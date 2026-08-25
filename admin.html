@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — CollabHive</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <script src="assets/js/config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .panel { display: none; }
+    .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .stat-cards .card { text-align: center; padding: 28px; }
+    .stat-cards .num { font-size: 2.2rem; font-weight: 800; }
+    .tbl-wrap { overflow-x: auto; margin-top: 24px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); font-size: .9rem; }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { background: var(--muted); font-weight: 800; color: var(--charcoal); }
+    tr:last-child td { border-bottom: none; }
+    .muted-note { color: var(--muted-fg); font-size: .85rem; }
+    @media (max-width: 700px) { .stat-cards { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand"><img src="assets/img/logo.png" alt="CollabHive" /></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+      <div class="nav-cta"><a href="index.html" class="btn btn-ghost">Back to site</a></div>
+    </div>
+  </header>
+
+  <section class="section" id="gate">
+    <div class="container" style="max-width: 460px;">
+      <div class="form-card" style="text-align:center;">
+        <div class="icon gold" style="margin:0 auto 18px;">🔒</div>
+        <h2>Admin Panel</h2>
+        <p class="form-note">Enter your admin key to view brands, creators and bookings.</p>
+        <div class="field" style="margin-top:18px; text-align:left;">
+          <label for="akey">Admin key</label>
+          <input id="akey" type="password" placeholder="Enter key…" />
+        </div>
+        <button class="btn btn-purple btn-lg" id="unlock" style="margin-top:20px; width:100%;">Unlock</button>
+        <p class="form-note" id="gate-err" style="color: hsl(0,70%,50%); display:none;">Wrong key. Try again.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="panel" id="panel">
+    <section class="section" style="padding-top: 24px;">
+      <div class="container">
+        <div class="sec-head" style="margin-bottom:32px;">
+          <span class="kicker">Overview</span>
+          <h2>CollabHive Analytics</h2>
+          <p class="muted-note" id="mode-note"></p>
+        </div>
+        <div class="stat-cards">
+          <div class="card"><div class="num" style="color:var(--purple);" id="s-brands">–</div><div class="lbl" style="color:var(--muted-fg);font-weight:600;">Brands</div></div>
+          <div class="card"><div class="num" style="color:var(--honey-dark);" id="s-creators">–</div><div class="lbl" style="color:var(--muted-fg);font-weight:600;">Creators</div></div>
+          <div class="card"><div class="num" style="color:var(--ink);" id="s-bookings">–</div><div class="lbl" style="color:var(--muted-fg);font-weight:600;">Bookings</div></div>
+          <div class="card"><div class="num" style="color:var(--ink);" id="s-ratio">–</div><div class="lbl" style="color:var(--muted-fg);font-weight:600;">Creators / Brand</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted" style="padding-top: 48px;">
+      <div class="container">
+        <div class="sec-head" style="margin-bottom:24px;">
+          <span class="kicker">Data</span>
+          <h2 style="font-size:1.6rem;">All Records</h2>
+        </div>
+
+        <h3 style="margin-bottom:8px;">Brands</h3>
+        <div class="tbl-wrap" id="brands-table"></div>
+
+        <h3 style="margin:32px 0 8px;">Creators</h3>
+        <div class="tbl-wrap" id="creators-table"></div>
+
+        <h3 style="margin:32px 0 8px;">Bookings</h3>
+        <div class="tbl-wrap" id="bookings-table"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var KEY = (window.CH_API && window.CH_API.adminKey) || 'collabhive';
+      var input = document.getElementById('akey');
+      var err = document.getElementById('gate-err');
+
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, function (m) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+        });
+      }
+      function rowsHtml(rows, cols) {
+        if (!rows || !rows.length) return '<div class="card" style="padding:20px;"><p class="muted-note">No records yet.</p></div>';
+        var head = '<tr>' + cols.map(function (c) { return '<th>' + esc(c.label) + '</th>'; }).join('') + '</tr>';
+        var body = rows.map(function (r) {
+          return '<tr>' + cols.map(function (c) { return '<td>' + esc(r[c.key]) + '</td>'; }).join('') + '</tr>';
+        }).join('');
+        return '<table>' + head + body + '</table>';
+      }
+
+      function unlock() {
+        var k = input.value.trim();
+        if (k !== KEY) { err.style.display = 'block'; return; }
+        err.style.display = 'none';
+        window.CH_API.adminKey = k;
+        document.getElementById('gate').style.display = 'none';
+        document.getElementById('panel').style.display = 'block';
+        load();
+      }
+      document.getElementById('unlock').addEventListener('click', unlock);
+      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') unlock(); });
+
+      function load() {
+        var mode = (CH.data.isLive) ? 'Live mode — Google Sheets connected.' : 'Demo mode — showing sample data. Connect Google Sheets (set CH_API.base) for real records.';
+        document.getElementById('mode-note').textContent = mode;
+
+        CH.data.stats().then(function (s) {
+          document.getElementById('s-brands').textContent = s.brands;
+          document.getElementById('s-creators').textContent = s.creators;
+          document.getElementById('s-bookings').textContent = s.bookings;
+          document.getElementById('s-ratio').textContent = s.brands ? (s.creators / s.brands).toFixed(1) : '–';
+        }).catch(function () { /* ignore */ });
+
+        CH.data.list('brands').then(function (r) {
+          document.getElementById('brands-table').innerHTML = rowsHtml(r, [
+            { key: 'business', label: 'Business' }, { key: 'category', label: 'Category' },
+            { key: 'city', label: 'City' }, { key: 'budget', label: 'Budget' },
+            { key: 'goal', label: 'Goal' }, { key: 'status', label: 'Status' }
+          ]);
+        });
+        CH.data.list('creators').then(function (r) {
+          document.getElementById('creators-table').innerHTML = rowsHtml(r, [
+            { key: 'name', label: 'Name' }, { key: 'handle', label: 'Handle' },
+            { key: 'niche', label: 'Niche' }, { key: 'followers', label: 'Followers' },
+            { key: 'city', label: 'City' }, { key: 'rate', label: 'Rate' }
+          ]);
+        });
+        CH.data.list('bookings').then(function (r) {
+          document.getElementById('bookings-table').innerHTML = rowsHtml(r, [
+            { key: 'brand', label: 'Brand' }, { key: 'creator', label: 'Creator' },
+            { key: 'niche', label: 'Niche' }, { key: 'city', label: 'City' }, { key: 'status', label: 'Status' }
+          ]);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

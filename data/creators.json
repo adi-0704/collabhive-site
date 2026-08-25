@@ -1,0 +1,12 @@
+[
+  { "name": "Aarav Mehra", "handle": "@aarav.eats", "niche": "Food & Beverage", "city": "Delhi", "followers": "24.5K", "rate": "₹3,500 / post" },
+  { "name": "Meher Kapoor", "handle": "@meher.styles", "niche": "Fashion", "city": "Gurugram", "followers": "18.2K", "rate": "₹4,000 / post" },
+  { "name": "Rohan Bansal", "handle": "@rohan.travels", "niche": "Travel", "city": "Noida", "followers": "12.8K", "rate": "₹2,500 / post" },
+  { "name": "Sanya Gupta", "handle": "@sanya.glow", "niche": "Beauty", "city": "Delhi", "followers": "32.1K", "rate": "₹5,000 / post" },
+  { "name": "Kabir Malhotra", "handle": "@kabir.fits", "niche": "Fitness & Wellness", "city": "Delhi", "followers": "15.4K", "rate": "₹3,000 / post" },
+  { "name": "Isha Verma", "handle": "@isha.home", "niche": "Lifestyle", "city": "Faridabad", "followers": "9.6K", "rate": "₹1,800 / post" },
+  { "name": "Dev Shah", "handle": "@dev.discovers", "niche": "Tech", "city": "Gurugram", "followers": "41.0K", "rate": "₹6,500 / post" },
+  { "name": "Naina Joshi", "handle": "@naina.creates", "niche": "Food & DIY", "city": "Delhi", "followers": "7.2K", "rate": "₹1,500 / post" },
+  { "name": "Arjun Rao", "handle": "@arjun.streets", "niche": "Food & Beverage", "city": "Delhi", "followers": "28.4K", "rate": "₹3,800 / post" },
+  { "name": "Tara Sen", "handle": "@tara.wellness", "niche": "Fitness & Wellness", "city": "Gurugram", "followers": "11.3K", "rate": "₹2,200 / post" }
+]

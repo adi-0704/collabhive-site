@@ -245,11 +245,52 @@ h1, h2, h3 { line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
 .footer p { font-size: .92rem; margin-bottom: 12px; }
 .footer-bottom { border-top: 1px solid hsl(0, 0%, 20%); margin-top: 48px; padding-top: 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .85rem; color: hsl(0, 0%, 55%); }
 
+/* ---------- Brands strip ---------- */
+.brand-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 34px; }
+.brand-strip .b-logo { font-weight: 800; font-size: 1.35rem; letter-spacing: -0.01em; color: var(--charcoal); opacity: .75; transition: opacity .15s ease; }
+.brand-strip .b-logo:hover { opacity: 1; }
+.brand-strip .b-logo:nth-child(2n) { color: var(--purple); }
+.brand-strip .b-logo:nth-child(3n) { color: var(--honey-dark); }
+
+/* ---------- Creator cards ---------- */
+.creator-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.creator-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-align: center; box-shadow: var(--shadow-card); transition: transform .2s ease, box-shadow .2s ease; }
+.creator-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); }
+.creator-card .avatar { width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; font-weight: 800; color: #fff; background: var(--grad-purple); }
+.creator-card:nth-child(3n) .avatar { background: var(--grad-honey); color: var(--ink); }
+.creator-card:nth-child(4n) .avatar { background: linear-gradient(135deg, hsl(263, 70%, 58%), hsl(45, 100%, 50%)); }
+.creator-card h3 { font-size: 1.05rem; margin-bottom: 2px; }
+.creator-card .handle { color: var(--purple-dark); font-weight: 700; font-size: .88rem; }
+.creator-card .niche { display: inline-block; margin-top: 10px; font-size: .78rem; font-weight: 800; color: var(--honey-dark); background: var(--honey-soft); padding: 4px 12px; border-radius: 999px; }
+.creator-card .meta { margin-top: 12px; color: var(--muted-fg); font-size: .85rem; }
+.creator-card .meta b { color: var(--ink); }
+.creator-card .book-btn { margin-top: 14px; width: 100%; }
+
+/* ---------- Creator directory tools ---------- */
+.dir-tools { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+.dir-tools input, .dir-tools select {
+  font-family: inherit; font-size: .98rem; padding: 12px 16px; border: 1.5px solid var(--border);
+  border-radius: 10px; background: #fff; color: var(--ink); min-width: 220px;
+}
+.dir-tools input:focus, .dir-tools select:focus { outline: none; border-color: var(--honey); box-shadow: 0 0 0 4px hsl(45, 100%, 50% / 0.15); }
+
+/* ---------- Testimonials ---------- */
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.testi-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 14px; }
+.testi-card .stars { color: var(--honey-dark); letter-spacing: 2px; }
+.testi-card p { color: var(--charcoal); font-size: .98rem; }
+.testi-card .who { margin-top: auto; display: flex; align-items: center; gap: 12px; }
+.testi-card .who .av { width: 40px; height: 40px; border-radius: 50%; background: var(--grad-purple); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+.testi-card .who strong { display: block; font-size: .92rem; }
+.testi-card .who span { color: var(--muted-fg); font-size: .82rem; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
   .grid-2 { grid-template-columns: 1fr; }
   .trust-strip { grid-template-columns: 1fr 1fr; }
+  .creator-grid { grid-template-columns: 1fr 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .nav-links, .nav-cta { display: none; }
   .nav-toggle { display: block; }
@@ -260,6 +301,7 @@ h1, h2, h3 { line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
 }
 @media (max-width: 600px) {
   .grid-3, .grid-4, .footer-grid, .trust-strip { grid-template-columns: 1fr; }
+  .creator-grid { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .split-card { padding: 36px 28px; }
   .hero { padding: 64px 0 48px; }

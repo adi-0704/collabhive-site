@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://adi-0704.github.io/collabhive-site/assets/img/logo.png" />
   <link rel="canonical" href="https://adi-0704.github.io/collabhive-site/brands.html" />
-  <script>window.CH_ANALYTICS = { ga4Id: "", pixelId: "" };</script>
+  <script src="assets/js/config.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -128,6 +128,22 @@
     </div>
   </section>
 
+  <section class="section muted" id="directory">
+    <div class="container">
+      <div class="sec-head kicker-gold">
+        <span class="kicker">Creator directory</span>
+        <h2>Browse &amp; Book Creators</h2>
+        <p>Search our curated network and book the right creators for your campaign — or send us a brief and we&rsquo;ll match for you.</p>
+      </div>
+      <div class="dir-tools">
+        <input type="search" data-creator-search placeholder="Search name, handle, niche, city…" aria-label="Search creators" />
+        <select data-creator-niche aria-label="Filter by niche"><option value="">All niches</option></select>
+      </div>
+      <p style="text-align:center; color:var(--muted-fg); margin-bottom:24px;"><span data-directory-count></span> available</p>
+      <div class="creator-grid" data-creators data-directory data-bookable></div>
+    </div>
+  </section>
+
   <section class="section muted" id="brief">
     <div class="container">
       <div class="grid grid-2" style="align-items: start;">
@@ -156,6 +172,7 @@
             <button type="submit" class="btn btn-purple btn-lg">Send Brief via WhatsApp</button>
           </div>
           <p class="form-note">Submitting opens WhatsApp with your brief pre-filled. You can edit before sending.</p>
+          <p class="form-note">Already onboarded? <a href="dashboard.html" style="color:var(--purple);font-weight:700;">Open your brand dashboard →</a></p>
         </form>
       </div>
     </div>
@@ -209,6 +226,9 @@
     </div>
   </footer>
 
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/creators.js"></script>
+  <script src="assets/js/onboard.js"></script>
   <script src="assets/js/analytics.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
