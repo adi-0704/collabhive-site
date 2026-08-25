@@ -8,7 +8,9 @@
   <meta property="og:title" content="CollabHive for Creators — Grow Your Influence" />
   <meta property="og:description" content="Join a curated creator network, get matched with brands that fit your style, and earn with just a fair 10% commission." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/img/logo.png" />
+  <meta property="og:image" content="https://adi-0704.github.io/collabhive-site/assets/img/logo.png" />
+  <link rel="canonical" href="https://adi-0704.github.io/collabhive-site/creators.html" />
+  <script>window.CH_ANALYTICS = { ga4Id: "", pixelId: "" };</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -135,7 +137,7 @@
             <strong>Transparency note:</strong> Joining the creator network does not guarantee immediate collaborations. Shortlisted creators will be contacted when relevant opportunities arise. We believe in honest communication and realistic expectations.
           </p>
         </div>
-        <form class="form-card" data-wa-form="Hi CollabHive! I'd like to join as a creator.">
+        <form class="form-card" data-wa-form="Hi CollabHive! I'd like to join as a creator." data-event="creator_application_submitted">
           <div class="form-grid">
             <div class="field"><label for="cname">Your name</label><input id="cname" name="Name" data-label="Name" type="text" placeholder="e.g. Aarav Sharma" required /></div>
             <div class="field"><label for="chandle">Instagram handle</label><input id="chandle" name="Handle" data-label="Handle" type="text" placeholder="@yourhandle" required /></div>
@@ -202,6 +204,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/analytics.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
