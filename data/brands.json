@@ -1,0 +1,6 @@
+[
+  { "timestamp": "2026-08-24", "business": "UrbanBrew", "category": "Food & Beverage", "city": "Delhi", "budget": "₹10,000 – ₹25,000", "goal": "Footfall / visits", "status": "Active" },
+  { "timestamp": "2026-08-24", "business": "FitKart", "category": "Fitness & Wellness", "city": "Gurugram", "budget": "₹25,000 – ₹50,000", "goal": "Sales & conversions", "status": "Active" },
+  { "timestamp": "2026-08-25", "business": "Glowly", "category": "Fashion & Beauty", "city": "Delhi", "budget": "Under ₹10,000", "goal": "Brand awareness", "status": "Active" },
+  { "timestamp": "2026-08-25", "business": "The Green Table", "category": "Food & Beverage", "city": "Noida", "budget": "₹10,000 – ₹25,000", "goal": "Engagement", "status": "Active" }
+]

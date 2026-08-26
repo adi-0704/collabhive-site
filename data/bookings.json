@@ -1,0 +1,5 @@
+[
+  { "timestamp": "2026-08-25", "brand": "UrbanBrew", "creator": "@aarav.eats", "niche": "Food & Beverage", "city": "Delhi", "status": "Pending" },
+  { "timestamp": "2026-08-25", "brand": "FitKart", "creator": "@kabir.fits", "niche": "Fitness & Wellness", "city": "Gurugram", "status": "Confirmed" },
+  { "timestamp": "2026-08-25", "brand": "Glowly", "creator": "@sanya.glow", "niche": "Beauty", "city": "Delhi", "status": "Pending" }
+]

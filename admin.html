@@ -124,7 +124,9 @@
       input.addEventListener('keydown', function (e) { if (e.key === 'Enter') unlock(); });
 
       function load() {
-        var mode = (CH.data.isLive) ? 'Live mode — Google Sheets connected.' : 'Demo mode — showing sample data. Connect Google Sheets (set CH_API.base) for real records.';
+        var mode = (CH.data.backend === 'supabase') ? 'Live mode — Supabase connected.'
+          : (CH.data.backend === 'sheets') ? 'Live mode — Google Sheets connected.'
+          : 'Demo mode — showing sample data. Connect Supabase (set CH_API.supabaseUrl + supabaseAnonKey) for real records.';
         document.getElementById('mode-note').textContent = mode;
 
         CH.data.stats().then(function (s) {
