@@ -70,6 +70,45 @@
       </div>
     </section>
 
+    <section class="section" style="padding: 32px 0 0;">
+      <div class="container">
+        <div class="sec-head" style="margin-bottom:20px;">
+          <span class="kicker">Add record</span>
+          <h2 style="font-size:1.4rem;">Add a Creator or Brand</h2>
+        </div>
+        <div class="grid grid-2" style="align-items:start;">
+          <form class="form-card" id="add-creator">
+            <h3 style="margin-bottom:16px;">Add Creator</h3>
+            <div class="form-grid">
+              <div class="field"><label>Name</label><input name="name" placeholder="Aarav Mehra" required /></div>
+              <div class="field"><label>Handle</label><input name="handle" placeholder="@handle" required /></div>
+              <div class="field"><label>Niche</label><input name="niche" placeholder="Food &amp; Beverage" /></div>
+              <div class="field"><label>Followers</label><input name="followers" placeholder="24.5K" /></div>
+              <div class="field"><label>City</label><input name="city" placeholder="Delhi" /></div>
+              <div class="field"><label>Rate</label><input name="rate" placeholder="₹3,500 / post" /></div>
+              <div class="field full"><label>Links / about</label><input name="links" placeholder="Instagram, YouTube…" /></div>
+            </div>
+            <button type="submit" class="btn btn-gold btn-lg" style="margin-top:18px;">Add Creator</button>
+            <p class="form-note" id="add-creator-msg"></p>
+          </form>
+
+          <form class="form-card" id="add-brand">
+            <h3 style="margin-bottom:16px;">Add Brand</h3>
+            <div class="form-grid">
+              <div class="field"><label>Business</label><input name="business" placeholder="Brew &amp; Bites" required /></div>
+              <div class="field"><label>Category</label><input name="category" placeholder="Food &amp; Beverage" /></div>
+              <div class="field"><label>City</label><input name="city" placeholder="Delhi" /></div>
+              <div class="field"><label>Budget</label><input name="budget" placeholder="₹10,000 – ₹25,000" /></div>
+              <div class="field"><label>Goal</label><input name="goal" placeholder="Footfall / visits" /></div>
+              <div class="field"><label>Status</label><input name="status" value="Active" /></div>
+            </div>
+            <button type="submit" class="btn btn-purple btn-lg" style="margin-top:18px;">Add Brand</button>
+            <p class="form-note" id="add-brand-msg"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <section class="section muted" style="padding-top: 48px;">
       <div class="container">
         <div class="sec-head" style="margin-bottom:24px;">
@@ -157,6 +196,29 @@
           ]);
         });
       }
+
+      function collect(form) {
+        var row = {};
+        form.querySelectorAll('[name]').forEach(function (f) {
+          var v = (f.value || '').trim();
+          if (v) row[f.name] = v;
+        });
+        return row;
+      }
+      function wireForm(id, sheet, msgId) {
+        var form = document.getElementById(id);
+        var msg = document.getElementById(msgId);
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          CH.data.add(sheet, collect(form)).then(function () {
+            msg.textContent = 'Added — refreshing…';
+            form.reset();
+            setTimeout(load, 500);
+          });
+        });
+      }
+      wireForm('add-creator', 'creators', 'add-creator-msg');
+      wireForm('add-brand', 'brands', 'add-brand-msg');
     })();
   </script>
 </body>
