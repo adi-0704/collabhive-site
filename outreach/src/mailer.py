@@ -90,7 +90,8 @@ def daily_run(cfg: dict) -> dict:
 
     cap = min(cfg["smtp"]["daily_limit"], cfg["smtp"]["daily_hard_cap"])
     state_file = ROOT / cfg["brands"]["state_file"]
-    state = load_json(state_file) if isinstance(load_json(state_file), dict) else {}
+    loaded = load_json(state_file)
+    state = loaded if isinstance(loaded, dict) else {}
 
     targets, _ = select_targets(cfg, state, cap)
     targets = [t for t in targets if t.get("email")]

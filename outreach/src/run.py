@@ -28,16 +28,15 @@ def gather_report(cfg: dict) -> dict:
     from collections import Counter
     from datetime import datetime, timezone
 
-    sent_state_file = ROOT / cfg["brands"]["sent_log"]
     state_file = ROOT / cfg["brands"]["state_file"]
     seed_file = ROOT / cfg["brands"]["seed_file"]
 
     state = {}
     if state_file.exists():
         from src.common import load_json
-        state = load_json(state_file)
-        if not isinstance(state, dict):
-            state = {}
+        _s = load_json(state_file)
+        if isinstance(_s, dict):
+            state = _s
     pool = brands_mod.load_seed_pool(cfg)
     sent_log = state.get("sent_log", [])
 

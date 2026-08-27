@@ -155,16 +155,25 @@ def refresh_brand_emails(cfg: dict) -> dict:
     timeout = cfg["emails"].get("fetch_timeout_seconds", 12)
     limit = cfg["emails"].get("max_emails_per_brand", 3)
     pool = load_seed_pool(cfg)
+    cap = cfg["emails"].get("fetch_max_brands_per_run", 12)
     updated = 0
-    for brand in pool:
-        if brand.get("website"):
-            before = len(brand.get("emails", []))
-            brand = enrich_brand(brand, ua, timeout, limit)
-            if brand.get("emails") and len(brand["emails"]) > before:
-                updated += 1
+    processed = 0
+    for idx, brand in enumerate(pool):
+        if not brand.get("website"):
+            continue
+        # Re-skip brands that already have emails, and cap per-run work so the
+        # daily job stays well within its time budget (unreachable sites are slow).
+        if brand.get("emails") or (processed >= cap):
+            continue
+        before = len(brand.get("emails", []))
+        enriched = enrich_brand(brand, ua, timeout, limit)
+        pool[idx] = enriched
+        processed += 1
+        if enriched.get("emails") and len(enriched["emails"]) > before:
+            updated += 1
     from .common import save_json
     save_json(ROOT / cfg["brands"]["seed_file"], pool)
-    return {"brands": len(pool), "with_emails": sum(1 for b in pool if b.get("emails")), "updated": updated}
+    return {"brands": len(pool), "with_emails": sum(1 for b in pool if b.get("emails")), "updated": updated, "processed": processed}
 
 
 def select_targets(cfg: dict, state: dict, limit: int) -> tuple[list[dict], dict]:
@@ -175,12 +184,17 @@ def select_targets(cfg: dict, state: dict, limit: int) -> tuple[list[dict], dict
     the week.
     """
     pool = load_seed_pool(cfg)
+    if not isinstance(state, dict):
+        state = {}
     sent = set(state.get("emailed_domains", []))
     sent_emails = set(state.get("emailed_emails", []))
 
     candidates: list[dict] = []
     for b in pool:
-        email = (b.get("email") or (b.get("emails") or [""])[0] or "").strip().lower()
+        if not isinstance(b, dict):
+            continue
+        emails = b.get("emails") or ([b["email"]] if b.get("email") else [])
+        email = (b.get("email") or (emails[0] if emails else "") or "").strip().lower()
         domain = ((b.get("website") or "").lower().replace("https://", "").replace("http://", "").split("/")[0]).replace("www.", "")
         if not email or email in sent_emails:
             continue
@@ -188,6 +202,7 @@ def select_targets(cfg: dict, state: dict, limit: int) -> tuple[list[dict], dict
             continue
         b = dict(b)
         b["email"] = email
+        b["emails"] = b.get("emails") or [email]
         candidates.append(b)
 
     # Order for niche rotation: prefer today's niche, spread cities.

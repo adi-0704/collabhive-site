@@ -21,7 +21,8 @@
   },
   "emails": {
     "max_emails_per_brand": 3,
-    "fetch_timeout_seconds": 12,
+    "fetch_timeout_seconds": 8,
+    "fetch_max_brands_per_run": 12,
     "user_agent": "Mozilla/5.0 (compatible; CollabHive/1.0; +collabhive.in@gmail.com)",
     "lookback_days": 1
   },
