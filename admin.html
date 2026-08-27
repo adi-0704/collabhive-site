@@ -130,6 +130,24 @@
         <div class="tbl-wrap" id="bookings-table"></div>
       </div>
     </section>
+
+    <section class="section muted" style="padding-top: 48px;">
+      <div class="container">
+        <div class="sec-head" style="margin-bottom:12px;">
+          <span class="kicker">Creator onboarding</span>
+          <h2 style="font-size:1.6rem;">Influencer Applications</h2>
+          <p class="muted-note">
+            New applications from the CollabHive Influencer form. Review each one, edit if needed,
+            then <strong>Approve</strong> to publish them to the creator directory for brands.
+            <a id="influencer-sheet-link" href="#" target="_blank" rel="noopener" style="color:var(--purple);">Open the application sheet →</a>
+          </p>
+        </div>
+        <div class="tbl-wrap" id="applications-table">
+          <div class="card" style="padding:20px;"><p class="muted-note">Loading applications…</p></div>
+        </div>
+        <p class="muted-note" id="applications-msg" style="margin-top:12px;"></p>
+      </div>
+    </section>
   </div>
 
   <script src="assets/js/data.js"></script>
@@ -223,6 +241,206 @@
       }
       wireForm('add-creator', 'creators', 'add-creator-msg');
       wireForm('add-brand', 'brands', 'add-brand-msg');
+
+      // ============ Influencer Applications ============
+      var INFL = (window.CH_INFLUENCERS) || {};
+      var sheetId = INFL.sheetId || '';
+      var sheetLink = 'https://docs.google.com/spreadsheets/d/' + sheetId + '/edit';
+      document.getElementById('influencer-sheet-link').href = sheetLink;
+
+      // Human-friendly field labels in the order the form stores answers.
+      var FORM_FIELDS = [
+        { key: 'name', label: 'Name' },
+        { key: 'pronoun', label: 'Pronouns' },
+        { key: 'email', label: 'Email' },
+        { key: 'phone', label: 'Phone' },
+        { key: 'city', label: 'City & country' },
+        { key: 'dob', label: 'Date of birth' },
+        { key: 'handle', label: 'Instagram handle' },
+        { key: 'platforms', label: 'Platforms' },
+        { key: 'links', label: 'Other links' },
+        { key: 'niche', label: 'Niche' },
+        { key: 'followers', label: 'Followers' },
+        { key: 'reach', label: 'Avg reach' },
+        { key: 'formats', label: 'Formats' },
+        { key: 'years', label: 'Years creating' },
+        { key: 'types', label: 'Collaboration' },
+        { key: 'rate', label: 'Rate' },
+        { key: 'preferences', label: 'Content pref' },
+        { key: 'availability', label: 'Availability' },
+        { key: 'pastbrands', label: 'Past brands' },
+        { key: 'toplinks', label: 'Top posts' },
+        { key: 'notes', label: 'Notes' },
+        { key: 'ts', label: 'Submitted' }
+      ];
+
+      function loadApplications() {
+        var el = document.getElementById('applications-table');
+        var msg = document.getElementById('applications-msg');
+        msg.textContent = '';
+        if (!sheetId) {
+          el.innerHTML = '<div class="card" style="padding:20px;"><p class="muted-note">Set CH_INFLUENCERS.sheetId in config.js.</p></div>';
+          return;
+        }
+        var url = 'https://docs.google.com/spreadsheets/d/' + sheetId + '/gviz/tq?tqx=out:json&headers=1';
+        fetch(url).then(function (r) { if (!r.ok) throw new Error('status ' + r.status); return r.text(); })
+          .then(function (text) {
+            var parsed = parseGviz(text);
+            if (!parsed || !parsed.length) {
+              el.innerHTML = '<div class="card" style="padding:20px;"><p class="muted-note">No applications yet, or the sheet is private. Share the sheet as "Anyone with the link → Viewer".</p></div>';
+              return;
+            }
+            renderApplications(el, parsed);
+          })
+          .catch(function (err) {
+            el.innerHTML = '<div class="card" style="padding:20px;"><p class="muted-note">Could not read applications: ' + esc(err.message) + '. Make sure the sheet is shared as "Anyone with the link → Viewer".</p></div>';
+          });
+      }
+
+      function parseGviz(text) {
+        var m = text.match(/^\s*google\.visualization\.Query\.setResponse\((.*)\);?\s*$/s);
+        if (!m) return [];
+        var data = JSON.parse(m[1]);
+        var table = data.table;
+        if (!table) return [];
+        var cols = table.cols.map(function (c) { return c.label; });
+        return (table.rows || []).map(function (row) {
+          var obj = { _raw: {} };
+          row.c.forEach(function (cell, i) {
+            var v = (cell && cell.v !== null && cell.v !== undefined) ? cell.v : '';
+            if (v && typeof v === 'object' && v.$t !== undefined) v = v.$t;
+            obj[cols[i] || ('c' + i)] = v;
+            obj._raw[cols[i] || ('c' + i)] = v;
+          });
+          // Map form headers -> internal keys via keyword matching.
+          var form = obj._raw || {};
+          var fields = {
+            name: firstOf(form, ['Full name', 'Name']),
+            handle: firstOf(form, ['Instagram handle', 'Handle']),
+            niche: firstOf(form, ['Primary content niche', 'Niche']),
+            city: firstOf(form, ['City & country', 'City']),
+            followers: firstOf(form, ['Followers']),
+            reach: firstOf(form, ['views', 'reach', 'Average']),
+            email: firstOf(form, ['Email address', 'Email']),
+            phone: firstOf(form, ['Phone', 'WhatsApp']),
+            rate: firstOf(form, ['Proposed rate', 'rate', 'Rate']),
+            platforms: firstOf(form, ['Platforms you create']),
+            availability: firstOf(form, ['available', 'Availability']),
+            pastbrands: firstOf(form, ['Brands you have worked']),
+            toplinks: firstOf(form, ['links to your best', 'Links to your best']),
+            notes: firstOf(form, ['Anything else']),
+            ts: firstOf(form, ['Timestamp']) || obj['Submitted']
+          };
+          return fields;
+        });
+      }
+      function firstOf(obj, keys) {
+        for (var i = 0; i < keys.length; i++) {
+          for (var k in obj) {
+            if (k.toLowerCase().indexOf(keys[i].toLowerCase()) !== -1 && obj[k] !== '') return obj[k];
+          }
+        }
+        return '';
+      }
+
+      function renderApplications(el, rows) {
+        // Filter out already-approved (matched by handle in approved set).
+        var approved = approvedSet();
+        rows = rows.filter(function (r) { return !(r.handle && approved.has(String(r.handle).toLowerCase())); });
+        if (!rows.length) {
+          el.innerHTML = '<div class="card" style="padding:20px;"><p class="muted-note">No pending applications.</p></div>';
+          return;
+        }
+        var html = '<table><thead><tr><th>Name</th><th>Handle</th><th>Niche</th><th>Followers</th><th>City</th><th>Submitted</th><th>Actions</th></tr></thead><tbody>';
+        rows.forEach(function (r, idx) {
+          html += '<tr>' +
+            '<td>' + esc(r.name || '—') + '</td>' +
+            '<td>' + esc(r.handle || '—') + '</td>' +
+            '<td>' + esc(r.niche || '—') + '</td>' +
+            '<td>' + esc(r.followers || '—') + '</td>' +
+            '<td>' + esc(r.city || '—') + '</td>' +
+            '<td>' + esc((r.ts || '').slice(0, 16)) + '</td>' +
+            '<td style="white-space:nowrap;">' +
+            '<button type="button" class="btn" data-appr="' + idx + '">Approve</button> ' +
+            '<button type="button" class="btn btn-ghost" data-reject="' + idx + '" style="border-color:#ddd;color:#555;">Dismiss</button>' +
+            '</td></tr>';
+        });
+        html += '</tbody></table>';
+        el.innerHTML = html;
+        rows.forEach(function (r, idx) {
+          var appr = el.querySelector('[data-appr="' + idx + '"]');
+          var rej = el.querySelector('[data-reject="' + idx + '"]');
+          if (appr) appr.addEventListener('click', function () { openApproveModal(r, idx); });
+          if (rej) rej.addEventListener('click', function () { dismiss(idx, r); });
+        });
+      }
+
+      var pendingRows = [];
+      function openApproveModal(r, idx) {
+        pendingRows[idx] = r;
+        // Build an editable form with all known fields.
+        var fields = [
+          ['name', 'Name'], ['handle', 'Instagram handle'], ['niche', 'Niche'],
+          ['followers', 'Followers'], ['city', 'City'], ['rate', 'Rate'], ['email', 'Email']
+        ];
+        var inner = fields.map(function (f) {
+          return '<div class="field"><label>' + esc(f[1]) + '</label>' +
+            '<input name="' + f[0] + '" value="' + esc(r[f[0]] || '') + '" /></div>';
+        }).join('');
+        inner += '<div class="field full"><label>About / notes</label><textarea name="_raw">' + esc(r.notes || r._raw ? JSON.stringify(r) : '') + '</textarea></div>';
+        modal.innerHTML = '<div class="form-card"><h3 style="margin-bottom:14px;">Approve influencer</h3>' +
+          '<div class="form-grid">' + inner + '</div>' +
+          '<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">' +
+          '<button class="btn btn-gold" id="modal-approve">Approve &amp; Publish</button>' +
+          '<button class="btn btn-ghost" id="modal-cancel" style="border-color:#ddd;color:#555;">Cancel</button></div></div>';
+        modal.style.display = 'flex';
+        document.getElementById('modal-approve').onclick = function () {
+          approve(idx, modal.querySelector('.form-card'));
+        };
+        document.getElementById('modal-cancel').onclick = function () { modal.style.display = 'none'; };
+      }
+
+      var modal = document.createElement('div');
+      modal.id = 'appr-modal';
+      modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:9999;';
+      modal.innerHTML = '';
+      document.body.appendChild(modal);
+
+      function approve(idx, formEl) {
+        var r = pendingRows[idx] || {};
+        var row = collect(formEl);
+        row.name = row.name || r.name; row.handle = row.handle || r.handle;
+        row.niche = row.niche || r.niche; row.city = row.city || r.city;
+        row.followers = row.followers || r.followers; row.rate = row.rate || r.rate;
+        row.email = row.email || r.email; row._approved = new Date().toISOString();
+        CH.data.add('creators', row).then(function () {
+          modal.style.display = 'none';
+          markApproved(row.handle);
+          var msg = document.getElementById('applications-msg');
+          msg.textContent = '✔ Approved ' + (row.name || row.handle) + ' — now visible to brands on the creator directory.';
+          setTimeout(loadApplications, 600);
+          load(); // refresh the Creators table
+        });
+      }
+
+      function dismiss(idx, r) {
+        modal.style.display = 'none';
+        var msg = document.getElementById('applications-msg');
+        msg.textContent = 'Dismissed ' + (r.name || r.handle) + '. It stays in the sheet but is hidden here.';
+        loadApplications();
+      }
+
+      function approvedSet() {
+        try { return new Set(JSON.parse(localStorage.getItem('ch_approved_handles') || '[]')); }
+        catch (e) { return new Set(); }
+      }
+      function markApproved(handle) {
+        if (!handle) return;
+        var s = approvedSet(); s.add(String(handle).toLowerCase());
+        localStorage.setItem('ch_approved_handles', JSON.stringify(Array.from(s)));
+      }
+
+      loadApplications();
     })();
   </script>
 </body>

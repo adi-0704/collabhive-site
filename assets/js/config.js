@@ -16,3 +16,10 @@ window.CH_APPLY = window.CH_APPLY || {
   creatorFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLScIV5PVkwbdcvMpzCyxTAzN71ORCqaTaIMY7Dr15xEMXSxIXQ/viewform",
   brandFormUrl: ""
 };
+
+// Influencer application responses sheet (read by the admin panel to review + approve).
+// Must be shared "Anyone with the link -> Viewer" so the admin page can fetch it.
+window.CH_INFLUENCERS = window.CH_INFLUENCERS || {
+  sheetId: "1fnINFVDChyeK0VoihUeTHY_vG9V1s-4dkHMsxGdzYGY",
+  approvedTab: "Approved"
+};
