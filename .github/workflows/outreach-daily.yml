@@ -57,7 +57,7 @@ jobs:
         run: |
           git config user.name "collabhive-outreach"
           git config user.email "collabhive.in@gmail.com"
-          git add outreach/data/report.json outreach/data/state.json outreach/data/brands_seed.json outreach/data/sent_log.json
+          git add -A outreach/data/ || true
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
