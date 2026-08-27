@@ -1,0 +1,21 @@
+Subject: {subject_line}
+
+Hi {name},
+
+We're {company}, an influencer marketing agency based in India. We help growing brands like {name} reach new audiences through authentic creator collaborations.
+
+We're currently building a curated network of creators across every niche — food, fashion, fitness, tech, travel, and more.
+
+If you'd like to get your brand in front of the right creators, we'd love to explore how we can work together:
+
+🌐 Learn more about us: {site_url}
+📝 Apply to be a featured brand: {apply_url}
+
+No pressure — just reply to this email and we'll take it from there. We keep things simple, transparent, and fair.
+
+Warm regards,
+The {company} Team
+{contact_email} | {phone}
+
+---
+You're receiving this because your business is publicly listed and we think you might be interested in influencer marketing. If you'd prefer not to hear from us, just reply "unsubscribe" and we won't contact you again.

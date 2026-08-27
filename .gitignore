@@ -1,0 +1,16 @@
+# Outreach — never commit secrets or local env
+.env
+outreach/.env
+outreach/data/state.json
+outreach/data/sent_log.json
+outreach/data/report.json
+
+# Local clutter
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Playwright caches
+node_modules/
+.playwright/

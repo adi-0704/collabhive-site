@@ -1,0 +1,108 @@
+# CollabHive Outreach Automation
+
+A **fully free, daily, automated** brand-outreach system. It finds small/startup
+businesses across Indian niches, extracts their public emails, emails them an
+intro to CollabHive + your website/apply links, and logs everything to a
+monitoring dashboard you reach from the **admin panel**.
+
+Zero cost: Python stdlib only (+ optional Playwright), GitHub Actions free
+tier, GitHub Pages free hosting, Gmail SMTP with your app password.
+
+---
+
+## What it does every day (scheduled)
+1. **Discovers** target brands (curated seed pool + optional Maps scrape).
+2. **Extracts emails** from each brand's website (ToS-safe, free).
+3. **Sends** up to `daily_limit` (default 18) personalized emails, niche-
+   rotated across the week, with randomized delays + circuit breaker.
+4. **Logs** every send and writes `data/report.json`.
+5. **Pushes** the report back to the repo so the dashboard updates.
+
+You never have to touch it. You just monitor.
+
+---
+
+## How it's hosted (all free)
+| Piece | Where |
+|---|---|
+| Daily scheduled run | `.github/workflows/outreach-daily.yml` (cron `30 3 * * *` = 09:00 IST) |
+| Brand discovery (Maps) | `.github/workflows/outreach-maps.yml` (manual only) |
+| Dashboard | `outreach/dashboard/index.html` on GitHub Pages |
+| Data | `outreach/data/*.json` (committed after each run) |
+| Login for email | Gmail SMTP via GitHub Secrets |
+
+---
+
+## ✅ One-time setup (manual, human-only)
+
+### 1. Add GitHub Secrets (Repo → Settings → Secrets → Actions)
+You **must** add these for email to send:
+- `OUTREACH_EMAIL_USER` → `collabhive.in@gmail.com`
+- `OUTREACH_EMAIL_PASS` → your Gmail **app password** (the 16-char one)
+
+> Your app password is **never** committed. It lives only in GitHub Secrets.
+> Update Gmail → Security → 2-Step Verification → App passwords if you need a new one.
+
+### 2. Enable Pages (if not already)
+Repo → **Settings → Pages** → Source: `Deploy from a branch` → `main` / root.
+The dashboard is at:
+```
+https://adi-0704.github.io/collabhive-site/outreach/dashboard/
+```
+
+### 3. Add brands to the seed pool
+`outreach/data/brands_seed.json`. Each entry:
+```json
+{ "name": "Zesty Foods", "niche": "Food & Beverage", "city": "Delhi",
+  "website": "https://zesty.in", "email": "", "emails": [], "source": "seed" }
+```
+The daily run extracts emails from each `website` automatically.
+You can also add them from the admin panel flow, or manually.
+
+### 4. (Optional) Test the daily run manually
+Repo → **Actions** → "Outreach Daily Run" → **Run workflow** (mode `all`). Check the log.
+
+---
+
+## Monitoring
+- **Admin panel → "Open Outreach Monitor"** (links to the dashboard).
+- Dashboard shows: emails sent, unique brands, pool size, remaining candidates,
+  distribution by niche + city, and the recent-sends table.
+- `data/report.json` is the raw source the dashboard reads.
+
+---
+
+## Configuration
+`outreach/config.json`:
+- `smtp.daily_limit` / `daily_hard_cap` → emails per day (mandatory 15–20 range).
+- `smtp.min/max_delay_seconds` → randomized send spacing (anti-spam).
+- `niches.categories` → niches, keywords, cities. Rotates daily.
+- `profile.site_url` / `apply_url` → links inside every email.
+
+---
+
+## Google Maps scraper (OPTIONAL — read the warning)
+`outreach/src/maps_scraper.py` auto-discovers brands from Google Maps using
+Playwright. **NOT scheduled** — run manually via the "Outreach Data Builder"
+workflow. It can violate Google ToS and trigger IP bans, so it's throttled,
+capped, and off by default. Email extraction still comes from brand websites.
+Only use it if you accept the risk; prefer the Places API (paid) or curation.
+
+---
+
+## IP-ban protection
+- Daily runs from GitHub's rotating IPs to send email (not your home IP).
+- `outreach/src/protect.py`: token bucket, per-hour cap, session cap, randomized
+  jitter, exponential backoff, and a circuit breaker that stops after repeated
+  SMTP failures.
+- Volume kept to 15–20/day, spread across niches and days.
+
+---
+
+## Local testing (optional)
+```
+cd outreach
+cp .env.example .env      # fill in credentials for SMTP test
+python src/run.py report  # writes data/report.json
+python src/run.py daily   # dry-sends if password set, else safe-skip
+```

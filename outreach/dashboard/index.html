@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outreach Monitor — CollabHive</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f7f9; --card: #ffffff; --border: #ececf1; --muted: #f1f1f5;
+      --charcoal: #1b1a21; --muted-fg: #8a8a99; --purple: #6C3BFF;
+      --purple-soft: #f3efff; --honey: #c79b3b; --honey-soft: #fff8ec;
+      --red: #d14343; --green: #1f9d63;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: var(--bg); color: var(--charcoal); }
+    header { background: #1b1a21; color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    header .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.15rem; }
+    header .brand img { width: 34px; height: 34px; border-radius: 8px; }
+    header .updated { font-size: .8rem; color: #b6b6c2; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px; }
+    h1 { font-size: 1.4rem; margin: 0 0 6px; }
+    .sub { color: var(--muted-fg); margin: 0 0 24px; font-size: .92rem; }
+    .grid { display: grid; gap: 16px; }
+    .stats { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 780px) { .stats { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 500px) { .stats { grid-template-columns: 1fr; } }
+    .stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; }
+    .stat .lbl { color: var(--muted-fg); font-size: .82rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+    .stat .num { font-size: 2rem; font-weight: 800; margin-top: 6px; }
+    .stat .hint { font-size: .8rem; color: var(--muted-fg); margin-top: 4px; }
+    .panels { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 800px) { .panels { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+    .card h3 { margin: 0 0 16px; font-size: 1rem; }
+    .bars .row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .bars .row .name { width: 130px; font-size: .85rem; color: var(--charcoal); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .bars .bar-bg { flex: 1; height: 10px; background: var(--muted); border-radius: 999px; overflow: hidden; }
+    .bars .bar { height: 100%; background: var(--purple); border-radius: 999px; }
+    .bars .row.gold .bar { background: var(--honey); }
+    .bars .val { width: 40px; text-align: right; font-weight: 700; font-size: .85rem; }
+    .log { grid-template-columns: 1fr; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--muted-fg); font-weight: 700; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; }
+    tr:last-child td { border-bottom: none; }
+    .tag { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: .72rem; font-weight: 700; background: var(--purple-soft); color: var(--purple); }
+    .empty { text-align: center; color: var(--muted-fg); padding: 40px 0; }
+    .mk { color: var(--muted-fg); font-size: .78rem; margin-top: 28px; text-align: center; }
+    .pill-live { background: var(--green); color: #fff; padding: 3px 12px; border-radius: 999px; font-size: .72rem; font-weight: 700; }
+    .pill-off { background: var(--red); color: #fff; padding: 3px 12px; border-radius: 999px; font-size: .72rem; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand"><img src="https://adi-0704.github.io/collabhive-site/assets/img/logo.png" alt="CollabHive" /> Outreach Monitor</div>
+    <div class="updated" id="updated">Last updated: —</div>
+  </header>
+
+  <div class="wrap">
+    <h1>Daily Brand Outreach Monitor</h1>
+    <p class="sub">Automated influencer-marketing outreach from the curated brand pool. Data is refreshed by the daily GitHub Action run.</p>
+
+    <div class="grid stats">
+      <div class="stat"><div class="lbl">Emails Sent</div><div class="num" id="s-sent">—</div><div class="hint">all time</div></div>
+      <div class="stat"><div class="lbl">Unique Brands</div><div class="num" id="s-unique">—</div><div class="hint">emailed</div></div>
+      <div class="stat"><div class="lbl">Pool Size</div><div class="num" id="s-pool">—</div><div class="hint">brands with email</div></div>
+      <div class="stat"><div class="lbl">Remaining</div><div class="num" id="s-remain">—</div><div class="hint">candidates left</div></div>
+    </div>
+
+    <div class="grid panels" style="margin-top:16px;">
+      <div class="card">
+        <h3>By niche</h3>
+        <div class="bars" id="by-niche"><div class="empty">No data yet.</div></div>
+      </div>
+      <div class="card">
+        <h3>By city</h3>
+        <div class="bars gold" id="by-city"><div class="empty">No data yet.</div></div>
+      </div>
+    </div>
+
+    <div class="grid log" style="margin-top:16px;">
+      <div class="card">
+        <h3>Recent sends</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>When</th><th>Brand</th><th>Niche</th><th>City</th><th>Email</th></tr></thead>
+            <tbody id="recent"><tr><td colspan="5"><div class="empty">No sends yet.</div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="mk">CollabHive &middot; Outreach automation &middot; toS-safe (curated pool + website email extraction)</div>
+  </div>
+
+  <script>
+    (function () {
+      fetch('../data/report.json', { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw new Error('status ' + r.status); return r.json(); })
+        .then(function (d) { render(d); })
+        .catch(function (err) {
+          document.getElementById('updated').textContent = 'Data unavailable: ' + err.message;
+        });
+
+      function render(d) {
+        var s = d.summary || {};
+        document.getElementById('s-sent').textContent = s.total_sent != null ? s.total_sent : '—';
+        document.getElementById('s-unique').textContent = s.unique_brands_emailed != null ? s.unique_brands_emailed : '—';
+        document.getElementById('s-pool').textContent = s.brands_with_email != null ? s.brands_with_email : '—';
+        document.getElementById('s-remain').textContent = s.remaining_candidates != null ? s.remaining_candidates : '—';
+
+        var t = d.generated_at ? new Date(d.generated_at).toLocaleString() : '—';
+        document.getElementById('updated').textContent = 'Last updated: ' + t;
+
+        renderBars('by-niche', (d.by_niche || {}), false);
+        renderBars('by-city', (d.by_city || {}), false);
+
+        var recent = d.recent_sends || [];
+        var tbody = document.getElementById('recent');
+        if (!recent.length) {
+          tbody.innerHTML = '<tr><td colspan="5"><div class="empty">No sends yet.</div></td></tr>';
+        } else {
+          tbody.innerHTML = recent.map(function (e) {
+            var ts = e.ts ? new Date(e.ts).toLocaleString() : '—';
+            return '<tr>' +
+              '<td>' + ts + '</td>' +
+              '<td>' + (e.name || '—') + '</td>' +
+              '<td><span class="tag">' + (e.niche || '—') + '</span></td>' +
+              '<td>' + (e.city || '—') + '</td>' +
+              '<td>' + (e.email || '—') + '</td>' +
+              '</tr>';
+          }).join('');
+        }
+      }
+
+      function renderBars(id, obj, gold) {
+        var el = document.getElementById(id);
+        var entries = Object.entries(obj).sort(function (a, b) { return b[1] - a[1]; });
+        if (!entries.length) { el.innerHTML = '<div class="empty">No data yet.</div>'; return; }
+        var max = Math.max.apply(null, entries.map(function (e) { return e[1]; })) || 1;
+        el.innerHTML = entries.map(function (e) {
+          var w = Math.max(4, Math.round((e[1] / max) * 100));
+          return '<div class="row"><div class="name">' + e[0] + '</div>' +
+            '<div class="bar-bg"><div class="bar" style="width:' + w + '%"></div></div>' +
+            '<div class="val">' + e[1] + '</div></div>';
+        }).join('');
+      }
+    })();
+  </script>
+</body>
+</html>

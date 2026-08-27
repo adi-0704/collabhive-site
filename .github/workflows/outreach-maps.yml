@@ -1,0 +1,64 @@
+name: Outreach Data Builder (Maps scrape)
+
+# MANUAL ONLY (workflow_dispatch). This scrapes Google Maps, which can trigger
+# IP bans and violates Google ToS. It is NOT scheduled. Run it yourself when you
+# want to grow the brand pool, and keep --limit low. Use at your own risk.
+on:
+  workflow_dispatch:
+    inputs:
+      niches:
+        description: 'Number of niches to scrape (0 = rotate to today only)'
+        required: false
+        default: '1'
+      limit:
+        description: 'Places per query (keep low, e.g. 6)'
+        required: false
+        default: '6'
+      write:
+        description: 'Append results to brand seed pool (true/false)'
+        required: false
+        default: 'true'
+
+permissions:
+  contents: write
+
+jobs:
+  maps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install chromium --with-deps
+
+      - name: Scrape Google Maps (throttled)
+        working-directory: outreach
+        run: |
+          python src/maps_scraper.py \
+            --niches "${{ inputs.niches }}" \
+            --limit "${{ inputs.limit }}" \
+            ${{ inputs.write == 'true' && '--write' || '' }}
+
+      - name: Commit new brands
+        if: inputs.write != 'false'
+        run: |
+          git config user.name "collabhive-outreach"
+          git config user.email "collabhive.in@gmail.com"
+          git add outreach/data/brands_seed.json
+          if git diff --cached --quiet; then
+            echo "No new brands added."
+          else
+            git commit -m "build: add brands from Maps scrape [skip ci]"
+            git push origin "${{ github.ref_name }}"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

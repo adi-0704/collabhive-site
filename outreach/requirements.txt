@@ -1,0 +1,6 @@
+# No runtime dependencies for the daily automation (stdlib only).
+# Playwright is OPTIONAL — only needed to run the Google Maps scraper manually:
+#   pip install playwright && playwright install chromium
+#
+# The daily GitHub Action uses only the Python standard library, so it runs
+# with zero pip installs (free and reliable).

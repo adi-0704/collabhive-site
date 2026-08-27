@@ -1,0 +1,63 @@
+name: Outreach Daily Run
+
+on:
+  schedule:
+    # India Standard Time = UTC+5:30. Run daily at 09:00 IST.
+    # Cron is UTC: 09:00 IST = 03:30 UTC.
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode (default: all = enrich + daily + report)'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - daily
+          - report
+          - enrich
+
+concurrency:
+  group: outreach-daily
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  outreach:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run daily outreach
+        working-directory: outreach
+        env:
+          OUTREACH_EMAIL_USER: ${{ secrets.OUTREACH_EMAIL_USER }}
+          OUTREACH_EMAIL_PASS: ${{ secrets.OUTREACH_EMAIL_PASS }}
+        run: |
+          MODE="${{ inputs.mode || 'all' }}"
+          python src/run.py "$MODE" || echo "Run finished with warnings (email may be disabled if secrets unset)"
+
+      - name: Commit report + state
+        run: |
+          git config user.name "collabhive-outreach"
+          git config user.email "collabhive.in@gmail.com"
+          git add outreach/data/report.json outreach/data/state.json outreach/data/brands_seed.json outreach/data/sent_log.json
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "build: refresh outreach report + state [skip ci]"
+            git push origin "${{ github.ref_name }}"
+          fi
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

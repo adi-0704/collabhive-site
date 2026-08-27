@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Zesty Foods",
+    "niche": "Food & Beverage",
+    "city": "Delhi",
+    "website": "https://example-zesty.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "UrbanBrew",
+    "niche": "Food & Beverage",
+    "city": "Mumbai",
+    "website": "https://example-urbanbrew.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "StyleNest",
+    "niche": "Fashion & Apparel",
+    "city": "Jaipur",
+    "website": "https://example-stylenest.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  }
+]

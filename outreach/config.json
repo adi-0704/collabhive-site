@@ -1,0 +1,84 @@
+{
+  "profile": {
+    "company": "CollabHive",
+    "tagline": "Influencer Marketing Agency",
+    "site_url": "https://adi-0704.github.io/collabhive-site/",
+    "apply_url": "https://docs.google.com/forms/d/e/1FAIpQLScIV5PVkwbdcvMpzCyxTAzN71ORCqaTaIMY7Dr15xEMXSxIXQ/viewform",
+    "contact_email": "collabhive.in@gmail.com",
+    "phone": "+91 81780 22572"
+  },
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "username": "collabhive.in@gmail.com",
+    "use_tls": true,
+    "daily_limit": 18,
+    "daily_hard_cap": 20,
+    "min_delay_seconds": 180,
+    "max_delay_seconds": 420,
+    "from_name": "CollabHive",
+    "subject_prefix": ""
+  },
+  "emails": {
+    "max_emails_per_brand": 3,
+    "fetch_timeout_seconds": 12,
+    "user_agent": "Mozilla/5.0 (compatible; CollabHive/1.0; +collabhive.in@gmail.com)",
+    "lookback_days": 1
+  },
+  "discovery": {
+    "enabled": false,
+    "max_places_per_run": 25,
+    "max_queries_per_session": 14,
+    "session_break_seconds": 1800,
+    "min_gap_seconds": 4,
+    "max_gap_seconds": 14,
+    "notes": "Google Maps scraping is optional and off by default: it can trigger IP bans. Keep it off; rely on the curated seed pool + website email extraction for the daily (toS-safe) automation."
+  },
+  "brands": {
+    "seed_file": "data/brands_seed.json",
+    "sent_log": "data/sent_log.json",
+    "state_file": "data/state.json",
+    "dedupe_key": "email",
+    "niche_rotation_days": 7
+  },
+  "niches": {
+    "market": "India",
+    "categories": [
+      {
+        "niche": "Food & Beverage",
+        "keywords": ["cafe", "restaurant", "cloud kitchen", "bakery", "juice bar"],
+        "cities": ["Delhi", "Mumbai", "Bangalore", "Gurugram", "Pune", "Hyderabad"]
+      },
+      {
+        "niche": "Fashion & Apparel",
+        "keywords": ["boutique", "clothing", "ethnic wear", "streetwear", "fashion label"],
+        "cities": ["Delhi", "Mumbai", "Jaipur", "Chennai", "Ahmedabad"]
+      },
+      {
+        "niche": "Beauty & Cosmetics",
+        "keywords": ["beauty", "salon", "cosmetics", "makeup", "skincare"],
+        "cities": ["Delhi", "Mumbai", "Bangalore", "Hyderabad", "Kolkata"]
+      },
+      {
+        "niche": "Fitness & Wellness",
+        "keywords": ["gym", "yoga", "fitness", "nutrition", "wellness"],
+        "cities": ["Delhi", "Mumbai", "Bangalore", "Pune", "Chandigarh"]
+      },
+      {
+        "niche": "Tech & Startups",
+        "keywords": ["software", "app", "fintech", "saas", "startup"],
+        "cities": ["Bangalore", "Hyderabad", "Gurugram", "Pune", "Mumbai"]
+      },
+      {
+        "niche": "Travel & Hospitality",
+        "keywords": ["travel", "homestay", "hotel", "tour", "resort"],
+        "cities": ["Jaipur", "Goa", "Udaipur", "Manali", "Kochi"]
+      },
+      {
+        "niche": "Home & Decor",
+        "keywords": ["home decor", "furniture", "interior", "decor store"],
+        "cities": ["Delhi", "Mumbai", "Bangalore", "Surat"]
+      }
+    ]
+  }
+}
