@@ -6,7 +6,8 @@
     "website": "https://thewholetruth.in",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Sleepy Owl Coffee",
@@ -14,8 +15,12 @@
     "city": "Gurugram",
     "website": "https://sleepyowl.co",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "help@sleepyowl.co",
+      "support@starapps.studio"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Yogabar",
@@ -23,8 +28,12 @@
     "city": "Gurugram",
     "website": "https://yogabar.com",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "files@quinn-live.bundle.js",
+      "hello@yogabars.in"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Blue Tokai Coffee Roasters",
@@ -32,8 +41,13 @@
     "city": "Gurugram",
     "website": "https://bluetokaicoffee.com",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "getcoffee@bluetokaicoffee.com",
+      "emandate@bluetokaicoffee.com",
+      "aarushi@bluetokaicoffee.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Vahdam India",
@@ -41,8 +55,11 @@
     "city": "Delhi",
     "website": "https://www.vahdam.in",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "help@vahdam.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Paper Boat",
@@ -51,7 +68,8 @@
     "website": "https://paperboatdrinks.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Slurrp Farm",
@@ -59,8 +77,13 @@
     "city": "Gurugram",
     "website": "https://www.slurrpfarm.com",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "mail@slurrpfarm.com",
+      "help@wholsumfoods.com",
+      "info@stagheaddesigns.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Coolberg",
@@ -69,7 +92,8 @@
     "website": "https://www.coolberg.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Sweet Karam Coffee",
@@ -78,7 +102,8 @@
     "website": "https://www.sweetkaramcoffee.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "The Good Bug",
@@ -86,8 +111,12 @@
     "city": "Mumbai",
     "website": "https://www.thegoodbug.com",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "tgb@seventurns.in",
+      "abc@xyz.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "The Souled Store",
@@ -96,7 +125,8 @@
     "website": "https://www.thesouledstore.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Snitch",
@@ -104,8 +134,11 @@
     "city": "Bengaluru",
     "website": "https://www.snitch.com",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "grievance@snitch.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Bewakoof",
@@ -113,8 +146,13 @@
     "city": "Mumbai",
     "website": "https://www.bewakoof.com",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "careers@bewakoof.com",
+      "care@bewakoof.com",
+      "u003ecareers@bewakoof.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "The House of Rare",
@@ -122,8 +160,12 @@
     "city": "Bengaluru",
     "website": "https://thehouseofrare.com",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "support@thehouseofrare.com",
+      "js-shopify-core@v55.0.1.js"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "The Indian Garage Co.",
@@ -131,8 +173,11 @@
     "city": "Bengaluru",
     "website": "https://www.tigc.in",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "care@tigc.in"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Berrylush",
@@ -141,7 +186,8 @@
     "website": "https://www.berrylush.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "FabAlley",
@@ -149,8 +195,11 @@
     "city": "Gurugram",
     "website": "https://www.faballey.com",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "customercare@houseofindya.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Miraggio",
@@ -159,7 +208,8 @@
     "website": "https://www.miraggio.in",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Rare Rabbit",
@@ -167,8 +217,12 @@
     "city": "Bengaluru",
     "website": "https://www.rarerabbit.in",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "support@thehouseofrare.com",
+      "js-shopify-core@v55.0.1.js"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Earth Rhythm",
