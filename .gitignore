@@ -1,9 +1,6 @@
 # Outreach — never commit secrets or local env
 .env
 outreach/.env
-outreach/data/state.json
-outreach/data/sent_log.json
-outreach/data/report.json
 
 # Local clutter
 __pycache__/
@@ -14,3 +11,7 @@ venv/
 # Playwright caches
 node_modules/
 .playwright/
+
+# Keep outreach/data/*.json tracked: state.json (dedupe), sent_log.json,
+# report.json (dashboard) and brands_seed.json (brand pool) MUST persist
+# between daily runs, otherwise the same brands get re-emailed every day.

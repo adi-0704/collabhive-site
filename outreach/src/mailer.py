@@ -87,6 +87,25 @@ def warmup_delay(cfg: dict) -> float:
     return random.uniform(lo, hi)
 
 
+def count_sent_last_hours(state: dict, hours: int) -> int:
+    """Count sends in the last `hours` (rolling window) from state['sent_log']."""
+    if not isinstance(state, dict):
+        return 0
+    from datetime import datetime, timezone, timedelta
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
+    n = 0
+    for entry in state.get("sent_log", []):
+        try:
+            ts = datetime.fromisoformat(entry.get("ts", ""))
+        except (ValueError, TypeError):
+            continue
+        if ts.tzinfo is None:
+            ts = ts.replace(tzinfo=timezone.utc)
+        if ts >= cutoff:
+            n += 1
+    return n
+
+
 def daily_run(cfg: dict) -> dict:
     from .brands import select_targets
     from .common import load_json, save_json
@@ -101,7 +120,14 @@ def daily_run(cfg: dict) -> dict:
     loaded = load_json(state_file)
     state = loaded if isinstance(loaded, dict) else {}
 
-    targets, _ = select_targets(cfg, state, cap)
+    # Respect the daily cap across a rolling 24h window: if we already sent
+    # the budget today (e.g. a manual run + the scheduled one), do not overshoot.
+    sent_today = count_sent_last_hours(state, 24)
+    if sent_today >= cap:
+        log(f"Daily cap already reached ({sent_today}/{cap}) — nothing sent this run.")
+        return {"sent": 0, "attempted": 0, "already_at_cap": True, "sent_today": sent_today}
+
+    targets, _ = select_targets(cfg, state, cap - sent_today)
     targets = [t for t in targets if t.get("email")]
 
     if not targets:
@@ -138,6 +164,8 @@ def daily_run(cfg: dict) -> dict:
                     sent += 1
                     state = record_sent(state, brand)
                     log(f"  SENT {brand.get('email')} <- {brand.get('name')} [{brand.get('niche')}]")
+                    # Checkpoint so progress survives a mid-loop crash.
+                    save_json(state_file, state)
                 else:
                     failed += 1
                 if brand is not targets[-1]:

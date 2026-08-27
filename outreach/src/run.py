@@ -47,8 +47,25 @@ def gather_report(cfg: dict) -> dict:
     brands_with_email = sum(1 for b in pool if b.get("email") or b.get("emails"))
     brands_total = len(pool)
 
+    # Per-niche progress: how many in each niche have been emailed.
+    pool_by_niche = Counter((b.get("niche") or "Other") for b in pool)
+
+    # Today's sends (last 24h).
+    now = datetime.now(timezone.utc)
+    recency = []
+    for entry in sent_log:
+        try:
+            ts = datetime.fromisoformat(entry.get("ts", ""))
+            if ts.tzinfo is None:
+                ts = ts.replace(tzinfo=timezone.utc)
+            recency.append(ts)
+        except (ValueError, TypeError):
+            recency.append(None)
+    sent_today = sum(1 for ts in recency if ts and (now - ts).total_seconds() <= 86400)
+    sent_week = sum(1 for ts in recency if ts and (now - ts).total_seconds() <= 7 * 86400)
+
     report = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": now.isoformat(),
         "profile": cfg["profile"],
         "summary": {
             "total_sent": total_sent,
@@ -56,9 +73,14 @@ def gather_report(cfg: dict) -> dict:
             "brands_in_pool": brands_total,
             "brands_with_email": brands_with_email,
             "remaining_candidates": max(brands_with_email - unique_emails, 0),
+            "sent_today": sent_today,
+            "sent_week": sent_week,
+            "day_streak": sum(1 for ts in recency if ts and (now - ts).total_seconds() <= 7 * 86400),
+            "daily_budget": cfg.get("smtp", {}).get("daily_limit", 18),
         },
         "by_niche": dict(by_niche),
         "by_city": dict(by_city),
+        "pool_by_niche": dict(pool_by_niche),
         "recent_sends": sent_log[-20:][::-1],
         "last_run": state.get("last_run", ""),
     }
@@ -83,7 +105,8 @@ def cmd_daily(cfg: dict) -> None:
             log(f"Maps scrape: {res}")
         except Exception as exc:
             log(f"Maps scrape step skipped: {exc}")
-    # 2) Refresh emails for any seed brand missing one.
+    # 2) Refresh emails for any seed brand missing one (AFTER scrape so newly
+    #    discovered brands can be enriched in the same run).
     try:
         brands_mod.refresh_brand_emails(cfg)
     except Exception as exc:
@@ -92,12 +115,12 @@ def cmd_daily(cfg: dict) -> None:
     result = mailer.daily_run(cfg)
     log(f"Daily run result: {result}")
 
-    # Record last_run.
+    # Record last_run (guard against non-dict state).
     from src.common import load_json
-    state = load_json(state_file)
-    if isinstance(state, dict):
-        state["last_run"] = datetime.now(timezone.utc).isoformat()
-        save_json(state_file, state)
+    loaded = load_json(state_file)
+    state = loaded if isinstance(loaded, dict) else {}
+    state["last_run"] = datetime.now(timezone.utc).isoformat()
+    save_json(state_file, state)
 
 
 def cmd_report(cfg: dict) -> None:

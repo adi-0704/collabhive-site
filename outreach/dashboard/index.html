@@ -17,31 +17,37 @@
     }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: var(--bg); color: var(--charcoal); }
-    header { background: #1b1a21; color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    header { background: #1b1a21; color: #fff; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
     header .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.15rem; }
     header .brand img { width: 34px; height: 34px; border-radius: 8px; }
+    header .right { display: flex; align-items: center; gap: 12px; }
     header .updated { font-size: .8rem; color: #b6b6c2; }
     .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px; }
     h1 { font-size: 1.4rem; margin: 0 0 6px; }
     .sub { color: var(--muted-fg); margin: 0 0 24px; font-size: .92rem; }
     .grid { display: grid; gap: 16px; }
-    .stats { grid-template-columns: repeat(4, 1fr); }
-    @media (max-width: 780px) { .stats { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 500px) { .stats { grid-template-columns: 1fr; } }
-    .stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; }
-    .stat .lbl { color: var(--muted-fg); font-size: .82rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
-    .stat .num { font-size: 2rem; font-weight: 800; margin-top: 6px; }
-    .stat .hint { font-size: .8rem; color: var(--muted-fg); margin-top: 4px; }
+    .stats { grid-template-columns: repeat(6, 1fr); }
+    @media (max-width: 980px) { .stats { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 560px) { .stats { grid-template-columns: 1fr 1fr; } }
+    .stat { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
+    .stat .lbl { color: var(--muted-fg); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+    .stat .num { font-size: 1.9rem; font-weight: 800; margin-top: 6px; }
+    .stat .hint { font-size: .78rem; color: var(--muted-fg); margin-top: 4px; }
+    .stat.accent-purple .num { color: var(--purple); }
+    .stat.accent-honey .num { color: var(--honey); }
+    .stat.accent-green .num { color: var(--green); }
     .panels { grid-template-columns: 1fr 1fr; }
     @media (max-width: 800px) { .panels { grid-template-columns: 1fr; } }
     .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
     .card h3 { margin: 0 0 16px; font-size: 1rem; }
+    .card .head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .card .head h3 { margin: 0; }
     .bars .row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-    .bars .row .name { width: 130px; font-size: .85rem; color: var(--charcoal); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .bars .row .name { width: 150px; font-size: .82rem; color: var(--charcoal); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .bars .bar-bg { flex: 1; height: 10px; background: var(--muted); border-radius: 999px; overflow: hidden; }
     .bars .bar { height: 100%; background: var(--purple); border-radius: 999px; }
     .bars .row.gold .bar { background: var(--honey); }
-    .bars .val { width: 40px; text-align: right; font-weight: 700; font-size: .85rem; }
+    .bars .val { width: 84px; text-align: right; font-weight: 700; font-size: .8rem; color: var(--muted-fg); }
     .log { grid-template-columns: 1fr; }
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; font-size: .85rem; }
@@ -51,42 +57,59 @@
     .tag { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: .72rem; font-weight: 700; background: var(--purple-soft); color: var(--purple); }
     .empty { text-align: center; color: var(--muted-fg); padding: 40px 0; }
     .mk { color: var(--muted-fg); font-size: .78rem; margin-top: 28px; text-align: center; }
-    .pill-live { background: var(--green); color: #fff; padding: 3px 12px; border-radius: 999px; font-size: .72rem; font-weight: 700; }
-    .pill-off { background: var(--red); color: #fff; padding: 3px 12px; border-radius: 999px; font-size: .72rem; font-weight: 700; }
+    .btn { display: inline-block; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); font-weight: 700; font-size: .82rem; cursor: pointer; }
+    .btn:hover { border-color: var(--purple); color: var(--purple); }
+    .pill { padding: 3px 12px; border-radius: 999px; font-size: .72rem; font-weight: 700; color: #fff; }
+    .pill-live { background: var(--green); }
+    .pill-off { background: var(--red); }
+    .pill-warn { background: var(--honey); }
+    .wrap-2col { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+    @media (max-width: 800px) { .wrap-2col { grid-template-columns: 1fr; } }
+    .kv { font-size: .85rem; }
+    .kv div { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--border); }
+    .kv div:last-child { border-bottom: none; }
+    .kv b { font-weight: 700; }
+    .progress { height: 12px; background: var(--muted); border-radius: 999px; overflow: hidden; margin-top: 6px; }
+    .progress > span { display: block; height: 100%; background: linear-gradient(90deg, var(--purple), var(--honey)); }
   </style>
 </head>
 <body>
 
   <header>
     <div class="brand"><img src="https://adi-0704.github.io/collabhive-site/assets/img/logo.png" alt="CollabHive" /> Outreach Monitor</div>
-    <div class="updated" id="updated">Last updated: —</div>
+    <div class="right">
+      <span class="updated" id="updated">Last updated: —</span>
+      <button class="btn" id="refresh">↻ Refresh</button>
+    </div>
   </header>
 
   <div class="wrap">
     <h1>Daily Brand Outreach Monitor</h1>
-    <p class="sub">Automated influencer-marketing outreach from the curated brand pool. Data is refreshed by the daily GitHub Action run.</p>
+    <p class="sub">Automated influencer-marketing outreach from the curated brand pool. Data updates after each daily run.</p>
 
     <div class="grid stats">
-      <div class="stat"><div class="lbl">Emails Sent</div><div class="num" id="s-sent">—</div><div class="hint">all time</div></div>
+      <div class="stat accent-purple"><div class="lbl">Emails Sent (all time)</div><div class="num" id="s-sent">—</div><div class="hint">total</div></div>
       <div class="stat"><div class="lbl">Unique Brands</div><div class="num" id="s-unique">—</div><div class="hint">emailed</div></div>
-      <div class="stat"><div class="lbl">Pool Size</div><div class="num" id="s-pool">—</div><div class="hint">brands with email</div></div>
+      <div class="stat accent-green"><div class="lbl">Sent Today</div><div class="num" id="s-today">—</div><div class="hint" id="s-budget">budget —</div></div>
+      <div class="stat"><div class="lbl">Sent (7 days)</div><div class="num" id="s-week">—</div><div class="hint">rolling week</div></div>
+      <div class="stat accent-honey"><div class="lbl">Pool Size</div><div class="num" id="s-pool">—</div><div class="hint" id="s-poolhint">brands w/ email</div></div>
       <div class="stat"><div class="lbl">Remaining</div><div class="num" id="s-remain">—</div><div class="hint">candidates left</div></div>
     </div>
 
     <div class="grid panels" style="margin-top:16px;">
       <div class="card">
-        <h3>By niche</h3>
+        <div class="head"><h3>Sent by niche</h3><span class="pill pill-live" id="s-niche-pill">✓</span></div>
         <div class="bars" id="by-niche"><div class="empty">No data yet.</div></div>
       </div>
       <div class="card">
-        <h3>By city</h3>
+        <div class="head"><h3>Sent by city</h3></div>
         <div class="bars gold" id="by-city"><div class="empty">No data yet.</div></div>
       </div>
     </div>
 
-    <div class="grid log" style="margin-top:16px;">
+    <div class="wrap-2col" style="margin-top:16px;">
       <div class="card">
-        <h3>Recent sends</h3>
+        <div class="head"><h3>Recent sends</h3></div>
         <div class="table-wrap">
           <table>
             <thead><tr><th>When</th><th>Brand</th><th>Niche</th><th>City</th><th>Email</th></tr></thead>
@@ -94,26 +117,58 @@
           </table>
         </div>
       </div>
+      <div class="card">
+        <div class="head"><h3>Snapshot</h3></div>
+        <div class="kv" id="snapshot">
+          <div><span>Last run</span><b id="sv-last">—</b></div>
+          <div><span>Daily budget</span><b id="sv-budget">—</b></div>
+          <div><span>Brands in pool</span><b id="sv-pool">—</b></div>
+          <div><span>With email</span><b id="sv-email">—</b></div>
+          <div><span>Remaining</span><b id="sv-remain">—</b></div>
+        </div>
+        <div style="margin-top:16px;">
+          <div style="font-size:.85rem;color:var(--muted-fg);">Reach of the pool</div>
+          <div class="progress"><span id="pool-fill" style="width:0%"></span></div>
+          <div style="font-size:.75rem;color:var(--muted-fg);margin-top:4px;" id="pool-fill-label">0% emailed</div>
+        </div>
+      </div>
     </div>
 
-    <div class="mk">CollabHive &middot; Outreach automation &middot; toS-safe (curated pool + website email extraction)</div>
+    <div class="mk">CollabHive &middot; Outreach automation &middot; curated pool + website email extraction</div>
   </div>
 
   <script>
     (function () {
-      fetch('../data/report.json', { cache: 'no-store' })
-        .then(function (r) { if (!r.ok) throw new Error('status ' + r.status); return r.json(); })
-        .then(function (d) { render(d); })
-        .catch(function (err) {
-          document.getElementById('updated').textContent = 'Data unavailable: ' + err.message;
-        });
+      var current = null;
+      function load() {
+        fetch('../data/report.json', { cache: 'no-store' })
+          .then(function (r) { if (!r.ok) throw new Error('status ' + r.status); return r.json(); })
+          .then(function (d) { current = d; render(d); })
+          .catch(function (err) {
+            document.getElementById('updated').textContent = 'Data unavailable: ' + err.message;
+          });
+      }
+      document.getElementById('refresh').addEventListener('click', load);
+
+      function fmt(s) { return s == null ? '—' : s; }
 
       function render(d) {
         var s = d.summary || {};
-        document.getElementById('s-sent').textContent = s.total_sent != null ? s.total_sent : '—';
-        document.getElementById('s-unique').textContent = s.unique_brands_emailed != null ? s.unique_brands_emailed : '—';
-        document.getElementById('s-pool').textContent = s.brands_with_email != null ? s.brands_with_email : '—';
-        document.getElementById('s-remain').textContent = s.remaining_candidates != null ? s.remaining_candidates : '—';
+        document.getElementById('s-sent').textContent = fmt(s.total_sent);
+        document.getElementById('s-unique').textContent = fmt(s.unique_brands_emailed);
+        document.getElementById('s-today').textContent = fmt(s.sent_today);
+        document.getElementById('s-week').textContent = fmt(s.sent_week);
+        document.getElementById('s-pool').textContent = fmt(s.brands_in_pool);
+        document.getElementById('s-poolhint').textContent = (s.brands_with_email || 0) + ' with email';
+        document.getElementById('s-remain').textContent = fmt(s.remaining_candidates);
+        document.getElementById('s-budget').textContent = 'budget ' + (s.daily_budget != null ? s.daily_budget : '—');
+
+        // Budget health pill
+        var pill = document.getElementById('s-niche-pill');
+        var today = s.sent_today || 0, budget = s.daily_budget || 0;
+        if (budget && today >= budget) { pill.textContent = 'At daily cap'; pill.className = 'pill pill-off'; }
+        else if (budget && today >= budget * 0.7) { pill.textContent = 'Filling up'; pill.className = 'pill pill-warn'; }
+        else { pill.textContent = '● Active'; pill.className = 'pill pill-live'; }
 
         var t = d.generated_at ? new Date(d.generated_at).toLocaleString() : '—';
         document.getElementById('updated').textContent = 'Last updated: ' + t;
@@ -128,18 +183,40 @@
         } else {
           tbody.innerHTML = recent.map(function (e) {
             var ts = e.ts ? new Date(e.ts).toLocaleString() : '—';
-            return '<tr>' +
-              '<td>' + ts + '</td>' +
-              '<td>' + (e.name || '—') + '</td>' +
+            return '<tr>' + '<td>' + ts + '</td>' + '<td>' + (e.name || '—') + '</td>' +
               '<td><span class="tag">' + (e.niche || '—') + '</span></td>' +
-              '<td>' + (e.city || '—') + '</td>' +
-              '<td>' + (e.email || '—') + '</td>' +
-              '</tr>';
+              '<td>' + (e.city || '—') + '</td>' + '<td>' + (e.email || '—') + '</td></tr>';
           }).join('');
         }
+
+        // Snapshot
+        document.getElementById('sv-last').textContent = d.last_run ? new Date(d.last_run).toLocaleString() : '—';
+        document.getElementById('sv-budget').textContent = s.daily_budget || '—';
+        document.getElementById('sv-pool').textContent = s.brands_in_pool || 0;
+        document.getElementById('sv-email').textContent = s.brands_with_email || 0;
+        document.getElementById('sv-remain').textContent = s.remaining_candidates || 0;
+
+        var reach = (s.brands_with_email && s.unique_brands_emailed != null)
+          ? Math.min(100, Math.round((s.unique_brands_emailed / s.brands_with_email) * 100)) : 0;
+        document.getElementById('pool-fill').style.width = reach + '%';
+        document.getElementById('pool-fill-label').textContent = reach + '% of email pool reached';
+
+        // Niche progress comparison (sent vs pool)
+        renderNicheProgress(d);
       }
 
-      function renderBars(id, obj, gold) {
+      function renderNicheProgress(d) {
+        var pool = d.pool_by_niche || {};
+        // Only render if we have pool data and it differs from by_niche.
+        var byNiche = d.by_niche || {};
+        var names = Object.keys(pool);
+        if (!names.length) return;
+        var el = document.getElementById('snapshot');
+        var hasPool = names.some(function (n) { return pool[n]; });
+        if (!hasPool) return;
+      }
+
+      function renderBars(id, obj) {
         var el = document.getElementById(id);
         var entries = Object.entries(obj).sort(function (a, b) { return b[1] - a[1]; });
         if (!entries.length) { el.innerHTML = '<div class="empty">No data yet.</div>'; return; }
@@ -151,6 +228,8 @@
             '<div class="val">' + e[1] + '</div></div>';
         }).join('');
       }
+
+      load();
     })();
   </script>
 </body>
