@@ -1,5 +1,3 @@
-Subject: {subject_line}
-
 Hi {name},
 
 We're {company}, an influencer marketing agency based in India. We help growing brands like {name} reach new audiences through authentic creator collaborations.

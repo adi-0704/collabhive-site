@@ -17,7 +17,7 @@
     "min_delay_seconds": 180,
     "max_delay_seconds": 420,
     "from_name": "CollabHive",
-    "subject_prefix": ""
+    "subject_line": "A creator network for {brand} — CollabHive"
   },
   "emails": {
     "max_emails_per_brand": 3,

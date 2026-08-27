@@ -22,7 +22,6 @@ def _render(subject_template: str, txt: str, html: str, brand: dict, cfg: dict) 
     p = cfg["profile"]
     name = brand.get("name") or brand.get("brand") or "Business"
     first = name.split()[0] if name else "there"
-    subject_line = subject_template.format(name=first, brand=name, niche=brand.get("niche", ""))
     ctx = {
         "name": first,
         "brand": name,
@@ -33,9 +32,18 @@ def _render(subject_template: str, txt: str, html: str, brand: dict, cfg: dict) 
         "contact_email": p["contact_email"],
         "phone": p["phone"],
     }
-    subj = subject_template.format(**ctx)
-    body_txt = txt.format(**ctx)
-    body_html = html.format(**ctx)
+    try:
+        subj = subject_template.format(**ctx)
+    except (KeyError, IndexError, ValueError):
+        subj = subject_template
+    try:
+        body_txt = txt.format(**ctx)
+    except (KeyError, IndexError, ValueError):
+        body_txt = txt
+    try:
+        body_html = html.format(**ctx)
+    except (KeyError, IndexError, ValueError):
+        body_html = html
     return subj, body_txt, body_html
 
 
