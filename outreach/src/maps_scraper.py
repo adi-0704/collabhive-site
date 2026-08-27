@@ -52,6 +52,164 @@ def build_search_url(query: str, city: str) -> str:
 
 
 def run_scrape(cfg: dict, niches_filter: int, limit_per_query: int, write: bool) -> list[dict]:
+    """Scrape the configured niches with protection. Returns discovered places."""
+    return _run_scrape(cfg, niches_filter, limit_per_query, write)
+
+
+def run_daily_scrape(cfg: dict) -> dict:
+    """Orchestrated daily scrape (rotation + cooldown + safe limits).
+
+    Uses cfg['discovery']:
+      * rotates 1 niche per day (mode='daily_rotate')
+      * low volume (max_queries_per_day, max_places_per_query)
+      * honors cooldown after a failed run (state['maps_cooldown_until'])
+    Returns {'new_brands': n, 'scraped': bool, 'skipped': reason}
+    """
+    d = cfg.get("discovery", {})
+    if not d.get("enabled", False):
+        return {"new_brands": 0, "scraped": False, "skipped": "discovery disabled"}
+
+    from datetime import datetime, timezone
+    from src.common import load_json
+
+    state_file = ROOT / cfg["brands"]["state_file"]
+    state = load_json(state_file) if isinstance(load_json(state_file), dict) else {}
+
+    # Cooldown / circuit break from previous failed scrapes.
+    cooldown_until = _parse_ts(state.get("maps_cooldown_until", ""))
+    if cooldown_until and cooldown_until > datetime.now(timezone.utc):
+        return {"new_brands": 0, "scraped": False,
+                "skipped": "cooldown active until " + cooldown_until.isoformat()}
+    if state.get("maps_consecutive_failures", 0) >= d.get("max_consecutive_failures", 3):
+        return {"new_brands": 0, "scraped": False, "skipped": "too many consecutive failures"}
+
+    # Rotate: pick today's niche (1 per day).
+    niches = cfg["niches"]["categories"]
+    idx = (int(datetime.now().strftime("%j")) + int(datetime.now().strftime("%w"))) % len(niches)
+    chosen = [niches[idx]]
+    limit = d.get("max_places_per_query", 4)
+    max_queries = d.get("max_queries_per_day", 6)
+
+    # Build a query plan capped by max_queries_per_day.
+    plan = []
+    for cat in chosen:
+        for query in cat.get("queries", cat.get("keywords", [])):
+            for city in cat.get("cities", [])[:2]:  # keep city count small
+                if len(plan) >= max_queries:
+                    break
+                plan.append((query, city))
+            if len(plan) >= max_queries:
+                break
+
+    log(f"Daily scrape: niche '{chosen[0]['niche']}', {len(plan)} queries, max {limit}/query")
+
+    results: list[dict] = []
+    from .protect import Throttle
+    throttle = Throttle(
+        max_per_hour=d.get("max_queries_per_day", 6),
+        session_cap=d.get("max_queries_per_day", 6) * 2,
+        backoff_after_failures=d.get("max_consecutive_failures", 3),
+        min_gap=d.get("min_gap_seconds", 5),
+        max_gap=d.get("max_gap_seconds", 16),
+    )
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError as exc:
+        log("Playwright not installed: " + str(exc))
+        _record_maps_state(cfg, ok=False)
+        return {"new_brands": 0, "scraped": False, "skipped": "playwright missing"}
+
+    chunk = []
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page(
+            user_agent=cfg["emails"].get("user_agent", "CollabHive/1.0"), locale="en-IN")
+        for query, city in plan:
+            if throttle.is_circuit_open() or throttle.session_exhausted():
+                break
+            throttle.wait()
+            url = build_search_url(query, city)
+            found = scrape_query(page, url, limit)
+            throttle.record(ok=len(found) > 0)
+            for r in found:
+                r["niche"] = chosen[0]["niche"]
+                r["city"] = city
+                r["source"] = "google_maps"
+                website = (r.get("website") or "").lower()
+                if website and any(x in website for x in ("google.", "facebook.com", "instagram.com", "youtube.com")):
+                    r["website"] = ""
+                chunk.append(r)
+        browser.close()
+
+    # Write new unique brands into the seed pool.
+    added = _append_to_seed(cfg, chunk)
+    ok = added > 0 or bool(chunk)
+    _record_maps_state(cfg, ok=ok)
+    return {"new_brands": added, "scraped": True, "queries": len(plan)}
+
+
+def _append_to_seed(cfg: dict, places: list[dict]) -> int:
+    pool_file = ROOT / cfg["brands"]["seed_file"]
+    existing = load_seed(pool_file)
+    seen = {b.get("name", "").lower().strip() for b in existing}
+    added = 0
+    for r in places:
+        name = (r.get("name") or "").strip()
+        if not name or name.lower() in seen:
+            continue
+        existing.append({
+            "name": name,
+            "niche": r.get("niche", ""),
+            "city": r.get("city", ""),
+            "website": (r.get("website") or "").strip(),
+            "phone": (r.get("phone") or "").strip(),
+            "email": "",
+            "emails": [],
+            "source": "google_maps",
+        })
+        seen.add(name.lower())
+        added += 1
+    if added:
+        save_json(pool_file, existing)
+        log(f"Added {added} new brands to {pool_file}")
+    return added
+
+
+def _record_maps_state(cfg: dict, ok: bool) -> None:
+    from datetime import datetime, timedelta, timezone
+    from src.common import load_json, save_json
+    state_file = ROOT / cfg["brands"]["state_file"]
+    state = load_json(state_file) if isinstance(load_json(state_file), dict) else {}
+    d = cfg.get("discovery", {})
+    if ok:
+        state["maps_consecutive_failures"] = 0
+        state.setdefault("maps_last_ok", datetime.now(timezone.utc).isoformat())
+    else:
+        fails = state.get("maps_consecutive_failures", 0) + 1
+        state["maps_consecutive_failures"] = fails
+        if fails >= d.get("max_consecutive_failures", 3):
+            wait_days = d.get("cooldown_days_after_fail", 2)
+            end = datetime.now(timezone.utc) + timedelta(days=wait_days)
+            state["maps_cooldown_until"] = end.isoformat()
+            log(f"Maps scraper cooling down for {wait_days} day(s) after {fails} failures.")
+    save_json(state_file, state)
+
+
+def _parse_ts(value: str):
+    from datetime import datetime, timezone
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(value)
+    except ValueError:
+        return None
+
+
+def run_scrape_full(cfg: dict, niches_filter: int, limit_per_query: int, write: bool) -> list[dict]:
+    return run_scrape(cfg, niches_filter, limit_per_query, write)
+
+
+def _run_scrape(cfg: dict, niches_filter: int, limit_per_query: int, write: bool) -> list[dict]:
     try:
         from playwright.sync_api import sync_playwright
     except ImportError as exc:

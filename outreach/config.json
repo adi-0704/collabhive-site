@@ -26,13 +26,17 @@
     "lookback_days": 1
   },
   "discovery": {
-    "enabled": false,
-    "max_places_per_run": 25,
-    "max_queries_per_session": 14,
-    "session_break_seconds": 1800,
-    "min_gap_seconds": 4,
-    "max_gap_seconds": 14,
-    "notes": "Google Maps scraping is optional and off by default: it can trigger IP bans. Keep it off; rely on the curated seed pool + website email extraction for the daily (toS-safe) automation."
+    "enabled": true,
+    "mode": "daily_rotate",
+    "niches_per_day": 1,
+    "max_places_per_query": 4,
+    "max_queries_per_day": 6,
+    "min_gap_seconds": 5,
+    "max_gap_seconds": 16,
+    "session_break_seconds": 900,
+    "max_consecutive_failures": 3,
+    "cooldown_days_after_fail": 2,
+    "notes": "Google Maps scraping is against Google ToS and can trigger IP bans. Scraper enabled by USER REQUEST: throttled, only 1 niche/day, low volume, with exponential backoff + circuit breaker. Prefer the Places API (paid) or curation for long-term reliability."
   },
   "brands": {
     "seed_file": "data/brands_seed.json",

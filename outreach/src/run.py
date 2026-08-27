@@ -76,7 +76,15 @@ def cmd_daily(cfg: dict) -> None:
     from src import mailer
 
     state_file = ROOT / cfg["brands"]["state_file"]
-    # Try to refresh emails for any seed brand missing one.
+    # 1) If enabled, discover new brands from Google Maps (throttled + safe).
+    if cfg.get("discovery", {}).get("enabled", False):
+        try:
+            from src import maps_scraper
+            res = maps_scraper.run_daily_scrape(cfg)
+            log(f"Maps scrape: {res}")
+        except Exception as exc:
+            log(f"Maps scrape step skipped: {exc}")
+    # 2) Refresh emails for any seed brand missing one.
     try:
         brands_mod.refresh_brand_emails(cfg)
     except Exception as exc:

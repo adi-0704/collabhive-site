@@ -38,6 +38,12 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install Playwright (for Maps discovery, optional)
+        run: |
+          pip install playwright >/dev/null 2>&1 || echo "Playwright install skipped"
+          playwright install chromium >/dev/null 2>&1 || echo "Chromium / Playwright not available — email run will still work"
+        shell: bash
+
       - name: Run daily outreach
         working-directory: outreach
         env:

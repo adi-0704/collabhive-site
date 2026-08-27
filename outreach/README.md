@@ -11,8 +11,9 @@ tier, GitHub Pages free hosting, Gmail SMTP with your app password.
 ---
 
 ## What it does every day (scheduled)
-1. **Discovers** target brands (curated seed pool + optional Maps scrape).
-2. **Extracts emails** from each brand's website (ToS-safe, free).
+1. **Discovers** target brands (Google Maps scrape, throttled, 1 niche/day, plus
+   the curated seed pool).
+2. **Extracts emails** from each brand's website (free).
 3. **Sends** up to `daily_limit` (default 18) personalized emails, niche-
    rotated across the week, with randomized delays + circuit breaker.
 4. **Logs** every send and writes `data/report.json`.
@@ -81,12 +82,19 @@ Repo → **Actions** → "Outreach Daily Run" → **Run workflow** (mode `all`).
 
 ---
 
-## Google Maps scraper (OPTIONAL — read the warning)
+## Google Maps scraper (automated now — read the warning)
 `outreach/src/maps_scraper.py` auto-discovers brands from Google Maps using
-Playwright. **NOT scheduled** — run manually via the "Outreach Data Builder"
-workflow. It can violate Google ToS and trigger IP bans, so it's throttled,
-capped, and off by default. Email extraction still comes from brand websites.
-Only use it if you accept the risk; prefer the Places API (paid) or curation.
+Playwright. It runs **inside the daily scheduled workflow** (1 niche/day,
+low volume via `outreach/config.json → discovery`), with throttling, a session
+cap, exponential backoff, and a cooldown after repeated failures.
+
+> ⚠️ **Risk accepted by the owner.** Google Maps scraping violates Google's
+> Terms of Service and can trigger IP throttling or bans. It is tuned to be
+> low-volume and self-protecting, but it is not guaranteed safe. If you later
+> want reliability without this risk, switch `discovery.enabled` to `false`
+> and use the curated seed pool, or move to the paid Places API.
+
+See `outreach/config.json → discovery` to tune volume / turn it off.
 
 ---
 
