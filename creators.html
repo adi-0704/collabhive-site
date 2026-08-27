@@ -41,7 +41,7 @@
       <h1>Grow Your Influence with<br /><span class="grad-purple">CollabHive</span></h1>
       <p class="lead">Join our creator network and unlock opportunities to collaborate with brands that align with your passion. Just starting out or already established — CollabHive welcomes creators from all niches.</p>
       <div class="hero-cta">
-        <a href="#apply" class="btn btn-gold btn-lg">Join Creator Network</a>
+        <a href="#apply" data-apply class="btn btn-gold btn-lg">Join Creator Network</a>
         <a href="#benefits" class="btn btn-ghost btn-lg">Why Join</a>
       </div>
     </div>
@@ -148,9 +148,10 @@
             <div class="field full"><label for="cmsg">Tell us about your content</label><textarea id="cmsg" name="About" data-label="About" placeholder="What do you create? What brands would you love to work with?"></textarea></div>
           </div>
           <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;">
-            <button type="submit" class="btn btn-gold btn-lg">Apply via WhatsApp</button>
+            <a href="#" class="btn btn-gold btn-lg" id="apply-online">Apply via Online Form</a>
+            <button type="submit" class="btn btn-ghost btn-lg" style="border-color:hsl(0,0%,35%);color:#fff;">Apply via WhatsApp</button>
           </div>
-          <p class="form-note">Submitting opens WhatsApp with your application pre-filled. You can edit before sending.</p>
+          <p class="form-note">The online form logs your application straight into our creator database. WhatsApp is a quick alternative — you can edit before sending.</p>
         </form>
       </div>
     </div>
@@ -209,5 +210,24 @@
   <script src="assets/js/onboard.js"></script>
   <script src="assets/js/analytics.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    // Wire all creator "apply" CTAs to the live Google Form.
+    (function () {
+      var formUrl = (window.CH_APPLY && window.CH_APPLY.creatorFormUrl) || '';
+      if (formUrl) {
+        document.querySelectorAll('a[data-apply]').forEach(function (a) {
+          a.href = formUrl;
+          a.target = '_blank';
+          a.rel = 'noopener';
+        });
+        var online = document.getElementById('apply-online');
+        if (online) {
+          online.href = formUrl;
+          online.target = '_blank';
+          online.rel = 'noopener';
+        }
+      }
+    })();
+  </script>
 </body>
 </html>

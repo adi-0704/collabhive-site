@@ -9,3 +9,10 @@ window.CH_API = window.CH_API || {
   base: "",
   adminKey: "collabhive"
 };
+
+// Live Google Form where influencers apply (auto-logs to the CollabHive Influencer Leads sheet).
+// Set CH_ANALYTICS alongside this; see also backend/influencer_form.gs.
+window.CH_APPLY = window.CH_APPLY || {
+  creatorFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLScIV5PVkwbdcvMpzCyxTAzN71ORCqaTaIMY7Dr15xEMXSxIXQ/viewform",
+  brandFormUrl: ""
+};
