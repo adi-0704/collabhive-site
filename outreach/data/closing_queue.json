@@ -1,0 +1,44 @@
+[
+  {
+    "email": "no-reply@accounts.google.com",
+    "subject": "Security alert",
+    "snippet": "--000000000000afb550065a0a5c71 Content-Type: text/plain; charset=\"UTF-8\"; format=flowed; delsp=yes Content-Transfer-Encoding: base64 W2ltYWdlOiBHb29nbGVdDQpBIG5ldyBzaWduLWluIG9uIFdpbmRvd3MNCg0KDQpjb2xsYWJoaXZl LmluQGdtYWlsLmNvbQ0KV2Ugbm90aWNlZCBhIG5ldyBzaWduLWluIHRvIHlvdXIgR29vZ2xlIEFj Y291bnQgb24gYSBXaW5kb3dzIGRldmljZS4gSWYNCnRoaXMgd2FzIHlvdSwgeW91IGRvbuKAmXQg bmVlZCB0byBkbyBhbnl0aGluZy4gSWYgbm90",
+    "status": "interested",
+    "ts": "2026-08-28T16:20:02.668704+00:00"
+  },
+  {
+    "email": "cssupport@thehouseofrare.com",
+    "subject": "TicketID:425385 - TicketID: @TicketID - New Ticket creation",
+    "snippet": "<p class=\"rte-paragraph\"><span style=\"white-space: pre-wrap;\">Hi Customer,</span></p><p class=\"rte-paragraph\"><span style=\"white-space: pre-wrap;\">Thank you for contacting The House of Rare.</span><br><br><span style=\"white-space: pre-wrap;\">We wish to acknowledge that we have received your query,&nbsp;A creator network for The House of Rare — CollabHive and one of our Rare Experts is reviewing it",
+    "status": "interested",
+    "ts": "2026-08-28T16:20:02.668808+00:00"
+  },
+  {
+    "email": "Customercare@houseofindya.com",
+    "subject": "=?UTF-8?Q?Re:_A_creator_network_for_FabAlley_=E2=80=94_CollabHive?=",
+    "snippet": "ji/17.0/1faa1/32.png\" alt=3D\"=F0=9F=AA=A1\" /><img src=3D\"https://fonts.gsta= tic.com/s/e/notoemoji/17.0/2728/32.png\" alt=3D\"=E2=9C=A8\" /></p>=0A= <p>Thank you for reaching out to us. Our customer support team is currently= offline celebrating the festival with their loved ones.</p>=0A= <p>Please allow us <strong>24 to 48 hours</strong> to revert to your query.= We will be happy to assist you as so",
+    "status": "interested",
+    "ts": "2026-08-28T16:20:02.668891+00:00"
+  },
+  {
+    "email": "support@earthrhythm.com",
+    "subject": "=?UTF-8?Q?Re_:_A_creator_network_for_Earth_Rhythm_=E2=80=94_Collab?=\r\n =?UTF-8?Q?Hive?=",
+    "snippet": "----==_mimepart_6a91066a53dd5_15518708646a Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: quoted-printable Dear CollabHive, Thank you for reaching out to Earth Rhythm Customer Support. This is an automated response to confirm that we have received your email= . Our support team is currently reviewing your message and will get back = to you within 24-48 hours. = For your referen",
+    "status": "interested",
+    "ts": "2026-08-28T16:20:02.668926+00:00"
+  },
+  {
+    "email": "tgb@seventurns.in",
+    "subject": "Your Support Ticket 245807 Has Been Created",
+    "snippet": "----==_mimepart_6a91086b6c2ea_24766634292d0 Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable Hi CollabHive, We have received your request, and your ticket ID is= 245807. =0D Our support team will review your query and respond to you between Monday= to Sunday, 9:00 AM =E2=80=93 7:00 PM. Thank you for reaching out to = us. We appreciate your patience and will get b",
+    "status": "interested",
+    "ts": "2026-08-28T16:20:02.668962+00:00"
+  },
+  {
+    "email": "hello@plumgoodness.com",
+    "subject": "A creator network for Plum =?UTF-8?B?4oCU?= CollabHive",
+    "snippet": "<div dir=3D\"ltr\">How was your support experience today?<br><br>Please leave= your review here: <a href=3D\"http://track.mail.sagepilot.ai/ls/click?upn= =3Du001.A0nn5Jh61alOjNvajnxsgMcpBrUQkrTAyFn8Yk3xLSPgLPzwMyC0NH-2B4dnaWCIf3-= 2Bm8xl1KYXRFapXIBzwL-2FIg-3D-3DdB21_pdpQFspEfsti8doGBZ3Cjf8aeesTfWuXK3aPZZZ= 7AsMMr8B-2BKDjqDCXBUzPF02HkGKrMR4JBxvx0E6O0FRBg4Riqa8IctFYZxhWssfjoAq0BXE9p= xn9Y9SZgJdzfSEuvnr",
+    "status": "interested",
+    "ts": "2026-08-28T16:20:02.668991+00:00"
+  }
+]
