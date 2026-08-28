@@ -1,0 +1,82 @@
+{
+  "maps_consecutive_failures": 0,
+  "maps_last_ok": "2026-08-28T03:15:09.012989+00:00",
+  "emailed_emails": [
+    "grievance@snitch.com",
+    "support@thehouseofrare.com",
+    "care@tigc.in",
+    "enquiry@deyga.in",
+    "help@vahdam.com",
+    "help@sleepyowl.co",
+    "files@quinn-live.bundle.js"
+  ],
+  "emailed_domains": [
+    "snitch.com",
+    "thehouseofrare.com",
+    "tigc.in",
+    "rarerabbit.in",
+    "deyga.in",
+    "vahdam.in",
+    "sleepyowl.co",
+    "yogabar.com"
+  ],
+  "sent_log": [
+    {
+      "ts": "2026-08-28T03:16:45.090396+00:00",
+      "email": "grievance@snitch.com",
+      "name": "Snitch",
+      "niche": "Fashion & Apparel",
+      "city": "Bengaluru"
+    },
+    {
+      "ts": "2026-08-28T03:18:28.238324+00:00",
+      "email": "support@thehouseofrare.com",
+      "name": "The House of Rare",
+      "niche": "Fashion & Apparel",
+      "city": "Bengaluru"
+    },
+    {
+      "ts": "2026-08-28T03:21:12.151529+00:00",
+      "email": "care@tigc.in",
+      "name": "The Indian Garage Co.",
+      "niche": "Fashion & Apparel",
+      "city": "Bengaluru"
+    },
+    {
+      "ts": "2026-08-28T03:22:54.370211+00:00",
+      "email": "support@thehouseofrare.com",
+      "name": "Rare Rabbit",
+      "niche": "Fashion & Apparel",
+      "city": "Bengaluru"
+    },
+    {
+      "ts": "2026-08-28T03:24:37.990166+00:00",
+      "email": "enquiry@deyga.in",
+      "name": "Deyga Organics",
+      "niche": "Beauty & Cosmetics",
+      "city": "Coimbatore"
+    },
+    {
+      "ts": "2026-08-28T03:26:44.285250+00:00",
+      "email": "help@vahdam.com",
+      "name": "Vahdam India",
+      "niche": "Food & Beverage",
+      "city": "Delhi"
+    },
+    {
+      "ts": "2026-08-28T03:29:57.942880+00:00",
+      "email": "help@sleepyowl.co",
+      "name": "Sleepy Owl Coffee",
+      "niche": "Food & Beverage",
+      "city": "Gurugram"
+    },
+    {
+      "ts": "2026-08-28T03:32:32.825292+00:00",
+      "email": "files@quinn-live.bundle.js",
+      "name": "Yogabar",
+      "niche": "Food & Beverage",
+      "city": "Gurugram"
+    }
+  ],
+  "last_run": "2026-08-28T03:35:18.018442+00:00"
+}

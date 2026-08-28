@@ -230,8 +230,12 @@
     "city": "Gurugram",
     "website": "https://www.earthrhythm.in",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "support@earthrhythm.com",
+      "business@earthrhythm.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Deconstruct",
@@ -240,7 +244,8 @@
     "website": "https://myskindeconstruct.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Dot & Key",
@@ -248,8 +253,11 @@
     "city": "Kolkata",
     "website": "https://www.dotandkey.com",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "care@dotandkey.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Plum",
@@ -257,8 +265,11 @@
     "city": "Mumbai",
     "website": "https://plumgoodness.com",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "hello@plumgoodness.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Minimalist",
@@ -266,8 +277,13 @@
     "city": "Mumbai",
     "website": "https://beminimalist.co",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "help@beminimalist.co",
+      "gifting@beminimalist.co",
+      "info@stagheaddesigns.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Deyga Organics",
@@ -275,8 +291,12 @@
     "city": "Coimbatore",
     "website": "https://www.deyga.in",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "enquiry@deyga.in",
+      "info@stagheaddesigns.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "SUGAR Cosmetics",
@@ -284,8 +304,11 @@
     "city": "Mumbai",
     "website": "https://www.sugarcosmetics.com",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "hello@sugarcosmetics.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Asaya",
@@ -293,8 +316,11 @@
     "city": "Mumbai",
     "website": "https://asaya.in",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "info@asaya.in"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "indē wild",
@@ -302,8 +328,11 @@
     "city": "Mumbai",
     "website": "https://indewild.com",
     "email": "",
-    "emails": [],
-    "source": "seed"
+    "emails": [
+      "you@indewild.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "SunScoop",
