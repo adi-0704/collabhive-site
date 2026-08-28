@@ -29,6 +29,7 @@ def _render(subject_template: str, txt: str, html: str, brand: dict, cfg: dict) 
         "company": p["company"],
         "site_url": p["site_url"],
         "apply_url": p["apply_url"],
+        "brief_url": p.get("brand_brief_url") or p["apply_url"],
         "contact_email": p["contact_email"],
         "phone": p["phone"],
     }

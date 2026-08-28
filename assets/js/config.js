@@ -14,7 +14,7 @@ window.CH_API = window.CH_API || {
 // Set CH_ANALYTICS alongside this; see also backend/influencer_form.gs.
 window.CH_APPLY = window.CH_APPLY || {
   creatorFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLScIV5PVkwbdcvMpzCyxTAzN71ORCqaTaIMY7Dr15xEMXSxIXQ/viewform",
-  brandFormUrl: ""
+  brandFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLScIV5PVkwbdcvMpzCyxTAzN71ORCqaTaIMY7Dr15xEMXSxIXQ/viewform" // ← replace with your Brand Form URL (backend/brand_form.gs)
 };
 
 // Influencer application responses sheet (read by the admin panel to review + approve).

@@ -4,6 +4,7 @@
     "tagline": "Influencer Marketing Agency",
     "site_url": "https://adi-0704.github.io/collabhive-site/",
     "apply_url": "https://docs.google.com/forms/d/e/1FAIpQLScIV5PVkwbdcvMpzCyxTAzN71ORCqaTaIMY7Dr15xEMXSxIXQ/viewform",
+    "brand_brief_url": "",
     "contact_email": "collabhive.in@gmail.com",
     "phone": "+91 81780 22572"
   },
@@ -53,6 +54,7 @@
     "closing_file": "data/closing_queue.json",
     "shortlist_file": "data/shortlist.json",
     "brand_briefs_file": "data/brand_briefs.json",
+    "brand_briefs_sheet_id": "",
     "creator_pool_file": "data/creators_pool.json",
     "applicant_sheet_id": "1fnINFVDChyeK0VoihUeTHY_vG9V1s-4dkHMsxGdzYGY",
     "commission_pct": 10,

@@ -4,10 +4,13 @@ We're {company}, an influencer marketing agency based in India. We help growing 
 
 We're currently building a curated network of creators across every niche — food, fashion, fitness, tech, travel, and more.
 
-If you'd like to get your brand in front of the right creators, we'd love to explore how we can work together:
+If you'd like to get your brand in front of the right creators, we'd love to explore how we can work together.
 
 🌐 Learn more about us: {site_url}
 📝 Apply to be a featured brand: {apply_url}
+
+Ready to start? Tell us your campaign goals and we'll send you a shortlist of matched creators + a quote:
+📋 Share your brief here: {brief_url}
 
 No pressure — just reply to this email and we'll take it from there. We keep things simple, transparent, and fair.
 

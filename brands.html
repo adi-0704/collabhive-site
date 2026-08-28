@@ -170,8 +170,9 @@
           </div>
           <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;">
             <button type="submit" class="btn btn-purple btn-lg">Send Brief via WhatsApp</button>
+            <a href="#" id="brief-online" class="btn btn-ghost btn-lg" style="border-color:hsl(0,0%,35%);color:#fff;">Fill Online Brief instead</a>
           </div>
-          <p class="form-note">Submitting opens WhatsApp with your brief pre-filled. You can edit before sending.</p>
+          <p class="form-note">WhatsApp opens pre-filled; the online brief goes straight to our brand inbox. Pick either.</p>
           <p class="form-note">Already onboarded? <a href="dashboard.html" style="color:var(--purple);font-weight:700;">Open your brand dashboard →</a></p>
         </form>
       </div>
@@ -232,5 +233,18 @@
   <script src="assets/js/onboard.js"></script>
   <script src="assets/js/analytics.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    // Wire all "online brief" CTAs to the live Brand Brief Google Form.
+    (function () {
+      var url = (window.CH_APPLY && window.CH_APPLY.brandFormUrl) || '';
+      if (url) {
+        var el = document.getElementById('brief-online');
+        if (el) { el.href = url; el.target = '_blank'; el.rel = 'noopener'; }
+        document.querySelectorAll('a[data-brandbrief]').forEach(function (a) {
+          a.href = url; a.target = '_blank'; a.rel = 'noopener';
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

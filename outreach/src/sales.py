@@ -240,10 +240,66 @@ def load_creators(cfg: dict) -> list[dict]:
 
 
 def load_briefs(cfg: dict) -> list[dict]:
+    """Brand briefs from the brief form sheet (if public) + seed file."""
+    rows = _load_brief_sheet(cfg)
     f = ROOT / cfg["sales"]["brand_briefs_file"]
-    rows = load_json(f)
-    rows = rows if isinstance(rows, list) else []
+    seed = load_json(f)
+    seed = seed if isinstance(seed, list) else []
+    rows.extend(seed)
     return [b for b in rows if _norm_niche(b.get("status", "active")).strip() not in ("closed", "done", "won")]
+
+
+def _load_brief_sheet(cfg: dict) -> list[dict]:
+    """Read the CollabHive Brand Briefs sheet via the public gviz JSON endpoint.
+
+    Maps the sheet columns (brand, name, email, city, goal, niche, budget,
+    creators, posts) into brief-ish objects. Returns [] if not readable.
+    """
+    sid = cfg["sales"].get("brand_briefs_sheet_id", "")
+    if not sid:
+        return []
+    url = ("https://docs.google.com/spreadsheets/d/%s/gviz/tq?tqx=out:json&headers=1" % sid)
+    try:
+        with urllib.request.urlopen(url, timeout=15) as resp:
+            text = resp.read().decode("utf-8", "ignore")
+        data = _parse_gviz(text)
+    except Exception:
+        return []
+    briefs = []
+    for row in data:
+        briefs.append({
+            "brand": row.get("Brand / business name", "") or row.get("brand", ""),
+            "niche": row.get("Which niche are you in (or closest to)?", "") or row.get("niche", ""),
+            "city": row.get("City & country", "") or row.get("city", ""),
+            "budget": row.get("Budget range (INR)", "") or row.get("budget", ""),
+            "goal": row.get("What is your primary goal?", "") or row.get("goal", ""),
+            "note": row.get("Describe your campaign / product", "") or row.get("note", ""),
+            "status": "sheet",
+        })
+    return briefs
+
+
+def _parse_gviz(text):
+    m = re.search(r"google\.visualization\.Query\.setResponse\((.*)\);?\s*$", text)
+    if not m:
+        return []
+    try:
+        data = json.loads(m.group(1))
+        table = data.get("table", {})
+        cols = [c.get("label", "") for c in table.get("cols", [])]
+        rows = []
+        for r in table.get("rows", []):
+            obj = {}
+            c = r.get("c", [])
+            for i, lab in enumerate(cols):
+                v = c[i].get("v") if i < len(c) and c[i] else ""
+                if isinstance(v, dict) and "$t" in v:
+                    v = v["$t"]
+                obj[lab] = v
+            rows.append(obj)
+        return rows
+    except Exception:
+        return []
 
 
 def match_briefs(cfg: dict) -> dict:
