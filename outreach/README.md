@@ -111,6 +111,11 @@ Repo → **Actions** → "Outreach Daily Run" → **Run workflow** (mode `all`).
   site (`[data-social-proof]`) fed by the daily run.
 - **Referral tracking**: each creator gets an "Invite a creator" share-link with a `ref`
   param; sign-ups are attributed on the dashboard.
+- **A/B landing CTA**: the "Start a Campaign" CTA auto-swaps between "Start a Campaign"
+  and "Get a Free Quote" per visitor; clicks vs submits are scored and the winner is
+  shown on the dashboard.
+- **WhatsApp handoff**: briefs/hot-leads auto-generate a wa.me deep-link (works now);
+  if you add a Meta Cloud API `token` + `phone_id` it auto-sends the message.
 - **Funnel event endpoint**: `outreach/track/worker.js` also exposes `POST /events` to
   record real form views/submits; wire `config.json → tracking.worker_url` + the site
   `CH_FUNNEL.eventsUrl` to enable. Without it, the funnel derives from pools/sheets.

@@ -20,7 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src import brands as brands_mod  # noqa: E402
-from src.common import ROOT, env, load_config, log, save_json  # noqa: E402
+from src.common import ROOT, env, load_config, load_json, log, save_json  # noqa: E402
 
 def gather_report(cfg: dict) -> dict:
     """Builds the dashboard report from current state + seed pool."""
@@ -105,7 +105,11 @@ def _gather_onboarding(cfg: dict) -> dict:
         refs = ob_mod.referral_stats(cfg)
     except Exception:
         refs = {}
-    return {"funnel": funnel, "proof": proof, "referrals": refs}
+    try:
+        cta = ob_mod.cta_winner(cfg)
+    except Exception:
+        cta = {}
+    return {"funnel": funnel, "proof": proof, "referrals": refs, "cta_winner": cta}
 
 
 def _gather_pipeline(cfg: dict) -> dict:
@@ -297,6 +301,25 @@ def cmd_onboarding(cfg: dict) -> None:
     log(f"Social proof: {proof}")
     stats = ob_mod.referral_stats(cfg)
     log(f"Referrals: {stats}")
+    cta = ob_mod.cta_winner(cfg)
+    log(f"CTA winner: {cta}")
+    # WhatsApp handoff for any recent hot leads (deep-link, or auto-send if token set).
+    handoffs = _wa_handoff_hot_leads(cfg)
+    log(f"WhatsApp handoffs: {handoffs}")
+
+
+def _wa_handoff_hot_leads(cfg: dict) -> dict:
+    from src import onboarding as ob_mod
+    closing = load_json(ROOT / cfg["sales"]["closing_file"])
+    closing = closing if isinstance(closing, list) else []
+    hot = [c for c in closing if c.get("status") in ("interested", "negotiating")]
+    if not hot:
+        return {"handoffs": 0}
+    n = 0
+    for c in hot[:3]:
+        ob_mod.whatsapp_handoff(cfg, phone="", brand=c.get("name", ""), kind="hot_lead")
+        n += 1
+    return {"handoffs": n, "note": "Deep-links enabled for hot leads; set onboarding.whatsapp.token to auto-send"}
 
 
 def main(argv: list[str] | None = None) -> int:

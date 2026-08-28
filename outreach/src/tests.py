@@ -279,6 +279,26 @@ class TestOnboarding(unittest.TestCase):
         self.assertEqual(s["top"][0]["creator"], "@aarav")
         self.assertEqual(s["top"][0]["signups"], 2)
 
+    def test_cta_variant_assign(self):
+        from src import onboarding as ob
+        v1 = ob.assign_cta_variant(self.cfg, "visitorA")
+        v2 = ob.assign_cta_variant(self.cfg, "visitorA")
+        self.assertEqual(v1["variant"], v2["variant"])  # deterministic
+        self.assertIn(v1["variant"], ["Start a Campaign", "Get a Free Quote"])
+
+    def test_cta_winner_scoring(self):
+        from src import onboarding as ob
+        ob.record_cta_click(self.cfg, "Start a Campaign")
+        ob.record_event(self.cfg, "creator_submit", "c@y.com", extra={"variant": "Start a Campaign"})
+        w = ob.cta_winner(self.cfg)
+        self.assertEqual(w["rows"][0]["variant"], "Start a Campaign")
+
+    def test_whatsapp_handoff_deeplink(self):
+        from src import onboarding as ob
+        r = ob.whatsapp_handoff(self.cfg, brand="X", kind="brief")
+        self.assertIn("wa.me", r["deep_link"])
+        self.assertIsNone(r["auto_sent"])  # no token -> no auto send
+
 
 def _blackbox_modes():
     """Run each run.py mode in a fresh subprocess with a temp data dir,

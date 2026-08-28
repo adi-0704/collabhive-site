@@ -50,7 +50,7 @@ export default {
       if (store) {
         const key = `ev:${day}`;
         const cur = await store.get(key).then(v => (v ? JSON.parse(v) : [])).catch(() => []);
-        cur.push({ kind, email, ref, source, ts: new Date().toISOString() });
+        cur.push({ kind, email, ref, source, variant: body.variant || '', ts: new Date().toISOString() });
         await store.put(key, JSON.stringify(cur.slice(-1000)), { expirationTtl: 30 * 86400 }).catch(() => {});
       }
       return new Response(JSON.stringify({ ok: 1 }), { status: 200, headers: { 'Content-Type': 'application/json' } });

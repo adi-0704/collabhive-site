@@ -142,7 +142,21 @@
     "remarket_after_hours": 24,
     "remarket_once_per_email": true,
     "referral_bonus_pct": 5,
-    "social_proof_ttl_hours": 120
+    "social_proof_ttl_hours": 120,
+    "ab_cta": {
+      "enabled": true,
+      "variants": ["Start a Campaign", "Get a Free Quote"],
+      "winner_file": "data/cta_winner.json",
+      "record_on": "cta_click"
+    },
+    "whatsapp": {
+      "enabled": true,
+      "link_number": "918178022572",
+      "token": "",
+      "phone_id": "",
+      "auto_send": false,
+      "handoff_after_minutes": 30
+    }
   },
   "seo": {
     "enabled": true,

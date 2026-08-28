@@ -40,6 +40,23 @@
         proofEl.innerHTML =
           '<div class="proof-item"><span class="p-num">' + creators + '</span><span class="p-lbl">creators joined</span></div>' +
           '<div class="proof-item"><span class="p-num">' + campaigns + '</span><span class="p-lbl">campaigns run</span></div>';
+        proofEl.style.display = 'flex';
       }).catch(function () { /* silent */ });
+  }
+
+  // A/B CTA: pick a variant for this visitor, apply to [data-cta-ab] buttons,
+  // and record clicks via the funnel worker.
+  var abEls = document.querySelectorAll('[data-cta-ab]');
+  if (abEls.length) {
+    var variants = ['Start a Campaign', 'Get a Free Quote'];
+    var vkey = (window.CH_FUNNEL && window.CH_FUNNEL.ctaVariants) || variants;
+    var seed = 0;
+    var s = 'visitor' + new Date().getDate();
+    for (var i = 0; i < s.length; i++) seed += s.charCodeAt(i);
+    var variant = vkey[seed % vkey.length];
+    abEls.forEach(function (el) { el.textContent = variant; });
+    abEls.forEach(function (el) {
+      el.addEventListener('click', function () { send('cta_click', '', variant); });
+    });
   }
 })();

@@ -199,6 +199,16 @@
           <div><span>Referrals</span><b id="pf-refs">—</b></div>
         </div>
       </div>
+      <div class="card">
+        <div class="head"><h3>Landing CTA test (A/B)</h3><span class="pill pill-warn" id="s-cta-pill">—</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Variant</th><th>Clicks</th><th>Submits</th><th>Conv %</th></tr></thead>
+            <tbody id="cta-rows"><tr><td colspan="4"><div class="empty">No CTA data yet.</div></td></tr></tbody>
+          </table>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:var(--muted-fg);">Winner is auto-set so the site shows the higher-converting CTA.</div>
+      </div>
     </div>
 
     <div class="mk">CollabHive &middot; Outreach automation &middot; curated pool + website email extraction</div>
@@ -349,6 +359,20 @@
         document.getElementById('pf-campaigns').textContent = fmt(pf.campaigns_run);
         var refs = ob.referrals || {};
         document.getElementById('pf-refs').textContent = fmt(refs.total_referrals);
+
+        // Landing CTA A/B
+        var cta = ob.cta_winner || {};
+        var crows = cta.rows || [];
+        var ctapill = document.getElementById('s-cta-pill');
+        if (cta.winner) { ctapill.textContent = 'Winner: ' + cta.winner; ctapill.className = 'pill pill-live'; }
+        else { ctapill.textContent = 'Testing'; ctapill.className = 'pill pill-warn'; }
+        var ctbody = document.getElementById('cta-rows');
+        ctbody.innerHTML = crows.length
+          ? crows.map(function (r) {
+              return '<tr><td>' + (r.variant || '—') + '</td><td>' + (r.clicks || 0) +
+                '</td><td>' + (r.submits || 0) + '</td><td>' + (r.conversion_pct != null ? r.conversion_pct + '%' : '—') + '</td></tr>';
+            }).join('')
+          : '<tr><td colspan="4"><div class="empty">No CTA data yet.</div></td></tr>';
       }
 
       function renderNicheProgress(d) {

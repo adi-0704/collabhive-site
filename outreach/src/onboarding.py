@@ -297,3 +297,105 @@ def referral_stats(cfg: dict) -> dict:
     top = sorted(by_creator.items(), key=lambda kv: kv[1], reverse=True)[:10]
     return {"total_referrals": len(refs), "creators_referring": len(by_creator),
             "top": [{"creator": k, "signups": v} for k, v in top]}
+
+
+# ---------- A/B landing CTA ----------
+def assign_cta_variant(cfg: dict, visitor_key: str = "") -> dict:
+    """Deterministically assign a CTA label to a visitor (hash of key + day)."""
+    ab = cfg["onboarding"].get("ab_cta", {})
+    variants = ab.get("variants", ["Start a Campaign", "Get a Free Quote"])
+    if not variants:
+        return {"variant": ""}
+    seed = sum(ord(c) for c in (visitor_key or "")) + int(datetime.now().strftime("%d"))
+    return {"variant": variants[seed % len(variants)], "variants": variants}
+
+
+def record_cta_click(cfg: dict, variant: str, referrer: str = "") -> dict:
+    """Record a CTA click -> submit pair so we can score conversion per variant."""
+    ab = cfg["onboarding"].get("ab_cta", {})
+    record_on = ab.get("record_on", "cta_click")
+    kind = "cta_click"
+    res = record_event(cfg, kind, "", referrer=referrer, extra={"variant": variant})
+    return res
+
+
+def cta_winner(cfg: dict) -> dict:
+    """Score each CTA variant: clicks vs resulting submissions (conversion)."""
+    events = load_events(cfg)
+    by_variant = {}
+    for e in events:
+        v = (e.get("extra") or {}).get("variant") or e.get("variant")
+        if not v:
+            continue
+        d = by_variant.setdefault(v, {"clicks": 0, "submits": 0})
+        if e.get("kind") == "cta_click":
+            d["clicks"] += 1
+        elif e.get("kind") in ("creator_submit", "brand_submit", "brief"):
+            d["submits"] += 1
+    rows = []
+    for v, d in by_variant.items():
+        conv = round(d["submits"] / d["clicks"] * 100, 1) if d["clicks"] else 0.0
+        rows.append({"variant": v, "clicks": d["clicks"], "submits": d["submits"], "conversion_pct": conv})
+    rows.sort(key=lambda r: r["conversion_pct"], reverse=True)
+    winner = rows[0]["variant"] if rows and rows[0]["clicks"] > 0 else ""
+    cfg_ab = cfg["onboarding"].get("ab_cta", {})
+    save_json(ROOT / cfg_ab.get("winner_file", "data/cta_winner.json"),
+              {"winner": winner, "rows": rows, "generated_at": datetime.now(timezone.utc).isoformat()})
+    return {"winner": winner, "rows": rows}
+
+
+# ---------- WhatsApp handoff ----------
+def whatsapp_handoff(cfg: dict, phone: str = "", brand: str = "", kind: str = "brief") -> dict:
+    """Respond to a brief/hot-lead on WhatsApp.
+
+    Returns a wa.me deep link (works now). If a Meta Cloud API token is set,
+    it attempts to AUTO-SEND the message too; otherwise the deep link is the
+    handoff (brand taps -> pre-filled message opens, you take it from there).
+    """
+    wa = cfg["onboarding"].get("whatsapp", {})
+    if not wa.get("enabled", True):
+        return {"handoff": "disabled"}
+    link_num = wa.get("link_number", "918178022572")
+    if kind == "hot_lead":
+        text = ("Thanks for your interest in CollabHive! We've noted your interest. "
+                "Let's lock in your campaign: reply with your preferred creators and "
+                "timeline, and we'll send a quote right away.")
+    else:
+        text = ("Thanks for submitting your CollabHive brief! We're matching your "
+                "campaign to creators now. Reply here with your WhatsApp number and "
+                "we'll send the shortlist + quote.")
+    url = "https://wa.me/%s?text=%s" % (link_num, _urlencode(text))
+
+    sent = None
+    if wa.get("token") and wa.get("auto_send"):
+        sent = _wa_auto_send(cfg, wa, phone, text)
+    return {"deep_link": url, "message": text, "auto_sent": sent}
+
+
+def _urlencode(text: str) -> str:
+    import urllib.parse
+    return urllib.parse.quote(text)
+
+
+def _wa_auto_send(cfg, wa, phone, text):
+    """Send via Meta Cloud API if configured. Requires phone_id + token (human setup)."""
+    import urllib.request
+    import json as _json
+    if not phone or not wa.get("token") or not wa.get("phone_id"):
+        return None
+    url = "https://graph.facebook.com/v19.0/%s/messages" % wa["phone_id"]
+    payload = _json.dumps({
+        "messaging_product": "whatsapp",
+        "to": phone,
+        "type": "template" if wa.get("template") else "text",
+        "text": {"body": text},
+    }).encode()
+    req = urllib.request.Request(url, data=payload, headers={
+        "Authorization": "Bearer %s" % wa["token"],
+        "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return resp.status == 200
+    except Exception as exc:
+        log(f"WA auto-send failed: {exc}")
+        return False
