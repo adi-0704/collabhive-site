@@ -27,9 +27,8 @@
     "niche": "Food & Beverage",
     "city": "Gurugram",
     "website": "https://yogabar.com",
-    "email": "",
+    "email": "hello@yogabars.in",
     "emails": [
-      "files@quinn-live.bundle.js",
       "hello@yogabars.in"
     ],
     "source": "seed",
@@ -159,10 +158,9 @@
     "niche": "Fashion & Apparel",
     "city": "Bengaluru",
     "website": "https://thehouseofrare.com",
-    "email": "",
+    "email": "support@thehouseofrare.com",
     "emails": [
-      "support@thehouseofrare.com",
-      "js-shopify-core@v55.0.1.js"
+      "support@thehouseofrare.com"
     ],
     "source": "seed",
     "has_email": true
@@ -216,10 +214,9 @@
     "niche": "Fashion & Apparel",
     "city": "Bengaluru",
     "website": "https://www.rarerabbit.in",
-    "email": "",
+    "email": "support@thehouseofrare.com",
     "emails": [
-      "support@thehouseofrare.com",
-      "js-shopify-core@v55.0.1.js"
+      "support@thehouseofrare.com"
     ],
     "source": "seed",
     "has_email": true
@@ -339,9 +336,12 @@
     "niche": "Beauty & Cosmetics",
     "city": "Mumbai",
     "website": "https://www.sunscoop.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "dokterbacklink@gmail.com",
+    "emails": [
+      "dokterbacklink@gmail.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Boldfit",
@@ -350,7 +350,8 @@
     "website": "https://www.boldfit.in",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "HealthifyMe",
@@ -359,7 +360,8 @@
     "website": "https://www.healthifyme.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "TruNativ",
@@ -368,16 +370,20 @@
     "website": "https://www.trunativ.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Aquatein",
     "niche": "Fitness & Wellness",
     "city": "Hyderabad",
     "website": "https://aquatein.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "info@stagheaddesigns.com",
+    "emails": [
+      "info@stagheaddesigns.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Earthful",
