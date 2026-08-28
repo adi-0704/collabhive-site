@@ -29,6 +29,9 @@ CONTACT_PATHS = ("", "contact", "contact-us", "contactus", "about", "about-us", 
 
 
 def _fetch(url: str, timeout: int = 12, ua: str = "") -> str | None:
+    import socket
+    # Guard: DNS/connect stalls can ignore urllib timeout, so set a socket floor.
+    socket.setdefaulttimeout(timeout)
     try:
         req = urllib.request.Request(url, headers={"User-Agent": ua or "CollabHive/1.0"})
         with urllib.request.urlopen(req, timeout=timeout) as resp:

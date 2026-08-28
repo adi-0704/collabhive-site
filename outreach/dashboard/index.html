@@ -141,6 +141,7 @@
           <div><span>Closing queue (hot leads)</span><b id="sl-close">—</b></div>
           <div><span>Interested</span><b id="sl-int">—</b></div>
           <div><span>Negotiating</span><b id="sl-neg">—</b></div>
+          <div><span>Reply rate</span><b id="sl-reply">—</b></div>
           <div><span>Quotes sent</span><b id="sl-quotes">—</b></div>
           <div><span>Hot briefs (auto-scored)</span><b id="sl-hot">—</b></div>
         </div>
@@ -253,6 +254,7 @@
         document.getElementById('sl-close').textContent = fmt(sales.closing_count);
         document.getElementById('sl-int').textContent = fmt(byStatus.interested || 0);
         document.getElementById('sl-neg').textContent = fmt(byStatus.negotiating || 0);
+        document.getElementById('sl-reply').textContent = (sales.reply_rate_pct != null ? sales.reply_rate_pct + '%' : '—');
         document.getElementById('sl-quotes').textContent = fmt(sales.quotes_sent);
         document.getElementById('sl-hot').textContent = fmt(sales.hot_briefs);
         var pill = document.getElementById('s-sales-pill');

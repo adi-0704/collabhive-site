@@ -93,6 +93,32 @@ def _render(subject_template: str, txt: str, html: str, brand: dict, cfg: dict) 
     return subj, body_txt, body_html
 
 
+def _inject_tracking(body_html: str, email: str, brand: dict, cfg: dict) -> str:
+    """Add an open-tracking pixel and wrap links via the tracker (if configured)."""
+    trk = cfg.get("tracking", {})
+    worker = (trk.get("worker_url") or "").strip().rstrip("/")
+    if not trk.get("enabled", True) or not worker:
+        return body_html
+    import base64
+    e = base64.urlsafe_b64encode((email or "").encode()).decode().rstrip("=")
+    b = base64.urlsafe_b64encode((brand.get("name") or "").encode()).decode().rstrip("=")
+    # Open pixel.
+    pixel = ('<img src="%s/o?e=%s&c=outreach&b=%s" alt="" width="1" height="1" '
+             'style="display:none;visibility:hidden;">') % (worker, e, b)
+    # Wrap external links (http/https, non-mailto) through the click redirect.
+    import re
+    def wrap(m):
+        q = m.group(1)
+        href = m.group(2)
+        if href.startswith("http://") or href.startswith("https://"):
+            target = base64.urlsafe_b64encode(href.encode()).decode().rstrip("=")
+            nhref = "%s/r?u=%s&e=%s&c=outreach" % (worker, target, e)
+            return 'href=%s%s%s' % (q, nhref, q)
+        return 'href=%s%s%s' % (q, href, q)
+    body_html = re.sub(r'href=(["\'])([^"\']+)\1', wrap, body_html)
+    return body_html + pixel
+
+
 def load_templates(cfg: dict) -> tuple[str, str, str]:
     tdir = ROOT / "templates"
     subject_template = cfg["smtp"].get("subject_line") or \
@@ -118,7 +144,7 @@ def send_one(smtp, brand: dict, cfg: dict) -> bool:
     msg["From"] = f"{smtp_cfg['from_name']} <{from_addr}>"
     msg["To"] = to_addr
     msg.attach(MIMEText(body_txt, "plain", _charset="utf-8"))
-    msg.attach(MIMEText(body_html, "html", _charset="utf-8"))
+    msg.attach(MIMEText(_inject_tracking(body_html, to_addr, brand, cfg), "html", _charset="utf-8"))
 
     try:
         smtp.sendmail(from_addr, [to_addr], msg.as_string())

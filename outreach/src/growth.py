@@ -153,6 +153,7 @@ def generate_sitemap(cfg: dict) -> dict:
     seo = cfg.get("seo", {})
     site = seo.get("site_url", cfg["profile"]["site_url"]).rstrip("/")
     seo_dir = ROOT / seo.get("output_dir", "../seo-pages")
+    seo_dir.mkdir(parents=True, exist_ok=True)
     pages = sorted(seo_dir.glob("*.html")) if seo_dir.exists() else []
     urls = [site + "/" + p.name for p in pages if p.name != "index.html"]
     urls = [site + "/"] + urls

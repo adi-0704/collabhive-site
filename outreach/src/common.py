@@ -12,13 +12,12 @@ import sys
 from pathlib import Path
 
 # The outreach/ package root (this file lives in outreach/src/).
-ROOT = Path(__file__).resolve().parent.parent
-
-CONFIG_FILE = ROOT / "config.json"
+# Override with OUTREACH_ROOT (used by tests to sandbox data).
+ROOT = Path(os.environ.get("OUTREACH_ROOT", Path(__file__).resolve().parent.parent))
 
 
 def load_config(path: Path | None = None) -> dict:
-    cfg_path = path or CONFIG_FILE
+    cfg_path = path or (ROOT / "config.json")
     with open(cfg_path, "r", encoding="utf-8") as fh:
         return json.load(fh)
 

@@ -130,9 +130,26 @@ See `outreach/config.json → discovery` to tune volume / turn it off.
 ---
 
 ## Local testing (optional)
+Run the full test suite (white-box + black-box, no network, no real email):
 ```
-cd outreach
-cp .env.example .env      # fill in credentials for SMTP test
-python src/run.py report  # writes data/report.json
-python src/run.py daily   # dry-sends if password set, else safe-skip
+python src/tests.py
 ```
+This sandboxes all data (never touches live files) and exercises every module +
+every `run.py` mode, verifying dedupe/DNC/bounce logic, email hygiene, A/B render,
+tracking injection, sitemap, pipeline, and throttle/circuit breaker. Expect "Ran
+24 tests ... OK".
+
+Disable the (network) Maps scrape locally with:
+```
+$env:OUTREACH_DISCOVERY="0" ; python src/run.py daily
+```
+
+## Open/click tracking (optional, free)
+Static GitHub Pages can't record hits, so open/click tracking uses a **free
+Cloudflare Worker** (`outreach/track/worker.js`, no card needed):
+1. Deploy that file to workers.cloudflare.com → note the Worker URL.
+2. Paste it into `config.json → tracking.worker_url`.
+3. Emails then embed an open-pixel + click-redirect automatically; the dashboard
+   shows reply rate and the worker records opens/clicks in free KV.
+
+Without it, the system still tracks **reply rate** from real Gmail replies.

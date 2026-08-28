@@ -127,6 +127,11 @@
     "to_email": "collabhive.in@gmail.com",
     "days": 7
   },
+  "tracking": {
+    "enabled": true,
+    "worker_url": "",
+    "note": "OPTIONAL: deploy outreach/track/worker.js to a FREE Cloudflare Worker and paste the URL here to enable open/click tracking. Without it, the dashboard still shows reply rate (from Gmail replies)."
+  },
   "seo": {
     "enabled": true,
     "output_dir": "../seo-pages",

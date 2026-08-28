@@ -144,7 +144,23 @@ def _gather_sales(cfg: dict) -> dict:
         "quotes_sent": len(quotes),
         "recent_quotes": quotes[-8:][::-1],
         "lead_tiers": [(b.get("brand"), b.get("tier"), b.get("priority")) for b in scored[:10]],
+        "replied_count": len(closing),
+        "reply_rate_pct": _reply_rate(cfg),
     }
+
+
+def _reply_rate(cfg: dict) -> float:
+    """Reply rate = replies / sends (from state), as a percentage."""
+    from src.common import load_json
+    state = load_json(ROOT / cfg["brands"]["state_file"])
+    state = state if isinstance(state, dict) else {}
+    sent = len(state.get("emailed_emails", []))
+    closing = load_json(ROOT / cfg["sales"]["closing_file"])
+    closing = closing if isinstance(closing, list) else []
+    replied = len(closing)
+    if not sent:
+        return 0.0
+    return round(replied / sent * 100, 1)
 
 
 def cmd_enrich(cfg: dict) -> None:
@@ -157,8 +173,12 @@ def cmd_daily(cfg: dict) -> None:
     from src import mailer
 
     state_file = ROOT / cfg["brands"]["state_file"]
+    # Allow tests/local to disable Maps discovery via env override.
+    discovery_enabled = cfg.get("discovery", {}).get("enabled", False)
+    if env("OUTREACH_DISCOVERY", "1") == "0":
+        discovery_enabled = False
     # 1) If enabled, discover new brands from Google Maps (throttled + safe).
-    if cfg.get("discovery", {}).get("enabled", False):
+    if discovery_enabled:
         try:
             from src import maps_scraper
             res = maps_scraper.run_daily_scrape(cfg)
