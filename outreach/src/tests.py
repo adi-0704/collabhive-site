@@ -240,6 +240,46 @@ class TestProtect(unittest.TestCase):
         self.assertEqual(th._failures, 0)
 
 
+class TestOnboarding(unittest.TestCase):
+    def setUp(self):
+        self.common = _mkdata(None)
+        self.cfg = _load_cfg()
+
+    def test_record_and_funnel(self):
+        from src import onboarding as ob
+        ob.record_event(self.cfg, "form_view", "a@x.com")
+        ob.record_event(self.cfg, "creator_submit", "c@y.com")
+        ob.record_event(self.cfg, "brand_submit", "b@z.com")
+        ob.record_event(self.cfg, "approve", "c@y.com")
+        f = ob.funnel_analytics(self.cfg)
+        self.assertEqual(f["form_views"], 1)
+        self.assertEqual(f["creator_submissions"], 1)
+        self.assertEqual(f["approve_rate_pct"], 100.0)
+
+    def test_seed_events_idempotent(self):
+        from src import onboarding as ob
+        r1 = ob.seed_events_from_data(self.cfg)
+        r2 = ob.seed_events_from_data(self.cfg)
+        self.assertEqual(r2["added"], 0)  # second run adds nothing
+
+    def test_social_proof_counts(self):
+        from src import onboarding as ob
+        ob.record_event(self.cfg, "creator_submit", "c@y.com")
+        ob.record_event(self.cfg, "brief", "b@z.com")
+        p = ob.social_proof(self.cfg)
+        self.assertIn("creators_joined", p)
+        self.assertGreaterEqual(p["creators_joined"], 1)
+
+    def test_referral_tracking(self):
+        from src import onboarding as ob
+        ob.track_referral(self.cfg, "@aarav")
+        ob.track_referral(self.cfg, "@aarav")
+        s = ob.referral_stats(self.cfg)
+        self.assertEqual(s["total_referrals"], 2)
+        self.assertEqual(s["top"][0]["creator"], "@aarav")
+        self.assertEqual(s["top"][0]["signups"], 2)
+
+
 def _blackbox_modes():
     """Run each run.py mode in a fresh subprocess with a temp data dir,
     no SMTP password, no network (must skip, never crash)."""
@@ -272,7 +312,8 @@ def _blackbox_modes():
         "os.environ.pop('OUTREACH_EMAIL_PASS', None)\n"
         "from src import run\n"
         "sys.exit(run.main(sys.argv[1:]))\n", encoding="utf-8")
-    for mode in ("daily", "enrich", "report", "sales", "seo", "verify", "automation", "growth", "all"):
+    for mode in ("daily", "enrich", "report", "sales", "seo", "verify",
+                 "automation", "growth", "onboarding", "all"):
         import subprocess
         try:
             p = subprocess.run([sys.executable, str(runner), mode],
@@ -299,7 +340,7 @@ def _suite():
     loader = unittest.TestLoader()
     suite = unittest.TestSuite()
     for cls in (TestCommon, TestBrands, TestSales, TestMailerNoNetwork,
-                TestGrowth, TestProtect, TestBlackboxModes):
+                TestGrowth, TestProtect, TestOnboarding, TestBlackboxModes):
         suite.addTests(loader.loadTestsFromTestCase(cls))
     return suite
 

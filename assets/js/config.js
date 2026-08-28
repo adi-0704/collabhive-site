@@ -23,3 +23,11 @@ window.CH_INFLUENCERS = window.CH_INFLUENCERS || {
   sheetId: "1fnINFVDChyeK0VoihUeTHY_vG9V1s-4dkHMsxGdzYGY",
   approvedTab: "Approved"
 };
+
+// Onboarding funnel event tracking (OPTIONAL). Deploy outreach/track/worker.js to a
+// FREE Cloudflare Worker and paste its URL here to record form views/submits for the
+// funnel analytics on the admin dashboard. Empty = funnel tracking off (analytics
+// still derives from the creatATOR/brand pools + sheets via the daily run).
+window.CH_FUNNEL = window.CH_FUNNEL || {
+  eventsUrl: ""
+};

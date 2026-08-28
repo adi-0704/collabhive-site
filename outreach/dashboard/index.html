@@ -181,6 +181,26 @@
       </div>
     </div>
 
+    <div class="grid" style="margin-top:16px;">
+      <div class="card">
+        <div class="head"><h3>Onboarding funnel</h3><span class="pill pill-live" id="s-funnel-pill">—</span></div>
+        <div class="kv" id="funnel-snap">
+          <div><span>Form views</span><b id="fn-views">—</b></div>
+          <div><span>Creator submissions</span><b id="fn-creator">—</b></div>
+          <div><span>Brand submissions</span><b id="fn-brand">—</b></div>
+          <div><span>Creators approved</span><b id="fn-approved">—</b></div>
+          <div><span>Brand briefs</span><b id="fn-briefs">—</b></div>
+          <div><span>Quotes sent</span><b id="fn-quotes">—</b></div>
+        </div>
+        <div style="margin-top:16px;font-size:.85rem;color:var(--muted-fg);">Social proof</div>
+        <div class="kv" id="proof-snap">
+          <div><span>Creators joined (window)</span><b id="pf-creators">—</b></div>
+          <div><span>Campaigns run (window)</span><b id="pf-campaigns">—</b></div>
+          <div><span>Referrals</span><b id="pf-refs">—</b></div>
+        </div>
+      </div>
+    </div>
+
     <div class="mk">CollabHive &middot; Outreach automation &middot; curated pool + website email extraction</div>
   </div>
 
@@ -311,6 +331,24 @@
 
         // Niche progress comparison (sent vs pool)
         renderNicheProgress(d);
+
+        // Onboarding funnel
+        var ob = d.onboarding || {};
+        var fn = ob.funnel || {};
+        document.getElementById('fn-views').textContent = fmt(fn.form_views);
+        document.getElementById('fn-creator').textContent = fmt(fn.creator_submissions);
+        document.getElementById('fn-brand').textContent = fmt(fn.brand_submissions);
+        document.getElementById('fn-approved').textContent = fmt(fn.creators_approved);
+        document.getElementById('fn-briefs').textContent = fmt(fn.brand_briefs);
+        document.getElementById('fn-quotes').textContent = fmt(fn.quotes_sent);
+        var fpill = document.getElementById('s-funnel-pill');
+        if (fn.creator_conversion_pct != null) { fpill.textContent = fn.creator_conversion_pct + '% creator conv'; fpill.className = 'pill pill-live'; }
+        else { fpill.textContent = 'Funnel off'; fpill.className = 'pill pill-off'; }
+        var pf = ob.proof || {};
+        document.getElementById('pf-creators').textContent = fmt(pf.creators_joined);
+        document.getElementById('pf-campaigns').textContent = fmt(pf.campaigns_run);
+        var refs = ob.referrals || {};
+        document.getElementById('pf-refs').textContent = fmt(refs.total_referrals);
       }
 
       function renderNicheProgress(d) {

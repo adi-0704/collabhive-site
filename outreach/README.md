@@ -97,10 +97,25 @@ Repo → **Actions** → "Outreach Daily Run" → **Run workflow** (mode `all`).
   reply, up to `max_followups`, spaced `wait_between_days`. Skips brands that replied.
 - **Lead scoring**: briefs auto-scored (budget/intent/contact) into hot/warm/cold tiers.
 - **Weekly digest**: emails you a recap of sends, delivery, sales, reach each week.
-- **Quote builder**: auto-generates campaign quotes with your commission.
 - **Delivery verification**: confirms emails landed in Sent + detects bounces.
 - **SEO pages**: `python src/run.py seo` writes niche×city landing pages to
   `seo-pages/` (published with the site, committed by the daily run).
+
+## Onboarding funnel (boost conversions, both sides)
+- **Funnel analytics**: tracks form views → creator/brand submissions → approvals/briefs
+  → quotes, with conversion + drop-off rates (dashboard "Onboarding funnel" card).
+- **Instant value emails**: right after a creator/brand submits, auto-emails something
+  valuable (creator profile link / a sample quote preview).
+- **Auto-remarketing**: nudges anyone who opened the form but didn't submit, once.
+- **Social proof**: an auto-updating "creators joined / campaigns run" ticker on the
+  site (`[data-social-proof]`) fed by the daily run.
+- **Referral tracking**: each creator gets an "Invite a creator" share-link with a `ref`
+  param; sign-ups are attributed on the dashboard.
+- **Funnel event endpoint**: `outreach/track/worker.js` also exposes `POST /events` to
+  record real form views/submits; wire `config.json → tracking.worker_url` + the site
+  `CH_FUNNEL.eventsUrl` to enable. Without it, the funnel derives from pools/sheets.
+
+Run it manually: `python src/run.py onboarding`.
 
 ---
 

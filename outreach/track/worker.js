@@ -37,6 +37,25 @@ export default {
       await store.put('tot:' + day, String(tot + 1), { expirationTtl: 60 * 86400 }).catch(() => {});
     }
 
+    // Funnel event ingestion from the static site forms. Records to KV (free).
+    if (path === '/events') {
+      let body = {};
+      try { body = await request.json(); } catch (e) { body = {}; }
+      const kind = body.kind || 'form_view';
+      const email = body.email || '';
+      const ref = body.ref || '';
+      const source = body.source || 'site';
+      const day = new Date().toISOString().slice(0, 10);
+      const store = env.TRACK;
+      if (store) {
+        const key = `ev:${day}`;
+        const cur = await store.get(key).then(v => (v ? JSON.parse(v) : [])).catch(() => []);
+        cur.push({ kind, email, ref, source, ts: new Date().toISOString() });
+        await store.put(key, JSON.stringify(cur.slice(-1000)), { expirationTtl: 30 * 86400 }).catch(() => {});
+      }
+      return new Response(JSON.stringify({ ok: 1 }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+    }
+
     // Open pixel: return a 1x1 transparent GIF.
     if (path === '/o' || path === '/h') {
       const gif = Uint8Array.from([0x47,0x49,0x46,0x38,0x39,0x61,0x01,0x00,0x01,0x00,

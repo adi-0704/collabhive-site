@@ -84,10 +84,28 @@ def gather_report(cfg: dict) -> dict:
         "sales": _gather_sales(cfg),
         "verification": _gather_verification(cfg),
         "pipeline_dataset": _gather_pipeline(cfg),
+        "onboarding": _gather_onboarding(cfg),
         "dnc_count": _gather_dnc(cfg),
         "last_run": state.get("last_run", ""),
     }
     return report
+
+
+def _gather_onboarding(cfg: dict) -> dict:
+    from src import onboarding as ob_mod
+    try:
+        funnel = ob_mod.funnel_analytics(cfg)
+    except Exception:
+        funnel = {}
+    try:
+        proof = ob_mod.social_proof(cfg)
+    except Exception:
+        proof = {}
+    try:
+        refs = ob_mod.referral_stats(cfg)
+    except Exception:
+        refs = {}
+    return {"funnel": funnel, "proof": proof, "referrals": refs}
 
 
 def _gather_pipeline(cfg: dict) -> dict:
@@ -264,6 +282,23 @@ def cmd_growth(cfg: dict) -> None:
     log(f"A/B subject winner: {ab}")
 
 
+def cmd_onboarding(cfg: dict) -> None:
+    """Onboarding funnel: analytics, instant value emails, remarketing, proof, referral."""
+    from src import onboarding as ob_mod
+    seeded = ob_mod.seed_events_from_data(cfg)
+    log(f"Seeded events: {seeded}")
+    funnel = ob_mod.funnel_analytics(cfg)
+    log(f"Funnel: {funnel}")
+    instant = ob_mod.instant_value_emails(cfg)
+    log(f"Instant value emails: {instant}")
+    remarket = ob_mod.remarket_openers(cfg)
+    log(f"Remarket: {remarket}")
+    proof = ob_mod.social_proof(cfg)
+    log(f"Social proof: {proof}")
+    stats = ob_mod.referral_stats(cfg)
+    log(f"Referrals: {stats}")
+
+
 def main(argv: list[str] | None = None) -> int:
     argv = argv if argv is not None else sys.argv[1:]
     mode = argv[0] if argv else "daily"
@@ -284,12 +319,23 @@ def main(argv: list[str] | None = None) -> int:
         cmd_automation(cfg)
     elif mode == "growth":
         cmd_growth(cfg)
+    elif mode == "onboarding":
+        cmd_onboarding(cfg)
+    elif mode == "record":
+        # Record a funnel event: python src/run.py record <kind> [email] [referrer]
+        from src import onboarding as ob_mod
+        kind = argv[1] if len(argv) > 1 else "form_view"
+        email = argv[2] if len(argv) > 2 else ""
+        ref = argv[3] if len(argv) > 3 else ""
+        res = ob_mod.record_event(cfg, kind, email, ref)
+        log(f"Event recorded: {res}")
     elif mode == "all":
         cmd_enrich(cfg)
         cmd_daily(cfg)
         cmd_sales(cfg)
         cmd_automation(cfg)
         cmd_growth(cfg)
+        cmd_onboarding(cfg)
         cmd_seo(cfg)
         cmd_verify(cfg)
         cmd_report(cfg)

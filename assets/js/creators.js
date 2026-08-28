@@ -24,6 +24,11 @@
     if (bookable) {
       html += '<button type="button" class="btn btn-gold book-btn" data-handle="' + esc(c.handle) + '" data-name="' + esc(c.name) + '" data-niche="' + esc(c.niche) + '" data-city="' + esc(c.city) + '">Book this creator</button>';
     }
+    // Referral link so creators can invite others (share-link attribution).
+    var referrer = encodeURIComponent((c.handle || '').replace('@', ''));
+    if (referrer) {
+      html += '<a class="btn btn-ghost" style="margin-top:8px;border-color:#ddd;color:#555;font-size:.78rem;" href="#" data-referral="' + esc(referrer) + '">Invite a creator</a>';
+    }
     html += '</div>';
     return html;
   }
@@ -51,6 +56,20 @@
         });
       });
     }
+    // Referral: copy a share/apply link with this creator's ref attribution.
+    el.querySelectorAll('a[data-referral]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var ref = a.getAttribute('data-referral') || '';
+        var apply = (window.CH_APPLY && window.CH_APPLY.creatorFormUrl) || '';
+        var link = apply ? (apply + (apply.indexOf('?') === -1 ? '?' : '&') + 'ref=' + encodeURIComponent(ref)) : window.location.href;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(link).then(function () { alert('Referral link copied! Share it to invite creators.'); }).catch(function () { prompt('Copy this link:', link); });
+        } else {
+          prompt('Copy this link:', link);
+        }
+      });
+    });
   }
 
   var dataPromise = null;

@@ -17,6 +17,7 @@ on:
           - daily
           - automation
           - growth
+          - onboarding
           - sales
           - seo
           - verify
@@ -62,6 +63,8 @@ jobs:
           python src/run.py seo || echo "SEO step skipped"
           # Always generate the sitemap/robots (reach) + pipeline + DNC + pool health.
           python src/run.py growth || echo "Growth step skipped"
+          # Always run onboarding funnel (analytics, instant emails, remarket, proof, refs).
+          python src/run.py onboarding || echo "Onboarding step skipped"
 
       - name: Commit report + state + SEO
         run: |

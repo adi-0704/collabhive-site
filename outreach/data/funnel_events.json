@@ -1,0 +1,37 @@
+[
+  {
+    "kind": "form_view",
+    "email": "visitor@x.com",
+    "referrer": "",
+    "source": "site",
+    "ts": "2026-08-28T17:58:54.822186+00:00"
+  },
+  {
+    "kind": "creator_submit",
+    "email": "c@y.com",
+    "referrer": "",
+    "source": "site",
+    "ts": "2026-08-28T17:58:54.841808+00:00"
+  },
+  {
+    "kind": "form_view",
+    "email": "v2@x.com",
+    "referrer": "",
+    "source": "site",
+    "ts": "2026-08-28T17:58:54.861006+00:00"
+  },
+  {
+    "kind": "brand_submit",
+    "email": "b@z.com",
+    "referrer": "",
+    "source": "site",
+    "ts": "2026-08-28T17:58:54.878647+00:00"
+  },
+  {
+    "kind": "approve",
+    "email": "c@y.com",
+    "referrer": "",
+    "source": "site",
+    "ts": "2026-08-28T17:58:54.896872+00:00"
+  }
+]

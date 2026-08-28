@@ -418,9 +418,18 @@
           markApproved(row.handle);
           var msg = document.getElementById('applications-msg');
           msg.textContent = '✔ Approved ' + (row.name || row.handle) + ' — now visible to brands on the creator directory.';
+          if (window.CH_FUNNEL && window.CH_FUNNEL.eventsUrl) recordFunnel('approve', row.email);
           setTimeout(loadApplications, 600);
           load(); // refresh the Creators table
         });
+      }
+
+      function recordFunnel(kind, email) {
+        var url = (window.CH_FUNNEL && window.CH_FUNNEL.eventsUrl) || '';
+        if (!url) return;
+        try {
+          fetch(url + '/events', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ kind: kind, email: email || '', source: 'admin' }), keepalive: true });
+        } catch (e) { /* ignore */ }
       }
 
       function dismiss(idx, r) {

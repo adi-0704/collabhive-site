@@ -251,6 +251,11 @@ h1, h2, h3 { line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
 .brand-strip .b-logo:hover { opacity: 1; }
 .brand-strip .b-logo:nth-child(2n) { color: var(--purple); }
 .brand-strip .b-logo:nth-child(3n) { color: var(--honey-dark); }
+.proof-strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 28px; }
+.proof-item { display: flex; flex-direction: column; align-items: center; padding: 14px 24px; border: 1px solid var(--border); border-radius: 14px; background: #fff; min-width: 130px; }
+.proof-item .p-num { font-size: 1.8rem; font-weight: 800; color: var(--purple); }
+.proof-item .p-lbl { font-size: .82rem; color: var(--muted-fg); margin-top: 2px; text-transform: uppercase; letter-spacing: .03em; }
+
 
 /* ---------- Creator cards ---------- */
 .creator-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }

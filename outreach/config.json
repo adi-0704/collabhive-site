@@ -132,6 +132,18 @@
     "worker_url": "",
     "note": "OPTIONAL: deploy outreach/track/worker.js to a FREE Cloudflare Worker and paste the URL here to enable open/click tracking. Without it, the dashboard still shows reply rate (from Gmail replies)."
   },
+  "onboarding": {
+    "events_file": "data/funnel_events.json",
+    "remarket_file": "data/remarket.json",
+    "referral_file": "data/referrals.json",
+    "instant_email_on_signup": true,
+    "quote_preview_min_budget": 10000,
+    "quote_preview_posts": 2,
+    "remarket_after_hours": 24,
+    "remarket_once_per_email": true,
+    "referral_bonus_pct": 5,
+    "social_proof_ttl_hours": 120
+  },
   "seo": {
     "enabled": true,
     "output_dir": "../seo-pages",
