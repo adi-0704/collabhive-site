@@ -47,6 +47,12 @@
     "dedupe_key": "email",
     "niche_rotation_days": 7
   },
+  "verification": {
+    "lookback_hours": 96,
+    "health_file": "data/delivery_health.json",
+    "auto_verify_on_manual": true,
+    "notes": "Verifies emails actually landed (Sent folder) and detects bounces/DNS via IMAP using the same Gmail app password."
+  },
   "sales": {
     "imap_host": "imap.gmail.com",
     "imap_port": 993,

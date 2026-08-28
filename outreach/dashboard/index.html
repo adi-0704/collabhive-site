@@ -150,6 +150,21 @@
           </table>
         </div>
       </div>
+      <div class="card">
+        <div class="head"><h3>Delivery health</h3><span class="pill pill-live" id="s-deliv-pill">—</span></div>
+        <div class="kv" id="deliv-snap">
+          <div><span>Confirmed delivered</span><b id="dv-conf">—</b></div>
+          <div><span>Unconfirmed</span><b id="dv-unconf">—</b></div>
+          <div><span>Bounced</span><b id="dv-bounce">—</b></div>
+          <div><span>Delivery rate</span><b id="dv-rate">—</b></div>
+        </div>
+        <div class="table-wrap" style="margin-top:16px;">
+          <table>
+            <thead><tr><th>Bounced emails (auto-skipped)</th></tr></thead>
+            <tbody id="bounced"><tr><td><div class="empty">No bounces.</div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
     <div class="mk">CollabHive &middot; Outreach automation &middot; curated pool + website email extraction</div>
@@ -242,6 +257,22 @@
               '</td><td>' + (handles || '—') + '</td></tr>';
           }).join('');
         }
+
+        // Delivery health
+        var ver = d.verification || {};
+        document.getElementById('dv-conf').textContent = fmt(ver.confirmed_in_sent);
+        document.getElementById('dv-unconf').textContent = fmt(ver.unconfirmed);
+        document.getElementById('dv-bounce').textContent = fmt(ver.bounces);
+        document.getElementById('dv-rate').textContent = (ver.delivery_rate_pct != null ? ver.delivery_rate_pct + '%' : '—');
+        var dpill = document.getElementById('s-deliv-pill');
+        if (ver.flagged) { dpill.textContent = '⚠ At risk'; dpill.className = 'pill pill-off'; }
+        else if (!ver.ok) { dpill.textContent = 'Not verified'; dpill.className = 'pill pill-off'; }
+        else { dpill.textContent = 'Healthy'; dpill.className = 'pill pill-live'; }
+        var bounces = ver.bounce_emails || [];
+        var bbody = document.getElementById('bounced');
+        bbody.innerHTML = bounces.length
+          ? bounces.map(function (e) { return '<tr><td>' + e + '</td></tr>'; }).join('')
+          : '<tr><td><div class="empty">No bounces.</div></td></tr>';
 
         // Niche progress comparison (sent vs pool)
         renderNicheProgress(d);

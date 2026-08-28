@@ -202,6 +202,7 @@ def select_targets(cfg: dict, state: dict, limit: int) -> tuple[list[dict], dict
         state = {}
     sent = set(state.get("emailed_domains", []))
     sent_emails = set(state.get("emailed_emails", []))
+    bounced = set(state.get("bounced_emails", []))
 
     candidates: list[dict] = []
     for b in pool:
@@ -211,6 +212,8 @@ def select_targets(cfg: dict, state: dict, limit: int) -> tuple[list[dict], dict
         email = (b.get("email") or (emails[0] if emails else "") or "").strip().lower()
         domain = ((b.get("website") or "").lower().replace("https://", "").replace("http://", "").split("/")[0]).replace("www.", "")
         if not email or email in sent_emails:
+            continue
+        if email in bounced:
             continue
         if not _is_good(email, domain):
             continue

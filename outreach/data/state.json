@@ -168,5 +168,9 @@
       "city": "Mumbai"
     }
   ],
-  "last_run": "2026-08-28T16:19:49.966834+00:00"
+  "last_run": "2026-08-28T15:37:58.511634+00:00",
+  "bounced_emails": [
+    "files@quinn-live.bundle.js",
+    "careers@bewakoof.com"
+  ]
 }

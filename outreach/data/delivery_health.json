@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "checked_at": "2026-08-28T16:32:59.982330+00:00",
+  "lookback_hours": 96,
+  "recorded_sends": 17,
+  "confirmed_in_sent": 17,
+  "unconfirmed": 0,
+  "delivery_rate_pct": 100.0,
+  "bounces": 2,
+  "bounce_emails": [
+    "files@quinn-live.bundle.js",
+    "careers@bewakoof.com"
+  ],
+  "unconfirmed_emails": [],
+  "flagged": false
+}

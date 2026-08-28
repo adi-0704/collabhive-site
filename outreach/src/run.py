@@ -22,7 +22,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src import brands as brands_mod  # noqa: E402
 from src.common import ROOT, env, load_config, log, save_json  # noqa: E402
 
-
 def gather_report(cfg: dict) -> dict:
     """Builds the dashboard report from current state + seed pool."""
     from collections import Counter
@@ -83,9 +82,16 @@ def gather_report(cfg: dict) -> dict:
         "pool_by_niche": dict(pool_by_niche),
         "recent_sends": sent_log[-20:][::-1],
         "sales": _gather_sales(cfg),
+        "verification": _gather_verification(cfg),
         "last_run": state.get("last_run", ""),
     }
     return report
+
+
+def _gather_verification(cfg: dict) -> dict:
+    from src.common import load_json
+    health = load_json(ROOT / cfg.get("verification", {}).get("health_file", "data/delivery_health.json"))
+    return health if isinstance(health, dict) else {}
 
 
 def _gather_sales(cfg: dict) -> dict:
@@ -167,6 +173,12 @@ def cmd_seo(cfg: dict) -> None:
     log(f"SEO pages: {res}")
 
 
+def cmd_verify(cfg: dict) -> None:
+    from src import verify as verify_mod
+    health = verify_mod.verify_delivery(cfg)
+    log(f"Delivery verification: {health}")
+
+
 def main(argv: list[str] | None = None) -> int:
     argv = argv if argv is not None else sys.argv[1:]
     mode = argv[0] if argv else "daily"
@@ -181,11 +193,14 @@ def main(argv: list[str] | None = None) -> int:
         cmd_sales(cfg)
     elif mode == "seo":
         cmd_seo(cfg)
+    elif mode == "verify":
+        cmd_verify(cfg)
     elif mode == "all":
         cmd_enrich(cfg)
         cmd_daily(cfg)
         cmd_sales(cfg)
         cmd_seo(cfg)
+        cmd_verify(cfg)
         cmd_report(cfg)
     else:
         log(f"Unknown mode: {mode}")

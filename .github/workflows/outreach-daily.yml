@@ -17,6 +17,7 @@ on:
           - daily
           - sales
           - seo
+          - verify
           - report
           - enrich
 
