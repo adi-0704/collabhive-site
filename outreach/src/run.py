@@ -102,10 +102,17 @@ def _gather_sales(cfg: dict) -> dict:
     short = load_json(ROOT / cfg["sales"]["shortlist_file"])
     short = short if isinstance(short, dict) else {}
     shortlist = short.get("shortlist", []) if isinstance(short, dict) else []
+    scored = load_json(ROOT / "data" / "briefs_scored.json")
+    scored = scored if isinstance(scored, list) else []
+    quotes = load_json(ROOT / cfg.get("quotes", {}).get("created_file", "data/quotes_sent.json"))
+    quotes = quotes if isinstance(quotes, list) else []
     by_status = {}
     for c in closing:
         s = c.get("status", "unknown")
         by_status[s] = by_status.get(s, 0) + 1
+    tier_count = {"hot": 0, "warm": 0, "cold": 0}
+    for b in scored:
+        tier_count[b.get("tier", "cold")] = tier_count.get(b.get("tier", "cold"), 0) + 1
     return {
         "closing_count": len(closing),
         "closing_by_status": by_status,
@@ -113,6 +120,11 @@ def _gather_sales(cfg: dict) -> dict:
         "shortlist": [(s.get("brand"), s.get("niche"), [m.get("handle") for m in s.get("matches", [])][:5])
                       for s in shortlist],
         "shortlist_count": len(shortlist),
+        "hot_briefs": tier_count.get("hot", 0),
+        "briefs_by_tier": tier_count,
+        "quotes_sent": len(quotes),
+        "recent_quotes": quotes[-8:][::-1],
+        "lead_tiers": [(b.get("brand"), b.get("tier"), b.get("priority")) for b in scored[:10]],
     }
 
 
@@ -179,6 +191,19 @@ def cmd_verify(cfg: dict) -> None:
     log(f"Delivery verification: {health}")
 
 
+def cmd_automation(cfg: dict) -> None:
+    """Auto-quotes, follow-ups, digest, scoring. Purely automatic."""
+    from src import automation as auto_mod
+    quotes = auto_mod.send_auto_quotes(cfg)
+    log(f"Auto-quotes: {quotes}")
+    followups = auto_mod.send_followups(cfg)
+    log(f"Follow-ups: {followups}")
+    scored = auto_mod.score_briefs(cfg)
+    log(f"Scored briefs: {len(scored)} (hot={sum(1 for b in scored if b.get('tier')=='hot')})")
+    digest = auto_mod.send_weekly_digest(cfg)
+    log(f"Weekly digest: {digest}")
+
+
 def main(argv: list[str] | None = None) -> int:
     argv = argv if argv is not None else sys.argv[1:]
     mode = argv[0] if argv else "daily"
@@ -195,10 +220,13 @@ def main(argv: list[str] | None = None) -> int:
         cmd_seo(cfg)
     elif mode == "verify":
         cmd_verify(cfg)
+    elif mode == "automation":
+        cmd_automation(cfg)
     elif mode == "all":
         cmd_enrich(cfg)
         cmd_daily(cfg)
         cmd_sales(cfg)
+        cmd_automation(cfg)
         cmd_seo(cfg)
         cmd_verify(cfg)
         cmd_report(cfg)

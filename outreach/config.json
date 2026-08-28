@@ -71,6 +71,29 @@
       "negotiating": ["rate", "budget", "how much", "price", "discount", "commission", "fee"]
     }
   },
+  "followup": {
+    "enabled": true,
+    "enabled_after_days": 3,
+    "max_followups": 2,
+    "wait_between_days": 4,
+    "only_if_no_reply": true,
+    "state_file": "data/followups.json",
+    "subject_prefix": "Re: "
+  },
+  "quotes": {
+    "enabled": true,
+    "send_email": true,
+    "default_posts": 2,
+    "created_file": "data/quotes_sent.json",
+    "contact_file": "data/brief_contacts.json"
+  },
+  "digest": {
+    "enabled": true,
+    "schedule_day": 0,
+    "last_sent_file": "data/digest_last.json",
+    "to_email": "collabhive.in@gmail.com",
+    "days": 7
+  },
   "seo": {
     "enabled": true,
     "output_dir": "../seo-pages",

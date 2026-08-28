@@ -1,0 +1,57 @@
+[
+  {
+    "brand": "FitKart",
+    "city": "Mumbai",
+    "niche": "Fitness & Wellness",
+    "budget": "25000",
+    "goal": "Product launch reach",
+    "note": "Launching plant-protein range; need 5 fitness creators for video reviews.",
+    "status": "active",
+    "priority": 0.5,
+    "tier": "warm"
+  },
+  {
+    "brand": "UrbanBrew",
+    "city": "Delhi",
+    "niche": "Food & Beverage",
+    "budget": "15000",
+    "goal": "Footfall + awareness",
+    "note": "New cafe in Delhi NCR; want 4-6 local creators to post reels over the next 2 weeks.",
+    "status": "active",
+    "priority": 0.42,
+    "tier": "warm"
+  },
+  {
+    "brand": "Glowly",
+    "city": "Bengaluru",
+    "niche": "Beauty & Cosmetics",
+    "budget": "30000",
+    "goal": "Skincare awareness",
+    "note": "New serum; want 6 beauty creators with high engagement (not just followers).",
+    "status": "active",
+    "priority": 0.24,
+    "tier": "cold"
+  },
+  {
+    "brand": "StyleNest",
+    "city": "Jaipur",
+    "niche": "Fashion & Apparel",
+    "budget": "20000",
+    "goal": "Festive collection",
+    "note": "Needs fashion influencers for the festive drop; 4 posts + stories.",
+    "status": "active",
+    "priority": 0.16,
+    "tier": "cold"
+  },
+  {
+    "brand": "Travella",
+    "city": "Goa",
+    "niche": "Travel & Hospitality",
+    "budget": "18000",
+    "goal": "Homestay bookings",
+    "note": "Boutique homestay; 3 travel creators for a weekend content trip.",
+    "status": "pending_review",
+    "priority": 0.144,
+    "tier": "cold"
+  }
+]

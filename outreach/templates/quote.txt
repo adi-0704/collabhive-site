@@ -1,0 +1,28 @@
+Hi {name},
+
+Thanks for sharing your campaign brief with CollabHive. We've matched your goals to creators from our network and put together a proposal for you.
+
+📋 Your campaign:
+• Brand: {brand}
+• Goal: {goal}
+• Niche: {niche} · City: {city}
+• Budget range: {budget}
+
+🎯 Recommended creators ({n}):
+{creator_list}
+
+💰 Proposed quote:
+• Creator payout: ₹{payout}
+• CollabHive commission ({pct}%): ₹{commission}
+• Total: ₹{total}
+
+Every creator has been vetted and their rates reflect a fair, transparent deal. We can adjust the number of creators or posts to fit your budget.
+
+Want to go ahead? Just reply to this email and we'll lock in the creators and timeline.
+
+Warm regards,
+The CollabHive Team
+{contact_email} | {phone}
+
+---
+You're receiving this because you submitted a campaign brief to CollabHive. Reply "unsubscribe" if you'd rather not hear from us.

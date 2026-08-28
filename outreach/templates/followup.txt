@@ -1,0 +1,13 @@
+Hi {name},
+
+Just following up on my last note about CollabHive. 👋
+
+We're building a curated network of creators across every niche, and we think {brand} would be a great fit. Creators keep 90% — just a fair 10% commission on successful collaborations.
+
+If now isn't a good time, no worries — just let me know and I'll stop reaching out. Otherwise, I can share how we match brands to the right creators and send you a shortlist + quote.
+
+🌐 Learn more: {site_url}
+
+Warm regards,
+The CollabHive Team
+{contact_email} | {phone}

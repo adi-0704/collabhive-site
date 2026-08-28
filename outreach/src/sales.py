@@ -269,10 +269,16 @@ def _load_brief_sheet(cfg: dict) -> list[dict]:
     for row in data:
         briefs.append({
             "brand": row.get("Brand / business name", "") or row.get("brand", ""),
+            "contact": row.get("Your name", "") or row.get("contact", ""),
+            "email": row.get("Email address", "") or row.get("email", ""),
+            "phone": row.get("Phone / WhatsApp", "") or row.get("phone", ""),
             "niche": row.get("Which niche are you in (or closest to)?", "") or row.get("niche", ""),
             "city": row.get("City & country", "") or row.get("city", ""),
             "budget": row.get("Budget range (INR)", "") or row.get("budget", ""),
             "goal": row.get("What is your primary goal?", "") or row.get("goal", ""),
+            "creators": row.get("Number of creators you need", "") or row.get("creators", ""),
+            "posts": row.get("Posts per creator", "") or row.get("posts", ""),
+            "timeline": row.get("When do you need this?", "") or row.get("timeline", ""),
             "note": row.get("Describe your campaign / product", "") or row.get("note", ""),
             "status": "sheet",
         })

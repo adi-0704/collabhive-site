@@ -15,6 +15,7 @@ on:
         options:
           - all
           - daily
+          - automation
           - sales
           - seo
           - verify

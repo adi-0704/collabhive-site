@@ -92,7 +92,13 @@ Repo → **Actions** → "Outreach Daily Run" → **Run workflow** (mode `all`).
   `data/closing_queue.json`. Uses your Gmail app password via IMAP.
 - **Auto-match**: reads `data/brand_briefs.json` ↔ `data/creators_pool.json`,
   scores each creator, writes `data/shortlist.json` (best-fit per brief).
+- **Auto-quote emails**: sends matched brands a shortlist + quote (rates + 10% commission).
+- **Follow-up system**: politely re-emails brands after `enabled_after_days` if no
+  reply, up to `max_followups`, spaced `wait_between_days`. Skips brands that replied.
+- **Lead scoring**: briefs auto-scored (budget/intent/contact) into hot/warm/cold tiers.
+- **Weekly digest**: emails you a recap of sends, delivery, sales, reach each week.
 - **Quote builder**: auto-generates campaign quotes with your commission.
+- **Delivery verification**: confirms emails landed in Sent + detects bounces.
 - **SEO pages**: `python src/run.py seo` writes niche×city landing pages to
   `seo-pages/` (published with the site, committed by the daily run).
 
