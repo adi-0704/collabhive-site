@@ -7,5 +7,19 @@
   { "name": "Isha Verma", "handle": "@isha.home", "niche": "Home & Decor", "city": "Delhi", "followers": 9600, "rate": 1800, "platforms": "Instagram", "email": "isha.home@gmail.com" },
   { "name": "Dev Shah", "handle": "@dev.discovers", "niche": "Tech & Startups", "city": "Bengaluru", "followers": 41000, "rate": 6500, "platforms": "YouTube", "email": "dev.discovers@gmail.com" },
   { "name": "Naina Joshi", "handle": "@naina.creates", "niche": "Food & Beverage", "city": "Delhi", "followers": 7200, "rate": 1500, "platforms": "Instagram, YouTube", "email": "naina.creates@gmail.com" },
-  { "name": "Garima Narang", "handle": "@onlyyygarima", "niche": "Food & Beverage", "city": "Sonipat", "followers": 4300, "rate": 1500, "platforms": "Instagram, YouTube", "email": "gariman339@gmail.com" }
+  { "name": "Garima Narang", "handle": "@onlyyygarima", "niche": "Food & Beverage", "city": "Sonipat", "followers": 4300, "rate": 1500, "platforms": "Instagram, YouTube", "email": "gariman339@gmail.com" },
+  { "name": "Ishita Rao", "handle": "@ishita.bites", "niche": "Food & Beverage", "city": "Mumbai", "followers": 53000, "rate": 8000, "platforms": "Instagram", "email": "ishita.bites@gmail.com" },
+  { "name": "Vihaan Kulkarni", "handle": "@vihaan.kfood", "niche": "Food & Beverage", "city": "Pune", "followers": 11200, "rate": 2200, "platforms": "Instagram, YouTube", "email": "vihaan.kfood@gmail.com" },
+  { "name": "Ananya Singh", "handle": "@ananya.vogue", "niche": "Fashion & Apparel", "city": "Mumbai", "followers": 27800, "rate": 4800, "platforms": "Instagram", "email": "ananya.vogue@gmail.com" },
+  { "name": "Tanvi Desai", "handle": "@tanvi.wears", "niche": "Fashion & Apparel", "city": "Ahmedabad", "followers": 14600, "rate": 2600, "platforms": "Instagram", "email": "tanvi.wears@gmail.com" },
+  { "name": "Reyansh Sharma", "handle": "@reyansh.style", "niche": "Fashion & Apparel", "city": "Jaipur", "followers": 8900, "rate": 1900, "platforms": "Instagram", "email": "reyansh.style@gmail.com" },
+  { "name": "Kiara Nair", "handle": "@kiara.itbeauty", "niche": "Beauty & Cosmetics", "city": "Mumbai", "followers": 56000, "rate": 7500, "platforms": "Instagram, YouTube", "email": "kiara.itbeauty@gmail.com" },
+  { "name": "Advika Menon", "handle": "@advika.skin", "niche": "Beauty & Cosmetics", "city": "Hyderabad", "followers": 13400, "rate": 2400, "platforms": "Instagram", "email": "advika.skin@gmail.com" },
+  { "name": "Dhruv Kapoor", "handle": "@dhruv.lifts", "niche": "Fitness & Wellness", "city": "Gurugram", "followers": 39800, "rate": 6000, "platforms": "Instagram, YouTube", "email": "dhruv.lifts@gmail.com" },
+  { "name": "Anika Reddy", "handle": "@anika.yoga", "niche": "Fitness & Wellness", "city": "Bengaluru", "followers": 21700, "rate": 3200, "platforms": "Instagram", "email": "anika.yoga@gmail.com" },
+  { "name": "Arnav Joshi", "handle": "@arnav.codes", "niche": "Tech & Startups", "city": "Hyderabad", "followers": 33000, "rate": 5500, "platforms": "YouTube", "email": "arnav.codes@gmail.com" },
+  { "name": "Mira Patel", "handle": "@mira.roams", "niche": "Travel & Hospitality", "city": "Jaipur", "followers": 26400, "rate": 4200, "platforms": "Instagram", "email": "mira.roams@gmail.com" },
+  { "name": "Nikhil Verma", "handle": "@nikhil.adventures", "niche": "Travel & Hospitality", "city": "Manali", "followers": 17800, "rate": 2900, "platforms": "Instagram, YouTube", "email": "nikhil.adventures@gmail.com" },
+  { "name": "Shreya Iyer", "handle": "@shreya.home", "niche": "Home & Decor", "city": "Mumbai", "followers": 22700, "rate": 3600, "platforms": "Instagram", "email": "shreya.home@gmail.com" },
+  { "name": "Aryan Gupta", "handle": "@aryan.diy", "niche": "Home & Decor", "city": "Bengaluru", "followers": 11500, "rate": 2000, "platforms": "Instagram, YouTube", "email": "aryan.diy@gmail.com" }
 ]
