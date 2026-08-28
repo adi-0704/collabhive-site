@@ -159,7 +159,8 @@ def daily_run(cfg: dict) -> dict:
                 break
             throttle.wait()
             ok, hard_fail = send_safe(smtp, brand, cfg, user, password, ctx)
-            throttle.record(hard_fail)
+            # record(ok=...): only a genuine hard failure should trip the breaker.
+            throttle.record(ok=not hard_fail)
             if ok:
                 sent += 1
                 state = record_sent(state, brand)
