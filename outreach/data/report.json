@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T04:05:36.882318+00:00",
+  "generated_at": "2026-08-28T04:16:20.635938+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -9,19 +9,19 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 16,
-    "unique_brands_emailed": 15,
+    "total_sent": 18,
+    "unique_brands_emailed": 17,
     "brands_in_pool": 42,
     "brands_with_email": 22,
-    "remaining_candidates": 7,
-    "sent_today": 16,
-    "sent_week": 16,
-    "day_streak": 16,
+    "remaining_candidates": 5,
+    "sent_today": 18,
+    "sent_week": 18,
+    "day_streak": 18,
     "daily_budget": 18
   },
   "by_niche": {
     "Fashion & Apparel": 6,
-    "Beauty & Cosmetics": 3,
+    "Beauty & Cosmetics": 5,
     "Food & Beverage": 6,
     "Fitness & Wellness": 1
   },
@@ -32,7 +32,7 @@
     "Gurugram": 6,
     "Hyderabad": 1,
     "Kolkata": 1,
-    "Mumbai": 2
+    "Mumbai": 4
   },
   "pool_by_niche": {
     "Food & Beverage": 10,
@@ -44,6 +44,20 @@
     "Tech & Startups": 2
   },
   "recent_sends": [
+    {
+      "ts": "2026-08-28T04:16:20.616885+00:00",
+      "email": "help@beminimalist.co",
+      "name": "Minimalist",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai"
+    },
+    {
+      "ts": "2026-08-28T04:14:03.127940+00:00",
+      "email": "hello@plumgoodness.com",
+      "name": "Plum",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai"
+    },
     {
       "ts": "2026-08-28T04:03:36.755181+00:00",
       "email": "careers@bewakoof.com",
@@ -157,5 +171,5 @@
       "city": "Bengaluru"
     }
   ],
-  "last_run": "2026-08-28T04:05:36.881753+00:00"
+  "last_run": "2026-08-28T04:16:20.635361+00:00"
 }

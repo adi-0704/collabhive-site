@@ -392,7 +392,8 @@
     "website": "https://www.earthful.in",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "BeastLife",
