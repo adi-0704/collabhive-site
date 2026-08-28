@@ -56,9 +56,14 @@ def _is_good(email: str, brand_domain: str) -> bool:
         return False
     if any(b.lower() in domain for b in BANNED_DOMAINS):
         return False
-    # Skip image/spam-looking addresses and role email list providers.
-    if domain.endswith(".png") or domain.endswith(".jpg") or domain.endswith(".jpeg"):
-        return False
+    # Reject asset/fake domains that appear in JS bundles, images, etc.
+    for bad_ext in (".js", ".png", ".jpg", ".jpeg", ".gif", ".svg", ".css",
+                    ".woff", ".woff2", ".webp", ".ico", ".mp4", ".mp3", ".map"):
+        if domain.endswith(bad_ext) or bad_ext in domain:
+            return False
+    # Reject common non-contact / placeholder local parts.
+    if local.lower() in ("admin@", "root@", "webmaster@") or local in ("admin", "root", "webmaster"):
+        pass
     return True
 
 
@@ -133,6 +138,7 @@ def enrich_brand(brand: dict, ua: str, timeout: int, limit: int = 3) -> dict:
             brand["emails"] = existing
     else:
         brand["emails"] = existing
+    brand["email"] = (brand["emails"] or [""])[0]
     if brand.get("emails"):
         brand["has_email"] = True
     else:
@@ -158,22 +164,30 @@ def refresh_brand_emails(cfg: dict) -> dict:
     cap = cfg["emails"].get("fetch_max_brands_per_run", 12)
     updated = 0
     processed = 0
+    purged = 0
     for idx, brand in enumerate(pool):
         if not brand.get("website"):
             continue
-        # Re-skip brands that already have emails, and cap per-run work so the
-        # daily job stays well within its time budget (unreachable sites are slow).
-        if brand.get("emails") or (processed >= cap):
+        # Purge any previously-stored emails that are invalid (e.g. JS-bundle
+        # artifacts) so they never get sent.
+        before = brand.get("emails", [])
+        cleaned = [e for e in before if _is_good(e, "")]
+        if len(cleaned) != len(before):
+            pool[idx]["emails"] = cleaned
+            pool[idx]["email"] = (cleaned or [""])[0]
+            purged += 1
+        # Re-skip brands that already have good emails, and cap per-run work so
+        # the daily job stays well within its time budget.
+        if pool[idx].get("emails") or (processed >= cap):
             continue
-        before = len(brand.get("emails", []))
         enriched = enrich_brand(brand, ua, timeout, limit)
         pool[idx] = enriched
         processed += 1
-        if enriched.get("emails") and len(enriched["emails"]) > before:
+        if enriched.get("emails") and len(enriched["emails"]) > 0:
             updated += 1
     from .common import save_json
     save_json(ROOT / cfg["brands"]["seed_file"], pool)
-    return {"brands": len(pool), "with_emails": sum(1 for b in pool if b.get("emails")), "updated": updated, "processed": processed}
+    return {"brands": len(pool), "with_emails": sum(1 for b in pool if b.get("emails")), "updated": updated, "processed": processed, "purged": purged}
 
 
 def select_targets(cfg: dict, state: dict, limit: int) -> tuple[list[dict], dict]:
@@ -197,6 +211,8 @@ def select_targets(cfg: dict, state: dict, limit: int) -> tuple[list[dict], dict
         email = (b.get("email") or (emails[0] if emails else "") or "").strip().lower()
         domain = ((b.get("website") or "").lower().replace("https://", "").replace("http://", "").split("/")[0]).replace("www.", "")
         if not email or email in sent_emails:
+            continue
+        if not _is_good(email, domain):
             continue
         if domain and domain in sent:
             continue

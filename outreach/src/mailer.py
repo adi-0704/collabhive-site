@@ -206,7 +206,7 @@ def send_safe(body_smtp, brand: dict, cfg: dict, user, password, ctx) -> tuple[b
         attempts += 1
         try:
             ok = send_one(i_smtp, brand, cfg)
-            return ok, (not ok)
+            return ok, False   # mailbox rejected (ok=False) is NOT a circuit-breaker trip
         except smtplib.SMTPAuthenticationError as exc:
             log(f"  AUTH FAILED: {exc}")
             return False, True
@@ -224,8 +224,8 @@ def send_safe(body_smtp, brand: dict, cfg: dict, user, password, ctx) -> tuple[b
             continue
         except Exception as exc:
             log(f"  SEND FAIL {brand.get('email')}: {exc}")
-            return False, True
-    return False, True
+            return False, False
+    return False, False
 
 
 def record_sent(state: dict, brand: dict) -> dict:
