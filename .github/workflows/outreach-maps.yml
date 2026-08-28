@@ -58,7 +58,12 @@ jobs:
             echo "No new brands added."
           else
             git commit -m "build: add brands from Maps scrape [skip ci]"
-            git push origin "${{ github.ref_name }}"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin "${{ github.ref_name }}" && break || true
+            done
+            for i in 1 2 3 4 5; do
+              git push origin "${{ github.ref_name }}" && break || sleep 20
+            done
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

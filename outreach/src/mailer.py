@@ -76,7 +76,11 @@ def send_one(smtp, brand: dict, cfg: dict) -> bool:
     try:
         smtp.sendmail(from_addr, [to_addr], msg.as_string())
         return True
+    except (smtplib.SMTPServerDisconnected, smtplib.SMTPAuthenticationError, ConnectionError, OSError):
+        # Connection-level problems: let the caller decide (reconnect/retry).
+        raise
     except Exception as exc:
+        # Message-level (e.g. recipient rejected): count as a failed attempt.
         log(f"  FAIL {to_addr}: {exc}")
         return False
 
@@ -109,6 +113,7 @@ def count_sent_last_hours(state: dict, hours: int) -> int:
 def daily_run(cfg: dict) -> dict:
     from .brands import select_targets
     from .common import load_json, save_json
+    from .protect import Throttle
 
     user, password = gmail_credentials()
     if not password:
@@ -134,49 +139,93 @@ def daily_run(cfg: dict) -> dict:
         log("No unsent brands with emails available today. (Add brands to seed pool.)")
         return {"sent": 0, "skipped": 0, "pool_empty": True}
 
-    ctx = ssl.create_default_context()
-    from .protect import Throttle
-    throttle = Throttle(
-        max_per_hour=cfg["smtp"]["daily_limit"],
-        session_cap=len(targets),
-        backoff_after_failures=3,
-        min_gap=0.0,
-        max_gap=2.0,
-    )
     sent = 0
     failed = 0
     delivered_from = 0
+    ctx = ssl.create_default_context()
+    throttle = Throttle(
+        max_per_hour=cfg["smtp"]["daily_limit"],
+        session_cap=len(targets),
+        backoff_after_failures=8,   # tolerate transient connection drops
+        min_gap=0.0,
+        max_gap=2.0,
+    )
     try:
-        with smtplib.SMTP(cfg["smtp"]["host"], cfg["smtp"]["port"], timeout=30) as smtp:
-            smtp.ehlo()
-            smtp.starttls(context=ctx)
-            smtp.ehlo()
-            smtp.login(user, password)
-            delivered_from = len(targets)
-            for brand in targets:
-                if throttle.is_circuit_open():
-                    log("Circuit breaker open — stopping sends (too many SMTP/auth failures).")
-                    break
-                throttle.wait()
-                ok = send_one(smtp, brand, cfg)
-                throttle.record(ok)
-                if ok:
-                    sent += 1
-                    state = record_sent(state, brand)
-                    log(f"  SENT {brand.get('email')} <- {brand.get('name')} [{brand.get('niche')}]")
-                    # Checkpoint so progress survives a mid-loop crash.
-                    save_json(state_file, state)
-                else:
-                    failed += 1
-                if brand is not targets[-1]:
-                    d = warmup_delay(cfg)
-                    log(f"    ...waiting {d:.0f}s")
-                    time.sleep(d)
+        smtp = _connect(cfg, user, password, ctx)
+        delivered_from = len(targets)
+        for brand in targets:
+            if throttle.is_circuit_open():
+                log("Circuit breaker open — stopping sends (too many SMTP/auth failures).")
+                break
+            throttle.wait()
+            ok, hard_fail = send_safe(smtp, brand, cfg, user, password, ctx)
+            throttle.record(hard_fail)
+            if ok:
+                sent += 1
+                state = record_sent(state, brand)
+                log(f"  SENT {brand.get('email')} <- {brand.get('name')} [{brand.get('niche')}]")
+                save_json(state_file, state)
+            else:
+                failed += 1
+            if brand is not targets[-1]:
+                d = warmup_delay(cfg)
+                log(f"    ...waiting {d:.0f}s")
+                time.sleep(d)
     except Exception as exc:
         log(f"SMTP error: {exc}")
+    finally:
+        try:
+            if 'smtp' in locals() and smtp is not None:
+                smtp.quit()
+        except Exception:
+            pass
 
     save_json(state_file, state)
     return {"sent": sent, "attempted": len(targets), "failed": failed, "delivered_from": delivered_from}
+
+
+def _connect(cfg: dict, user: str, password: str, ctx) -> "smtplib.SMTP":
+    smtp = smtplib.SMTP(cfg["smtp"]["host"], cfg["smtp"]["port"], timeout=30)
+    smtp.ehlo()
+    smtp.starttls(context=ctx)
+    smtp.ehlo()
+    smtp.login(user, password)
+    return smtp
+
+
+def send_safe(body_smtp, brand: dict, cfg: dict, user, password, ctx) -> tuple[bool, bool]:
+    """Send to one brand, transparently reconnecting on a dropped connection.
+
+    Returns (ok, hard_fail). hard_fail only True for genuine auth/limit/soft
+    failures (counts toward the circuit breaker). Recoverable connection drops
+    that reconnect and succeed are not hard failures.
+    """
+    attempts = 0
+    i_smtp = body_smtp
+    while attempts < 3:
+        attempts += 1
+        try:
+            ok = send_one(i_smtp, brand, cfg)
+            return ok, (not ok)
+        except smtplib.SMTPAuthenticationError as exc:
+            log(f"  AUTH FAILED: {exc}")
+            return False, True
+        except (smtplib.SMTPServerDisconnected, ConnectionError, OSError) as exc:
+            log(f"  ...connection dropped ({exc}); reconnecting (attempt {attempts})")
+            try:
+                i_smtp.close()
+            except Exception:
+                pass
+            try:
+                i_smtp = _connect(cfg, user, password, ctx)
+            except Exception as re_exc:
+                log(f"  reconnect failed: {re_exc}")
+                return False, True
+            continue
+        except Exception as exc:
+            log(f"  SEND FAIL {brand.get('email')}: {exc}")
+            return False, True
+    return False, True
 
 
 def record_sent(state: dict, brand: dict) -> dict:

@@ -14,8 +14,8 @@
     "use_tls": true,
     "daily_limit": 18,
     "daily_hard_cap": 20,
-    "min_delay_seconds": 180,
-    "max_delay_seconds": 420,
+    "min_delay_seconds": 90,
+    "max_delay_seconds": 200,
     "from_name": "CollabHive",
     "subject_line": "A creator network for {brand} — CollabHive"
   },
