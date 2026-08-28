@@ -18,7 +18,40 @@
     "min_delay_seconds": 90,
     "max_delay_seconds": 200,
     "from_name": "CollabHive",
-    "subject_line": "A creator network for {brand} — CollabHive"
+    "subject_line": "A creator network for {brand} — CollabHive",
+    "subject_lines_ab": [
+      "A creator network for {brand} — CollabHive",
+      "Creators for {brand} from CollabHive",
+      "Helping {brand} grow with creators",
+      "{brand}: matched creators, ready to collab"
+    ],
+    "dynamic_opener": true,
+    "ab_rotate": true,
+    "ab_winner_field": "ab_subject_winner"
+  },
+  "pipeline": {
+    "enabled": true,
+    "stages": ["brief", "quoted", "booked", "delivered", "paid"],
+    "state_file": "data/pipeline.json"
+  },
+  "alerts": {
+    "enabled": true,
+    "on_hot_lead": true,
+    "to_email": "collabhive.in@gmail.com",
+    "last_sent_file": "data/alert_last.json",
+    "cooldown_minutes": 120
+  },
+  "dnc": {
+    "enabled": true,
+    "state_file": "data/dnc.json",
+    "unsubscribe_keywords": ["unsubscribe", "stop", "remove me", "opt out", "no longer", "do not contact"]
+  },
+  "pool_health": {
+    "enabled": true,
+    "max_emails_per_brand": 3,
+    "prune_dead_sites": true,
+    "prune_duplicates": true,
+    "min_followers": 0
   },
   "emails": {
     "max_emails_per_brand": 3,

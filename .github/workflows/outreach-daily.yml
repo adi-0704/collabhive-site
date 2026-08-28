@@ -16,6 +16,7 @@ on:
           - all
           - daily
           - automation
+          - growth
           - sales
           - seo
           - verify
@@ -59,6 +60,8 @@ jobs:
           python src/run.py "$MODE" || echo "Run finished with warnings (email may be disabled if secrets unset)"
           # Always (re)generate SEO pages so the site stays fresh every day.
           python src/run.py seo || echo "SEO step skipped"
+          # Always generate the sitemap/robots (reach) + pipeline + DNC + pool health.
+          python src/run.py growth || echo "Growth step skipped"
 
       - name: Commit report + state + SEO
         run: |

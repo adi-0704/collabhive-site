@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adi-0704.github.io/collabhive-site/seo-pages/sitemap.xml

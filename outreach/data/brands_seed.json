@@ -140,20 +140,6 @@
     "has_email": true
   },
   {
-    "name": "Bewakoof",
-    "niche": "Fashion & Apparel",
-    "city": "Mumbai",
-    "website": "https://www.bewakoof.com",
-    "email": "",
-    "emails": [
-      "careers@bewakoof.com",
-      "care@bewakoof.com",
-      "u003ecareers@bewakoof.com"
-    ],
-    "source": "seed",
-    "has_email": true
-  },
-  {
     "name": "The House of Rare",
     "niche": "Fashion & Apparel",
     "city": "Bengaluru",

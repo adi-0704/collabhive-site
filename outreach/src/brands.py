@@ -203,6 +203,13 @@ def select_targets(cfg: dict, state: dict, limit: int) -> tuple[list[dict], dict
     sent = set(state.get("emailed_domains", []))
     sent_emails = set(state.get("emailed_emails", []))
     bounced = set(state.get("bounced_emails", []))
+    # Do-not-contact registry (opt-outs) must never be emailed again.
+    dnc = set()
+    try:
+        from .growth import dnc_set
+        dnc = dnc_set(cfg)
+    except Exception:
+        dnc = set()
 
     candidates: list[dict] = []
     for b in pool:
@@ -214,6 +221,8 @@ def select_targets(cfg: dict, state: dict, limit: int) -> tuple[list[dict], dict
         if not email or email in sent_emails:
             continue
         if email in bounced:
+            continue
+        if email in dnc:
             continue
         if not _is_good(email, domain):
             continue

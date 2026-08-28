@@ -17,15 +17,60 @@ from pathlib import Path
 
 from .common import ROOT, env, load_config, log, gmail_credentials
 
+LAST_SUBJECT = {"value": ""}
+
+
+def _pick_subject(cfg: dict, brand: dict) -> str:
+    """Choose a subject line: A/B rotate from config, or winner slot, or default."""
+    smtp = cfg["smtp"]
+    if not smtp.get("ab_rotate", True):
+        return smtp.get("subject_line")
+    variants = smtp.get("subject_lines_ab") or []
+    if not variants:
+        return smtp.get("subject_line")
+    winner = smtp.get("ab_winner_field") and brand.get(smtp.get("ab_winner_field"))
+    if winner:
+        return winner
+    # Deterministic rotation so the same brand keeps the same variant.
+    seed = sum(ord(c) for c in (brand.get("name") or brand.get("brand") or ""))
+    return variants[seed % len(variants)]
+
+
+def _opener(ctx: dict, brand: dict, cfg: dict) -> str:
+    """Dynamic first line that personalizes the email (not generic)."""
+    if not cfg["smtp"].get("dynamic_opener", True):
+        return ""
+    parts = []
+    city = brand.get("city")
+    niche = brand.get("niche")
+    fb = brand.get("followers")
+    if niche:
+        parts.append(f"we know {niche} creators are a great fit")
+    if city:
+        parts.append(f"especially in {city}")
+    if fb:
+        try:
+            num = int(str(fb).replace(",", "").replace("K", "000").replace("k", "000").replace("M", "000000"))
+            if num >= 1000:
+                parts.append(f"with audiences of {num//1000}K+ followers")
+        except ValueError:
+            pass
+    if not parts:
+        return ""
+    return " ".join(parts) + ". "
+    # opener rendered separately (see send_one)
+
 
 def _render(subject_template: str, txt: str, html: str, brand: dict, cfg: dict) -> tuple[str, str, str]:
     p = cfg["profile"]
     name = brand.get("name") or brand.get("brand") or "Business"
     first = name.split()[0] if name else "there"
+    opener = _opener({}, brand, cfg)
     ctx = {
         "name": first,
         "brand": name,
         "niche": brand.get("niche", ""),
+        "opener": opener,
         "company": p["company"],
         "site_url": p["site_url"],
         "apply_url": p["apply_url"],
@@ -59,6 +104,7 @@ def load_templates(cfg: dict) -> tuple[str, str, str]:
 
 def send_one(smtp, brand: dict, cfg: dict) -> bool:
     subject_template, txt_tpl, html_tpl = load_templates(cfg)
+    subject_template = _pick_subject(cfg, brand)
     subject, body_txt, body_html = _render(subject_template, txt_tpl, html_tpl, brand, cfg)
 
     to_addr = brand.get("email") or (brand.get("emails") or [""])[0]
@@ -76,6 +122,7 @@ def send_one(smtp, brand: dict, cfg: dict) -> bool:
 
     try:
         smtp.sendmail(from_addr, [to_addr], msg.as_string())
+        LAST_SUBJECT["value"] = subject
         return True
     except (smtplib.SMTPServerDisconnected, smtplib.SMTPAuthenticationError, ConnectionError, OSError):
         # Connection-level problems: let the caller decide (reconnect/retry).
@@ -164,7 +211,7 @@ def daily_run(cfg: dict) -> dict:
             throttle.record(ok=not hard_fail)
             if ok:
                 sent += 1
-                state = record_sent(state, brand)
+                state = record_sent(state, brand, LAST_SUBJECT.get("value", ""))
                 log(f"  SENT {brand.get('email')} <- {brand.get('name')} [{brand.get('niche')}]")
                 save_json(state_file, state)
             else:
@@ -230,7 +277,7 @@ def send_safe(body_smtp, brand: dict, cfg: dict, user, password, ctx) -> tuple[b
     return False, False
 
 
-def record_sent(state: dict, brand: dict) -> dict:
+def record_sent(state: dict, brand: dict, subject: str = "") -> dict:
     from datetime import datetime, timezone
     email = (brand.get("email") or "").lower()
     if email:
@@ -250,5 +297,6 @@ def record_sent(state: dict, brand: dict) -> dict:
         "name": brand.get("name"),
         "niche": brand.get("niche"),
         "city": brand.get("city"),
+        "subject": subject,
     })
     return state

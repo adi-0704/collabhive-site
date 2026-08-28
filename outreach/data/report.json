@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T16:20:02.974880+00:00",
+  "generated_at": "2026-08-28T17:00:59.899451+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -12,9 +12,9 @@
   "summary": {
     "total_sent": 18,
     "unique_brands_emailed": 17,
-    "brands_in_pool": 42,
-    "brands_with_email": 22,
-    "remaining_candidates": 5,
+    "brands_in_pool": 41,
+    "brands_with_email": 21,
+    "remaining_candidates": 4,
     "sent_today": 18,
     "sent_week": 18,
     "day_streak": 18,
@@ -37,7 +37,7 @@
   },
   "pool_by_niche": {
     "Food & Beverage": 10,
-    "Fashion & Apparel": 9,
+    "Fashion & Apparel": 8,
     "Beauty & Cosmetics": 10,
     "Fitness & Wellness": 6,
     "Home & Decor": 3,
@@ -278,7 +278,101 @@
         ]
       ]
     ],
-    "shortlist_count": 5
+    "shortlist_count": 5,
+    "hot_briefs": 0,
+    "briefs_by_tier": {
+      "hot": 0,
+      "warm": 2,
+      "cold": 3
+    },
+    "quotes_sent": 0,
+    "recent_quotes": [],
+    "lead_tiers": [
+      [
+        "FitKart",
+        "warm",
+        0.5
+      ],
+      [
+        "UrbanBrew",
+        "warm",
+        0.42
+      ],
+      [
+        "Glowly",
+        "cold",
+        0.24
+      ],
+      [
+        "StyleNest",
+        "cold",
+        0.16
+      ],
+      [
+        "Travella",
+        "cold",
+        0.144
+      ]
+    ]
   },
-  "last_run": "2026-08-28T16:19:49.966834+00:00"
+  "verification": {
+    "ok": true,
+    "checked_at": "2026-08-28T16:32:59.982330+00:00",
+    "lookback_hours": 96,
+    "recorded_sends": 17,
+    "confirmed_in_sent": 17,
+    "unconfirmed": 0,
+    "delivery_rate_pct": 100.0,
+    "bounces": 2,
+    "bounce_emails": [
+      "files@quinn-live.bundle.js",
+      "careers@bewakoof.com"
+    ],
+    "unconfirmed_emails": [],
+    "flagged": false
+  },
+  "pipeline_dataset": {
+    "counts": {
+      "brief": 5
+    },
+    "rows": [
+      {
+        "brand": "UrbanBrew",
+        "niche": "Food & Beverage",
+        "budget": "15000",
+        "stage": "brief",
+        "priority": 0
+      },
+      {
+        "brand": "FitKart",
+        "niche": "Fitness & Wellness",
+        "budget": "25000",
+        "stage": "brief",
+        "priority": 0
+      },
+      {
+        "brand": "Glowly",
+        "niche": "Beauty & Cosmetics",
+        "budget": "30000",
+        "stage": "brief",
+        "priority": 0
+      },
+      {
+        "brand": "StyleNest",
+        "niche": "Fashion & Apparel",
+        "budget": "20000",
+        "stage": "brief",
+        "priority": 0
+      },
+      {
+        "brand": "Travella",
+        "niche": "Travel & Hospitality",
+        "budget": "18000",
+        "stage": "brief",
+        "priority": 0
+      }
+    ]
+  },
+  "dnc_count": 0,
+  "last_run": "2026-08-28T15:37:58.511634+00:00"
 }

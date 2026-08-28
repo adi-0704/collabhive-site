@@ -168,6 +168,18 @@
       </div>
     </div>
 
+    <div class="grid" style="margin-top:16px;">
+      <div class="card">
+        <div class="head"><h3>Campaign pipeline</h3><span class="pill pill-off" id="s-pipeline-pill">—</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Brand</th><th>Niche</th><th>Budget</th><th>Stage</th><th>Priority</th></tr></thead>
+            <tbody id="pipeline"><tr><td colspan="5"><div class="empty">No pipeline data.</div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
     <div class="mk">CollabHive &middot; Outreach automation &middot; curated pool + website email extraction</div>
   </div>
 
@@ -275,6 +287,25 @@
         bbody.innerHTML = bounces.length
           ? bounces.map(function (e) { return '<tr><td>' + e + '</td></tr>'; }).join('')
           : '<tr><td><div class="empty">No bounces.</div></td></tr>';
+
+        // Campaign pipeline
+        var pipe = d.pipeline_dataset || {};
+        var pcounts = pipe.counts || {};
+        var proc = pipe.rows || [];
+        var ppill = document.getElementById('s-pipeline-pill');
+        var totalP = Object.keys(pcounts).length;
+        if (totalP) { ppill.textContent = totalP + ' stages active'; ppill.className = 'pill pill-warn'; }
+        else { ppill.textContent = 'Warming up'; ppill.className = 'pill pill-off'; }
+        var pbody = document.getElementById('pipeline');
+        if (!proc.length) {
+          pbody.innerHTML = '<tr><td colspan="5"><div class="empty">No pipeline data.</div></td></tr>';
+        } else {
+          pbody.innerHTML = proc.map(function (r) {
+            return '<tr><td>' + (r.brand || '—') + '</td><td>' + (r.niche || '—') +
+              '</td><td>' + (r.budget || '—') + '</td><td><span class="tag">' + (r.stage || 'brief') +
+              '</span></td><td>' + (r.priority != null ? r.priority : '—') + '</td></tr>';
+          }).join('');
+        }
 
         // Niche progress comparison (sent vs pool)
         renderNicheProgress(d);

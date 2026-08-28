@@ -83,9 +83,28 @@ def gather_report(cfg: dict) -> dict:
         "recent_sends": sent_log[-20:][::-1],
         "sales": _gather_sales(cfg),
         "verification": _gather_verification(cfg),
+        "pipeline_dataset": _gather_pipeline(cfg),
+        "dnc_count": _gather_dnc(cfg),
         "last_run": state.get("last_run", ""),
     }
     return report
+
+
+def _gather_pipeline(cfg: dict) -> dict:
+    from src.common import load_json
+    rows = load_json(ROOT / cfg.get("pipeline", {}).get("state_file", "data/pipeline.json"))
+    rows = rows if isinstance(rows, list) else []
+    counts = {}
+    for r in rows:
+        s = r.get("stage", "brief")
+        counts[s] = counts.get(s, 0) + 1
+    return {"counts": counts, "rows": rows[:20]}
+
+
+def _gather_dnc(cfg: dict) -> int:
+    from src.common import load_json
+    dnc = load_json(ROOT / cfg.get("dnc", {}).get("state_file", "data/dnc.json"))
+    return len(dnc) if isinstance(dnc, list) else 0
 
 
 def _gather_verification(cfg: dict) -> dict:
@@ -192,16 +211,37 @@ def cmd_verify(cfg: dict) -> None:
 
 
 def cmd_automation(cfg: dict) -> None:
-    """Auto-quotes, follow-ups, digest, scoring. Purely automatic."""
+    """Auto-quotes, follow-ups, digest, scoring, pipeline, DNC, pool health, alerts."""
     from src import automation as auto_mod
+    from src import growth as growth_mod
+    scored = auto_mod.score_briefs(cfg)
+    log(f"Scored briefs: {len(scored)} (hot={sum(1 for b in scored if b.get('tier')=='hot')})")
+    dnc = growth_mod.scan_replies_for_dnc(cfg)
+    log(f"DNC scan: {dnc}")
+    pruned = growth_mod.prune_brand_pool(cfg)
+    log(f"Pool prune: {pruned}")
+    pipeline = growth_mod.pipeline_status(cfg)
+    log(f"Pipeline: {len(pipeline)} brands")
     quotes = auto_mod.send_auto_quotes(cfg)
     log(f"Auto-quotes: {quotes}")
     followups = auto_mod.send_followups(cfg)
     log(f"Follow-ups: {followups}")
-    scored = auto_mod.score_briefs(cfg)
-    log(f"Scored briefs: {len(scored)} (hot={sum(1 for b in scored if b.get('tier')=='hot')})")
+    alert = auto_mod.alert_hot_leads(cfg)
+    log(f"Hot-lead alert: {alert}")
     digest = auto_mod.send_weekly_digest(cfg)
     log(f"Weekly digest: {digest}")
+
+
+def cmd_growth(cfg: dict) -> None:
+    from src import growth as growth_mod
+    sitemap = growth_mod.generate_sitemap(cfg)
+    log(f"Sitemap: {sitemap}")
+    pruned = growth_mod.prune_brand_pool(cfg)
+    log(f"Pool prune: {pruned}")
+    pipeline = growth_mod.pipeline_status(cfg)
+    log(f"Pipeline: {len(pipeline)} brands")
+    ab = growth_mod.ab_winner(cfg)
+    log(f"A/B subject winner: {ab}")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -222,11 +262,14 @@ def main(argv: list[str] | None = None) -> int:
         cmd_verify(cfg)
     elif mode == "automation":
         cmd_automation(cfg)
+    elif mode == "growth":
+        cmd_growth(cfg)
     elif mode == "all":
         cmd_enrich(cfg)
         cmd_daily(cfg)
         cmd_sales(cfg)
         cmd_automation(cfg)
+        cmd_growth(cfg)
         cmd_seo(cfg)
         cmd_verify(cfg)
         cmd_report(cfg)

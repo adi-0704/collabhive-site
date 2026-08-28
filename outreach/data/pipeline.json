@@ -1,0 +1,37 @@
+[
+  {
+    "brand": "UrbanBrew",
+    "niche": "Food & Beverage",
+    "budget": "15000",
+    "stage": "brief",
+    "priority": 0
+  },
+  {
+    "brand": "FitKart",
+    "niche": "Fitness & Wellness",
+    "budget": "25000",
+    "stage": "brief",
+    "priority": 0
+  },
+  {
+    "brand": "Glowly",
+    "niche": "Beauty & Cosmetics",
+    "budget": "30000",
+    "stage": "brief",
+    "priority": 0
+  },
+  {
+    "brand": "StyleNest",
+    "niche": "Fashion & Apparel",
+    "budget": "20000",
+    "stage": "brief",
+    "priority": 0
+  },
+  {
+    "brand": "Travella",
+    "niche": "Travel & Hospitality",
+    "budget": "18000",
+    "stage": "brief",
+    "priority": 0
+  }
+]

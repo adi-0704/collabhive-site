@@ -264,6 +264,10 @@ def send_followups(cfg: dict) -> dict:
     fu_state = load_json(fu_file)
     fu_state = fu_state if isinstance(fu_state, dict) else {}
 
+    # Skip anyone on the Do-Not-Contact registry.
+    from .growth import dnc_set
+    dnc = dnc_set(cfg)
+
     now = datetime.now(timezone.utc)
     after_days = fcfg.get("enabled_after_days", 3)
     max_fu = fcfg.get("max_followups", 2)
@@ -278,6 +282,8 @@ def send_followups(cfg: dict) -> dict:
     for entry in sent_log:
         email = (entry.get("email") or "").lower()
         if not email or email in replied:
+            continue
+        if email in dnc:
             continue
         try:
             ts = datetime.fromisoformat(entry.get("ts", ""))
@@ -339,6 +345,56 @@ def _parse_ts(value: str):
         return datetime.fromisoformat(value)
     except (ValueError, TypeError):
         return None
+
+
+# ---------- hot-lead alert ----------
+def alert_hot_leads(cfg: dict) -> dict:
+    """Email the owner when a hot lead (interested/negotiating) lands, throttled."""
+    acfg = cfg.get("alerts", {})
+    if not acfg.get("enabled", True) or not acfg.get("on_hot_lead", True):
+        return {"alerted": 0, "skipped": "disabled"}
+    password = env("OUTREACH_EMAIL_PASS", "")
+    if not password:
+        return {"alerted": 0, "skipped": "no_password"}
+    to = acfg.get("to_email", cfg["profile"]["contact_email"])
+
+    # Throttle: only alert once per cooldown window.
+    last_file = ROOT / acfg.get("last_sent_file", "data/alert_last.json")
+    last = load_json(last_file)
+    last = last if isinstance(last, dict) else {}
+    cooldown = acfg.get("cooldown_minutes", 120)
+    if last.get("ts"):
+        try:
+            prev = datetime.fromisoformat(last["ts"])
+            if (datetime.now(timezone.utc) - prev).total_seconds() < cooldown * 60:
+                return {"alerted": 0, "skipped": "cooldown"}
+        except (ValueError, TypeError):
+            pass
+
+    closing = load_json(ROOT / cfg["sales"]["closing_file"])
+    closing = closing if isinstance(closing, list) else []
+    hot = [c for c in closing if c.get("status") in ("interested", "negotiating")]
+    # Only new ones since the last alert.
+    if last.get("seen") and isinstance(last["seen"], list):
+        seen = set(last["seen"])
+        hot = [c for c in hot if (c.get("email") or "").lower() not in seen]
+    if not hot:
+        return {"alerted": 0, "skipped": "no_new_hot"}
+
+    lines = ["You have %d hot lead(s) ready to close:" % len(hot), ""]
+    for c in hot:
+        lines.append("• %s — [%s] — %s" % (c.get("email"), c.get("status"), (c.get("snippet") or "")[:120]))
+    body = "\n".join(lines)
+    subject = "CollabHive: %d hot lead(s) ready" % len(hot)
+    try:
+        _send_mime(cfg, cfg["smtp"]["username"], password, to, subject, body, body)
+        save_json(last_file, {"ts": datetime.now(timezone.utc).isoformat(),
+                              "seen": [c.get("email") for c in closing]})
+        log(f"Hot-lead alert sent to {to} ({len(hot)} leads)")
+        return {"alerted": len(hot), "to": to}
+    except Exception as exc:
+        log(f"Alert FAIL: {exc}")
+        return {"alerted": 0, "error": str(exc)}
 
 
 # ---------- weekly digest ----------
