@@ -1,0 +1,325 @@
+{
+  "generated_at": "2026-08-28T15:43:24.830327+00:00",
+  "shortlist": [
+    {
+      "brand": "UrbanBrew",
+      "niche": "Food & Beverage",
+      "city": "Delhi",
+      "budget": "15000",
+      "goal": "Footfall + awareness",
+      "note": "New cafe in Delhi NCR; want 4-6 local creators to post reels over the next 2 weeks.",
+      "matches": [
+        {
+          "name": "Aarav Mehra",
+          "handle": "@aarav.eats",
+          "niche": "Food & Beverage",
+          "city": "Delhi",
+          "followers": 24500,
+          "rate": 3500,
+          "score": 0.942
+        },
+        {
+          "name": "Isha Verma",
+          "handle": "@isha.home",
+          "niche": "Home & Decor",
+          "city": "Delhi",
+          "followers": 9600,
+          "rate": 1800,
+          "score": 0.886
+        },
+        {
+          "name": "Naina Joshi",
+          "handle": "@naina.creates",
+          "niche": "Food & Beverage",
+          "city": "Delhi",
+          "followers": 7200,
+          "rate": 1500,
+          "score": 0.877
+        },
+        {
+          "name": "Sanya Gupta",
+          "handle": "@sanya.glow",
+          "niche": "Beauty & Cosmetics",
+          "city": "Bengaluru",
+          "followers": 32100,
+          "rate": 5000,
+          "score": 0.67
+        },
+        {
+          "name": "Dev Shah",
+          "handle": "@dev.discovers",
+          "niche": "Tech & Startups",
+          "city": "Bengaluru",
+          "followers": 41000,
+          "rate": 6500,
+          "score": 0.665
+        },
+        {
+          "name": "Kabir Malhotra",
+          "handle": "@kabir.fits",
+          "niche": "Fitness & Wellness",
+          "city": "Mumbai",
+          "followers": 15400,
+          "rate": 3000,
+          "score": 0.658
+        }
+      ]
+    },
+    {
+      "brand": "FitKart",
+      "niche": "Fitness & Wellness",
+      "city": "Mumbai",
+      "budget": "25000",
+      "goal": "Product launch reach",
+      "note": "Launching plant-protein range; need 5 fitness creators for video reviews.",
+      "matches": [
+        {
+          "name": "Kabir Malhotra",
+          "handle": "@kabir.fits",
+          "niche": "Fitness & Wellness",
+          "city": "Mumbai",
+          "followers": 15400,
+          "rate": 3000,
+          "score": 0.908
+        },
+        {
+          "name": "Dev Shah",
+          "handle": "@dev.discovers",
+          "niche": "Tech & Startups",
+          "city": "Bengaluru",
+          "followers": 41000,
+          "rate": 6500,
+          "score": 0.742
+        },
+        {
+          "name": "Sanya Gupta",
+          "handle": "@sanya.glow",
+          "niche": "Beauty & Cosmetics",
+          "city": "Bengaluru",
+          "followers": 32100,
+          "rate": 5000,
+          "score": 0.72
+        },
+        {
+          "name": "Aarav Mehra",
+          "handle": "@aarav.eats",
+          "niche": "Food & Beverage",
+          "city": "Delhi",
+          "followers": 24500,
+          "rate": 3500,
+          "score": 0.692
+        },
+        {
+          "name": "Meher Kapoor",
+          "handle": "@meher.styles",
+          "niche": "Fashion & Apparel",
+          "city": "Gurugram",
+          "followers": 18200,
+          "rate": 4000,
+          "score": 0.668
+        },
+        {
+          "name": "Rohan Bansal",
+          "handle": "@rohan.travels",
+          "niche": "Travel & Hospitality",
+          "city": "Goa",
+          "followers": 12800,
+          "rate": 2500,
+          "score": 0.648
+        }
+      ]
+    },
+    {
+      "brand": "Glowly",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bengaluru",
+      "budget": "30000",
+      "goal": "Skincare awareness",
+      "note": "New serum; want 6 beauty creators with high engagement (not just followers).",
+      "matches": [
+        {
+          "name": "Dev Shah",
+          "handle": "@dev.discovers",
+          "niche": "Tech & Startups",
+          "city": "Bengaluru",
+          "followers": 41000,
+          "rate": 6500,
+          "score": 1.0
+        },
+        {
+          "name": "Sanya Gupta",
+          "handle": "@sanya.glow",
+          "niche": "Beauty & Cosmetics",
+          "city": "Bengaluru",
+          "followers": 32100,
+          "rate": 5000,
+          "score": 0.97
+        },
+        {
+          "name": "Aarav Mehra",
+          "handle": "@aarav.eats",
+          "niche": "Food & Beverage",
+          "city": "Delhi",
+          "followers": 24500,
+          "rate": 3500,
+          "score": 0.692
+        },
+        {
+          "name": "Meher Kapoor",
+          "handle": "@meher.styles",
+          "niche": "Fashion & Apparel",
+          "city": "Gurugram",
+          "followers": 18200,
+          "rate": 4000,
+          "score": 0.668
+        },
+        {
+          "name": "Kabir Malhotra",
+          "handle": "@kabir.fits",
+          "niche": "Fitness & Wellness",
+          "city": "Mumbai",
+          "followers": 15400,
+          "rate": 3000,
+          "score": 0.658
+        },
+        {
+          "name": "Rohan Bansal",
+          "handle": "@rohan.travels",
+          "niche": "Travel & Hospitality",
+          "city": "Goa",
+          "followers": 12800,
+          "rate": 2500,
+          "score": 0.648
+        }
+      ]
+    },
+    {
+      "brand": "StyleNest",
+      "niche": "Fashion & Apparel",
+      "city": "Jaipur",
+      "budget": "20000",
+      "goal": "Festive collection",
+      "note": "Needs fashion influencers for the festive drop; 4 posts + stories.",
+      "matches": [
+        {
+          "name": "Sanya Gupta",
+          "handle": "@sanya.glow",
+          "niche": "Beauty & Cosmetics",
+          "city": "Bengaluru",
+          "followers": 32100,
+          "rate": 5000,
+          "score": 0.72
+        },
+        {
+          "name": "Dev Shah",
+          "handle": "@dev.discovers",
+          "niche": "Tech & Startups",
+          "city": "Bengaluru",
+          "followers": 41000,
+          "rate": 6500,
+          "score": 0.704
+        },
+        {
+          "name": "Aarav Mehra",
+          "handle": "@aarav.eats",
+          "niche": "Food & Beverage",
+          "city": "Delhi",
+          "followers": 24500,
+          "rate": 3500,
+          "score": 0.692
+        },
+        {
+          "name": "Meher Kapoor",
+          "handle": "@meher.styles",
+          "niche": "Fashion & Apparel",
+          "city": "Gurugram",
+          "followers": 18200,
+          "rate": 4000,
+          "score": 0.668
+        },
+        {
+          "name": "Kabir Malhotra",
+          "handle": "@kabir.fits",
+          "niche": "Fitness & Wellness",
+          "city": "Mumbai",
+          "followers": 15400,
+          "rate": 3000,
+          "score": 0.658
+        },
+        {
+          "name": "Rohan Bansal",
+          "handle": "@rohan.travels",
+          "niche": "Travel & Hospitality",
+          "city": "Goa",
+          "followers": 12800,
+          "rate": 2500,
+          "score": 0.648
+        }
+      ]
+    },
+    {
+      "brand": "Travella",
+      "niche": "Travel & Hospitality",
+      "city": "Goa",
+      "budget": "18000",
+      "goal": "Homestay bookings",
+      "note": "Boutique homestay; 3 travel creators for a weekend content trip.",
+      "matches": [
+        {
+          "name": "Rohan Bansal",
+          "handle": "@rohan.travels",
+          "niche": "Travel & Hospitality",
+          "city": "Goa",
+          "followers": 12800,
+          "rate": 2500,
+          "score": 0.898
+        },
+        {
+          "name": "Sanya Gupta",
+          "handle": "@sanya.glow",
+          "niche": "Beauty & Cosmetics",
+          "city": "Bengaluru",
+          "followers": 32100,
+          "rate": 5000,
+          "score": 0.7
+        },
+        {
+          "name": "Aarav Mehra",
+          "handle": "@aarav.eats",
+          "niche": "Food & Beverage",
+          "city": "Delhi",
+          "followers": 24500,
+          "rate": 3500,
+          "score": 0.692
+        },
+        {
+          "name": "Dev Shah",
+          "handle": "@dev.discovers",
+          "niche": "Tech & Startups",
+          "city": "Bengaluru",
+          "followers": 41000,
+          "rate": 6500,
+          "score": 0.688
+        },
+        {
+          "name": "Meher Kapoor",
+          "handle": "@meher.styles",
+          "niche": "Fashion & Apparel",
+          "city": "Gurugram",
+          "followers": 18200,
+          "rate": 4000,
+          "score": 0.668
+        },
+        {
+          "name": "Kabir Malhotra",
+          "handle": "@kabir.fits",
+          "niche": "Fitness & Wellness",
+          "city": "Mumbai",
+          "followers": 15400,
+          "rate": 3000,
+          "score": 0.658
+        }
+      ]
+    }
+  ]
+}

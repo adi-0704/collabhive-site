@@ -46,6 +46,30 @@
     "dedupe_key": "email",
     "niche_rotation_days": 7
   },
+  "sales": {
+    "imap_host": "imap.gmail.com",
+    "imap_port": 993,
+    "reply_lookback_hours": 48,
+    "closing_file": "data/closing_queue.json",
+    "shortlist_file": "data/shortlist.json",
+    "brand_briefs_file": "data/brand_briefs.json",
+    "creator_pool_file": "data/creators_pool.json",
+    "applicant_sheet_id": "1fnINFVDChyeK0VoihUeTHY_vG9V1s-4dkHMsxGdzYGY",
+    "commission_pct": 10,
+    "max_shortlist_per_brief": 6,
+    "reply_keywords": {
+      "interested": ["interested", "let's talk", "lets talk", "sounds good", "would love", "yes", "keen", "share more", "pricing", "collaborate", "collab"],
+      "declined": ["not interested", "no thanks", "not now", "skip", "don't have budget", "unsubscribe", "remove", "stop"],
+      "negotiating": ["rate", "budget", "how much", "price", "discount", "commission", "fee"]
+    }
+  },
+  "seo": {
+    "enabled": true,
+    "output_dir": "../seo-pages",
+    "keywords_per_page": 6,
+    "site_url": "https://adi-0704.github.io/collabhive-site/",
+    "index_url": "https://adi-0704.github.io/collabhive-site/seo-pages/index.html"
+  },
   "niches": {
     "market": "India",
     "categories": [

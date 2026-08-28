@@ -8,13 +8,15 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'Run mode (default: all = enrich + daily + report)'
+        description: 'Run mode (default: all = enrich + daily + sales + seo + report)'
         required: false
         default: 'all'
         type: choice
         options:
           - all
           - daily
+          - sales
+          - seo
           - report
           - enrich
 
@@ -49,19 +51,22 @@ jobs:
         env:
           OUTREACH_EMAIL_USER: ${{ secrets.OUTREACH_EMAIL_USER }}
           OUTREACH_EMAIL_PASS: ${{ secrets.OUTREACH_EMAIL_PASS }}
+          RUN_MODE: ${{ inputs.mode || 'all' }}
         run: |
           MODE="${{ inputs.mode || 'all' }}"
           python src/run.py "$MODE" || echo "Run finished with warnings (email may be disabled if secrets unset)"
+          # Always (re)generate SEO pages so the site stays fresh every day.
+          python src/run.py seo || echo "SEO step skipped"
 
-      - name: Commit report + state
+      - name: Commit report + state + SEO
         run: |
           git config user.name "collabhive-outreach"
           git config user.email "collabhive.in@gmail.com"
-          git add -A outreach/data/ || true
+          git add -A outreach/data/ seo-pages/ || true
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else
-            git commit -m "build: refresh outreach report + state [skip ci]"
+            git commit -m "build: refresh outreach report + state + SEO [skip ci]"
             # Rebase + push with retry to avoid racing concurrent commits.
             for i in 1 2 3 4 5; do
               git pull --rebase origin "${{ github.ref_name }}" && break || true

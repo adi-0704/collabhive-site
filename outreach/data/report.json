@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T15:37:58.512420+00:00",
+  "generated_at": "2026-08-28T15:46:17.670934+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -9,19 +9,19 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 18,
-    "unique_brands_emailed": 17,
+    "total_sent": 16,
+    "unique_brands_emailed": 15,
     "brands_in_pool": 42,
     "brands_with_email": 22,
-    "remaining_candidates": 5,
-    "sent_today": 18,
-    "sent_week": 18,
-    "day_streak": 18,
+    "remaining_candidates": 7,
+    "sent_today": 16,
+    "sent_week": 16,
+    "day_streak": 16,
     "daily_budget": 18
   },
   "by_niche": {
     "Fashion & Apparel": 6,
-    "Beauty & Cosmetics": 5,
+    "Beauty & Cosmetics": 3,
     "Food & Beverage": 6,
     "Fitness & Wellness": 1
   },
@@ -32,7 +32,7 @@
     "Gurugram": 6,
     "Hyderabad": 1,
     "Kolkata": 1,
-    "Mumbai": 4
+    "Mumbai": 2
   },
   "pool_by_niche": {
     "Food & Beverage": 10,
@@ -44,20 +44,6 @@
     "Tech & Startups": 2
   },
   "recent_sends": [
-    {
-      "ts": "2026-08-28T04:16:20.616885+00:00",
-      "email": "help@beminimalist.co",
-      "name": "Minimalist",
-      "niche": "Beauty & Cosmetics",
-      "city": "Mumbai"
-    },
-    {
-      "ts": "2026-08-28T04:14:03.127940+00:00",
-      "email": "hello@plumgoodness.com",
-      "name": "Plum",
-      "niche": "Beauty & Cosmetics",
-      "city": "Mumbai"
-    },
     {
       "ts": "2026-08-28T04:03:36.755181+00:00",
       "email": "careers@bewakoof.com",
@@ -171,5 +157,68 @@
       "city": "Bengaluru"
     }
   ],
-  "last_run": "2026-08-28T15:37:58.511634+00:00"
+  "sales": {
+    "closing_count": 0,
+    "closing_by_status": {},
+    "recent_closing": [],
+    "shortlist": [
+      [
+        "UrbanBrew",
+        "Food & Beverage",
+        [
+          "@aarav.eats",
+          "@isha.home",
+          "@naina.creates",
+          "@sanya.glow",
+          "@dev.discovers"
+        ]
+      ],
+      [
+        "FitKart",
+        "Fitness & Wellness",
+        [
+          "@kabir.fits",
+          "@dev.discovers",
+          "@sanya.glow",
+          "@aarav.eats",
+          "@meher.styles"
+        ]
+      ],
+      [
+        "Glowly",
+        "Beauty & Cosmetics",
+        [
+          "@dev.discovers",
+          "@sanya.glow",
+          "@aarav.eats",
+          "@meher.styles",
+          "@kabir.fits"
+        ]
+      ],
+      [
+        "StyleNest",
+        "Fashion & Apparel",
+        [
+          "@sanya.glow",
+          "@dev.discovers",
+          "@aarav.eats",
+          "@meher.styles",
+          "@kabir.fits"
+        ]
+      ],
+      [
+        "Travella",
+        "Travel & Hospitality",
+        [
+          "@rohan.travels",
+          "@sanya.glow",
+          "@aarav.eats",
+          "@dev.discovers",
+          "@meher.styles"
+        ]
+      ]
+    ],
+    "shortlist_count": 5
+  },
+  "last_run": "2026-08-28T04:05:36.881753+00:00"
 }

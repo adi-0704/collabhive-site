@@ -16,8 +16,12 @@ tier, GitHub Pages free hosting, Gmail SMTP with your app password.
 2. **Extracts emails** from each brand's website (free).
 3. **Sends** up to `daily_limit` (default 18) personalized emails, niche-
    rotated across the week, with randomized delays + circuit breaker.
-4. **Logs** every send and writes `data/report.json`.
-5. **Pushes** the report back to the repo so the dashboard updates.
+4. **Sales & reach** (automatic): scans Gmail replies → builds a Closing Queue of
+   hot leads; auto-matches brand briefs to best-fit creators → daily shortlist;
+   generates programmatic niche×city SEO pages.
+5. **Logs** every send and writes `data/report.json`.
+6. **Pushes** the report + SEO pages back to the repo so the site + dashboard
+   update.
 
 You never have to touch it. You just monitor.
 
@@ -79,6 +83,18 @@ Repo → **Actions** → "Outreach Daily Run" → **Run workflow** (mode `all`).
 - `smtp.min/max_delay_seconds` → randomized send spacing (anti-spam).
 - `niches.categories` → niches, keywords, cities. Rotates daily.
 - `profile.site_url` / `apply_url` → links inside every email.
+- `sales.*` → reply-triage keywords, closing queue, creator pool, briefs, commission.
+- `seo.*` → programmatic page generation.
+
+## Sales & reach automations
+- **Reply triage**: `python src/run.py sales` reads Gmail IMAP inbox, classifies
+  replies (interested / negotiating / declined) and fills the Closing Queue in
+  `data/closing_queue.json`. Uses your Gmail app password via IMAP.
+- **Auto-match**: reads `data/brand_briefs.json` ↔ `data/creators_pool.json`,
+  scores each creator, writes `data/shortlist.json` (best-fit per brief).
+- **Quote builder**: auto-generates campaign quotes with your commission.
+- **SEO pages**: `python src/run.py seo` writes niche×city landing pages to
+  `seo-pages/` (published with the site, committed by the daily run).
 
 ---
 

@@ -134,6 +134,24 @@
       </div>
     </div>
 
+    <div class="grid" style="margin-top:16px;">
+      <div class="card">
+        <div class="head"><h3>Sales pipeline</h3><span class="pill pill-warn" id="s-sales-pill">—</span></div>
+        <div class="kv" id="sales-snap">
+          <div><span>Closing queue (hot leads)</span><b id="sl-close">—</b></div>
+          <div><span>Interested</span><b id="sl-int">—</b></div>
+          <div><span>Negotiating</span><b id="sl-neg">—</b></div>
+          <div><span>Matched shortlists</span><b id="sl-matches">—</b></div>
+        </div>
+        <div class="table-wrap" style="margin-top:16px;">
+          <table>
+            <thead><tr><th>Brand</th><th>Niche</th><th>Best-fit creators</th></tr></thead>
+            <tbody id="shortlist"><tr><td colspan="3"><div class="empty">No matching yet.</div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
     <div class="mk">CollabHive &middot; Outreach automation &middot; curated pool + website email extraction</div>
   </div>
 
@@ -200,6 +218,30 @@
           ? Math.min(100, Math.round((s.unique_brands_emailed / s.brands_with_email) * 100)) : 0;
         document.getElementById('pool-fill').style.width = reach + '%';
         document.getElementById('pool-fill-label').textContent = reach + '% of email pool reached';
+
+        // Sales pipeline
+        var sales = d.sales || {};
+        var byStatus = sales.closing_by_status || {};
+        document.getElementById('sl-close').textContent = fmt(sales.closing_count);
+        document.getElementById('sl-int').textContent = fmt(byStatus.interested || 0);
+        document.getElementById('sl-neg').textContent = fmt(byStatus.negotiating || 0);
+        document.getElementById('sl-matches').textContent = fmt(sales.shortlist_count);
+        var pill = document.getElementById('s-sales-pill');
+        var hot = (byStatus.interested || 0) + (byStatus.negotiating || 0);
+        if (hot > 0) { pill.textContent = hot + ' hot leads'; pill.className = 'pill pill-live'; }
+        else { pill.textContent = 'Warming up'; pill.className = 'pill pill-off'; }
+
+        var shortlist = sales.shortlist || [];
+        var stbody = document.getElementById('shortlist');
+        if (!shortlist.length) {
+          stbody.innerHTML = '<tr><td colspan="3"><div class="empty">No matching yet.</div></td></tr>';
+        } else {
+          stbody.innerHTML = shortlist.map(function (row) {
+            var handles = (row[2] || []).join(', ');
+            return '<tr><td>' + (row[0] || '—') + '</td><td>' + (row[1] || '—') +
+              '</td><td>' + (handles || '—') + '</td></tr>';
+          }).join('');
+        }
 
         // Niche progress comparison (sent vs pool)
         renderNicheProgress(d);

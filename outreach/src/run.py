@@ -82,9 +82,32 @@ def gather_report(cfg: dict) -> dict:
         "by_city": dict(by_city),
         "pool_by_niche": dict(pool_by_niche),
         "recent_sends": sent_log[-20:][::-1],
+        "sales": _gather_sales(cfg),
         "last_run": state.get("last_run", ""),
     }
     return report
+
+
+def _gather_sales(cfg: dict) -> dict:
+    """Read closing queue + shortlist for the dashboard."""
+    from src.common import load_json
+    closing = load_json(ROOT / cfg["sales"]["closing_file"])
+    closing = closing if isinstance(closing, list) else []
+    short = load_json(ROOT / cfg["sales"]["shortlist_file"])
+    short = short if isinstance(short, dict) else {}
+    shortlist = short.get("shortlist", []) if isinstance(short, dict) else []
+    by_status = {}
+    for c in closing:
+        s = c.get("status", "unknown")
+        by_status[s] = by_status.get(s, 0) + 1
+    return {
+        "closing_count": len(closing),
+        "closing_by_status": by_status,
+        "recent_closing": closing[-10:][::-1],
+        "shortlist": [(s.get("brand"), s.get("niche"), [m.get("handle") for m in s.get("matches", [])][:5])
+                      for s in shortlist],
+        "shortlist_count": len(shortlist),
+    }
 
 
 def cmd_enrich(cfg: dict) -> None:
@@ -129,6 +152,21 @@ def cmd_report(cfg: dict) -> None:
     log(f"Report written to data/report.json")
 
 
+def cmd_sales(cfg: dict) -> None:
+    """Reply triage + auto-match + shortlist. Purely automatic."""
+    from src import sales as sales_mod
+    triage = sales_mod.triage_replies(cfg)
+    log(f"Reply triage: {triage}")
+    matched = sales_mod.match_briefs(cfg)
+    log(f"Auto-match: {matched}")
+
+
+def cmd_seo(cfg: dict) -> None:
+    from src import sales as sales_mod
+    res = sales_mod.generate_seo(cfg)
+    log(f"SEO pages: {res}")
+
+
 def main(argv: list[str] | None = None) -> int:
     argv = argv if argv is not None else sys.argv[1:]
     mode = argv[0] if argv else "daily"
@@ -139,9 +177,15 @@ def main(argv: list[str] | None = None) -> int:
         cmd_enrich(cfg)
     elif mode == "report":
         cmd_report(cfg)
+    elif mode == "sales":
+        cmd_sales(cfg)
+    elif mode == "seo":
+        cmd_seo(cfg)
     elif mode == "all":
         cmd_enrich(cfg)
         cmd_daily(cfg)
+        cmd_sales(cfg)
+        cmd_seo(cfg)
         cmd_report(cfg)
     else:
         log(f"Unknown mode: {mode}")
