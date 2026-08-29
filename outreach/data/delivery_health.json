@@ -1,16 +1,21 @@
 {
   "ok": true,
-  "checked_at": "2026-08-28T16:32:59.982330+00:00",
+  "checked_at": "2026-08-29T05:13:34.058660+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 17,
-  "confirmed_in_sent": 17,
-  "unconfirmed": 0,
-  "delivery_rate_pct": 100.0,
-  "bounces": 2,
+  "recorded_sends": 21,
+  "confirmed_in_sent": 18,
+  "unconfirmed": 3,
+  "delivery_rate_pct": 85.7,
+  "bounces": 5,
   "bounce_emails": [
+    "customercare@houseofindya.com",
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com"
   ],
-  "unconfirmed_emails": [],
+  "unconfirmed_emails": [
+    "info@asaya.in",
+    "you@indewild.com",
+    "dokterbacklink@gmail.com"
+  ],
   "flagged": false
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T17:00:59.899451+00:00",
+  "generated_at": "2026-08-29T05:13:34.059834+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -10,19 +10,19 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 18,
-    "unique_brands_emailed": 17,
+    "total_sent": 22,
+    "unique_brands_emailed": 21,
     "brands_in_pool": 41,
     "brands_with_email": 21,
-    "remaining_candidates": 4,
-    "sent_today": 18,
-    "sent_week": 18,
-    "day_streak": 18,
+    "remaining_candidates": 0,
+    "sent_today": 4,
+    "sent_week": 22,
+    "day_streak": 22,
     "daily_budget": 18
   },
   "by_niche": {
     "Fashion & Apparel": 6,
-    "Beauty & Cosmetics": 5,
+    "Beauty & Cosmetics": 9,
     "Food & Beverage": 6,
     "Fitness & Wellness": 1
   },
@@ -33,7 +33,7 @@
     "Gurugram": 6,
     "Hyderabad": 1,
     "Kolkata": 1,
-    "Mumbai": 4
+    "Mumbai": 8
   },
   "pool_by_niche": {
     "Food & Beverage": 10,
@@ -45,6 +45,38 @@
     "Tech & Startups": 2
   },
   "recent_sends": [
+    {
+      "ts": "2026-08-29T05:12:55.947770+00:00",
+      "email": "dokterbacklink@gmail.com",
+      "name": "SunScoop",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Helping SunScoop grow with creators"
+    },
+    {
+      "ts": "2026-08-29T05:09:57.803364+00:00",
+      "email": "you@indewild.com",
+      "name": "indē wild",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Helping indē wild grow with creators"
+    },
+    {
+      "ts": "2026-08-29T05:07:51.662667+00:00",
+      "email": "info@asaya.in",
+      "name": "Asaya",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Asaya: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-08-29T05:04:57.247473+00:00",
+      "email": "hello@sugarcosmetics.com",
+      "name": "SUGAR Cosmetics",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "A creator network for SUGAR Cosmetics — CollabHive"
+    },
     {
       "ts": "2026-08-28T04:16:20.616885+00:00",
       "email": "help@beminimalist.co",
@@ -156,28 +188,28 @@
       "name": "The Indian Garage Co.",
       "niche": "Fashion & Apparel",
       "city": "Bengaluru"
-    },
-    {
-      "ts": "2026-08-28T03:18:28.238324+00:00",
-      "email": "support@thehouseofrare.com",
-      "name": "The House of Rare",
-      "niche": "Fashion & Apparel",
-      "city": "Bengaluru"
-    },
-    {
-      "ts": "2026-08-28T03:16:45.090396+00:00",
-      "email": "grievance@snitch.com",
-      "name": "Snitch",
-      "niche": "Fashion & Apparel",
-      "city": "Bengaluru"
     }
   ],
   "sales": {
-    "closing_count": 6,
+    "closing_count": 8,
     "closing_by_status": {
-      "interested": 6
+      "interested": 8
     },
     "recent_closing": [
+      {
+        "email": "you@indewild.com",
+        "subject": "=?UTF-8?Q?Re:_Helping_ind=C4=93_wild_grow_with_creators?=",
+        "snippet": "----==_mimepart_6a9269c8669e7_25a4cda60815a5 Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable Hello CollabHive, Thanks for reaching out, and we truly appreciate yo= ur interest in collaborating with us =F0=9F=A4=8E Could you please share = all the relevant details with our dedicated team at ambassadors@indewild.= com? They=E2=80=99ll review your request and get b",
+        "status": "interested",
+        "ts": "2026-08-29T05:13:16.067867+00:00"
+      },
+      {
+        "email": "hello@sugarcosmetics.com",
+        "subject": "A creator network for SUGAR Cosmetics =?UTF-8?B?4oCU?= CollabHive",
+        "snippet": "<div dir=3D\"ltr\"><p>Dear CollabHive,</p> <p>Thank you for reaching out and expressing your interest in our brand.</p= > <p>Appreciate the time and effort you've taken to share the details of your= proposal. We have received your information, and our team will review it t= horoughly. If we wish to explore this or require any further details, be as= sured that our team will reach out to you promptly",
+        "status": "interested",
+        "ts": "2026-08-29T05:13:16.067814+00:00"
+      },
       {
         "email": "hello@plumgoodness.com",
         "subject": "A creator network for Plum =?UTF-8?B?4oCU?= CollabHive",
@@ -285,8 +317,44 @@
       "warm": 2,
       "cold": 3
     },
-    "quotes_sent": 0,
-    "recent_quotes": [],
+    "quotes_sent": 5,
+    "recent_quotes": [
+      {
+        "brand": "Travella",
+        "email": "",
+        "total": 28600.0,
+        "ts": "2026-08-29T05:13:17.254825+00:00",
+        "status": "no_contact"
+      },
+      {
+        "brand": "StyleNest",
+        "email": "",
+        "total": 32010.0,
+        "ts": "2026-08-29T05:13:17.254735+00:00",
+        "status": "no_contact"
+      },
+      {
+        "brand": "Glowly",
+        "email": "",
+        "total": 33220.0,
+        "ts": "2026-08-29T05:13:17.254641+00:00",
+        "status": "no_contact"
+      },
+      {
+        "brand": "FitKart",
+        "email": "",
+        "total": 36190.0,
+        "ts": "2026-08-29T05:13:17.254541+00:00",
+        "status": "no_contact"
+      },
+      {
+        "brand": "UrbanBrew",
+        "email": "",
+        "total": 19580.0,
+        "ts": "2026-08-29T05:13:17.254437+00:00",
+        "status": "no_contact"
+      }
+    ],
     "lead_tiers": [
       [
         "FitKart",
@@ -313,66 +381,109 @@
         "cold",
         0.144
       ]
-    ]
+    ],
+    "replied_count": 8,
+    "reply_rate_pct": 38.1
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-08-28T16:32:59.982330+00:00",
+    "checked_at": "2026-08-29T05:13:34.058660+00:00",
     "lookback_hours": 96,
-    "recorded_sends": 17,
-    "confirmed_in_sent": 17,
-    "unconfirmed": 0,
-    "delivery_rate_pct": 100.0,
-    "bounces": 2,
+    "recorded_sends": 21,
+    "confirmed_in_sent": 18,
+    "unconfirmed": 3,
+    "delivery_rate_pct": 85.7,
+    "bounces": 5,
     "bounce_emails": [
+      "customercare@houseofindya.com",
       "files@quinn-live.bundle.js",
       "careers@bewakoof.com"
     ],
-    "unconfirmed_emails": [],
+    "unconfirmed_emails": [
+      "info@asaya.in",
+      "you@indewild.com",
+      "dokterbacklink@gmail.com"
+    ],
     "flagged": false
   },
   "pipeline_dataset": {
     "counts": {
-      "brief": 5
+      "quoted": 5
     },
     "rows": [
       {
         "brand": "UrbanBrew",
         "niche": "Food & Beverage",
         "budget": "15000",
-        "stage": "brief",
+        "stage": "quoted",
         "priority": 0
       },
       {
         "brand": "FitKart",
         "niche": "Fitness & Wellness",
         "budget": "25000",
-        "stage": "brief",
+        "stage": "quoted",
         "priority": 0
       },
       {
         "brand": "Glowly",
         "niche": "Beauty & Cosmetics",
         "budget": "30000",
-        "stage": "brief",
+        "stage": "quoted",
         "priority": 0
       },
       {
         "brand": "StyleNest",
         "niche": "Fashion & Apparel",
         "budget": "20000",
-        "stage": "brief",
+        "stage": "quoted",
         "priority": 0
       },
       {
         "brand": "Travella",
         "niche": "Travel & Hospitality",
         "budget": "18000",
-        "stage": "brief",
+        "stage": "quoted",
         "priority": 0
       }
     ]
   },
+  "onboarding": {
+    "funnel": {
+      "form_views": 2,
+      "creator_submissions": 1,
+      "brand_submissions": 2,
+      "creators_approved": 1,
+      "brand_briefs": 0,
+      "quotes_sent": 0,
+      "creator_conversion_pct": 50.0,
+      "brand_conversion_pct": 100.0,
+      "approve_rate_pct": 100.0,
+      "brief_rate_pct": 0.0,
+      "events_last_24h": 29
+    },
+    "proof": {
+      "creators_joined": 2,
+      "campaigns_run": 0,
+      "alltime_creators": 24,
+      "alltime_briefs": 2,
+      "generated_at": "2026-08-29T05:13:34.061136+00:00"
+    },
+    "referrals": {
+      "total_referrals": 1,
+      "creators_referring": 1,
+      "top": [
+        {
+          "creator": "@aarav",
+          "signups": 1
+        }
+      ]
+    },
+    "cta_winner": {
+      "winner": "",
+      "rows": []
+    }
+  },
   "dnc_count": 0,
-  "last_run": "2026-08-28T15:37:58.511634+00:00"
+  "last_run": "2026-08-29T05:12:55.962248+00:00"
 }

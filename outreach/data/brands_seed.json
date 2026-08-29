@@ -174,18 +174,6 @@
     "has_email": false
   },
   {
-    "name": "FabAlley",
-    "niche": "Fashion & Apparel",
-    "city": "Gurugram",
-    "website": "https://www.faballey.com",
-    "email": "",
-    "emails": [
-      "customercare@houseofindya.com"
-    ],
-    "source": "seed",
-    "has_email": true
-  },
-  {
     "name": "Miraggio",
     "niche": "Fashion & Apparel",
     "city": "Delhi",

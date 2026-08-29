@@ -18,7 +18,11 @@
     "tgb@seventurns.in",
     "careers@bewakoof.com",
     "hello@plumgoodness.com",
-    "help@beminimalist.co"
+    "help@beminimalist.co",
+    "hello@sugarcosmetics.com",
+    "info@asaya.in",
+    "you@indewild.com",
+    "dokterbacklink@gmail.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -38,7 +42,11 @@
     "thegoodbug.com",
     "bewakoof.com",
     "plumgoodness.com",
-    "beminimalist.co"
+    "beminimalist.co",
+    "sugarcosmetics.com",
+    "asaya.in",
+    "indewild.com",
+    "sunscoop.com"
   ],
   "sent_log": [
     {
@@ -166,11 +174,46 @@
       "name": "Minimalist",
       "niche": "Beauty & Cosmetics",
       "city": "Mumbai"
+    },
+    {
+      "ts": "2026-08-29T05:04:57.247473+00:00",
+      "email": "hello@sugarcosmetics.com",
+      "name": "SUGAR Cosmetics",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "A creator network for SUGAR Cosmetics — CollabHive"
+    },
+    {
+      "ts": "2026-08-29T05:07:51.662667+00:00",
+      "email": "info@asaya.in",
+      "name": "Asaya",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Asaya: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-08-29T05:09:57.803364+00:00",
+      "email": "you@indewild.com",
+      "name": "indē wild",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Helping indē wild grow with creators"
+    },
+    {
+      "ts": "2026-08-29T05:12:55.947770+00:00",
+      "email": "dokterbacklink@gmail.com",
+      "name": "SunScoop",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Helping SunScoop grow with creators"
     }
   ],
-  "last_run": "2026-08-28T15:37:58.511634+00:00",
+  "last_run": "2026-08-29T05:12:55.962248+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
-    "careers@bewakoof.com"
+    "careers@bewakoof.com",
+    "customercare@houseofindya.com",
+    "no-reply@accounts.google.com",
+    "cssupport@thehouseofrare.com"
   ]
 }
