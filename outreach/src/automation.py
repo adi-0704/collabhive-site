@@ -24,13 +24,10 @@ def _render_tpl(path_name: str, ctx: dict, subject_tpl: str = "") -> tuple[str, 
     from pathlib import Path
     tdir = ROOT / "templates"
     subject = (subject_tpl or "Your CollabHive proposal").format(**ctx)
-    txt = (tdir / f"{path_name}.txt").read_text(encoding="utf-8")
-    html = (tdir / f"{path_name}.html").read_text(encoding="utf-8")
-    for key in list(ctx):
-        if key != "subject":
-            pass
-    for name in ("txt", "html"):
-        pass
+    txt_file = tdir / f"{path_name}.txt"
+    html_file = tdir / f"{path_name}.html"
+    txt = txt_file.read_text(encoding="utf-8") if txt_file.exists() else ""
+    html = html_file.read_text(encoding="utf-8") if html_file.exists() else txt
     try:
         body_txt = txt.format(**ctx)
     except (KeyError, IndexError, ValueError):
@@ -441,12 +438,16 @@ def send_weekly_digest(cfg: dict) -> dict:
     from .common import gmail_credentials as gc
     user, password = gc()
     try:
-        subject, body_txt, body_html = _render_tpl("digest", ctx, "CollabHive Weekly Report — {date}")
-        # digest only has .txt
+        # Digest is a plain-text only email (no HTML template exists).
         from pathlib import Path
         tdir = ROOT / "templates"
-        body_txt = (tdir / "digest.txt").read_text(encoding="utf-8")
-        body_txt = body_txt.format(**ctx)
+        txt = (tdir / "digest.txt").read_text(encoding="utf-8")
+        body_txt = txt.format(**ctx)
+        subject_tpl = "CollabHive Weekly Report — {date}"
+        try:
+            subject = subject_tpl.format(**ctx)
+        except (KeyError, IndexError, ValueError):
+            subject = subject_tpl
         _send_mime(cfg, user, password, to, subject, body_txt, body_txt)
         save_json(last_file, {"ts": datetime.now(timezone.utc).isoformat(), "to": to})
         log(f"Digest sent to {to}")

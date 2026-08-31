@@ -299,6 +299,20 @@ class TestOnboarding(unittest.TestCase):
         self.assertIn("wa.me", r["deep_link"])
         self.assertIsNone(r["auto_sent"])  # no token -> no auto send
 
+    def test_digest_plain_text_render(self):
+        from src import automation as auto
+        from src.common import load_config
+        cfg = load_config()
+        subj, txt, html = auto._render_tpl("digest", {"date": "01 Jan 2026", "owner": "T",
+                                                      "days": 7, "sent_total": "0", "delivery_rate": "0",
+                                                      "bounces": "0", "unique_brands": "0", "closing": "0",
+                                                      "interested": "0", "negotiating": "0", "declined": "0",
+                                                      "matched_briefs": "0", "quotes_sent": "0", "creator_pool": "0",
+                                                      "seo_pages": "0", "actions": "OK"},
+                                            "CollabHive Weekly Report — {date}")
+        self.assertTrue(txt)  # digest.txt exists; digest.html may not -> should not crash
+        self.assertIn("CollabHive Weekly Report", subj)
+
 
 def _blackbox_modes():
     """Run each run.py mode in a fresh subprocess with a temp data dir,

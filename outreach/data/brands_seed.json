@@ -376,61 +376,84 @@
     "website": "https://www.beast.life",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Wakefit",
     "niche": "Home & Decor",
     "city": "Bengaluru",
     "website": "https://www.wakefit.co",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "support@wakefit.co",
+    "emails": [
+      "support@wakefit.co"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Urban Ladder",
     "niche": "Home & Decor",
     "city": "Bengaluru",
     "website": "https://www.urbanladder.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "hello@urbanladder.com",
+    "emails": [
+      "hello@urbanladder.com",
+      "shankar.gupta@ril.com",
+      "kartik.wagh@ril.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "The Sleep Company",
     "niche": "Home & Decor",
     "city": "Mumbai",
     "website": "https://thesleepcompany.in",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "care@thesleepcompany.in",
+    "emails": [
+      "care@thesleepcompany.in"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "StayVista",
     "niche": "Travel & Hospitality",
     "city": "Gurugram",
     "website": "https://www.stayvista.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "villas@stayvista.com",
+    "emails": [
+      "villas@stayvista.com",
+      "guestsupport@stayvista.com",
+      "partnerships@stayvista.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Noise",
     "niche": "Tech & Startups",
     "city": "Gurugram",
     "website": "https://www.gonoise.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "partnerships@nexxbase.com",
+    "emails": [
+      "partnerships@nexxbase.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Fire-Boltt",
     "niche": "Tech & Startups",
     "city": "Gurugram",
     "website": "https://www.fireboltt.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "infocare@boltt.com",
+    "emails": [
+      "infocare@boltt.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Results",
@@ -440,6 +463,463 @@
     "phone": "\n+91 88886 97898",
     "email": "",
     "emails": [],
-    "source": "google_maps"
+    "source": "google_maps",
+    "has_email": false
+  },
+  {
+    "name": "Raw Pressery",
+    "niche": "Food & Beverage",
+    "city": "Mumbai",
+    "website": "https://rawpressery.com",
+    "email": "",
+    "emails": [],
+    "source": "seed",
+    "has_email": false
+  },
+  {
+    "name": "Epigamia",
+    "niche": "Food & Beverage",
+    "city": "Mumbai",
+    "website": "https://epigamia.com",
+    "email": "info@stagheaddesigns.com",
+    "emails": [
+      "info@stagheaddesigns.com"
+    ],
+    "source": "seed",
+    "has_email": true
+  },
+  {
+    "name": "The Cinnamon Kitchen",
+    "niche": "Food & Beverage",
+    "city": "Delhi",
+    "website": "https://thecinnamonkitchen.com",
+    "email": "",
+    "emails": [],
+    "source": "seed",
+    "has_email": false
+  },
+  {
+    "name": "Bombay Island Coffee",
+    "niche": "Food & Beverage",
+    "city": "Mumbai",
+    "website": "https://bombayislandcoffee.com",
+    "email": "",
+    "emails": [],
+    "source": "seed",
+    "has_email": false
+  },
+  {
+    "name": "The Daily Roast",
+    "niche": "Food & Beverage",
+    "city": "Delhi",
+    "website": "https://thedailyroast.in",
+    "email": "",
+    "emails": [],
+    "source": "seed",
+    "has_email": false
+  },
+  {
+    "name": "Bombay Sweet Shop",
+    "niche": "Food & Beverage",
+    "city": "Mumbai",
+    "website": "https://bombaysweetshop.com",
+    "email": "chat@bombaysweetshop.com",
+    "emails": [
+      "chat@bombaysweetshop.com",
+      "xxx@xxx.xxx"
+    ],
+    "source": "seed",
+    "has_email": true
+  },
+  {
+    "name": "Nature's Soul",
+    "niche": "Food & Beverage",
+    "city": "Delhi",
+    "website": "https://naturessoul.in",
+    "email": "",
+    "emails": [],
+    "source": "seed",
+    "has_email": false
+  },
+  {
+    "name": "Crust & Crumb",
+    "niche": "Food & Beverage",
+    "city": "Gurugram",
+    "website": "https://crustandcrumb.com",
+    "email": "",
+    "emails": [],
+    "source": "seed",
+    "has_email": false
+  },
+  {
+    "name": "Pop & Pour",
+    "niche": "Food & Beverage",
+    "city": "Pune",
+    "website": "https://popandpour.in",
+    "email": "",
+    "emails": [],
+    "source": "seed",
+    "has_email": false
+  },
+  {
+    "name": "Bombay Baking Co",
+    "niche": "Food & Beverage",
+    "city": "Mumbai",
+    "website": "https://bombaybakingco.com",
+    "email": "",
+    "emails": [],
+    "source": "seed",
+    "has_email": false
+  },
+  {
+    "name": "Chumbak",
+    "niche": "Fashion & Apparel",
+    "city": "Bengaluru",
+    "website": "https://chumbak.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Zudio",
+    "niche": "Fashion & Apparel",
+    "city": "Mumbai",
+    "website": "https://zudio.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Anouk Ethnic",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://anouk.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Forca By Virat",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://forca.is",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "The Jodi Life",
+    "niche": "Fashion & Apparel",
+    "city": "Mumbai",
+    "website": "https://thejodilife.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Bunaai",
+    "niche": "Fashion & Apparel",
+    "city": "Jaipur",
+    "website": "https://bunaai.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Zaliga",
+    "niche": "Fashion & Apparel",
+    "city": "Mumbai",
+    "website": "https://zaliga.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "The Kaftan Company",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://thekaftancompany.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "FableStreet",
+    "niche": "Fashion & Apparel",
+    "city": "Gurugram",
+    "website": "https://fablestreet.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Amara Shoes",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://amarashoes.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "The Ayurveda Company",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bengaluru",
+    "website": "https://theayurvedaco.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Bella Vita Organic",
+    "niche": "Beauty & Cosmetics",
+    "city": "Gurugram",
+    "website": "https://bellavitaorganic.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Aqualogica",
+    "niche": "Beauty & Cosmetics",
+    "city": "Gurugram",
+    "website": "https://aqualogica.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Dot & Key Beauty",
+    "niche": "Beauty & Cosmetics",
+    "city": "Kolkata",
+    "website": "https://dotandkey.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Dr. Sheth's",
+    "niche": "Beauty & Cosmetics",
+    "city": "Mumbai",
+    "website": "https://drsheths.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Foxtale",
+    "niche": "Beauty & Cosmetics",
+    "city": "Mumbai",
+    "website": "https://foxtale.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "The Derma Co",
+    "niche": "Beauty & Cosmetics",
+    "city": "Gurugram",
+    "website": "https://thedermaco.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Perfora",
+    "niche": "Beauty & Cosmetics",
+    "city": "Jodhpur",
+    "website": "https://perforacare.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Chemist at Play",
+    "niche": "Beauty & Cosmetics",
+    "city": "Gurugram",
+    "website": "https://chemistatplay.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Hair Originals",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://hairoriginals.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Blue Tribe",
+    "niche": "Fitness & Wellness",
+    "city": "Bengaluru",
+    "website": "https://bluetribe.co",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "GetMyMettle",
+    "niche": "Fitness & Wellness",
+    "city": "Mumbai",
+    "website": "https://getmymettle.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Nutrabay",
+    "niche": "Fitness & Wellness",
+    "city": "Gurugram",
+    "website": "https://nutrabay.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "MYFITNESS",
+    "niche": "Fitness & Wellness",
+    "city": "Pune",
+    "website": "https://myfitness.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Muse Wellness",
+    "niche": "Fitness & Wellness",
+    "city": "Bengaluru",
+    "website": "https://musewellness.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Bold Care",
+    "niche": "Fitness & Wellness",
+    "city": "Mumbai",
+    "website": "https://boldcare.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Habit Wellness",
+    "niche": "Fitness & Wellness",
+    "city": "Mumbai",
+    "website": "https://habit.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "D2C Sleep",
+    "niche": "Fitness & Wellness",
+    "city": "Bengaluru",
+    "website": "https://d2csleep.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Sleepy Cat",
+    "niche": "Fitness & Wellness",
+    "city": "Delhi",
+    "website": "https://sleepycat.co",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Livpure",
+    "niche": "Home & Decor",
+    "city": "Gurugram",
+    "website": "https://livpure.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Sleepyhead",
+    "niche": "Home & Decor",
+    "city": "Mumbai",
+    "website": "https://sleepyhead.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Springwel",
+    "niche": "Home & Decor",
+    "city": "Delhi",
+    "website": "https://springwel.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Duroflex",
+    "niche": "Home & Decor",
+    "city": "Bengaluru",
+    "website": "https://duroflexworld.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Wakefit Co",
+    "niche": "Home & Decor",
+    "city": "Bengaluru",
+    "website": "https://wakefit.co.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "The White Willow",
+    "niche": "Home & Decor",
+    "city": "Delhi",
+    "website": "https://thewhitewillow.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Home Living Co",
+    "niche": "Home & Decor",
+    "city": "Mumbai",
+    "website": "https://homelivingco.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Feather Kitch",
+    "niche": "Home & Decor",
+    "city": "Gurugram",
+    "website": "https://featherkitch.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Zansaar",
+    "niche": "Home & Decor",
+    "city": "Bengaluru",
+    "website": "https://zansaar.com",
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Suta",
+    "niche": "Fashion & Apparel",
+    "city": "Mumbai",
+    "website": "https://suta.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
   }
 ]
