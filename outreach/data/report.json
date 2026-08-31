@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T10:04:14.788447+00:00",
+  "generated_at": "2026-08-31T13:19:38.239259+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -10,41 +10,157 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 22,
-    "unique_brands_emailed": 21,
-    "brands_in_pool": 40,
-    "brands_with_email": 20,
+    "total_sent": 36,
+    "unique_brands_emailed": 35,
+    "brands_in_pool": 89,
+    "brands_with_email": 35,
     "remaining_candidates": 0,
-    "sent_today": 0,
-    "sent_week": 22,
-    "day_streak": 22,
+    "sent_today": 14,
+    "sent_week": 36,
+    "day_streak": 36,
     "daily_budget": 18
   },
   "by_niche": {
-    "Fashion & Apparel": 6,
-    "Beauty & Cosmetics": 9,
-    "Food & Beverage": 6,
-    "Fitness & Wellness": 1
+    "Fashion & Apparel": 11,
+    "Beauty & Cosmetics": 11,
+    "Food & Beverage": 7,
+    "Fitness & Wellness": 1,
+    "Home & Decor": 3,
+    "Travel & Hospitality": 1,
+    "Tech & Startups": 2
   },
   "by_city": {
-    "Bengaluru": 4,
+    "Bengaluru": 7,
     "Coimbatore": 1,
-    "Delhi": 1,
-    "Gurugram": 6,
+    "Delhi": 3,
+    "Gurugram": 11,
     "Hyderabad": 1,
     "Kolkata": 1,
-    "Mumbai": 8
+    "Mumbai": 11,
+    "Jaipur": 1
   },
   "pool_by_niche": {
-    "Food & Beverage": 10,
-    "Fashion & Apparel": 7,
-    "Beauty & Cosmetics": 10,
-    "Fitness & Wellness": 6,
-    "Home & Decor": 3,
+    "Food & Beverage": 20,
+    "Fashion & Apparel": 18,
+    "Beauty & Cosmetics": 20,
+    "Fitness & Wellness": 15,
+    "Home & Decor": 12,
     "Travel & Hospitality": 2,
     "Tech & Startups": 2
   },
   "recent_sends": [
+    {
+      "ts": "2026-08-31T13:18:36.309985+00:00",
+      "email": "chat@bombaysweetshop.com",
+      "name": "Bombay Sweet Shop",
+      "niche": "Food & Beverage",
+      "city": "Mumbai",
+      "subject": "A creator network for Bombay Sweet Shop — CollabHive"
+    },
+    {
+      "ts": "2026-08-31T13:16:08.645623+00:00",
+      "email": "care@thesleepcompany.in",
+      "name": "The Sleep Company",
+      "niche": "Home & Decor",
+      "city": "Mumbai",
+      "subject": "Creators for The Sleep Company from CollabHive"
+    },
+    {
+      "ts": "2026-08-31T13:12:48.837426+00:00",
+      "email": "no-reply@aqualogica.in",
+      "name": "Aqualogica",
+      "niche": "Beauty & Cosmetics",
+      "city": "Gurugram",
+      "subject": "Aqualogica: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-08-31T13:11:06.676561+00:00",
+      "email": "shop@bellavitaorganic.com",
+      "name": "Bella Vita Organic",
+      "niche": "Beauty & Cosmetics",
+      "city": "Gurugram",
+      "subject": "Bella Vita Organic: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-08-31T13:08:43.139120+00:00",
+      "email": "infocare@boltt.com",
+      "name": "Fire-Boltt",
+      "niche": "Tech & Startups",
+      "city": "Gurugram",
+      "subject": "A creator network for Fire-Boltt — CollabHive"
+    },
+    {
+      "ts": "2026-08-31T13:06:15.811777+00:00",
+      "email": "partnerships@nexxbase.com",
+      "name": "Noise",
+      "niche": "Tech & Startups",
+      "city": "Gurugram",
+      "subject": "Helping Noise grow with creators"
+    },
+    {
+      "ts": "2026-08-31T13:03:46.760310+00:00",
+      "email": "villas@stayvista.com",
+      "name": "StayVista",
+      "niche": "Travel & Hospitality",
+      "city": "Gurugram",
+      "subject": "A creator network for StayVista — CollabHive"
+    },
+    {
+      "ts": "2026-08-31T13:00:23.800877+00:00",
+      "email": "hello@urbanladder.com",
+      "name": "Urban Ladder",
+      "niche": "Home & Decor",
+      "city": "Bengaluru",
+      "subject": "A creator network for Urban Ladder — CollabHive"
+    },
+    {
+      "ts": "2026-08-31T12:58:40.511365+00:00",
+      "email": "support@wakefit.co",
+      "name": "Wakefit",
+      "niche": "Home & Decor",
+      "city": "Bengaluru",
+      "subject": "Wakefit: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-08-31T12:56:12.749975+00:00",
+      "email": "zudiohelp@trent-tata.com",
+      "name": "Zudio",
+      "niche": "Fashion & Apparel",
+      "city": "Mumbai",
+      "subject": "Zudio: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-08-31T12:54:23.056020+00:00",
+      "email": "orders@bunai.com",
+      "name": "Bunaai",
+      "niche": "Fashion & Apparel",
+      "city": "Jaipur",
+      "subject": "A creator network for Bunaai — CollabHive"
+    },
+    {
+      "ts": "2026-08-31T12:52:18.350483+00:00",
+      "email": "back-in-stock@notifyboost.net",
+      "name": "The Kaftan Company",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Creators for The Kaftan Company from CollabHive"
+    },
+    {
+      "ts": "2026-08-31T12:50:25.402561+00:00",
+      "email": "info@anouk.in",
+      "name": "Anouk Ethnic",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Creators for Anouk Ethnic from CollabHive"
+    },
+    {
+      "ts": "2026-08-31T12:48:37.786645+00:00",
+      "email": "help@chumbak.in",
+      "name": "Chumbak",
+      "niche": "Fashion & Apparel",
+      "city": "Bengaluru",
+      "subject": "Chumbak: matched creators, ready to collab"
+    },
     {
       "ts": "2026-08-29T05:12:55.947770+00:00",
       "email": "dokterbacklink@gmail.com",
@@ -90,112 +206,49 @@
       "name": "Plum",
       "niche": "Beauty & Cosmetics",
       "city": "Mumbai"
-    },
-    {
-      "ts": "2026-08-28T04:03:36.755181+00:00",
-      "email": "careers@bewakoof.com",
-      "name": "Bewakoof",
-      "niche": "Fashion & Apparel",
-      "city": "Mumbai"
-    },
-    {
-      "ts": "2026-08-28T04:01:56.127687+00:00",
-      "email": "tgb@seventurns.in",
-      "name": "The Good Bug",
-      "niche": "Food & Beverage",
-      "city": "Mumbai"
-    },
-    {
-      "ts": "2026-08-28T03:59:07.305413+00:00",
-      "email": "care@dotandkey.com",
-      "name": "Dot & Key",
-      "niche": "Beauty & Cosmetics",
-      "city": "Kolkata"
-    },
-    {
-      "ts": "2026-08-28T03:56:08.521424+00:00",
-      "email": "info@stagheaddesigns.com",
-      "name": "Aquatein",
-      "niche": "Fitness & Wellness",
-      "city": "Hyderabad"
-    },
-    {
-      "ts": "2026-08-28T03:54:13.203310+00:00",
-      "email": "support@earthrhythm.com",
-      "name": "Earth Rhythm",
-      "niche": "Beauty & Cosmetics",
-      "city": "Gurugram"
-    },
-    {
-      "ts": "2026-08-28T03:51:56.842523+00:00",
-      "email": "customercare@houseofindya.com",
-      "name": "FabAlley",
-      "niche": "Fashion & Apparel",
-      "city": "Gurugram"
-    },
-    {
-      "ts": "2026-08-28T03:49:25.868357+00:00",
-      "email": "mail@slurrpfarm.com",
-      "name": "Slurrp Farm",
-      "niche": "Food & Beverage",
-      "city": "Gurugram"
-    },
-    {
-      "ts": "2026-08-28T03:46:08.355111+00:00",
-      "email": "getcoffee@bluetokaicoffee.com",
-      "name": "Blue Tokai Coffee Roasters",
-      "niche": "Food & Beverage",
-      "city": "Gurugram"
-    },
-    {
-      "ts": "2026-08-28T03:32:32.825292+00:00",
-      "email": "files@quinn-live.bundle.js",
-      "name": "Yogabar",
-      "niche": "Food & Beverage",
-      "city": "Gurugram"
-    },
-    {
-      "ts": "2026-08-28T03:29:57.942880+00:00",
-      "email": "help@sleepyowl.co",
-      "name": "Sleepy Owl Coffee",
-      "niche": "Food & Beverage",
-      "city": "Gurugram"
-    },
-    {
-      "ts": "2026-08-28T03:26:44.285250+00:00",
-      "email": "help@vahdam.com",
-      "name": "Vahdam India",
-      "niche": "Food & Beverage",
-      "city": "Delhi"
-    },
-    {
-      "ts": "2026-08-28T03:24:37.990166+00:00",
-      "email": "enquiry@deyga.in",
-      "name": "Deyga Organics",
-      "niche": "Beauty & Cosmetics",
-      "city": "Coimbatore"
-    },
-    {
-      "ts": "2026-08-28T03:22:54.370211+00:00",
-      "email": "support@thehouseofrare.com",
-      "name": "Rare Rabbit",
-      "niche": "Fashion & Apparel",
-      "city": "Bengaluru"
-    },
-    {
-      "ts": "2026-08-28T03:21:12.151529+00:00",
-      "email": "care@tigc.in",
-      "name": "The Indian Garage Co.",
-      "niche": "Fashion & Apparel",
-      "city": "Bengaluru"
     }
   ],
   "sales": {
-    "closing_count": 8,
+    "closing_count": 13,
     "closing_by_status": {
-      "interested": 8
+      "interested": 13
     },
     "recent_closing": [
+      {
+        "email": "care@thesleepcompany.in",
+        "subject": "Ticket Received - 2932898 |",
+        "snippet": "----==_mimepart_6a957ea97fc93_1c68c19f083182 Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable Dear CollabHive, Thank you for contacting The Sleep Company. W= e want to assure you that your request has been successfully registered, = and a ticket has been created with the reference number=C2=A02932898. = Our support team is already reviewing your query and will re",
+        "status": "interested",
+        "ts": "2026-08-31T13:19:01.583377+00:00"
+      },
+      {
+        "email": "shop@bellavitaorganic.com",
+        "subject": "Re: Bella Vita Organic: matched creators, ready to collab",
+        "snippet": "<p>Thank you for reaching out to BellaVita. Your request has been received, and your <strong>Ticket ID is 15690927</strong>.<br /> <br /> Due to an overwhelming response to our Rakhi Sale, kindly expect a little delay in the revert.</p> <p>Our support team will get back to you within <strong>48 working hours</strong>.<br /> We appreciate your patience and look forward to assisting you soon.</p> <p",
+        "status": "interested",
+        "ts": "2026-08-31T13:19:01.583355+00:00"
+      },
+      {
+        "email": "support@fireboltt-complaint.freshdesk.com",
+        "subject": "=?UTF-8?Q?Re:_A_creator_network_for_Fire-Boltt_=E2=80=94_Collab?=\r\n =?UTF-8?Q?Hive_-_4365375?=",
+        "snippet": "----==_mimepart_6a957ce32b9a4_2226723c1749de Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable Hello CollabHive, This is with reference to your Fire-Boltt service re= quest registered with Savex Technologies Private Limited (=E2=80=9CSavex=E2= =80=9D). =C2=A0 Please note that Savex is no longer authorised by Fire-= Boltt to handle or process after-sales service an",
+        "status": "interested",
+        "ts": "2026-08-31T13:19:01.583331+00:00"
+      },
+      {
+        "email": "hello@urbanladder.com",
+        "subject": "Re:Re:A creator network for Urban Ladder =?UTF-8?B?4oCU?= CollabHive",
+        "snippet": "Ticket No:788181242910<br><br><p><span data-sheets-root=3D\"1\" style=3D\"colo= r: rgb(0, 0, 0); font-size: 10pt; font-family: Arial;\">Hi Patron,<br /><br = />Urban Ladder Greets you!<br /><br />Sit back at ease while we take care o= f your ask. You will get a response in the next 24 hours.<br />Meanwhile, r= elish in the beauty of our furniture! Glimpse at <a href=3D\"https://www.urb= anladder.com/\">",
+        "status": "interested",
+        "ts": "2026-08-31T13:19:01.583302+00:00"
+      },
+      {
+        "email": "Zudiohelp@trent-tata.com",
+        "subject": "Re: Zudio: matched creators, ready to collab",
+        "snippet": "--_000_PNWP287MB61325E52FB6060473015F3B19DA92PNWP287MB6132INDP_ Content-Type: text/plain; charset=\"utf-8\" Content-Transfer-Encoding: base64 DQpEZWFyIFNpci9NYWRhbSwNCg0KDQpUaGFuayB5b3UgZm9yIHdyaXRpbmcgdG8gdXMuDQpUbyBs ZXQgdXMgaGVscCB5b3UgYmV0dGVyLCBwbGVhc2Ugc2hhcmUgeW91ciBkZXRhaWxzIGFzIGJlbG93 OiAoaWYgeW91IGhhdmVuJ3QgYWxyZWFkeSkNCk5hbWU6DQpDb250YWN0IE5vOg0KU3RvcmUgRGV0 YWlsczogKGlmIGFwcGxpY2FibGUpD",
+        "status": "interested",
+        "ts": "2026-08-31T13:19:01.583242+00:00"
+      },
       {
         "email": "you@indewild.com",
         "subject": "=?UTF-8?Q?Re:_Helping_ind=C4=93_wild_grow_with_creators?=",
@@ -230,27 +283,6 @@
         "snippet": "----==_mimepart_6a91066a53dd5_15518708646a Content-Type: text/plain; charset=utf-8 Content-Transfer-Encoding: quoted-printable Dear CollabHive, Thank you for reaching out to Earth Rhythm Customer Support. This is an automated response to confirm that we have received your email= . Our support team is currently reviewing your message and will get back = to you within 24-48 hours. = For your referen",
         "status": "interested",
         "ts": "2026-08-28T16:20:02.668926+00:00"
-      },
-      {
-        "email": "Customercare@houseofindya.com",
-        "subject": "=?UTF-8?Q?Re:_A_creator_network_for_FabAlley_=E2=80=94_CollabHive?=",
-        "snippet": "ji/17.0/1faa1/32.png\" alt=3D\"=F0=9F=AA=A1\" /><img src=3D\"https://fonts.gsta= tic.com/s/e/notoemoji/17.0/2728/32.png\" alt=3D\"=E2=9C=A8\" /></p>=0A= <p>Thank you for reaching out to us. Our customer support team is currently= offline celebrating the festival with their loved ones.</p>=0A= <p>Please allow us <strong>24 to 48 hours</strong> to revert to your query.= We will be happy to assist you as so",
-        "status": "interested",
-        "ts": "2026-08-28T16:20:02.668891+00:00"
-      },
-      {
-        "email": "cssupport@thehouseofrare.com",
-        "subject": "TicketID:425385 - TicketID: @TicketID - New Ticket creation",
-        "snippet": "<p class=\"rte-paragraph\"><span style=\"white-space: pre-wrap;\">Hi Customer,</span></p><p class=\"rte-paragraph\"><span style=\"white-space: pre-wrap;\">Thank you for contacting The House of Rare.</span><br><br><span style=\"white-space: pre-wrap;\">We wish to acknowledge that we have received your query,&nbsp;A creator network for The House of Rare — CollabHive and one of our Rare Experts is reviewing it",
-        "status": "interested",
-        "ts": "2026-08-28T16:20:02.668808+00:00"
-      },
-      {
-        "email": "no-reply@accounts.google.com",
-        "subject": "Security alert",
-        "snippet": "--000000000000afb550065a0a5c71 Content-Type: text/plain; charset=\"UTF-8\"; format=flowed; delsp=yes Content-Transfer-Encoding: base64 W2ltYWdlOiBHb29nbGVdDQpBIG5ldyBzaWduLWluIG9uIFdpbmRvd3MNCg0KDQpjb2xsYWJoaXZl LmluQGdtYWlsLmNvbQ0KV2Ugbm90aWNlZCBhIG5ldyBzaWduLWluIHRvIHlvdXIgR29vZ2xlIEFj Y291bnQgb24gYSBXaW5kb3dzIGRldmljZS4gSWYNCnRoaXMgd2FzIHlvdSwgeW91IGRvbuKAmXQg bmVlZCB0byBkbyBhbnl0aGluZy4gSWYgbm90",
-        "status": "interested",
-        "ts": "2026-08-28T16:20:02.668704+00:00"
       }
     ],
     "shortlist": [
@@ -382,27 +414,36 @@
         0.144
       ]
     ],
-    "replied_count": 8,
-    "reply_rate_pct": 38.1
+    "replied_count": 13,
+    "reply_rate_pct": 37.1
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-08-31T10:04:14.787263+00:00",
+    "checked_at": "2026-08-31T13:19:38.237521+00:00",
     "lookback_hours": 96,
-    "recorded_sends": 21,
-    "confirmed_in_sent": 18,
-    "unconfirmed": 3,
-    "delivery_rate_pct": 85.7,
-    "bounces": 5,
+    "recorded_sends": 35,
+    "confirmed_in_sent": 23,
+    "unconfirmed": 12,
+    "delivery_rate_pct": 65.7,
+    "bounces": 7,
     "bounce_emails": [
-      "files@quinn-live.bundle.js",
+      "no-reply@aqualogica.in",
       "customercare@houseofindya.com",
-      "careers@bewakoof.com"
+      "careers@bewakoof.com",
+      "files@quinn-live.bundle.js",
+      "back-in-stock@notifyboost.net"
     ],
     "unconfirmed_emails": [
       "info@asaya.in",
       "you@indewild.com",
-      "dokterbacklink@gmail.com"
+      "dokterbacklink@gmail.com",
+      "help@chumbak.in",
+      "info@anouk.in",
+      "zudiohelp@trent-tata.com",
+      "support@wakefit.co",
+      "partnerships@nexxbase.com",
+      "shop@bellavitaorganic.com",
+      "care@thesleepcompany.in"
     ],
     "flagged": false
   },
@@ -467,7 +508,7 @@
       "campaigns_run": 0,
       "alltime_creators": 24,
       "alltime_briefs": 2,
-      "generated_at": "2026-08-31T10:04:14.789276+00:00"
+      "generated_at": "2026-08-31T13:19:38.240273+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -484,6 +525,6 @@
       "rows": []
     }
   },
-  "dnc_count": 0,
-  "last_run": "2026-08-31T10:03:30.832221+00:00"
+  "dnc_count": 1,
+  "last_run": "2026-08-31T13:18:36.337943+00:00"
 }

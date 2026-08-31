@@ -22,7 +22,21 @@
     "hello@sugarcosmetics.com",
     "info@asaya.in",
     "you@indewild.com",
-    "dokterbacklink@gmail.com"
+    "dokterbacklink@gmail.com",
+    "help@chumbak.in",
+    "info@anouk.in",
+    "back-in-stock@notifyboost.net",
+    "orders@bunai.com",
+    "zudiohelp@trent-tata.com",
+    "support@wakefit.co",
+    "hello@urbanladder.com",
+    "villas@stayvista.com",
+    "partnerships@nexxbase.com",
+    "infocare@boltt.com",
+    "shop@bellavitaorganic.com",
+    "no-reply@aqualogica.in",
+    "care@thesleepcompany.in",
+    "chat@bombaysweetshop.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -46,7 +60,21 @@
     "sugarcosmetics.com",
     "asaya.in",
     "indewild.com",
-    "sunscoop.com"
+    "sunscoop.com",
+    "chumbak.com",
+    "anouk.in",
+    "thekaftancompany.com",
+    "bunaai.com",
+    "zudio.com",
+    "wakefit.co",
+    "urbanladder.com",
+    "stayvista.com",
+    "gonoise.com",
+    "fireboltt.com",
+    "bellavitaorganic.com",
+    "aqualogica.in",
+    "thesleepcompany.in",
+    "bombaysweetshop.com"
   ],
   "sent_log": [
     {
@@ -206,14 +234,128 @@
       "niche": "Beauty & Cosmetics",
       "city": "Mumbai",
       "subject": "Helping SunScoop grow with creators"
+    },
+    {
+      "ts": "2026-08-31T12:48:37.786645+00:00",
+      "email": "help@chumbak.in",
+      "name": "Chumbak",
+      "niche": "Fashion & Apparel",
+      "city": "Bengaluru",
+      "subject": "Chumbak: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-08-31T12:50:25.402561+00:00",
+      "email": "info@anouk.in",
+      "name": "Anouk Ethnic",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Creators for Anouk Ethnic from CollabHive"
+    },
+    {
+      "ts": "2026-08-31T12:52:18.350483+00:00",
+      "email": "back-in-stock@notifyboost.net",
+      "name": "The Kaftan Company",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Creators for The Kaftan Company from CollabHive"
+    },
+    {
+      "ts": "2026-08-31T12:54:23.056020+00:00",
+      "email": "orders@bunai.com",
+      "name": "Bunaai",
+      "niche": "Fashion & Apparel",
+      "city": "Jaipur",
+      "subject": "A creator network for Bunaai — CollabHive"
+    },
+    {
+      "ts": "2026-08-31T12:56:12.749975+00:00",
+      "email": "zudiohelp@trent-tata.com",
+      "name": "Zudio",
+      "niche": "Fashion & Apparel",
+      "city": "Mumbai",
+      "subject": "Zudio: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-08-31T12:58:40.511365+00:00",
+      "email": "support@wakefit.co",
+      "name": "Wakefit",
+      "niche": "Home & Decor",
+      "city": "Bengaluru",
+      "subject": "Wakefit: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-08-31T13:00:23.800877+00:00",
+      "email": "hello@urbanladder.com",
+      "name": "Urban Ladder",
+      "niche": "Home & Decor",
+      "city": "Bengaluru",
+      "subject": "A creator network for Urban Ladder — CollabHive"
+    },
+    {
+      "ts": "2026-08-31T13:03:46.760310+00:00",
+      "email": "villas@stayvista.com",
+      "name": "StayVista",
+      "niche": "Travel & Hospitality",
+      "city": "Gurugram",
+      "subject": "A creator network for StayVista — CollabHive"
+    },
+    {
+      "ts": "2026-08-31T13:06:15.811777+00:00",
+      "email": "partnerships@nexxbase.com",
+      "name": "Noise",
+      "niche": "Tech & Startups",
+      "city": "Gurugram",
+      "subject": "Helping Noise grow with creators"
+    },
+    {
+      "ts": "2026-08-31T13:08:43.139120+00:00",
+      "email": "infocare@boltt.com",
+      "name": "Fire-Boltt",
+      "niche": "Tech & Startups",
+      "city": "Gurugram",
+      "subject": "A creator network for Fire-Boltt — CollabHive"
+    },
+    {
+      "ts": "2026-08-31T13:11:06.676561+00:00",
+      "email": "shop@bellavitaorganic.com",
+      "name": "Bella Vita Organic",
+      "niche": "Beauty & Cosmetics",
+      "city": "Gurugram",
+      "subject": "Bella Vita Organic: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-08-31T13:12:48.837426+00:00",
+      "email": "no-reply@aqualogica.in",
+      "name": "Aqualogica",
+      "niche": "Beauty & Cosmetics",
+      "city": "Gurugram",
+      "subject": "Aqualogica: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-08-31T13:16:08.645623+00:00",
+      "email": "care@thesleepcompany.in",
+      "name": "The Sleep Company",
+      "niche": "Home & Decor",
+      "city": "Mumbai",
+      "subject": "Creators for The Sleep Company from CollabHive"
+    },
+    {
+      "ts": "2026-08-31T13:18:36.309985+00:00",
+      "email": "chat@bombaysweetshop.com",
+      "name": "Bombay Sweet Shop",
+      "niche": "Food & Beverage",
+      "city": "Mumbai",
+      "subject": "A creator network for Bombay Sweet Shop — CollabHive"
     }
   ],
-  "last_run": "2026-08-31T10:03:30.832221+00:00",
+  "last_run": "2026-08-31T13:18:36.337943+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
     "customercare@houseofindya.com",
     "no-reply@accounts.google.com",
-    "cssupport@thehouseofrare.com"
+    "cssupport@thehouseofrare.com",
+    "no-reply@aqualogica.in",
+    "back-in-stock@notifyboost.net"
   ]
 }

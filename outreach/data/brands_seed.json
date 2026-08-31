@@ -576,27 +576,39 @@
     "niche": "Fashion & Apparel",
     "city": "Bengaluru",
     "website": "https://chumbak.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "help@chumbak.in",
+    "emails": [
+      "help@chumbak.in",
+      "u003ehelp@chumbak.in",
+      "info@stagheaddesigns.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Zudio",
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://zudio.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "zudiohelp@trent-tata.com",
+    "emails": [
+      "zudiohelp@trent-tata.com",
+      "zudio.rba@trent-tata.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Anouk Ethnic",
     "niche": "Fashion & Apparel",
     "city": "Delhi",
     "website": "https://anouk.in",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "info@anouk.in",
+    "emails": [
+      "info@anouk.in"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Forca By Virat",
@@ -605,7 +617,8 @@
     "website": "https://forca.is",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "The Jodi Life",
@@ -614,16 +627,20 @@
     "website": "https://thejodilife.in",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Bunaai",
     "niche": "Fashion & Apparel",
     "city": "Jaipur",
     "website": "https://bunaai.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "orders@bunai.com",
+    "emails": [
+      "orders@bunai.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Zaliga",
@@ -632,16 +649,8 @@
     "website": "https://zaliga.in",
     "email": "",
     "emails": [],
-    "source": "seed"
-  },
-  {
-    "name": "The Kaftan Company",
-    "niche": "Fashion & Apparel",
-    "city": "Delhi",
-    "website": "https://thekaftancompany.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "FableStreet",
@@ -650,7 +659,8 @@
     "website": "https://fablestreet.in",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Amara Shoes",
@@ -659,7 +669,8 @@
     "website": "https://amarashoes.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "The Ayurveda Company",
@@ -668,25 +679,21 @@
     "website": "https://theayurvedaco.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Bella Vita Organic",
     "niche": "Beauty & Cosmetics",
     "city": "Gurugram",
     "website": "https://bellavitaorganic.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
-  },
-  {
-    "name": "Aqualogica",
-    "niche": "Beauty & Cosmetics",
-    "city": "Gurugram",
-    "website": "https://aqualogica.in",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "shop@bellavitaorganic.com",
+    "emails": [
+      "shop@bellavitaorganic.com",
+      "abc@xyz.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Dot & Key Beauty",

@@ -1,21 +1,30 @@
 {
   "ok": true,
-  "checked_at": "2026-08-31T10:04:14.787263+00:00",
+  "checked_at": "2026-08-31T13:19:38.237521+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 21,
-  "confirmed_in_sent": 18,
-  "unconfirmed": 3,
-  "delivery_rate_pct": 85.7,
-  "bounces": 5,
+  "recorded_sends": 35,
+  "confirmed_in_sent": 23,
+  "unconfirmed": 12,
+  "delivery_rate_pct": 65.7,
+  "bounces": 7,
   "bounce_emails": [
-    "files@quinn-live.bundle.js",
+    "no-reply@aqualogica.in",
     "customercare@houseofindya.com",
-    "careers@bewakoof.com"
+    "careers@bewakoof.com",
+    "files@quinn-live.bundle.js",
+    "back-in-stock@notifyboost.net"
   ],
   "unconfirmed_emails": [
     "info@asaya.in",
     "you@indewild.com",
-    "dokterbacklink@gmail.com"
+    "dokterbacklink@gmail.com",
+    "help@chumbak.in",
+    "info@anouk.in",
+    "zudiohelp@trent-tata.com",
+    "support@wakefit.co",
+    "partnerships@nexxbase.com",
+    "shop@bellavitaorganic.com",
+    "care@thesleepcompany.in"
   ],
   "flagged": false
 }
