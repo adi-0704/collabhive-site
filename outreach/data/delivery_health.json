@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "checked_at": "2026-08-30T09:28:06.551751+00:00",
+  "checked_at": "2026-08-31T10:04:14.787263+00:00",
   "lookback_hours": 96,
   "recorded_sends": 21,
   "confirmed_in_sent": 18,
@@ -8,8 +8,8 @@
   "delivery_rate_pct": 85.7,
   "bounces": 5,
   "bounce_emails": [
-    "customercare@houseofindya.com",
     "files@quinn-live.bundle.js",
+    "customercare@houseofindya.com",
     "careers@bewakoof.com"
   ],
   "unconfirmed_emails": [
