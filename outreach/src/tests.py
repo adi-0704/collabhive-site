@@ -111,6 +111,14 @@ class TestBrands(unittest.TestCase):
         self.assertIn("hi@x.com", got)
         self.assertNotIn("files@q.bundle.js", got)
 
+    def test_email_hygiene_notification_bots(self):
+        from src.brands import _is_good
+        self.assertFalse(_is_good("no-reply@aqualogica.in", ""))
+        self.assertFalse(_is_good("back-in-stock@notifyboost.net", ""))
+        self.assertFalse(_is_good("orders@bunai.com", ""))
+        self.assertTrue(_is_good("support@wakefit.co", ""))
+        self.assertTrue(_is_good("hello@urbanladder.com", ""))
+
 
 class TestSales(unittest.TestCase):
     def setUp(self):

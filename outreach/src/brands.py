@@ -25,6 +25,18 @@ BANNED_DOMAINS = (
     "example.com", "sentry.io", "wixpress.com", "schema.org", "w3.org",
     "domain.com", "email.com", "yourdomain.com", "godaddy.com", "placeholder",
 )
+# Local-part prefixes that are almost never a human contact (notification bots,
+# no-reply, order/back-in-stock responders). Never email these.
+BANNED_LOCAL_PREFIXES = (
+    "no-reply", "noreply", "do-not-reply", "donotreply", "no_reply",
+    "back-in-stock", "backinstock", "orders@", "order@", "notifications@",
+    "notification@", "billing@", "automated", "system@", "support-",
+    "newsletter@", "mailer@", "noreply-",
+)
+BANNED_DOMAIN_HINTS = (
+    "notifyboost", "sendgrid", "mailgun", "postmark", "mailchimp", "klaviyo",
+    "sendinblue", "sender", "createsend", "mailsac", "tempmail", "mailinator",
+)
 CONTACT_PATHS = ("", "contact", "contact-us", "contactus", "about", "about-us", "team", "careers")
 
 
@@ -64,9 +76,18 @@ def _is_good(email: str, brand_domain: str) -> bool:
                     ".woff", ".woff2", ".webp", ".ico", ".mp4", ".mp3", ".map"):
         if domain.endswith(bad_ext) or bad_ext in domain:
             return False
+    # Reject notification/DSP/email-service local-parts (never human contacts).
+    local_l = local.lower().strip()
+    for p in BANNED_LOCAL_PREFIXES:
+        if local_l == p.rstrip("@") or local_l.startswith(p) or p in local_l:
+            return False
+    # Reject third-party email-service sender domains.
+    for hint in BANNED_DOMAIN_HINTS:
+        if hint in domain:
+            return False
     # Reject common non-contact / placeholder local parts.
-    if local.lower() in ("admin@", "root@", "webmaster@") or local in ("admin", "root", "webmaster"):
-        pass
+    if local_l in ("admin", "root", "webmaster", "postmaster", "abuse", "noreply"):
+        return False
     return True
 
 
@@ -168,20 +189,37 @@ def refresh_brand_emails(cfg: dict) -> dict:
     updated = 0
     processed = 0
     purged = 0
+    # Global purge pass: clean ANY stored email that is now invalid (JS assets,
+    # notification bots, no-reply, order responders) regardless of the per-run cap.
+    changed = False
+    for idx, brand in enumerate(pool):
+        if not isinstance(brand, dict):
+            continue
+        before = brand.get("emails", [])
+        cleaned = [e for e in before if _is_good(e, "")]
+        changed = False
+        if len(cleaned) != len(before):
+            pool[idx]["emails"] = cleaned
+            purged += 1
+            changed = True
+        # Also fix a stale top-level email that no longer passes the filter.
+        cur_email = brand.get("email", "")
+        if cur_email and not _is_good(cur_email, ""):
+            pool[idx]["email"] = (cleaned or [""])[0]
+            purged += 1
+            changed = True
+        if changed:
+            pool[idx]["email"] = (pool[idx].get("emails") or [pool[idx].get("email", "") or ""])[0] or ""
+    if purged:
+        from .common import save_json
+        save_json(ROOT / cfg["brands"]["seed_file"], pool)
+
     for idx, brand in enumerate(pool):
         if not brand.get("website"):
             continue
-        # Purge any previously-stored emails that are invalid (e.g. JS-bundle
-        # artifacts) so they never get sent.
-        before = brand.get("emails", [])
-        cleaned = [e for e in before if _is_good(e, "")]
-        if len(cleaned) != len(before):
-            pool[idx]["emails"] = cleaned
-            pool[idx]["email"] = (cleaned or [""])[0]
-            purged += 1
         # Re-skip brands that already have good emails, and cap per-run work so
-        # the daily job stays well within its time budget.
-        if pool[idx].get("emails") or (processed >= cap):
+        # the daily job stays well within its time budget (unreachable sites are slow).
+        if brand.get("emails") or (processed >= cap):
             continue
         enriched = enrich_brand(brand, ua, timeout, limit)
         pool[idx] = enriched

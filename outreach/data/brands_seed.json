@@ -635,18 +635,26 @@
     "niche": "Fashion & Apparel",
     "city": "Jaipur",
     "website": "https://bunaai.com",
-    "email": "orders@bunai.com",
-    "emails": [
-      "orders@bunai.com"
-    ],
+    "email": "",
+    "emails": [],
     "source": "seed",
-    "has_email": true
+    "has_email": false
   },
   {
     "name": "Zaliga",
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://zaliga.in",
+    "email": "",
+    "emails": [],
+    "source": "seed",
+    "has_email": false
+  },
+  {
+    "name": "The Kaftan Company",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://thekaftancompany.com",
     "email": "",
     "emails": [],
     "source": "seed",
@@ -687,13 +695,18 @@
     "niche": "Beauty & Cosmetics",
     "city": "Gurugram",
     "website": "https://bellavitaorganic.com",
-    "email": "shop@bellavitaorganic.com",
-    "emails": [
-      "shop@bellavitaorganic.com",
-      "abc@xyz.com"
-    ],
-    "source": "seed",
-    "has_email": true
+    "email": "",
+    "emails": [],
+    "source": "seed"
+  },
+  {
+    "name": "Aqualogica",
+    "niche": "Beauty & Cosmetics",
+    "city": "Gurugram",
+    "website": "https://aqualogica.in",
+    "email": "",
+    "emails": [],
+    "source": "seed"
   },
   {
     "name": "Dot & Key Beauty",
