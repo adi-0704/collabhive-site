@@ -1,23 +1,21 @@
 {
   "ok": true,
-  "checked_at": "2026-08-31T13:55:19.709180+00:00",
+  "checked_at": "2026-09-01T08:59:40.295721+00:00",
   "lookback_hours": 96,
   "recorded_sends": 35,
-  "confirmed_in_sent": 23,
-  "unconfirmed": 12,
-  "delivery_rate_pct": 65.7,
+  "confirmed_in_sent": 25,
+  "unconfirmed": 10,
+  "delivery_rate_pct": 71.4,
   "bounces": 7,
   "bounce_emails": [
+    "customercare@houseofindya.com",
     "no-reply@aqualogica.in",
-    "back-in-stock@notifyboost.net",
-    "careers@bewakoof.com",
     "files@quinn-live.bundle.js",
-    "customercare@houseofindya.com"
+    "careers@bewakoof.com",
+    "back-in-stock@notifyboost.net"
   ],
   "unconfirmed_emails": [
-    "info@asaya.in",
     "you@indewild.com",
-    "dokterbacklink@gmail.com",
     "help@chumbak.in",
     "info@anouk.in",
     "zudiohelp@trent-tata.com",
