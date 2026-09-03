@@ -211,6 +211,27 @@
       </div>
     </div>
 
+    <div class="grid" style="margin-top:16px;">
+      <div class="card">
+        <div class="head"><h3>Auto-published creators</h3><span class="pill pill-live" id="s-pub-pill">—</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Name</th><th>Handle</th><th>Niche</th><th>City</th></tr></thead>
+            <tbody id="pub-creators"><tr><td colspan="4"><div class="empty">No creators published yet.</div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card">
+        <div class="head"><h3>Onboarding social post drafts</h3><span class="pill pill-warn" id="s-post-pill">—</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Creator</th><th>Handle</th><th>Post</th></tr></thead>
+            <tbody id="dr-posts"><tr><td colspan="3"><div class="empty">No drafts yet.</div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
     <div class="mk">CollabHive &middot; Outreach automation &middot; curated pool + website email extraction</div>
   </div>
 
@@ -373,6 +394,27 @@
                 '</td><td>' + (r.submits || 0) + '</td><td>' + (r.conversion_pct != null ? r.conversion_pct + '%' : '—') + '</td></tr>';
             }).join('')
           : '<tr><td colspan="4"><div class="empty">No CTA data yet.</div></td></tr>';
+
+        // Auto-published creators + social post drafts
+        var pub = d.publish || {};
+        document.getElementById('s-pub-pill').textContent = (pub.published_count || 0) + ' on site';
+        var cb = document.getElementById('pub-creators');
+        var pcreators = pub.creators || [];
+        cb.innerHTML = pcreators.length
+          ? pcreators.map(function (c) {
+              return '<tr><td>' + (c.name || '—') + '</td><td>' + (c.handle || '—') +
+                '</td><td>' + (c.niche || '—') + '</td><td>' + (c.city || '—') + '</td></tr>';
+            }).join('')
+          : '<tr><td colspan="4"><div class="empty">No creators published yet.</div></td></tr>';
+        var drafts = pub.drafts || [];
+        document.getElementById('s-post-pill').textContent = (drafts.length || 0) + ' drafts';
+        var db = document.getElementById('dr-posts');
+        db.innerHTML = drafts.length
+          ? drafts.map(function (d) {
+              return '<tr><td>' + (d.name || '—') + '</td><td>' + (d.handle || '—') +
+                '</td><td><a href="../data/social_drafts.json" target="_blank" rel="noopener">view post</a></td></tr>';
+            }).join('')
+          : '<tr><td colspan="3"><div class="empty">No drafts yet.</div></td></tr>';
       }
 
       function renderNicheProgress(d) {

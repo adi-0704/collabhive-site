@@ -158,6 +158,24 @@
       "handoff_after_minutes": 30
     }
   },
+  "publish": {
+    "enabled": true,
+    "applicant_sheet_id": "1fnINFVDChyeK0VoihUeTHY_vG9V1s-4dkHMsxGdzYGY",
+    "creator_pool_file": "data/creators_pool.json",
+    "published_file": "data/published_creators.json",
+    "publish_to_site": true,
+    "publish_to_pool": true,
+    "min_followers_publish": 0,
+    "auto_publish": true
+  },
+  "social": {
+    "enabled": true,
+    "drafts_file": "data/social_drafts.json",
+    "hashtags": ["CollabHive", "InfluencerMarketing", "CreatorEconomy", "BrandCollab", "IndiaCreators", "UGC"],
+    "include_handle": true,
+    "include_link": true,
+    "platforms": ["instagram", "linkedin", "x"]
+  },
   "seo": {
     "enabled": true,
     "output_dir": "../seo-pages",

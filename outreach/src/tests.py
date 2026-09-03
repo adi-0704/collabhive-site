@@ -322,6 +322,41 @@ class TestOnboarding(unittest.TestCase):
         self.assertIn("CollabHive Weekly Report", subj)
 
 
+class TestPublication(unittest.TestCase):
+    def setUp(self):
+        self.common = _mkdata(None)
+        self.cfg = _load_cfg()
+
+    def test_strip_private_removes_rate_empty(self):
+        from src.publication import _strip_private
+        c = {"name": "A", "handle": "@a", "rate": "5000", "rate_internal": "₹2000",
+             "email": "a@b.com", "phone": "999", "niche": "Food"}
+        pub = _strip_private(c)
+        self.assertNotIn("rate", pub)
+        self.assertNotIn("rate_internal", pub)
+        self.assertNotIn("email", pub)
+        self.assertNotIn("phone", pub)
+        self.assertTrue("name" in pub and "niche" in pub)
+
+    def test_followers_units(self):
+        from src.publication import _to_int
+        self.assertEqual(_to_int("1.2k"), 1200)
+        self.assertEqual(_to_int("3.2M"), 3200000)
+        self.assertEqual(_to_int("4,300"), 4300)
+        self.assertEqual(_to_int("10k"), 10000)
+
+    def test_build_post_has_handle_no_price(self):
+        from src.publication import build_post
+        from src.common import load_config
+        cfg = load_config()
+        post = build_post(cfg, {"name": "Chetna", "handle": "@chetna", "niche": "Fashion",
+                                "followers": 4000, "city": "Mumbai"}, ["CollabHive"], True, True, "https://x")
+        ig = post["instagram"]
+        self.assertIn("@chetna", ig)
+        self.assertNotIn("₹", ig)
+        self.assertNotIn("rate", ig)
+
+
 def _blackbox_modes():
     """Run each run.py mode in a fresh subprocess with a temp data dir,
     no SMTP password, no network (must skip, never crash)."""
@@ -355,7 +390,7 @@ def _blackbox_modes():
         "from src import run\n"
         "sys.exit(run.main(sys.argv[1:]))\n", encoding="utf-8")
     for mode in ("daily", "enrich", "report", "sales", "seo", "verify",
-                 "automation", "growth", "onboarding", "all"):
+                 "automation", "growth", "onboarding", "publish", "all"):
         import subprocess
         try:
             p = subprocess.run([sys.executable, str(runner), mode],
@@ -382,7 +417,7 @@ def _suite():
     loader = unittest.TestLoader()
     suite = unittest.TestSuite()
     for cls in (TestCommon, TestBrands, TestSales, TestMailerNoNetwork,
-                TestGrowth, TestProtect, TestOnboarding, TestBlackboxModes):
+                TestGrowth, TestProtect, TestOnboarding, TestPublication, TestBlackboxModes):
         suite.addTests(loader.loadTestsFromTestCase(cls))
     return suite
 

@@ -18,6 +18,7 @@ on:
           - automation
           - growth
           - onboarding
+          - publish
           - sales
           - seo
           - verify
@@ -65,6 +66,8 @@ jobs:
           python src/run.py growth || echo "Growth step skipped"
           # Always run onboarding funnel (analytics, instant emails, remarket, proof, refs).
           python src/run.py onboarding || echo "Onboarding step skipped"
+          # Always auto-publish form submitters to the site + draft onboarding posts.
+          python src/run.py publish || echo "Publish step skipped"
 
       - name: Commit report + state + SEO
         run: |

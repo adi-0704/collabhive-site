@@ -122,6 +122,17 @@ Repo → **Actions** → "Outreach Daily Run" → **Run workflow** (mode `all`).
 
 Run it manually: `python src/run.py onboarding`.
 
+## Auto-publish + social onboarding (form -> site, fully automatic)
+- **Auto-publish**: whoever submits the influencer application form is automatically
+  onboarded to the website — published to the creator directory (Supabase `creators`)
+  and the creator pool. No manual approval needed.
+- **No prices shown**: creator rates/emails/phone are stripped before publishing (kept
+  internally for quoting/matching only).
+- **Social post drafts**: auto-generates Instagram / LinkedIn / X onboarding posts that
+  welcome each new creator and mention their @handle + a collab link. Saved to
+  `data/social_drafts.json` (listed on the dashboard under "Onboarding social post drafts").
+- Run it manually: `python src/run.py publish`.
+
 ---
 
 ## Google Maps scraper (automated now — read the warning)

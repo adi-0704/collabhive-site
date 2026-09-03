@@ -85,10 +85,26 @@ def gather_report(cfg: dict) -> dict:
         "verification": _gather_verification(cfg),
         "pipeline_dataset": _gather_pipeline(cfg),
         "onboarding": _gather_onboarding(cfg),
+        "publish": _gather_publish(cfg),
         "dnc_count": _gather_dnc(cfg),
         "last_run": state.get("last_run", ""),
     }
     return report
+
+
+def _gather_publish(cfg: dict) -> dict:
+    from src.common import load_json
+    pub = load_json(ROOT / cfg["publish"]["published_file"])
+    pub = pub if isinstance(pub, dict) else {}
+    drafts = load_json(ROOT / cfg["social"]["drafts_file"])
+    drafts = drafts if isinstance(drafts, list) else []
+    return {
+        "published_count": pub.get("count", 0),
+        "creators": pub.get("creators", [])[:20],
+        "drafts": [{"handle": d.get("handle"), "name": d.get("name"), "niche": d.get("niche")}
+                   for d in drafts],
+        "drafts_count": len(drafts),
+    }
 
 
 def _gather_onboarding(cfg: dict) -> dict:
@@ -308,6 +324,15 @@ def cmd_onboarding(cfg: dict) -> None:
     log(f"WhatsApp handoffs: {handoffs}")
 
 
+def cmd_publish(cfg: dict) -> None:
+    """Publish approved influencers + draft onboarding social posts."""
+    from src import publication as pub_mod
+    published = pub_mod.publish_creators(cfg)
+    log(f"Publish creators: {published}")
+    drafts = pub_mod.draft_social_posts(cfg)
+    log(f"Social drafts: {drafts}")
+
+
 def _wa_handoff_hot_leads(cfg: dict) -> dict:
     from src import onboarding as ob_mod
     closing = load_json(ROOT / cfg["sales"]["closing_file"])
@@ -344,6 +369,8 @@ def main(argv: list[str] | None = None) -> int:
         cmd_growth(cfg)
     elif mode == "onboarding":
         cmd_onboarding(cfg)
+    elif mode == "publish":
+        cmd_publish(cfg)
     elif mode == "record":
         # Record a funnel event: python src/run.py record <kind> [email] [referrer]
         from src import onboarding as ob_mod
@@ -359,6 +386,7 @@ def main(argv: list[str] | None = None) -> int:
         cmd_automation(cfg)
         cmd_growth(cfg)
         cmd_onboarding(cfg)
+        cmd_publish(cfg)
         cmd_seo(cfg)
         cmd_verify(cfg)
         cmd_report(cfg)
