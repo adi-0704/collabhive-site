@@ -232,6 +232,18 @@
       </div>
     </div>
 
+    <div class="grid" style="margin-top:16px;">
+      <div class="card">
+        <div class="head"><h3>Buffer auto-posting</h3><span class="pill pill-off" id="s-buffer-pill">—</span></div>
+        <div class="kv" id="buffer-snap">
+          <div><span>Queued to Buffer</span><b id="bf-queued">—</b></div>
+          <div><span>Needs media (Instagram)</span><b id="bf-media">—</b></div>
+          <div><span>Total drafts</span><b id="bf-total">—</b></div>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:var(--muted-fg);">Text posts auto-queue to X/LinkedIn. Instagram drafts need a media asset — add it in Buffer, or connect an X/LinkedIn channel.</div>
+      </div>
+    </div>
+
     <div class="mk">CollabHive &middot; Outreach automation &middot; curated pool + website email extraction</div>
   </div>
 
@@ -415,6 +427,16 @@
                 '</td><td><a href="../data/social_drafts.json" target="_blank" rel="noopener">view post</a></td></tr>';
             }).join('')
           : '<tr><td colspan="3"><div class="empty">No drafts yet.</div></td></tr>';
+
+        // Buffer auto-posting status
+        var buf = d.buffer || {};
+        document.getElementById('bf-queued').textContent = fmt(buf.queued_count);
+        document.getElementById('bf-media').textContent = fmt(buf.needs_media_count);
+        document.getElementById('bf-total').textContent = fmt(buf.has_drafts);
+        var bpill = document.getElementById('s-buffer-pill');
+        if (buf.queued_count > 0) { bpill.textContent = 'Posting'; bpill.className = 'pill pill-live'; }
+        else if (buf.needs_media_count > 0) { bpill.textContent = 'Needs media'; bpill.className = 'pill pill-warn'; }
+        else { bpill.textContent = 'Idle'; bpill.className = 'pill pill-off'; }
       }
 
       function renderNicheProgress(d) {

@@ -86,10 +86,26 @@ def gather_report(cfg: dict) -> dict:
         "pipeline_dataset": _gather_pipeline(cfg),
         "onboarding": _gather_onboarding(cfg),
         "publish": _gather_publish(cfg),
+        "buffer": _gather_buffer(cfg),
         "dnc_count": _gather_dnc(cfg),
         "last_run": state.get("last_run", ""),
     }
     return report
+
+
+def _gather_buffer(cfg: dict) -> dict:
+    from src.common import load_json
+    drafts = load_json(ROOT / cfg["social"]["drafts_file"])
+    drafts = drafts if isinstance(drafts, list) else []
+    queued = sum(1 for d in drafts if d.get("buffered"))
+    needs_media = sum(1 for d in drafts if d.get("buffer_status") == "needs_media")
+    return {
+        "queued_count": queued,
+        "needs_media_count": needs_media,
+        "has_drafts": len(drafts),
+        "statuses": {s: sum(1 for d in drafts if d.get("buffer_status") == s)
+                     for s in set(d.get("buffer_status") for d in drafts if d.get("buffer_status"))},
+    }
 
 
 def _gather_publish(cfg: dict) -> dict:
@@ -331,6 +347,14 @@ def cmd_publish(cfg: dict) -> None:
     log(f"Publish creators: {published}")
     drafts = pub_mod.draft_social_posts(cfg)
     log(f"Social drafts: {drafts}")
+    # Queue new drafts to Buffer (auto-posting) if a key is configured.
+    if cfg.get("buffer", {}).get("enabled", True):
+        try:
+            from src import buffer as buf_mod
+            result = buf_mod.queue_drafts(cfg)
+            log(f"Buffer queue: {result}")
+        except Exception as exc:
+            log(f"Buffer step skipped: {exc}")
 
 
 def _wa_handoff_hot_leads(cfg: dict) -> dict:
@@ -371,6 +395,10 @@ def main(argv: list[str] | None = None) -> int:
         cmd_onboarding(cfg)
     elif mode == "publish":
         cmd_publish(cfg)
+    elif mode == "buffer":
+        from src import buffer as buf_mod
+        result = buf_mod.queue_drafts(cfg)
+        log(f"Buffer queue: {result}")
     elif mode == "record":
         # Record a funnel event: python src/run.py record <kind> [email] [referrer]
         from src import onboarding as ob_mod

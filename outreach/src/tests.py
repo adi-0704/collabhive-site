@@ -357,6 +357,31 @@ class TestPublication(unittest.TestCase):
         self.assertNotIn("rate", ig)
 
 
+class TestBuffer(unittest.TestCase):
+    def setUp(self):
+        self.common = _mkdata(None)
+        self.cfg = _load_cfg()
+
+    def test_escape_str(self):
+        from src.buffer import _escape_gql, _esc
+        self.assertEqual(_escape_gql('he said "hi"'), 'he said \\"hi\\"')
+        self.assertTrue(_escape_gql('emoji 🎉'))
+
+    def test_queue_no_key_skips(self):
+        from src import buffer as B
+        import os
+        os.environ.pop("OUTREACH_BUFFER_KEY", None)
+        os.environ.pop("BUFFER_ACCESS_TOKEN", None)
+        res = B.queue_drafts(self.cfg)
+        self.assertEqual(res.get("queued"), 0)
+        self.assertIn("no_key", res.get("skipped", ""))
+
+    def test_text_only_ok(self):
+        from src.buffer import text_only_ok
+        self.assertTrue(text_only_ok("hi", "x"))
+        self.assertFalse(text_only_ok("hi", "instagram"))
+
+
 def _blackbox_modes():
     """Run each run.py mode in a fresh subprocess with a temp data dir,
     no SMTP password, no network (must skip, never crash)."""
@@ -417,7 +442,7 @@ def _suite():
     loader = unittest.TestLoader()
     suite = unittest.TestSuite()
     for cls in (TestCommon, TestBrands, TestSales, TestMailerNoNetwork,
-                TestGrowth, TestProtect, TestOnboarding, TestPublication, TestBlackboxModes):
+                TestGrowth, TestProtect, TestOnboarding, TestPublication, TestBuffer, TestBlackboxModes):
         suite.addTests(loader.loadTestsFromTestCase(cls))
     return suite
 

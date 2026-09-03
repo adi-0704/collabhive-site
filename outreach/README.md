@@ -133,6 +133,15 @@ Run it manually: `python src/run.py onboarding`.
   `data/social_drafts.json` (listed on the dashboard under "Onboarding social post drafts").
 - Run it manually: `python src/run.py publish`.
 
+## Buffer auto-posting (schedule posts automatically)
+- **Queue drafts to Buffer**: `python src/run.py buffer` reads the social drafts and
+  queues each to your Buffer channels via the GraphQL API (api.buffer.com).
+- **Text posts** auto-queue to X/LinkedIn/Facebook. **Instagram** posts need a media
+  asset, so they're flagged `needs_media` (add the image in Buffer, or connect an
+  X/LinkedIn channel) — never lost, never spammed.
+- Buffer then schedules/publishes on its schedule. Add the key as a GitHub Secret:
+  `BUFFER_ACCESS_TOKEN` (alias `OUTREACH_BUFFER_KEY`). Never committed.
+
 ---
 
 ## Google Maps scraper (automated now — read the warning)

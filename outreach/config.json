@@ -176,6 +176,16 @@
     "include_link": true,
     "platforms": ["instagram", "linkedin", "x"]
   },
+  "buffer": {
+    "enabled": true,
+    "api_url": "https://api.buffer.com",
+    "organization_id": "6a99504c4cc393783e8d69fe",
+    "channel_id": "6a995178065799be467d5fb7",
+    "service": "instagram",
+    "mention_handle_in_text": "instagram",
+    "default_image_url": "https://adi-0704.github.io/collabhive-site/assets/img/logo.png",
+    "note": "Buffer API key is read from OUTREACH_BUFFER_KEY / GitHub Secret BUFFER_ACCESS_TOKEN (never committed)."
+  },
   "seo": {
     "enabled": true,
     "output_dir": "../seo-pages",
