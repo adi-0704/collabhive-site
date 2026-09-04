@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-03T10:15:54.208786+00:00",
-  "count": 19,
+  "generated_at": "2026-09-04T08:16:19.503580+00:00",
+  "count": 25,
   "creators": [
     {
       "name": "Garima Narang",
@@ -171,6 +171,60 @@
       "city": "Delhi",
       "followers": 64171000000,
       "platforms": "Instagram, YouTube, Snapchat, Facebook",
+      "source": "applicant"
+    },
+    {
+      "name": "Niana",
+      "handle": "@softlyverse",
+      "niche": "Beauty, Makeup skincare ",
+      "city": "Delhi",
+      "followers": 1130,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Sunami devi",
+      "handle": "@https://www.instagram.com/t.sunaamii_",
+      "niche": "Food fashion fitness travel beauty",
+      "city": "India",
+      "followers": 3000,
+      "platforms": "Instagram, YouTube",
+      "source": "applicant"
+    },
+    {
+      "name": "Mahak Chauhan",
+      "handle": "@shanthojamehakk",
+      "niche": "fashion ,travel ",
+      "city": "shimla",
+      "followers": 5780,
+      "platforms": "Instagram, Snapchat",
+      "source": "applicant"
+    },
+    {
+      "name": "Rishrishirish",
+      "handle": "@rishrishirish",
+      "niche": "food, travel and fashion",
+      "city": "Mumbai",
+      "followers": 158,
+      "platforms": "Instagram, YouTube",
+      "source": "applicant"
+    },
+    {
+      "name": "Kanak Jadoun",
+      "handle": "@thehaphazardhustle",
+      "niche": "Fashion and beauty",
+      "city": "Indore",
+      "followers": 1300,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Anshika Rai",
+      "handle": "@_anshika._.rai",
+      "niche": "Beauty & Skincare and fashion ",
+      "city": "Dehradun, Uttarakhand",
+      "followers": 2500,
+      "platforms": "Instagram",
       "source": "applicant"
     }
   ]

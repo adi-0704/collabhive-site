@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T08:21:20.781194+00:00",
+  "generated_at": "2026-09-04T08:15:03.950683+00:00",
   "shortlist": [
     {
       "brand": "UrbanBrew",
@@ -37,6 +37,15 @@
           "score": 0.877
         },
         {
+          "name": "Atrangisouls ",
+          "handle": "@atrangisouls",
+          "niche": "Food and Travel",
+          "city": "Delhi",
+          "followers": 64171000000,
+          "rate": null,
+          "score": 0.8
+        },
+        {
           "name": "Shreya Iyer",
           "handle": "@shreya.home",
           "niche": "Home & Decor",
@@ -53,15 +62,6 @@
           "followers": 21700,
           "rate": 3200,
           "score": 0.681
-        },
-        {
-          "name": "Mira Patel",
-          "handle": "@mira.roams",
-          "niche": "Travel & Hospitality",
-          "city": "Jaipur",
-          "followers": 26400,
-          "rate": 4200,
-          "score": 0.678
         }
       ]
     },

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T08:21:53.020625+00:00",
+  "generated_at": "2026-09-04T08:16:18.583750+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -16,8 +16,8 @@
     "brands_with_email": 31,
     "remaining_candidates": 0,
     "sent_today": 0,
-    "sent_week": 36,
-    "day_streak": 36,
+    "sent_week": 18,
+    "day_streak": 18,
     "daily_budget": 18
   },
   "by_niche": {
@@ -293,8 +293,8 @@
           "@aarav.eats",
           "@isha.home",
           "@naina.creates",
-          "@shreya.home",
-          "@anika.yoga"
+          "@atrangisouls",
+          "@shreya.home"
         ]
       ],
       [
@@ -419,30 +419,27 @@
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-09-02T08:11:55.855321+00:00",
+    "checked_at": "2026-09-04T08:16:18.582089+00:00",
     "lookback_hours": 96,
     "recorded_sends": 35,
-    "confirmed_in_sent": 21,
-    "unconfirmed": 14,
-    "delivery_rate_pct": 60.0,
-    "bounces": 7,
+    "confirmed_in_sent": 26,
+    "unconfirmed": 9,
+    "delivery_rate_pct": 74.3,
+    "bounces": 4,
     "bounce_emails": [
       "files@quinn-live.bundle.js",
-      "back-in-stock@notifyboost.net",
       "careers@bewakoof.com",
-      "customercare@houseofindya.com",
-      "no-reply@aqualogica.in"
+      "no-reply@aqualogica.in",
+      "back-in-stock@notifyboost.net"
     ],
     "unconfirmed_emails": [
+      "customercare@houseofindya.com",
       "support@earthrhythm.com",
       "tgb@seventurns.in",
       "hello@plumgoodness.com",
+      "hello@sugarcosmetics.com",
       "you@indewild.com",
-      "help@chumbak.in",
-      "info@anouk.in",
       "zudiohelp@trent-tata.com",
-      "support@wakefit.co",
-      "partnerships@nexxbase.com",
       "shop@bellavitaorganic.com",
       "care@thesleepcompany.in"
     ],
@@ -502,14 +499,14 @@
       "brand_conversion_pct": 100.0,
       "approve_rate_pct": 100.0,
       "brief_rate_pct": 0.0,
-      "events_last_24h": 0
+      "events_last_24h": 18
     },
     "proof": {
       "creators_joined": 0,
       "campaigns_run": 0,
-      "alltime_creators": 24,
+      "alltime_creators": 42,
       "alltime_briefs": 2,
-      "generated_at": "2026-09-03T08:21:53.022215+00:00"
+      "generated_at": "2026-09-04T08:16:18.584646+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -526,6 +523,325 @@
       "rows": []
     }
   },
+  "publish": {
+    "published_count": 25,
+    "creators": [
+      {
+        "name": "Garima Narang",
+        "handle": "@onlyyygarima",
+        "niche": "Food & Beverage",
+        "city": "Sonipat",
+        "followers": 4300,
+        "platforms": "Instagram, YouTube",
+        "source": "applicant"
+      },
+      {
+        "name": "Kumkum Singare",
+        "handle": "@_kumkumm.m",
+        "niche": "Beauty, Funny, Lifestyle, Fashion",
+        "city": "Durg, Chhattisgarh",
+        "followers": 1200,
+        "platforms": "Instagram, YouTube, LinkedIn, Snapchat",
+        "source": "applicant"
+      },
+      {
+        "name": "Beenish nazakat ",
+        "handle": "@beeeeeeesh",
+        "niche": "Fashion,beauty ",
+        "city": "Pakistan,Islamabad",
+        "followers": 1480,
+        "platforms": "Instagram, Snapchat",
+        "source": "applicant"
+      },
+      {
+        "name": "Bhoomi Nigam (Avanya)",
+        "handle": "@ca_relatedlife",
+        "niche": "Studies. And motivation ",
+        "city": "Lucknow Uttar Pradesh",
+        "followers": 10000,
+        "platforms": "Instagram, LinkedIn",
+        "source": "applicant"
+      },
+      {
+        "name": "Mahek Dwivedi",
+        "handle": "@Mahek_dwivedi_",
+        "niche": "Gen-Z Lifestyle & Fashion Creator | Relatable Reels + UGC",
+        "city": "Nagpur",
+        "followers": 1000,
+        "platforms": "Instagram",
+        "source": "applicant"
+      },
+      {
+        "name": "Chetna Jain",
+        "handle": "@Vibe_with_chetna_",
+        "niche": "Lifestyle, Fashion, food",
+        "city": "Mumbai",
+        "followers": 4000,
+        "platforms": "Instagram, YouTube, LinkedIn, Facebook",
+        "source": "applicant"
+      },
+      {
+        "name": "Yana Gupta",
+        "handle": "@y_aa_n_aa10",
+        "niche": "POV, Fashion, Beauty",
+        "city": "Bhubaneswar",
+        "followers": 3000,
+        "platforms": "Instagram",
+        "source": "applicant"
+      },
+      {
+        "name": "muskan singla",
+        "handle": "@_muskansingla",
+        "niche": "funny relatable,college",
+        "city": "kharar,mohali",
+        "followers": 14,
+        "platforms": "Instagram, YouTube",
+        "source": "applicant"
+      },
+      {
+        "name": "Chetna Kathayat",
+        "handle": "@21.chetna",
+        "niche": "Fashion",
+        "city": "Bhopal",
+        "followers": 11600,
+        "platforms": "Instagram",
+        "source": "applicant"
+      },
+      {
+        "name": "Anamika Somvanshi (anamika.coree)",
+        "handle": "@anamika.coree",
+        "niche": "Fashion, Makeup, beauty, lifestyle",
+        "city": "Bareilly",
+        "followers": 2500,
+        "platforms": "Instagram, TikTok",
+        "source": "applicant"
+      },
+      {
+        "name": "Sapna Nair",
+        "handle": "@realfitwithsapna",
+        "niche": "Fitness , food",
+        "city": "Mumbai",
+        "followers": 2500,
+        "platforms": "Instagram, Facebook",
+        "source": "applicant"
+      },
+      {
+        "name": "sidequestsdocumented",
+        "handle": "@sidequestsdocumented",
+        "niche": "Food, Fashion, Travel, Beauty, Tech, Gaming",
+        "city": "Mumbai",
+        "followers": 130,
+        "platforms": "Instagram, YouTube",
+        "source": "applicant"
+      },
+      {
+        "name": "Isha Siddiqui",
+        "handle": "@ishasiddiquii",
+        "niche": "Fashion and beauty ",
+        "city": "Karachi",
+        "followers": 8000,
+        "platforms": "YouTube, TikTok",
+        "source": "applicant"
+      },
+      {
+        "name": "Khushi jangra",
+        "handle": "@jangrakhushii",
+        "niche": "Fashion, travel, beauty, lifestyle ",
+        "city": "New Delhi india",
+        "followers": 1500,
+        "platforms": "Instagram, YouTube",
+        "source": "applicant"
+      },
+      {
+        "name": "Anusha",
+        "handle": "@okk.anusha",
+        "niche": "Fashion,beauty,entertainment ",
+        "city": "Firozabad",
+        "followers": 5322,
+        "platforms": "Instagram, Snapchat",
+        "source": "applicant"
+      },
+      {
+        "name": "Ishika Shahi",
+        "handle": "@ishikashahiii",
+        "niche": "Fashion , travel , beauty",
+        "city": "Pithoragarh, uttrakhand",
+        "followers": 1427,
+        "platforms": "Instagram",
+        "source": "applicant"
+      },
+      {
+        "name": "Ishika negi",
+        "handle": "@__._Ishika._",
+        "niche": "Fashion,travel , beauty ",
+        "city": "Dehradun,Uttarakhand",
+        "followers": 31000,
+        "platforms": "Instagram",
+        "source": "applicant"
+      },
+      {
+        "name": "Charu Tyagi ",
+        "handle": "@_charutyagi",
+        "niche": "Beauty i guess ",
+        "city": "Ghaziabad",
+        "followers": 1200,
+        "platforms": "Instagram",
+        "source": "applicant"
+      },
+      {
+        "name": "Atrangisouls ",
+        "handle": "@atrangisouls",
+        "niche": "Food and Travel",
+        "city": "Delhi",
+        "followers": 64171000000,
+        "platforms": "Instagram, YouTube, Snapchat, Facebook",
+        "source": "applicant"
+      },
+      {
+        "name": "Niana",
+        "handle": "@softlyverse",
+        "niche": "Beauty, Makeup skincare ",
+        "city": "Delhi",
+        "followers": 1130,
+        "platforms": "Instagram",
+        "source": "applicant"
+      }
+    ],
+    "drafts": [
+      {
+        "handle": "@onlyyygarima",
+        "name": "Garima Narang",
+        "niche": "Food & Beverage"
+      },
+      {
+        "handle": "@_kumkumm.m",
+        "name": "Kumkum Singare",
+        "niche": "Beauty, Funny, Lifestyle, Fashion"
+      },
+      {
+        "handle": "@beeeeeeesh",
+        "name": "Beenish nazakat ",
+        "niche": "Fashion,beauty "
+      },
+      {
+        "handle": "@ca_relatedlife",
+        "name": "Bhoomi Nigam (Avanya)",
+        "niche": "Studies. And motivation "
+      },
+      {
+        "handle": "@Mahek_dwivedi_",
+        "name": "Mahek Dwivedi",
+        "niche": "Gen-Z Lifestyle & Fashion Creator | Relatable Reels + UGC"
+      },
+      {
+        "handle": "@Vibe_with_chetna_",
+        "name": "Chetna Jain",
+        "niche": "Lifestyle, Fashion, food"
+      },
+      {
+        "handle": "@y_aa_n_aa10",
+        "name": "Yana Gupta",
+        "niche": "POV, Fashion, Beauty"
+      },
+      {
+        "handle": "@_muskansingla",
+        "name": "muskan singla",
+        "niche": "funny relatable,college"
+      },
+      {
+        "handle": "@21.chetna",
+        "name": "Chetna Kathayat",
+        "niche": "Fashion"
+      },
+      {
+        "handle": "@anamika.coree",
+        "name": "Anamika Somvanshi (anamika.coree)",
+        "niche": "Fashion, Makeup, beauty, lifestyle"
+      },
+      {
+        "handle": "@realfitwithsapna",
+        "name": "Sapna Nair",
+        "niche": "Fitness , food"
+      },
+      {
+        "handle": "@sidequestsdocumented",
+        "name": "sidequestsdocumented",
+        "niche": "Food, Fashion, Travel, Beauty, Tech, Gaming"
+      },
+      {
+        "handle": "@ishasiddiquii",
+        "name": "Isha Siddiqui",
+        "niche": "Fashion and beauty "
+      },
+      {
+        "handle": "@jangrakhushii",
+        "name": "Khushi jangra",
+        "niche": "Fashion, travel, beauty, lifestyle "
+      },
+      {
+        "handle": "@okk.anusha",
+        "name": "Anusha",
+        "niche": "Fashion,beauty,entertainment "
+      },
+      {
+        "handle": "@ishikashahiii",
+        "name": "Ishika Shahi",
+        "niche": "Fashion , travel , beauty"
+      },
+      {
+        "handle": "@__._Ishika._",
+        "name": "Ishika negi",
+        "niche": "Fashion,travel , beauty "
+      },
+      {
+        "handle": "@_charutyagi",
+        "name": "Charu Tyagi ",
+        "niche": "Beauty i guess "
+      },
+      {
+        "handle": "@atrangisouls",
+        "name": "Atrangisouls ",
+        "niche": "Food and Travel"
+      },
+      {
+        "handle": "@softlyverse",
+        "name": "Niana",
+        "niche": "Beauty, Makeup skincare "
+      },
+      {
+        "handle": "@https://www.instagram.com/t.sunaamii_",
+        "name": "Sunami devi",
+        "niche": "Food fashion fitness travel beauty"
+      },
+      {
+        "handle": "@shanthojamehakk",
+        "name": "Mahak Chauhan",
+        "niche": "fashion ,travel "
+      },
+      {
+        "handle": "@rishrishirish",
+        "name": "Rishrishirish",
+        "niche": "food, travel and fashion"
+      },
+      {
+        "handle": "@thehaphazardhustle",
+        "name": "Kanak Jadoun",
+        "niche": "Fashion and beauty"
+      },
+      {
+        "handle": "@_anshika._.rai",
+        "name": "Anshika Rai",
+        "niche": "Beauty & Skincare and fashion "
+      }
+    ],
+    "drafts_count": 25
+  },
+  "buffer": {
+    "queued_count": 0,
+    "needs_media_count": 0,
+    "has_drafts": 25,
+    "statuses": {}
+  },
   "dnc_count": 1,
-  "last_run": "2026-09-03T08:21:16.420339+00:00"
+  "last_run": "2026-09-04T08:14:57.410658+00:00"
 }
