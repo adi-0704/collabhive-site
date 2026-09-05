@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T08:16:18.583750+00:00",
+  "generated_at": "2026-09-05T07:56:44.560472+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -16,8 +16,8 @@
     "brands_with_email": 31,
     "remaining_candidates": 0,
     "sent_today": 0,
-    "sent_week": 18,
-    "day_streak": 18,
+    "sent_week": 14,
+    "day_streak": 14,
     "daily_budget": 18
   },
   "by_niche": {
@@ -419,18 +419,18 @@
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-09-04T08:16:18.582089+00:00",
+    "checked_at": "2026-09-05T07:56:44.559082+00:00",
     "lookback_hours": 96,
     "recorded_sends": 35,
-    "confirmed_in_sent": 26,
-    "unconfirmed": 9,
-    "delivery_rate_pct": 74.3,
+    "confirmed_in_sent": 25,
+    "unconfirmed": 10,
+    "delivery_rate_pct": 71.4,
     "bounces": 4,
     "bounce_emails": [
-      "files@quinn-live.bundle.js",
-      "careers@bewakoof.com",
+      "back-in-stock@notifyboost.net",
       "no-reply@aqualogica.in",
-      "back-in-stock@notifyboost.net"
+      "careers@bewakoof.com",
+      "files@quinn-live.bundle.js"
     ],
     "unconfirmed_emails": [
       "customercare@houseofindya.com",
@@ -440,6 +440,7 @@
       "hello@sugarcosmetics.com",
       "you@indewild.com",
       "zudiohelp@trent-tata.com",
+      "hello@urbanladder.com",
       "shop@bellavitaorganic.com",
       "care@thesleepcompany.in"
     ],
@@ -499,14 +500,14 @@
       "brand_conversion_pct": 100.0,
       "approve_rate_pct": 100.0,
       "brief_rate_pct": 0.0,
-      "events_last_24h": 18
+      "events_last_24h": 24
     },
     "proof": {
       "creators_joined": 0,
       "campaigns_run": 0,
-      "alltime_creators": 42,
+      "alltime_creators": 48,
       "alltime_briefs": 2,
-      "generated_at": "2026-09-04T08:16:18.584646+00:00"
+      "generated_at": "2026-09-05T07:56:44.561469+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -843,5 +844,5 @@
     "statuses": {}
   },
   "dnc_count": 1,
-  "last_run": "2026-09-04T08:14:57.410658+00:00"
+  "last_run": "2026-09-05T07:55:56.418426+00:00"
 }

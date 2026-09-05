@@ -1,17 +1,17 @@
 {
   "ok": true,
-  "checked_at": "2026-09-04T08:16:18.582089+00:00",
+  "checked_at": "2026-09-05T07:56:44.559082+00:00",
   "lookback_hours": 96,
   "recorded_sends": 35,
-  "confirmed_in_sent": 26,
-  "unconfirmed": 9,
-  "delivery_rate_pct": 74.3,
+  "confirmed_in_sent": 25,
+  "unconfirmed": 10,
+  "delivery_rate_pct": 71.4,
   "bounces": 4,
   "bounce_emails": [
-    "files@quinn-live.bundle.js",
-    "careers@bewakoof.com",
+    "back-in-stock@notifyboost.net",
     "no-reply@aqualogica.in",
-    "back-in-stock@notifyboost.net"
+    "careers@bewakoof.com",
+    "files@quinn-live.bundle.js"
   ],
   "unconfirmed_emails": [
     "customercare@houseofindya.com",
@@ -21,6 +21,7 @@
     "hello@sugarcosmetics.com",
     "you@indewild.com",
     "zudiohelp@trent-tata.com",
+    "hello@urbanladder.com",
     "shop@bellavitaorganic.com",
     "care@thesleepcompany.in"
   ],
