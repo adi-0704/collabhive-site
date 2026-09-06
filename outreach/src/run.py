@@ -222,6 +222,18 @@ def cmd_enrich(cfg: dict) -> None:
     log(f"Enrich done: {res}")
 
 
+def cmd_pool(cfg: dict) -> None:
+    """Automated pool refill: merge curated brands into the seed pool."""
+    from src import pool as pool_mod
+    if not cfg.get("pool", {}).get("enabled", True):
+        log("Pool refill disabled.")
+        return
+    res = pool_mod.refill(cfg)
+    log(f"Pool refill: {res}")
+    health = pool_mod.pool_health(cfg)
+    log(f"Pool health: {health}")
+
+
 def cmd_daily(cfg: dict) -> None:
     from datetime import datetime, timezone
     from src import mailer
@@ -379,6 +391,8 @@ def main(argv: list[str] | None = None) -> int:
         cmd_daily(cfg)
     elif mode == "enrich":
         cmd_enrich(cfg)
+    elif mode == "pool":
+        cmd_pool(cfg)
     elif mode == "report":
         cmd_report(cfg)
     elif mode == "sales":
@@ -408,6 +422,7 @@ def main(argv: list[str] | None = None) -> int:
         res = ob_mod.record_event(cfg, kind, email, ref)
         log(f"Event recorded: {res}")
     elif mode == "all":
+        cmd_pool(cfg)
         cmd_enrich(cfg)
         cmd_daily(cfg)
         cmd_sales(cfg)

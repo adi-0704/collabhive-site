@@ -36,6 +36,8 @@ def _mkdata(cfg=None):
     ddir.mkdir(parents=True, exist_ok=True)
     for name in ("brands_seed.json", "creators_pool.json", "brand_briefs.json"):
         shutil.copy(data / name, ddir / name)
+    if (data / "seed_brands_extra.json").exists():
+        shutil.copy(data / "seed_brands_extra.json", ddir / "seed_brands_extra.json")
     shutil.copy(Path(__file__).resolve().parent.parent / "config.json", _TEST_ROOT / "config.json")
     return common
 
@@ -118,6 +120,42 @@ class TestBrands(unittest.TestCase):
         self.assertFalse(_is_good("orders@bunai.com", ""))
         self.assertTrue(_is_good("support@wakefit.co", ""))
         self.assertTrue(_is_good("hello@urbanladder.com", ""))
+
+
+class TestPool(unittest.TestCase):
+    def setUp(self):
+        self.common = _mkdata(None)
+        self.cfg = _load_cfg()
+
+    def test_refill_merges_curated_and_dedupes(self):
+        from src import pool as pool_mod
+        # Seed with one brand whose domain overlaps a curated entry.
+        self.common.save_json(_TEST_ROOT / "data" / "brands_seed.json", [
+            {"name": "Nykaa", "niche": "Beauty & Cosmetics", "city": "Mumbai",
+             "website": "https://www.nykaa.com", "email": "", "emails": []},
+        ])
+        res = pool_mod.refill(self.cfg)
+        self.assertGreaterEqual(res["added"], 1)
+        self.assertEqual(res["skipped_dupes"], 1)  # Nykaa dup by name+domain
+        pool = self.common.load_json(_TEST_ROOT / "data" / "brands_seed.json")
+        names = [b.get("name") for b in pool]
+        self.assertEqual(len(names), len(set(n.lower() for n in names)))
+        self.assertIn("Mamaearth", names)
+        self.assertEqual(len([b for b in pool if b.get("emails") or b.get("email")]), res["pool_with_email"])
+
+    def test_refill_idempotent(self):
+        from src import pool as pool_mod
+        pool_mod.refill(self.cfg)
+        first = pool_mod.pool_health(self.cfg)
+        second = pool_mod.refill(self.cfg)
+        self.assertEqual(second["added"], 0)
+        self.assertEqual(pool_mod.pool_health(self.cfg)["pool_total"], first["pool_total"])
+
+    def test_pool_health_counts(self):
+        from src import pool as pool_mod
+        health = pool_mod.pool_health(self.cfg)
+        self.assertIn("pool_total", health)
+        self.assertIn("with_email", health)
 
 
 class TestSales(unittest.TestCase):
@@ -441,7 +479,7 @@ class TestBlackboxModes(unittest.TestCase):
 def _suite():
     loader = unittest.TestLoader()
     suite = unittest.TestSuite()
-    for cls in (TestCommon, TestBrands, TestSales, TestMailerNoNetwork,
+    for cls in (TestCommon, TestBrands, TestPool, TestSales, TestMailerNoNetwork,
                 TestGrowth, TestProtect, TestOnboarding, TestPublication, TestBuffer, TestBlackboxModes):
         suite.addTests(loader.loadTestsFromTestCase(cls))
     return suite

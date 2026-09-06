@@ -80,6 +80,11 @@
     "dedupe_key": "email",
     "niche_rotation_days": 7
   },
+  "pool": {
+    "enabled": true,
+    "curated_file": "data/seed_brands_extra.json",
+    "note": "Automated pool refill: merges curated Indian D2C brands (with public contact emails where known) into brands_seed.json each run. Dedupes by name + website domain."
+  },
   "verification": {
     "lookback_hours": 96,
     "health_file": "data/delivery_health.json",

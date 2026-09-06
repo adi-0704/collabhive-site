@@ -941,5 +941,346 @@
     "email": "",
     "emails": [],
     "source": "seed"
+  },
+  {
+    "name": "Nykaa",
+    "niche": "Beauty & Cosmetics",
+    "city": "Mumbai",
+    "website": "https://www.nykaa.com",
+    "email": "care@nykaa.com",
+    "emails": [
+      "care@nykaa.com"
+    ],
+    "source": "curated"
+  },
+  {
+    "name": "Mamaearth",
+    "niche": "Beauty & Cosmetics",
+    "city": "Gurugram",
+    "website": "https://mamaearth.in",
+    "email": "care@mamaearth.in",
+    "emails": [
+      "care@mamaearth.in"
+    ],
+    "source": "curated"
+  },
+  {
+    "name": "boAt",
+    "niche": "Tech & Startups",
+    "city": "Delhi",
+    "website": "https://www.boat-lifestyle.com",
+    "email": "support@boat-lifestyle.com",
+    "emails": [
+      "support@boat-lifestyle.com"
+    ],
+    "source": "curated"
+  },
+  {
+    "name": "Zivame",
+    "niche": "Fashion & Apparel",
+    "city": "Bengaluru",
+    "website": "https://www.zivame.com",
+    "email": "care@zivame.com",
+    "emails": [
+      "care@zivame.com"
+    ],
+    "source": "curated"
+  },
+  {
+    "name": "FabIndia",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://www.fabindia.com",
+    "email": "care@fabindia.com",
+    "emails": [
+      "care@fabindia.com"
+    ],
+    "source": "curated"
+  },
+  {
+    "name": "Juicy Chemistry",
+    "niche": "Beauty & Cosmetics",
+    "city": "Coimbatore",
+    "website": "https://juicychemistry.com",
+    "email": "care@juicychemistry.com",
+    "emails": [
+      "care@juicychemistry.com"
+    ],
+    "source": "curated"
+  },
+  {
+    "name": "RiteBite",
+    "niche": "Fitness & Wellness",
+    "city": "Mumbai",
+    "website": "https://www.ritebite.com",
+    "email": "care@ritebite.com",
+    "emails": [
+      "care@ritebite.com"
+    ],
+    "source": "curated"
+  },
+  {
+    "name": "Pepperfry",
+    "niche": "Home & Decor",
+    "city": "Mumbai",
+    "website": "https://www.pepperfry.com",
+    "email": "care@pepperfry.com",
+    "emails": [
+      "care@pepperfry.com"
+    ],
+    "source": "curated"
+  },
+  {
+    "name": "Boult Audio",
+    "niche": "Tech & Startups",
+    "city": "Gurugram",
+    "website": "https://www.boultaudio.com",
+    "email": "support@boultaudio.com",
+    "emails": [
+      "support@boultaudio.com"
+    ],
+    "source": "curated"
+  },
+  {
+    "name": "Mivi",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://www.mivi.in",
+    "email": "support@mivi.in",
+    "emails": [
+      "support@mivi.in"
+    ],
+    "source": "curated"
+  },
+  {
+    "name": "Portronics",
+    "niche": "Tech & Startups",
+    "city": "Delhi",
+    "website": "https://www.portronics.com",
+    "email": "support@portronics.com",
+    "emails": [
+      "support@portronics.com"
+    ],
+    "source": "curated"
+  },
+  {
+    "name": "The Label Life",
+    "niche": "Fashion & Apparel",
+    "city": "Mumbai",
+    "website": "https://www.thelabellife.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Nappa Dori",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://www.nappadori.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Doodlage",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://doodlage.in",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Global Desi",
+    "niche": "Fashion & Apparel",
+    "city": "Mumbai",
+    "website": "https://www.globaldesi.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Biba",
+    "niche": "Fashion & Apparel",
+    "city": "Gurugram",
+    "website": "https://www.biba.in",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Aurelia",
+    "niche": "Fashion & Apparel",
+    "city": "Gurugram",
+    "website": "https://www.aurelia.in",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Clovia",
+    "niche": "Fashion & Apparel",
+    "city": "Gurugram",
+    "website": "https://clovia.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Wow Skin",
+    "niche": "Beauty & Cosmetics",
+    "city": "Gurugram",
+    "website": "https://www.wowskin.com",
+    "email": "care@wowskin.com",
+    "emails": [
+      "care@wowskin.com"
+    ],
+    "source": "curated"
+  },
+  {
+    "name": "Auli Lifestyle",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://auli.in",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Just Herbs",
+    "niche": "Beauty & Cosmetics",
+    "city": "Chandigarh",
+    "website": "https://justherbs.in",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Forest Essentials",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://www.forestessentialsindia.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Biotique",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://www.biotique.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Wingreens Farms",
+    "niche": "Food & Beverage",
+    "city": "Gurugram",
+    "website": "https://www.wingreensfarms.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Happilo",
+    "niche": "Food & Beverage",
+    "city": "Bengaluru",
+    "website": "https://www.happilo.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "True Elements",
+    "niche": "Food & Beverage",
+    "city": "Pune",
+    "website": "https://true-elements.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Farmley",
+    "niche": "Food & Beverage",
+    "city": "Gurugram",
+    "website": "https://farmley.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Country Bean",
+    "niche": "Food & Beverage",
+    "city": "Delhi",
+    "website": "https://www.countrybean.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Nourish You",
+    "niche": "Food & Beverage",
+    "city": "Gurugram",
+    "website": "https://nourishyou.in",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Nestasia",
+    "niche": "Home & Decor",
+    "city": "Mumbai",
+    "website": "https://www.nestasia.in",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "The Decor Kart",
+    "niche": "Home & Decor",
+    "city": "Mumbai",
+    "website": "https://www.thedecorkart.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Wooden Street",
+    "niche": "Home & Decor",
+    "city": "Jaipur",
+    "website": "https://www.woodenstreet.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "SaffronStays",
+    "niche": "Travel & Hospitality",
+    "city": "Mumbai",
+    "website": "https://www.saffronstays.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "The Hosteller",
+    "niche": "Travel & Hospitality",
+    "city": "Delhi",
+    "website": "https://www.thehosteller.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Zebronics",
+    "niche": "Tech & Startups",
+    "city": "Chennai",
+    "website": "https://www.zebronics.com",
+    "email": "support@zebronics.com",
+    "emails": [
+      "support@zebronics.com"
+    ],
+    "source": "curated"
   }
 ]
