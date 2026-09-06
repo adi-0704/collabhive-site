@@ -135,7 +135,6 @@ def instant_value_emails(cfg: dict) -> dict:
     if not ob.get("instant_email_on_signup", True):
         return {"sent": 0, "skipped": "disabled"}
     from .verify import _emails  # noqa: F401
-    from . import automation as auto_mod
 
     # Look at recent submissions we haven't yet welcomed.
     events = load_events(cfg)
@@ -185,7 +184,8 @@ def instant_value_emails(cfg: dict) -> dict:
 
 def _safe_send(cfg, user, password, to, subject, body):
     try:
-        auto_mod._send_mime(cfg, user, password, to, subject, body, body)
+        from . import automation as _auto
+        _auto._send_mime(cfg, user, password, to, subject, body, body)
         return True
     except Exception as exc:
         log(f"  instant send fail {to}: {exc}")

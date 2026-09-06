@@ -214,7 +214,13 @@ def refresh_brand_emails(cfg: dict) -> dict:
         from .common import save_json
         save_json(ROOT / cfg["brands"]["seed_file"], pool)
 
-    for idx, brand in enumerate(pool):
+    # Rotate the starting point each run so the per-run cap covers different
+    # no-email brands over time, instead of retrying the same first N forever.
+    from datetime import datetime as _dt
+    offset = int(_dt.now().strftime("%j")) % len(pool)
+    order = list(range(offset, len(pool))) + list(range(0, offset))
+    for idx in order:
+        brand = pool[idx]
         if not brand.get("website"):
             continue
         # Re-skip brands that already have good emails, and cap per-run work so
