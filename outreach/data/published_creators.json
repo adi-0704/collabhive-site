@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-06T08:10:35.852230+00:00",
-  "count": 28,
+  "generated_at": "2026-09-07T09:13:35.335524+00:00",
+  "count": 31,
   "creators": [
     {
       "name": "Garima Narang",
@@ -252,6 +252,33 @@
       "city": "Lucknow",
       "followers": 2000,
       "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Sumit & Nishu ",
+      "handle": "@thesncouple_",
+      "niche": "Relationship / Couple content",
+      "city": "Meerut",
+      "followers": 5200,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Ananya gupta ",
+      "handle": "@ananyyawwww",
+      "niche": "Fashion, Beauty, want to explore travel as well",
+      "city": "Bhopal",
+      "followers": 4000,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Tarun Vijay",
+      "handle": "@https://www.instagram.com/tron3_/",
+      "niche": "Music",
+      "city": "Jaipur",
+      "followers": 56000,
+      "platforms": "Instagram, YouTube",
       "source": "applicant"
     }
   ]

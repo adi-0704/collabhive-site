@@ -390,5 +390,26 @@
     "referrer": "",
     "source": "seed",
     "ts": "2026-09-06T08:10:35.341189+00:00"
+  },
+  {
+    "kind": "creator_registered",
+    "email": "sumitbakshi2006@gmail.com",
+    "referrer": "",
+    "source": "seed",
+    "ts": "2026-09-07T09:13:34.825141+00:00"
+  },
+  {
+    "kind": "creator_registered",
+    "email": "ananyagupta2804@gmail.com",
+    "referrer": "",
+    "source": "seed",
+    "ts": "2026-09-07T09:13:34.825153+00:00"
+  },
+  {
+    "kind": "creator_registered",
+    "email": "tron3music@gmail.com",
+    "referrer": "",
+    "source": "seed",
+    "ts": "2026-09-07T09:13:34.825156+00:00"
   }
 ]

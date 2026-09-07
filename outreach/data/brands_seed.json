@@ -695,18 +695,25 @@
     "niche": "Beauty & Cosmetics",
     "city": "Gurugram",
     "website": "https://bellavitaorganic.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "shop@bellavitaorganic.com",
+    "emails": [
+      "shop@bellavitaorganic.com",
+      "abc@xyz.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Aqualogica",
     "niche": "Beauty & Cosmetics",
     "city": "Gurugram",
     "website": "https://aqualogica.in",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "care@bblunt.com",
+    "emails": [
+      "care@bblunt.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Dot & Key Beauty",
@@ -976,39 +983,6 @@
     "source": "curated"
   },
   {
-    "name": "Zivame",
-    "niche": "Fashion & Apparel",
-    "city": "Bengaluru",
-    "website": "https://www.zivame.com",
-    "email": "care@zivame.com",
-    "emails": [
-      "care@zivame.com"
-    ],
-    "source": "curated"
-  },
-  {
-    "name": "FabIndia",
-    "niche": "Fashion & Apparel",
-    "city": "Delhi",
-    "website": "https://www.fabindia.com",
-    "email": "care@fabindia.com",
-    "emails": [
-      "care@fabindia.com"
-    ],
-    "source": "curated"
-  },
-  {
-    "name": "Juicy Chemistry",
-    "niche": "Beauty & Cosmetics",
-    "city": "Coimbatore",
-    "website": "https://juicychemistry.com",
-    "email": "care@juicychemistry.com",
-    "emails": [
-      "care@juicychemistry.com"
-    ],
-    "source": "curated"
-  },
-  {
     "name": "RiteBite",
     "niche": "Fitness & Wellness",
     "city": "Mumbai",
@@ -1124,17 +1098,6 @@
     "website": "https://clovia.com",
     "email": "",
     "emails": [],
-    "source": "curated"
-  },
-  {
-    "name": "Wow Skin",
-    "niche": "Beauty & Cosmetics",
-    "city": "Gurugram",
-    "website": "https://www.wowskin.com",
-    "email": "care@wowskin.com",
-    "emails": [
-      "care@wowskin.com"
-    ],
     "source": "curated"
   },
   {

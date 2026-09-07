@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T08:10:34.924848+00:00",
+  "generated_at": "2026-09-07T09:13:34.444380+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -10,45 +10,150 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 36,
-    "unique_brands_emailed": 35,
-    "brands_in_pool": 89,
-    "brands_with_email": 31,
+    "total_sent": 49,
+    "unique_brands_emailed": 48,
+    "brands_in_pool": 124,
+    "brands_with_email": 46,
     "remaining_candidates": 0,
-    "sent_today": 0,
-    "sent_week": 14,
-    "day_streak": 14,
+    "sent_today": 13,
+    "sent_week": 27,
+    "day_streak": 27,
     "daily_budget": 18
   },
   "by_niche": {
-    "Fashion & Apparel": 11,
-    "Beauty & Cosmetics": 11,
+    "Fashion & Apparel": 13,
+    "Beauty & Cosmetics": 15,
     "Food & Beverage": 7,
-    "Fitness & Wellness": 1,
-    "Home & Decor": 3,
+    "Fitness & Wellness": 2,
+    "Home & Decor": 4,
     "Travel & Hospitality": 1,
-    "Tech & Startups": 2
+    "Tech & Startups": 7
   },
   "by_city": {
-    "Bengaluru": 7,
-    "Coimbatore": 1,
-    "Delhi": 3,
-    "Gurugram": 11,
-    "Hyderabad": 1,
+    "Bengaluru": 8,
+    "Coimbatore": 2,
+    "Delhi": 6,
+    "Gurugram": 14,
+    "Hyderabad": 2,
     "Kolkata": 1,
-    "Mumbai": 11,
-    "Jaipur": 1
+    "Mumbai": 14,
+    "Jaipur": 1,
+    "Chennai": 1
   },
   "pool_by_niche": {
-    "Food & Beverage": 20,
-    "Fashion & Apparel": 18,
-    "Beauty & Cosmetics": 20,
-    "Fitness & Wellness": 15,
-    "Home & Decor": 12,
-    "Travel & Hospitality": 2,
-    "Tech & Startups": 2
+    "Food & Beverage": 26,
+    "Fashion & Apparel": 27,
+    "Beauty & Cosmetics": 28,
+    "Fitness & Wellness": 16,
+    "Home & Decor": 16,
+    "Travel & Hospitality": 4,
+    "Tech & Startups": 7
   },
   "recent_sends": [
+    {
+      "ts": "2026-09-07T09:12:38.689473+00:00",
+      "email": "care@pepperfry.com",
+      "name": "Pepperfry",
+      "niche": "Home & Decor",
+      "city": "Mumbai",
+      "subject": "Creators for Pepperfry from CollabHive"
+    },
+    {
+      "ts": "2026-09-07T09:09:16.525434+00:00",
+      "email": "care@ritebite.com",
+      "name": "RiteBite",
+      "niche": "Fitness & Wellness",
+      "city": "Mumbai",
+      "subject": "A creator network for RiteBite — CollabHive"
+    },
+    {
+      "ts": "2026-09-07T09:06:05.893159+00:00",
+      "email": "care@nykaa.com",
+      "name": "Nykaa",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "A creator network for Nykaa — CollabHive"
+    },
+    {
+      "ts": "2026-09-07T09:04:11.973411+00:00",
+      "email": "support@mivi.in",
+      "name": "Mivi",
+      "niche": "Tech & Startups",
+      "city": "Hyderabad",
+      "subject": "Creators for Mivi from CollabHive"
+    },
+    {
+      "ts": "2026-09-07T09:01:24.041636+00:00",
+      "email": "care@wowskin.com",
+      "name": "Wow Skin",
+      "niche": "Beauty & Cosmetics",
+      "city": "Gurugram",
+      "subject": "Helping Wow Skin grow with creators"
+    },
+    {
+      "ts": "2026-09-07T08:58:27.228485+00:00",
+      "email": "support@boultaudio.com",
+      "name": "Boult Audio",
+      "niche": "Tech & Startups",
+      "city": "Gurugram",
+      "subject": "A creator network for Boult Audio — CollabHive"
+    },
+    {
+      "ts": "2026-09-07T08:56:45.135226+00:00",
+      "email": "care@mamaearth.in",
+      "name": "Mamaearth",
+      "niche": "Beauty & Cosmetics",
+      "city": "Gurugram",
+      "subject": "A creator network for Mamaearth — CollabHive"
+    },
+    {
+      "ts": "2026-09-07T08:53:29.443327+00:00",
+      "email": "support@portronics.com",
+      "name": "Portronics",
+      "niche": "Tech & Startups",
+      "city": "Delhi",
+      "subject": "Portronics: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-07T08:50:56.444571+00:00",
+      "email": "support@boat-lifestyle.com",
+      "name": "boAt",
+      "niche": "Tech & Startups",
+      "city": "Delhi",
+      "subject": "Helping boAt grow with creators"
+    },
+    {
+      "ts": "2026-09-07T08:47:39.895995+00:00",
+      "email": "care@juicychemistry.com",
+      "name": "Juicy Chemistry",
+      "niche": "Beauty & Cosmetics",
+      "city": "Coimbatore",
+      "subject": "A creator network for Juicy Chemistry — CollabHive"
+    },
+    {
+      "ts": "2026-09-07T08:44:46.550656+00:00",
+      "email": "support@zebronics.com",
+      "name": "Zebronics",
+      "niche": "Tech & Startups",
+      "city": "Chennai",
+      "subject": "Zebronics: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-07T08:42:28.675144+00:00",
+      "email": "care@fabindia.com",
+      "name": "FabIndia",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Helping FabIndia grow with creators"
+    },
+    {
+      "ts": "2026-09-07T08:40:07.963049+00:00",
+      "email": "care@zivame.com",
+      "name": "Zivame",
+      "niche": "Fashion & Apparel",
+      "city": "Bengaluru",
+      "subject": "A creator network for Zivame — CollabHive"
+    },
     {
       "ts": "2026-08-31T13:18:36.309985+00:00",
       "email": "chat@bombaysweetshop.com",
@@ -104,116 +209,35 @@
       "niche": "Travel & Hospitality",
       "city": "Gurugram",
       "subject": "A creator network for StayVista — CollabHive"
-    },
-    {
-      "ts": "2026-08-31T13:00:23.800877+00:00",
-      "email": "hello@urbanladder.com",
-      "name": "Urban Ladder",
-      "niche": "Home & Decor",
-      "city": "Bengaluru",
-      "subject": "A creator network for Urban Ladder — CollabHive"
-    },
-    {
-      "ts": "2026-08-31T12:58:40.511365+00:00",
-      "email": "support@wakefit.co",
-      "name": "Wakefit",
-      "niche": "Home & Decor",
-      "city": "Bengaluru",
-      "subject": "Wakefit: matched creators, ready to collab"
-    },
-    {
-      "ts": "2026-08-31T12:56:12.749975+00:00",
-      "email": "zudiohelp@trent-tata.com",
-      "name": "Zudio",
-      "niche": "Fashion & Apparel",
-      "city": "Mumbai",
-      "subject": "Zudio: matched creators, ready to collab"
-    },
-    {
-      "ts": "2026-08-31T12:54:23.056020+00:00",
-      "email": "orders@bunai.com",
-      "name": "Bunaai",
-      "niche": "Fashion & Apparel",
-      "city": "Jaipur",
-      "subject": "A creator network for Bunaai — CollabHive"
-    },
-    {
-      "ts": "2026-08-31T12:52:18.350483+00:00",
-      "email": "back-in-stock@notifyboost.net",
-      "name": "The Kaftan Company",
-      "niche": "Fashion & Apparel",
-      "city": "Delhi",
-      "subject": "Creators for The Kaftan Company from CollabHive"
-    },
-    {
-      "ts": "2026-08-31T12:50:25.402561+00:00",
-      "email": "info@anouk.in",
-      "name": "Anouk Ethnic",
-      "niche": "Fashion & Apparel",
-      "city": "Delhi",
-      "subject": "Creators for Anouk Ethnic from CollabHive"
-    },
-    {
-      "ts": "2026-08-31T12:48:37.786645+00:00",
-      "email": "help@chumbak.in",
-      "name": "Chumbak",
-      "niche": "Fashion & Apparel",
-      "city": "Bengaluru",
-      "subject": "Chumbak: matched creators, ready to collab"
-    },
-    {
-      "ts": "2026-08-29T05:12:55.947770+00:00",
-      "email": "dokterbacklink@gmail.com",
-      "name": "SunScoop",
-      "niche": "Beauty & Cosmetics",
-      "city": "Mumbai",
-      "subject": "Helping SunScoop grow with creators"
-    },
-    {
-      "ts": "2026-08-29T05:09:57.803364+00:00",
-      "email": "you@indewild.com",
-      "name": "indē wild",
-      "niche": "Beauty & Cosmetics",
-      "city": "Mumbai",
-      "subject": "Helping indē wild grow with creators"
-    },
-    {
-      "ts": "2026-08-29T05:07:51.662667+00:00",
-      "email": "info@asaya.in",
-      "name": "Asaya",
-      "niche": "Beauty & Cosmetics",
-      "city": "Mumbai",
-      "subject": "Asaya: matched creators, ready to collab"
-    },
-    {
-      "ts": "2026-08-29T05:04:57.247473+00:00",
-      "email": "hello@sugarcosmetics.com",
-      "name": "SUGAR Cosmetics",
-      "niche": "Beauty & Cosmetics",
-      "city": "Mumbai",
-      "subject": "A creator network for SUGAR Cosmetics — CollabHive"
-    },
-    {
-      "ts": "2026-08-28T04:16:20.616885+00:00",
-      "email": "help@beminimalist.co",
-      "name": "Minimalist",
-      "niche": "Beauty & Cosmetics",
-      "city": "Mumbai"
-    },
-    {
-      "ts": "2026-08-28T04:14:03.127940+00:00",
-      "email": "hello@plumgoodness.com",
-      "name": "Plum",
-      "niche": "Beauty & Cosmetics",
-      "city": "Mumbai"
     }
   ],
   "sales": {
-    "closing_count": 14,
+    "closing_count": 17,
     "closing_by_status": {
-      "interested": 14
+      "interested": 17
     },
     "recent_closing": [
+      {
+        "email": "noreply@mivi.in",
+        "subject": "Re:[## 3887016 ##] Creators for Mivi from CollabHive",
+        "snippet": "------=_Part_15710_368597975.1788771868679 Content-Type: text/plain; charset=\"utf-8\" Content-Transfer-Encoding: quoted-printable Dear Valued Mivian, Kindly note that we have changed our complaint registration portal and henc= e request you to raise your complaint by either of the following options fo= r a quicker resolution. Raise your complaint online using this link:=C2=A0 http://mivi.in/help_ce",
+        "status": "interested",
+        "ts": "2026-09-07T09:12:52.991905+00:00"
+      },
+      {
+        "email": "support@goboult.co.in",
+        "subject": "Re:Re:A creator network for Boult Audio =?UTF-8?B?4oCU?= CollabHive",
+        "snippet": "Ticket No:4788771520915<br><br><p><span style=3D\"font-family:Arial, Helveti= ca, sans-serif;\">Dear Customer,</span></p> <p><span style=3D\"font-family:Arial, Helvetica, sans-serif;\">Thank you for = reaching out to GoBoult. We appreciate you taking the time to connect with = us, and we want you to know your query matters to us.</span></p> <p><span style=3D\"font-family:Arial, Helvetica, sans-serif;\">",
+        "status": "interested",
+        "ts": "2026-09-07T09:12:52.991881+00:00"
+      },
+      {
+        "email": "mamaearth@honasa.freshdesk.com",
+        "subject": "=?UTF-8?Q?Ticket_Received_-_[#1339538]_-_A_creator_network_for?=\r\n =?UTF-8?Q?_Mamaearth_=E2=80=94_CollabHive?=",
+        "snippet": "----==_mimepart_6a9e7c5472fc2_21f9b73afb45683414 Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable Dear CollabHive, We would like to acknowledge that we have received yo= ur request and a ticket has been created. A support representative will = be reviewing your request and will send you a personal response (usually = within 3 -4 days). We appreciate=C2=A0your pat",
+        "status": "interested",
+        "ts": "2026-09-07T09:12:52.991832+00:00"
+      },
       {
         "email": "workspace-noreply@google.com",
         "subject": "You now have exclusive access to AI features",
@@ -262,27 +286,6 @@
         "snippet": "----==_mimepart_6a9269c8669e7_25a4cda60815a5 Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable Hello CollabHive, Thanks for reaching out, and we truly appreciate yo= ur interest in collaborating with us =F0=9F=A4=8E Could you please share = all the relevant details with our dedicated team at ambassadors@indewild.= com? They=E2=80=99ll review your request and get b",
         "status": "interested",
         "ts": "2026-08-29T05:13:16.067867+00:00"
-      },
-      {
-        "email": "hello@sugarcosmetics.com",
-        "subject": "A creator network for SUGAR Cosmetics =?UTF-8?B?4oCU?= CollabHive",
-        "snippet": "<div dir=3D\"ltr\"><p>Dear CollabHive,</p> <p>Thank you for reaching out and expressing your interest in our brand.</p= > <p>Appreciate the time and effort you've taken to share the details of your= proposal. We have received your information, and our team will review it t= horoughly. If we wish to explore this or require any further details, be as= sured that our team will reach out to you promptly",
-        "status": "interested",
-        "ts": "2026-08-29T05:13:16.067814+00:00"
-      },
-      {
-        "email": "hello@plumgoodness.com",
-        "subject": "A creator network for Plum =?UTF-8?B?4oCU?= CollabHive",
-        "snippet": "<div dir=3D\"ltr\">How was your support experience today?<br><br>Please leave= your review here: <a href=3D\"http://track.mail.sagepilot.ai/ls/click?upn= =3Du001.A0nn5Jh61alOjNvajnxsgMcpBrUQkrTAyFn8Yk3xLSPgLPzwMyC0NH-2B4dnaWCIf3-= 2Bm8xl1KYXRFapXIBzwL-2FIg-3D-3DdB21_pdpQFspEfsti8doGBZ3Cjf8aeesTfWuXK3aPZZZ= 7AsMMr8B-2BKDjqDCXBUzPF02HkGKrMR4JBxvx0E6O0FRBg4Riqa8IctFYZxhWssfjoAq0BXE9p= xn9Y9SZgJdzfSEuvnr",
-        "status": "interested",
-        "ts": "2026-08-28T16:20:02.668991+00:00"
-      },
-      {
-        "email": "tgb@seventurns.in",
-        "subject": "Your Support Ticket 245807 Has Been Created",
-        "snippet": "----==_mimepart_6a91086b6c2ea_24766634292d0 Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable Hi CollabHive, We have received your request, and your ticket ID is= 245807. =0D Our support team will review your query and respond to you between Monday= to Sunday, 9:00 AM =E2=80=93 7:00 PM. Thank you for reaching out to = us. We appreciate your patience and will get b",
-        "status": "interested",
-        "ts": "2026-08-28T16:20:02.668962+00:00"
       }
     ],
     "shortlist": [
@@ -414,23 +417,27 @@
         0.144
       ]
     ],
-    "replied_count": 14,
-    "reply_rate_pct": 40.0
+    "replied_count": 17,
+    "reply_rate_pct": 35.4
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-09-06T08:10:34.923422+00:00",
+    "checked_at": "2026-09-07T09:13:34.443052+00:00",
     "lookback_hours": 96,
-    "recorded_sends": 35,
-    "confirmed_in_sent": 25,
-    "unconfirmed": 10,
-    "delivery_rate_pct": 71.4,
-    "bounces": 4,
+    "recorded_sends": 48,
+    "confirmed_in_sent": 31,
+    "unconfirmed": 17,
+    "delivery_rate_pct": 64.6,
+    "bounces": 12,
     "bounce_emails": [
       "back-in-stock@notifyboost.net",
+      "care@juicychemistry.com",
+      "no-reply@aqualogica.in",
+      "care@fabindia.com",
+      "care@zivame.com",
       "careers@bewakoof.com",
       "files@quinn-live.bundle.js",
-      "no-reply@aqualogica.in"
+      "care@wowskin.com"
     ],
     "unconfirmed_emails": [
       "customercare@houseofindya.com",
@@ -442,7 +449,12 @@
       "zudiohelp@trent-tata.com",
       "hello@urbanladder.com",
       "shop@bellavitaorganic.com",
-      "care@thesleepcompany.in"
+      "care@thesleepcompany.in",
+      "support@zebronics.com",
+      "support@boat-lifestyle.com",
+      "support@portronics.com",
+      "support@mivi.in",
+      "care@pepperfry.com"
     ],
     "flagged": false
   },
@@ -505,9 +517,9 @@
     "proof": {
       "creators_joined": 0,
       "campaigns_run": 0,
-      "alltime_creators": 48,
+      "alltime_creators": 51,
       "alltime_briefs": 2,
-      "generated_at": "2026-09-06T08:10:34.925841+00:00"
+      "generated_at": "2026-09-07T09:13:34.445156+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -525,7 +537,7 @@
     }
   },
   "publish": {
-    "published_count": 28,
+    "published_count": 31,
     "creators": [
       {
         "name": "Garima Narang",
@@ -848,16 +860,31 @@
         "handle": "@aathharrvv",
         "name": "Atharv singh ",
         "niche": "Fashion "
+      },
+      {
+        "handle": "@thesncouple_",
+        "name": "Sumit & Nishu ",
+        "niche": "Relationship / Couple content"
+      },
+      {
+        "handle": "@ananyyawwww",
+        "name": "Ananya gupta ",
+        "niche": "Fashion, Beauty, want to explore travel as well"
+      },
+      {
+        "handle": "@https://www.instagram.com/tron3_/",
+        "name": "Tarun Vijay",
+        "niche": "Music"
       }
     ],
-    "drafts_count": 28
+    "drafts_count": 31
   },
   "buffer": {
     "queued_count": 0,
     "needs_media_count": 0,
-    "has_drafts": 28,
+    "has_drafts": 31,
     "statuses": {}
   },
   "dnc_count": 1,
-  "last_run": "2026-09-06T08:10:04.118999+00:00"
+  "last_run": "2026-09-07T09:12:38.726510+00:00"
 }
