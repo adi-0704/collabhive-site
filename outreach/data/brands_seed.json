@@ -722,7 +722,8 @@
     "website": "https://dotandkey.in",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Dr. Sheth's",

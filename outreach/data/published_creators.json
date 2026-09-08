@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-07T09:13:35.335524+00:00",
-  "count": 31,
+  "generated_at": "2026-09-08T08:27:15.208931+00:00",
+  "count": 34,
   "creators": [
     {
       "name": "Garima Narang",
@@ -278,6 +278,33 @@
       "niche": "Music",
       "city": "Jaipur",
       "followers": 56000,
+      "platforms": "Instagram, YouTube",
+      "source": "applicant"
+    },
+    {
+      "name": "Shreya Paudel",
+      "handle": "@lipstickona.receipt",
+      "niche": "Fashion, beauty, travel",
+      "city": "Kathmandu",
+      "followers": 600,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Sanskriti Singh",
+      "handle": "@_sanskritisingh06_",
+      "niche": "Beauty ",
+      "city": "Delhi",
+      "followers": 4600,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Abhijeet ",
+      "handle": "@foodieabhijeet",
+      "niche": "Food",
+      "city": "Delhi",
+      "followers": 1,
       "platforms": "Instagram, YouTube",
       "source": "applicant"
     }
