@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T08:27:14.255523+00:00",
+  "generated_at": "2026-09-09T08:30:47.809153+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -15,7 +15,7 @@
     "brands_in_pool": 120,
     "brands_with_email": 42,
     "remaining_candidates": 0,
-    "sent_today": 13,
+    "sent_today": 0,
     "sent_week": 13,
     "day_streak": 13,
     "daily_budget": 18
@@ -422,22 +422,24 @@
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-09-08T08:27:14.253863+00:00",
+    "checked_at": "2026-09-09T08:30:47.807799+00:00",
     "lookback_hours": 96,
     "recorded_sends": 48,
     "confirmed_in_sent": 31,
     "unconfirmed": 17,
     "delivery_rate_pct": 64.6,
-    "bounces": 12,
+    "bounces": 14,
     "bounce_emails": [
       "back-in-stock@notifyboost.net",
+      "careers@bewakoof.com",
       "files@quinn-live.bundle.js",
+      "care@fabindia.com",
+      "care@zivame.com",
+      "care@ritebite.com",
+      "support@boat-lifestyle.com",
       "care@juicychemistry.com",
       "no-reply@aqualogica.in",
-      "careers@bewakoof.com",
-      "care@wowskin.com",
-      "care@fabindia.com",
-      "care@zivame.com"
+      "care@wowskin.com"
     ],
     "unconfirmed_emails": [
       "customercare@houseofindya.com",
@@ -451,7 +453,6 @@
       "shop@bellavitaorganic.com",
       "care@thesleepcompany.in",
       "support@zebronics.com",
-      "support@boat-lifestyle.com",
       "support@portronics.com",
       "support@mivi.in",
       "care@pepperfry.com"
@@ -512,14 +513,14 @@
       "brand_conversion_pct": 100.0,
       "approve_rate_pct": 100.0,
       "brief_rate_pct": 0.0,
-      "events_last_24h": 3
+      "events_last_24h": 0
     },
     "proof": {
       "creators_joined": 0,
       "campaigns_run": 0,
-      "alltime_creators": 54,
+      "alltime_creators": 57,
       "alltime_briefs": 2,
-      "generated_at": "2026-09-08T08:27:14.256750+00:00"
+      "generated_at": "2026-09-09T08:30:47.810026+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -537,7 +538,7 @@
     }
   },
   "publish": {
-    "published_count": 34,
+    "published_count": 41,
     "creators": [
       {
         "name": "Garima Narang",
@@ -890,16 +891,51 @@
         "handle": "@foodieabhijeet",
         "name": "Abhijeet ",
         "niche": "Food"
+      },
+      {
+        "handle": "@vaishnavi_verma17",
+        "name": "Vaishnavi ",
+        "niche": "Fashion, fitness, travel, beauty,lifestyle "
+      },
+      {
+        "handle": "@ruksharmallickk",
+        "name": "rukshar mallick",
+        "niche": "food fashion"
+      },
+      {
+        "handle": "@thatsmyplate",
+        "name": "Paras Arora",
+        "niche": "Food, Travel"
+      },
+      {
+        "handle": "@im.ayla___",
+        "name": "Ayla ",
+        "niche": "Fashion, Beauty, Transitions"
+      },
+      {
+        "handle": "@Whatever",
+        "name": "Lifeasnamdol",
+        "niche": "Like whtever"
+      },
+      {
+        "handle": "@ankitaaxa",
+        "name": "Ankita Sarmah",
+        "niche": "Random , travel , fashion , beauty "
+      },
+      {
+        "handle": "@_.loveyyyy._",
+        "name": "Lovi",
+        "niche": "food, fashion, beauty, travel, lifestyle"
       }
     ],
-    "drafts_count": 34
+    "drafts_count": 41
   },
   "buffer": {
     "queued_count": 0,
     "needs_media_count": 0,
-    "has_drafts": 34,
+    "has_drafts": 41,
     "statuses": {}
   },
   "dnc_count": 1,
-  "last_run": "2026-09-08T08:26:09.800847+00:00"
+  "last_run": "2026-09-09T08:30:01.610859+00:00"
 }

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-08T08:27:15.208931+00:00",
-  "count": 34,
+  "generated_at": "2026-09-09T08:30:48.787741+00:00",
+  "count": 41,
   "creators": [
     {
       "name": "Garima Narang",
@@ -306,6 +306,69 @@
       "city": "Delhi",
       "followers": 1,
       "platforms": "Instagram, YouTube",
+      "source": "applicant"
+    },
+    {
+      "name": "Vaishnavi ",
+      "handle": "@vaishnavi_verma17",
+      "niche": "Fashion, fitness, travel, beauty,lifestyle ",
+      "city": "Jaipur",
+      "followers": 2500,
+      "platforms": "Instagram, YouTube",
+      "source": "applicant"
+    },
+    {
+      "name": "rukshar mallick",
+      "handle": "@ruksharmallickk",
+      "niche": "food fashion",
+      "city": "delhi",
+      "followers": 7400,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Paras Arora",
+      "handle": "@thatsmyplate",
+      "niche": "Food, Travel",
+      "city": "Delhi India",
+      "followers": 810000,
+      "platforms": "Instagram, YouTube, Facebook",
+      "source": "applicant"
+    },
+    {
+      "name": "Ayla ",
+      "handle": "@im.ayla___",
+      "niche": "Fashion, Beauty, Transitions",
+      "city": "Dehradun",
+      "followers": 1500,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Lifeasnamdol",
+      "handle": "@Whatever",
+      "niche": "Like whtever",
+      "city": "Manali HP",
+      "followers": 58,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Ankita Sarmah",
+      "handle": "@ankitaaxa",
+      "niche": "Random , travel , fashion , beauty ",
+      "city": "Assam",
+      "followers": 283,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Lovi",
+      "handle": "@_.loveyyyy._",
+      "niche": "food, fashion, beauty, travel, lifestyle",
+      "city": "new delhi",
+      "followers": 73512,
+      "platforms": "Instagram",
       "source": "applicant"
     }
   ]
