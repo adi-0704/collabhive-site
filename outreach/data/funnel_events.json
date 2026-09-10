@@ -481,5 +481,12 @@
     "referrer": "",
     "source": "seed",
     "ts": "2026-09-09T08:30:48.216085+00:00"
+  },
+  {
+    "kind": "creator_registered",
+    "email": "gogiaangel@gmail.com",
+    "referrer": "",
+    "source": "seed",
+    "ts": "2026-09-10T08:29:41.458116+00:00"
   }
 ]
