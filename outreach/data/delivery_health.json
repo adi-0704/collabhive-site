@@ -1,21 +1,21 @@
 {
   "ok": true,
-  "checked_at": "2026-09-10T08:29:41.079231+00:00",
+  "checked_at": "2026-09-11T08:28:18.726907+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 48,
-  "confirmed_in_sent": 18,
-  "unconfirmed": 30,
-  "delivery_rate_pct": 37.5,
+  "recorded_sends": 50,
+  "confirmed_in_sent": 23,
+  "unconfirmed": 27,
+  "delivery_rate_pct": 46.0,
   "bounces": 12,
   "bounce_emails": [
-    "support@boat-lifestyle.com",
     "care@zivame.com",
-    "care@juicychemistry.com",
-    "care@fabindia.com",
-    "back-in-stock@notifyboost.net",
     "care@ritebite.com",
+    "support@boat-lifestyle.com",
     "no-reply@aqualogica.in",
-    "care@wowskin.com"
+    "care@fabindia.com",
+    "care@juicychemistry.com",
+    "care@wowskin.com",
+    "back-in-stock@notifyboost.net"
   ],
   "unconfirmed_emails": [
     "grievance@snitch.com",
@@ -36,8 +36,8 @@
     "hello@plumgoodness.com",
     "help@beminimalist.co",
     "hello@sugarcosmetics.com",
-    "you@indewild.com",
-    "zudiohelp@trent-tata.com"
+    "info@asaya.in",
+    "you@indewild.com"
   ],
   "flagged": true
 }

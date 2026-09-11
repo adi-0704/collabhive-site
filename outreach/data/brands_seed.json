@@ -730,18 +730,24 @@
     "niche": "Beauty & Cosmetics",
     "city": "Mumbai",
     "website": "https://drsheths.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "support@drsheths.com",
+    "emails": [
+      "support@drsheths.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Foxtale",
     "niche": "Beauty & Cosmetics",
     "city": "Mumbai",
     "website": "https://foxtale.in",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "info@foxtale.in",
+    "emails": [
+      "info@foxtale.in"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "The Derma Co",

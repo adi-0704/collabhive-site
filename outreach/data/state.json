@@ -49,7 +49,9 @@
     "support@mivi.in",
     "care@nykaa.com",
     "care@ritebite.com",
-    "care@pepperfry.com"
+    "care@pepperfry.com",
+    "support@drsheths.com",
+    "info@foxtale.in"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -100,7 +102,9 @@
     "mivi.in",
     "nykaa.com",
     "ritebite.com",
-    "pepperfry.com"
+    "pepperfry.com",
+    "drsheths.com",
+    "foxtale.in"
   ],
   "sent_log": [
     {
@@ -476,9 +480,25 @@
       "niche": "Home & Decor",
       "city": "Mumbai",
       "subject": "Creators for Pepperfry from CollabHive"
+    },
+    {
+      "ts": "2026-09-11T08:24:16.543372+00:00",
+      "email": "support@drsheths.com",
+      "name": "Dr. Sheth's",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Helping Dr. Sheth's grow with creators"
+    },
+    {
+      "ts": "2026-09-11T08:27:01.957473+00:00",
+      "email": "info@foxtale.in",
+      "name": "Foxtale",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Foxtale: matched creators, ready to collab"
     }
   ],
-  "last_run": "2026-09-10T08:29:12.495695+00:00",
+  "last_run": "2026-09-11T08:27:02.000334+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",

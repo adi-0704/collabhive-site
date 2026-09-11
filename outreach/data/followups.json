@@ -123,5 +123,70 @@
     "count": 2,
     "last_sent": "2026-09-08T08:26:25.911850+00:00",
     "name": "Bombay Sweet Shop"
+  },
+  "care@zivame.com": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "Zivame"
+  },
+  "care@fabindia.com": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "FabIndia"
+  },
+  "support@zebronics.com": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "Zebronics"
+  },
+  "care@juicychemistry.com": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "Juicy Chemistry"
+  },
+  "support@boat-lifestyle.com": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "boAt"
+  },
+  "support@portronics.com": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "Portronics"
+  },
+  "care@mamaearth.in": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "Mamaearth"
+  },
+  "support@boultaudio.com": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "Boult Audio"
+  },
+  "care@wowskin.com": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "Wow Skin"
+  },
+  "support@mivi.in": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "Mivi"
+  },
+  "care@nykaa.com": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "Nykaa"
+  },
+  "care@ritebite.com": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "RiteBite"
+  },
+  "care@pepperfry.com": {
+    "count": 1,
+    "last_sent": "2026-09-11T08:27:08.658151+00:00",
+    "name": "Pepperfry"
   }
 }
