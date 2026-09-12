@@ -51,7 +51,9 @@
     "care@ritebite.com",
     "care@pepperfry.com",
     "support@drsheths.com",
-    "info@foxtale.in"
+    "info@foxtale.in",
+    "care@thedermaco.com",
+    "hello@perforacare.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -104,7 +106,9 @@
     "ritebite.com",
     "pepperfry.com",
     "drsheths.com",
-    "foxtale.in"
+    "foxtale.in",
+    "thedermaco.com",
+    "perforacare.com"
   ],
   "sent_log": [
     {
@@ -496,9 +500,25 @@
       "niche": "Beauty & Cosmetics",
       "city": "Mumbai",
       "subject": "Foxtale: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-12T08:14:36.433478+00:00",
+      "email": "care@thedermaco.com",
+      "name": "The Derma Co",
+      "niche": "Beauty & Cosmetics",
+      "city": "Gurugram",
+      "subject": "A creator network for The Derma Co — CollabHive"
+    },
+    {
+      "ts": "2026-09-12T08:17:50.570726+00:00",
+      "email": "hello@perforacare.com",
+      "name": "Perfora",
+      "niche": "Beauty & Cosmetics",
+      "city": "Jodhpur",
+      "subject": "Perfora: matched creators, ready to collab"
     }
   ],
-  "last_run": "2026-09-11T08:27:02.000334+00:00",
+  "last_run": "2026-09-12T08:17:50.584199+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",

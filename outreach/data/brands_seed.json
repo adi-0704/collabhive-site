@@ -754,18 +754,26 @@
     "niche": "Beauty & Cosmetics",
     "city": "Gurugram",
     "website": "https://thedermaco.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "care@thedermaco.com",
+    "emails": [
+      "care@thedermaco.com",
+      "support@thedermaco.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Perfora",
     "niche": "Beauty & Cosmetics",
     "city": "Jodhpur",
     "website": "https://perforacare.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "hello@perforacare.com",
+    "emails": [
+      "hello@perforacare.com",
+      "collab@perforacare.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Chemist at Play",
