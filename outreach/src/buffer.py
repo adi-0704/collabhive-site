@@ -68,7 +68,9 @@ def _queue_post(cfg, channel_id: str, text: str, org_id: str, image_url: str = "
     assets = ""
     if image_url:
         assets = ', assets: [{ image: { url: "%s" } }]' % image_url
-    if due_at:
+    if due_at == "now":
+        timing = 'mode: shareNow'
+    elif due_at:
         timing = 'mode: customScheduled, dueAt: "%s"' % due_at
     else:
         timing = 'mode: addToQueue'

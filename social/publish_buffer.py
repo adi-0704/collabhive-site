@@ -66,6 +66,7 @@ def main() -> int:
     ap.add_argument("--date", default=date.today().isoformat())
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--list-channels", action="store_true")
+    ap.add_argument("--now", action="store_true", help="publish immediately")
     args = ap.parse_args()
 
     cfg = load_config()
@@ -104,10 +105,15 @@ def main() -> int:
             log("  SKIP — BUFFER_ACCESS_TOKEN not set.")
             continue
         try:
-            res = _queue_post(cfg, channel_id, e["caption"], org_id, image_url)
-            if isinstance(res, dict) and res.get("error"):
-                raise RuntimeError(res["error"])
-            log(f"  QUEUED to Buffer channel {channel_id}")
+            res = _queue_post(cfg, channel_id, e["caption"], org_id, image_url,
+                              due_at="now" if args.now else "",
+                              service="instagram")
+            # _queue_post signals failure with {"ok": False, "message": ...}.
+            # This used to check res["error"], a key it never returns, so a
+            # rejected post printed "QUEUED" and nothing ever reached Instagram.
+            if not (isinstance(res, dict) and res.get("ok")):
+                raise RuntimeError((res or {}).get("message", "unknown error"))
+            log(f"  QUEUED to Buffer channel {channel_id} (post {res.get('post_id')})")
         except Exception as exc:
             failures += 1
             log(f"  FAILED: {exc}")
