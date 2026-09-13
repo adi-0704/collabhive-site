@@ -395,6 +395,88 @@ class TestPublication(unittest.TestCase):
         self.assertNotIn("rate", ig)
 
 
+class TestOps(unittest.TestCase):
+    """Health watchdog + CEO brief. Must never send outreach, never crash."""
+
+    def setUp(self):
+        self.common = _mkdata(None)
+        self.cfg = _load_cfg()
+
+    def _write_state(self, last_run_h, last_send_h):
+        from datetime import datetime, timezone, timedelta
+        now = datetime.now(timezone.utc)
+        self.common.save_json(_TEST_ROOT / "data" / "state.json", {
+            "last_run": (now - timedelta(hours=last_run_h)).isoformat(),
+            "emailed_emails": ["hi@a.com"],
+            "sent_log": [{"ts": (now - timedelta(hours=last_send_h)).isoformat(),
+                          "email": "hi@a.com", "name": "A"}],
+        })
+
+    def test_healthy_pipeline_passes(self):
+        from src import ops
+        self._write_state(last_run_h=2, last_send_h=3)
+        checks = ops.health_check(self.cfg)
+        by = {c["name"]: c for c in checks}
+        self.assertEqual(by["pipeline_ran"]["status"], ops.OK)
+        self.assertEqual(by["mail_flowing"]["status"], ops.OK)
+
+    def test_detects_stalled_pipeline(self):
+        """The exact failure that went unnoticed for a week."""
+        from src import ops
+        self._write_state(last_run_h=300, last_send_h=300)
+        checks = ops.health_check(self.cfg)
+        by = {c["name"]: c for c in checks}
+        self.assertEqual(by["pipeline_ran"]["status"], ops.FAIL)
+        self.assertEqual(ops.worst_status(checks), ops.FAIL)
+
+    def test_brief_renders_and_flags_problems(self):
+        from src import ops
+        self._write_state(last_run_h=300, last_send_h=300)
+        checks = ops.health_check(self.cfg)
+        metrics = ops.gather_metrics(self.cfg)
+        subject, body = ops.render_brief(self.cfg, checks, metrics)
+        self.assertIn("CollabHive", subject)
+        self.assertIn("NEEDS YOUR ATTENTION", body)
+        self.assertIn("SALES", body)
+
+    def test_run_ops_without_password_does_not_crash(self):
+        import os
+        from src import ops
+        os.environ.pop("OUTREACH_EMAIL_PASS", None)
+        self._write_state(last_run_h=1, last_send_h=1)
+        res = ops.run_ops(self.cfg)
+        self.assertFalse(res["emailed"])          # no password -> no mail
+        self.assertIn(res["status"], (ops.OK, ops.WARN, ops.FAIL))
+        self.assertTrue((_TEST_ROOT / "data" / "ops_health.json").exists())
+
+
+class TestReplyHygiene(unittest.TestCase):
+    """Only real brands we contacted may enter the sales pipeline."""
+
+    def setUp(self):
+        self.common = _mkdata(None)
+        self.cfg = _load_cfg()
+        self.common.save_json(_TEST_ROOT / "data" / "state.json", {
+            "emailed_emails": ["hello@brand.com"],
+            "emailed_domains": ["brand.com"],
+        })
+
+    def test_rejects_notification_bots_and_strangers(self):
+        from src.sales import _contacted_index, _is_reply_to_us
+        idx = _contacted_index(self.cfg)
+        self.assertFalse(_is_reply_to_us("no-reply@accounts.google.com", idx))
+        self.assertFalse(_is_reply_to_us("workspace-noreply@google.com", idx))
+        self.assertFalse(_is_reply_to_us("random@stranger.com", idx))
+        self.assertFalse(_is_reply_to_us("", idx))
+
+    def test_accepts_contacted_brand_and_colleague(self):
+        from src.sales import _contacted_index, _is_reply_to_us
+        idx = _contacted_index(self.cfg)
+        self.assertTrue(_is_reply_to_us("hello@brand.com", idx))
+        # founder replying from a different mailbox on the same domain
+        self.assertTrue(_is_reply_to_us("priya@brand.com", idx))
+
+
 class TestBuffer(unittest.TestCase):
     def setUp(self):
         self.common = _mkdata(None)
@@ -480,7 +562,8 @@ def _suite():
     loader = unittest.TestLoader()
     suite = unittest.TestSuite()
     for cls in (TestCommon, TestBrands, TestPool, TestSales, TestMailerNoNetwork,
-                TestGrowth, TestProtect, TestOnboarding, TestPublication, TestBuffer, TestBlackboxModes):
+                TestGrowth, TestProtect, TestOnboarding, TestPublication, TestBuffer,
+                TestOps, TestReplyHygiene, TestBlackboxModes):
         suite.addTests(loader.loadTestsFromTestCase(cls))
     return suite
 

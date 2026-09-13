@@ -1,0 +1,57 @@
+name: Outreach Ops (health watchdog + daily brief)
+
+# Deliberately a SEPARATE workflow from outreach-daily.yml. If the daily run
+# crashes, times out, or is disabled, this one still fires and tells the owner.
+# A watchdog that lives inside the thing it watches is not a watchdog.
+on:
+  schedule:
+    # 20:00 IST = 14:30 UTC — late enough that the 09:00 IST daily run has
+    # finished, so the brief reports on a complete day.
+    - cron: '30 14 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: outreach-ops
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  ops:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Health check + daily brief
+        working-directory: outreach
+        env:
+          OUTREACH_EMAIL_USER: ${{ secrets.OUTREACH_EMAIL_USER }}
+          OUTREACH_EMAIL_PASS: ${{ secrets.OUTREACH_EMAIL_PASS }}
+        run: python -u src/run.py ops
+
+      - name: Commit health snapshot
+        if: always()
+        run: |
+          git config user.name "collabhive-ops"
+          git config user.email "collabhive.in@gmail.com"
+          git add -A outreach/data/ops_health.json || true
+          if git diff --cached --quiet; then
+            echo "No health change to commit."
+          else
+            git commit -m "ops: health snapshot [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase origin "${{ github.ref_name }}" && break || true
+            done
+            for i in 1 2 3; do
+              git push origin "${{ github.ref_name }}" && break || sleep 15
+            done
+          fi
+        shell: bash
