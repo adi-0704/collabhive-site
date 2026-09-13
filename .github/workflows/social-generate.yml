@@ -1,0 +1,71 @@
+name: Social Generate (build calendar + render images)
+
+# Renders the post art in CI so no laptop is ever required. Edit the copy in
+# social/content_bank.py, push, and this regenerates the calendar and images
+# and commits them back. The daily posting workflow then just picks up whatever
+# is committed.
+#
+# Not on a daily schedule on purpose: rendering is only needed when the content
+# or the layouts change, not every morning.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'social/content_bank.py'
+      - 'social/layouts.py'
+      - 'social/hashtags.py'
+      - 'social/generate_calendar.py'
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'How many days to generate'
+        required: false
+        default: '100'
+
+concurrency:
+  group: social-generate
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Playwright + Chromium
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Build calendar and render images
+        run: |
+          python -u social/generate_calendar.py --days "${{ inputs.days || 100 }}"
+
+      - name: Commit generated posts
+        if: always()
+        run: |
+          git config user.name "collabhive-social"
+          git config user.email "collabhive.in@gmail.com"
+          git add -A social/calendar/ || true
+          if git diff --cached --quiet; then
+            echo "No calendar changes to commit."
+          else
+            git commit -m "build: regenerate social calendar + post images [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase origin "${{ github.ref_name }}" && break || true
+            done
+            for i in 1 2 3; do
+              git push origin "${{ github.ref_name }}" && break || sleep 15
+            done
+          fi
+        shell: bash
