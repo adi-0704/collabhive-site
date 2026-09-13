@@ -110,7 +110,25 @@ def health_check(cfg: dict) -> list[dict]:
     else:
         checks.append(_check("hot_leads", OK, "No hot leads are being ignored."))
 
-    # 5) Deliverability — a high bounce rate poisons the sending domain.
+    # 5) Creator supply. creators_pool.json is rebuilt from the applicant sheet
+    #    each run (it is untracked, since it holds creator PII and this repo is
+    #    public). If the sheet read fails, the pool silently empties and every
+    #    shortlist/quote downstream produces nothing — so check it explicitly.
+    creators = load_json(ROOT / cfg["sales"]["creator_pool_file"])
+    creators = creators if isinstance(creators, list) else []
+    if not creators:
+        checks.append(_check("creator_supply", FAIL,
+                             "Creator pool is EMPTY — no shortlists or quotes can be produced.",
+                             "The applicant sheet read failed. Confirm the sheet in "
+                             "publish.applicant_sheet_id is still shared 'Anyone with the link'."))
+    elif len(creators) < int(ocfg.get("low_creator_threshold", 10)):
+        checks.append(_check("creator_supply", WARN,
+                             f"Only {len(creators)} creator(s) in the pool.",
+                             "Recruit more creators or brand matching gets thin."))
+    else:
+        checks.append(_check("creator_supply", OK, f"{len(creators)} creators available for matching."))
+
+    # 6) Deliverability — a high bounce rate poisons the sending domain.
     health = load_json(ROOT / cfg.get("verification", {}).get("health_file", "data/delivery_health.json"))
     health = health if isinstance(health, dict) else {}
     if health.get("flagged"):

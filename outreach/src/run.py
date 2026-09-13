@@ -436,11 +436,16 @@ def main(argv: list[str] | None = None) -> int:
         # itself. Calling both doubled the (slow, network-bound) enrichment pass
         # and pushed the scheduled job past its timeout.
         cmd_daily(cfg)
+        # publish FIRST: it rebuilds data/creators_pool.json from the applicant
+        # sheet. That file is no longer tracked in git (it holds creator email/
+        # phone and this repo is public), so on a fresh CI checkout it does not
+        # exist until publish recreates it. sales/onboarding both read it, so
+        # they must run after, or matching and instant-value emails see nothing.
+        cmd_publish(cfg)
         cmd_sales(cfg)
         cmd_automation(cfg)
         cmd_growth(cfg)
         cmd_onboarding(cfg)
-        cmd_publish(cfg)
         cmd_seo(cfg)
         cmd_verify(cfg)
         cmd_report(cfg)

@@ -15,3 +15,11 @@ node_modules/
 # Keep outreach/data/*.json tracked: state.json (dedupe), sent_log.json,
 # report.json (dashboard) and brands_seed.json (brand pool) MUST persist
 # between daily runs, otherwise the same brands get re-emailed every day.
+
+# EXCEPTION — creator PII must never be in this public repo.
+# creators_pool.json carries applicant email, phone and internal rates. The
+# Google applicant sheet (publish.applicant_sheet_id) is the source of truth;
+# publication.pull_applicants() rebuilds this file from it on every run, so it
+# does not need to persist in git. The `all` pipeline runs publish early for
+# exactly this reason.
+outreach/data/creators_pool.json
