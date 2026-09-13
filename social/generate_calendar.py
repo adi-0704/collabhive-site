@@ -38,24 +38,46 @@ APPLY_FORM = ("https://docs.google.com/forms/d/e/"
               "1FAIpQLScIV5PVkwbdcvMpzCyxTAzN71ORCqaTaIMY7Dr15xEMXSxIXQ/viewform")
 
 
-def _pick_layout(pillar: str, recent: list[str]) -> str:
+def _is_stat_headline(headline: str) -> bool:
+    """stat_hero blows the first word up to 210px, which only reads as design
+    if that word is actually a figure. 'You're undercharging...' rendered a
+    giant "You're" — so gate the layout on a numeric opening token."""
+    first = headline.split()[0] if headline.split() else ""
+    return any(ch.isdigit() for ch in first)
+
+
+def _pick_layout(pillar: str, recent: list[str], headline: str = "") -> str:
     """First layout not used in the last 7 posts. Some pillars have a natural fit."""
     preferred = {
         "myth": ["myth_fact", "split_compare"],
-        "data": ["stat_hero", "bold_statement"],
-        "tip": ["tip_card", "checklist"],
+        "data": ["stat_hero", "bold_dark"],
+        "tip": ["hero_cta", "checklist"],
         "mistake": ["split_compare", "myth_fact"],
-        "process": ["checklist", "gradient_band"],
-        "money": ["stat_hero", "gradient_band"],
-        "rates": ["stat_hero", "tip_card"],
-        "redflag": ["myth_fact", "bold_statement"],
+        "process": ["checklist", "bullet_list"],
+        "money": ["stat_hero", "statement_frame"],
+        "rates": ["stat_hero", "hero_cta"],
+        "redflag": ["myth_fact", "bold_dark"],
         "community": ["question", "quote_card"],
-        "confidence": ["quote_card", "bold_statement"],
+        "confidence": ["quote_card", "statement_frame"],
+        "pitch": ["bold_dark", "statement_frame"],
+        "mediakit": ["bullet_list", "checklist"],
+        "growth": ["statement_frame", "hero_cta"],
+        "negotiation": ["split_compare", "quote_card"],
+        "format": ["split_compare", "bullet_list"],
+        "seasonal": ["hero_cta", "statement_frame"],
+        "proof": ["quote_card", "bullet_list"],
     }
     for cand in preferred.get(pillar, []) + LAYOUTS:
+        if cand == "stat_hero" and not _is_stat_headline(headline):
+            continue
         if cand not in recent[-7:]:
             return cand
-    return LAYOUTS[len(recent) % len(LAYOUTS)]
+    # Fallback must respect the same gate.
+    for cand in LAYOUTS:
+        if cand == "stat_hero" and not _is_stat_headline(headline):
+            continue
+        return cand
+    return "hero_cta"
 
 
 def build(days: int, start: date) -> list[dict]:
@@ -77,7 +99,7 @@ def build(days: int, start: date) -> list[dict]:
                 src = bank[(day + tries) % len(bank)]
                 pillar, headline, sub, caption, cta = src
 
-            layout = _pick_layout(pillar, recent_layouts)
+            layout = _pick_layout(pillar, recent_layouts, headline)
             recent_layouts.append(layout)
             recent_pillars.append(pillar)
 

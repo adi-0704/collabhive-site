@@ -34,15 +34,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Publish today's posts
+      - name: Queue today's posts to Buffer
         env:
-          IG_BRAND_USER_ID: ${{ secrets.IG_BRAND_USER_ID }}
-          IG_BRAND_TOKEN: ${{ secrets.IG_BRAND_TOKEN }}
-          IG_CREATOR_USER_ID: ${{ secrets.IG_CREATOR_USER_ID }}
-          IG_CREATOR_TOKEN: ${{ secrets.IG_CREATOR_TOKEN }}
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
         run: |
           if [ "${{ inputs.dry_run }}" = "true" ]; then
-            python -u social/publish_instagram.py --dry-run
+            python -u social/publish_buffer.py --dry-run
           else
-            python -u social/publish_instagram.py
+            python -u social/publish_buffer.py
           fi

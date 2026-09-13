@@ -200,6 +200,11 @@
     "service": "instagram",
     "mention_handle_in_text": "instagram",
     "default_image_url": "https://adi-0704.github.io/collabhive-site/assets/img/logo.png",
+    "channels": {
+      "brand": "",
+      "creator": ""
+    },
+    "channels_note": "Buffer channel ids for the two Instagram pages, used by social/publish_buffer.py. Find them with: python social/publish_buffer.py --list-channels",
     "note": "Buffer API key is read from OUTREACH_BUFFER_KEY / GitHub Secret BUFFER_ACCESS_TOKEN (never committed)."
   },
   "seo": {
