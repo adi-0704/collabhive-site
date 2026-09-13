@@ -158,14 +158,25 @@ def triage_replies(cfg: dict) -> dict:
     closing = existing if isinstance(existing, list) else []
     by_email = {c.get("email", "").lower(): c for c in closing}
 
+    # Only mail from brands we actually contacted counts as a reply. Without
+    # this, Google security notices and helpdesk autoresponders landed in the
+    # closing queue as "interested" leads, inflating the reply rate and risking
+    # an auto-quote being emailed to a no-reply address.
+    contacted = _contacted_index(cfg)
+
     new = 0
     queued_by_status = {"interested": 0, "negotiating": 0, "declined": 0, "unknown": 0}
+    skipped_unsolicited = 0
     for m in msgs:
         em = m["from"].lower()
         status = classify_reply(m["subject"] + " " + m["snippet"], cfg)
         if status == "unknown":
             continue
         if em in by_email:
+            continue
+        if not _is_reply_to_us(em, contacted):
+            skipped_unsolicited += 1
+            log(f"  skipped (not a reply to our outreach): {em}")
             continue
         closing.append({
             "email": m["from"],
@@ -180,7 +191,37 @@ def triage_replies(cfg: dict) -> dict:
         log(f"  [{status.upper()}] {m['from']} | {m['subject']}")
 
     save_json(closing_file, closing)
-    return {"scanned": len(msgs), "new": new, "triage": "ok", "by_status": queued_by_status}
+    return {"scanned": len(msgs), "new": new, "triage": "ok", "by_status": queued_by_status,
+            "skipped_unsolicited": skipped_unsolicited}
+
+
+def _contacted_index(cfg: dict) -> tuple[set[str], set[str]]:
+    """(emails, domains) we have actually sent outreach to."""
+    state = load_json(ROOT / cfg["brands"]["state_file"])
+    state = state if isinstance(state, dict) else {}
+    emails = {e.lower() for e in state.get("emailed_emails", []) if isinstance(e, str)}
+    domains = {e.split("@", 1)[1] for e in emails if "@" in e}
+    # emailed_domains holds website domains, which often match the mail domain.
+    domains |= {d.lower() for d in state.get("emailed_domains", []) if isinstance(d, str)}
+    return emails, domains
+
+
+def _is_reply_to_us(sender: str, contacted: tuple[set[str], set[str]]) -> bool:
+    """True only for real humans at a brand we contacted.
+
+    Matches on domain as well as exact address, because a founder often replies
+    from a different mailbox than the generic one we originally emailed.
+    """
+    from .brands import _is_good
+    sender = (sender or "").lower().strip()
+    if not sender or "@" not in sender:
+        return False
+    if not _is_good(sender, ""):       # no-reply@, notifications@, bots
+        return False
+    emails, domains = contacted
+    if sender in emails:
+        return True
+    return sender.split("@", 1)[1] in domains
 
 
 # ---------- auto-match (briefs <-> creators) ----------

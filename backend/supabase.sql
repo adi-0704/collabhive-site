@@ -59,6 +59,10 @@ on conflict (key) do nothing;
 alter table public.creators enable row level security;
 alter table public.brands  enable row level security;
 alter table public.bookings enable row level security;
+-- settings holds the admin key: enable RLS with NO policies so it's reachable
+-- only via the admin_data() SECURITY DEFINER function below, never directly
+-- over PostgREST (otherwise anon/authenticated get default read/write access).
+alter table public.settings enable row level security;
 
 -- creators: public read + public write (onboarding feeds the public directory)
 drop policy if exists "creators_select" on public.creators;

@@ -3,7 +3,9 @@
 Fully automatic (no human input):
   * manage_dnc          -> Do-Not-Contact registry (unsubscribe/stop) so no one
                            who opts out is ever emailed again (sends, quotes, follow-ups).
-  * prune_brand_pool    -> remove dead websites, duplicates, and brands that bounced.
+  * prune_brand_pool    -> remove duplicate brands and brands with a bounced email
+                           (dead-website checks are not implemented; see pool_health
+                           config for the flag reserved for that).
   * generate_sitemap    -> write sitemap.xml + robots.txt pointing at SEO pages.
   * pipeline_status     -> derive a campaign pipeline from briefs/quotes/sends.
 
@@ -195,13 +197,11 @@ def pipeline_status(cfg: dict) -> list[dict]:
     for b in briefs:
         brand = b.get("brand", "?")
         bk = brand.lower()
-        stage = "brief"
-        if bk in quoted_brands:
-            stage = "quoted"
-        elif (b.get("email") or "").lower() in replied or (b.get("email") or "").lower() in sent:
-            stage = "quoted" if bk in quoted_brands else "brief"
+        email = (b.get("email") or "").lower()
+        stage = "quoted" if bk in quoted_brands else "brief"
         rows.append({"brand": brand, "niche": b.get("niche", ""), "budget": b.get("budget", ""),
-                     "stage": stage, "priority": b.get("priority", 0)})
+                     "stage": stage, "priority": b.get("priority", 0),
+                     "sent": email in sent, "replied": email in replied})
     rows.sort(key=lambda r: r["priority"], reverse=True)
     save_json(ROOT / cfg.get("pipeline", {}).get("state_file", "data/pipeline.json"), rows)
     return rows

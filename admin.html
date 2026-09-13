@@ -331,6 +331,7 @@
             notes: firstOf(form, ['Anything else']),
             ts: firstOf(form, ['Timestamp']) || obj['Submitted']
           };
+          fields._raw = form;
           return fields;
         });
       }
@@ -387,7 +388,7 @@
           return '<div class="field"><label>' + esc(f[1]) + '</label>' +
             '<input name="' + f[0] + '" value="' + esc(r[f[0]] || '') + '" /></div>';
         }).join('');
-        inner += '<div class="field full"><label>About / notes</label><textarea name="_raw">' + esc(r.notes || r._raw ? JSON.stringify(r) : '') + '</textarea></div>';
+        inner += '<div class="field full"><label>About / notes</label><textarea name="_raw">' + esc(r.notes || (r._raw ? JSON.stringify(r._raw) : '')) + '</textarea></div>';
         modal.innerHTML = '<div class="form-card"><h3 style="margin-bottom:14px;">Approve influencer</h3>' +
           '<div class="form-grid">' + inner + '</div>' +
           '<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">' +
@@ -412,15 +413,27 @@
         row.name = row.name || r.name; row.handle = row.handle || r.handle;
         row.niche = row.niche || r.niche; row.city = row.city || r.city;
         row.followers = row.followers || r.followers; row.rate = row.rate || r.rate;
-        row.email = row.email || r.email; row._approved = new Date().toISOString();
-        CH.data.add('creators', row).then(function () {
+        var email = row.email || r.email;
+        var msg = document.getElementById('applications-msg');
+        // Only send columns that exist in the creators table — email/_raw/_approved
+        // are not schema columns (see backend/supabase.sql) and are kept internal only.
+        var payload = {
+          name: row.name, handle: row.handle, niche: row.niche,
+          city: row.city, followers: row.followers, rate: row.rate
+        };
+        CH.data.add('creators', payload).then(function (res) {
+          if (res && (res.ok === false || res.error)) {
+            msg.textContent = '✖ Approve failed: ' + (res.error || 'could not save to the creators directory') + '.';
+            return;
+          }
           modal.style.display = 'none';
           markApproved(row.handle);
-          var msg = document.getElementById('applications-msg');
           msg.textContent = '✔ Approved ' + (row.name || row.handle) + ' — now visible to brands on the creator directory.';
-          if (window.CH_FUNNEL && window.CH_FUNNEL.eventsUrl) recordFunnel('approve', row.email);
+          if (window.CH_FUNNEL && window.CH_FUNNEL.eventsUrl) recordFunnel('approve', email);
           setTimeout(loadApplications, 600);
           load(); // refresh the Creators table
+        }).catch(function () {
+          msg.textContent = '✖ Approve failed — network or server error.';
         });
       }
 

@@ -31,7 +31,7 @@
   // Social proof widget: reads report.json -> proof section.
   var proofEl = document.querySelector('[data-social-proof]');
   if (proofEl) {
-    fetch('../data/report.json', { cache: 'no-store' })
+    fetch('outreach/data/report.json', { cache: 'no-store' })
       .then(function (r) { return r.json(); })
       .then(function (d) {
         var proof = (d.onboarding && d.onboarding.proof) || {};

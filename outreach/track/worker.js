@@ -37,6 +37,17 @@ export default {
       await store.put('tot:' + day, String(tot + 1), { expirationTtl: 60 * 86400 }).catch(() => {});
     }
 
+    const corsHeaders = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    };
+
+    // CORS preflight for the cross-origin /events call from the static site.
+    if (request.method === 'OPTIONS' && path === '/events') {
+      return new Response(null, { status: 204, headers: corsHeaders });
+    }
+
     // Funnel event ingestion from the static site forms. Records to KV (free).
     if (path === '/events') {
       let body = {};
@@ -53,7 +64,7 @@ export default {
         cur.push({ kind, email, ref, source, variant: body.variant || '', ts: new Date().toISOString() });
         await store.put(key, JSON.stringify(cur.slice(-1000)), { expirationTtl: 30 * 86400 }).catch(() => {});
       }
-      return new Response(JSON.stringify({ ok: 1 }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      return new Response(JSON.stringify({ ok: 1 }), { status: 200, headers: { 'Content-Type': 'application/json', ...corsHeaders } });
     }
 
     // Open pixel: return a 1x1 transparent GIF.

@@ -32,8 +32,13 @@ def _render_tpl(path_name: str, ctx: dict, subject_tpl: str = "") -> tuple[str, 
         body_txt = txt.format(**ctx)
     except (KeyError, IndexError, ValueError):
         body_txt = txt
+    # HTML-escape plain string values before interpolating into the HTML template —
+    # these can originate from public form submissions (brand briefs). Keys already
+    # holding pre-rendered/escaped HTML fragments (suffixed "_html") pass through as-is.
+    html_ctx = {k: (_e(v) if isinstance(v, str) and not k.endswith("_html") else v)
+                for k, v in ctx.items()}
     try:
-        body_html = html.format(**ctx)
+        body_html = html.format(**html_ctx)
     except (KeyError, IndexError, ValueError):
         body_html = html
     return subject, body_txt, body_html
@@ -152,6 +157,12 @@ def send_auto_quotes(cfg: dict) -> dict:
                 quoted.append({"brand": brief.get("brand"), "email": contact_email,
                                "total": total, "ts": datetime.now(timezone.utc).isoformat()})
                 log(f"  QUOTE SENT -> {contact_email} ({brief.get('brand')}) ₹{total}")
+                # Mark as sent only on success — do NOT dedupe a failed send, so
+                # a transient SMTP error gets retried on the next run instead of
+                # permanently losing the quote.
+                sent.append({"brand": brief.get("brand"), "email": contact_email,
+                             "total": total, "ts": datetime.now(timezone.utc).isoformat(),
+                             "status": "sent"})
             except Exception as exc:
                 log(f"  QUOTE FAIL {contact_email}: {exc}")
                 skipped += 1
@@ -159,11 +170,10 @@ def send_auto_quotes(cfg: dict) -> dict:
             quoted.append({"brand": brief.get("brand"), "email": contact_email, "total": total,
                            "ts": datetime.now(timezone.utc).isoformat(), "draft": True})
             log(f"  QUOTE DRAFT (no email) -> {brief.get('brand')} ₹{total}")
-
-        # Mark as processed even if no contact (avoid re-processing).
-        sent.append({"brand": brief.get("brand"), "email": contact_email,
-                     "total": total, "ts": datetime.now(timezone.utc).isoformat(),
-                     "status": "sent" if contact_email else "no_contact"})
+            # No contact email at all — mark as processed so we don't re-draft forever.
+            sent.append({"brand": brief.get("brand"), "email": contact_email,
+                         "total": total, "ts": datetime.now(timezone.utc).isoformat(),
+                         "status": "no_contact"})
 
     save_json(sent_file, sent)
     return {"shortlisted": len(shortlist), "quoted": len(quoted), "skipped": skipped}
@@ -386,7 +396,7 @@ def alert_hot_leads(cfg: dict) -> dict:
     try:
         _send_mime(cfg, cfg["smtp"]["username"], password, to, subject, body, body)
         save_json(last_file, {"ts": datetime.now(timezone.utc).isoformat(),
-                              "seen": [c.get("email") for c in closing]})
+                              "seen": [(c.get("email") or "").lower() for c in closing]})
         log(f"Hot-lead alert sent to {to} ({len(hot)} leads)")
         return {"alerted": len(hot), "to": to}
     except Exception as exc:
