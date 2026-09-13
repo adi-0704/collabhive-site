@@ -1,18 +1,29 @@
-name: Social Daily (Instagram auto-post)
+name: Social Daily (top up Buffer queue)
 
-# Posts today's scheduled card to both Instagram pages, every day, with no
-# laptop involved. Images are served from GitHub Pages because the Instagram
-# Graph API fetches the image by URL rather than accepting an upload.
+# Keeps both Instagram queues topped up so posts go live at exactly 18:00 IST.
+#
+# Why a top-up instead of posting one per day:
+#   * schedule_all.py pins each post to an exact dueAt, so it publishes at
+#     18:00 sharp rather than whenever Buffer's own queue slot happens to be.
+#   * Buffer's free plan allows 10 scheduled posts per channel, so this fills
+#     up to that cap and stops. That leaves ~10 days of runway — a failed run
+#     (or a few) never creates a gap in posting.
+#   * Re-runs are safe: already-scheduled posts are detected and skipped.
 on:
   schedule:
-    # 18:00 IST = 12:30 UTC — evening scroll window.
-    - cron: '30 12 * * *'
+    # 04:30 IST = 23:00 UTC (previous day). Runs well before the 18:00 IST
+    # publish time, so a retry still has the whole day of margin.
+    - cron: '0 23 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'Print the post instead of publishing'
+        description: 'Print the plan instead of scheduling'
         type: boolean
         default: false
+      post_time:
+        description: 'Publish time in IST (HH:MM)'
+        required: false
+        default: '18:00'
 
 concurrency:
   group: social-daily
@@ -22,9 +33,9 @@ permissions:
   contents: read
 
 jobs:
-  post:
+  topup:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,12 +45,17 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Queue today's posts to Buffer
+      - name: Top up the Buffer queue
         env:
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
         run: |
+          if [ -z "$BUFFER_ACCESS_TOKEN" ]; then
+            echo "::error::BUFFER_ACCESS_TOKEN secret is not set — nothing was scheduled."
+            exit 1
+          fi
+          TIME="${{ inputs.post_time || '18:00' }}"
           if [ "${{ inputs.dry_run }}" = "true" ]; then
-            python -u social/publish_buffer.py --dry-run
+            python -u social/schedule_all.py --time "$TIME" --dry-run
           else
-            python -u social/publish_buffer.py
+            python -u social/schedule_all.py --time "$TIME"
           fi
