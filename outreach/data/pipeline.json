@@ -4,34 +4,44 @@
     "niche": "Food & Beverage",
     "budget": "15000",
     "stage": "quoted",
-    "priority": 0
+    "priority": 0,
+    "sent": false,
+    "replied": false
   },
   {
     "brand": "FitKart",
     "niche": "Fitness & Wellness",
     "budget": "25000",
     "stage": "quoted",
-    "priority": 0
+    "priority": 0,
+    "sent": false,
+    "replied": false
   },
   {
     "brand": "Glowly",
     "niche": "Beauty & Cosmetics",
     "budget": "30000",
     "stage": "quoted",
-    "priority": 0
+    "priority": 0,
+    "sent": false,
+    "replied": false
   },
   {
     "brand": "StyleNest",
     "niche": "Fashion & Apparel",
     "budget": "20000",
     "stage": "quoted",
-    "priority": 0
+    "priority": 0,
+    "sent": false,
+    "replied": false
   },
   {
     "brand": "Travella",
     "niche": "Travel & Hospitality",
     "budget": "18000",
     "stage": "quoted",
-    "priority": 0
+    "priority": 0,
+    "sent": false,
+    "replied": false
   }
 ]

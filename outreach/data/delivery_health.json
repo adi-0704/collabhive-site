@@ -1,21 +1,19 @@
 {
   "ok": true,
-  "checked_at": "2026-09-12T08:18:27.430022+00:00",
+  "checked_at": "2026-09-13T08:36:34.781059+00:00",
   "lookback_hours": 96,
   "recorded_sends": 52,
-  "confirmed_in_sent": 24,
-  "unconfirmed": 28,
-  "delivery_rate_pct": 46.2,
-  "bounces": 8,
+  "confirmed_in_sent": 14,
+  "unconfirmed": 38,
+  "delivery_rate_pct": 26.9,
+  "bounces": 6,
   "bounce_emails": [
-    "back-in-stock@notifyboost.net",
-    "no-reply@aqualogica.in",
-    "care@zivame.com",
     "care@fabindia.com",
-    "support@boat-lifestyle.com",
-    "care@ritebite.com",
     "care@wowskin.com",
-    "care@juicychemistry.com"
+    "support@boat-lifestyle.com",
+    "care@zivame.com",
+    "care@juicychemistry.com",
+    "care@ritebite.com"
   ],
   "unconfirmed_emails": [
     "grievance@snitch.com",

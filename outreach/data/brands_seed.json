@@ -782,7 +782,8 @@
     "website": "https://chemistatplay.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Hair Originals",
@@ -791,7 +792,8 @@
     "website": "https://hairoriginals.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Blue Tribe",
