@@ -34,10 +34,28 @@ def _mkdata(cfg=None):
     ddir = _TEST_ROOT / "data"
     shutil.rmtree(ddir, ignore_errors=True)
     ddir.mkdir(parents=True, exist_ok=True)
-    for name in ("brands_seed.json", "creators_pool.json", "brand_briefs.json"):
-        shutil.copy(data / name, ddir / name)
-    if (data / "seed_brands_extra.json").exists():
-        shutil.copy(data / "seed_brands_extra.json", ddir / "seed_brands_extra.json")
+    for name in ("brands_seed.json", "brand_briefs.json", "seed_brands_extra.json"):
+        if (data / name).exists():
+            shutil.copy(data / name, ddir / name)
+    # creators_pool.json is deliberately untracked (it holds creator email and
+    # phone numbers and this repo is public), so it does not exist on a clean
+    # checkout. Tests must not depend on real people's contact details anyway —
+    # use a synthetic pool that exercises the same code paths.
+    pool_src = data / "creators_pool.json"
+    if pool_src.exists():
+        shutil.copy(pool_src, ddir / "creators_pool.json")
+    else:
+        (ddir / "creators_pool.json").write_text(json.dumps([
+            {"name": "Test Creator One", "handle": "@test.one", "niche": "Food & Beverage",
+             "city": "Delhi", "followers": 12000, "rate": 4000, "rate_internal": "4000",
+             "email": "one@example.com", "phone": "0000000001", "source": "fixture"},
+            {"name": "Test Creator Two", "handle": "@test.two", "niche": "Fashion & Apparel",
+             "city": "Mumbai", "followers": 48000, "rate": 9000, "rate_internal": "9000",
+             "email": "two@example.com", "phone": "0000000002", "source": "fixture"},
+            {"name": "Test Creator Three", "handle": "@test.three", "niche": "Beauty & Cosmetics",
+             "city": "Delhi", "followers": 7000, "rate": 2500, "rate_internal": "2500",
+             "email": "three@example.com", "phone": "0000000003", "source": "fixture"},
+        ], indent=2), encoding="utf-8")
     shutil.copy(Path(__file__).resolve().parent.parent / "config.json", _TEST_ROOT / "config.json")
     return common
 
