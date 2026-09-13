@@ -88,16 +88,18 @@ def build(days: int, start: date) -> list[dict]:
     ):
         recent_layouts: list[str] = []
         recent_pillars: list[str] = []
+        # Consume each authored post at most once. The earlier version indexed
+        # with day % len(bank) and skipped forward to de-cluster pillars, which
+        # could land on an entry already used and silently duplicate copy.
+        unused = list(range(len(bank)))
         for day in range(days):
-            src = bank[day % len(bank)]
-            pillar, headline, sub, caption, cta = src
-
-            # Keep pillars from clustering.
-            tries = 0
-            while pillar in recent_pillars[-5:] and tries < len(bank):
-                tries += 1
-                src = bank[(day + tries) % len(bank)]
-                pillar, headline, sub, caption, cta = src
+            if not unused:
+                break                      # bank exhausted; verify() reports it
+            # Prefer the first unused post whose pillar hasn't run recently.
+            choice = next((i for i in unused if bank[i][0] not in recent_pillars[-5:]),
+                          unused[0])
+            unused.remove(choice)
+            pillar, headline, sub, caption, cta = bank[choice]
 
             layout = _pick_layout(pillar, recent_layouts, headline)
             recent_layouts.append(layout)
