@@ -1,0 +1,48 @@
+name: Social Daily (Instagram auto-post)
+
+# Posts today's scheduled card to both Instagram pages, every day, with no
+# laptop involved. Images are served from GitHub Pages because the Instagram
+# Graph API fetches the image by URL rather than accepting an upload.
+on:
+  schedule:
+    # 11:00 IST = 05:30 UTC — a strong engagement window for Indian audiences.
+    - cron: '30 5 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Print the post instead of publishing'
+        type: boolean
+        default: false
+
+concurrency:
+  group: social-daily
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Publish today's posts
+        env:
+          IG_BRAND_USER_ID: ${{ secrets.IG_BRAND_USER_ID }}
+          IG_BRAND_TOKEN: ${{ secrets.IG_BRAND_TOKEN }}
+          IG_CREATOR_USER_ID: ${{ secrets.IG_CREATOR_USER_ID }}
+          IG_CREATOR_TOKEN: ${{ secrets.IG_CREATOR_TOKEN }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python -u social/publish_instagram.py --dry-run
+          else
+            python -u social/publish_instagram.py
+          fi

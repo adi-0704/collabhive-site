@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CollabHive — 50+ Creators Onboarded</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --honey: hsl(45, 100%, 50%);
+    --honey-dark: hsl(45, 100%, 40%);
+    --honey-soft: hsl(45, 100%, 95%);
+    --purple: hsl(263, 70%, 58%);
+    --purple-dark: hsl(263, 70%, 48%);
+    --purple-soft: hsl(263, 70%, 95%);
+    --ink: hsl(0, 0%, 8%);
+    --muted: hsl(0, 0%, 45%);
+    --grad-honey: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsl(35, 100%, 55%) 100%);
+    --grad-purple: linear-gradient(135deg, hsl(263, 70%, 58%) 0%, hsl(280, 70%, 65%) 100%);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1350px; overflow: hidden; position: relative;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(52% 42% at 88% 6%, hsl(45, 100%, 94%) 0%, transparent 60%),
+      radial-gradient(48% 44% at 6% 92%, hsl(263, 70%, 96%) 0%, transparent 60%),
+      #ffffff;
+  }
+  .wrap { position: relative; z-index: 2; padding: 72px 80px 0; display: flex; flex-direction: column; align-items: center; }
+
+  /* ---------- header ---------- */
+  header { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .hex-mark { width: 52px; height: 58px; position: relative; }
+  .hex-mark .h {
+    position: absolute; inset: 0;
+    background: var(--grad-honey);
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  }
+  .hex-mark .h.p { background: var(--grad-purple); inset: 7px; clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); transform: translateX(14px) translateY(-6px); }
+  .brand-name { font-size: 34px; font-weight: 800; letter-spacing: -0.02em; }
+  .brand-name span { color: var(--purple-dark); }
+  .pill-tag {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 20px; font-weight: 700; letter-spacing: 0.14em;
+    color: var(--purple-dark); background: var(--purple-soft);
+    border: 2px solid hsl(263, 70%, 88%);
+    padding: 10px 22px; border-radius: 999px;
+  }
+  .pill-tag .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--grad-honey); }
+
+  /* ---------- hero ---------- */
+  .hero { margin-top: 56px; text-align: center; position: relative; }
+  .hero .hex-glow {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 460px; height: 520px;
+    background: var(--honey-soft);
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+    z-index: -1;
+  }
+  .hero .hex-glow.g2 { width: 520px; height: 590px; background: var(--purple-soft); opacity: .55; transform: translate(-46%, -58%) rotate(12deg); }
+  .eyebrow { font-size: 24px; font-weight: 700; letter-spacing: 0.28em; color: var(--purple); text-transform: uppercase; }
+  h1 {
+    margin-top: 12px; font-size: 280px; line-height: 0.9; font-weight: 800; letter-spacing: -0.04em;
+    background: var(--grad-honey); -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  h1 em { font-style: normal; background: var(--grad-purple); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  h2 { margin-top: 18px; font-size: 62px; font-weight: 800; letter-spacing: -0.02em; }
+  h2 span { color: var(--purple-dark); }
+  .sub { margin-top: 14px; font-size: 24px; font-weight: 600; color: var(--muted); max-width: 720px; line-height: 1.5; }
+  .sub strong { color: var(--ink); }
+
+  /* ---------- handle chips ---------- */
+  .chips { margin-top: 36px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 940px; }
+  .chip {
+    font-size: 18px; font-weight: 700; padding: 9px 16px; border-radius: 999px; white-space: nowrap;
+  }
+  .chip.honey { background: var(--honey-soft); color: var(--honey-dark); border: 2px solid hsl(45, 100%, 88%); }
+  .chip.purple { background: var(--purple-soft); color: var(--purple-dark); border: 2px solid hsl(263, 70%, 88%); }
+  .chip.ink { background: var(--ink); color: #fff; }
+  .more { margin-top: 18px; font-size: 21px; font-weight: 700; color: var(--muted); }
+  .more strong { color: var(--purple-dark); }
+
+  /* ---------- footer ---------- */
+  footer {
+    position: absolute; left: 80px; right: 80px; bottom: 72px; z-index: 3;
+    background: var(--grad-purple); border-radius: 28px;
+    padding: 44px 56px; display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 24px 60px -20px hsl(263, 70%, 50% / 0.5);
+  }
+  footer .cta-text { color: #fff; }
+  footer .cta-text .t1 { font-size: 30px; font-weight: 800; letter-spacing: -0.01em; }
+  footer .cta-text .t2 { margin-top: 6px; font-size: 21px; font-weight: 600; opacity: .85; }
+  footer .btn {
+    background: var(--grad-honey); color: var(--ink);
+    font-size: 26px; font-weight: 800; padding: 18px 38px; border-radius: 999px;
+    box-shadow: 0 14px 34px -10px hsl(45, 100%, 40% / 0.6);
+    display: flex; align-items: center; gap: 12px;
+  }
+  footer .btn .hex {
+    width: 26px; height: 29px; background: var(--ink);
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="hex-mark"><div class="h"></div><div class="h p"></div></div>
+        <div class="brand-name">Collab<span>Hive</span></div>
+      </div>
+      <div class="pill-tag"><span class="dot"></span>MILESTONE</div>
+    </header>
+
+    <section class="hero">
+      <div class="hex-glow g2"></div>
+      <div class="hex-glow"></div>
+      <div class="eyebrow">The hive is growing</div>
+      <h1>50<em>+</em></h1>
+      <h2>Creators <span>Onboarded</span></h2>
+      <p class="sub">From micro to macro — <strong>food, fashion, beauty, fitness, tech, travel &amp; lifestyle</strong> creators across India, all in one hive.</p>
+    </section>
+
+    <div class="chips">
+      <span class="chip honey">@aarav.eats</span>
+      <span class="chip purple">@sanya.glow</span>
+      <span class="chip ink">@dev.discovers</span>
+      <span class="chip honey">@kiara.itbeauty</span>
+      <span class="chip purple">@dhruv.lifts</span>
+      <span class="chip honey">@onlyyygarima</span>
+      <span class="chip purple">@_beingsne</span>
+      <span class="chip honey">@ishita.bites</span>
+      <span class="chip ink">@atrangisouls</span>
+      <span class="chip purple">@_kumkumm.m</span>
+      <span class="chip honey">@anamika.coree</span>
+      <span class="chip purple">@mira.roams</span>
+      <span class="chip honey">@arnav.codes</span>
+      <span class="chip ink">@21.chetna</span>
+      <span class="chip purple">@realfitwithsapna</span>
+      <span class="chip honey">@okk.anusha</span>
+      <span class="chip purple">@softlyverse</span>
+      <span class="chip honey">@ca_relatedlife</span>
+      <span class="chip purple">@jangrakhushii</span>
+      <span class="chip honey">@_anshika._.rai</span>
+      <span class="chip ink">@thehaphazardhustle</span>
+      <span class="chip purple">@sidequestsdocumented</span>
+    </div>
+    <div class="more">…and <strong>28+ more</strong> buzzing inside the hive</div>
+  </div>
+
+  <footer>
+    <div class="cta-text">
+      <div class="t1">Your next collab is already here.</div>
+      <div class="t2">Creators keep 90% &middot; campaigns from ₹4,999 &middot; zero hidden fees</div>
+    </div>
+    <div class="btn"><span class="hex"></span>Join the hive</div>
+  </footer>
+</body>
+</html>
