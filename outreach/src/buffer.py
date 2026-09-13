@@ -55,14 +55,34 @@ def get_channels(cfg, org_id: str = "") -> list[dict]:
     return (data.get("data", {}).get("channels", []) if isinstance(data, dict) else [])
 
 
-def _queue_post(cfg, channel_id: str, text: str, org_id: str, image_url: str = "") -> dict:
+def _queue_post(cfg, channel_id: str, text: str, org_id: str, image_url: str = "",
+                due_at: str = "", service: str = "") -> dict:
+    """Create a Buffer post.
+
+    due_at: ISO-8601 UTC timestamp (e.g. 2026-09-14T12:30:00Z). When given, the
+    post is pinned to that exact time via mode: customScheduled. Without it we
+    fall back to addToQueue, which drops the post into the channel's next open
+    slot — and if that slot is already in the past, Buffer publishes it
+    immediately, which is rarely what you want for a planned calendar.
+    """
     assets = ""
     if image_url:
         assets = ', assets: [{ image: { url: "%s" } }]' % image_url
+    if due_at:
+        timing = 'mode: customScheduled, dueAt: "%s"' % due_at
+    else:
+        timing = 'mode: addToQueue'
+    # Instagram rejects a post with no type: "Instagram posts require a type
+    # (post, story, or reel)". Everything we generate is a single feed image.
+    meta = ""
+    if (service or "").lower() == "instagram":
+        # shouldShareToFeed is Boolean! (non-null) so it must always be sent.
+        meta = ', metadata: { instagram: { type: post, shouldShareToFeed: true } }'
     q = ('mutation CreatePost { createPost(input: { text: "%s", channelId: "%s", '
-         'schedulingType: automatic, mode: addToQueue%s }) { '
+         'schedulingType: automatic, %s%s%s }) { '
          '... on PostActionSuccess { post { id text dueAt } } '
-         '... on MutationError { message } } }' % (_escape_gql(text), channel_id, assets))
+         '... on MutationError { message } } }'
+         % (_escape_gql(text), channel_id, timing, assets, meta))
     resp = _gql(cfg, q)
     res = None
     if isinstance(resp, dict):
@@ -78,13 +98,19 @@ def _queue_post(cfg, channel_id: str, text: str, org_id: str, image_url: str = "
 
 
 def _escape_gql(s: str) -> str:
-    """Escape a string for safe embedding inside a GraphQL JSON string literal."""
+    """Escape a string for safe embedding inside a GraphQL string literal.
+
+    Newlines are emitted as the two-character escape \\n so GraphQL decodes a
+    real line break. Flattening them to spaces (the previous behaviour) posted
+    captions as one unreadable block with every paragraph break destroyed.
+    """
     if s is None:
         return ""
     return (str(s)
             .replace(chr(92), chr(92) * 2)          # backslash
             .replace('"', '\\"')                     # double quote
-            .replace("\n", "  ")
+            .replace("\r\n", "\\n")
+            .replace("\n", "\\n")                    # real line break, escaped
             .replace("\r", ""))
 
 
