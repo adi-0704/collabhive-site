@@ -86,11 +86,18 @@ def _render(subject_template: str, txt: str, html: str, brand: dict, cfg: dict) 
         body_txt = txt.format(**ctx)
     except (KeyError, IndexError, ValueError):
         body_txt = txt
+    # HTML-escape plain string values before interpolating into the HTML template —
+    # "name"/"brand"/"niche" can originate from scraped/curated brand data.
+    html_ctx = {k: (_e(v) if isinstance(v, str) else v) for k, v in ctx.items()}
     try:
-        body_html = html.format(**ctx)
+        body_html = html.format(**html_ctx)
     except (KeyError, IndexError, ValueError):
         body_html = html
     return subj, body_txt, body_html
+
+
+def _e(s) -> str:
+    return str(s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
 def _inject_tracking(body_html: str, email: str, brand: dict, cfg: dict) -> str:
@@ -224,12 +231,24 @@ def daily_run(cfg: dict) -> dict:
         min_gap=0.0,
         max_gap=2.0,
     )
+    # Hard wall-clock budget for the send phase. With 18 targets and 90-200s
+    # anti-spam gaps this phase alone can run ~60 min; without a ceiling the
+    # scheduled job hit its timeout and was killed before the commit step, so
+    # state/report were never saved. Unsent brands simply go out next run.
+    send_budget_s = float(cfg["smtp"].get("max_send_minutes", 45)) * 60
+    started = time.monotonic()
+    budget_hit = False
     try:
         smtp = _connect(cfg, user, password, ctx)
         delivered_from = len(targets)
         for brand in targets:
             if throttle.is_circuit_open():
                 log("Circuit breaker open — stopping sends (too many SMTP/auth failures).")
+                break
+            if time.monotonic() - started > send_budget_s:
+                budget_hit = True
+                log(f"Send budget ({send_budget_s/60:.0f} min) reached after {sent} sent — "
+                    f"remaining {len(targets) - sent - failed} brand(s) go out next run.")
                 break
             throttle.wait()
             ok, hard_fail = send_safe(smtp, brand, cfg, user, password, ctx)
@@ -242,8 +261,14 @@ def daily_run(cfg: dict) -> dict:
                 save_json(state_file, state)
             else:
                 failed += 1
+            # Skip the pause if the next send wouldn't fit in the budget anyway.
             if brand is not targets[-1]:
                 d = warmup_delay(cfg)
+                if time.monotonic() - started + d > send_budget_s:
+                    budget_hit = True
+                    log(f"Send budget ({send_budget_s/60:.0f} min) reached after {sent} sent — "
+                        f"remaining brand(s) go out next run.")
+                    break
                 log(f"    ...waiting {d:.0f}s")
                 time.sleep(d)
     except Exception as exc:
@@ -256,7 +281,8 @@ def daily_run(cfg: dict) -> dict:
             pass
 
     save_json(state_file, state)
-    return {"sent": sent, "attempted": len(targets), "failed": failed, "delivered_from": delivered_from}
+    return {"sent": sent, "attempted": len(targets), "failed": failed,
+            "delivered_from": delivered_from, "budget_hit": budget_hit}
 
 
 def _connect(cfg: dict, user: str, password: str, ctx) -> "smtplib.SMTP":

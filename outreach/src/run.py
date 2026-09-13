@@ -352,6 +352,13 @@ def cmd_onboarding(cfg: dict) -> None:
     log(f"WhatsApp handoffs: {handoffs}")
 
 
+def cmd_ops(cfg: dict) -> None:
+    """Health watchdog + daily CEO brief. Read-only; sends no outreach."""
+    from src import ops as ops_mod
+    res = ops_mod.run_ops(cfg)
+    log(f"Ops: {res['status'].upper()} — {res['problems']} issue(s), emailed={res['emailed']}")
+
+
 def cmd_publish(cfg: dict) -> None:
     """Publish approved influencers + draft onboarding social posts."""
     from src import publication as pub_mod
@@ -409,6 +416,8 @@ def main(argv: list[str] | None = None) -> int:
         cmd_onboarding(cfg)
     elif mode == "publish":
         cmd_publish(cfg)
+    elif mode == "ops":
+        cmd_ops(cfg)
     elif mode == "buffer":
         from src import buffer as buf_mod
         result = buf_mod.queue_drafts(cfg)
@@ -423,7 +432,9 @@ def main(argv: list[str] | None = None) -> int:
         log(f"Event recorded: {res}")
     elif mode == "all":
         cmd_pool(cfg)
-        cmd_enrich(cfg)
+        # NOTE: no cmd_enrich here — cmd_daily already runs refresh_brand_emails()
+        # itself. Calling both doubled the (slow, network-bound) enrichment pass
+        # and pushed the scheduled job past its timeout.
         cmd_daily(cfg)
         cmd_sales(cfg)
         cmd_automation(cfg)

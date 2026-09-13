@@ -17,6 +17,7 @@
     "daily_hard_cap": 20,
     "min_delay_seconds": 90,
     "max_delay_seconds": 200,
+    "max_send_minutes": 45,
     "from_name": "CollabHive",
     "subject_line": "A creator network for {brand} — CollabHive",
     "subject_lines_ab": [
@@ -57,6 +58,7 @@
     "max_emails_per_brand": 3,
     "fetch_timeout_seconds": 7,
     "fetch_max_brands_per_run": 30,
+    "max_enrich_minutes": 8,
     "user_agent": "Mozilla/5.0 (compatible; CollabHive/1.0; +collabhive.in@gmail.com)",
     "lookback_days": 1
   },
@@ -124,6 +126,15 @@
     "default_posts": 2,
     "created_file": "data/quotes_sent.json",
     "contact_file": "data/brief_contacts.json"
+  },
+  "ops": {
+    "email_brief": true,
+    "to_email": "collabhive.in@gmail.com",
+    "stale_run_hours": 36,
+    "stale_send_hours": 48,
+    "stale_lead_hours": 48,
+    "low_pool_threshold": 10,
+    "note": "Health watchdog + daily CEO brief (src/ops.py, `run.py ops`). Runs in its own workflow so a broken daily run still gets reported."
   },
   "digest": {
     "enabled": true,
@@ -200,6 +211,7 @@
   },
   "niches": {
     "market": "India",
+    "priority": ["Fashion & Apparel", "Beauty & Cosmetics"],
     "categories": [
       {
         "niche": "Food & Beverage",

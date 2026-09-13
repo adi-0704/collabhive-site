@@ -43,6 +43,9 @@ CONTACT_PATHS = ("", "contact", "contact-us", "contactus", "about", "about-us", 
 def _fetch(url: str, timeout: int = 12, ua: str = "") -> str | None:
     import socket
     # Guard: DNS/connect stalls can ignore urllib timeout, so set a socket floor.
+    # Restore the previous default afterwards — leaving it set leaked a 7s
+    # timeout onto the later SMTP/IMAP connections in the same process.
+    _prev_timeout = socket.getdefaulttimeout()
     socket.setdefaulttimeout(timeout)
     try:
         req = urllib.request.Request(url, headers={"User-Agent": ua or "CollabHive/1.0"})
@@ -55,6 +58,8 @@ def _fetch(url: str, timeout: int = 12, ua: str = "") -> str | None:
             return resp.read().decode("utf-8", errors="ignore")
     except Exception:
         return None
+    finally:
+        socket.setdefaulttimeout(_prev_timeout)
 
 
 def _normalize_email(raw: str) -> str:
@@ -185,6 +190,8 @@ def refresh_brand_emails(cfg: dict) -> dict:
     timeout = cfg["emails"].get("fetch_timeout_seconds", 12)
     limit = cfg["emails"].get("max_emails_per_brand", 3)
     pool = load_seed_pool(cfg)
+    if not pool:
+        return {"brands": 0, "with_emails": 0, "updated": 0, "processed": 0, "purged": 0}
     cap = cfg["emails"].get("fetch_max_brands_per_run", 12)
     updated = 0
     processed = 0
@@ -219,6 +226,12 @@ def refresh_brand_emails(cfg: dict) -> dict:
     from datetime import datetime as _dt
     offset = int(_dt.now().strftime("%j")) % len(pool)
     order = list(range(offset, len(pool))) + list(range(0, offset))
+    # Hard wall-clock budget: a handful of slow/unreachable sites can each burn
+    # ~57s (8 paths x timeout), which previously let this phase run long enough
+    # to push the whole scheduled job past its timeout before any mail was sent.
+    budget_s = float(cfg["emails"].get("max_enrich_minutes", 8)) * 60
+    started = time.monotonic()
+    stopped_early = False
     for idx in order:
         brand = pool[idx]
         if not brand.get("website"):
@@ -227,11 +240,19 @@ def refresh_brand_emails(cfg: dict) -> dict:
         # the daily job stays well within its time budget (unreachable sites are slow).
         if brand.get("emails") or (processed >= cap):
             continue
+        if time.monotonic() - started > budget_s:
+            stopped_early = True
+            log(f"  enrich: time budget ({budget_s/60:.0f} min) reached after "
+                f"{processed} brand(s) — remaining continue next run.")
+            break
         enriched = enrich_brand(brand, ua, timeout, limit)
         pool[idx] = enriched
         processed += 1
         if enriched.get("emails") and len(enriched["emails"]) > 0:
             updated += 1
+            log(f"  enrich {processed}/{cap}: {brand.get('name')} -> {enriched['emails'][0]}")
+        elif processed % 10 == 0:
+            log(f"  enrich {processed}/{cap} scanned ({time.monotonic()-started:.0f}s elapsed)")
     from .common import save_json
     save_json(ROOT / cfg["brands"]["seed_file"], pool)
     return {"brands": len(pool), "with_emails": sum(1 for b in pool if b.get("emails")), "updated": updated, "processed": processed, "purged": purged}
@@ -280,12 +301,22 @@ def select_targets(cfg: dict, state: dict, limit: int) -> tuple[list[dict], dict
         b["emails"] = b.get("emails") or [email]
         candidates.append(b)
 
-    # Order for niche rotation: prefer today's niche, spread cities.
+    # Order for niche rotation: prefer today's niche, spread cities. An optional
+    # niches.priority list (e.g. a current campaign focus) always outranks the
+    # day-of-week rotation so a push on specific niches doesn't wait its turn.
     from datetime import datetime as _dt, timedelta
     today_idx = int(_dt.now().strftime("%w"))
     niches = cfg["niches"]["categories"]
     primary = niches[today_idx % len(niches)]["niche"]
-    candidates.sort(key=lambda b: (b.get("niche") != primary, b.get("city") or ""))
+    priority = [n.strip().lower() for n in cfg["niches"].get("priority", []) if n.strip()]
+    if priority:
+        candidates.sort(key=lambda b: (
+            (b.get("niche") or "").strip().lower() not in priority,
+            b.get("niche") != primary,
+            b.get("city") or "",
+        ))
+    else:
+        candidates.sort(key=lambda b: (b.get("niche") != primary, b.get("city") or ""))
 
     selected = candidates[:limit]
     return selected, state

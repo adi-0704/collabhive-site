@@ -37,7 +37,10 @@ permissions:
 jobs:
   outreach:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    # Must stay above the sum of the in-app budgets (smtp.max_send_minutes +
+    # emails.max_enrich_minutes + the remaining steps) so the job is never
+    # killed mid-run — a killed job skips the commit step and loses all state.
+    timeout-minutes: 120
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -58,6 +61,7 @@ jobs:
         env:
           OUTREACH_EMAIL_USER: ${{ secrets.OUTREACH_EMAIL_USER }}
           OUTREACH_EMAIL_PASS: ${{ secrets.OUTREACH_EMAIL_PASS }}
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
           RUN_MODE: ${{ inputs.mode || 'all' }}
         run: |
           MODE="${{ inputs.mode || 'all' }}"
@@ -72,6 +76,10 @@ jobs:
           python src/run.py publish || echo "Publish step skipped"
 
       - name: Commit report + state + SEO
+        # always(): even if the run step failed part-way, commit whatever state
+        # was written. Skipping this loses the record of who was already emailed,
+        # which makes the next run re-email them.
+        if: always()
         run: |
           git config user.name "collabhive-outreach"
           git config user.email "collabhive.in@gmail.com"
