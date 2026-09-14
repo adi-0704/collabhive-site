@@ -800,9 +800,12 @@
     "niche": "Fitness & Wellness",
     "city": "Bengaluru",
     "website": "https://bluetribe.co",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "enquiries@bluetribe.co",
+    "emails": [
+      "enquiries@bluetribe.co"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "GetMyMettle",
