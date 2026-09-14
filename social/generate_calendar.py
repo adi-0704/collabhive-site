@@ -128,10 +128,19 @@ def build(days: int, start: date) -> list[dict]:
     return entries
 
 
-def verify(entries: list[dict]) -> None:
+def verify(entries: list[dict], days: int = 0) -> None:
     """Fail loudly rather than shipping a repetitive grid."""
     for audience in ("brand", "creator"):
         rows = [e for e in entries if e["audience"] == audience]
+        # A bank that runs out short-changes that page silently: the calendar
+        # simply ends early for one audience while the other keeps going, and
+        # nothing else here would notice because there are no duplicates.
+        if days and len(rows) < days:
+            have = len(BRAND_POSTS if audience == "brand" else CREATOR_POSTS)
+            raise SystemExit(
+                f"FAIL: {audience} page only got {len(rows)} of {days} days.\n"
+                f"       Its bank holds {have} authored posts. Add "
+                f"{days - have} more, or run with --days {len(rows)}.")
         # Judge on the body copy, NOT the assembled caption: hashtags rotate
         # daily and would otherwise make a recycled post look unique.
         bodies = [e["caption_body"] for e in rows]
@@ -188,7 +197,7 @@ def main() -> int:
 
     OUT.mkdir(parents=True, exist_ok=True)
     entries = build(args.days, date.fromisoformat(args.start))
-    verify(entries)
+    verify(entries, args.days)
 
     (OUT / "calendar.json").write_text(
         json.dumps(entries, indent=2, ensure_ascii=False), encoding="utf-8")
