@@ -110,17 +110,22 @@ def health_check(cfg: dict) -> list[dict]:
     else:
         checks.append(_check("hot_leads", OK, "No hot leads are being ignored."))
 
-    # 5) Creator supply. creators_pool.json is rebuilt from the applicant sheet
-    #    each run (it is untracked, since it holds creator PII and this repo is
-    #    public). If the sheet read fails, the pool silently empties and every
-    #    shortlist/quote downstream produces nothing — so check it explicitly.
-    creators = load_json(ROOT / cfg["sales"]["creator_pool_file"])
-    creators = creators if isinstance(creators, list) else []
-    if not creators:
+    # 5) Creator supply. Check the applicant SHEET, not the cached pool file.
+    #    creators_pool.json is untracked (it holds creator PII and this repo is
+    #    public), so it is simply absent in a fresh CI checkout — reading the
+    #    cache made this check fail every single ops run while the pipeline was
+    #    perfectly healthy. The sheet is the real dependency: if it is readable,
+    #    the daily run can rebuild the pool and produce shortlists.
+    creators = _creator_supply(cfg)
+    if creators is None:
         checks.append(_check("creator_supply", FAIL,
-                             "Creator pool is EMPTY — no shortlists or quotes can be produced.",
-                             "The applicant sheet read failed. Confirm the sheet in "
-                             "publish.applicant_sheet_id is still shared 'Anyone with the link'."))
+                             "Applicant sheet is unreadable — the creator pool cannot be rebuilt.",
+                             "Confirm the sheet in publish.applicant_sheet_id is still "
+                             "shared 'Anyone with the link -> Viewer'."))
+    elif not creators:
+        checks.append(_check("creator_supply", FAIL,
+                             "Applicant sheet is readable but contains no creators.",
+                             "Nobody has applied yet, or the form columns changed."))
     elif len(creators) < int(ocfg.get("low_creator_threshold", 10)):
         checks.append(_check("creator_supply", WARN,
                              f"Only {len(creators)} creator(s) in the pool.",
@@ -141,6 +146,22 @@ def health_check(cfg: dict) -> list[dict]:
                              f"{health.get('delivery_rate_pct', 0)}% delivered, {health.get('bounces', 0)} bounce(s)."))
 
     return checks
+
+
+def _creator_supply(cfg: dict) -> list | None:
+    """Creators available from the applicant sheet, or None if unreadable.
+
+    Deliberately reads the sheet rather than data/creators_pool.json: that file
+    is untracked, so it does not exist on a clean checkout and the cached
+    version would report an empty pool on every CI run.
+    """
+    try:
+        from .publication import pull_applicants
+        rows = pull_applicants(cfg)
+        return rows if isinstance(rows, list) else None
+    except Exception as exc:
+        log(f"  ops: applicant sheet unreadable ({exc})")
+        return None
 
 
 def _sendable_count(cfg: dict, state: dict) -> int:
