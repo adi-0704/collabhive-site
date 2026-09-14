@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-13T17:35:35.853733+00:00",
+  "generated_at": "2026-09-14T19:33:27.289165+00:00",
   "status": "fail",
   "checks": [
     {
       "name": "pipeline_ran",
       "status": "ok",
-      "detail": "Last run 9h ago.",
+      "detail": "Last run 10h ago.",
       "fix": ""
     },
     {
       "name": "mail_flowing",
       "status": "ok",
-      "detail": "Last email sent 33h ago.",
+      "detail": "Last email sent 10h ago.",
       "fix": ""
     },
     {
@@ -23,26 +23,26 @@
     {
       "name": "hot_leads",
       "status": "warn",
-      "detail": "18 hot lead(s) with no quote for >48h: no-reply@accounts.google.com, cssupport@thehouseofrare.com, Customercare@houseofindya.com, support@earthrhythm.com, tgb@seventurns.in",
+      "detail": "19 hot lead(s) with no quote for >48h: no-reply@accounts.google.com, cssupport@thehouseofrare.com, Customercare@houseofindya.com, support@earthrhythm.com, tgb@seventurns.in",
       "fix": "Reply personally — these are the closest thing to revenue you have."
     },
     {
       "name": "creator_supply",
-      "status": "fail",
-      "detail": "Creator pool is EMPTY — no shortlists or quotes can be produced.",
-      "fix": "The applicant sheet read failed. Confirm the sheet in publish.applicant_sheet_id is still shared 'Anyone with the link'."
+      "status": "ok",
+      "detail": "43 creators available for matching.",
+      "fix": ""
     },
     {
       "name": "deliverability",
       "status": "fail",
-      "detail": "Delivery flagged: 26.9% delivered, 6 bounce(s).",
+      "detail": "Delivery flagged: 28.3% delivered, 6 bounce(s).",
       "fix": "Pause sending and clean the pool before Gmail throttles the account."
     }
   ],
   "metrics": {
-    "sent_24h": 0,
-    "sent_7d": 17,
-    "sent_total": 53,
+    "sent_24h": 1,
+    "sent_7d": 5,
+    "sent_total": 54,
     "replies_total": 20,
     "interested": 20,
     "negotiating": 0,
@@ -52,6 +52,6 @@
     "creators": 0,
     "social_drafts": 42,
     "seo_pages": 19,
-    "reply_rate_pct": 38.5
+    "reply_rate_pct": 37.7
   }
 }
