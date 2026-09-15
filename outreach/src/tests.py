@@ -413,6 +413,43 @@ class TestPublication(unittest.TestCase):
         self.assertNotIn("rate", ig)
 
 
+class TestEmailCheck(unittest.TestCase):
+    """Deliverability gate. Every address here actually bounced in production."""
+
+    def test_rejects_addresses_that_bounced(self):
+        from src.emailcheck import validate
+        for bad in ("files@quinn-live.bundle.js", "c@y.com", "b@z.com",
+                    "visitor@x.com", "no-reply@accounts.google.com",
+                    "back-in-stock@notifyboost.net", "careers@bewakoof.com",
+                    "test@mailinator.com"):
+            ok, why = validate(bad, {}, check_mx=False)
+            self.assertFalse(ok, "%s should be rejected" % bad)
+            self.assertTrue(why)
+
+    def test_accepts_real_business_contacts(self):
+        from src.emailcheck import validate
+        for good in ("care@fabindia.com", "support@wakefit.co",
+                     "hello@sugarcosmetics.com", "listen@thewholetruthfoods.com",
+                     "manish.kumar@justherbs.in"):
+            ok, why = validate(good, {}, check_mx=False)
+            self.assertTrue(ok, "%s should pass, got %s" % (good, why))
+
+    def test_role_prefix_separators(self):
+        """no.reply / no_reply / noreply are one mailbox; support@ is not a role."""
+        from src.emailcheck import role_ok
+        for bad in ("no.reply@a.in", "no_reply@a.in", "noreply@a.in", "no-reply@a.in"):
+            self.assertFalse(role_ok(bad), bad)
+        # "support-" targets sub-addresses only; plain support@ is a real contact.
+        self.assertTrue(role_ok("support@a.in"))
+        self.assertFalse(role_ok("support-orders@a.in"))
+
+    def test_mx_lookup_distinguishes_live_and_dead(self):
+        from src.emailcheck import has_mx
+        cache = {}
+        self.assertTrue(has_mx("gmail.com", cache))
+        self.assertFalse(has_mx("thisdomaindoesnotexist-collabhive-xyz123.com", cache))
+
+
 class TestOps(unittest.TestCase):
     """Health watchdog + CEO brief. Must never send outreach, never crash."""
 
@@ -581,7 +618,7 @@ def _suite():
     suite = unittest.TestSuite()
     for cls in (TestCommon, TestBrands, TestPool, TestSales, TestMailerNoNetwork,
                 TestGrowth, TestProtect, TestOnboarding, TestPublication, TestBuffer,
-                TestOps, TestReplyHygiene, TestBlackboxModes):
+                TestOps, TestReplyHygiene, TestEmailCheck, TestBlackboxModes):
         suite.addTests(loader.loadTestsFromTestCase(cls))
     return suite
 

@@ -216,6 +216,16 @@ def daily_run(cfg: dict) -> dict:
     targets, _ = select_targets(cfg, state, cap - sent_today)
     targets = [t for t in targets if t.get("email")]
 
+    # Final deliverability gate. Addresses scraped from web pages included JS
+    # filenames and placeholder domains; every one bounced, and bounces are
+    # what dragged delivery to 28% and put the sending reputation at risk.
+    if cfg.get("emails", {}).get("validate_before_send", True):
+        from .emailcheck import screen_targets
+        before = len(targets)
+        targets, dropped = screen_targets(cfg, targets)
+        if dropped:
+            log(f"Screened {before - len(targets)} undeliverable target(s): {dropped}")
+
     if not targets:
         log("No unsent brands with emails available today. (Add brands to seed pool.)")
         return {"sent": 0, "skipped": 0, "pool_empty": True}

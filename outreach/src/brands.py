@@ -37,7 +37,23 @@ BANNED_DOMAIN_HINTS = (
     "notifyboost", "sendgrid", "mailgun", "postmark", "mailchimp", "klaviyo",
     "sendinblue", "sender", "createsend", "mailsac", "tempmail", "mailinator",
 )
-CONTACT_PATHS = ("", "contact", "contact-us", "contactus", "about", "about-us", "team", "careers")
+# Ordered by hit rate, cheapest first. Most Indian D2C brands run Shopify, and
+# /policies/contact-information is legally required to carry a contact address —
+# it is by far the most reliable source, yet the original list never checked it.
+CONTACT_PATHS = (
+    "",
+    "policies/contact-information",
+    "pages/contact", "pages/contact-us", "pages/support",
+    "contact", "contact-us", "contactus",
+    "pages/about-us", "about", "about-us",
+    "policies/refund-policy", "policies/privacy-policy",
+    "support", "help", "team",
+)
+
+# Announcing ourselves as a bot gets the request blocked by most CDNs, which is
+# why 72 pooled brands had a live website and no discoverable email.
+BROWSER_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 
 
 def _fetch(url: str, timeout: int = 12, ua: str = "") -> str | None:
@@ -48,7 +64,11 @@ def _fetch(url: str, timeout: int = 12, ua: str = "") -> str | None:
     _prev_timeout = socket.getdefaulttimeout()
     socket.setdefaulttimeout(timeout)
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": ua or "CollabHive/1.0"})
+        req = urllib.request.Request(url, headers={
+            "User-Agent": ua or BROWSER_UA,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-IN,en;q=0.9",
+        })
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             if resp.status != 200:
                 return None
@@ -82,9 +102,22 @@ def _is_good(email: str, brand_domain: str) -> bool:
         if domain.endswith(bad_ext) or bad_ext in domain:
             return False
     # Reject notification/DSP/email-service local-parts (never human contacts).
+    # Strip separators first: no-reply / no.reply / no_reply / noreply are all
+    # the same mailbox, and matching the literal string let "no.reply@" through.
     local_l = local.lower().strip()
+    local_flat = re.sub(r"[._\-]", "", local_l)
     for p in BANNED_LOCAL_PREFIXES:
-        if local_l == p.rstrip("@") or local_l.startswith(p) or p in local_l:
+        raw = p.rstrip("@")
+        # A prefix that ends in a separator ("support-") is deliberately
+        # targeting sub-addresses like support-orders@, NOT the plain mailbox.
+        # Normalising it away rejected support@ outright, which is a valid and
+        # common business contact.
+        if raw.endswith(("-", ".", "_")):
+            if local_l.startswith(raw):
+                return False
+            continue
+        pf = re.sub(r"[._\-]", "", raw)
+        if local_flat == pf or local_flat.startswith(pf):
             return False
     # Reject third-party email-service sender domains.
     for hint in BANNED_DOMAIN_HINTS:
@@ -136,9 +169,15 @@ def brand_emails(brand: dict, ua: str, timeout: int, limit: int = 3) -> list[str
     if html:
         emails = emails_from_html(html, brand_domain, limit)
     if len(emails) < limit:
+        # Cap attempts: with 15 candidate paths a brand that has no discoverable
+        # address anywhere would burn ~2 minutes on its own and blow the run's
+        # enrichment budget. The list is ordered by hit rate, so the first few
+        # find almost everything that is findable.
+        tried = 0
         for path in CONTACT_PATHS:
-            if path == "":
+            if path == "" or tried >= 6:
                 continue
+            tried += 1
             page = _fetch(f"{base}/{path}", timeout, ua)
             if page:
                 for e in emails_from_html(page, brand_domain, limit - len(emails)):

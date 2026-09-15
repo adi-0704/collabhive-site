@@ -32,7 +32,13 @@
   },
   "pipeline": {
     "enabled": true,
-    "stages": ["brief", "quoted", "booked", "delivered", "paid"],
+    "stages": [
+      "brief",
+      "quoted",
+      "booked",
+      "delivered",
+      "paid"
+    ],
     "state_file": "data/pipeline.json"
   },
   "alerts": {
@@ -45,7 +51,14 @@
   "dnc": {
     "enabled": true,
     "state_file": "data/dnc.json",
-    "unsubscribe_keywords": ["unsubscribe", "stop", "remove me", "opt out", "no longer", "do not contact"]
+    "unsubscribe_keywords": [
+      "unsubscribe",
+      "stop",
+      "remove me",
+      "opt out",
+      "no longer",
+      "do not contact"
+    ]
   },
   "pool_health": {
     "enabled": true,
@@ -59,8 +72,9 @@
     "fetch_timeout_seconds": 7,
     "fetch_max_brands_per_run": 30,
     "max_enrich_minutes": 8,
-    "user_agent": "Mozilla/5.0 (compatible; CollabHive/1.0; +collabhive.in@gmail.com)",
-    "lookback_days": 1
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "lookback_days": 1,
+    "validate_before_send": true
   },
   "discovery": {
     "enabled": true,
@@ -106,9 +120,38 @@
     "commission_pct": 10,
     "max_shortlist_per_brief": 6,
     "reply_keywords": {
-      "interested": ["interested", "let's talk", "lets talk", "sounds good", "would love", "yes", "keen", "share more", "pricing", "collaborate", "collab"],
-      "declined": ["not interested", "no thanks", "not now", "skip", "don't have budget", "unsubscribe", "remove", "stop"],
-      "negotiating": ["rate", "budget", "how much", "price", "discount", "commission", "fee"]
+      "interested": [
+        "interested",
+        "let's talk",
+        "lets talk",
+        "sounds good",
+        "would love",
+        "yes",
+        "keen",
+        "share more",
+        "pricing",
+        "collaborate",
+        "collab"
+      ],
+      "declined": [
+        "not interested",
+        "no thanks",
+        "not now",
+        "skip",
+        "don't have budget",
+        "unsubscribe",
+        "remove",
+        "stop"
+      ],
+      "negotiating": [
+        "rate",
+        "budget",
+        "how much",
+        "price",
+        "discount",
+        "commission",
+        "fee"
+      ]
     }
   },
   "followup": {
@@ -161,7 +204,10 @@
     "social_proof_ttl_hours": 120,
     "ab_cta": {
       "enabled": true,
-      "variants": ["Start a Campaign", "Get a Free Quote"],
+      "variants": [
+        "Start a Campaign",
+        "Get a Free Quote"
+      ],
       "winner_file": "data/cta_winner.json",
       "record_on": "cta_click"
     },
@@ -187,10 +233,21 @@
   "social": {
     "enabled": true,
     "drafts_file": "data/social_drafts.json",
-    "hashtags": ["CollabHive", "InfluencerMarketing", "CreatorEconomy", "BrandCollab", "IndiaCreators", "UGC"],
+    "hashtags": [
+      "CollabHive",
+      "InfluencerMarketing",
+      "CreatorEconomy",
+      "BrandCollab",
+      "IndiaCreators",
+      "UGC"
+    ],
     "include_handle": true,
     "include_link": true,
-    "platforms": ["instagram", "linkedin", "x"]
+    "platforms": [
+      "instagram",
+      "linkedin",
+      "x"
+    ]
   },
   "buffer": {
     "enabled": true,
@@ -217,42 +274,128 @@
   },
   "niches": {
     "market": "India",
-    "priority": ["Fashion & Apparel", "Beauty & Cosmetics"],
+    "priority": [
+      "Fashion & Apparel",
+      "Beauty & Cosmetics"
+    ],
     "categories": [
       {
         "niche": "Food & Beverage",
-        "keywords": ["cafe", "restaurant", "cloud kitchen", "bakery", "juice bar"],
-        "cities": ["Delhi", "Mumbai", "Bangalore", "Gurugram", "Pune", "Hyderabad"]
+        "keywords": [
+          "cafe",
+          "restaurant",
+          "cloud kitchen",
+          "bakery",
+          "juice bar"
+        ],
+        "cities": [
+          "Delhi",
+          "Mumbai",
+          "Bangalore",
+          "Gurugram",
+          "Pune",
+          "Hyderabad"
+        ]
       },
       {
         "niche": "Fashion & Apparel",
-        "keywords": ["boutique", "clothing", "ethnic wear", "streetwear", "fashion label"],
-        "cities": ["Delhi", "Mumbai", "Jaipur", "Chennai", "Ahmedabad"]
+        "keywords": [
+          "boutique",
+          "clothing",
+          "ethnic wear",
+          "streetwear",
+          "fashion label"
+        ],
+        "cities": [
+          "Delhi",
+          "Mumbai",
+          "Jaipur",
+          "Chennai",
+          "Ahmedabad"
+        ]
       },
       {
         "niche": "Beauty & Cosmetics",
-        "keywords": ["beauty", "salon", "cosmetics", "makeup", "skincare"],
-        "cities": ["Delhi", "Mumbai", "Bangalore", "Hyderabad", "Kolkata"]
+        "keywords": [
+          "beauty",
+          "salon",
+          "cosmetics",
+          "makeup",
+          "skincare"
+        ],
+        "cities": [
+          "Delhi",
+          "Mumbai",
+          "Bangalore",
+          "Hyderabad",
+          "Kolkata"
+        ]
       },
       {
         "niche": "Fitness & Wellness",
-        "keywords": ["gym", "yoga", "fitness", "nutrition", "wellness"],
-        "cities": ["Delhi", "Mumbai", "Bangalore", "Pune", "Chandigarh"]
+        "keywords": [
+          "gym",
+          "yoga",
+          "fitness",
+          "nutrition",
+          "wellness"
+        ],
+        "cities": [
+          "Delhi",
+          "Mumbai",
+          "Bangalore",
+          "Pune",
+          "Chandigarh"
+        ]
       },
       {
         "niche": "Tech & Startups",
-        "keywords": ["software", "app", "fintech", "saas", "startup"],
-        "cities": ["Bangalore", "Hyderabad", "Gurugram", "Pune", "Mumbai"]
+        "keywords": [
+          "software",
+          "app",
+          "fintech",
+          "saas",
+          "startup"
+        ],
+        "cities": [
+          "Bangalore",
+          "Hyderabad",
+          "Gurugram",
+          "Pune",
+          "Mumbai"
+        ]
       },
       {
         "niche": "Travel & Hospitality",
-        "keywords": ["travel", "homestay", "hotel", "tour", "resort"],
-        "cities": ["Jaipur", "Goa", "Udaipur", "Manali", "Kochi"]
+        "keywords": [
+          "travel",
+          "homestay",
+          "hotel",
+          "tour",
+          "resort"
+        ],
+        "cities": [
+          "Jaipur",
+          "Goa",
+          "Udaipur",
+          "Manali",
+          "Kochi"
+        ]
       },
       {
         "niche": "Home & Decor",
-        "keywords": ["home decor", "furniture", "interior", "decor store"],
-        "cities": ["Delhi", "Mumbai", "Bangalore", "Surat"]
+        "keywords": [
+          "home decor",
+          "furniture",
+          "interior",
+          "decor store"
+        ],
+        "cities": [
+          "Delhi",
+          "Mumbai",
+          "Bangalore",
+          "Surat"
+        ]
       }
     ]
   }

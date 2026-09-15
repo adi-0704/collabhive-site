@@ -232,6 +232,12 @@ def cmd_pool(cfg: dict) -> None:
     log(f"Pool refill: {res}")
     health = pool_mod.pool_health(cfg)
     log(f"Pool health: {health}")
+    # Strip undeliverable addresses before they can be mailed. Scraped pages
+    # yielded JS filenames and placeholder domains; those bounced and took the
+    # delivery rate down to 28%, which is where Gmail starts throttling.
+    if cfg.get("emails", {}).get("validate_before_send", True):
+        from src.emailcheck import clean_pool
+        log(f"Pool validation: {clean_pool(cfg)}")
 
 
 def cmd_daily(cfg: dict) -> None:
