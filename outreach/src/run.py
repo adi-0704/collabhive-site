@@ -358,6 +358,13 @@ def cmd_onboarding(cfg: dict) -> None:
     log(f"WhatsApp handoffs: {handoffs}")
 
 
+def cmd_nurture(cfg: dict) -> None:
+    """Bridge email replies into quotes: clean queue, nurture leads, chase quotes."""
+    from src import nurture as nur
+    res = nur.run_nurture(cfg)
+    log(f"Nurture: {res}")
+
+
 def cmd_ops(cfg: dict) -> None:
     """Health watchdog + daily CEO brief. Read-only; sends no outreach."""
     from src import ops as ops_mod
@@ -424,6 +431,8 @@ def main(argv: list[str] | None = None) -> int:
         cmd_publish(cfg)
     elif mode == "ops":
         cmd_ops(cfg)
+    elif mode == "nurture":
+        cmd_nurture(cfg)
     elif mode == "buffer":
         from src import buffer as buf_mod
         result = buf_mod.queue_drafts(cfg)
@@ -450,6 +459,7 @@ def main(argv: list[str] | None = None) -> int:
         cmd_publish(cfg)
         cmd_sales(cfg)
         cmd_automation(cfg)
+        cmd_nurture(cfg)
         cmd_growth(cfg)
         cmd_onboarding(cfg)
         cmd_seo(cfg)

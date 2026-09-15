@@ -398,5 +398,12 @@
         ]
       }
     ]
+  },
+  "nurture": {
+    "enabled": true,
+    "wait_hours": 24,
+    "quote_chase_hours": 72,
+    "subject": "Your creator shortlist — {brand}",
+    "note": "Bridges email replies into quotes (src/nurture.py). Replies land in closing_queue but auto-quotes only read brand_briefs, so interested brands were never followed up."
   }
 }

@@ -413,6 +413,65 @@ class TestPublication(unittest.TestCase):
         self.assertNotIn("rate", ig)
 
 
+class TestNurture(unittest.TestCase):
+    """Bridges email replies into quotes. Must never mail a non-lead."""
+
+    def setUp(self):
+        self.common = _mkdata(None)
+        self.cfg = _load_cfg()
+        os.environ["OUTREACH_EMAIL_PASS"] = "test"
+        self.common.save_json(_TEST_ROOT / "data" / "state.json", {
+            "emailed_emails": ["hello@brand.com"], "emailed_domains": ["brand.com"]})
+        self.common.save_json(_TEST_ROOT / "data" / "closing_queue.json", [
+            {"email": "hello@brand.com", "status": "interested",
+             "ts": "2020-01-01T00:00:00+00:00", "subject": "re: collab"},
+            {"email": "no-reply@accounts.google.com", "status": "interested",
+             "ts": "2020-01-01T00:00:00+00:00", "subject": "Security alert"},
+        ])
+        self.common.save_json(_TEST_ROOT / "data" / "quotes_sent.json", [])
+        self.sent = []
+        import src.automation as auto
+        self._orig = auto._send_mime
+        auto._send_mime = lambda c, u, p, to, s, t, h: self.sent.append(to)
+
+    def tearDown(self):
+        import src.automation as auto
+        auto._send_mime = self._orig
+
+    def test_cleans_non_replies_from_queue(self):
+        from src.nurture import clean_queue
+        res = clean_queue(self.cfg)
+        self.assertEqual(res["removed"], 1)       # the Google alert
+        self.assertEqual(res["remaining"], 1)
+
+    def test_nurtures_real_lead_only(self):
+        from src import nurture as nur
+        nur._POOL_NAMES = None
+        nur.clean_queue(self.cfg)
+        res = nur.nurture_hot_leads(self.cfg)
+        self.assertEqual(res["sent"], 1)
+        self.assertEqual(self.sent, ["hello@brand.com"])
+
+    def test_never_nurtures_twice(self):
+        from src import nurture as nur
+        nur._POOL_NAMES = None
+        nur.clean_queue(self.cfg)
+        nur.nurture_hot_leads(self.cfg)
+        self.sent.clear()
+        again = nur.nurture_hot_leads(self.cfg)
+        self.assertEqual(again["sent"], 0)
+        self.assertEqual(self.sent, [])
+
+    def test_draft_quotes_are_not_chased(self):
+        """Quotes with no address were never sent, so there is nothing to chase."""
+        from src.nurture import chase_quotes
+        self.common.save_json(_TEST_ROOT / "data" / "quotes_sent.json", [
+            {"brand": "X", "email": "", "ts": "2020-01-01T00:00:00+00:00", "draft": True}])
+        res = chase_quotes(self.cfg)
+        self.assertEqual(res["sent"], 0)
+        self.assertEqual(self.sent, [])
+
+
 class TestEmailCheck(unittest.TestCase):
     """Deliverability gate. Every address here actually bounced in production."""
 
@@ -618,7 +677,7 @@ def _suite():
     suite = unittest.TestSuite()
     for cls in (TestCommon, TestBrands, TestPool, TestSales, TestMailerNoNetwork,
                 TestGrowth, TestProtect, TestOnboarding, TestPublication, TestBuffer,
-                TestOps, TestReplyHygiene, TestEmailCheck, TestBlackboxModes):
+                TestOps, TestReplyHygiene, TestEmailCheck, TestNurture, TestBlackboxModes):
         suite.addTests(loader.loadTestsFromTestCase(cls))
     return suite
 
