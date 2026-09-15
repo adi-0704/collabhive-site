@@ -56,6 +56,32 @@ def _anchor_date() -> str:
     return date.today().isoformat()
 
 
+CTA_FILE = HERE / "cta.json"
+
+_DEFAULT_CTA = {
+    "brand": "Free shortlist — link in bio 🔗",
+    "creator": "Link in bio 🔗",
+}
+
+
+def _cta(audience: str) -> str:
+    """Closing call to action for a caption.
+
+    Kept in social/cta.json so switching to a comment-to-DM prompt is a data
+    change, not a code change — and so every one of the 149 days picks it up on
+    the next rebuild.
+    """
+    data = {}
+    if CTA_FILE.exists():
+        try:
+            data = json.loads(CTA_FILE.read_text(encoding="utf-8"))
+        except Exception:
+            data = {}
+    if not data.get("enabled", False):
+        return _DEFAULT_CTA.get(audience, "")
+    return data.get(audience) or _DEFAULT_CTA.get(audience, "")
+
+
 def _is_stat_headline(headline: str) -> bool:
     """stat_hero blows the first word up to 210px, which only reads as design
     if that word is actually a figure. 'You're undercharging...' rendered a
@@ -123,9 +149,13 @@ def build(days: int, start: date) -> list[dict]:
             recent_layouts.append(layout)
             recent_pillars.append(pillar)
 
-            link = "Link in bio" if audience == "creator" else "Free shortlist — link in bio"
+            # A comment CTA converts better than a bio link (the reader never
+            # leaves the app) and the comments themselves lift reach. Driven by
+            # social/cta.json so switching it on is a data change, and every one
+            # of the 149 days picks it up on the next rebuild.
+            link = _cta(audience)
             full_caption = (
-                f"{caption}\n\n{cta}\n\n{link} 🔗\n\n"
+                f"{caption}\n\n{cta}\n\n{link}\n\n"
                 f"{tag_block(audience, day)}"
             )
             entries.append({

@@ -1,0 +1,6 @@
+{
+  "enabled": false,
+  "brand": "Comment QUOTE and we'll DM you a free creator shortlist 👇",
+  "creator": "Comment JOIN and we'll DM you the application link 👇",
+  "note": "Set enabled=true only AFTER the ManyChat comment-to-DM automation is live (see SETUP_COMMENT_TO_DM.md). Asking for a comment nothing answers is worse than the bio link."
+}

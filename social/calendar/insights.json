@@ -1,0 +1,292 @@
+{
+  "generated_at": "2026-09-15T15:47:30.266283+00:00",
+  "posts_measured": 14,
+  "matched_to_calendar": 8,
+  "by_pillar": [
+    {
+      "audience": "brand",
+      "pillar": "myth",
+      "posts": 1,
+      "avg_score": 60.0,
+      "avg_reach": 5.0
+    },
+    {
+      "audience": "brand",
+      "pillar": "data",
+      "posts": 2,
+      "avg_score": 21.43,
+      "avg_reach": 4.0
+    },
+    {
+      "audience": "creator",
+      "pillar": "rates",
+      "posts": 1,
+      "avg_score": 15.0,
+      "avg_reach": 20.0
+    },
+    {
+      "audience": "creator",
+      "pillar": "redflag",
+      "posts": 2,
+      "avg_score": 8.82,
+      "avg_reach": 10.5
+    },
+    {
+      "audience": "brand",
+      "pillar": "tip",
+      "posts": 1,
+      "avg_score": 0.0,
+      "avg_reach": 1.0
+    },
+    {
+      "audience": "creator",
+      "pillar": "pitch",
+      "posts": 1,
+      "avg_score": 0.0,
+      "avg_reach": 6.0
+    }
+  ],
+  "by_layout": [
+    {
+      "audience": "brand",
+      "layout": "myth_fact",
+      "posts": 1,
+      "avg_score": 60.0,
+      "avg_reach": 5.0
+    },
+    {
+      "audience": "brand",
+      "layout": "bold_dark",
+      "posts": 2,
+      "avg_score": 21.43,
+      "avg_reach": 4.0
+    },
+    {
+      "audience": "creator",
+      "layout": "hero_cta",
+      "posts": 1,
+      "avg_score": 15.0,
+      "avg_reach": 20.0
+    },
+    {
+      "audience": "creator",
+      "layout": "myth_fact",
+      "posts": 2,
+      "avg_score": 8.82,
+      "avg_reach": 10.5
+    },
+    {
+      "audience": "brand",
+      "layout": "hero_cta",
+      "posts": 1,
+      "avg_score": 0.0,
+      "avg_reach": 1.0
+    },
+    {
+      "audience": "creator",
+      "layout": "bold_dark",
+      "posts": 1,
+      "avg_score": 0.0,
+      "avg_reach": 6.0
+    }
+  ],
+  "top_posts": [
+    {
+      "audience": "brand",
+      "sent_at": "2026-09-13",
+      "headline": "Follower count is a vanity metric",
+      "pillar": "myth",
+      "layout": "myth_fact",
+      "reach": 5,
+      "views": 17,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 60.0
+    },
+    {
+      "audience": "brand",
+      "sent_at": "2026-01-04",
+      "headline": "(not in calendar)",
+      "pillar": "unknown",
+      "layout": "unknown",
+      "reach": 9,
+      "views": 34,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 44.44
+    },
+    {
+      "audience": "brand",
+      "sent_at": "2026-09-14",
+      "headline": "Most collabs fail before the brief is sent",
+      "pillar": "data",
+      "layout": "bold_dark",
+      "reach": 7,
+      "views": 15,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 42.86
+    },
+    {
+      "audience": "brand",
+      "sent_at": "2025-12-30",
+      "headline": "(not in calendar)",
+      "pillar": "unknown",
+      "layout": "unknown",
+      "reach": 21,
+      "views": 87,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 42.86
+    },
+    {
+      "audience": "brand",
+      "sent_at": "2026-01-01",
+      "headline": "(not in calendar)",
+      "pillar": "unknown",
+      "layout": "unknown",
+      "reach": 14,
+      "views": 44,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 35.71
+    },
+    {
+      "audience": "creator",
+      "sent_at": "2026-09-14",
+      "headline": "'We'll pay you in exposure'",
+      "pillar": "redflag",
+      "layout": "myth_fact",
+      "reach": 17,
+      "views": 43,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 17.65
+    },
+    {
+      "audience": "creator",
+      "sent_at": "2026-09-13",
+      "headline": "You're undercharging. Here's the test",
+      "pillar": "rates",
+      "layout": "hero_cta",
+      "reach": 20,
+      "views": 50,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 15.0
+    },
+    {
+      "audience": "brand",
+      "sent_at": "2025-12-29",
+      "headline": "(not in calendar)",
+      "pillar": "unknown",
+      "layout": "unknown",
+      "reach": 21,
+      "views": 84,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 14.29
+    },
+    {
+      "audience": "creator",
+      "sent_at": "2026-01-20",
+      "headline": "(not in calendar)",
+      "pillar": "unknown",
+      "layout": "unknown",
+      "reach": 127,
+      "views": 182,
+      "saves": 0,
+      "shares": 1,
+      "follows": 0,
+      "score": 5.51
+    },
+    {
+      "audience": "creator",
+      "sent_at": "2026-01-06",
+      "headline": "(not in calendar)",
+      "pillar": "unknown",
+      "layout": "unknown",
+      "reach": 114,
+      "views": 165,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 1.75
+    }
+  ],
+  "weakest_posts": [
+    {
+      "audience": "brand",
+      "sent_at": "2026-09-15",
+      "headline": "Most collabs fail before the brief is sent",
+      "pillar": "data",
+      "layout": "bold_dark",
+      "reach": 1,
+      "views": 2,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 0.0
+    },
+    {
+      "audience": "brand",
+      "sent_at": "2026-09-15",
+      "headline": "Your brief is too long",
+      "pillar": "tip",
+      "layout": "hero_cta",
+      "reach": 1,
+      "views": 3,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 0.0
+    },
+    {
+      "audience": "creator",
+      "sent_at": "2026-09-15",
+      "headline": "'We'll pay you in exposure'",
+      "pillar": "redflag",
+      "layout": "myth_fact",
+      "reach": 4,
+      "views": 11,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 0.0
+    },
+    {
+      "audience": "creator",
+      "sent_at": "2026-09-15",
+      "headline": "Your pitch email is about you",
+      "pillar": "pitch",
+      "layout": "bold_dark",
+      "reach": 6,
+      "views": 16,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 0.0
+    },
+    {
+      "audience": "creator",
+      "sent_at": "2026-01-06",
+      "headline": "(not in calendar)",
+      "pillar": "unknown",
+      "layout": "unknown",
+      "reach": 114,
+      "views": 165,
+      "saves": 0,
+      "shares": 0,
+      "follows": 0,
+      "score": 1.75
+    }
+  ]
+}

@@ -148,6 +148,21 @@ def health_check(cfg: dict) -> list[dict]:
     return checks
 
 
+def _content_insights(limit: int = 4) -> list[str]:
+    """Top-performing content pillars, if social/insights.py has run."""
+    path = ROOT.parent / "social" / "calendar" / "insights.json"
+    data = load_json(path)
+    if not isinstance(data, dict) or not data.get("by_pillar"):
+        return []
+    out = [f"  measured {data.get('posts_measured', 0)} published post(s)"]
+    if int(data.get("posts_measured") or 0) < 30:
+        out.append("  (too few posts to be conclusive yet - directional only)")
+    for row in data["by_pillar"][:limit]:
+        out.append("  %-8s %-14s score %.1f over %d post(s)"
+                   % (row["audience"], row["pillar"], row["avg_score"], row["posts"]))
+    return out
+
+
 def _creator_supply(cfg: dict) -> list | None:
     """Creators available from the applicant sheet, or None if unreadable.
 
@@ -302,6 +317,13 @@ def render_brief(cfg: dict, checks: list[dict], metrics: dict) -> tuple[str, str
     ]
     for c in checks:
         lines.append(f"  [{c['status'].upper():4}] {c['name']}: {c['detail']}")
+
+    # What the Instagram content is actually doing. Written by social/insights.py;
+    # absent until that has run at least once, which is fine — the brief should
+    # never fail because an optional input is missing.
+    top = _content_insights()
+    if top:
+        lines += ["", "CONTENT PERFORMANCE", "-" * 40] + top
 
     lines += [
         "",
