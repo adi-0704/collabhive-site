@@ -208,7 +208,11 @@ def render_images(entries: list[dict]) -> int:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--days", type=int, default=100)
+    # 0 = build every authored post. A hardcoded default silently truncated
+    # the calendar: CI regenerated with --days 100 and cut a 149-day calendar
+    # back to 100, discarding 49 days of written content.
+    ap.add_argument("--days", type=int, default=0,
+                    help="0 (default) = as many days as the banks allow")
     # Default to the anchor recorded in the existing calendar, NOT today.
     # Defaulting to today meant every regeneration re-dated the whole calendar:
     # content slid to a different day, Buffer's queue no longer matched, and a
@@ -227,8 +231,9 @@ def main() -> int:
     else:
         print(f"  anchor held: day 1 = {start.isoformat()} "
               f"(use --reanchor to move it)")
-    entries = build(args.days, start)
-    verify(entries, args.days)
+    days = args.days or min(len(BRAND_POSTS), len(CREATOR_POSTS))
+    entries = build(days, start)
+    verify(entries, days)
 
     (OUT / "calendar.json").write_text(
         json.dumps(entries, indent=2, ensure_ascii=False), encoding="utf-8")

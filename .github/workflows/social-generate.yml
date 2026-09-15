@@ -18,9 +18,9 @@ on:
   workflow_dispatch:
     inputs:
       days:
-        description: 'How many days to generate'
+        description: 'Days to generate (blank = every authored post)'
         required: false
-        default: '100'
+        default: ''
 
 concurrency:
   group: social-generate
@@ -48,8 +48,15 @@ jobs:
           playwright install --with-deps chromium
 
       - name: Build calendar and render images
+        # No --days by default. Passing a fixed number here once truncated a
+        # 149-day calendar back to 100 and silently discarded 49 days of
+        # written content. Blank means "build every authored post".
         run: |
-          python -u social/generate_calendar.py --days "${{ inputs.days || 100 }}"
+          if [ -n "${{ inputs.days }}" ]; then
+            python -u social/generate_calendar.py --days "${{ inputs.days }}"
+          else
+            python -u social/generate_calendar.py
+          fi
 
       - name: Commit generated posts
         if: always()
