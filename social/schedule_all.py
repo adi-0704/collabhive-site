@@ -41,24 +41,44 @@ def log(msg: str) -> None:
         print(str(msg).encode(enc, "replace").decode(enc, "replace"), flush=True)
 
 
-def existing_scheduled(cfg: dict, channel_id: str) -> set[str]:
-    """Text of posts already scheduled on this channel, so re-runs are safe.
+def existing_posts(cfg: dict, channel_id: str) -> set[str]:
+    """Text of every post on this channel, whatever its status.
 
-    channelIds/status live under `filter`, not at the top level. An earlier
-    version had them at the top level, which errored and — because the caller
-    swallowed it — silently returned an empty set, disabling the duplicate
-    protection entirely. A re-run would have double-posted the whole calendar.
+    Must include `sent`, not just `scheduled`. Checking only scheduled posts
+    meant already-published content was invisible to the dedupe, so a post that
+    went out yesterday could be scheduled again today — which is exactly what
+    happened when a calendar regeneration shifted the day/date mapping.
+
+    channelIds/status live under `filter`, not at the top level; an earlier
+    version put them at the top level, errored, and silently returned an empty
+    set, disabling duplicate protection altogether.
     """
-    q = ('query Posts { posts(input: { organizationId: "%s", '
-         'filter: { channelIds: ["%s"], status: [scheduled] } }) '
-         '{ edges { node { id text } } } }'
-         % (cfg.get("buffer", {}).get("organization_id", ""), channel_id))
-    r = _gql(cfg, q)
-    if isinstance(r, dict) and r.get("errors"):
-        raise RuntimeError("could not read existing Buffer posts: %s"
-                           % r["errors"][0].get("message", "")[:120])
-    edges = (((r.get("data") or {}).get("posts") or {}).get("edges") or [])
-    return {e["node"].get("text", "") for e in edges}
+    org = cfg.get("buffer", {}).get("organization_id", "")
+    texts: set[str] = set()
+    after = ""
+    # MUST paginate. The default page is small, so an unpaginated read returned
+    # only part of the history — the dedupe then missed an already-sent post and
+    # scheduled it again. Walk every page before deciding anything is new.
+    for _ in range(20):
+        cursor = ', after: "%s"' % after if after else ""
+        q = ('query Posts { posts(first: 50%s, input: { organizationId: "%s", '
+             'filter: { channelIds: ["%s"], '
+             'status: [scheduled, sent, sending, draft, needs_approval, error] } }) '
+             '{ pageInfo { hasNextPage endCursor } edges { node { id text } } } }'
+             % (cursor, org, channel_id))
+        r = _gql(cfg, q)
+        if isinstance(r, dict) and r.get("errors"):
+            raise RuntimeError("could not read existing Buffer posts: %s"
+                               % r["errors"][0].get("message", "")[:120])
+        page = ((r.get("data") or {}).get("posts") or {})
+        texts |= {e["node"].get("text", "") for e in (page.get("edges") or [])}
+        info = page.get("pageInfo") or {}
+        if not info.get("hasNextPage"):
+            break
+        after = info.get("endCursor") or ""
+        if not after:
+            break
+    return texts
 
 
 def main() -> int:
@@ -116,7 +136,7 @@ def main() -> int:
         log("BUFFER_ACCESS_TOKEN is not set.")
         return 1
 
-    seen = {a: existing_scheduled(cfg, cid) for a, cid in channels.items() if cid}
+    seen = {a: existing_posts(cfg, cid) for a, cid in channels.items() if cid}
     ok = skipped = failed = 0
     full: dict[str, int] = {}     # audience -> posts we couldn't fit
 
@@ -132,7 +152,7 @@ def main() -> int:
             full[e["audience"]] += 1
             continue
         # Dedupe on the unique first line of the caption.
-        marker = e["caption"].splitlines()[0][:60]
+        marker = e["caption_body"].splitlines()[0][:80]
         if any(marker in t for t in seen.get(e["audience"], ())):
             skipped += 1
             continue

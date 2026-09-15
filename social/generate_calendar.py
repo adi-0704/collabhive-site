@@ -38,6 +38,24 @@ APPLY_FORM = ("https://docs.google.com/forms/d/e/"
               "1FAIpQLScIV5PVkwbdcvMpzCyxTAzN71ORCqaTaIMY7Dr15xEMXSxIXQ/viewform")
 
 
+ANCHOR = OUT / "anchor.txt"
+
+
+def _anchor_date() -> str:
+    """The date day 1 maps to, held fixed across regenerations.
+
+    Buffer holds real scheduled posts keyed to these dates. If a rebuild moves
+    day 1, every later post shifts with it and the queue silently disagrees with
+    the calendar — which is how already-published copy got scheduled a second
+    time. The anchor is written once and reused forever unless --reanchor.
+    """
+    if ANCHOR.exists():
+        txt = ANCHOR.read_text(encoding="utf-8").strip()
+        if txt:
+            return txt
+    return date.today().isoformat()
+
+
 def _is_stat_headline(headline: str) -> bool:
     """stat_hero blows the first word up to 210px, which only reads as design
     if that word is actually a figure. 'You're undercharging...' rendered a
@@ -191,12 +209,25 @@ def render_images(entries: list[dict]) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=100)
-    ap.add_argument("--start", default=date.today().isoformat())
+    # Default to the anchor recorded in the existing calendar, NOT today.
+    # Defaulting to today meant every regeneration re-dated the whole calendar:
+    # content slid to a different day, Buffer's queue no longer matched, and a
+    # post that had already published got scheduled again the next day.
+    ap.add_argument("--start", default=_anchor_date())
+    ap.add_argument("--reanchor", action="store_true",
+                    help="deliberately restart the calendar from --start/today")
     ap.add_argument("--no-images", action="store_true")
     args = ap.parse_args()
 
     OUT.mkdir(parents=True, exist_ok=True)
-    entries = build(args.days, date.fromisoformat(args.start))
+    start = date.fromisoformat(args.start)
+    if args.reanchor or not ANCHOR.exists():
+        ANCHOR.write_text(start.isoformat(), encoding="utf-8")
+        print(f"  anchor set: day 1 = {start.isoformat()}")
+    else:
+        print(f"  anchor held: day 1 = {start.isoformat()} "
+              f"(use --reanchor to move it)")
+    entries = build(args.days, start)
     verify(entries, args.days)
 
     (OUT / "calendar.json").write_text(
