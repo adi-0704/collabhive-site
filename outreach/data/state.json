@@ -54,7 +54,8 @@
     "info@foxtale.in",
     "care@thedermaco.com",
     "hello@perforacare.com",
-    "enquiries@bluetribe.co"
+    "enquiries@bluetribe.co",
+    "cs@getmymettle.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -110,7 +111,8 @@
     "foxtale.in",
     "thedermaco.com",
     "perforacare.com",
-    "bluetribe.co"
+    "bluetribe.co",
+    "getmymettle.com"
   ],
   "sent_log": [
     {
@@ -526,9 +528,17 @@
       "niche": "Fitness & Wellness",
       "city": "Bengaluru",
       "subject": "Helping Blue Tribe grow with creators"
+    },
+    {
+      "ts": "2026-09-15T08:57:35.619992+00:00",
+      "email": "cs@getmymettle.com",
+      "name": "GetMyMettle",
+      "niche": "Fitness & Wellness",
+      "city": "Mumbai",
+      "subject": "Creators for GetMyMettle from CollabHive"
     }
   ],
-  "last_run": "2026-09-14T09:15:32.445912+00:00",
+  "last_run": "2026-09-15T08:57:35.662832+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",

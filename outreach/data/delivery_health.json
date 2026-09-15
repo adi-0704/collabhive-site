@@ -1,19 +1,19 @@
 {
   "ok": true,
-  "checked_at": "2026-09-14T09:15:58.909668+00:00",
+  "checked_at": "2026-09-15T08:59:11.197319+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 53,
+  "recorded_sends": 54,
   "confirmed_in_sent": 15,
-  "unconfirmed": 38,
-  "delivery_rate_pct": 28.3,
+  "unconfirmed": 39,
+  "delivery_rate_pct": 27.8,
   "bounces": 6,
   "bounce_emails": [
-    "care@fabindia.com",
-    "care@zivame.com",
     "support@boat-lifestyle.com",
+    "care@zivame.com",
     "care@juicychemistry.com",
+    "care@wowskin.com",
     "care@ritebite.com",
-    "care@wowskin.com"
+    "care@fabindia.com"
   ],
   "unconfirmed_emails": [
     "grievance@snitch.com",

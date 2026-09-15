@@ -812,9 +812,14 @@
     "niche": "Fitness & Wellness",
     "city": "Mumbai",
     "website": "https://getmymettle.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "cs@getmymettle.com",
+    "emails": [
+      "cs@getmymettle.com",
+      "shop@getmymettle.myshopify.com",
+      "getmymettle2@gmail.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Nutrabay",

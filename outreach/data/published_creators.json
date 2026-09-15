@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-14T09:15:59.805385+00:00",
-  "count": 42,
+  "generated_at": "2026-09-15T08:59:12.454091+00:00",
+  "count": 44,
   "creators": [
     {
       "name": "Garima narang",
@@ -377,6 +377,24 @@
       "niche": "Beauty fashion ",
       "city": "New Delhi India",
       "followers": 1000,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Fareya",
+      "handle": "@farheenn_q",
+      "niche": "Relatable reels",
+      "city": "Odisha",
+      "followers": 265,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Mansi shastri",
+      "handle": "@Mansigotnochill",
+      "niche": "Fashion ,beauty, random",
+      "city": "Ahmedabad",
+      "followers": 500,
       "platforms": "Instagram",
       "source": "applicant"
     }
