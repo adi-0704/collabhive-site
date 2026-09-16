@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-15T08:59:12.454091+00:00",
-  "count": 44,
+  "generated_at": "2026-09-16T09:22:38.637896+00:00",
+  "count": 46,
   "creators": [
     {
       "name": "Garima narang",
@@ -395,6 +395,24 @@
       "niche": "Fashion ,beauty, random",
       "city": "Ahmedabad",
       "followers": 500,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Aastha niranjan ",
+      "handle": "@aasthaniranjan_",
+      "niche": "Fashion, beauty",
+      "city": "Jhansi",
+      "followers": 1000,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Ritika Pandey",
+      "handle": "@byriitika",
+      "niche": "Fashion,beauty",
+      "city": "kolkata",
+      "followers": 8000,
       "platforms": "Instagram",
       "source": "applicant"
     }

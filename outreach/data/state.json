@@ -55,7 +55,21 @@
     "care@thedermaco.com",
     "hello@perforacare.com",
     "enquiries@bluetribe.co",
-    "cs@getmymettle.com"
+    "cs@getmymettle.com",
+    "customer.support@justherbs.in",
+    "support@starapps.studio",
+    "team@doodlage.in",
+    "support@gist-apps.com",
+    "customercare@bibaindia.com",
+    "care@clovia.com",
+    "info@suta.in",
+    "help@thelabellife.com",
+    "friends@nutrabay.com",
+    "support@boldcare.in",
+    "grievance@duroflexworld.com",
+    "info@springwel.com",
+    "support@thewhitewillow.in",
+    "customercare@livpure.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -112,7 +126,21 @@
     "thedermaco.com",
     "perforacare.com",
     "bluetribe.co",
-    "getmymettle.com"
+    "getmymettle.com",
+    "justherbs.in",
+    "nappadori.com",
+    "doodlage.in",
+    "biotique.com",
+    "biba.in",
+    "clovia.com",
+    "suta.in",
+    "thelabellife.com",
+    "nutrabay.com",
+    "boldcare.in",
+    "duroflexworld.com",
+    "springwel.com",
+    "thewhitewillow.in",
+    "livpure.com"
   ],
   "sent_log": [
     {
@@ -536,9 +564,121 @@
       "niche": "Fitness & Wellness",
       "city": "Mumbai",
       "subject": "Creators for GetMyMettle from CollabHive"
+    },
+    {
+      "ts": "2026-09-16T08:50:50.891209+00:00",
+      "email": "customer.support@justherbs.in",
+      "name": "Just Herbs",
+      "niche": "Beauty & Cosmetics",
+      "city": "Chandigarh",
+      "subject": "Helping Just Herbs grow with creators"
+    },
+    {
+      "ts": "2026-09-16T08:52:51.338647+00:00",
+      "email": "support@starapps.studio",
+      "name": "Nappa Dori",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Helping Nappa Dori grow with creators"
+    },
+    {
+      "ts": "2026-09-16T08:55:46.247840+00:00",
+      "email": "team@doodlage.in",
+      "name": "Doodlage",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Doodlage: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-16T08:58:28.724327+00:00",
+      "email": "support@gist-apps.com",
+      "name": "Biotique",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "Helping Biotique grow with creators"
+    },
+    {
+      "ts": "2026-09-16T09:01:10.626312+00:00",
+      "email": "customercare@bibaindia.com",
+      "name": "Biba",
+      "niche": "Fashion & Apparel",
+      "city": "Gurugram",
+      "subject": "Helping Biba grow with creators"
+    },
+    {
+      "ts": "2026-09-16T09:02:49.189182+00:00",
+      "email": "care@clovia.com",
+      "name": "Clovia",
+      "niche": "Fashion & Apparel",
+      "city": "Gurugram",
+      "subject": "Helping Clovia grow with creators"
+    },
+    {
+      "ts": "2026-09-16T09:05:17.513450+00:00",
+      "email": "info@suta.in",
+      "name": "Suta",
+      "niche": "Fashion & Apparel",
+      "city": "Mumbai",
+      "subject": "Creators for Suta from CollabHive"
+    },
+    {
+      "ts": "2026-09-16T09:08:40.358366+00:00",
+      "email": "help@thelabellife.com",
+      "name": "The Label Life",
+      "niche": "Fashion & Apparel",
+      "city": "Mumbai",
+      "subject": "Creators for The Label Life from CollabHive"
+    },
+    {
+      "ts": "2026-09-16T09:10:16.727878+00:00",
+      "email": "friends@nutrabay.com",
+      "name": "Nutrabay",
+      "niche": "Fitness & Wellness",
+      "city": "Gurugram",
+      "subject": "Helping Nutrabay grow with creators"
+    },
+    {
+      "ts": "2026-09-16T09:11:52.160534+00:00",
+      "email": "support@boldcare.in",
+      "name": "Bold Care",
+      "niche": "Fitness & Wellness",
+      "city": "Mumbai",
+      "subject": "A creator network for Bold Care — CollabHive"
+    },
+    {
+      "ts": "2026-09-16T09:14:15.656244+00:00",
+      "email": "grievance@duroflexworld.com",
+      "name": "Duroflex",
+      "niche": "Home & Decor",
+      "city": "Bengaluru",
+      "subject": "Creators for Duroflex from CollabHive"
+    },
+    {
+      "ts": "2026-09-16T09:17:08.438080+00:00",
+      "email": "info@springwel.com",
+      "name": "Springwel",
+      "niche": "Home & Decor",
+      "city": "Delhi",
+      "subject": "Springwel: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-16T09:19:03.385134+00:00",
+      "email": "support@thewhitewillow.in",
+      "name": "The White Willow",
+      "niche": "Home & Decor",
+      "city": "Delhi",
+      "subject": "A creator network for The White Willow — CollabHive"
+    },
+    {
+      "ts": "2026-09-16T09:21:02.993132+00:00",
+      "email": "customercare@livpure.com",
+      "name": "Livpure",
+      "niche": "Home & Decor",
+      "city": "Gurugram",
+      "subject": "Livpure: matched creators, ready to collab"
     }
   ],
-  "last_run": "2026-09-15T08:57:35.662832+00:00",
+  "last_run": "2026-09-16T09:21:03.028499+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",

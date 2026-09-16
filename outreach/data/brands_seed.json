@@ -826,18 +826,24 @@
     "niche": "Fitness & Wellness",
     "city": "Gurugram",
     "website": "https://nutrabay.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "friends@nutrabay.com",
+    "emails": [
+      "friends@nutrabay.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "MYFITNESS",
     "niche": "Fitness & Wellness",
     "city": "Pune",
     "website": "https://myfitness.in",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "care@myfitness.co.in",
+    "emails": [
+      "care@myfitness.co.in"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Muse Wellness",
@@ -846,16 +852,20 @@
     "website": "https://musewellness.in",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Bold Care",
     "niche": "Fitness & Wellness",
     "city": "Mumbai",
     "website": "https://boldcare.in",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "support@boldcare.in",
+    "emails": [
+      "support@boldcare.in"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Habit Wellness",
@@ -864,7 +874,8 @@
     "website": "https://habit.in",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "D2C Sleep",
@@ -873,7 +884,8 @@
     "website": "https://d2csleep.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Sleepy Cat",
@@ -882,16 +894,22 @@
     "website": "https://sleepycat.co",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Livpure",
     "niche": "Home & Decor",
     "city": "Gurugram",
     "website": "https://livpure.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "customercare@livpure.com",
+    "emails": [
+      "customercare@livpure.com",
+      "export@livpure.com",
+      "care@livpuresleep.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Sleepyhead",
@@ -900,25 +918,35 @@
     "website": "https://sleepyhead.in",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Springwel",
     "niche": "Home & Decor",
     "city": "Delhi",
     "website": "https://springwel.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "info@springwel.com",
+    "emails": [
+      "info@springwel.com",
+      "sleep@springwel.com",
+      "crm@springwel.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Duroflex",
     "niche": "Home & Decor",
     "city": "Bengaluru",
     "website": "https://duroflexworld.com",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "grievance@duroflexworld.com",
+    "emails": [
+      "grievance@duroflexworld.com",
+      "support@duroflexworld.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Wakefit Co",
@@ -927,16 +955,20 @@
     "website": "https://wakefit.co.in",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "The White Willow",
     "niche": "Home & Decor",
     "city": "Delhi",
     "website": "https://thewhitewillow.in",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "support@thewhitewillow.in",
+    "emails": [
+      "support@thewhitewillow.in"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Home Living Co",
@@ -945,7 +977,8 @@
     "website": "https://homelivingco.in",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Feather Kitch",
@@ -954,7 +987,8 @@
     "website": "https://featherkitch.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Zansaar",
@@ -963,16 +997,21 @@
     "website": "https://zansaar.com",
     "email": "",
     "emails": [],
-    "source": "seed"
+    "source": "seed",
+    "has_email": false
   },
   {
     "name": "Suta",
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://suta.in",
-    "email": "",
-    "emails": [],
-    "source": "seed"
+    "email": "info@suta.in",
+    "emails": [
+      "info@suta.in",
+      "abc@xyz.com"
+    ],
+    "source": "seed",
+    "has_email": true
   },
   {
     "name": "Nykaa",
@@ -1045,27 +1084,37 @@
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://www.thelabellife.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "help@thelabellife.com",
+    "emails": [
+      "help@thelabellife.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Nappa Dori",
     "niche": "Fashion & Apparel",
     "city": "Delhi",
     "website": "https://www.nappadori.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "support@starapps.studio",
+    "emails": [
+      "support@starapps.studio",
+      "customercare@nappadori.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Doodlage",
     "niche": "Fashion & Apparel",
     "city": "Delhi",
     "website": "https://doodlage.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "team@doodlage.in",
+    "emails": [
+      "team@doodlage.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Global Desi",
@@ -1074,16 +1123,22 @@
     "website": "https://www.globaldesi.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Biba",
     "niche": "Fashion & Apparel",
     "city": "Gurugram",
     "website": "https://www.biba.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "customercare@bibaindia.com",
+    "emails": [
+      "customercare@bibaindia.com",
+      "careers@bibaindia.com",
+      "info@bibaindia.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Aurelia",
@@ -1092,16 +1147,20 @@
     "website": "https://www.aurelia.in",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Clovia",
     "niche": "Fashion & Apparel",
     "city": "Gurugram",
     "website": "https://clovia.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@clovia.com",
+    "emails": [
+      "care@clovia.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Auli Lifestyle",
@@ -1110,16 +1169,21 @@
     "website": "https://auli.in",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Just Herbs",
     "niche": "Beauty & Cosmetics",
     "city": "Chandigarh",
     "website": "https://justherbs.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "customer.support@justherbs.in",
+    "emails": [
+      "customer.support@justherbs.in",
+      "manish.kumar@justherbs.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Forest Essentials",
@@ -1128,16 +1192,22 @@
     "website": "https://www.forestessentialsindia.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Biotique",
     "niche": "Beauty & Cosmetics",
     "city": "Delhi",
     "website": "https://www.biotique.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "support@gist-apps.com",
+    "emails": [
+      "support@gist-apps.com",
+      "gahaj@yahoo.in",
+      "asmatara231@gmail.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Wingreens Farms",
@@ -1246,72 +1316,6 @@
     "email": "support@zebronics.com",
     "emails": [
       "support@zebronics.com"
-    ],
-    "source": "curated"
-  },
-  {
-    "name": "boAt",
-    "niche": "Tech & Startups",
-    "city": "Delhi",
-    "website": "https://www.boat-lifestyle.com",
-    "email": "support@boat-lifestyle.com",
-    "emails": [
-      "support@boat-lifestyle.com"
-    ],
-    "source": "curated"
-  },
-  {
-    "name": "Zivame",
-    "niche": "Fashion & Apparel",
-    "city": "Bengaluru",
-    "website": "https://www.zivame.com",
-    "email": "care@zivame.com",
-    "emails": [
-      "care@zivame.com"
-    ],
-    "source": "curated"
-  },
-  {
-    "name": "FabIndia",
-    "niche": "Fashion & Apparel",
-    "city": "Delhi",
-    "website": "https://www.fabindia.com",
-    "email": "care@fabindia.com",
-    "emails": [
-      "care@fabindia.com"
-    ],
-    "source": "curated"
-  },
-  {
-    "name": "Juicy Chemistry",
-    "niche": "Beauty & Cosmetics",
-    "city": "Coimbatore",
-    "website": "https://juicychemistry.com",
-    "email": "care@juicychemistry.com",
-    "emails": [
-      "care@juicychemistry.com"
-    ],
-    "source": "curated"
-  },
-  {
-    "name": "RiteBite",
-    "niche": "Fitness & Wellness",
-    "city": "Mumbai",
-    "website": "https://www.ritebite.com",
-    "email": "care@ritebite.com",
-    "emails": [
-      "care@ritebite.com"
-    ],
-    "source": "curated"
-  },
-  {
-    "name": "Wow Skin",
-    "niche": "Beauty & Cosmetics",
-    "city": "Gurugram",
-    "website": "https://www.wowskin.com",
-    "email": "care@wowskin.com",
-    "emails": [
-      "care@wowskin.com"
     ],
     "source": "curated"
   },
