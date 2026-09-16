@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T18:25:36.937857+00:00",
+  "generated_at": "2026-09-16T18:22:26.545981+00:00",
   "status": "fail",
   "checks": [
     {
@@ -16,14 +16,14 @@
     },
     {
       "name": "prospect_pool",
-      "status": "fail",
-      "detail": "0 brands left to contact — outreach is starved.",
-      "fix": "Add brands to data/brands_seed.json or run the Maps discovery workflow."
+      "status": "warn",
+      "detail": "Only 1 contactable brand(s) left (threshold 10).",
+      "fix": "Top up the seed pool this week or outreach stops."
     },
     {
       "name": "hot_leads",
       "status": "warn",
-      "detail": "20 hot lead(s) with no quote for >48h: no-reply@accounts.google.com, cssupport@thehouseofrare.com, Customercare@houseofindya.com, support@earthrhythm.com, tgb@seventurns.in",
+      "detail": "13 hot lead(s) with no quote for >48h: cssupport@thehouseofrare.com, Customercare@houseofindya.com, support@earthrhythm.com, tgb@seventurns.in, hello@plumgoodness.com",
       "fix": "Reply personally — these are the closest thing to revenue you have."
     },
     {
@@ -35,23 +35,23 @@
     {
       "name": "deliverability",
       "status": "fail",
-      "detail": "Delivery flagged: 27.8% delivered, 6 bounce(s).",
+      "detail": "Delivery flagged: 25.0% delivered, 6 bounce(s).",
       "fix": "Pause sending and clean the pool before Gmail throttles the account."
     }
   ],
   "metrics": {
-    "sent_24h": 1,
-    "sent_7d": 6,
-    "sent_total": 55,
-    "replies_total": 20,
-    "interested": 20,
+    "sent_24h": 14,
+    "sent_7d": 20,
+    "sent_total": 69,
+    "replies_total": 14,
+    "interested": 14,
     "negotiating": 0,
     "declined": 0,
     "quotes_sent": 5,
     "pipeline_value": 149600,
     "creators": 0,
-    "social_drafts": 44,
+    "social_drafts": 46,
     "seo_pages": 19,
-    "reply_rate_pct": 37.0
+    "reply_rate_pct": 20.6
   }
 }
