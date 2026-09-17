@@ -898,20 +898,6 @@
     "has_email": false
   },
   {
-    "name": "Livpure",
-    "niche": "Home & Decor",
-    "city": "Gurugram",
-    "website": "https://livpure.com",
-    "email": "customercare@livpure.com",
-    "emails": [
-      "customercare@livpure.com",
-      "export@livpure.com",
-      "care@livpuresleep.com"
-    ],
-    "source": "seed",
-    "has_email": true
-  },
-  {
     "name": "Sleepyhead",
     "niche": "Home & Decor",
     "city": "Mumbai",
@@ -1080,18 +1066,6 @@
     "source": "curated"
   },
   {
-    "name": "The Label Life",
-    "niche": "Fashion & Apparel",
-    "city": "Mumbai",
-    "website": "https://www.thelabellife.com",
-    "email": "help@thelabellife.com",
-    "emails": [
-      "help@thelabellife.com"
-    ],
-    "source": "curated",
-    "has_email": true
-  },
-  {
     "name": "Nappa Dori",
     "niche": "Fashion & Apparel",
     "city": "Delhi",
@@ -1134,7 +1108,6 @@
     "email": "customercare@bibaindia.com",
     "emails": [
       "customercare@bibaindia.com",
-      "careers@bibaindia.com",
       "info@bibaindia.com"
     ],
     "source": "curated",
@@ -1216,34 +1189,47 @@
     "website": "https://www.wingreensfarms.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Happilo",
     "niche": "Food & Beverage",
     "city": "Bengaluru",
     "website": "https://www.happilo.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@happilo.com",
+    "emails": [
+      "care@happilo.com",
+      "mailsupport@gmail.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "True Elements",
     "niche": "Food & Beverage",
     "city": "Pune",
     "website": "https://true-elements.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@true-elements.com",
+    "emails": [
+      "care@true-elements.com",
+      "n@true.elements"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Farmley",
     "niche": "Food & Beverage",
     "city": "Gurugram",
     "website": "https://farmley.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "wecare@farmley.com",
+    "emails": [
+      "wecare@farmley.com",
+      "social@farmley.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Country Bean",
@@ -1252,43 +1238,58 @@
     "website": "https://www.countrybean.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Nourish You",
     "niche": "Food & Beverage",
     "city": "Gurugram",
     "website": "https://nourishyou.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@nourishyou.in",
+    "emails": [
+      "care@nourishyou.in",
+      "support@nourishyou.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Nestasia",
     "niche": "Home & Decor",
     "city": "Mumbai",
     "website": "https://www.nestasia.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "info@nestasia.in",
+    "emails": [
+      "info@nestasia.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "The Decor Kart",
     "niche": "Home & Decor",
     "city": "Mumbai",
     "website": "https://www.thedecorkart.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "info@thedecorkart.com",
+    "emails": [
+      "info@thedecorkart.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Wooden Street",
     "niche": "Home & Decor",
     "city": "Jaipur",
     "website": "https://www.woodenstreet.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "support@woodenstreet.com",
+    "emails": [
+      "support@woodenstreet.com",
+      "care@woodenstreet.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "SaffronStays",
@@ -1297,7 +1298,8 @@
     "website": "https://www.saffronstays.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "The Hosteller",
@@ -1306,7 +1308,8 @@
     "website": "https://www.thehosteller.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Zebronics",
@@ -1326,25 +1329,35 @@
     "website": "https://bewakoof.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Nicobar",
     "niche": "Fashion & Apparel",
     "city": "New Delhi",
     "website": "https://nicobar.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@nicobar.com",
+    "emails": [
+      "care@nicobar.com",
+      "corporate@nicobar.com",
+      "pr@nicobar.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Okhai",
     "niche": "Fashion & Apparel",
     "city": "Ahmedabad",
     "website": "https://okhai.org",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "prakash@okhai.org",
+    "emails": [
+      "prakash@okhai.org",
+      "okhaicfe@okhai.org"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Jaypore",
