@@ -1,21 +1,22 @@
 {
   "ok": true,
-  "checked_at": "2026-09-17T09:10:41.771294+00:00",
+  "checked_at": "2026-09-18T08:47:57.976421+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 75,
-  "confirmed_in_sent": 20,
-  "unconfirmed": 55,
-  "delivery_rate_pct": 26.7,
-  "bounces": 8,
+  "recorded_sends": 82,
+  "confirmed_in_sent": 24,
+  "unconfirmed": 58,
+  "delivery_rate_pct": 29.3,
+  "bounces": 9,
   "bounce_emails": [
-    "care@fabindia.com",
-    "care@zivame.com",
     "customercare@livpure.com",
-    "support@boat-lifestyle.com",
     "care@juicychemistry.com",
+    "help@thelabellife.com",
+    "care@zivame.com",
     "care@ritebite.com",
     "care@wowskin.com",
-    "help@thelabellife.com"
+    "support@boat-lifestyle.com",
+    "abc@xyz.com",
+    "care@fabindia.com"
   ],
   "unconfirmed_emails": [
     "grievance@snitch.com",

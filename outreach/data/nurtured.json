@@ -50,5 +50,9 @@
   "hello@perforacare.com": {
     "ts": "2026-09-16T09:22:08.983669+00:00",
     "brand": "Perfora"
+  },
+  "friends@nutrabay.com": {
+    "ts": "2026-09-18T08:47:24.587864+00:00",
+    "brand": "Nutrabay"
   }
 }

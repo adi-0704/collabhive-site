@@ -76,7 +76,14 @@
     "wecare@farmley.com",
     "care@nourishyou.in",
     "support@woodenstreet.com",
-    "info@nestasia.in"
+    "info@nestasia.in",
+    "care@saltattire.com",
+    "konnect@kosha.co",
+    "hello@summersomewhere.com",
+    "hello@jaypore.com",
+    "abc@xyz.com",
+    "info@thedecorkart.com",
+    "care@true-elements.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -154,7 +161,14 @@
     "farmley.com",
     "nourishyou.in",
     "woodenstreet.com",
-    "nestasia.in"
+    "nestasia.in",
+    "saltattire.com",
+    "kosha.co",
+    "summersomewhere.com",
+    "jaypore.com",
+    "andamen.com",
+    "thedecorkart.com",
+    "true-elements.com"
   ],
   "sent_log": [
     {
@@ -746,9 +760,65 @@
       "niche": "Home & Decor",
       "city": "Mumbai",
       "subject": "A creator network for Nestasia — CollabHive"
+    },
+    {
+      "ts": "2026-09-18T08:31:10.163063+00:00",
+      "email": "care@saltattire.com",
+      "name": "Salt Attire",
+      "niche": "Fashion & Apparel",
+      "city": "Gurugram",
+      "subject": "Creators for Salt Attire from CollabHive"
+    },
+    {
+      "ts": "2026-09-18T08:33:32.665965+00:00",
+      "email": "konnect@kosha.co",
+      "name": "Kosha",
+      "niche": "Fashion & Apparel",
+      "city": "Mumbai",
+      "subject": "Helping Kosha grow with creators"
+    },
+    {
+      "ts": "2026-09-18T08:36:38.826705+00:00",
+      "email": "hello@summersomewhere.com",
+      "name": "Summer Somewhere",
+      "niche": "Fashion & Apparel",
+      "city": "Mumbai",
+      "subject": "A creator network for Summer Somewhere — CollabHive"
+    },
+    {
+      "ts": "2026-09-18T08:39:40.812465+00:00",
+      "email": "hello@jaypore.com",
+      "name": "Jaypore",
+      "niche": "Fashion & Apparel",
+      "city": "New Delhi",
+      "subject": "Helping Jaypore grow with creators"
+    },
+    {
+      "ts": "2026-09-18T08:42:30.110732+00:00",
+      "email": "abc@xyz.com",
+      "name": "Andamen",
+      "niche": "Fashion & Apparel",
+      "city": "New Delhi",
+      "subject": "A creator network for Andamen — CollabHive"
+    },
+    {
+      "ts": "2026-09-18T08:44:55.069664+00:00",
+      "email": "info@thedecorkart.com",
+      "name": "The Decor Kart",
+      "niche": "Home & Decor",
+      "city": "Mumbai",
+      "subject": "A creator network for The Decor Kart — CollabHive"
+    },
+    {
+      "ts": "2026-09-18T08:46:48.788762+00:00",
+      "email": "care@true-elements.com",
+      "name": "True Elements",
+      "niche": "Food & Beverage",
+      "city": "Pune",
+      "subject": "Creators for True Elements from CollabHive"
     }
   ],
-  "last_run": "2026-09-17T09:09:54.843287+00:00",
+  "last_run": "2026-09-18T08:46:48.807345+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
@@ -768,6 +838,7 @@
     "care@ritebite.com",
     "support@boat-lifestyle.com",
     "customercare@livpure.com",
-    "help@thelabellife.com"
+    "help@thelabellife.com",
+    "abc@xyz.com"
   ]
 }

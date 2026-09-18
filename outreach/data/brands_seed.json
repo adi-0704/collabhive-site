@@ -1212,8 +1212,7 @@
     "website": "https://true-elements.com",
     "email": "care@true-elements.com",
     "emails": [
-      "care@true-elements.com",
-      "n@true.elements"
+      "care@true-elements.com"
     ],
     "source": "curated",
     "has_email": true
@@ -1364,54 +1363,63 @@
     "niche": "Fashion & Apparel",
     "city": "New Delhi",
     "website": "https://jaypore.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "hello@jaypore.com",
+    "emails": [
+      "hello@jaypore.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Bombay Shirt Company",
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://bombayshirts.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
-  },
-  {
-    "name": "Andamen",
-    "niche": "Fashion & Apparel",
-    "city": "New Delhi",
-    "website": "https://andamen.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "u@v.pv",
+    "emails": [
+      "u@v.pv"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Tjori",
     "niche": "Fashion & Apparel",
     "city": "New Delhi",
     "website": "https://tjori.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "alerts@tjori.com",
+    "emails": [
+      "alerts@tjori.com",
+      "support@tjori.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Kosha",
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://kosha.co",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "konnect@kosha.co",
+    "emails": [
+      "konnect@kosha.co"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Zouk",
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://zouk.co.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "online@zouk.co.in\\",
+    "emails": [
+      "online@zouk.co.in\\",
+      "online@zouk.co.in",
+      "u003eonline@zouk.co.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Nush",
@@ -1420,25 +1428,32 @@
     "website": "https://nushbrand.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Salt Attire",
     "niche": "Fashion & Apparel",
     "city": "Gurugram",
     "website": "https://saltattire.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@saltattire.com",
+    "emails": [
+      "care@saltattire.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Summer Somewhere",
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://summersomewhere.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "hello@summersomewhere.com",
+    "emails": [
+      "hello@summersomewhere.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Label Ritu Kumar",
@@ -1967,6 +1982,15 @@
     "niche": "Food & Beverage",
     "city": "Pune",
     "website": "https://twobrothersindiashop.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "The Label Life",
+    "niche": "Fashion & Apparel",
+    "city": "Mumbai",
+    "website": "https://www.thelabellife.com",
     "email": "",
     "emails": [],
     "source": "curated"
