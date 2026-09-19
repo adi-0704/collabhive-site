@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-18T08:47:58.960304+00:00",
-  "count": 46,
+  "generated_at": "2026-09-19T08:25:40.454168+00:00",
+  "count": 48,
   "creators": [
     {
       "name": "Garima narang",
@@ -413,6 +413,24 @@
       "niche": "Fashion,beauty",
       "city": "kolkata",
       "followers": 8000,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Seema yadav ",
+      "handle": "@r.seez",
+      "niche": "Beauty skincare makeup random rants ",
+      "city": "Jaipur",
+      "followers": 1300,
+      "platforms": "Instagram, YouTube",
+      "source": "applicant"
+    },
+    {
+      "name": "Khushi",
+      "handle": "@khushisehrawat.official",
+      "niche": "Entertainment,fashion,fitness,travel",
+      "city": "Delhi",
+      "followers": 249000,
       "platforms": "Instagram",
       "source": "applicant"
     }

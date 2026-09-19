@@ -54,5 +54,13 @@
   "friends@nutrabay.com": {
     "ts": "2026-09-18T08:47:24.587864+00:00",
     "brand": "Nutrabay"
+  },
+  "customercare@livpure.com": {
+    "ts": "2026-09-19T08:25:04.920776+00:00",
+    "brand": "Livpure"
+  },
+  "help@thelabellife.com": {
+    "ts": "2026-09-19T08:25:06.367292+00:00",
+    "brand": "The Label Life"
   }
 }

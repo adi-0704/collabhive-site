@@ -1375,21 +1375,18 @@
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://bombayshirts.com",
-    "email": "u@v.pv",
-    "emails": [
-      "u@v.pv"
-    ],
+    "email": "",
+    "emails": [],
     "source": "curated",
-    "has_email": true
+    "has_email": false
   },
   {
     "name": "Tjori",
     "niche": "Fashion & Apparel",
     "city": "New Delhi",
     "website": "https://tjori.com",
-    "email": "alerts@tjori.com",
+    "email": "support@tjori.com",
     "emails": [
-      "alerts@tjori.com",
       "support@tjori.com"
     ],
     "source": "curated",
@@ -1460,9 +1457,13 @@
     "niche": "Fashion & Apparel",
     "city": "New Delhi",
     "website": "https://ritukumar.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "customercare@ritukumar.com",
+    "emails": [
+      "customercare@ritukumar.com",
+      "john123xyz@gmail.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Freakins",
@@ -1471,25 +1472,22 @@
     "website": "https://freakins.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Powerlook",
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://powerlook.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
-  },
-  {
-    "name": "Bonkers Corner",
-    "niche": "Fashion & Apparel",
-    "city": "Hyderabad",
-    "website": "https://bonkerscorner.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "support@powerlook.in",
+    "emails": [
+      "support@powerlook.in",
+      "server@powerlook.in",
+      "abc@xyz.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Urbanic",
@@ -1498,16 +1496,21 @@
     "website": "https://urbanic.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Damensch",
     "niche": "Fashion & Apparel",
     "city": "Bengaluru",
     "website": "https://damensch.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "support@damensch.com\\",
+    "emails": [
+      "support@damensch.com\\",
+      "support@damensch.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "XYXX",
@@ -1991,6 +1994,15 @@
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://www.thelabellife.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Andamen",
+    "niche": "Fashion & Apparel",
+    "city": "New Delhi",
+    "website": "https://andamen.com",
     "email": "",
     "emails": [],
     "source": "curated"

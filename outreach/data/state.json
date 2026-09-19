@@ -83,7 +83,11 @@
     "hello@jaypore.com",
     "abc@xyz.com",
     "info@thedecorkart.com",
-    "care@true-elements.com"
+    "care@true-elements.com",
+    "xxx@xxx.xxx",
+    "support@powerlook.in",
+    "support@tjori.com",
+    "customercare@ritukumar.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -168,7 +172,11 @@
     "jaypore.com",
     "andamen.com",
     "thedecorkart.com",
-    "true-elements.com"
+    "true-elements.com",
+    "bonkerscorner.com",
+    "powerlook.in",
+    "tjori.com",
+    "ritukumar.com"
   ],
   "sent_log": [
     {
@@ -816,9 +824,41 @@
       "niche": "Food & Beverage",
       "city": "Pune",
       "subject": "Creators for True Elements from CollabHive"
+    },
+    {
+      "ts": "2026-09-19T08:18:53.373686+00:00",
+      "email": "xxx@xxx.xxx",
+      "name": "Bonkers Corner",
+      "niche": "Fashion & Apparel",
+      "city": "Hyderabad",
+      "subject": "Creators for Bonkers Corner from CollabHive"
+    },
+    {
+      "ts": "2026-09-19T08:21:00.453372+00:00",
+      "email": "support@powerlook.in",
+      "name": "Powerlook",
+      "niche": "Fashion & Apparel",
+      "city": "Mumbai",
+      "subject": "Helping Powerlook grow with creators"
+    },
+    {
+      "ts": "2026-09-19T08:22:56.078260+00:00",
+      "email": "support@tjori.com",
+      "name": "Tjori",
+      "niche": "Fashion & Apparel",
+      "city": "New Delhi",
+      "subject": "A creator network for Tjori — CollabHive"
+    },
+    {
+      "ts": "2026-09-19T08:24:39.462967+00:00",
+      "email": "customercare@ritukumar.com",
+      "name": "Label Ritu Kumar",
+      "niche": "Fashion & Apparel",
+      "city": "New Delhi",
+      "subject": "A creator network for Label Ritu Kumar — CollabHive"
     }
   ],
-  "last_run": "2026-09-18T08:46:48.807345+00:00",
+  "last_run": "2026-09-19T08:24:39.477689+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
@@ -839,6 +879,7 @@
     "support@boat-lifestyle.com",
     "customercare@livpure.com",
     "help@thelabellife.com",
-    "abc@xyz.com"
+    "abc@xyz.com",
+    "xxx@xxx.xxx"
   ]
 }
