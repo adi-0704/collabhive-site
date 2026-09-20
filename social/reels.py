@@ -33,7 +33,7 @@ from datetime import date, timedelta
 HERE = pathlib.Path(__file__).parent.resolve()
 sys.path.insert(0, str(HERE))
 
-from layouts import HONEY, INK, PURPLE, _esc, _logo_uri   # noqa: E402
+from reel_styles import pick_style, render as render_style   # noqa: E402
 
 CAL = HERE / "calendar" / "calendar.json"
 REELS = HERE / "calendar" / "reels"
@@ -58,60 +58,7 @@ def have_ffmpeg() -> bool:
 
 
 # ---------------------------------------------------------------- animation
-def reel_html(headline: str, sub: str, cta: str, audience: str) -> str:
-    """A 9:16 animated card.
-
-    Motion is deliberately restrained — a slow zoom on the background, text
-    arriving in sequence, an accent bar wiping in. Busy animation reads as a
-    template; measured animation reads as a brand.
-    """
-    accent = HONEY if audience == "brand" else PURPLE
-    logo = _logo_uri()
-    # logo.png has a solid white background. mix-blend-mode: multiply drops
-    # white to transparent against the light card, so the bee sits on the
-    # gradient instead of inside a visible white rectangle.
-    # The fade must live on the <img> itself. Putting opacity on a wrapping
-    # div creates a stacking context, which isolates mix-blend-mode from the
-    # background behind it and the white box comes back.
-    logo_tag = (f'<img class="logo" src="{logo}">' if logo else "")
-    return f"""<!doctype html><html><head><meta charset="utf-8">
-<link href="{_FONT}" rel="stylesheet">
-<style>
- *{{margin:0;padding:0;box-sizing:border-box}}
- body{{width:{W}px;height:{H}px;background:#fff;font-family:'Plus Jakarta Sans',sans-serif;
-      overflow:hidden;position:relative}}
- .bg{{position:absolute;inset:0;background:
-      radial-gradient(circle at 20% 15%, {accent}22 0%, transparent 45%),
-      radial-gradient(circle at 85% 80%, {PURPLE}1a 0%, transparent 45%);
-      animation:zoom 7s ease-out forwards}}
- @keyframes zoom{{from{{transform:scale(1)}}to{{transform:scale(1.12)}}}}
- .wrap{{position:absolute;inset:0;padding:150px 90px;display:flex;
-       flex-direction:column;justify-content:center;align-items:center;text-align:center}}
- .logo{{width:300px;margin:0 auto;display:block;mix-blend-mode:multiply;
-       opacity:0;animation:fade .7s .2s forwards}}
- .bar{{height:12px;width:0;background:{accent};border-radius:99px;margin:56px 0;
-      animation:wipe .8s 1.0s forwards}}
- @keyframes wipe{{to{{width:220px}}}}
- h1{{font-size:104px;font-weight:800;line-height:1.05;color:{INK};letter-spacing:-3.5px;
-    opacity:0;transform:translateY(34px);animation:rise .9s 1.3s forwards}}
- .sub{{font-size:44px;font-weight:400;line-height:1.38;color:#5A6480;margin-top:44px;
-      max-width:850px;opacity:0;transform:translateY(28px);animation:rise .9s 2.2s forwards}}
- .cta{{position:absolute;bottom:190px;left:0;right:0;text-align:center;opacity:0;
-      animation:fade .8s 3.4s forwards}}
- .pill{{display:inline-block;background:#111;color:{HONEY};font-size:46px;font-weight:800;
-       padding:32px 72px;border-radius:22px}}
- @keyframes fade{{to{{opacity:1}}}}
- @keyframes rise{{to{{opacity:1;transform:translateY(0)}}}}
-</style></head><body>
- <div class="bg"></div>
- <div class="wrap">
-   {logo_tag}
-   <div class="bar"></div>
-   <h1>{_esc(headline)}</h1>
-   <div class="sub">{_esc(sub)}</div>
- </div>
- <div class="cta"><span class="pill">{_esc(cta)}</span></div>
-</body></html>"""
+# Styles live in reel_styles.py so the feed is not one template with new words.
 
 
 def record(entry: dict, out_dir: pathlib.Path) -> pathlib.Path | None:
@@ -119,7 +66,8 @@ def record(entry: dict, out_dir: pathlib.Path) -> pathlib.Path | None:
     from playwright.sync_api import sync_playwright
 
     cta = "Link in bio" if entry["audience"] == "creator" else "Free shortlist"
-    html = reel_html(entry["headline"], entry["sub"], cta, entry["audience"])
+    html = render_style(entry["style"], entry["headline"], entry["sub"],
+                        cta, entry["audience"])
     tmp_html = out_dir / "_reel.html"
     tmp_html.write_text(html, encoding="utf-8")
 
@@ -203,12 +151,17 @@ def main() -> int:
 
     REELS.mkdir(parents=True, exist_ok=True)
     made = failed = 0
-    for entry in wanted:
+    recent: dict[str, list[str]] = {}
+    for idx, entry in enumerate(wanted):
+        aud = entry["audience"]
+        entry["style"] = pick_style(entry["headline"], idx, recent.get(aud, []))
+        recent.setdefault(aud, []).append(entry["style"])
         stem = pathlib.Path(entry["image"]).stem
         dest = REELS / f"{stem}.mp4"
         if dest.exists():
             continue
-        log(f"  {entry['date']} [{entry['audience']:<7}] {entry['headline'][:44]}")
+        log(f"  {entry['date']} [{entry['audience']:<7}] {entry['style']:<8} "
+            f"{entry['headline'][:38]}")
         webm = record(entry, REELS)
         if not webm:
             failed += 1

@@ -248,8 +248,8 @@
       "linkedin",
       "x"
     ],
-    "use_reels": false,
-    "use_reels_note": "Publish the rendered reel instead of the still image. Off until the output has been reviewed - flipping this changes how both accounts look."
+    "use_reels": true,
+    "use_reels_note": "Approved. Reels publish instead of still images where a video exists for that day."
   },
   "buffer": {
     "enabled": true,
