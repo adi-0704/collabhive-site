@@ -30,6 +30,7 @@ from src.common import load_config                      # noqa: E402
 
 CAL = HERE / "calendar" / "calendar.json"
 IMAGE_BASE = "https://adi-0704.github.io/collabhive-site/social/calendar/"
+REELS_DIR = HERE / "calendar" / "reels"
 IST = timezone(timedelta(hours=5, minutes=30))
 
 
@@ -230,10 +231,20 @@ def main() -> int:
             continue
 
         due_utc = due.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        # Publish as a reel when one has been rendered for this day, since reels
+        # reach non-followers. Falls back to the still image otherwise, so a
+        # missing video never blocks the post.
+        stem = pathlib.Path(e["image"]).stem
+        video_url = thumb_url = ""
+        if (REELS_DIR / f"{stem}.mp4").exists():
+            video_url = IMAGE_BASE + f"reels/{stem}.mp4"
+            if (REELS_DIR / f"{stem}.jpg").exists():
+                thumb_url = IMAGE_BASE + f"reels/{stem}.jpg"
         try:
             res = _queue_post(cfg, channel_id, e["caption"], org_id,
                               IMAGE_BASE + e["image"], due_at=due_utc,
-                              service="instagram")
+                              service="instagram", video_url=video_url,
+                              thumbnail_url=thumb_url)
             if not res.get("ok"):
                 raise RuntimeError(res.get("message", "unknown"))
             ok += 1

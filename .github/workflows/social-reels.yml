@@ -1,0 +1,69 @@
+name: Social Reels (render video)
+
+# Renders upcoming posts as 9:16 Reels. Runs here rather than locally because
+# the MP4 conversion needs ffmpeg, which is preinstalled on the GitHub runner —
+# Chromium only produces WebM, which Instagram rejects outright.
+#
+# Weekly rather than daily: rendering video is slow, and the scheduler only
+# needs a modest buffer of reels ahead of the queue.
+on:
+  schedule:
+    # Sunday 02:00 UTC — quiet slot, well before the daily top-up at 23:00.
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'How many days ahead to render'
+        required: false
+        default: '14'
+
+concurrency:
+  group: social-reels
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Playwright + Chromium
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Confirm tooling
+        run: python -u social/reels.py --check
+
+      - name: Render reels
+        run: |
+          python -u social/reels.py --days "${{ inputs.days || 14 }}"
+
+      - name: Commit rendered reels
+        if: always()
+        run: |
+          git config user.name "collabhive-social"
+          git config user.email "collabhive.in@gmail.com"
+          git add -A social/calendar/reels/ || true
+          if git diff --cached --quiet; then
+            echo "No new reels to commit."
+          else
+            git commit -m "build: render Instagram reels [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase origin "${{ github.ref_name }}" && break || true
+            done
+            for i in 1 2 3; do
+              git push origin "${{ github.ref_name }}" && break || sleep 15
+            done
+          fi
+        shell: bash

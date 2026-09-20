@@ -56,7 +56,8 @@ def get_channels(cfg, org_id: str = "") -> list[dict]:
 
 
 def _queue_post(cfg, channel_id: str, text: str, org_id: str, image_url: str = "",
-                due_at: str = "", service: str = "") -> dict:
+                due_at: str = "", service: str = "", video_url: str = "",
+                thumbnail_url: str = "") -> dict:
     """Create a Buffer post.
 
     due_at: ISO-8601 UTC timestamp (e.g. 2026-09-14T12:30:00Z). When given, the
@@ -66,7 +67,13 @@ def _queue_post(cfg, channel_id: str, text: str, org_id: str, image_url: str = "
     immediately, which is rarely what you want for a planned calendar.
     """
     assets = ""
-    if image_url:
+    if video_url:
+        # Reels reach people who do not follow the account; feed posts mostly
+        # reach people who already do. A cover image is sent alongside, or
+        # Instagram picks an arbitrary frame as the thumbnail.
+        thumb = ', thumbnailUrl: "%s"' % thumbnail_url if thumbnail_url else ""
+        assets = ', assets: [{ video: { url: "%s"%s } }]' % (video_url, thumb)
+    elif image_url:
         assets = ', assets: [{ image: { url: "%s" } }]' % image_url
     if due_at == "now":
         timing = 'mode: shareNow'
@@ -79,7 +86,11 @@ def _queue_post(cfg, channel_id: str, text: str, org_id: str, image_url: str = "
     meta = ""
     if (service or "").lower() == "instagram":
         # shouldShareToFeed is Boolean! (non-null) so it must always be sent.
-        meta = ', metadata: { instagram: { type: post, shouldShareToFeed: true } }'
+        # A video asset has to be declared a reel — sending type: post with a
+        # video is rejected.
+        ig_type = "reel" if video_url else "post"
+        meta = (', metadata: { instagram: { type: %s, shouldShareToFeed: true } }'
+                % ig_type)
     q = ('mutation CreatePost { createPost(input: { text: "%s", channelId: "%s", '
          'schedulingType: automatic, %s%s%s }) { '
          '... on PostActionSuccess { post { id text dueAt } } '
