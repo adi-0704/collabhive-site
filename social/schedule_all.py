@@ -167,6 +167,13 @@ def main() -> int:
         log("BUFFER_ACCESS_TOKEN is not set.")
         return 1
 
+    # Reels are opt-in. They are a visible change to how the account presents
+    # itself, so they stay off until deliberately enabled rather than switching
+    # over the moment the first video happens to render.
+    use_reels = bool(cfg.get("social", {}).get("use_reels", False))
+    log("Reels: %s" % ("ENABLED" if use_reels
+                       else "disabled (set social.use_reels=true to publish video)"))
+
     seen = {a: existing_posts(cfg, cid) for a, cid in channels.items() if cid}
     scheduled_dates = {a: scheduled_days(cfg, cid) for a, cid in channels.items() if cid}
 
@@ -236,7 +243,7 @@ def main() -> int:
         # missing video never blocks the post.
         stem = pathlib.Path(e["image"]).stem
         video_url = thumb_url = ""
-        if (REELS_DIR / f"{stem}.mp4").exists():
+        if use_reels and (REELS_DIR / f"{stem}.mp4").exists():
             video_url = IMAGE_BASE + f"reels/{stem}.mp4"
             if (REELS_DIR / f"{stem}.jpg").exists():
                 thumb_url = IMAGE_BASE + f"reels/{stem}.jpg"
