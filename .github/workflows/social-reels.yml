@@ -37,6 +37,15 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install ffmpeg
+        # Not assumed to be present. It was NOT on the runner's PATH, which
+        # failed the first run outright — Playwright ships its own private
+        # build for recording, but that one is not exposed for our conversion.
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          ffmpeg -version | head -1
+
       - name: Install Playwright + Chromium
         run: |
           pip install playwright
