@@ -81,11 +81,41 @@ def existing_posts(cfg: dict, channel_id: str) -> set[str]:
     return texts
 
 
+def scheduled_days(cfg: dict, channel_id: str) -> set[str]:
+    """Dates (YYYY-MM-DD) that already hold a scheduled post on this channel."""
+    org = cfg.get("buffer", {}).get("organization_id", "")
+    days: set[str] = set()
+    after = ""
+    for _ in range(20):
+        cursor = ', after: "%s"' % after if after else ""
+        q = ('query { posts(first: 50%s, input: { organizationId: "%s", '
+             'filter: { channelIds: ["%s"], status: [scheduled] } }) '
+             '{ pageInfo { hasNextPage endCursor } edges { node { dueAt } } } }'
+             % (cursor, org, channel_id))
+        r = _gql(cfg, q)
+        if isinstance(r, dict) and r.get("errors"):
+            break
+        page = ((r.get("data") or {}).get("posts") or {})
+        for e in (page.get("edges") or []):
+            due = (e["node"].get("dueAt") or "")[:10]
+            if due:
+                days.add(due)
+        info = page.get("pageInfo") or {}
+        if not info.get("hasNextPage"):
+            break
+        after = info.get("endCursor") or ""
+        if not after:
+            break
+    return days
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=0, help="0 = whole calendar")
     ap.add_argument("--time", default="18:00", help="posting time, IST, HH:MM")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--no-fill-gaps", action="store_true",
+                    help="leave empty days empty instead of back-filling")
     ap.add_argument("--start", default="", help="first date to schedule (YYYY-MM-DD)")
     args = ap.parse_args()
 
@@ -137,6 +167,48 @@ def main() -> int:
         return 1
 
     seen = {a: existing_posts(cfg, cid) for a, cid in channels.items() if cid}
+    scheduled_dates = {a: scheduled_days(cfg, cid) for a, cid in channels.items() if cid}
+
+    # Fill empty days with unused content.
+    #
+    # The scheduler normally asks "what does the calendar say for this date?".
+    # If that content is already queued under a different date — which happens
+    # whenever the calendar and the queue drift apart — the date is skipped and
+    # stays empty forever. 24 Sep was left blank exactly this way.
+    #
+    # So: any future date with no post gets the next piece of content that is
+    # not already in Buffer, whatever date the calendar had assigned it.
+    if not args.no_fill_gaps:
+        used = {a: set() for a in channels}
+        filled: list[tuple[dict, datetime]] = []
+        for e, due in plan:
+            aud = e["audience"]
+            marker = e["caption_body"].splitlines()[0][:80]
+            if any(marker in t for t in seen.get(aud, ())):
+                used[aud].add(marker)
+        for e, due in plan:
+            aud = e["audience"]
+            day = due.date().isoformat()
+            if day in scheduled_dates.get(aud, set()):
+                continue                      # that day already has a post
+            marker = e["caption_body"].splitlines()[0][:80]
+            if marker in used[aud]:
+                # Content already live elsewhere — find the first unused piece
+                # and move it into this empty slot instead of skipping the day.
+                for cand, _ in plan:
+                    if cand["audience"] != aud:
+                        continue
+                    cm = cand["caption_body"].splitlines()[0][:80]
+                    if cm in used[aud] or any(cm in t for t in seen.get(aud, ())):
+                        continue
+                    used[aud].add(cm)
+                    filled.append((cand, due))
+                    log(f"  gap-fill: {day} [{aud}] <- {cand['headline'][:44]}")
+                    break
+                continue
+            used[aud].add(marker)
+            filled.append((e, due))
+        plan = filled
     ok = skipped = failed = 0
     full: dict[str, int] = {}     # audience -> posts we couldn't fit
 
