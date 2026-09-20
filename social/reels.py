@@ -11,9 +11,12 @@ produces). A still frame is exported alongside as the cover.
     python social/reels.py --day 2026-09-25    # one specific day
     python social/reels.py --check             # report tooling only
 
+Input is social/calendar/reels_calendar.json — the REEL stream, which carries
+different topics to the static feed and is built by social/generate_reels.py.
+
 Output:
-    social/calendar/reels/<audience>-dayNNN.mp4
-    social/calendar/reels/<audience>-dayNNN.jpg   (cover)
+    social/calendar/reels/reel-<audience>-dayNNN.mp4
+    social/calendar/reels/reel-<audience>-dayNNN.jpg   (cover)
 
 ffmpeg is required for the MP4 conversion. It is preinstalled on GitHub
 Actions' ubuntu runners, which is where this is meant to run; locally it is an
@@ -33,9 +36,12 @@ from datetime import date, timedelta
 HERE = pathlib.Path(__file__).parent.resolve()
 sys.path.insert(0, str(HERE))
 
-from reel_styles import pick_style, render as render_style   # noqa: E402
+from reel_styles import render as render_style               # noqa: E402
 
-CAL = HERE / "calendar" / "calendar.json"
+# The REEL calendar, not the static feed calendar. The two streams run side by
+# side on the same days with different copy, so rendering from calendar.json
+# would put the 18:00 feed post on screen again at 19:30 as a video.
+CAL = HERE / "calendar" / "reels_calendar.json"
 REELS = HERE / "calendar" / "reels"
 
 W, H = 1080, 1920
@@ -65,7 +71,11 @@ def record(entry: dict, out_dir: pathlib.Path) -> pathlib.Path | None:
     """Record one reel to WebM and return the raw file."""
     from playwright.sync_api import sync_playwright
 
-    cta = "Link in bio" if entry["audience"] == "creator" else "Free shortlist"
+    # The on-screen CTA is the reel's own question - it invites a comment, which
+    # is the engagement signal that actually moves reach. The bio link lives in
+    # the caption.
+    cta = entry.get("cta") or (
+        "Link in bio" if entry["audience"] == "creator" else "Free shortlist")
     html = render_style(entry["style"], entry["headline"], entry["sub"],
                         cta, entry["audience"])
     tmp_html = out_dir / "_reel.html"
@@ -83,7 +93,7 @@ def record(entry: dict, out_dir: pathlib.Path) -> pathlib.Path | None:
         page.wait_for_load_state("networkidle")
         page.wait_for_timeout(DURATION_MS)
         # Cover frame taken at the end, when all the text has arrived.
-        page.screenshot(path=str(out_dir / (pathlib.Path(entry["image"]).stem + ".jpg")),
+        page.screenshot(path=str(HERE / "calendar" / entry["cover"]),
                         quality=90, type="jpeg")
         ctx.close()
         browser.close()
@@ -129,7 +139,7 @@ def main() -> int:
         return 0
 
     if not CAL.exists():
-        log("No calendar.json — run generate_calendar.py first.")
+        log("No reels_calendar.json — run social/generate_reels.py first.")
         return 1
     if not have_ffmpeg():
         log("ffmpeg is not installed, so the MP4 conversion cannot run.")
@@ -151,13 +161,11 @@ def main() -> int:
 
     REELS.mkdir(parents=True, exist_ok=True)
     made = failed = 0
-    recent: dict[str, list[str]] = {}
-    for idx, entry in enumerate(wanted):
-        aud = entry["audience"]
-        entry["style"] = pick_style(entry["headline"], idx, recent.get(aud, []))
-        recent.setdefault(aud, []).append(entry["style"])
-        stem = pathlib.Path(entry["image"]).stem
-        dest = REELS / f"{stem}.mp4"
+    for entry in wanted:
+        # Style comes from the calendar, not from a fresh rotation here. Picking
+        # it at render time meant a re-render of a subset produced a different
+        # look for the same day than the full run did.
+        dest = HERE / "calendar" / entry["video"]
         if dest.exists():
             continue
         log(f"  {entry['date']} [{entry['audience']:<7}] {entry['style']:<8} "

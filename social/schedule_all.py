@@ -167,13 +167,6 @@ def main() -> int:
         log("BUFFER_ACCESS_TOKEN is not set.")
         return 1
 
-    # Reels are opt-in. They are a visible change to how the account presents
-    # itself, so they stay off until deliberately enabled rather than switching
-    # over the moment the first video happens to render.
-    use_reels = bool(cfg.get("social", {}).get("use_reels", False))
-    log("Reels: %s" % ("ENABLED" if use_reels
-                       else "disabled (set social.use_reels=true to publish video)"))
-
     seen = {a: existing_posts(cfg, cid) for a, cid in channels.items() if cid}
     scheduled_dates = {a: scheduled_days(cfg, cid) for a, cid in channels.items() if cid}
 
@@ -238,20 +231,10 @@ def main() -> int:
             continue
 
         due_utc = due.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-        # Publish as a reel when one has been rendered for this day, since reels
-        # reach non-followers. Falls back to the still image otherwise, so a
-        # missing video never blocks the post.
-        stem = pathlib.Path(e["image"]).stem
-        video_url = thumb_url = ""
-        if use_reels and (REELS_DIR / f"{stem}.mp4").exists():
-            video_url = IMAGE_BASE + f"reels/{stem}.mp4"
-            if (REELS_DIR / f"{stem}.jpg").exists():
-                thumb_url = IMAGE_BASE + f"reels/{stem}.jpg"
         try:
             res = _queue_post(cfg, channel_id, e["caption"], org_id,
                               IMAGE_BASE + e["image"], due_at=due_utc,
-                              service="instagram", video_url=video_url,
-                              thumbnail_url=thumb_url)
+                              service="instagram")
             if not res.get("ok"):
                 raise RuntimeError(res.get("message", "unknown"))
             ok += 1

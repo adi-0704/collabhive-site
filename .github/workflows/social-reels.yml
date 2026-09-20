@@ -1,14 +1,19 @@
 name: Social Reels (render video)
 
-# Renders upcoming posts as 9:16 Reels. Runs here rather than locally because
-# the MP4 conversion needs ffmpeg, which is preinstalled on the GitHub runner —
+# Renders the REEL calendar (social/calendar/reels_calendar.json) as 9:16 MP4s.
+# This is the reel stream, which carries different topics to the static feed —
+# see social/generate_reels.py.
+#
+# Runs here rather than locally because the MP4 conversion needs ffmpeg;
 # Chromium only produces WebM, which Instagram rejects outright.
 #
-# Weekly rather than daily: rendering video is slow, and the scheduler only
-# needs a modest buffer of reels ahead of the queue.
+# Weekly rather than daily: rendering video is slow, and the publisher only
+# needs a modest buffer of rendered reels ahead of it. Committed MP4s are served
+# by GitHub Pages — that IS the upload step, so a reel must be committed before
+# social-reels-publish.yml can post it.
 on:
   schedule:
-    # Sunday 02:00 UTC — quiet slot, well before the daily top-up at 23:00.
+    # Sunday 02:00 UTC — quiet slot, well before the daily reel publish at 14:00.
     - cron: '0 2 * * 0'
   workflow_dispatch:
     inputs:
@@ -54,6 +59,11 @@ jobs:
       - name: Confirm tooling
         run: python -u social/reels.py --check
 
+      - name: Rebuild the reel calendar
+        # Cheap, and it keeps the rendered filenames in step with the calendar.
+        # The reel anchor is held, so this cannot re-date anything.
+        run: python -u social/generate_reels.py
+
       - name: Render reels
         run: |
           python -u social/reels.py --days "${{ inputs.days || 14 }}"
@@ -63,7 +73,7 @@ jobs:
         run: |
           git config user.name "collabhive-social"
           git config user.email "collabhive.in@gmail.com"
-          git add -A social/calendar/reels/ || true
+          git add -A social/calendar/reels/ social/calendar/reels_calendar.json social/calendar/reel_anchor.txt || true
           if git diff --cached --quiet; then
             echo "No new reels to commit."
           else
