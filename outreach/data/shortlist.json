@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T08:24:58.919738+00:00",
+  "generated_at": "2026-09-20T09:02:06.071042+00:00",
   "shortlist": [
     {
       "brand": "UrbanBrew",
@@ -238,6 +238,15 @@
           "score": 0.422
         },
         {
+          "name": "Shanaya Wadibhasme ",
+          "handle": "@shanayaaa_1137",
+          "niche": "Fashion , beauty, lifestyle, content writer ",
+          "city": "Nagpur India",
+          "followers": 4455,
+          "rate": null,
+          "score": 0.417
+        },
+        {
           "name": "Sunami devi",
           "handle": "@https://www.instagram.com/t.sunaamii_",
           "niche": "Food fashion fitness travel beauty",
@@ -245,15 +254,6 @@
           "followers": 3000,
           "rate": null,
           "score": 0.411
-        },
-        {
-          "name": "Anshika Rai",
-          "handle": "@_anshika._.rai",
-          "niche": "Beauty & Skincare and fashion ",
-          "city": "Dehradun, Uttarakhand",
-          "followers": 2500,
-          "rate": null,
-          "score": 0.409
         }
       ]
     },

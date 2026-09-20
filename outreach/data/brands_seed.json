@@ -1504,9 +1504,8 @@
     "niche": "Fashion & Apparel",
     "city": "Bengaluru",
     "website": "https://damensch.com",
-    "email": "support@damensch.com\\",
+    "email": "support@damensch.com",
     "emails": [
-      "support@damensch.com\\",
       "support@damensch.com"
     ],
     "source": "curated",
@@ -1517,36 +1516,38 @@
     "niche": "Fashion & Apparel",
     "city": "Ahmedabad",
     "website": "https://xyxxcrew.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "support@xyxxcrew.com",
+    "emails": [
+      "support@xyxxcrew.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Jockey India",
     "niche": "Fashion & Apparel",
     "city": "Bengaluru",
     "website": "https://jockey.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "wecare@jockeyindia.com",
+    "emails": [
+      "wecare@jockeyindia.com",
+      "franchisee@jockeyindia.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Blissclub",
     "niche": "Fashion & Apparel",
     "city": "Bengaluru",
     "website": "https://blissclub.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
-  },
-  {
-    "name": "Kica Active",
-    "niche": "Fashion & Apparel",
-    "city": "Mumbai",
-    "website": "https://kicaactive.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "grievanceofficer@myblissclub.in",
+    "emails": [
+      "grievanceofficer@myblissclub.in",
+      "hi@myblissclub.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Cava Athleisure",
@@ -1555,7 +1556,8 @@
     "website": "https://cava.in",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Anouk",
@@ -2003,6 +2005,15 @@
     "niche": "Fashion & Apparel",
     "city": "New Delhi",
     "website": "https://andamen.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Bonkers Corner",
+    "niche": "Fashion & Apparel",
+    "city": "Hyderabad",
+    "website": "https://bonkerscorner.com",
     "email": "",
     "emails": [],
     "source": "curated"
