@@ -23,7 +23,7 @@ on:
       post_time:
         description: 'Publish time in IST (HH:MM)'
         required: false
-        default: '18:00'
+        default: '19:30'
 
 concurrency:
   group: social-daily
@@ -53,7 +53,7 @@ jobs:
             echo "::error::BUFFER_ACCESS_TOKEN secret is not set — nothing was scheduled."
             exit 1
           fi
-          TIME="${{ inputs.post_time || '18:00' }}"
+          TIME="${{ inputs.post_time || '19:30' }}"
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             python -u social/schedule_all.py --time "$TIME" --dry-run
           else

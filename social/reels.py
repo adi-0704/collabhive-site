@@ -67,8 +67,13 @@ def reel_html(headline: str, sub: str, cta: str, audience: str) -> str:
     """
     accent = HONEY if audience == "brand" else PURPLE
     logo = _logo_uri()
-    logo_tag = (f'<img src="{logo}" style="width:300px;margin:0 auto;display:block">'
-                if logo else "")
+    # logo.png has a solid white background. mix-blend-mode: multiply drops
+    # white to transparent against the light card, so the bee sits on the
+    # gradient instead of inside a visible white rectangle.
+    # The fade must live on the <img> itself. Putting opacity on a wrapping
+    # div creates a stacking context, which isolates mix-blend-mode from the
+    # background behind it and the white box comes back.
+    logo_tag = (f'<img class="logo" src="{logo}">' if logo else "")
     return f"""<!doctype html><html><head><meta charset="utf-8">
 <link href="{_FONT}" rel="stylesheet">
 <style>
@@ -82,7 +87,8 @@ def reel_html(headline: str, sub: str, cta: str, audience: str) -> str:
  @keyframes zoom{{from{{transform:scale(1)}}to{{transform:scale(1.12)}}}}
  .wrap{{position:absolute;inset:0;padding:150px 90px;display:flex;
        flex-direction:column;justify-content:center;align-items:center;text-align:center}}
- .logo{{opacity:0;animation:fade .7s .2s forwards}}
+ .logo{{width:300px;margin:0 auto;display:block;mix-blend-mode:multiply;
+       opacity:0;animation:fade .7s .2s forwards}}
  .bar{{height:12px;width:0;background:{accent};border-radius:99px;margin:56px 0;
       animation:wipe .8s 1.0s forwards}}
  @keyframes wipe{{to{{width:220px}}}}
@@ -99,7 +105,7 @@ def reel_html(headline: str, sub: str, cta: str, audience: str) -> str:
 </style></head><body>
  <div class="bg"></div>
  <div class="wrap">
-   <div class="logo">{logo_tag}</div>
+   {logo_tag}
    <div class="bar"></div>
    <h1>{_esc(headline)}</h1>
    <div class="sub">{_esc(sub)}</div>
