@@ -85,6 +85,25 @@ def _festival_slots() -> dict:
     return slots
 
 
+WEIGHTS_FILE = OUT / "weights.json"
+
+
+def _pillar_weights(audience: str) -> dict:
+    """Performance weights written by insights.py, if it has run.
+
+    This is what makes the plan adaptive: a pillar that earns attention gets
+    scheduled more often. Absent or stale weights simply mean neutral, so the
+    generator never depends on analytics having run.
+    """
+    if not WEIGHTS_FILE.exists():
+        return {}
+    try:
+        data = json.loads(WEIGHTS_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    return (data.get("pillar_weights") or {}).get(audience, {})
+
+
 CTA_FILE = HERE / "cta.json"
 
 _DEFAULT_CTA = {
@@ -209,6 +228,7 @@ def build(days: int, start: date) -> list[dict]:
         ("creator", CREATOR_POSTS, APPLY_FORM),
     ):
         festival_plan = _festival_plan(audience, start, days)
+        weights = _pillar_weights(audience)
         recent_layouts: list[str] = []
         recent_pillars: list[str] = []
         # Consume each authored post at most once. The earlier version indexed
@@ -227,9 +247,14 @@ def build(days: int, start: date) -> list[dict]:
             else:
                 if not unused:
                     break                  # bank exhausted; verify() reports it
-                # Prefer the first unused post whose pillar hasn't run recently.
-                choice = next((i for i in unused if bank[i][0] not in recent_pillars[-5:]),
-                              unused[0])
+                # Prefer an unused post whose pillar has not run recently, and
+                # among those prefer the pillar that performs best. Every post
+                # is still used exactly once — weighting changes the ORDER they
+                # appear in, so strong topics surface sooner and weak ones later.
+                eligible = [i for i in unused if bank[i][0] not in recent_pillars[-5:]]
+                if not eligible:
+                    eligible = unused
+                choice = max(eligible, key=lambda i: weights.get(bank[i][0], 1.0))
                 unused.remove(choice)
                 pillar, headline, sub, caption, cta = bank[choice]
 
