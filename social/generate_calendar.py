@@ -25,6 +25,7 @@ HERE = pathlib.Path(__file__).parent.resolve()
 sys.path.insert(0, str(HERE))
 
 from content_bank import BRAND_POSTS, CREATOR_POSTS      # noqa: E402
+from posts_festival import FESTIVAL_BRAND, FESTIVAL_CREATOR  # noqa: E402
 from hashtags import tag_block                            # noqa: E402
 from layouts import LAYOUTS, render_html                   # noqa: E402
 
@@ -54,6 +55,34 @@ def _anchor_date() -> str:
         if txt:
             return txt
     return date.today().isoformat()
+
+
+FESTIVALS = HERE / "festivals.json"
+
+
+def _festival_slots() -> dict:
+    """Map each festival key to the date its content should RUN.
+
+    Not the festival date — the festival date minus lead_days. Brands lock
+    Diwali budgets eight weeks out, so a Diwali planning post published on
+    Diwali is worth nothing. The lead time is the entire value of this.
+    """
+    if not FESTIVALS.exists():
+        return {}
+    try:
+        data = json.loads(FESTIVALS.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    slots = {}
+    for f in data.get("festivals", []):
+        try:
+            d = date.fromisoformat(f["date"]) - timedelta(days=int(f.get("lead_days", 30)))
+        except Exception:
+            continue
+        slots[f["key"]] = {"run_on": d, "name": f.get("name", f["key"]),
+                           "weight": int(f.get("weight", 1)),
+                           "approx": bool(f.get("approx"))}
+    return slots
 
 
 CTA_FILE = HERE / "cta.json"
@@ -124,12 +153,62 @@ def _pick_layout(pillar: str, recent: list[str], headline: str = "") -> str:
     return "hero_cta"
 
 
+def _festival_plan(audience: str, start: date, days: int) -> dict:
+    """date -> festival post, for dates inside the calendar window.
+
+    Festival content is placed FIRST and the evergreen bank fills around it,
+    because a seasonal post only works on its own date. Where a festival has
+    several posts they run on consecutive days leading into that slot.
+    """
+    bank = FESTIVAL_BRAND if audience == "brand" else FESTIVAL_CREATOR
+    slots = _festival_slots()
+    by_festival: dict[str, list] = {}
+    for entry in bank:
+        by_festival.setdefault(entry[0], []).append(entry)
+
+    end = start + timedelta(days=days - 1)
+    plan: dict[date, tuple] = {}
+    for key, posts in by_festival.items():
+        slot = slots.get(key)
+        if not slot:
+            continue
+        # Several posts for one festival run on consecutive days ending on the
+        # slot date, so the last one lands closest to the planning deadline.
+        for offset, post in enumerate(reversed(posts)):
+            run_on = slot["run_on"] - timedelta(days=offset)
+            if run_on < start or run_on > end or run_on in plan:
+                continue
+            plan[run_on] = post
+    return plan
+
+
+def _max_days(start: date) -> int:
+    """How many days the banks can actually fill.
+
+    Festival posts occupy a day without consuming the evergreen bank, so the
+    calendar runs longer than the evergreen count — but only for festivals whose
+    slot falls inside the window, and the window depends on the total. Solve it
+    by iterating to a fixed point rather than assuming every festival counts.
+    """
+    evergreen = min(len(BRAND_POSTS), len(CREATOR_POSTS))
+    days = evergreen
+    for _ in range(10):
+        placed = min(len(_festival_plan("brand", start, days)),
+                     len(_festival_plan("creator", start, days)))
+        nxt = evergreen + placed
+        if nxt == days:
+            break
+        days = nxt
+    return days
+
+
 def build(days: int, start: date) -> list[dict]:
     entries: list[dict] = []
     for audience, bank, cta_url in (
         ("brand", BRAND_POSTS, BRIEF_FORM),
         ("creator", CREATOR_POSTS, APPLY_FORM),
     ):
+        festival_plan = _festival_plan(audience, start, days)
         recent_layouts: list[str] = []
         recent_pillars: list[str] = []
         # Consume each authored post at most once. The earlier version indexed
@@ -137,13 +216,22 @@ def build(days: int, start: date) -> list[dict]:
         # could land on an entry already used and silently duplicate copy.
         unused = list(range(len(bank)))
         for day in range(days):
-            if not unused:
-                break                      # bank exhausted; verify() reports it
-            # Prefer the first unused post whose pillar hasn't run recently.
-            choice = next((i for i in unused if bank[i][0] not in recent_pillars[-5:]),
-                          unused[0])
-            unused.remove(choice)
-            pillar, headline, sub, caption, cta = bank[choice]
+            this_date = start + timedelta(days=day)
+            festival_post = festival_plan.get(this_date)
+            festival_key = ""
+
+            if festival_post:
+                # Seasonal content is date-critical, so it takes the slot and
+                # the evergreen bank simply flows around it.
+                festival_key, pillar, headline, sub, caption, cta = festival_post
+            else:
+                if not unused:
+                    break                  # bank exhausted; verify() reports it
+                # Prefer the first unused post whose pillar hasn't run recently.
+                choice = next((i for i in unused if bank[i][0] not in recent_pillars[-5:]),
+                              unused[0])
+                unused.remove(choice)
+                pillar, headline, sub, caption, cta = bank[choice]
 
             layout = _pick_layout(pillar, recent_layouts, headline)
             recent_layouts.append(layout)
@@ -160,7 +248,8 @@ def build(days: int, start: date) -> list[dict]:
             )
             entries.append({
                 "day": day + 1,
-                "date": (start + timedelta(days=day)).isoformat(),
+                "date": this_date.isoformat(),
+                "festival": festival_key,
                 "audience": audience,
                 "pillar": pillar,
                 "layout": layout,
@@ -261,7 +350,7 @@ def main() -> int:
     else:
         print(f"  anchor held: day 1 = {start.isoformat()} "
               f"(use --reanchor to move it)")
-    days = args.days or min(len(BRAND_POSTS), len(CREATOR_POSTS))
+    days = args.days or _max_days(start)
     entries = build(days, start)
     verify(entries, days)
 
