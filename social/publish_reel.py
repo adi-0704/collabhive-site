@@ -4,19 +4,17 @@
     python social/publish_reel.py                 # publish today's reels now
     python social/publish_reel.py --date 2026-09-25
 
-Why this publishes immediately instead of scheduling
-----------------------------------------------------
-Buffer's free plan allows 10 SCHEDULED posts per channel, and both channels are
-already full to that cap with the static 18:00 feed queue. Adding reels to that
-queue would mean deleting live, already-scheduled static posts - which is
-exactly what must not happen.
+MANUAL ESCAPE HATCH. The daily reel stream is SCHEDULED, not published live -
+see social/schedule_reels.py, which pins each reel to 19:30 IST in Buffer so it
+goes out even if every workflow is broken. That is the path in production.
 
-`mode: shareNow` publishes straight through without occupying a queue slot, so
-the reel stream costs nothing against the cap and the static queue is never
-touched. The trade is that the timing comes from the workflow's cron rather than
-from Buffer, so the publish lands at 19:30 IST give or take GitHub's usual few
-minutes of scheduler drift. For a reel that is immaterial; the peak window is
-19:00-21:00, not a single minute.
+This script exists for the cases scheduling cannot cover: publishing a reel
+right now, backfilling a day that was missed, or testing that a rendered MP4 is
+actually accepted by Instagram. It uses `mode: shareNow`, which publishes
+straight through without occupying one of the channel's 10 scheduled slots.
+
+Do not put this on a cron alongside schedule_reels.py. The dedupe below would
+catch the overlap, but two systems posting the same stream is not worth it.
 
 Idempotency: before publishing, every post already on the channel (any status)
 is read and matched against the caption's first line. Re-running the workflow,
@@ -92,7 +90,6 @@ def main() -> int:
     for e in todays:
         aud = e["audience"]
         video_url = BASE + e["video"]
-        cover_url = BASE + e["cover"]
         log(f"\n[{aud}] reel day {e['day']} - {e['style']}")
         log(f"  {e['headline']}")
         log(f"  video: {video_url}")
@@ -114,7 +111,7 @@ def main() -> int:
         try:
             res = _queue_post(cfg, channel_id, e["caption"], org_id,
                               due_at="now", service="instagram",
-                              video_url=video_url, thumbnail_url=cover_url)
+                              video_url=video_url, thumbnail_ms=6000)
             if not (isinstance(res, dict) and res.get("ok")):
                 raise RuntimeError((res or {}).get("message", "unknown error"))
             log(f"  PUBLISHED (post {res.get('post_id')})")

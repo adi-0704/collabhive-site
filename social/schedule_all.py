@@ -4,10 +4,16 @@
     python social/schedule_all.py                    # schedule everything
     python social/schedule_all.py --days 30          # just the next 30 days
     python social/schedule_all.py --time 18:00       # posting time (IST)
+    python social/schedule_all.py --max-queue 5      # leave room for reels
 
 Pins every post to an exact time with Buffer's customScheduled mode, so there
-is no daily job and no dependency on GitHub Actions. Once this has run, Buffer
-holds the whole calendar and publishes it on its own.
+is no dependency on GitHub Actions at publish time - once this has run, Buffer
+holds the queue and publishes it on its own even if every workflow is broken.
+
+Buffer's free plan allows 10 SCHEDULED posts per channel. That pool is shared
+with the reel stream (social/schedule_reels.py), so this fills only its half:
+--max-queue 5 gives five days of static runway and leaves five for reels. Both
+streams still post every day; the daily top-up refills whatever went out.
 
 Already-scheduled posts are skipped on re-run (matched on the image filename in
 the post text), so running this twice will not double-post.
@@ -82,10 +88,16 @@ def existing_posts(cfg: dict, channel_id: str) -> set[str]:
     return texts
 
 
-def scheduled_days(cfg: dict, channel_id: str) -> set[str]:
-    """Dates (YYYY-MM-DD) that already hold a scheduled post on this channel."""
+def scheduled_slots(cfg: dict, channel_id: str) -> list[str]:
+    """Due dates of every scheduled post on this channel, one entry per post.
+
+    A list rather than a set because the two things callers need are different:
+    which DAYS are covered (set) and how many SLOTS are consumed (length).
+    Buffer's free plan caps the latter at 10 per channel, and the reel stream
+    shares that cap with the static feed - so an accurate count matters.
+    """
     org = cfg.get("buffer", {}).get("organization_id", "")
-    days: set[str] = set()
+    days: list[str] = []
     after = ""
     for _ in range(20):
         cursor = ', after: "%s"' % after if after else ""
@@ -100,7 +112,7 @@ def scheduled_days(cfg: dict, channel_id: str) -> set[str]:
         for e in (page.get("edges") or []):
             due = (e["node"].get("dueAt") or "")[:10]
             if due:
-                days.add(due)
+                days.append(due)
         info = page.get("pageInfo") or {}
         if not info.get("hasNextPage"):
             break
@@ -118,6 +130,12 @@ def main() -> int:
     ap.add_argument("--no-fill-gaps", action="store_true",
                     help="leave empty days empty instead of back-filling")
     ap.add_argument("--start", default="", help="first date to schedule (YYYY-MM-DD)")
+    # Buffer's free plan allows 10 scheduled posts per channel, and the reel
+    # stream (social/schedule_reels.py) shares that pool. Filling all 10 with
+    # feed posts leaves no room for a reel, so each stream takes half: 5 days
+    # of runway each, both posting daily.
+    ap.add_argument("--max-queue", type=int, default=5,
+                    help="stop once this many posts are scheduled on a channel")
     args = ap.parse_args()
 
     hh, mm = (int(x) for x in args.time.split(":"))
@@ -168,7 +186,14 @@ def main() -> int:
         return 1
 
     seen = {a: existing_posts(cfg, cid) for a, cid in channels.items() if cid}
-    scheduled_dates = {a: scheduled_days(cfg, cid) for a, cid in channels.items() if cid}
+    slots = {a: scheduled_slots(cfg, cid) for a, cid in channels.items() if cid}
+    scheduled_dates = {a: set(v) for a, v in slots.items()}
+
+    # Slots left before this stream hits its half of the shared cap.
+    budget = {a: max(0, args.max_queue - len(v)) for a, v in slots.items()}
+    for aud, left in sorted(budget.items()):
+        log(f"  {aud}: {len(slots[aud])} scheduled, {left} slot(s) free "
+            f"(cap {args.max_queue})")
 
     # Fill empty days with unused content.
     #
@@ -224,6 +249,10 @@ def main() -> int:
         if e["audience"] in full:
             full[e["audience"]] += 1
             continue
+        # Stop before consuming the reel stream's half of the shared cap.
+        if budget.get(e["audience"], 0) <= 0:
+            skipped += 1
+            continue
         # Dedupe on the unique first line of the caption.
         marker = e["caption_body"].splitlines()[0][:80]
         if any(marker in t for t in seen.get(e["audience"], ())):
@@ -238,6 +267,7 @@ def main() -> int:
             if not res.get("ok"):
                 raise RuntimeError(res.get("message", "unknown"))
             ok += 1
+            budget[e["audience"]] = budget.get(e["audience"], 1) - 1
             if ok % 10 == 0 or ok == 1:
                 log(f"  scheduled {ok}/{len(plan)} (latest: {due:%d %b %H:%M} IST)")
         except Exception as exc:

@@ -57,7 +57,7 @@ def get_channels(cfg, org_id: str = "") -> list[dict]:
 
 def _queue_post(cfg, channel_id: str, text: str, org_id: str, image_url: str = "",
                 due_at: str = "", service: str = "", video_url: str = "",
-                thumbnail_url: str = "") -> dict:
+                thumbnail_ms: int = 0) -> dict:
     """Create a Buffer post.
 
     due_at: ISO-8601 UTC timestamp (e.g. 2026-09-14T12:30:00Z). When given, the
@@ -69,9 +69,16 @@ def _queue_post(cfg, channel_id: str, text: str, org_id: str, image_url: str = "
     assets = ""
     if video_url:
         # Reels reach people who do not follow the account; feed posts mostly
-        # reach people who already do. A cover image is sent alongside, or
-        # Instagram picks an arbitrary frame as the thumbnail.
-        thumb = ', thumbnailUrl: "%s"' % thumbnail_url if thumbnail_url else ""
+        # reach people who already do.
+        #
+        # The cover is chosen by TIME OFFSET, not by uploading an image. Buffer
+        # accepts thumbnailUrl in the schema but rejects it at validation:
+        # "social networks do not accept custom video thumbnail images, so this
+        # value is never sent to the network". thumbnailOffset is the supported
+        # route on Instagram - pick a moment once the text has finished arriving,
+        # or the cover is a blank opening frame.
+        thumb = (', metadata: { thumbnailOffset: %d }' % int(thumbnail_ms)
+                 if thumbnail_ms else "")
         assets = ', assets: [{ video: { url: "%s"%s } }]' % (video_url, thumb)
     elif image_url:
         assets = ', assets: [{ image: { url: "%s" } }]' % image_url

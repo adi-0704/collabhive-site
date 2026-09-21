@@ -1,13 +1,20 @@
-name: Social Daily (top up Buffer queue)
+name: Social Daily (top up Buffer queues)
 
-# Keeps both Instagram queues topped up so posts go live at exactly 18:00 IST.
+# Tops up BOTH Instagram streams so each page posts twice a day:
 #
-# Why a top-up instead of posting one per day:
-#   * schedule_all.py pins each post to an exact dueAt, so it publishes at
-#     18:00 sharp rather than whenever Buffer's own queue slot happens to be.
-#   * Buffer's free plan allows 10 scheduled posts per channel, so this fills
-#     up to that cap and stops. That leaves ~10 days of runway — a failed run
-#     (or a few) never creates a gap in posting.
+#   18:00 IST  static feed post   (social/calendar/calendar.json)
+#   19:30 IST  reel               (social/calendar/reels_calendar.json)
+#
+# The two carry different topics by construction — generate_reels.py fails the
+# build if any reel headline or body also appears in the static bank.
+#
+# Why a top-up instead of publishing one per day:
+#   * Each post is pinned to an exact dueAt, so Buffer publishes it on time on
+#     its own. If this workflow breaks, everything already queued still goes
+#     out — that is the whole point of scheduling rather than posting live.
+#   * Buffer's free plan allows 10 scheduled posts per channel, counted across
+#     the channel rather than per day. The two streams split it 5/5, giving
+#     five days of runway each.
 #   * Re-runs are safe: already-scheduled posts are detected and skipped.
 on:
   schedule:
@@ -21,9 +28,13 @@ on:
         type: boolean
         default: false
       post_time:
-        description: 'Publish time in IST (HH:MM)'
+        description: 'Static feed publish time in IST (HH:MM)'
         required: false
         default: '18:00'
+      reel_time:
+        description: 'Reel publish time in IST (HH:MM)'
+        required: false
+        default: '19:30'
 
 concurrency:
   group: social-daily
@@ -45,7 +56,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Top up the Buffer queue
+      - name: Top up the static feed queue (18:00 IST)
         env:
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
         run: |
@@ -54,8 +65,22 @@ jobs:
             exit 1
           fi
           TIME="${{ inputs.post_time || '18:00' }}"
-          if [ "${{ inputs.dry_run }}" = "true" ]; then
-            python -u social/schedule_all.py --time "$TIME" --dry-run
-          else
-            python -u social/schedule_all.py --time "$TIME"
+          DRY=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then DRY="--dry-run"; fi
+          python -u social/schedule_all.py --time "$TIME" --max-queue 5 $DRY
+
+      - name: Top up the reel queue (19:30 IST)
+        # Runs even if the static top-up failed — one stream stalling should not
+        # take the other down with it.
+        if: always()
+        env:
+          BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$BUFFER_ACCESS_TOKEN" ]; then
+            echo "::error::BUFFER_ACCESS_TOKEN secret is not set — no reels scheduled."
+            exit 1
           fi
+          TIME="${{ inputs.reel_time || '19:30' }}"
+          DRY=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then DRY="--dry-run"; fi
+          python -u social/schedule_reels.py --time "$TIME" --max-queue 5 $DRY
