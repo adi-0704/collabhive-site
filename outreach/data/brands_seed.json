@@ -1564,9 +1564,12 @@
     "niche": "Fashion & Apparel",
     "city": "Bengaluru",
     "website": "https://anoukfashion.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "myanouk@anoukfashion.com",
+    "emails": [
+      "myanouk@anoukfashion.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Fabnest",
@@ -1575,34 +1578,35 @@
     "website": "https://fabnest.in",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Aachho",
     "niche": "Fashion & Apparel",
     "city": "Jaipur",
     "website": "https://aachho.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
-  },
-  {
-    "name": "Indya",
-    "niche": "Fashion & Apparel",
-    "city": "Bengaluru",
-    "website": "https://houseofindya.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "info@aachho.com\\",
+    "emails": [
+      "info@aachho.com\\",
+      "info@aachho.com",
+      "u003einfo@aachho.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Libas",
     "niche": "Fashion & Apparel",
     "city": "New Delhi",
     "website": "https://libas.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@libas.in",
+    "emails": [
+      "care@libas.in",
+      "abc@xyz.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Sangria",
@@ -2014,6 +2018,15 @@
     "niche": "Fashion & Apparel",
     "city": "Hyderabad",
     "website": "https://bonkerscorner.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Kica Active",
+    "niche": "Fashion & Apparel",
+    "city": "Mumbai",
+    "website": "https://kicaactive.com",
     "email": "",
     "emails": [],
     "source": "curated"

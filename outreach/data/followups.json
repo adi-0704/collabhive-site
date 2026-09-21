@@ -278,5 +278,55 @@
     "count": 1,
     "last_sent": "2026-09-20T09:02:06.742305+00:00",
     "name": "Happilo"
+  },
+  "wecare@farmley.com": {
+    "count": 1,
+    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "name": "Farmley"
+  },
+  "care@nourishyou.in": {
+    "count": 1,
+    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "name": "Nourish You"
+  },
+  "info@nestasia.in": {
+    "count": 1,
+    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "name": "Nestasia"
+  },
+  "care@saltattire.com": {
+    "count": 1,
+    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "name": "Salt Attire"
+  },
+  "konnect@kosha.co": {
+    "count": 1,
+    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "name": "Kosha"
+  },
+  "hello@summersomewhere.com": {
+    "count": 1,
+    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "name": "Summer Somewhere"
+  },
+  "hello@jaypore.com": {
+    "count": 1,
+    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "name": "Jaypore"
+  },
+  "abc@xyz.com": {
+    "count": 1,
+    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "name": "Andamen"
+  },
+  "info@thedecorkart.com": {
+    "count": 1,
+    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "name": "The Decor Kart"
+  },
+  "care@true-elements.com": {
+    "count": 1,
+    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "name": "True Elements"
   }
 }
