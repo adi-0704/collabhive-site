@@ -107,11 +107,18 @@ def to_mp4(webm: pathlib.Path, dest: pathlib.Path) -> bool:
     """Convert to H.264/AAC MP4. Instagram rejects WebM outright."""
     cmd = [
         "ffmpeg", "-y", "-i", str(webm),
+        # A SILENT AUDIO TRACK, not no audio track. Instagram's media container
+        # intermittently rejects a video with no audio stream at all — one reel
+        # failed with "Unable to get media container status from Instagram"
+        # while three identical-format siblings published fine the same night.
+        # Silence needs no licence and costs a few KB.
+        "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100",
         "-c:v", "libx264", "-preset", "medium", "-crf", "23",
         "-pix_fmt", "yuv420p",              # required for broad playback
         "-vf", f"scale={W}:{H},fps=30",
+        "-c:a", "aac", "-b:a", "64k",
+        "-shortest",                         # audio is infinite; stop with video
         "-movflags", "+faststart",          # lets playback start before full download
-        "-an",                               # silent: audio is added in-app if wanted
         str(dest),
     ]
     try:

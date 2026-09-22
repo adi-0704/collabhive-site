@@ -43,7 +43,8 @@ from src.buffer import _queue_post, buffer_key        # noqa: E402
 from src.common import load_config                     # noqa: E402
 
 sys.path.insert(0, str(HERE))
-from schedule_all import existing_posts, scheduled_slots   # noqa: E402
+from schedule_all import (existing_posts, scheduled_slots,   # noqa: E402
+                          stream_count)
 
 CAL = HERE / "calendar" / "reels_calendar.json"
 BASE = "https://adi-0704.github.io/collabhive-site/social/calendar/"
@@ -127,11 +128,12 @@ def main() -> int:
 
     seen = {a: existing_posts(cfg, cid) for a, cid in channels.items() if cid}
     slots = {a: scheduled_slots(cfg, cid) for a, cid in channels.items() if cid}
-    budget = {a: max(0, args.max_queue - _reel_slots(v, hh, mm))
+    budget = {a: max(0, args.max_queue - stream_count(v, hh, mm))
               for a, v in slots.items()}
     for aud in sorted(slots):
-        log(f"  {aud}: {len(slots[aud])} scheduled on the channel, "
-            f"{budget[aud]} reel slot(s) free (cap {args.max_queue})")
+        log(f"  {aud}: {stream_count(slots[aud], hh, mm)} reels of "
+            f"{len(slots[aud])} scheduled, {budget[aud]} slot(s) free "
+            f"(cap {args.max_queue})")
 
     ok = skipped = failed = 0
     for e, due in plan:
@@ -176,19 +178,6 @@ def main() -> int:
 
     log(f"\nDone. scheduled={ok} skipped={skipped} failed={failed}")
     return 1 if failed else 0
-
-
-def _reel_slots(due_dates: list[str], hh: int, mm: int) -> int:
-    """How many of this channel's scheduled posts are already reels.
-
-    Counted by date rather than by asking Buffer what is a reel, because a
-    channel holds at most one reel per day: any date appearing more than once
-    is the static post plus this stream's reel.
-    """
-    counts: dict[str, int] = {}
-    for d in due_dates:
-        counts[d] = counts.get(d, 0) + 1
-    return sum(n - 1 for n in counts.values() if n > 1)
 
 
 if __name__ == "__main__":

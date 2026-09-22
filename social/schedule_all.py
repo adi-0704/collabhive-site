@@ -88,13 +88,37 @@ def existing_posts(cfg: dict, channel_id: str) -> set[str]:
     return texts
 
 
-def scheduled_slots(cfg: dict, channel_id: str) -> list[str]:
-    """Due dates of every scheduled post on this channel, one entry per post.
+def utc_hhmm(hh: int, mm: int) -> str:
+    """The UTC "HH:MM" that a given IST time lands on.
 
-    A list rather than a set because the two things callers need are different:
-    which DAYS are covered (set) and how many SLOTS are consumed (length).
-    Buffer's free plan caps the latter at 10 per channel, and the reel stream
-    shares that cap with the static feed - so an accurate count matters.
+    Buffer reports dueAt in UTC, so an IST posting time has to be converted
+    before it can be matched against one. 18:00 IST -> "12:30".
+    """
+    d = datetime(2000, 1, 1, hh, mm, tzinfo=IST).astimezone(timezone.utc)
+    return f"{d.hour:02d}:{d.minute:02d}"
+
+
+def stream_count(slots: list[str], hh: int, mm: int) -> int:
+    """How many of these scheduled posts belong to the stream posting at hh:mm.
+
+    The static feed and the reel stream share one 10-post cap, so each needs to
+    count ONLY its own posts against its half. Counting every post on the
+    channel made the static top-up see 8/5 and stop refilling entirely, while
+    the reel stream undercounted itself and kept taking the freed slots.
+
+    Publish time is the discriminator because it is exact: the two streams are
+    deliberately an hour and a half apart and nothing else is scheduled here.
+    """
+    target = utc_hhmm(hh, mm)
+    return sum(1 for d in slots if d[11:16] == target)
+
+
+def scheduled_slots(cfg: dict, channel_id: str) -> list[str]:
+    """dueAt of every scheduled post on this channel, one entry per post.
+
+    Full timestamps rather than dates: callers need the DAY (to spot gaps), the
+    COUNT (to respect the plan cap), and the TIME (to tell the two streams
+    apart). Keeping the whole string lets stream_count do the last one.
     """
     org = cfg.get("buffer", {}).get("organization_id", "")
     days: list[str] = []
@@ -110,7 +134,7 @@ def scheduled_slots(cfg: dict, channel_id: str) -> list[str]:
             break
         page = ((r.get("data") or {}).get("posts") or {})
         for e in (page.get("edges") or []):
-            due = (e["node"].get("dueAt") or "")[:10]
+            due = e["node"].get("dueAt") or ""
             if due:
                 days.append(due)
         info = page.get("pageInfo") or {}
@@ -187,12 +211,22 @@ def main() -> int:
 
     seen = {a: existing_posts(cfg, cid) for a, cid in channels.items() if cid}
     slots = {a: scheduled_slots(cfg, cid) for a, cid in channels.items() if cid}
-    scheduled_dates = {a: set(v) for a, v in slots.items()}
+    # Days that already hold a post FROM THIS STREAM. It must not count the
+    # reel stream: the gap-fill below treats a covered day as done, so counting
+    # any post meant a day with only a reel looked complete and never got its
+    # static post. Both streams are supposed to run every day.
+    target = utc_hhmm(hh, mm)
+    scheduled_dates = {a: {d[:10] for d in v if d[11:16] == target}
+                       for a, v in slots.items()}
 
-    # Slots left before this stream hits its half of the shared cap.
-    budget = {a: max(0, args.max_queue - len(v)) for a, v in slots.items()}
-    for aud, left in sorted(budget.items()):
-        log(f"  {aud}: {len(slots[aud])} scheduled, {left} slot(s) free "
+    # Slots left before THIS stream hits its half of the shared cap. Counted by
+    # publish time, so reels sitting on the same channel do not make the static
+    # feed think it is full.
+    budget = {a: max(0, args.max_queue - stream_count(v, hh, mm))
+              for a, v in slots.items()}
+    for aud in sorted(slots):
+        log(f"  {aud}: {stream_count(slots[aud], hh, mm)} static of "
+            f"{len(slots[aud])} scheduled, {budget[aud]} slot(s) free "
             f"(cap {args.max_queue})")
 
     # Fill empty days with unused content.
