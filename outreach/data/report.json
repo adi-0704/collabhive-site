@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T09:21:51.788424+00:00",
+  "generated_at": "2026-09-22T08:57:35.572384+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -10,19 +10,19 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 94,
-    "unique_brands_emailed": 93,
-    "brands_in_pool": 187,
-    "brands_with_email": 83,
+    "total_sent": 97,
+    "unique_brands_emailed": 96,
+    "brands_in_pool": 188,
+    "brands_with_email": 86,
     "remaining_candidates": 0,
-    "sent_today": 2,
-    "sent_week": 40,
-    "day_streak": 40,
+    "sent_today": 5,
+    "sent_week": 43,
+    "day_streak": 43,
     "daily_budget": 18
   },
   "by_niche": {
-    "Fashion & Apparel": 37,
-    "Beauty & Cosmetics": 21,
+    "Fashion & Apparel": 39,
+    "Beauty & Cosmetics": 22,
     "Food & Beverage": 11,
     "Fitness & Wellness": 6,
     "Home & Decor": 11,
@@ -36,8 +36,8 @@
     "Gurugram": 22,
     "Hyderabad": 3,
     "Kolkata": 1,
-    "Mumbai": 26,
-    "Jaipur": 2,
+    "Mumbai": 27,
+    "Jaipur": 4,
     "Chennai": 1,
     "Jodhpur": 1,
     "Chandigarh": 1,
@@ -47,7 +47,7 @@
   },
   "pool_by_niche": {
     "Food & Beverage": 29,
-    "Fashion & Apparel": 54,
+    "Fashion & Apparel": 55,
     "Beauty & Cosmetics": 51,
     "Fitness & Wellness": 23,
     "Home & Decor": 20,
@@ -55,6 +55,30 @@
     "Tech & Startups": 6
   },
   "recent_sends": [
+    {
+      "ts": "2026-09-22T08:56:33.673903+00:00",
+      "email": "care@vastrado.com",
+      "name": "Vastrado",
+      "niche": "Fashion & Apparel",
+      "city": "Jaipur",
+      "subject": "A creator network for Vastrado — CollabHive"
+    },
+    {
+      "ts": "2026-09-22T08:53:24.660265+00:00",
+      "email": "info@aachho.com",
+      "name": "Aachho",
+      "niche": "Fashion & Apparel",
+      "city": "Jaipur",
+      "subject": "A creator network for Aachho — CollabHive"
+    },
+    {
+      "ts": "2026-09-22T08:50:28.643066+00:00",
+      "email": "hello@discoverpilgrim.com",
+      "name": "Pilgrim",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "A creator network for Pilgrim — CollabHive"
+    },
     {
       "ts": "2026-09-21T09:21:01.145664+00:00",
       "email": "care@libas.in",
@@ -190,38 +214,22 @@
       "niche": "Fashion & Apparel",
       "city": "Mumbai",
       "subject": "Helping Kosha grow with creators"
-    },
-    {
-      "ts": "2026-09-18T08:31:10.163063+00:00",
-      "email": "care@saltattire.com",
-      "name": "Salt Attire",
-      "niche": "Fashion & Apparel",
-      "city": "Gurugram",
-      "subject": "Creators for Salt Attire from CollabHive"
-    },
-    {
-      "ts": "2026-09-17T09:09:54.827699+00:00",
-      "email": "info@nestasia.in",
-      "name": "Nestasia",
-      "niche": "Home & Decor",
-      "city": "Mumbai",
-      "subject": "A creator network for Nestasia — CollabHive"
-    },
-    {
-      "ts": "2026-09-17T09:08:12.389941+00:00",
-      "email": "support@woodenstreet.com",
-      "name": "Wooden Street",
-      "niche": "Home & Decor",
-      "city": "Jaipur",
-      "subject": "Wooden Street: matched creators, ready to collab"
     }
   ],
   "sales": {
-    "closing_count": 20,
+    "closing_count": 21,
     "closing_by_status": {
-      "interested": 20
+      "interested": 20,
+      "negotiating": 1
     },
     "recent_closing": [
+      {
+        "email": "care@libas.in",
+        "subject": "Re: Libas: matched creators, ready to collab",
+        "snippet": "----==_mimepart_6ab0f70431dc1_1e422a38336bd Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable Dear Customer, Thank you for contacting Libas. We have received your re= quest (#2163537) and a ticket has been created.=C2=A0 Our team is curren= tly reviewing your query and will get back to you shortly.=C2=A0 For urg= ent assistance, feel free to call us at +91 9899990",
+        "status": "negotiating",
+        "ts": "2026-09-22T08:56:53.682909+00:00"
+      },
       {
         "email": "support@damensch.com",
         "subject": "Damensch: matched creators, ready to collab",
@@ -284,13 +292,6 @@
         "snippet": "Ticket No:4789115230864<br><br><div>Hi There,</div> <div>&nbsp;</div> <div>Thank you for contacting Foxtale!</div> <div> <br /> </div> <div>We=E2=80=99ve received your query, and your ticket number is 478911523= 0864. Please use this reference for any future communication.</div> <div> <br /> </div> <div> We request you to kindly share your Order ID and registered contact detai= ls (if not already ",
         "status": "interested",
         "ts": "2026-09-12T08:18:03.254706+00:00"
-      },
-      {
-        "email": "care@thesleepcompany.in",
-        "subject": "Ticket Received - 2932898 |",
-        "snippet": "----==_mimepart_6a957ea97fc93_1c68c19f083182 Content-Type: text/plain; charset=UTF-8 Content-Transfer-Encoding: quoted-printable Dear CollabHive, Thank you for contacting The Sleep Company. W= e want to assure you that your request has been successfully registered, = and a ticket has been created with the reference number=C2=A02932898. = Our support team is already reviewing your query and will re",
-        "status": "interested",
-        "ts": "2026-08-31T13:19:01.583377+00:00"
       }
     ],
     "shortlist": [
@@ -422,26 +423,24 @@
         0.144
       ]
     ],
-    "replied_count": 20,
-    "reply_rate_pct": 21.5
+    "replied_count": 21,
+    "reply_rate_pct": 21.9
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-09-21T09:21:51.785697+00:00",
+    "checked_at": "2026-09-22T08:57:35.570672+00:00",
     "lookback_hours": 96,
-    "recorded_sends": 93,
-    "confirmed_in_sent": 31,
-    "unconfirmed": 62,
-    "delivery_rate_pct": 33.3,
-    "bounces": 7,
+    "recorded_sends": 96,
+    "confirmed_in_sent": 36,
+    "unconfirmed": 60,
+    "delivery_rate_pct": 37.5,
+    "bounces": 5,
     "bounce_emails": [
-      "customercare@livpure.com",
       "support@boat-lifestyle.com",
       "nbspcontact@kicaactive.com",
-      "abc@xyz.com",
-      "xxx@xxx.xxx",
       "care@ritebite.com",
-      "help@thelabellife.com"
+      "xxx@xxx.xxx",
+      "abc@xyz.com"
     ],
     "unconfirmed_emails": [
       "grievance@snitch.com",
@@ -538,7 +537,7 @@
       "campaigns_run": 0,
       "alltime_creators": 73,
       "alltime_briefs": 2,
-      "generated_at": "2026-09-21T09:21:51.789892+00:00"
+      "generated_at": "2026-09-22T08:57:35.573086+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -1002,5 +1001,5 @@
     }
   },
   "dnc_count": 1,
-  "last_run": "2026-09-21T09:21:01.159206+00:00"
+  "last_run": "2026-09-22T08:56:33.709116+00:00"
 }

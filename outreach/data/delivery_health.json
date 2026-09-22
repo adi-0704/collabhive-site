@@ -1,20 +1,18 @@
 {
   "ok": true,
-  "checked_at": "2026-09-21T09:21:51.785697+00:00",
+  "checked_at": "2026-09-22T08:57:35.570672+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 93,
-  "confirmed_in_sent": 31,
-  "unconfirmed": 62,
-  "delivery_rate_pct": 33.3,
-  "bounces": 7,
+  "recorded_sends": 96,
+  "confirmed_in_sent": 36,
+  "unconfirmed": 60,
+  "delivery_rate_pct": 37.5,
+  "bounces": 5,
   "bounce_emails": [
-    "customercare@livpure.com",
     "support@boat-lifestyle.com",
     "nbspcontact@kicaactive.com",
-    "abc@xyz.com",
-    "xxx@xxx.xxx",
     "care@ritebite.com",
-    "help@thelabellife.com"
+    "xxx@xxx.xxx",
+    "abc@xyz.com"
   ],
   "unconfirmed_emails": [
     "grievance@snitch.com",

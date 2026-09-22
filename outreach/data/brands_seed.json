@@ -1586,9 +1586,8 @@
     "niche": "Fashion & Apparel",
     "city": "Jaipur",
     "website": "https://aachho.com",
-    "email": "info@aachho.com\\",
+    "email": "info@aachho.com",
     "emails": [
-      "info@aachho.com\\",
       "info@aachho.com",
       "u003einfo@aachho.com"
     ],
@@ -1615,34 +1614,47 @@
     "website": "https://sangriaonline.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Vastrado",
     "niche": "Fashion & Apparel",
     "city": "Jaipur",
     "website": "https://vastrado.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@vastrado.com",
+    "emails": [
+      "care@vastrado.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Pilgrim",
     "niche": "Beauty & Cosmetics",
     "city": "Mumbai",
     "website": "https://discoverpilgrim.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "hello@discoverpilgrim.com",
+    "emails": [
+      "hello@discoverpilgrim.com",
+      "social@discoverpilgrim.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Kama Ayurveda",
     "niche": "Beauty & Cosmetics",
     "city": "New Delhi",
     "website": "https://kamaayurveda.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@kamaayurveda.in\\",
+    "emails": [
+      "care@kamaayurveda.in\\",
+      "care@kamaayurveda.in",
+      "u003ecare@kamaayurveda.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Colorbar",
@@ -2027,6 +2039,15 @@
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://kicaactive.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Indya",
+    "niche": "Fashion & Apparel",
+    "city": "Bengaluru",
+    "website": "https://houseofindya.com",
     "email": "",
     "emails": [],
     "source": "curated"

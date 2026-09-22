@@ -94,7 +94,10 @@
     "grievanceofficer@myblissclub.in",
     "nbspcontact@kicaactive.com",
     "myanouk@anoukfashion.com",
-    "care@libas.in"
+    "care@libas.in",
+    "hello@discoverpilgrim.com",
+    "info@aachho.com",
+    "care@vastrado.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -190,7 +193,10 @@
     "blissclub.com",
     "kicaactive.com",
     "anoukfashion.com",
-    "libas.in"
+    "libas.in",
+    "discoverpilgrim.com",
+    "aachho.com",
+    "vastrado.com"
   ],
   "sent_log": [
     {
@@ -926,9 +932,33 @@
       "niche": "Fashion & Apparel",
       "city": "New Delhi",
       "subject": "Libas: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-22T08:50:28.643066+00:00",
+      "email": "hello@discoverpilgrim.com",
+      "name": "Pilgrim",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "A creator network for Pilgrim — CollabHive"
+    },
+    {
+      "ts": "2026-09-22T08:53:24.660265+00:00",
+      "email": "info@aachho.com",
+      "name": "Aachho",
+      "niche": "Fashion & Apparel",
+      "city": "Jaipur",
+      "subject": "A creator network for Aachho — CollabHive"
+    },
+    {
+      "ts": "2026-09-22T08:56:33.673903+00:00",
+      "email": "care@vastrado.com",
+      "name": "Vastrado",
+      "niche": "Fashion & Apparel",
+      "city": "Jaipur",
+      "subject": "A creator network for Vastrado — CollabHive"
     }
   ],
-  "last_run": "2026-09-21T09:21:01.159206+00:00",
+  "last_run": "2026-09-22T08:56:33.709116+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
