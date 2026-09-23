@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T08:56:54.307574+00:00",
+  "generated_at": "2026-09-23T09:00:32.586730+00:00",
   "shortlist": [
     {
       "brand": "UrbanBrew",
@@ -83,6 +83,15 @@
           "score": 0.659
         },
         {
+          "name": "@chotapacketbadadhamaakaa",
+          "handle": "@chotapacketbadadhamaakaa",
+          "niche": "Food fitness fun couple content ",
+          "city": "Mumbai",
+          "followers": 100,
+          "rate": null,
+          "score": 0.65
+        },
+        {
           "name": "Sunami devi",
           "handle": "@https://www.instagram.com/t.sunaamii_",
           "niche": "Food fashion fitness travel beauty",
@@ -117,15 +126,6 @@
           "followers": 4000,
           "rate": null,
           "score": 0.265
-        },
-        {
-          "name": "Rishrishirish",
-          "handle": "@rishrishirish",
-          "niche": "food, travel and fashion",
-          "city": "Mumbai",
-          "followers": 158,
-          "rate": null,
-          "score": 0.251
         }
       ]
     },

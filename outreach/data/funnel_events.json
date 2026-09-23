@@ -544,5 +544,12 @@
     "referrer": "",
     "source": "seed",
     "ts": "2026-09-20T09:03:01.725043+00:00"
+  },
+  {
+    "kind": "creator_registered",
+    "email": "manyajha36@gmail.com",
+    "referrer": "",
+    "source": "seed",
+    "ts": "2026-09-23T09:00:44.177395+00:00"
   }
 ]

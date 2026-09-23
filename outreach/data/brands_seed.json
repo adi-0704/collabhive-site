@@ -1572,16 +1572,6 @@
     "has_email": true
   },
   {
-    "name": "Fabnest",
-    "niche": "Fashion & Apparel",
-    "city": "New Delhi",
-    "website": "https://fabnest.in",
-    "email": "",
-    "emails": [],
-    "source": "curated",
-    "has_email": false
-  },
-  {
     "name": "Aachho",
     "niche": "Fashion & Apparel",
     "city": "Jaipur",
@@ -1647,9 +1637,8 @@
     "niche": "Beauty & Cosmetics",
     "city": "New Delhi",
     "website": "https://kamaayurveda.in",
-    "email": "care@kamaayurveda.in\\",
+    "email": "care@kamaayurveda.in",
     "emails": [
-      "care@kamaayurveda.in\\",
       "care@kamaayurveda.in",
       "u003ecare@kamaayurveda.in"
     ],
@@ -1661,18 +1650,27 @@
     "niche": "Beauty & Cosmetics",
     "city": "New Delhi",
     "website": "https://colorbarcosmetics.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "support@colorbarcosmetics.com",
+    "emails": [
+      "support@colorbarcosmetics.com",
+      "cb-collaboration@colorbarcosmetics.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Lakme India",
     "niche": "Beauty & Cosmetics",
     "city": "Mumbai",
     "website": "https://lakmeindia.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "support@lakmeindia.com",
+    "emails": [
+      "support@lakmeindia.com",
+      "grievance.officer-privacy@unilever.com",
+      "lever.care@unilever.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Nykaa Cosmetics",
@@ -1681,7 +1679,8 @@
     "website": "https://nykaafashion.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "MyGlamm",

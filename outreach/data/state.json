@@ -97,7 +97,11 @@
     "care@libas.in",
     "hello@discoverpilgrim.com",
     "info@aachho.com",
-    "care@vastrado.com"
+    "care@vastrado.com",
+    "support@lakmeindia.com",
+    "78winone.com@gmail.com",
+    "care@kamaayurveda.in",
+    "support@colorbarcosmetics.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -196,7 +200,11 @@
     "libas.in",
     "discoverpilgrim.com",
     "aachho.com",
-    "vastrado.com"
+    "vastrado.com",
+    "lakmeindia.com",
+    "fabnest.in",
+    "kamaayurveda.in",
+    "colorbarcosmetics.com"
   ],
   "sent_log": [
     {
@@ -956,9 +964,41 @@
       "niche": "Fashion & Apparel",
       "city": "Jaipur",
       "subject": "A creator network for Vastrado — CollabHive"
+    },
+    {
+      "ts": "2026-09-23T08:51:45.361856+00:00",
+      "email": "support@lakmeindia.com",
+      "name": "Lakme India",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Lakme India: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-23T08:54:32.304390+00:00",
+      "email": "78winone.com@gmail.com",
+      "name": "Fabnest",
+      "niche": "Fashion & Apparel",
+      "city": "New Delhi",
+      "subject": "Fabnest: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-23T08:57:29.005603+00:00",
+      "email": "care@kamaayurveda.in",
+      "name": "Kama Ayurveda",
+      "niche": "Beauty & Cosmetics",
+      "city": "New Delhi",
+      "subject": "Kama Ayurveda: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-23T09:00:20.168026+00:00",
+      "email": "support@colorbarcosmetics.com",
+      "name": "Colorbar",
+      "niche": "Beauty & Cosmetics",
+      "city": "New Delhi",
+      "subject": "A creator network for Colorbar — CollabHive"
     }
   ],
-  "last_run": "2026-09-22T08:56:33.709116+00:00",
+  "last_run": "2026-09-23T09:00:20.182588+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
@@ -981,6 +1021,7 @@
     "help@thelabellife.com",
     "abc@xyz.com",
     "xxx@xxx.xxx",
-    "nbspcontact@kicaactive.com"
+    "nbspcontact@kicaactive.com",
+    "78winone.com@gmail.com"
   ]
 }
