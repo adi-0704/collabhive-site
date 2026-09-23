@@ -591,6 +591,87 @@ class TestReplyHygiene(unittest.TestCase):
         self.assertTrue(_is_reply_to_us("priya@brand.com", idx))
 
 
+class TestReplies(unittest.TestCase):
+    """The reply classifier. These are the exact failures that made 20 support
+    auto-acknowledgements look like 20 hot leads."""
+
+    def test_our_own_subject_is_not_intent(self):
+        """A reply carries OUR subject back. Ours said "collab"."""
+        from src.replies import classify
+        status, _ = classify("Re: Zudio: matched creators, ready to collab",
+                             "Dear Sir/Madam, we will look into this.", {}, "x@y.com")
+        self.assertNotEqual(status, "interested")
+
+    def test_our_own_name_is_not_intent(self):
+        from src.replies import classify
+        status, _ = classify("Re: A creator network for Plum - CollabHive",
+                             "Regards, Team Plum", {}, "hello@plum.com")
+        self.assertNotEqual(status, "interested")
+
+    def test_ticket_acknowledgement_is_automated(self):
+        from src.replies import classify
+        for body in ("Your Ticket ID is 15690927.",
+                     "We have received your query and will get back to you.",
+                     "This is an automated response.",
+                     "How was your support experience today?"):
+            status, _ = classify("Re: hello", body, {}, "support@brand.com")
+            self.assertEqual(status, "automated", body)
+
+    def test_auto_submitted_header_wins(self):
+        from src.replies import classify
+        status, why = classify("Re: hi", "Sure, we are very interested!",
+                               {"auto-submitted": "auto-replied"}, "a@b.com")
+        self.assertEqual(status, "automated")
+        self.assertIn("auto-submitted", why)
+
+    def test_noreply_mailbox_is_automated(self):
+        from src.replies import classify
+        status, _ = classify("Re: hi", "Thanks", {}, "no-reply@brand.com")
+        self.assertEqual(status, "automated")
+
+    def test_substring_does_not_match_word(self):
+        """'yes' used to match 'yesterday'."""
+        from src.replies import classify
+        status, _ = classify("Re: hi", "We shipped it yesterday.", {}, "a@b.com")
+        self.assertNotEqual(status, "interested")
+
+    def test_real_human_interest_still_detected(self):
+        from src.replies import classify
+        status, _ = classify("Re: creators",
+                             "This sounds good - can you share more on pricing?",
+                             {}, "priya@brand.com")
+        self.assertIn(status, ("interested", "negotiating"))
+
+    def test_quoted_history_is_stripped(self):
+        from src.replies import strip_quoted
+        body = chr(10).join([
+            "Not for us.",
+            "",
+            "On Mon, 1 Sep 2026, CollabHive wrote:",
+            "> we have creators ready to collab",
+        ])
+        self.assertNotIn("collab", strip_quoted(body).lower())
+
+    def test_mime_boundaries_never_become_a_reply(self):
+        from src.replies import clean_text
+        raw = (chr(13) + chr(10)).join([
+            "From: a@b.com",
+            "Subject: Re: hi",
+            'Content-Type: multipart/alternative; boundary="X"',
+            "",
+            "--X",
+            "Content-Type: text/plain",
+            "",
+            "Hello there",
+            "--X--",
+            "",
+        ]).encode()
+        subj, body, headers = clean_text(raw)
+        self.assertEqual(subj, "Re: hi")
+        self.assertIn("Hello there", body)
+        self.assertNotIn("--X", body)
+
+
 class TestBuffer(unittest.TestCase):
     def setUp(self):
         self.common = _mkdata(None)
@@ -677,7 +758,8 @@ def _suite():
     suite = unittest.TestSuite()
     for cls in (TestCommon, TestBrands, TestPool, TestSales, TestMailerNoNetwork,
                 TestGrowth, TestProtect, TestOnboarding, TestPublication, TestBuffer,
-                TestOps, TestReplyHygiene, TestEmailCheck, TestNurture, TestBlackboxModes):
+                TestOps, TestReplyHygiene, TestEmailCheck, TestNurture, TestReplies,
+                TestBlackboxModes):
         suite.addTests(loader.loadTestsFromTestCase(cls))
     return suite
 

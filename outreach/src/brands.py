@@ -348,14 +348,27 @@ def select_targets(cfg: dict, state: dict, limit: int) -> tuple[list[dict], dict
     niches = cfg["niches"]["categories"]
     primary = niches[today_idx % len(niches)]["niche"]
     priority = [n.strip().lower() for n in cfg["niches"].get("priority", []) if n.strip()]
+    # Reachability outranks niche. A brand whose only address is a consumer
+    # support desk is worth far less than one with a marketing or named
+    # mailbox: 53 of the first 100 sends went to support desks and produced
+    # zero replies, only ticket numbers. With an 18/day budget, spending a slot
+    # on care@ is spending it on nothing.
+    from .emailcheck import best_mailbox, mailbox_score
+
+    def _reach(b: dict) -> int:
+        addrs = (b.get("emails") or []) + ([b["email"]] if b.get("email") else [])
+        return mailbox_score(best_mailbox(addrs)) if addrs else 0
+
     if priority:
         candidates.sort(key=lambda b: (
+            -_reach(b),
             (b.get("niche") or "").strip().lower() not in priority,
             b.get("niche") != primary,
             b.get("city") or "",
         ))
     else:
-        candidates.sort(key=lambda b: (b.get("niche") != primary, b.get("city") or ""))
+        candidates.sort(key=lambda b: (-_reach(b), b.get("niche") != primary,
+                                       b.get("city") or ""))
 
     selected = candidates[:limit]
     return selected, state

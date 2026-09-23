@@ -277,3 +277,68 @@ def health_summary(cfg: dict) -> dict:
         "mx_cached_domains": len(cache),
         "checked_at": datetime.now(timezone.utc).isoformat(),
     }
+
+
+# --------------------------------------------------------------- targeting
+# Which mailbox at a brand actually reads a partnership pitch.
+#
+# This was the single biggest reason outreach got no replies: 53 of the first
+# 100 sends went to care@ / support@ / help@ / customercare@, which are consumer
+# support desks running Zendesk or Freshdesk. A B2B pitch landing there gets an
+# automatic ticket number and is closed by an agent with no authority to act on
+# it. It never reaches a marketer. Every "hot lead" in the queue was one of
+# those acknowledgements.
+#
+# Higher score = more likely to reach someone who can say yes.
+MAILBOX_TIERS = (
+    # The people whose job this actually is.
+    (100, ("marketing", "partnership", "partnerships", "collab", "collabs",
+           "collaboration", "collaborations", "influencer", "influencers",
+           "pr", "press", "media", "brand", "brands", "bd", "business",
+           "growth", "socialmedia", "social")),
+    # Founder//exec mailboxes at smaller D2C brands - often the decision maker.
+    (80, ("founder", "founders", "ceo", "director", "owner")),
+    # Generic front doors. Not ideal, but usually forwarded to a human.
+    (40, ("hello", "hi", "contact", "connect", "enquiry", "enquiries",
+          "inquiry", "inquiries", "info", "team", "mail", "reach")),
+    # Commerce/ops desks. Wrong audience, low odds.
+    (15, ("sales", "orders", "order", "shop", "store", "billing", "accounts")),
+    # Consumer support. Ticket systems - effectively a dead end for us.
+    (5, ("support", "care", "customercare", "custcare", "help", "helpdesk",
+         "service", "customerservice", "wecare", "returns", "grievance",
+         "cssupport", "feedback", "careers", "jobs", "hr", "legal", "privacy",
+         "unsubscribe", "webmaster")),
+)
+
+# A named human mailbox (priya@, rahul.sharma@) outranks any generic one: it is
+# a person, and people reply. Scored between the founder and generic tiers.
+_PERSONAL_SCORE = 60
+
+
+def mailbox_score(email: str) -> int:
+    """How promising this address is for partnership outreach (0-100)."""
+    local = (email or "").partition("@")[0].lower().strip()
+    if not local:
+        return 0
+    flat = re.sub(r"[._\-+0-9]", "", local)
+    for score, prefixes in MAILBOX_TIERS:
+        for p in prefixes:
+            # Prefix matching only for tokens long enough to be unambiguous.
+            # Short ones must match exactly: "pr" as a prefix scored priya@ as
+            # a PR desk, and "bd"/"hi" would do the same to any name starting
+            # with those letters.
+            if flat == p or (len(p) >= 4 and flat.startswith(p)):
+                return score
+    return _PERSONAL_SCORE
+
+
+def best_mailbox(emails, fallback: str = "") -> str:
+    """Pick the address most likely to reach a decision maker.
+
+    Ties keep the original order, so this only ever re-orders on a real
+    difference in tier - it never shuffles equivalent addresses at random.
+    """
+    candidates = [e.strip() for e in (emails or []) if e and e.strip()]
+    if not candidates:
+        return fallback
+    return max(candidates, key=lambda e: (mailbox_score(e), -candidates.index(e)))

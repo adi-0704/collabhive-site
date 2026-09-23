@@ -21,6 +21,7 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 
 from .common import ROOT, env, load_config, load_json, log, save_json
+from .replies import classify as replies_classify, clean_text
 
 COMMISSION_LABEL = "commission_pct"
 
@@ -49,18 +50,21 @@ def _imap_search(cfg: dict, user: str, password: str, hours: int):
         seen: set[str] = set()
         for num in ids[-60:]:  # cap scan
             try:
-                status, msg_data = conn.fetch(num, "(RFC822.HEADER BODY[TEXT])")
+                # Fetch the WHOLE message, not header + BODY[TEXT] separately.
+                # BODY[TEXT] on a multipart message is the raw payload including
+                # boundary lines, which is how "----==_mimepart_..." ended up
+                # stored as a brand's reply — and it carries no headers, so the
+                # auto-reply headers were invisible to the classifier.
+                status, msg_data = conn.fetch(num, "(RFC822)")
+                if not msg_data or not msg_data[0]:
+                    continue
                 raw = msg_data[0][1]
-                email_lib.message_from_bytes(raw)
-                # fetch header
-                hdr = _fetch_header(conn, num)
-                frm = hdr.get("from", "")
-                subj = hdr.get("subject", "")
-                frm_email = _extract_email(frm)
+                subj, body, headers = clean_text(raw)
+                frm_email = _extract_email(headers.get("from", ""))
                 if frm_email and frm_email.lower() not in seen and frm_email.lower() != user.lower():
                     seen.add(frm_email.lower())
-                    snippet = _fetch_snippet(conn, num)
-                    out.append({"from": frm_email, "subject": subj, "snippet": snippet})
+                    out.append({"from": frm_email, "subject": subj,
+                                "snippet": body[:600], "headers": headers})
             except Exception:
                 continue
         return out
@@ -129,15 +133,14 @@ def _extract_email(value: str) -> str:
 
 
 def classify_reply(text: str, cfg: dict) -> str:
-    low = (text or "").lower()
-    kw = cfg["sales"].get("reply_keywords", {})
-    if any(k in low for k in kw.get("declined", [])):
-        return "declined"
-    if any(k in low for k in kw.get("negotiating", [])):
-        return "negotiating"
-    if any(k in low for k in kw.get("interested", [])):
-        return "interested"
-    return "unknown"
+    """Kept for the existing tests and callers that only have loose text.
+
+    New code should call replies.classify(), which sees the subject, the body
+    and the headers separately and can therefore spot an auto-responder. This
+    wrapper treats whatever it is given as body text.
+    """
+    status, _ = replies_classify("", text or "", {}, "")
+    return "unknown" if status == "neutral" else status
 
 
 def triage_replies(cfg: dict) -> dict:
@@ -165,12 +168,25 @@ def triage_replies(cfg: dict) -> dict:
     contacted = _contacted_index(cfg)
 
     new = 0
-    queued_by_status = {"interested": 0, "negotiating": 0, "declined": 0, "unknown": 0}
+    queued_by_status = {"interested": 0, "negotiating": 0, "declined": 0,
+                        "unknown": 0}
     skipped_unsolicited = 0
+    automated = 0
     for m in msgs:
         em = m["from"].lower()
-        status = classify_reply(m["subject"] + " " + m["snippet"], cfg)
-        if status == "unknown":
+        # Subject is EXCLUDED from the intent check on purpose: a reply carries
+        # our own subject back with "Re:" in front, and ours contained the word
+        # "collab" (as does our name), so every auto-acknowledgement scored as a
+        # hot lead. Intent is judged on what the sender actually typed.
+        status, reason = replies_classify(m["subject"], m.get("snippet", ""),
+                                          m.get("headers") or {}, em)
+        if status == "automated":
+            # A real reply from a human at this brand may still come later, so
+            # the address is NOT added to by_email — only the robot is dropped.
+            automated += 1
+            log(f"  [AUTO] {m['from']} | {reason}")
+            continue
+        if status == "neutral":
             continue
         if em in by_email:
             continue
@@ -183,6 +199,8 @@ def triage_replies(cfg: dict) -> dict:
             "subject": m["subject"],
             "snippet": m["snippet"],
             "status": status,
+            "reason": reason,
+            "human": True,
             "ts": datetime.now(timezone.utc).isoformat(),
         })
         by_email[em] = True
@@ -191,7 +209,8 @@ def triage_replies(cfg: dict) -> dict:
         log(f"  [{status.upper()}] {m['from']} | {m['subject']}")
 
     save_json(closing_file, closing)
-    return {"scanned": len(msgs), "new": new, "triage": "ok", "by_status": queued_by_status,
+    return {"scanned": len(msgs), "new": new, "triage": "ok",
+            "by_status": queued_by_status, "automated": automated,
             "skipped_unsolicited": skipped_unsolicited}
 
 

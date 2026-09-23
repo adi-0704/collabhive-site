@@ -82,6 +82,7 @@ def gather_report(cfg: dict) -> dict:
         "pool_by_niche": dict(pool_by_niche),
         "recent_sends": sent_log[-20:][::-1],
         "sales": _gather_sales(cfg),
+        "mail_health": _gather_mail_health(cfg),
         "verification": _gather_verification(cfg),
         "pipeline_dataset": _gather_pipeline(cfg),
         "onboarding": _gather_onboarding(cfg),
@@ -469,6 +470,80 @@ def main(argv: list[str] | None = None) -> int:
         log(f"Unknown mode: {mode}")
         return 1
     return 0
+
+
+def _gather_mail_health(cfg: dict) -> dict:
+    """The honest state of the mail funnel, for the mobile dashboard.
+
+    Separated from _gather_sales because that reports the closing QUEUE, which
+    only ever contains leads we believe are human. The number that matters when
+    judging whether outreach works is the split: how many machines answered
+    versus how many people did.
+    """
+    from src.common import load_json
+    from src.emailcheck import best_mailbox, mailbox_score
+    from src.replies import _html_to_text
+
+    closing = load_json(ROOT / cfg["sales"]["closing_file"])
+    closing = closing if isinstance(closing, list) else []
+    # The send log lives INSIDE state.json, not at brands.sent_log — that config
+    # key names a file that is never written. Reading it gave sent_total = 0 and
+    # a reply rate of 0% regardless of what had actually happened.
+    state = load_json(ROOT / cfg["brands"]["state_file"])
+    state = state if isinstance(state, dict) else {}
+    sent_log = state.get("sent_log", [])
+    sent_log = sent_log if isinstance(sent_log, list) else []
+    health = load_json(ROOT / cfg["verification"]["health_file"])
+    health = health if isinstance(health, dict) else {}
+
+    human = [c for c in closing if c.get("status") in
+             ("interested", "negotiating", "declined")]
+    hot = [c for c in human if c.get("status") in ("interested", "negotiating")]
+
+    # How reachable is what we are sending to? A support desk is a dead end,
+    # so this is the leading indicator for whether replies are even possible.
+    pool = load_json(ROOT / cfg["brands"]["seed_file"])
+    pool = pool if isinstance(pool, list) else []
+    tiers = {"decision_maker": 0, "named_person": 0, "generic": 0,
+             "support_desk": 0, "no_email": 0}
+    for b in pool:
+        addrs = (b.get("emails") or []) + ([b["email"]] if b.get("email") else [])
+        if not addrs:
+            tiers["no_email"] += 1
+            continue
+        s = mailbox_score(best_mailbox(addrs))
+        if s >= 80:
+            tiers["decision_maker"] += 1
+        elif s >= 60:
+            tiers["named_person"] += 1
+        elif s >= 40:
+            tiers["generic"] += 1
+        else:
+            tiers["support_desk"] += 1
+
+    sent = len(sent_log)
+    return {
+        "sent_total": sent,
+        "delivered_pct": health.get("delivery_rate_pct",
+                                    (cfg.get("_v") or {}).get("delivery_rate_pct", 0)),
+        "bounces": health.get("bounces", 0),
+        "human_replies": len(human),
+        "hot_leads": len(hot),
+        "reply_rate_pct": round(len(human) * 100.0 / sent, 1) if sent else 0.0,
+        "hot_by_status": {s: sum(1 for c in hot if c.get("status") == s)
+                          for s in ("interested", "negotiating")},
+        "recent_human": [
+            {"email": c.get("email"), "status": c.get("status"),
+             "reason": c.get("reason", ""), "ts": c.get("ts", ""),
+             "subject": c.get("subject", "")[:90],
+             # Older entries were stored as raw HTML (and raw MIME) before the
+             # parser was fixed, so flatten here rather than shipping tag soup
+             # to a phone screen.
+             "snippet": " ".join(_html_to_text(c.get("snippet") or "").split())[:240]}
+            for c in human[-8:][::-1]
+        ],
+        "reachability": tiers,
+    }
 
 
 if __name__ == "__main__":

@@ -16,6 +16,7 @@ from email.mime.text import MIMEText
 from pathlib import Path
 
 from .common import ROOT, env, load_config, log, gmail_credentials
+from .emailcheck import best_mailbox
 
 LAST_SUBJECT = {"value": ""}
 
@@ -140,7 +141,13 @@ def send_one(smtp, brand: dict, cfg: dict) -> bool:
     subject_template = _pick_subject(cfg, brand)
     subject, body_txt, body_html = _render(subject_template, txt_tpl, html_tpl, brand, cfg)
 
-    to_addr = brand.get("email") or (brand.get("emails") or [""])[0]
+    # Pick the mailbox most likely to reach someone who can say yes, rather
+    # than whichever address the scraper happened to find first. 53 of the first
+    # 100 sends went to care@/support@/help@ — consumer ticket desks that
+    # auto-acknowledge and close, which is why none of them ever converted.
+    to_addr = best_mailbox(
+        (brand.get("emails") or []) + ([brand["email"]] if brand.get("email") else []),
+        fallback=brand.get("email") or "")
     if not to_addr:
         return False
     smtp_cfg = cfg["smtp"]
