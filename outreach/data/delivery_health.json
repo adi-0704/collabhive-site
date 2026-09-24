@@ -1,17 +1,17 @@
 {
   "ok": true,
-  "checked_at": "2026-09-23T09:01:12.763544+00:00",
+  "checked_at": "2026-09-24T08:50:14.689818+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 100,
-  "confirmed_in_sent": 39,
-  "unconfirmed": 61,
-  "delivery_rate_pct": 39.0,
+  "recorded_sends": 102,
+  "confirmed_in_sent": 56,
+  "unconfirmed": 46,
+  "delivery_rate_pct": 54.9,
   "bounces": 4,
   "bounce_emails": [
-    "xxx@xxx.xxx",
-    "nbspcontact@kicaactive.com",
     "abc@xyz.com",
-    "78winone.com@gmail.com"
+    "nbspcontact@kicaactive.com",
+    "78winone.com@gmail.com",
+    "xxx@xxx.xxx"
   ],
   "unconfirmed_emails": [
     "grievance@snitch.com",
@@ -23,17 +23,17 @@
     "files@quinn-live.bundle.js",
     "getcoffee@bluetokaicoffee.com",
     "mail@slurrpfarm.com",
-    "customercare@houseofindya.com",
-    "support@earthrhythm.com",
     "info@stagheaddesigns.com",
     "care@dotandkey.com",
-    "tgb@seventurns.in",
     "careers@bewakoof.com",
-    "hello@plumgoodness.com",
     "help@beminimalist.co",
     "hello@sugarcosmetics.com",
     "info@asaya.in",
-    "you@indewild.com"
+    "dokterbacklink@gmail.com",
+    "help@chumbak.in",
+    "info@anouk.in",
+    "back-in-stock@notifyboost.net",
+    "orders@bunai.com"
   ],
   "flagged": true
 }

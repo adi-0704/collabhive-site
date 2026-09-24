@@ -1689,25 +1689,33 @@
     "website": "https://myglamm.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Swiss Beauty",
     "niche": "Beauty & Cosmetics",
     "city": "New Delhi",
     "website": "https://swissbeauty.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "support@swissbeauty.in",
+    "emails": [
+      "support@swissbeauty.in",
+      "support@gist-apps.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "WOW Skin Science",
     "niche": "Beauty & Cosmetics",
     "city": "Bengaluru",
     "website": "https://buywow.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "support@buywow.in",
+    "emails": [
+      "support@buywow.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "mCaffeine",
@@ -2047,6 +2055,15 @@
     "niche": "Fashion & Apparel",
     "city": "Bengaluru",
     "website": "https://houseofindya.com",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Fabnest",
+    "niche": "Fashion & Apparel",
+    "city": "New Delhi",
+    "website": "https://fabnest.in",
     "email": "",
     "emails": [],
     "source": "curated"

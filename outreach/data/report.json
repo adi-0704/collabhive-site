@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T17:37:50.283274+00:00",
+  "generated_at": "2026-09-24T08:50:14.692283+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -10,19 +10,19 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 101,
-    "unique_brands_emailed": 100,
-    "brands_in_pool": 187,
-    "brands_with_email": 88,
+    "total_sent": 103,
+    "unique_brands_emailed": 102,
+    "brands_in_pool": 188,
+    "brands_with_email": 90,
     "remaining_candidates": 0,
-    "sent_today": 4,
-    "sent_week": 32,
-    "day_streak": 32,
+    "sent_today": 6,
+    "sent_week": 34,
+    "day_streak": 34,
     "daily_budget": 18
   },
   "by_niche": {
     "Fashion & Apparel": 40,
-    "Beauty & Cosmetics": 25,
+    "Beauty & Cosmetics": 27,
     "Food & Beverage": 11,
     "Fitness & Wellness": 6,
     "Home & Decor": 11,
@@ -30,7 +30,7 @@
     "Tech & Startups": 7
   },
   "by_city": {
-    "Bengaluru": 15,
+    "Bengaluru": 16,
     "Coimbatore": 2,
     "Delhi": 11,
     "Gurugram": 22,
@@ -42,12 +42,12 @@
     "Jodhpur": 1,
     "Chandigarh": 1,
     "Ahmedabad": 2,
-    "New Delhi": 9,
+    "New Delhi": 10,
     "Pune": 1
   },
   "pool_by_niche": {
     "Food & Beverage": 29,
-    "Fashion & Apparel": 54,
+    "Fashion & Apparel": 55,
     "Beauty & Cosmetics": 51,
     "Fitness & Wellness": 23,
     "Home & Decor": 20,
@@ -55,6 +55,22 @@
     "Tech & Startups": 6
   },
   "recent_sends": [
+    {
+      "ts": "2026-09-24T08:48:44.794843+00:00",
+      "email": "support@swissbeauty.in",
+      "name": "Swiss Beauty",
+      "niche": "Beauty & Cosmetics",
+      "city": "New Delhi",
+      "subject": "Swiss Beauty: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-24T08:45:51.846611+00:00",
+      "email": "support@buywow.in",
+      "name": "WOW Skin Science",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bengaluru",
+      "subject": "A creator network for WOW Skin Science — CollabHive"
+    },
     {
       "ts": "2026-09-23T09:00:20.168026+00:00",
       "email": "support@colorbarcosmetics.com",
@@ -198,30 +214,23 @@
       "niche": "Fashion & Apparel",
       "city": "Hyderabad",
       "subject": "Creators for Bonkers Corner from CollabHive"
-    },
-    {
-      "ts": "2026-09-18T08:46:48.788762+00:00",
-      "email": "care@true-elements.com",
-      "name": "True Elements",
-      "niche": "Food & Beverage",
-      "city": "Pune",
-      "subject": "Creators for True Elements from CollabHive"
-    },
-    {
-      "ts": "2026-09-18T08:44:55.069664+00:00",
-      "email": "info@thedecorkart.com",
-      "name": "The Decor Kart",
-      "niche": "Home & Decor",
-      "city": "Mumbai",
-      "subject": "A creator network for The Decor Kart — CollabHive"
     }
   ],
   "sales": {
-    "closing_count": 1,
+    "closing_count": 2,
     "closing_by_status": {
-      "negotiating": 1
+      "negotiating": 2
     },
     "recent_closing": [
+      {
+        "email": "care@kamaayurveda.in",
+        "subject": "Re: 164729",
+        "snippet": "Namaste, Thank you for reaching out to Kama Ayurveda and expressing interest in collaborating with us! To ensure your proposal is reviewed appropriately, please send your details to pr@kamaayurveda.com. If there is a fit with our brand, a member of our team will get in touch with you. Warm Regards, Kama Ayurveda \n\n \n\n On\n\n Wed, 23 Sep at 2:27 PM\n\n , CollabHive <collabhive.in@gmail.com> wrote:\n\n \n\n \n\n \n\n \n\n \n\n CollabHive\n\n Influencer Marketing Agency · India \n\n \n\n Hi Kama, \n\n we know Beauty & Cosmetics creators are a great fit especially in New Delhi. We're CollabHive, an influencer marketing a",
+        "status": "negotiating",
+        "reason": "proposal",
+        "human": true,
+        "ts": "2026-09-24T08:48:53.993155+00:00"
+      },
       {
         "email": "hello@sugarcosmetics.com",
         "subject": "A creator network for SUGAR Cosmetics =?UTF-8?B?4oCU?= CollabHive",
@@ -361,21 +370,29 @@
         0.144
       ]
     ],
-    "replied_count": 1,
-    "reply_rate_pct": 1.0
+    "replied_count": 2,
+    "reply_rate_pct": 2.0
   },
   "mail_health": {
-    "sent_total": 101,
-    "delivered_pct": 39.0,
+    "sent_total": 103,
+    "delivered_pct": 54.9,
     "bounces": 4,
-    "human_replies": 1,
-    "hot_leads": 1,
-    "reply_rate_pct": 1.0,
+    "human_replies": 2,
+    "hot_leads": 2,
+    "reply_rate_pct": 1.9,
     "hot_by_status": {
       "interested": 0,
-      "negotiating": 1
+      "negotiating": 2
     },
     "recent_human": [
+      {
+        "email": "care@kamaayurveda.in",
+        "status": "negotiating",
+        "reason": "proposal",
+        "ts": "2026-09-24T08:48:53.993155+00:00",
+        "subject": "Re: 164729",
+        "snippet": "Namaste, Thank you for reaching out to Kama Ayurveda and expressing interest in collaborating with us! To ensure your proposal is reviewed appropriately, please send your details to pr@kamaayurveda.com. If there is a fit with our brand, a m"
+      },
       {
         "email": "hello@sugarcosmetics.com",
         "status": "negotiating",
@@ -389,24 +406,24 @@
       "decision_maker": 7,
       "named_person": 28,
       "generic": 20,
-      "support_desk": 33,
-      "no_email": 99
+      "support_desk": 35,
+      "no_email": 98
     }
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-09-23T09:01:12.763544+00:00",
+    "checked_at": "2026-09-24T08:50:14.689818+00:00",
     "lookback_hours": 96,
-    "recorded_sends": 100,
-    "confirmed_in_sent": 39,
-    "unconfirmed": 61,
-    "delivery_rate_pct": 39.0,
+    "recorded_sends": 102,
+    "confirmed_in_sent": 56,
+    "unconfirmed": 46,
+    "delivery_rate_pct": 54.9,
     "bounces": 4,
     "bounce_emails": [
-      "xxx@xxx.xxx",
-      "nbspcontact@kicaactive.com",
       "abc@xyz.com",
-      "78winone.com@gmail.com"
+      "nbspcontact@kicaactive.com",
+      "78winone.com@gmail.com",
+      "xxx@xxx.xxx"
     ],
     "unconfirmed_emails": [
       "grievance@snitch.com",
@@ -418,17 +435,17 @@
       "files@quinn-live.bundle.js",
       "getcoffee@bluetokaicoffee.com",
       "mail@slurrpfarm.com",
-      "customercare@houseofindya.com",
-      "support@earthrhythm.com",
       "info@stagheaddesigns.com",
       "care@dotandkey.com",
-      "tgb@seventurns.in",
       "careers@bewakoof.com",
-      "hello@plumgoodness.com",
       "help@beminimalist.co",
       "hello@sugarcosmetics.com",
       "info@asaya.in",
-      "you@indewild.com"
+      "dokterbacklink@gmail.com",
+      "help@chumbak.in",
+      "info@anouk.in",
+      "back-in-stock@notifyboost.net",
+      "orders@bunai.com"
     ],
     "flagged": true
   },
@@ -503,7 +520,7 @@
       "campaigns_run": 0,
       "alltime_creators": 74,
       "alltime_briefs": 2,
-      "generated_at": "2026-09-23T17:37:50.356214+00:00"
+      "generated_at": "2026-09-24T08:50:14.695332+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -972,5 +989,5 @@
     }
   },
   "dnc_count": 1,
-  "last_run": "2026-09-23T09:00:20.182588+00:00"
+  "last_run": "2026-09-24T08:48:44.810411+00:00"
 }
