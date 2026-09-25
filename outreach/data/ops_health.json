@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T18:37:18.016244+00:00",
+  "generated_at": "2026-09-25T18:49:56.977138+00:00",
   "status": "fail",
   "checks": [
     {
@@ -17,7 +17,7 @@
     {
       "name": "prospect_pool",
       "status": "warn",
-      "detail": "Only 2 contactable brand(s) left (threshold 10).",
+      "detail": "Only 1 contactable brand(s) left (threshold 10).",
       "fix": "Top up the seed pool this week or outreach stops."
     },
     {
@@ -35,14 +35,14 @@
     {
       "name": "deliverability",
       "status": "fail",
-      "detail": "Delivery flagged: 54.9% delivered, 4 bounce(s).",
+      "detail": "Delivery flagged: 55.8% delivered, 4 bounce(s).",
       "fix": "Pause sending and clean the pool before Gmail throttles the account."
     }
   ],
   "metrics": {
     "sent_24h": 2,
-    "sent_7d": 27,
-    "sent_total": 103,
+    "sent_7d": 22,
+    "sent_total": 105,
     "replies_total": 2,
     "interested": 0,
     "negotiating": 2,
@@ -52,6 +52,6 @@
     "creators": 0,
     "social_drafts": 51,
     "seo_pages": 19,
-    "reply_rate_pct": 2.0
+    "reply_rate_pct": 1.9
   }
 }
