@@ -216,6 +216,21 @@ fetch('../data/report.json', {cache:'no-store'})
           is closed by someone who cannot approve a campaign. Red is the share
           of the pool that cannot realistically convert.</div>`;
 
+    // ---- brands that handed us a better address
+    const rd = mh.redirects || [];
+    if(rd.length){
+      h += `<h3>They told us where to write</h3>`;
+      rd.forEach(r => {
+        h += `<div class="row">
+                <div class="who">${esc(r.to)}</div>
+                <div class="txt">replied from ${esc(r.from)} — this is the
+                mailbox that actually handles partnerships.</div>
+              </div>`;
+      });
+      h += `<div class="note">Highest-yield action on this screen: these brands
+            asked to be pitched at that address.</div>`;
+    }
+
     // ---- real replies
     h += `<h3>Human replies</h3>`;
     const rows = mh.recent_human || [];

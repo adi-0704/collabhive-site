@@ -266,3 +266,36 @@ def classify(subject: str, body: str, headers: dict | None = None,
         if _has_word(low, k):
             return "interested", k
     return "neutral", "no intent signal"
+
+
+# ------------------------------------------------------------ redirects
+# "Please send your proposal to pr@brand.com" is the single most valuable thing
+# a reply can contain: the brand has told us which mailbox actually handles
+# partnerships. Kama Ayurveda did exactly this and the address was sitting
+# unread in the closing queue, because nothing looked for it.
+_REDIRECT_CUE = re.compile(
+    r"(send|share|forward|write|mail|email|reach|contact|revert|direct)\b[^.!?\n]{0,80}?"
+    r"([A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,24})", re.I)
+_ANY_ADDR = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,24}")
+
+
+def find_redirect(body: str, sender: str = "", ours: str = "") -> str:
+    """A better address the brand pointed us at, or "".
+
+    Only addresses offered in an instruction ("send it to...") count. A bare
+    address in a signature is the same desk that just deflected us, and mailing
+    it again achieves nothing.
+    """
+    our_domain = (ours or "").partition("@")[2].lower()
+    sender_local = (sender or "").partition("@")[0].lower()
+    best = ""
+    for m in _REDIRECT_CUE.finditer(body or ""):
+        addr = m.group(2).strip().lower()
+        dom = addr.partition("@")[2]
+        if our_domain and dom == our_domain:
+            continue                       # that is us
+        if addr.partition("@")[0] == sender_local:
+            continue                       # same mailbox, reworded
+        best = addr
+        break
+    return best

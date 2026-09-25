@@ -51,7 +51,7 @@ REEL_BRAND = [
 
     ("number", "3 posts beats 9 creators",
      "Repetition from one trusted voice changes behaviour.",
-     "Nobody buys on first exposure. They buy when something has been in their feed enough times to feel normal.\n\nNine strangers once each is nine adverts. One person three times is familiarity.",
+     "Purchases follow familiarity, and familiarity is built by seeing the same face say the same thing more than once.\n\nNine strangers once each is nine adverts. One person three times is familiarity.",
      "Depth or spread?"),
 
     ("quick", "Ask for the raw footage",
@@ -149,7 +149,7 @@ REEL_CREATOR = [
 
     ("number", "50% upfront. Standard",
      "Every other freelance industry does it.",
-     "Half before you shoot, half on delivery. Brands that work with creators properly will not blink.\n\nThe ones that argue are telling you something.",
+     "Take half at booking and the rest when you hand over the files. Any brand that works with creators regularly expects it.\n\nThe ones that argue are telling you something.",
      "Do you take a deposit?"),
 
     ("number", "10 hooks before you shoot",
@@ -169,12 +169,12 @@ REEL_CREATOR = [
 
     ("contrarian", "Small accounts get paid",
      "Brands are actively hunting 5-15k creators.",
-     "Micro creators convert better and cost less, so the smartest brands built their strategy around them.\n\nIf you have been waiting to hit a number, you have been leaving money behind.",
+     "Smaller accounts turn attention into sales more reliably, which is why serious brands now plan around them rather than around reach.\n\nIf you have been waiting to hit a number, you have been leaving money behind.",
      "How big were you at your first paid collab?"),
 
     ("contrarian", "Posting more will not fix it",
      "One post people send to a friend beats five nobody saves.",
-     "The algorithm rewards sends and saves far above likes, because those are the only signals habit cannot fake.\n\nDifferent question, different account.",
+     "Sends and saves outrank likes by a wide margin, because a thumb tapping out of habit cannot fake either of them.\n\nDifferent question, different account.",
      "Most-shared post you have made?"),
 
     ("money", "The fee is the easy part",
@@ -189,7 +189,7 @@ REEL_CREATOR = [
 
     ("tactic", "Answer questions under bigger creators' posts",
      "Their comments are full of questions nobody answers.",
-     "A genuinely useful reply gets seen by everyone reading that thread.\n\nDo it consistently and people follow you from it.",
+     "One reply that actually answers the question is read by everybody who scrolls that far.\n\nDo it consistently and people follow you from it.",
      "Have you tried this?"),
 
     ("tactic", "Pin the answer everyone asks",

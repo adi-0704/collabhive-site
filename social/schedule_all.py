@@ -48,6 +48,31 @@ def log(msg: str) -> None:
         print(str(msg).encode(enc, "replace").decode(enc, "replace"), flush=True)
 
 
+def _gql_posts(cfg: dict, q: str, what: str) -> dict:
+    """Run a posts query and insist on a real payload, retrying transient blips.
+
+    Buffer intermittently drops the connection ("An existing connection was
+    forcibly closed"), which surfaces as a response carrying neither `errors`
+    nor `data.posts`. Treating that as "nothing is scheduled" is what published
+    the same reel twice, so it is now an error — but a single blip must not fail
+    the whole daily top-up either, hence the retries before giving up.
+    """
+    last = ""
+    for attempt in range(4):
+        r = _gql(cfg, q)
+        if isinstance(r, dict) and r.get("errors"):
+            raise RuntimeError("could not read %s: %s"
+                               % (what, r["errors"][0].get("message", "")[:120]))
+        data = (r or {}).get("data") or {}
+        if data.get("posts") is not None:
+            return data["posts"]
+        last = str(r)[:120]
+        time.sleep(1.5 * (attempt + 1))
+    raise RuntimeError("Buffer returned no posts payload for %s after 4 tries "
+                       "(%s) — refusing to schedule against an unverified read"
+                       % (what, last))
+
+
 def existing_posts(cfg: dict, channel_id: str) -> set[str]:
     """Text of every post on this channel, whatever its status.
 
@@ -73,11 +98,7 @@ def existing_posts(cfg: dict, channel_id: str) -> set[str]:
              'status: [scheduled, sent, sending, draft, needs_approval, error] } }) '
              '{ pageInfo { hasNextPage endCursor } edges { node { id text } } } }'
              % (cursor, org, channel_id))
-        r = _gql(cfg, q)
-        if isinstance(r, dict) and r.get("errors"):
-            raise RuntimeError("could not read existing Buffer posts: %s"
-                               % r["errors"][0].get("message", "")[:120])
-        page = ((r.get("data") or {}).get("posts") or {})
+        page = _gql_posts(cfg, q, "existing posts")
         texts |= {e["node"].get("text", "") for e in (page.get("edges") or [])}
         info = page.get("pageInfo") or {}
         if not info.get("hasNextPage"):
@@ -113,6 +134,44 @@ def stream_count(slots: list[str], hh: int, mm: int) -> int:
     return sum(1 for d in slots if d[11:16] == target)
 
 
+def stream_dates(cfg: dict, channel_id: str, hh: int, mm: int) -> set[str]:
+    """Dates that already hold a post in this stream, in ANY status.
+
+    The belt to the dedupe's braces, and the stronger of the two. Text matching
+    depends on a healthy API response; if that read comes back empty the dedupe
+    silently passes everything, which is how the same reel published twice on
+    24 Sep. A slot is one post per stream per day by definition, so refusing a
+    date that is already taken cannot be defeated by a bad response — the worst
+    case is that a real gap goes unfilled for a day.
+
+    `sent` matters as much as `scheduled`: yesterday's published post must still
+    block its own date, or a re-run re-posts it.
+    """
+    org = cfg.get("buffer", {}).get("organization_id", "")
+    target = utc_hhmm(hh, mm)
+    taken: set[str] = set()
+    after = ""
+    for _ in range(20):
+        cursor = ', after: "%s"' % after if after else ""
+        q = ('query { posts(first: 50%s, input: { organizationId: "%s", '
+             'filter: { channelIds: ["%s"], '
+             'status: [scheduled, sent, sending, error] } }) '
+             '{ pageInfo { hasNextPage endCursor } edges { node { dueAt } } } }'
+             % (cursor, org, channel_id))
+        page = _gql_posts(cfg, q, "stream slot map")
+        for e in (page.get("edges") or []):
+            due = e["node"].get("dueAt") or ""
+            if due[11:16] == target:
+                taken.add(due[:10])
+        info = page.get("pageInfo") or {}
+        if not info.get("hasNextPage"):
+            break
+        after = info.get("endCursor") or ""
+        if not after:
+            break
+    return taken
+
+
 def scheduled_slots(cfg: dict, channel_id: str) -> list[str]:
     """dueAt of every scheduled post on this channel, one entry per post.
 
@@ -129,10 +188,7 @@ def scheduled_slots(cfg: dict, channel_id: str) -> list[str]:
              'filter: { channelIds: ["%s"], status: [scheduled] } }) '
              '{ pageInfo { hasNextPage endCursor } edges { node { dueAt } } } }'
              % (cursor, org, channel_id))
-        r = _gql(cfg, q)
-        if isinstance(r, dict) and r.get("errors"):
-            break
-        page = ((r.get("data") or {}).get("posts") or {})
+        page = _gql_posts(cfg, q, "scheduled slots")
         for e in (page.get("edges") or []):
             due = e["node"].get("dueAt") or ""
             if due:
@@ -215,9 +271,10 @@ def main() -> int:
     # reel stream: the gap-fill below treats a covered day as done, so counting
     # any post meant a day with only a reel looked complete and never got its
     # static post. Both streams are supposed to run every day.
-    target = utc_hhmm(hh, mm)
-    scheduled_dates = {a: {d[:10] for d in v if d[11:16] == target}
-                       for a, v in slots.items()}
+    # Any status, not just `scheduled`: a post that already went out must keep
+    # blocking its own date, or a re-run schedules it again.
+    scheduled_dates = {a: stream_dates(cfg, cid, hh, mm)
+                       for a, cid in channels.items() if cid}
 
     # Slots left before THIS stream hits its half of the shared cap. Counted by
     # publish time, so reels sitting on the same channel do not make the static

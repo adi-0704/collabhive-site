@@ -167,6 +167,16 @@ def verify(entries: list[dict], days: int = 0) -> None:
                 raise SystemExit(
                     f"FAIL: reel body also appears in the static bank "
                     f"(day {e['day']}, {audience}).")
+            # Whole-body equality is not enough. The scheduler dedupes on the
+            # first 80 characters of the body, so a reel whose opening line sits
+            # INSIDE a longer static post is a duplicate as far as the reader
+            # and the scheduler are concerned - it silently lost a reel slot on
+            # 27 Sep. Catch the overlap here instead.
+            opener = e["caption_body"].splitlines()[0][:80].strip().lower()
+            if opener and any(opener in b for b in static_bodies):
+                raise SystemExit(
+                    f"FAIL: reel opening line already appears inside a static "
+                    f"post ({audience} day {e['day']}): {opener[:70]}")
 
         for i in range(1, len(rows)):
             if rows[i]["style"] == rows[i - 1]["style"]:

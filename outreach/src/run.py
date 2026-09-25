@@ -482,7 +482,7 @@ def _gather_mail_health(cfg: dict) -> dict:
     """
     from src.common import load_json
     from src.emailcheck import best_mailbox, mailbox_score
-    from src.replies import _html_to_text
+    from src.replies import _html_to_text, find_redirect
 
     closing = load_json(ROOT / cfg["sales"]["closing_file"])
     closing = closing if isinstance(closing, list) else []
@@ -543,6 +543,17 @@ def _gather_mail_health(cfg: dict) -> dict:
             for c in human[-8:][::-1]
         ],
         "reachability": tiers,
+        # Brands that replied with a better address to write to. Re-pitching
+        # these is the highest-yield action available, because they asked.
+        "redirects": [
+            {"from": c.get("email"), "to": r}
+            for c in human
+            for r in [c.get("redirect")
+                      or find_redirect(_html_to_text(c.get("snippet") or ""),
+                                       c.get("email", ""),
+                                       cfg.get("smtp", {}).get("username", ""))]
+            if r
+        ],
     }
 
 

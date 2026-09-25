@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T09:11:50.319780+00:00",
+  "generated_at": "2026-09-25T15:04:59.789056+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -408,7 +408,13 @@
       "generic": 20,
       "support_desk": 35,
       "no_email": 97
-    }
+    },
+    "redirects": [
+      {
+        "from": "care@kamaayurveda.in",
+        "to": "pr@kamaayurveda.com"
+      }
+    ]
   },
   "verification": {
     "ok": true,
@@ -520,7 +526,7 @@
       "campaigns_run": 0,
       "alltime_creators": 74,
       "alltime_briefs": 2,
-      "generated_at": "2026-09-25T09:11:50.323745+00:00"
+      "generated_at": "2026-09-25T15:05:00.091607+00:00"
     },
     "referrals": {
       "total_referrals": 1,

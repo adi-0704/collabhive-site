@@ -21,7 +21,8 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 
 from .common import ROOT, env, load_config, load_json, log, save_json
-from .replies import classify as replies_classify, clean_text
+from .replies import (classify as replies_classify, clean_text,
+                      find_redirect)
 
 COMMISSION_LABEL = "commission_pct"
 
@@ -201,6 +202,9 @@ def triage_replies(cfg: dict) -> dict:
             "status": status,
             "reason": reason,
             "human": True,
+            # A brand naming the mailbox that handles partnerships is the most
+            # actionable thing an outreach reply can contain.
+            "redirect": find_redirect(m.get("snippet", ""), em, user),
             "ts": datetime.now(timezone.utc).isoformat(),
         })
         by_email[em] = True

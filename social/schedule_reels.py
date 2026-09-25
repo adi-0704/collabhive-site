@@ -44,7 +44,7 @@ from src.common import load_config                     # noqa: E402
 
 sys.path.insert(0, str(HERE))
 from schedule_all import (existing_posts, scheduled_slots,   # noqa: E402
-                          stream_count)
+                          stream_count, stream_dates)
 
 CAL = HERE / "calendar" / "reels_calendar.json"
 BASE = "https://adi-0704.github.io/collabhive-site/social/calendar/"
@@ -128,6 +128,10 @@ def main() -> int:
 
     seen = {a: existing_posts(cfg, cid) for a, cid in channels.items() if cid}
     slots = {a: scheduled_slots(cfg, cid) for a, cid in channels.items() if cid}
+    # Dates that already hold a reel, whatever its status. This is what stops a
+    # duplicate when the text dedupe cannot be trusted.
+    taken = {a: stream_dates(cfg, cid, hh, mm)
+             for a, cid in channels.items() if cid}
     budget = {a: max(0, args.max_queue - stream_count(v, hh, mm))
               for a, v in slots.items()}
     for aud in sorted(slots):
@@ -146,6 +150,9 @@ def main() -> int:
         if budget.get(aud, 0) <= 0:
             skipped += 1
             continue
+        if due.date().isoformat() in taken.get(aud, set()):
+            skipped += 1
+            continue
         marker = e["caption_body"].splitlines()[0][:80]
         if any(marker in t for t in seen.get(aud, ())):
             skipped += 1
@@ -161,6 +168,7 @@ def main() -> int:
                 raise RuntimeError(res.get("message", "unknown"))
             ok += 1
             budget[aud] -= 1
+            taken.setdefault(aud, set()).add(due.date().isoformat())
             log(f"  scheduled [{aud:<7}] {due:%d %b %H:%M} IST  "
                 f"{e['headline'][:44]}")
         except Exception as exc:

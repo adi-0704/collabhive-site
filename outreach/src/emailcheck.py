@@ -81,6 +81,11 @@ def syntax_ok(email: str) -> bool:
     local, _, domain = email.partition("@")
     if ".." in email or email.startswith(".") or local.endswith("."):
         return False
+    # A local part that is itself a hostname is scraped junk, not a mailbox:
+    # "78winone.com@gmail.com" passed every other check, was mailed, and
+    # bounced. Real local parts do not end in a TLD.
+    if re.search(r"\.(com|net|org|in|co|io|shop|store|info|biz)$", local):
+        return False
     # "c@y.com" / "b@z.com" — real brands do not have one-character domains.
     root = domain.rsplit(".", 1)[0].split(".")[-1]
     if len(root) < 3:
