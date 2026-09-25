@@ -103,7 +103,9 @@
     "care@kamaayurveda.in",
     "support@colorbarcosmetics.com",
     "support@buywow.in",
-    "support@swissbeauty.in"
+    "support@swissbeauty.in",
+    "woot@mcaffeine.com",
+    "support@fixderma.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -208,7 +210,9 @@
     "kamaayurveda.in",
     "colorbarcosmetics.com",
     "buywow.in",
-    "swissbeauty.in"
+    "swissbeauty.in",
+    "mcaffeine.com",
+    "fixderma.com"
   ],
   "sent_log": [
     {
@@ -1016,9 +1020,25 @@
       "niche": "Beauty & Cosmetics",
       "city": "New Delhi",
       "subject": "Swiss Beauty: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-25T09:06:09.892473+00:00",
+      "email": "woot@mcaffeine.com",
+      "name": "mCaffeine",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Helping mCaffeine grow with creators"
+    },
+    {
+      "ts": "2026-09-25T09:08:21.457841+00:00",
+      "email": "support@fixderma.com",
+      "name": "Fixderma",
+      "niche": "Beauty & Cosmetics",
+      "city": "New Delhi",
+      "subject": "A creator network for Fixderma — CollabHive"
     }
   ],
-  "last_run": "2026-09-24T08:48:44.810411+00:00",
+  "last_run": "2026-09-25T09:08:21.474388+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",

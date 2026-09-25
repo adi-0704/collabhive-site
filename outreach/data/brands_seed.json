@@ -838,12 +838,10 @@
     "niche": "Fitness & Wellness",
     "city": "Pune",
     "website": "https://myfitness.in",
-    "email": "care@myfitness.co.in",
-    "emails": [
-      "care@myfitness.co.in"
-    ],
+    "email": "",
+    "emails": [],
     "source": "seed",
-    "has_email": true
+    "has_email": false
   },
   {
     "name": "Muse Wellness",
@@ -1722,9 +1720,12 @@
     "niche": "Beauty & Cosmetics",
     "city": "Mumbai",
     "website": "https://mcaffeine.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "woot@mcaffeine.com",
+    "emails": [
+      "woot@mcaffeine.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Aminu",
@@ -1733,16 +1734,20 @@
     "website": "https://aminu.in",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Fixderma",
     "niche": "Beauty & Cosmetics",
     "city": "New Delhi",
     "website": "https://fixderma.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "support@fixderma.com",
+    "emails": [
+      "support@fixderma.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Re equil",

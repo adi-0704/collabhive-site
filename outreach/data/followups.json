@@ -210,73 +210,73 @@
     "name": "GetMyMettle"
   },
   "customer.support@justherbs.in": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Just Herbs"
   },
   "support@starapps.studio": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Nappa Dori"
   },
   "team@doodlage.in": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Doodlage"
   },
   "support@gist-apps.com": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Biotique"
   },
   "customercare@bibaindia.com": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Biba"
   },
   "care@clovia.com": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Clovia"
   },
   "info@suta.in": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Suta"
   },
   "support@boldcare.in": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Bold Care"
   },
   "grievance@duroflexworld.com": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Duroflex"
   },
   "info@springwel.com": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Springwel"
   },
   "support@thewhitewillow.in": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "The White Willow"
   },
   "prakash@okhai.org": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Okhai"
   },
   "care@nicobar.com": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Nicobar"
   },
   "care@happilo.com": {
-    "count": 1,
-    "last_sent": "2026-09-20T09:02:06.742305+00:00",
+    "count": 2,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Happilo"
   },
   "wecare@farmley.com": {
@@ -448,5 +448,30 @@
     "count": 1,
     "last_sent": "2026-09-24T08:48:55.008710+00:00",
     "name": "Kica Active"
+  },
+  "myanouk@anoukfashion.com": {
+    "count": 1,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
+    "name": "Anouk"
+  },
+  "care@libas.in": {
+    "count": 1,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
+    "name": "Libas"
+  },
+  "hello@discoverpilgrim.com": {
+    "count": 1,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
+    "name": "Pilgrim"
+  },
+  "info@aachho.com": {
+    "count": 1,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
+    "name": "Aachho"
+  },
+  "care@vastrado.com": {
+    "count": 1,
+    "last_sent": "2026-09-25T09:10:46.239990+00:00",
+    "name": "Vastrado"
   }
 }

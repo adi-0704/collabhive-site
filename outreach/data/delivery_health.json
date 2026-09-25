@@ -1,16 +1,16 @@
 {
   "ok": true,
-  "checked_at": "2026-09-24T08:50:14.689818+00:00",
+  "checked_at": "2026-09-25T09:11:50.317151+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 102,
-  "confirmed_in_sent": 56,
+  "recorded_sends": 104,
+  "confirmed_in_sent": 58,
   "unconfirmed": 46,
-  "delivery_rate_pct": 54.9,
+  "delivery_rate_pct": 55.8,
   "bounces": 4,
   "bounce_emails": [
+    "78winone.com@gmail.com",
     "abc@xyz.com",
     "nbspcontact@kicaactive.com",
-    "78winone.com@gmail.com",
     "xxx@xxx.xxx"
   ],
   "unconfirmed_emails": [
