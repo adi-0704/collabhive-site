@@ -1750,22 +1750,16 @@
     "has_email": true
   },
   {
-    "name": "Re equil",
-    "niche": "Beauty & Cosmetics",
-    "city": "Chandigarh",
-    "website": "https://reequil.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
-  },
-  {
     "name": "Conscious Chemist",
     "niche": "Beauty & Cosmetics",
     "city": "New Delhi",
     "website": "https://consciouschemist.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "hello@consciouschemist.com",
+    "emails": [
+      "hello@consciouschemist.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Klm Korean",
@@ -1774,7 +1768,8 @@
     "website": "https://klmfashionmall.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Arata",

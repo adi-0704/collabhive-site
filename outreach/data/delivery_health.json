@@ -1,17 +1,18 @@
 {
   "ok": true,
-  "checked_at": "2026-09-25T09:11:50.317151+00:00",
+  "checked_at": "2026-09-26T08:55:40.381504+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 104,
-  "confirmed_in_sent": 58,
+  "recorded_sends": 106,
+  "confirmed_in_sent": 60,
   "unconfirmed": 46,
-  "delivery_rate_pct": 55.8,
-  "bounces": 4,
+  "delivery_rate_pct": 56.6,
+  "bounces": 5,
   "bounce_emails": [
     "78winone.com@gmail.com",
-    "abc@xyz.com",
     "nbspcontact@kicaactive.com",
-    "xxx@xxx.xxx"
+    "xxx@xxx.xxx",
+    "help@reequil.com",
+    "abc@xyz.com"
   ],
   "unconfirmed_emails": [
     "grievance@snitch.com",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T15:04:59.789056+00:00",
+  "generated_at": "2026-09-26T08:55:40.387860+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -10,19 +10,19 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 105,
-    "unique_brands_emailed": 104,
+    "total_sent": 107,
+    "unique_brands_emailed": 106,
     "brands_in_pool": 188,
-    "brands_with_email": 91,
+    "brands_with_email": 93,
     "remaining_candidates": 0,
-    "sent_today": 2,
-    "sent_week": 22,
-    "day_streak": 22,
+    "sent_today": 4,
+    "sent_week": 20,
+    "day_streak": 20,
     "daily_budget": 18
   },
   "by_niche": {
     "Fashion & Apparel": 40,
-    "Beauty & Cosmetics": 29,
+    "Beauty & Cosmetics": 31,
     "Food & Beverage": 11,
     "Fitness & Wellness": 6,
     "Home & Decor": 11,
@@ -40,9 +40,9 @@
     "Jaipur": 4,
     "Chennai": 1,
     "Jodhpur": 1,
-    "Chandigarh": 1,
+    "Chandigarh": 2,
     "Ahmedabad": 2,
-    "New Delhi": 11,
+    "New Delhi": 12,
     "Pune": 1
   },
   "pool_by_niche": {
@@ -55,6 +55,22 @@
     "Tech & Startups": 6
   },
   "recent_sends": [
+    {
+      "ts": "2026-09-26T08:54:25.461479+00:00",
+      "email": "help@reequil.com",
+      "name": "Re equil",
+      "niche": "Beauty & Cosmetics",
+      "city": "Chandigarh",
+      "subject": "Re equil: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-26T08:52:31.933691+00:00",
+      "email": "hello@consciouschemist.com",
+      "name": "Conscious Chemist",
+      "niche": "Beauty & Cosmetics",
+      "city": "New Delhi",
+      "subject": "Conscious Chemist: matched creators, ready to collab"
+    },
     {
       "ts": "2026-09-25T09:08:21.457841+00:00",
       "email": "support@fixderma.com",
@@ -198,30 +214,35 @@
       "niche": "Fashion & Apparel",
       "city": "Ahmedabad",
       "subject": "Creators for XYXX from CollabHive"
-    },
-    {
-      "ts": "2026-09-19T08:24:39.462967+00:00",
-      "email": "customercare@ritukumar.com",
-      "name": "Label Ritu Kumar",
-      "niche": "Fashion & Apparel",
-      "city": "New Delhi",
-      "subject": "A creator network for Label Ritu Kumar — CollabHive"
-    },
-    {
-      "ts": "2026-09-19T08:22:56.078260+00:00",
-      "email": "support@tjori.com",
-      "name": "Tjori",
-      "niche": "Fashion & Apparel",
-      "city": "New Delhi",
-      "subject": "A creator network for Tjori — CollabHive"
     }
   ],
   "sales": {
-    "closing_count": 2,
+    "closing_count": 4,
     "closing_by_status": {
-      "negotiating": 2
+      "negotiating": 3,
+      "interested": 1
     },
     "recent_closing": [
+      {
+        "email": "woot@mcaffeine.com",
+        "subject": "Helping mCaffeine grow with creators",
+        "snippet": "Thank you so much for your interest in collaborating with mCaffeine! We're\nexcited to explore this opportunity further.\n\nTo help us gather the necessary information, please share your details\nusing the link below.\n\nHere is the link –\nhttps://docs.google.com/forms/d/1BXJLJIooykzzl2GpcA_j8UZsxyj235ywh-RRHVe3QxE/viewform?ts=6678f2fb&edit_requested=true\n\nOnce submitted, your details will be reviewed as per current campaign\nrequirements. If selected, further communication will happen through the\nprocess mentioned in the form.\n\nRegards",
+        "status": "interested",
+        "reason": "share your",
+        "human": true,
+        "redirect": "",
+        "ts": "2026-09-26T08:54:36.332810+00:00"
+      },
+      {
+        "email": "support@damensch.com",
+        "subject": "Re: A creator network for Damensch",
+        "snippet": "Dear CollabHive,\n\nThank you for reaching out and sharing details about your curated creator\nnetwork. We appreciate your interest in collaborating with DaMENSCH.\n\nPlease email your proposal to Support@damensch.com. Our team will review it\nand get in touch whenever a relevant requirement arises.\n\nRegards",
+        "status": "negotiating",
+        "reason": "proposal",
+        "human": true,
+        "redirect": "",
+        "ts": "2026-09-26T08:54:36.331918+00:00"
+      },
       {
         "email": "care@kamaayurveda.in",
         "subject": "Re: 164729",
@@ -370,21 +391,37 @@
         0.144
       ]
     ],
-    "replied_count": 2,
-    "reply_rate_pct": 1.9
+    "replied_count": 4,
+    "reply_rate_pct": 3.8
   },
   "mail_health": {
-    "sent_total": 105,
-    "delivered_pct": 55.8,
-    "bounces": 4,
-    "human_replies": 2,
-    "hot_leads": 2,
-    "reply_rate_pct": 1.9,
+    "sent_total": 107,
+    "delivered_pct": 56.6,
+    "bounces": 5,
+    "human_replies": 4,
+    "hot_leads": 4,
+    "reply_rate_pct": 3.7,
     "hot_by_status": {
-      "interested": 0,
-      "negotiating": 2
+      "interested": 1,
+      "negotiating": 3
     },
     "recent_human": [
+      {
+        "email": "woot@mcaffeine.com",
+        "status": "interested",
+        "reason": "share your",
+        "ts": "2026-09-26T08:54:36.332810+00:00",
+        "subject": "Helping mCaffeine grow with creators",
+        "snippet": "Thank you so much for your interest in collaborating with mCaffeine! We're excited to explore this opportunity further. To help us gather the necessary information, please share your details using the link below. Here is the link – https://"
+      },
+      {
+        "email": "support@damensch.com",
+        "status": "negotiating",
+        "reason": "proposal",
+        "ts": "2026-09-26T08:54:36.331918+00:00",
+        "subject": "Re: A creator network for Damensch",
+        "snippet": "Dear CollabHive, Thank you for reaching out and sharing details about your curated creator network. We appreciate your interest in collaborating with DaMENSCH. Please email your proposal to Support@damensch.com. Our team will review it and "
+      },
       {
         "email": "care@kamaayurveda.in",
         "status": "negotiating",
@@ -405,9 +442,9 @@
     "reachability": {
       "decision_maker": 7,
       "named_person": 29,
-      "generic": 20,
-      "support_desk": 35,
-      "no_email": 97
+      "generic": 21,
+      "support_desk": 36,
+      "no_email": 95
     },
     "redirects": [
       {
@@ -418,18 +455,19 @@
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-09-25T09:11:50.317151+00:00",
+    "checked_at": "2026-09-26T08:55:40.381504+00:00",
     "lookback_hours": 96,
-    "recorded_sends": 104,
-    "confirmed_in_sent": 58,
+    "recorded_sends": 106,
+    "confirmed_in_sent": 60,
     "unconfirmed": 46,
-    "delivery_rate_pct": 55.8,
-    "bounces": 4,
+    "delivery_rate_pct": 56.6,
+    "bounces": 5,
     "bounce_emails": [
       "78winone.com@gmail.com",
-      "abc@xyz.com",
       "nbspcontact@kicaactive.com",
-      "xxx@xxx.xxx"
+      "xxx@xxx.xxx",
+      "help@reequil.com",
+      "abc@xyz.com"
     ],
     "unconfirmed_emails": [
       "grievance@snitch.com",
@@ -526,7 +564,7 @@
       "campaigns_run": 0,
       "alltime_creators": 74,
       "alltime_briefs": 2,
-      "generated_at": "2026-09-25T15:05:00.091607+00:00"
+      "generated_at": "2026-09-26T08:55:40.391542+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -995,5 +1033,5 @@
     }
   },
   "dnc_count": 1,
-  "last_run": "2026-09-25T09:08:21.474388+00:00"
+  "last_run": "2026-09-26T08:54:25.489930+00:00"
 }

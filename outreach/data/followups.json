@@ -280,53 +280,53 @@
     "name": "Happilo"
   },
   "wecare@farmley.com": {
-    "count": 1,
-    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "count": 2,
+    "last_sent": "2026-09-26T08:54:37.626972+00:00",
     "name": "Farmley"
   },
   "care@nourishyou.in": {
-    "count": 1,
-    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "count": 2,
+    "last_sent": "2026-09-26T08:54:37.626972+00:00",
     "name": "Nourish You"
   },
   "info@nestasia.in": {
-    "count": 1,
-    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "count": 2,
+    "last_sent": "2026-09-26T08:54:37.626972+00:00",
     "name": "Nestasia"
   },
   "care@saltattire.com": {
-    "count": 1,
-    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "count": 2,
+    "last_sent": "2026-09-26T08:54:37.626972+00:00",
     "name": "Salt Attire"
   },
   "konnect@kosha.co": {
-    "count": 1,
-    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "count": 2,
+    "last_sent": "2026-09-26T08:54:37.626972+00:00",
     "name": "Kosha"
   },
   "hello@summersomewhere.com": {
-    "count": 1,
-    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "count": 2,
+    "last_sent": "2026-09-26T08:54:37.626972+00:00",
     "name": "Summer Somewhere"
   },
   "hello@jaypore.com": {
-    "count": 1,
-    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "count": 2,
+    "last_sent": "2026-09-26T08:54:37.626972+00:00",
     "name": "Jaypore"
   },
   "abc@xyz.com": {
-    "count": 1,
-    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "count": 2,
+    "last_sent": "2026-09-26T08:54:37.626972+00:00",
     "name": "Andamen"
   },
   "info@thedecorkart.com": {
-    "count": 1,
-    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "count": 2,
+    "last_sent": "2026-09-26T08:54:37.626972+00:00",
     "name": "The Decor Kart"
   },
   "care@true-elements.com": {
-    "count": 1,
-    "last_sent": "2026-09-21T09:21:12.421286+00:00",
+    "count": 2,
+    "last_sent": "2026-09-26T08:54:37.626972+00:00",
     "name": "True Elements"
   },
   "xxx@xxx.xxx": {
@@ -473,5 +473,15 @@
     "count": 1,
     "last_sent": "2026-09-25T09:10:46.239990+00:00",
     "name": "Vastrado"
+  },
+  "support@lakmeindia.com": {
+    "count": 1,
+    "last_sent": "2026-09-26T08:54:37.626972+00:00",
+    "name": "Lakme India"
+  },
+  "78winone.com@gmail.com": {
+    "count": 1,
+    "last_sent": "2026-09-26T08:54:37.626972+00:00",
+    "name": "Fabnest"
   }
 }
