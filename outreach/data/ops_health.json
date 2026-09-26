@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-25T18:49:56.977138+00:00",
+  "generated_at": "2026-09-26T17:56:30.278822+00:00",
   "status": "fail",
   "checks": [
     {
       "name": "pipeline_ran",
       "status": "ok",
-      "detail": "Last run 10h ago.",
+      "detail": "Last run 9h ago.",
       "fix": ""
     },
     {
       "name": "mail_flowing",
       "status": "ok",
-      "detail": "Last email sent 10h ago.",
+      "detail": "Last email sent 9h ago.",
       "fix": ""
     },
     {
@@ -23,35 +23,35 @@
     {
       "name": "hot_leads",
       "status": "warn",
-      "detail": "1 hot lead(s) with no quote for >48h: hello@sugarcosmetics.com",
+      "detail": "2 hot lead(s) with no quote for >48h: hello@sugarcosmetics.com, care@kamaayurveda.in",
       "fix": "Reply personally — these are the closest thing to revenue you have."
     },
     {
       "name": "creator_supply",
       "status": "ok",
-      "detail": "51 creators available for matching.",
+      "detail": "52 creators available for matching.",
       "fix": ""
     },
     {
       "name": "deliverability",
       "status": "fail",
-      "detail": "Delivery flagged: 55.8% delivered, 4 bounce(s).",
+      "detail": "Delivery flagged: 56.6% delivered, 5 bounce(s).",
       "fix": "Pause sending and clean the pool before Gmail throttles the account."
     }
   ],
   "metrics": {
     "sent_24h": 2,
-    "sent_7d": 22,
-    "sent_total": 105,
-    "replies_total": 2,
-    "interested": 0,
-    "negotiating": 2,
+    "sent_7d": 20,
+    "sent_total": 107,
+    "replies_total": 4,
+    "interested": 1,
+    "negotiating": 3,
     "declined": 0,
     "quotes_sent": 5,
     "pipeline_value": 149600,
     "creators": 0,
     "social_drafts": 51,
     "seo_pages": 19,
-    "reply_rate_pct": 1.9
+    "reply_rate_pct": 3.8
   }
 }
