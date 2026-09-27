@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T08:55:40.387860+00:00",
+  "generated_at": "2026-09-27T04:56:32.470204+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -12,10 +12,10 @@
   "summary": {
     "total_sent": 107,
     "unique_brands_emailed": 106,
-    "brands_in_pool": 188,
-    "brands_with_email": 93,
+    "brands_in_pool": 187,
+    "brands_with_email": 92,
     "remaining_candidates": 0,
-    "sent_today": 4,
+    "sent_today": 2,
     "sent_week": 20,
     "day_streak": 20,
     "daily_budget": 18
@@ -48,7 +48,7 @@
   "pool_by_niche": {
     "Food & Beverage": 29,
     "Fashion & Apparel": 55,
-    "Beauty & Cosmetics": 51,
+    "Beauty & Cosmetics": 50,
     "Fitness & Wellness": 23,
     "Home & Decor": 20,
     "Travel & Hospitality": 4,
@@ -443,7 +443,7 @@
       "decision_maker": 7,
       "named_person": 29,
       "generic": 21,
-      "support_desk": 36,
+      "support_desk": 35,
       "no_email": 95
     },
     "redirects": [
@@ -452,6 +452,11 @@
         "to": "pr@kamaayurveda.com"
       }
     ]
+  },
+  "social_runway": {
+    "rendered_through": "2026-10-02",
+    "days_left": 5,
+    "rendered": 12
   },
   "verification": {
     "ok": true,
@@ -564,7 +569,7 @@
       "campaigns_run": 0,
       "alltime_creators": 74,
       "alltime_briefs": 2,
-      "generated_at": "2026-09-26T08:55:40.391542+00:00"
+      "generated_at": "2026-09-27T04:56:32.822953+00:00"
     },
     "referrals": {
       "total_referrals": 1,

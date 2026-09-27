@@ -20,7 +20,10 @@ on:
   schedule:
     # 04:30 IST = 23:00 UTC (previous day). Runs well before the 18:00 IST
     # publish time, so a retry still has the whole day of margin.
-    - cron: '0 23 * * *'
+    # Off-peak minute, deliberately not :00 or :30. GitHub throttles
+    # scheduled runs hardest at the top and half of the hour — this job
+    # was firing a consistent ~5h15m late every day on '0 23 * * *'.
+    - cron: '13 23 * * *'
   workflow_dispatch:
     inputs:
       dry_run:

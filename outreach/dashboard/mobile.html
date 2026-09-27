@@ -252,6 +252,22 @@ fetch('../data/report.json', {cache:'no-store'})
       });
     }
 
+    // ---- reel render runway
+    const rw = d.social_runway || {};
+    if(rw.rendered_through){
+      const dl = rw.days_left ?? 0;
+      h += `<h3>Instagram reels</h3><div class="grid">`;
+      h += tile(dl + 'd', 'reels rendered ahead',
+                dl >= 14 ? 'good' : dl >= 5 ? 'warn' : 'bad');
+      h += tile(rw.rendered ?? 0, 'videos ready');
+      h += `</div>`;
+      if(dl < 7){
+        h += `<div class="note">A reel can only be scheduled once its video is
+              committed. Under a week of runway means the reel stream stops
+              soon — re-run the render workflow.</div>`;
+      }
+    }
+
     // ---- pool
     h += `<h3>Pool</h3><div class="grid">`;
     h += tile(sum.brands_in_pool ?? 0, 'brands in pool');

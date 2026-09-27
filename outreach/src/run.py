@@ -83,6 +83,7 @@ def gather_report(cfg: dict) -> dict:
         "recent_sends": sent_log[-20:][::-1],
         "sales": _gather_sales(cfg),
         "mail_health": _gather_mail_health(cfg),
+        "social_runway": _gather_social_runway(cfg),
         "verification": _gather_verification(cfg),
         "pipeline_dataset": _gather_pipeline(cfg),
         "onboarding": _gather_onboarding(cfg),
@@ -470,6 +471,39 @@ def main(argv: list[str] | None = None) -> int:
         log(f"Unknown mode: {mode}")
         return 1
     return 0
+
+
+def _gather_social_runway(cfg: dict) -> dict:
+    """How many days of rendered reels are left.
+
+    A reel can only be scheduled once its MP4 is committed, so the render
+    pipeline running dry silently stops the reel stream a few days later. The
+    weekly cron that fed it never fired once, which is exactly the kind of
+    failure that is invisible until a gap appears in the feed.
+    """
+    import json as _json
+    from datetime import date as _date
+
+    social = ROOT.parent / "social" / "calendar"
+    cal_file = social / "reels_calendar.json"
+    if not cal_file.exists():
+        return {"rendered_through": "", "days_left": 0, "rendered": 0}
+    try:
+        cal = _json.loads(cal_file.read_text(encoding="utf-8"))
+    except Exception:
+        return {"rendered_through": "", "days_left": 0, "rendered": 0}
+
+    today = _date.today().isoformat()
+    done = [e for e in cal
+            if e.get("date", "") >= today and (social / e.get("video", "")).exists()]
+    through = max((e["date"] for e in done), default="")
+    try:
+        left = ((_date.fromisoformat(through) - _date.today()).days
+                if through else 0)
+    except Exception:
+        left = 0
+    return {"rendered_through": through, "days_left": max(left, 0),
+            "rendered": len(done)}
 
 
 def _gather_mail_health(cfg: dict) -> dict:

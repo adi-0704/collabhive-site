@@ -4,7 +4,10 @@ on:
   schedule:
     # India Standard Time = UTC+5:30. Run daily at 09:00 IST.
     # Cron is UTC: 09:00 IST = 03:30 UTC.
-    - cron: '30 3 * * *'
+    # Off-peak minute, deliberately not :00 or :30. GitHub throttles
+    # scheduled runs hardest at the top and half of the hour — this job
+    # was firing a consistent ~5h15m late every day on '30 3 * * *'.
+    - cron: '23 3 * * *'
   workflow_dispatch:
     inputs:
       mode:

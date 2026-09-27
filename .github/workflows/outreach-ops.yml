@@ -7,7 +7,10 @@ on:
   schedule:
     # 20:00 IST = 14:30 UTC — late enough that the 09:00 IST daily run has
     # finished, so the brief reports on a complete day.
-    - cron: '30 14 * * *'
+    # Off-peak minute, deliberately not :00 or :30. GitHub throttles
+    # scheduled runs hardest at the top and half of the hour — this job
+    # was firing a consistent ~5h15m late every day on '30 14 * * *'.
+    - cron: '19 14 * * *'
   workflow_dispatch:
 
 concurrency:

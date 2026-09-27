@@ -7,20 +7,28 @@ name: Social Reels (render video)
 # Runs here rather than locally because the MP4 conversion needs ffmpeg;
 # Chromium only produces WebM, which Instagram rejects outright.
 #
-# Weekly rather than daily: rendering video is slow, and the publisher only
-# needs a modest buffer of rendered reels ahead of it. Committed MP4s are served
-# by GitHub Pages — that IS the upload step, so a reel must be committed before
-# social-reels-publish.yml can post it.
+# Keeps a deep runway of rendered reels ahead of the scheduler. Committed MP4s
+# are served by GitHub Pages — that IS the upload step, so a reel must be
+# committed before social/schedule_reels.py can queue it.
 on:
   schedule:
-    # Sunday 02:00 UTC — quiet slot, well before the daily reel publish at 14:00.
-    - cron: '0 2 * * 0'
+    # DAILY at an off-peak minute, not weekly on the hour.
+    #
+    # The original '0 2 * * 0' never fired once. GitHub delays or silently drops
+    # scheduled runs under load, and the top of the hour is the most contended
+    # slot there is — so a weekly job has a single chance per week to be skipped
+    # entirely, and the render runway quietly runs dry.
+    #
+    # Rendering is idempotent (reels.py skips any MP4 that already exists), so a
+    # daily run is nearly free once the backlog is built, and a missed day costs
+    # nothing because tomorrow catches up.
+    - cron: '37 2 * * *'
   workflow_dispatch:
     inputs:
       days:
         description: 'How many days ahead to render'
         required: false
-        default: '14'
+        default: '45'
 
 concurrency:
   group: social-reels
@@ -66,7 +74,7 @@ jobs:
 
       - name: Render reels
         run: |
-          python -u social/reels.py --days "${{ inputs.days || 14 }}"
+          python -u social/reels.py --days "${{ inputs.days || 45 }}"
 
       - name: Commit rendered reels
         if: always()
