@@ -1776,9 +1776,13 @@
     "niche": "Beauty & Cosmetics",
     "city": "Bengaluru",
     "website": "https://arata.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "info@arata.in",
+    "emails": [
+      "info@arata.in",
+      "grc@arata.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Organic Harvest",
@@ -1787,16 +1791,21 @@
     "website": "https://organicharvest.in",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Soultree",
     "niche": "Beauty & Cosmetics",
     "city": "New Delhi",
     "website": "https://soultree.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "wecare@soultree.in",
+    "emails": [
+      "wecare@soultree.in",
+      "international@soultree.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Ruby Organics",
@@ -2064,6 +2073,15 @@
     "niche": "Fashion & Apparel",
     "city": "New Delhi",
     "website": "https://fabnest.in",
+    "email": "",
+    "emails": [],
+    "source": "curated"
+  },
+  {
+    "name": "Re equil",
+    "niche": "Beauty & Cosmetics",
+    "city": "Chandigarh",
+    "website": "https://reequil.com",
     "email": "",
     "emails": [],
     "source": "curated"

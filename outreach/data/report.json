@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T05:16:14.440250+00:00",
+  "generated_at": "2026-09-28T10:08:52.038373+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -10,19 +10,19 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 107,
-    "unique_brands_emailed": 106,
-    "brands_in_pool": 187,
-    "brands_with_email": 92,
+    "total_sent": 109,
+    "unique_brands_emailed": 108,
+    "brands_in_pool": 188,
+    "brands_with_email": 94,
     "remaining_candidates": 0,
     "sent_today": 2,
-    "sent_week": 20,
-    "day_streak": 20,
+    "sent_week": 15,
+    "day_streak": 15,
     "daily_budget": 18
   },
   "by_niche": {
     "Fashion & Apparel": 40,
-    "Beauty & Cosmetics": 31,
+    "Beauty & Cosmetics": 33,
     "Food & Beverage": 11,
     "Fitness & Wellness": 6,
     "Home & Decor": 11,
@@ -30,7 +30,7 @@
     "Tech & Startups": 7
   },
   "by_city": {
-    "Bengaluru": 16,
+    "Bengaluru": 17,
     "Coimbatore": 2,
     "Delhi": 11,
     "Gurugram": 22,
@@ -42,19 +42,35 @@
     "Jodhpur": 1,
     "Chandigarh": 2,
     "Ahmedabad": 2,
-    "New Delhi": 12,
+    "New Delhi": 13,
     "Pune": 1
   },
   "pool_by_niche": {
     "Food & Beverage": 29,
     "Fashion & Apparel": 55,
-    "Beauty & Cosmetics": 50,
+    "Beauty & Cosmetics": 51,
     "Fitness & Wellness": 23,
     "Home & Decor": 20,
     "Travel & Hospitality": 4,
     "Tech & Startups": 6
   },
   "recent_sends": [
+    {
+      "ts": "2026-09-28T10:07:37.907423+00:00",
+      "email": "wecare@soultree.in",
+      "name": "Soultree",
+      "niche": "Beauty & Cosmetics",
+      "city": "New Delhi",
+      "subject": "Soultree: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-28T10:05:32.106015+00:00",
+      "email": "info@arata.in",
+      "name": "Arata",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bengaluru",
+      "subject": "Creators for Arata from CollabHive"
+    },
     {
       "ts": "2026-09-26T08:54:25.461479+00:00",
       "email": "help@reequil.com",
@@ -198,22 +214,6 @@
       "niche": "Fashion & Apparel",
       "city": "Bengaluru",
       "subject": "Helping Jockey India grow with creators"
-    },
-    {
-      "ts": "2026-09-20T08:54:36.930878+00:00",
-      "email": "support@damensch.com",
-      "name": "Damensch",
-      "niche": "Fashion & Apparel",
-      "city": "Bengaluru",
-      "subject": "Damensch: matched creators, ready to collab"
-    },
-    {
-      "ts": "2026-09-20T08:51:25.056316+00:00",
-      "email": "support@xyxxcrew.com",
-      "name": "XYXX",
-      "niche": "Fashion & Apparel",
-      "city": "Ahmedabad",
-      "subject": "Creators for XYXX from CollabHive"
     }
   ],
   "sales": {
@@ -290,10 +290,10 @@
         "Beauty & Cosmetics",
         [
           "@__._Ishika._",
+          "@_.annnjalii",
           "@ishasiddiquii",
           "@_sanskritisingh06_",
-          "@y_aa_n_aa10",
-          "@https://www.instagram.com/t.sunaamii_"
+          "@y_aa_n_aa10"
         ]
       ],
       [
@@ -301,10 +301,10 @@
         "Fashion & Apparel",
         [
           "@21.chetna",
+          "@_.annnjalii",
           "@ishasiddiquii",
           "@ruksharmallickk",
-          "@shanthojamehakk",
-          "@shanayaaa_1137"
+          "@shanthojamehakk"
         ]
       ],
       [
@@ -392,11 +392,11 @@
       ]
     ],
     "replied_count": 4,
-    "reply_rate_pct": 3.8
+    "reply_rate_pct": 3.7
   },
   "mail_health": {
-    "sent_total": 107,
-    "delivered_pct": 56.6,
+    "sent_total": 109,
+    "delivered_pct": 54.6,
     "bounces": 5,
     "human_replies": 4,
     "hot_leads": 4,
@@ -441,10 +441,10 @@
     ],
     "reachability": {
       "decision_maker": 7,
-      "named_person": 29,
+      "named_person": 31,
       "generic": 21,
       "support_desk": 35,
-      "no_email": 95
+      "no_email": 94
     },
     "redirects": [
       {
@@ -454,25 +454,25 @@
     ]
   },
   "social_runway": {
-    "rendered_through": "2026-11-11",
+    "rendered_through": "2026-11-12",
     "days_left": 45,
     "rendered": 92
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-09-26T08:55:40.381504+00:00",
+    "checked_at": "2026-09-28T10:08:52.035202+00:00",
     "lookback_hours": 96,
-    "recorded_sends": 106,
-    "confirmed_in_sent": 60,
-    "unconfirmed": 46,
-    "delivery_rate_pct": 56.6,
+    "recorded_sends": 108,
+    "confirmed_in_sent": 59,
+    "unconfirmed": 49,
+    "delivery_rate_pct": 54.6,
     "bounces": 5,
     "bounce_emails": [
-      "78winone.com@gmail.com",
       "nbspcontact@kicaactive.com",
-      "xxx@xxx.xxx",
+      "abc@xyz.com",
+      "78winone.com@gmail.com",
       "help@reequil.com",
-      "abc@xyz.com"
+      "xxx@xxx.xxx"
     ],
     "unconfirmed_emails": [
       "grievance@snitch.com",
@@ -562,14 +562,14 @@
       "brand_conversion_pct": 100.0,
       "approve_rate_pct": 100.0,
       "brief_rate_pct": 0.0,
-      "events_last_24h": 0
+      "events_last_24h": 1
     },
     "proof": {
       "creators_joined": 0,
       "campaigns_run": 0,
-      "alltime_creators": 74,
+      "alltime_creators": 75,
       "alltime_briefs": 2,
-      "generated_at": "2026-09-27T05:16:15.063828+00:00"
+      "generated_at": "2026-09-28T10:08:52.046368+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -587,7 +587,7 @@
     }
   },
   "publish": {
-    "published_count": 51,
+    "published_count": 52,
     "creators": [
       {
         "name": "Garima narang",
@@ -1025,18 +1025,23 @@
         "handle": "@chotapacketbadadhamaakaa",
         "name": "@chotapacketbadadhamaakaa",
         "niche": "Food fitness fun couple content "
+      },
+      {
+        "handle": "@_.annnjalii",
+        "name": "Anjali Kasamgotre",
+        "niche": "beauty , lipsync, song promotion, makeup, skincare ,travel , fashion "
       }
     ],
-    "drafts_count": 51
+    "drafts_count": 52
   },
   "buffer": {
     "queued_count": 0,
-    "needs_media_count": 51,
-    "has_drafts": 51,
+    "needs_media_count": 52,
+    "has_drafts": 52,
     "statuses": {
-      "needs_media": 51
+      "needs_media": 52
     }
   },
   "dnc_count": 1,
-  "last_run": "2026-09-26T08:54:25.489930+00:00"
+  "last_run": "2026-09-28T10:07:37.921104+00:00"
 }
