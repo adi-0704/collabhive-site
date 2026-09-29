@@ -109,7 +109,9 @@
     "hello@consciouschemist.com",
     "help@reequil.com",
     "info@arata.in",
-    "wecare@soultree.in"
+    "wecare@soultree.in",
+    "care@nathabit.in",
+    "hello@quenchbotanics.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -220,7 +222,9 @@
     "consciouschemist.com",
     "reequil.com",
     "arata.in",
-    "soultree.in"
+    "soultree.in",
+    "nathabit.in",
+    "quenchbotanics.com"
   ],
   "sent_log": [
     {
@@ -1076,9 +1080,25 @@
       "niche": "Beauty & Cosmetics",
       "city": "New Delhi",
       "subject": "Soultree: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-29T10:06:04.790484+00:00",
+      "email": "care@nathabit.in",
+      "name": "Nat Habit",
+      "niche": "Beauty & Cosmetics",
+      "city": "Gurugram",
+      "subject": "Nat Habit: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-29T10:07:41.219804+00:00",
+      "email": "hello@quenchbotanics.com",
+      "name": "Quench Botanics",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Quench Botanics: matched creators, ready to collab"
     }
   ],
-  "last_run": "2026-09-28T10:07:37.921104+00:00",
+  "last_run": "2026-09-29T10:07:41.248744+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",

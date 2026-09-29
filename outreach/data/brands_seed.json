@@ -1814,25 +1814,36 @@
     "website": "https://rubyorganics.co",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Quench Botanics",
     "niche": "Beauty & Cosmetics",
     "city": "Mumbai",
     "website": "https://quenchbotanics.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "hello@quenchbotanics.com",
+    "emails": [
+      "hello@quenchbotanics.com",
+      "pr@quenchbotanics.com",
+      "collabs@quenchbotanics.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Nat Habit",
     "niche": "Beauty & Cosmetics",
     "city": "Gurugram",
     "website": "https://nathabit.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@nathabit.in",
+    "emails": [
+      "care@nathabit.in",
+      "collab@nathabit.in",
+      "corporategifting@nathabit.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Sirona",

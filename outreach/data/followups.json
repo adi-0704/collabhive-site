@@ -450,28 +450,28 @@
     "name": "Kica Active"
   },
   "myanouk@anoukfashion.com": {
-    "count": 1,
-    "last_sent": "2026-09-25T09:10:46.239990+00:00",
+    "count": 2,
+    "last_sent": "2026-09-29T10:07:57.795837+00:00",
     "name": "Anouk"
   },
   "care@libas.in": {
-    "count": 1,
-    "last_sent": "2026-09-25T09:10:46.239990+00:00",
+    "count": 2,
+    "last_sent": "2026-09-29T10:07:57.795837+00:00",
     "name": "Libas"
   },
   "hello@discoverpilgrim.com": {
-    "count": 1,
-    "last_sent": "2026-09-25T09:10:46.239990+00:00",
+    "count": 2,
+    "last_sent": "2026-09-29T10:07:57.795837+00:00",
     "name": "Pilgrim"
   },
   "info@aachho.com": {
-    "count": 1,
-    "last_sent": "2026-09-25T09:10:46.239990+00:00",
+    "count": 2,
+    "last_sent": "2026-09-29T10:07:57.795837+00:00",
     "name": "Aachho"
   },
   "care@vastrado.com": {
-    "count": 1,
-    "last_sent": "2026-09-25T09:10:46.239990+00:00",
+    "count": 2,
+    "last_sent": "2026-09-29T10:07:57.795837+00:00",
     "name": "Vastrado"
   },
   "support@lakmeindia.com": {
@@ -503,5 +503,15 @@
     "count": 1,
     "last_sent": "2026-09-28T10:07:46.018395+00:00",
     "name": "Fixderma"
+  },
+  "hello@consciouschemist.com": {
+    "count": 1,
+    "last_sent": "2026-09-29T10:07:57.795837+00:00",
+    "name": "Conscious Chemist"
+  },
+  "help@reequil.com": {
+    "count": 1,
+    "last_sent": "2026-09-29T10:07:57.795837+00:00",
+    "name": "Re equil"
   }
 }
