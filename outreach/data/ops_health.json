@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-28T20:35:34.064576+00:00",
+  "generated_at": "2026-09-29T19:26:55.625618+00:00",
   "status": "fail",
   "checks": [
     {
       "name": "pipeline_ran",
       "status": "ok",
-      "detail": "Last run 10h ago.",
+      "detail": "Last run 9h ago.",
       "fix": ""
     },
     {
       "name": "mail_flowing",
       "status": "ok",
-      "detail": "Last email sent 10h ago.",
+      "detail": "Last email sent 9h ago.",
       "fix": ""
     },
     {
@@ -35,23 +35,23 @@
     {
       "name": "deliverability",
       "status": "fail",
-      "detail": "Delivery flagged: 54.6% delivered, 5 bounce(s).",
+      "detail": "Delivery flagged: 54.5% delivered, 5 bounce(s).",
       "fix": "Pause sending and clean the pool before Gmail throttles the account."
     }
   ],
   "metrics": {
     "sent_24h": 2,
-    "sent_7d": 15,
-    "sent_total": 109,
-    "replies_total": 4,
+    "sent_7d": 14,
+    "sent_total": 111,
+    "replies_total": 5,
     "interested": 1,
-    "negotiating": 3,
+    "negotiating": 4,
     "declined": 0,
     "quotes_sent": 5,
     "pipeline_value": 149600,
     "creators": 0,
     "social_drafts": 52,
     "seo_pages": 19,
-    "reply_rate_pct": 3.7
+    "reply_rate_pct": 4.5
   }
 }
