@@ -1852,25 +1852,32 @@
     "website": "https://sironahygiene.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Bombay Shaving Company",
     "niche": "Beauty & Cosmetics",
     "city": "Gurugram",
     "website": "https://bombayshavingcompany.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@bombayshavingcompany.com",
+    "emails": [
+      "care@bombayshavingcompany.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Beardo",
     "niche": "Beauty & Cosmetics",
     "city": "Ahmedabad",
     "website": "https://beardo.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "support@beardo.in",
+    "emails": [
+      "support@beardo.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Ustraa",

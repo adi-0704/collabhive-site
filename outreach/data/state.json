@@ -111,7 +111,9 @@
     "info@arata.in",
     "wecare@soultree.in",
     "care@nathabit.in",
-    "hello@quenchbotanics.com"
+    "hello@quenchbotanics.com",
+    "support@beardo.in",
+    "care@bombayshavingcompany.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -224,7 +226,9 @@
     "arata.in",
     "soultree.in",
     "nathabit.in",
-    "quenchbotanics.com"
+    "quenchbotanics.com",
+    "beardo.in",
+    "bombayshavingcompany.com"
   ],
   "sent_log": [
     {
@@ -1096,9 +1100,25 @@
       "niche": "Beauty & Cosmetics",
       "city": "Mumbai",
       "subject": "Quench Botanics: matched creators, ready to collab"
+    },
+    {
+      "ts": "2026-09-30T09:56:16.671209+00:00",
+      "email": "support@beardo.in",
+      "name": "Beardo",
+      "niche": "Beauty & Cosmetics",
+      "city": "Ahmedabad",
+      "subject": "Creators for Beardo from CollabHive"
+    },
+    {
+      "ts": "2026-09-30T09:59:04.737036+00:00",
+      "email": "care@bombayshavingcompany.com",
+      "name": "Bombay Shaving Company",
+      "niche": "Beauty & Cosmetics",
+      "city": "Gurugram",
+      "subject": "Creators for Bombay Shaving Company from CollabHive"
     }
   ],
-  "last_run": "2026-09-29T10:07:41.248744+00:00",
+  "last_run": "2026-09-30T09:59:04.754033+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
