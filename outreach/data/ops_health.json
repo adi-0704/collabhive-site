@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T19:26:55.625618+00:00",
+  "generated_at": "2026-09-30T19:27:10.934935+00:00",
   "status": "fail",
   "checks": [
     {
@@ -35,14 +35,14 @@
     {
       "name": "deliverability",
       "status": "fail",
-      "detail": "Delivery flagged: 54.5% delivered, 5 bounce(s).",
+      "detail": "Delivery flagged: 41.1% delivered, 5 bounce(s).",
       "fix": "Pause sending and clean the pool before Gmail throttles the account."
     }
   ],
   "metrics": {
     "sent_24h": 2,
-    "sent_7d": 14,
-    "sent_total": 111,
+    "sent_7d": 12,
+    "sent_total": 113,
     "replies_total": 5,
     "interested": 1,
     "negotiating": 4,
