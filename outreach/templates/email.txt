@@ -1,6 +1,6 @@
 Hi {name},
 
-{opener}We run a network of {creator_count} Indian creators, and {niche} is one of the categories we cover most deeply.
+{opener}We run {network_line}, and {niche} is one of the categories we cover most deeply.
 
 A straight offer, with nothing attached: reply with one line about what you'd want a campaign to achieve, and we'll send back a shortlist of five creators matched to {brand} - handles, audience size, city, engagement, and what each would charge. Free, no obligation, nothing to sign.
 

@@ -219,7 +219,15 @@ class TestMailerNoNetwork(unittest.TestCase):
         st, txt, html = load_templates(self.cfg)
         subj, btxt, bhtml = _render(st, txt, html,
                                     {"name": "Cafe", "niche": "Food & Beverage", "city": "Delhi"}, self.cfg)
-        self.assertIn("Food & Beverage creators", btxt)
+        # The dynamic opener was removed; personalisation now comes from
+        # {brand} and {niche} in the body, and the offer must survive a
+        # missing published_creators.json without a broken sentence.
+        self.assertIn("Food & Beverage", btxt)
+        self.assertIn("vetted network of Indian creators", btxt)
+        # No double space WITHIN a line. Checking the whole blob would trip on
+        # the blank line between paragraphs, which is not a defect.
+        for line in btxt.splitlines():
+            self.assertNotIn("  ", line, "double space in: %r" % line)
 
     def test_render_missing_tokens_safe(self):
         from src.mailer import _render, load_templates
