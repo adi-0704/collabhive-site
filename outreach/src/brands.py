@@ -43,6 +43,17 @@ BANNED_DOMAIN_HINTS = (
 CONTACT_PATHS = (
     "",
     "policies/contact-information",
+    # Collaboration pages, checked early but after the two cheapest reliable
+    # sources. A brand that publishes an influencer page publishes the mailbox
+    # that actually handles partnerships — which is the address we want and
+    # almost never the one on the contact page. 53 of the first 100 sends went
+    # to consumer support desks because only contact pages were ever read.
+    #
+    # Kept to the handful of paths Shopify themes actually use: every miss is a
+    # wasted fetch against a per-run enrichment time budget.
+    "pages/collaborate", "pages/collaboration", "pages/influencer",
+    "pages/influencer-collaboration", "pages/work-with-us",
+    "pages/partnership", "pages/affiliate", "pages/press",
     "pages/contact", "pages/contact-us", "pages/support",
     "contact", "contact-us", "contactus",
     "pages/about-us", "about", "about-us",
