@@ -19,16 +19,17 @@
     "max_delay_seconds": 200,
     "max_send_minutes": 45,
     "from_name": "CollabHive",
-    "subject_line": "A creator network for {brand} — CollabHive",
+    "subject_line": "A free creator shortlist for {brand}",
     "subject_lines_ab": [
-      "A creator network for {brand} — CollabHive",
-      "Creators for {brand} from CollabHive",
-      "Helping {brand} grow with creators",
-      "{brand}: matched creators, ready to collab"
+      "A free creator shortlist for {brand}",
+      "{brand}: five matched creators, free",
+      "Creator shortlist for {brand}?",
+      "What would a creator campaign cost {brand}?"
     ],
-    "dynamic_opener": true,
+    "dynamic_opener": false,
     "ab_rotate": true,
-    "ab_winner_field": "ab_subject_winner"
+    "ab_winner_field": "ab_subject_winner",
+    "dynamic_opener_note": "Off: the generated opener was a fragment that duplicated the niche named in the next sentence. Personalisation now comes from {brand}/{niche} in the body."
   },
   "pipeline": {
     "enabled": true,

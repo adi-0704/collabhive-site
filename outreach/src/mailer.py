@@ -62,6 +62,22 @@ def _opener(ctx: dict, brand: dict, cfg: dict) -> str:
     # opener rendered separately (see send_one)
 
 
+def _creator_count() -> str:
+    """How many creators are actually published on the site.
+
+    Read live rather than hardcoded so the pitch can never overstate the
+    network — if the number is unavailable the templates fall back to wording
+    that makes no numeric claim at all.
+    """
+    from .common import load_json
+    try:
+        pub = load_json(ROOT / "data" / "published_creators.json")
+        n = int((pub or {}).get("count", 0))
+        return str(n) if n > 0 else ""
+    except Exception:
+        return ""
+
+
 def _render(subject_template: str, txt: str, html: str, brand: dict, cfg: dict) -> tuple[str, str, str]:
     p = cfg["profile"]
     name = brand.get("name") or brand.get("brand") or "Business"
@@ -78,6 +94,10 @@ def _render(subject_template: str, txt: str, html: str, brand: dict, cfg: dict) 
         "brief_url": p.get("brand_brief_url") or p["apply_url"],
         "contact_email": p["contact_email"],
         "phone": p["phone"],
+        # Concrete proof beats adjectives. "a curated network" is what every
+        # agency says; a real number is checkable and is the only asset we can
+        # point at that a brand cannot get from a cold stranger.
+        "creator_count": _creator_count(),
     }
     try:
         subj = subject_template.format(**ctx)
