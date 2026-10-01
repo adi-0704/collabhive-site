@@ -763,6 +763,24 @@ class TestCreatorCampaign(unittest.TestCase):
         got = [c["email"] for c in real_creators(self.cfg)]
         self.assertEqual(got, ["sheet.person@gmail.com"])
 
+    def test_daily_cap_survives_a_rerun(self):
+        """A second invocation on the same day must not send another batch."""
+        import json as _j
+        from datetime import datetime, timezone
+        from src.creators import run_campaign
+        self._write(
+            pool=[{"name": "D%d" % i, "handle": "@d%d" % i,
+                   "email": "d%d.person@gmail.com" % i} for i in range(6)],
+            published=[{"handle": "@d%d" % i} for i in range(6)])
+        today = datetime.now(timezone.utc).date().isoformat()
+        (_TEST_ROOT / "data" / "creator_campaign.json").write_text(
+            _j.dumps({"activate": [], "sent_by_day": {today: 3}}),
+            encoding="utf-8")
+        self.cfg.setdefault("creators", {})["daily_limit"] = 3
+        res = run_campaign(self.cfg, "activate", dry_run=True)
+        # Cap is 3 and 3 already went today, so there is no room left at all.
+        self.assertEqual(res.get("would_send", 0), 0)
+
     def test_unknown_campaign_refused(self):
         from src.creators import run_campaign
         self.assertFalse(run_campaign(self.cfg, "blast")["ok"])

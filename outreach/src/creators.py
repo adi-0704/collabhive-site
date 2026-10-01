@@ -188,13 +188,23 @@ def run_campaign(cfg: dict, kind: str = "activate", limit: int = 0,
     # pattern human and stays well inside the Gmail account's daily headroom
     # that brand outreach also draws on.
     cap = limit or int(cfg.get("creators", {}).get("daily_limit", 12))
-    batch = pending[:cap]
+
+    # The cap is per DAY, not per run. A manual re-run (or a retry) otherwise
+    # sends another full batch within the hour from the same Gmail account that
+    # brand outreach depends on — the limit has to survive being invoked twice.
+    today = datetime.now(timezone.utc).date().isoformat()
+    sent_today = int((state.get("sent_by_day", {}) or {}).get(today, 0))
+    room = max(0, cap - sent_today)
+    if room < cap:
+        log(f"  {sent_today} already sent today - {room} slot(s) left of {cap}")
+    batch = pending[:room]
 
     log(f"creator campaign '{kind}': {len(audience)} eligible, "
         f"{len(done)} already sent, {len(batch)} in this batch")
     if not batch:
         return {"ok": True, "kind": kind, "sent": 0, "eligible": len(audience),
-                "already": len(done), "note": "nothing pending"}
+                "already": len(done), "sent_today": sent_today,
+                "note": "nothing pending or daily cap reached"}
 
     txt_tpl, html_tpl = _load(f"creator_{kind}")
 
@@ -252,6 +262,10 @@ def run_campaign(cfg: dict, kind: str = "activate", limit: int = 0,
             pass
 
     state[kind] = sorted(done)
+    by_day = state.get("sent_by_day") or {}
+    by_day[today] = int(by_day.get(today, 0)) + sent
+    # Keep a fortnight; this is a rate-limit ledger, not an archive.
+    state["sent_by_day"] = {d: n for d, n in sorted(by_day.items())[-14:]}
     state["last_run"] = datetime.now(timezone.utc).isoformat()
     save_json(ROOT / STATE_FILE, state)
     log(f"  done. sent={sent} failed={failed}")
