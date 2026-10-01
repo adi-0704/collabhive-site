@@ -680,6 +680,104 @@ class TestReplies(unittest.TestCase):
         self.assertNotIn("--X", body)
 
 
+class TestCreatorCampaign(unittest.TestCase):
+    """The consent boundary: only real applicants may ever be emailed.
+
+    creators_pool.json is seeded with synthetic demo creators whose addresses
+    are literally handle@gmail.com. Mailing those bounces every one of them in
+    a single run and damages the sending reputation that brand outreach needs,
+    so this is enforced in code rather than by convention.
+    """
+
+    def setUp(self):
+        _mkdata()
+        self.cfg = _load_cfg()
+        # real_creators() reads the live application sheet first. Tests must
+        # never touch the network, and the live data would also override the
+        # fixtures these cases depend on, so stub it to empty and let each test
+        # drive the local fallback path explicitly.
+        import src.publication as pub_mod
+        self._orig_pull = pub_mod.pull_applicants
+        pub_mod.pull_applicants = lambda cfg: []
+
+    def tearDown(self):
+        import src.publication as pub_mod
+        pub_mod.pull_applicants = self._orig_pull
+
+    def _write(self, pool, published):
+        import json as _j
+        (_TEST_ROOT / "data" / "creators_pool.json").write_text(
+            _j.dumps(pool), encoding="utf-8")
+        (_TEST_ROOT / "data" / "published_creators.json").write_text(
+            _j.dumps({"count": len(published), "creators": published}),
+            encoding="utf-8")
+
+    def test_synthetic_creator_is_never_emailed(self):
+        from src.creators import real_creators
+        self._write(
+            pool=[{"name": "Real Person", "handle": "@realone",
+                   "email": "realone.person@gmail.com", "niche": "Fashion"},
+                  {"name": "Seed Person", "handle": "@seedone",
+                   "email": "seedone@gmail.com", "niche": "Fashion"}],
+            published=[{"handle": "@realone", "name": "Real Person"}])
+        got = [c["email"] for c in real_creators(self.cfg)]
+        self.assertIn("realone.person@gmail.com", got)
+        self.assertNotIn("seedone@gmail.com", got)
+
+    def test_no_published_list_means_nobody_is_emailed(self):
+        """Without the applicant list there is no way to tell real from demo."""
+        from src.creators import real_creators
+        self._write(
+            pool=[{"name": "A", "handle": "@a", "email": "a.person@gmail.com"}],
+            published=[])
+        self.assertEqual(real_creators(self.cfg), [])
+
+    def test_invalid_address_is_dropped(self):
+        from src.creators import real_creators
+        self._write(
+            pool=[{"name": "B", "handle": "@b", "email": "not-an-address"}],
+            published=[{"handle": "@b"}])
+        self.assertEqual(real_creators(self.cfg), [])
+
+    def test_dry_run_sends_nothing_and_records_nothing(self):
+        from src.creators import run_campaign
+        self._write(
+            pool=[{"name": "C", "handle": "@c", "email": "c.person@gmail.com"}],
+            published=[{"handle": "@c"}])
+        res = run_campaign(self.cfg, "activate", dry_run=True)
+        self.assertTrue(res["ok"])
+        self.assertEqual(res["sent"], 0)
+        self.assertFalse((_TEST_ROOT / "data" / "creator_campaign.json").exists())
+
+    def test_applicant_sheet_is_preferred_over_local_pool(self):
+        """The sheet is the consent record; the local pool is only a fallback."""
+        import src.publication as pub_mod
+        pub_mod.pull_applicants = lambda cfg: [
+            {"name": "Sheet Person", "handle": "@sheetone",
+             "email": "sheet.person@gmail.com", "niche": "Food"}]
+        from src.creators import real_creators
+        self._write(
+            pool=[{"name": "Pool Person", "handle": "@poolone",
+                   "email": "pool.person@gmail.com"}],
+            published=[{"handle": "@poolone"}])
+        got = [c["email"] for c in real_creators(self.cfg)]
+        self.assertEqual(got, ["sheet.person@gmail.com"])
+
+    def test_unknown_campaign_refused(self):
+        from src.creators import run_campaign
+        self.assertFalse(run_campaign(self.cfg, "blast")["ok"])
+
+    def test_both_templates_render_without_placeholders(self):
+        from src.creators import _load, _render
+        creator = {"name": "Asha Rao", "handle": "asha.makes",
+                   "niche": "Beauty", "city": "Pune"}
+        for kind in ("activate", "refer"):
+            txt, html = _load("creator_" + kind)
+            body, _ = _render(txt, html, creator, self.cfg)
+            self.assertNotIn("{", body, "unrendered placeholder in " + kind)
+            self.assertIn("Asha", body)
+
+
 class TestBuffer(unittest.TestCase):
     def setUp(self):
         self.common = _mkdata(None)
@@ -767,6 +865,7 @@ def _suite():
     for cls in (TestCommon, TestBrands, TestPool, TestSales, TestMailerNoNetwork,
                 TestGrowth, TestProtect, TestOnboarding, TestPublication, TestBuffer,
                 TestOps, TestReplyHygiene, TestEmailCheck, TestNurture, TestReplies,
+                TestCreatorCampaign,
                 TestBlackboxModes):
         suite.addTests(loader.loadTestsFromTestCase(cls))
     return suite

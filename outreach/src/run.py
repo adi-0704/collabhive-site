@@ -417,6 +417,12 @@ def main(argv: list[str] | None = None) -> int:
         cmd_pool(cfg)
     elif mode == "report":
         cmd_report(cfg)
+    elif mode == "creators":
+        from src import creators as creators_mod
+        kind = "refer" if "--refer" in argv else "activate"
+        res = creators_mod.run_campaign(cfg, kind, dry_run=("--dry-run" in argv))
+        log(f"creators({kind}): {res}")
+        return 0 if res.get("ok") else 1
     elif mode == "sales":
         cmd_sales(cfg)
     elif mode == "seo":

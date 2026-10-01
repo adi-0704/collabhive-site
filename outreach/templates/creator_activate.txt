@@ -1,0 +1,24 @@
+Hi {name},
+
+Your profile is live on CollabHive - {handle}, listed under {niche}.
+
+{site_url}
+
+When a brand asks us for {niche} creators, we send them a shortlist. To put you
+on those shortlists properly, two things help:
+
+1. Your rate for one reel and for one story. A range is fine.
+2. Two or three links to work you're proud of.
+
+Reply to this email with those and I'll add them to your profile. It takes a
+minute and it is the difference between being on a list and being picked off it.
+
+Brands come to us with a budget and a brief already decided, so there is nothing
+to pitch - you either fit the brief or you don't. We take 10% when a
+collaboration goes ahead, and nothing from you ever.
+
+- {company}
+{contact_email}
+
+--
+Don't want to be listed? Reply "remove" and I'll take your profile down today.

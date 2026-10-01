@@ -77,6 +77,11 @@ jobs:
           python src/run.py onboarding || echo "Onboarding step skipped"
           # Always auto-publish form submitters to the site + draft onboarding posts.
           python src/run.py publish || echo "Publish step skipped"
+          # Creator-side campaigns. Runs AFTER publish so a creator who applied
+          # today is already on the site before we tell them they are live.
+          # Only published applicants are ever mailed — see src/creators.py.
+          python src/run.py creators || echo "Creator activation skipped"
+          python src/run.py creators --refer || echo "Creator referral skipped"
 
       - name: Commit report + state + SEO
         # always(): even if the run step failed part-way, commit whatever state

@@ -1,0 +1,26 @@
+Hi {name},
+
+Quick one. We're adding creators to CollabHive for the brand briefs coming in
+over the next few months, and the best ones so far have come from creators
+already on the platform pointing us at people they know.
+
+If you know creators who should be on this, here's the form - it takes about
+two minutes:
+
+{apply_url}
+
+What they get: brand briefs that already have a budget attached, so there's
+nothing to pitch. We take 10% when a collaboration happens, and nothing from
+the creator, ever.
+
+What you get: {bonus_pct}% of our commission on the first campaign anyone you
+refer completes. Just ask them to put {handle} in the "how did you hear about
+us" field so it comes back to you.
+
+No pressure at all - and if it's not for you, ignore this one.
+
+- {company}
+{contact_email}
+
+--
+Reply "stop" and I won't send you anything like this again.

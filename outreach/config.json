@@ -408,5 +408,12 @@
     "quote_chase_hours": 72,
     "subject": "Your creator shortlist — {brand}",
     "note": "Bridges email replies into quotes (src/nurture.py). Replies land in closing_queue but auto-quotes only read brand_briefs, so interested brands were never followed up."
+  },
+  "creators": {
+    "enabled": true,
+    "daily_limit": 12,
+    "gap_seconds": 20,
+    "state_file": "data/creator_campaign.json",
+    "note": "Email campaigns to the creator side. Only creators who submitted the application form AND were published to the site are ever mailed - creators.real_creators() enforces that against published_creators.json, because creators_pool.json is seeded with 22 synthetic handle@gmail.com demo entries that would bounce and damage sender reputation."
   }
 }
