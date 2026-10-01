@@ -116,7 +116,27 @@ def verify_delivery(cfg: dict) -> dict:
     state = load_json(state_file)
     state = state if isinstance(state, dict) else {}
     recorded = state.get("sent_log", [])
-    recorded_emails = [ (e.get("email") or "").lower() for e in recorded ]
+    # Only sends INSIDE the lookback window count.
+    #
+    # The Sent folder is scanned over `lookback_hours`, so dividing by every
+    # send ever made produced a "delivery rate" that compared a lifetime
+    # numerator's worth of addresses against a 96-hour confirmation window. It
+    # drifted with send cadence alone — 39% to 56.6% to 41.1% in a week with
+    # nothing actually changing — and tripped the `flagged` alarm at random.
+    def _in_window(entry: dict) -> bool:
+        ts = entry.get("ts", "")
+        if not ts:
+            return False
+        try:
+            t = datetime.fromisoformat(ts)
+        except (ValueError, TypeError):
+            return False
+        if t.tzinfo is None:
+            t = t.replace(tzinfo=timezone.utc)
+        return t >= since
+
+    recorded_emails = [(e.get("email") or "").lower()
+                       for e in recorded if _in_window(e)]
     recorded_emails = [e for e in recorded_emails if e]
     unique_recorded = list(dict.fromkeys(recorded_emails))
 
