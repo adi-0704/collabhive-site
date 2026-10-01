@@ -173,6 +173,15 @@ def run_campaign(cfg: dict, kind: str = "activate", limit: int = 0,
             log(f"  {before - len(audience)} applicant(s) not published yet - "
                 f"they get the activation mail once they are live")
 
+    if kind == "refer":
+        # Only ask for referrals from creators we have already spoken to.
+        # Both campaigns otherwise select the same first N creators and land in
+        # the same inbox minutes apart on day one, which reads as a blast.
+        # Gating on the activation list also produces a natural stagger: a
+        # creator activated today becomes referral-eligible on a later run.
+        activated = set(state.get("activate", []))
+        audience = [c for c in audience if c["email"] in activated]
+
     pending = [c for c in audience if c["email"] not in done]
 
     # The creator list is small and finite, so a modest batch keeps the sending
