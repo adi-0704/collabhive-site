@@ -1884,27 +1884,40 @@
     "niche": "Beauty & Cosmetics",
     "city": "Gurugram",
     "website": "https://ustraa.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "help@ustraa.com",
+    "emails": [
+      "help@ustraa.com",
+      "sainik@ustraa.com",
+      "help@happilyunmarried.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "The Man Company",
     "niche": "Beauty & Cosmetics",
     "city": "Gurugram",
     "website": "https://themancompany.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@themancompany.com",
+    "emails": [
+      "care@themancompany.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Kapiva",
     "niche": "Fitness & Wellness",
     "city": "Bengaluru",
     "website": "https://kapiva.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "info@kapiva.in",
+    "emails": [
+      "info@kapiva.in",
+      "vivek.arya@kapiva.in",
+      "alpesh@ditinteractive.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "OZiva",
