@@ -51,8 +51,8 @@ APPLY_FORM = ("https://docs.google.com/forms/d/e/"
               "1FAIpQLScIV5PVkwbdcvMpzCyxTAzN71ORCqaTaIMY7Dr15xEMXSxIXQ/viewform")
 
 CTA_LINK = {
-    "brand": "Free shortlist - link in bio 🔗",
-    "creator": "Link in bio 🔗",
+    "brand": "Free creator shortlist, no charge - link in bio 🔗",
+    "creator": "Join the network, free to apply - link in bio 🔗",
 }
 
 

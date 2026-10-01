@@ -107,8 +107,8 @@ def _pillar_weights(audience: str) -> dict:
 CTA_FILE = HERE / "cta.json"
 
 _DEFAULT_CTA = {
-    "brand": "Free shortlist — link in bio 🔗",
-    "creator": "Link in bio 🔗",
+    "brand": "Free creator shortlist, no charge — link in bio 🔗",
+    "creator": "Join the network, free to apply — link in bio 🔗",
 }
 
 

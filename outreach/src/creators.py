@@ -157,6 +157,22 @@ def run_campaign(cfg: dict, kind: str = "activate", limit: int = 0,
     done = set(state.get(kind, []))
 
     audience = real_creators(cfg)
+
+    if kind == "activate":
+        # This email states "your profile is live", so it may only go to
+        # creators who ARE live. The applicant sheet includes people whose
+        # profile has not been published yet; telling them otherwise is simply
+        # a false claim in outbound mail.
+        pub = load_json(ROOT / cfg["publish"]["published_file"])
+        pub = pub if isinstance(pub, dict) else {}
+        live = {(c.get("handle") or "").lower().lstrip("@")
+                for c in pub.get("creators", []) if c.get("handle")}
+        before = len(audience)
+        audience = [c for c in audience if c.get("handle") in live]
+        if before != len(audience):
+            log(f"  {before - len(audience)} applicant(s) not published yet - "
+                f"they get the activation mail once they are live")
+
     pending = [c for c in audience if c["email"] not in done]
 
     # The creator list is small and finite, so a modest batch keeps the sending
