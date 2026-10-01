@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T19:27:10.934935+00:00",
+  "generated_at": "2026-10-01T19:35:54.656917+00:00",
   "status": "fail",
   "checks": [
     {
@@ -23,7 +23,7 @@
     {
       "name": "hot_leads",
       "status": "warn",
-      "detail": "4 hot lead(s) with no quote for >48h: hello@sugarcosmetics.com, care@kamaayurveda.in, support@damensch.com, woot@mcaffeine.com",
+      "detail": "5 hot lead(s) with no quote for >48h: hello@sugarcosmetics.com, care@kamaayurveda.in, support@damensch.com, woot@mcaffeine.com, care@thesleepcompany.in",
       "fix": "Reply personally — these are the closest thing to revenue you have."
     },
     {
@@ -35,14 +35,14 @@
     {
       "name": "deliverability",
       "status": "fail",
-      "detail": "Delivery flagged: 41.1% delivered, 5 bounce(s).",
+      "detail": "Delivery flagged: 22.2% delivered, 5 bounce(s).",
       "fix": "Pause sending and clean the pool before Gmail throttles the account."
     }
   ],
   "metrics": {
-    "sent_24h": 2,
-    "sent_7d": 12,
-    "sent_total": 113,
+    "sent_24h": 3,
+    "sent_7d": 13,
+    "sent_total": 116,
     "replies_total": 5,
     "interested": 1,
     "negotiating": 4,
@@ -52,6 +52,6 @@
     "creators": 0,
     "social_drafts": 52,
     "seo_pages": 19,
-    "reply_rate_pct": 4.5
+    "reply_rate_pct": 4.3
   }
 }
