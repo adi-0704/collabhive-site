@@ -143,10 +143,15 @@
             <div class="field"><label for="chandle">Instagram handle</label><input id="chandle" name="Handle" data-label="Handle" type="text" placeholder="@yourhandle" required /></div>
             <div class="field"><label for="cniche">Primary niche</label><select id="cniche" name="Niche" data-label="Niche"><option value="">Select…</option><option>Fashion</option><option>Beauty</option><option>Food &amp; Beverage</option><option>Fitness &amp; Wellness</option><option>Tech</option><option>Travel &amp; Lifestyle</option><option>Finance</option><option>Gaming</option><option>Education</option><option>Other</option></select></div>
             <div class="field"><label for="cfollowers">Followers</label><select id="cfollowers" name="Followers" data-label="Followers"><option value="">Select…</option><option>Under 1K</option><option>1K – 5K</option><option>5K – 20K</option><option>20K – 100K</option><option>100K+</option></select></div>
+            <div class="field"><label for="cwa">WhatsApp number</label><input id="cwa" name="WhatsApp" data-label="WhatsApp" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 98765 43210" /></div>
             <div class="field"><label for="ccity">City</label><input id="ccity" name="City" data-label="City" type="text" placeholder="e.g. Delhi NCR" /></div>
             <div class="field"><label for="clink">Other platforms / links</label><input id="clink" name="Links" data-label="Links" type="text" placeholder="YouTube, blog, etc." /></div>
             <div class="field full"><label for="cmsg">Tell us about your content</label><textarea id="cmsg" name="About" data-label="About" placeholder="What do you create? What brands would you love to work with?"></textarea></div>
           </div>
+          <label class="form-note" style="display:flex;gap:8px;align-items:flex-start;margin-top:14px;">
+            <input id="cconsent" type="checkbox" style="margin-top:3px;" />
+            <span>Yes, CollabHive may message me on WhatsApp about brand collaborations. I can reply STOP anytime.</span>
+          </label>
           <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;">
             <a href="#" class="btn btn-gold btn-lg" id="apply-online">Apply via Online Form</a>
             <button type="submit" class="btn btn-ghost btn-lg" style="border-color:hsl(0,0%,35%);color:#fff;">Apply via WhatsApp</button>
@@ -228,6 +233,32 @@
           online.rel = 'noopener';
         }
       }
+    })();
+  </script>
+  <script>
+    // Save the creator's WhatsApp number (only with ticked consent) to the private
+    // queue via a function that can insert and nothing else. Never blocks applying.
+    (function () {
+      var form = document.querySelector('form[data-event="creator_application_submitted"]');
+      var api = window.CH_API || {};
+      if (!form || !api.supabaseUrl) return;
+      function val(id) { return (document.getElementById(id).value || '').trim(); }
+      function saveLead() {
+        var phone = val('cwa');
+        if (!phone || !document.getElementById('cconsent').checked) return;
+        try {
+          fetch(api.supabaseUrl + '/rest/v1/rpc/wa_submit_creator', {
+            method: 'POST', keepalive: true,
+            headers: { 'Content-Type': 'application/json', apikey: api.supabaseAnonKey,
+                       Authorization: 'Bearer ' + api.supabaseAnonKey },
+            body: JSON.stringify({ p_name: val('cname'), p_handle: val('chandle'), p_niche: val('cniche'),
+                                   p_city: val('ccity'), p_phone: phone, p_consent: true })
+          }).catch(function () {});
+        } catch (e) {}
+      }
+      // Capture phase: main.js resets the form on submit, so read the values first.
+      document.addEventListener('submit', function (e) { if (e.target === form) saveLead(); }, true);
+      document.getElementById('apply-online').addEventListener('click', saveLead);
     })();
   </script>
 </body>
