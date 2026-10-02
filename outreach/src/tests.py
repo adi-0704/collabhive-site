@@ -889,6 +889,33 @@ def _suite():
     return suite
 
 
+class TestLeads(unittest.TestCase):
+    def test_normalize_phone(self):
+        from src.leads import normalize_phone
+        self.assertEqual(normalize_phone("+91 98765 43210"), "919876543210")
+        self.assertEqual(normalize_phone("098765 43210"), "919876543210")
+        self.assertEqual(normalize_phone("011 2345 6789"), "")      # landline
+        self.assertEqual(normalize_phone("5555555555"), "")
+
+    def test_extract_contacts(self):
+        from src.leads import extract_contacts
+        html = ('<a href="https://wa.me/919876543210?text=hi">wa</a>'
+                '<a href="tel:+91 91234 56780">c</a>'
+                '<a href="https://instagram.com/some.creator/">ig</a>'
+                '<a href="https://instagram.com/p/xyz">post</a>')
+        c = extract_contacts(html)
+        self.assertEqual(c["phones"], ["919876543210", "919123456780"])
+        self.assertEqual(c["handles"], ["some.creator"])
+
+    def test_harvest_skips_without_key(self):
+        import os
+        from src import leads
+        os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        res = leads.run_harvest({"leads": {"supabase_url": "https://x.supabase.co"}})
+        self.assertFalse(res["ok"])
+
+
+
 if __name__ == "__main__":
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(_suite())

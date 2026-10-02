@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>CollabHive · WhatsApp queue</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root{--bg:#0f1115;--card:#181b22;--line:#262a33;--tx:#e9ecf2;--mut:#8b93a3;--ok:#25d366;--warn:#f5b84b;--bad:#ef6a6a}
+  *{box-sizing:border-box}body{margin:0;font:15px/1.45 system-ui,sans-serif;background:var(--bg);color:var(--tx)}
+  header{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5;flex-wrap:wrap}
+  h1{font-size:17px;margin:0}main{max-width:900px;margin:0 auto;padding:16px}
+  .quota{display:flex;gap:8px}.pill{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:13px}
+  .pill b{color:var(--ok)}.pill.full b{color:var(--bad)}
+  .tabs{display:flex;gap:8px;margin:14px 0;flex-wrap:wrap}
+  button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:8px;padding:8px 12px}
+  button.on{border-color:var(--ok);color:var(--ok)}button:disabled{opacity:.45;cursor:not-allowed}
+  .wa{background:var(--ok);color:#06210f;border-color:var(--ok);font-weight:600}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+  .meta{color:var(--mut);font-size:13px}.acts{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+  textarea{width:100%;min-height:120px;background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit}
+  input{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:9px;font:inherit}
+  #login{max-width:340px;margin:12vh auto;display:grid;gap:10px}
+  .hint{color:var(--mut);font-size:13px}.err{color:var(--bad)}
+</style>
+</head>
+<body>
+<div id="login" hidden>
+  <h1>CollabHive · WhatsApp queue</h1>
+  <input id="em" type="email" placeholder="Admin email" autocomplete="username">
+  <input id="pw" type="password" placeholder="Password" autocomplete="current-password">
+  <button class="wa" id="go">Sign in</button>
+  <div class="err" id="lerr"></div>
+</div>
+
+<div id="app" hidden>
+<header>
+  <h1>WhatsApp queue</h1>
+  <div class="quota"><span class="pill" id="qFirst"></span><span class="pill" id="qFollow"></span></div>
+  <button id="out">Sign out</button>
+</header>
+<main>
+  <div class="tabs" id="tabs"></div>
+  <details><summary>Message template (edit, saved in this browser)</summary>
+    <p class="hint">Use {name} for the brand/creator. Keep the opt-out line.</p>
+    <textarea id="tpl"></textarea>
+    <p class="hint">Follow-up template:</p>
+    <textarea id="tplF"></textarea>
+  </details>
+  <div id="list"></div>
+</main>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script>
+var CAP = {first:10, followup:5}, FOLLOW_AFTER_DAYS = 3, MAX_FOLLOWUPS = 2;
+var DEFAULT_TPL = {
+  brand: "Hi {name} team, this is Aditya from CollabHive, an influencer marketing agency. We match brands with verified creators and can send you a free shortlist of 5 creators for your niche. Want me to share it here? (Reply STOP and I won't message again.)",
+  creator: "Hi {name}, this is Aditya from CollabHive. We connect creators with paid brand collaborations. Want to join our creator list? Takes 2 minutes: https://adi-0704.github.io/collabhive-site/creators.html (Reply STOP and I won't message again.)",
+  followup: "Hi {name}, just following up on my earlier message from CollabHive. Happy to share details whenever you're free. (Reply STOP to opt out.)"
+};
+var sb = supabase.createClient(CH_API.supabaseUrl, CH_API.supabaseAnonKey);
+var kind = 'brand', view = 'new', used = {first:0, followup:0};
+var $ = function(id){return document.getElementById(id)};
+
+function tpl(k){return localStorage.getItem('wa_tpl_'+k) || DEFAULT_TPL[k]}
+function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+async function boot(){
+  var s = await sb.auth.getSession();
+  if(!s.data.session){ $('login').hidden=false; $('app').hidden=true; return; }
+  $('login').hidden=true; $('app').hidden=false;
+  $('tpl').value = tpl(kind); $('tplF').value = tpl('followup');
+  await refresh();
+}
+$('go').onclick = async function(){
+  var r = await sb.auth.signInWithPassword({email:$('em').value.trim(), password:$('pw').value});
+  if(r.error){ $('lerr').textContent = r.error.message; return; }
+  boot();
+};
+$('out').onclick = async function(){ await sb.auth.signOut(); boot(); };
+$('tpl').oninput = function(){ localStorage.setItem('wa_tpl_'+kind, $('tpl').value); };
+$('tplF').oninput = function(){ localStorage.setItem('wa_tpl_followup', $('tplF').value); };
+
+async function refresh(){
+  var today = new Date(Date.now() + 5.5*3600e3).toISOString().slice(0,10); // IST day
+  var q = await sb.from('wa_sends').select('send_type').eq('sent_day', today);
+  used = {first:0, followup:0};
+  (q.data||[]).forEach(function(r){ used[r.send_type]++; });
+  $('qFirst').innerHTML = 'New: <b>'+used.first+'/'+CAP.first+'</b>';
+  $('qFollow').innerHTML = 'Follow-ups: <b>'+used.followup+'/'+CAP.followup+'</b>';
+  $('qFirst').className = 'pill'+(used.first>=CAP.first?' full':'');
+  $('qFollow').className = 'pill'+(used.followup>=CAP.followup?' full':'');
+  var counts = {};
+  for (var k of ['brand','creator']) {
+    var n = await sb.from('wa_leads').select('id',{count:'exact',head:true}).eq('kind',k).eq('status','new');
+    counts[k] = n.count||0;
+  }
+  var f = await sb.from('wa_leads').select('id',{count:'exact',head:true}).eq('status','sent')
+          .lt('followups_sent', MAX_FOLLOWUPS).lt('last_sent_at', new Date(Date.now()-FOLLOW_AFTER_DAYS*864e5).toISOString());
+  $('tabs').innerHTML = '';
+  [['brand','Brands to message ('+counts.brand+')','new'],['creator','Creators to message ('+counts.creator+')','new'],
+   ['brand','Follow-ups due ('+(f.count||0)+')','followup']].forEach(function(t){
+    var b = document.createElement('button'); b.textContent = t[1];
+    if (t[0]===kind && t[2]===view) b.className='on';
+    b.onclick = function(){ kind=t[0]; view=t[2]; $('tpl').value=tpl(kind); refresh(); };
+    $('tabs').appendChild(b);
+  });
+  await render();
+}
+
+async function render(){
+  var qb = sb.from('wa_leads').select('*').limit(50);
+  if (view==='new') qb = qb.eq('kind',kind).eq('status','new').order('id');
+  else qb = qb.eq('status','sent').lt('followups_sent',MAX_FOLLOWUPS)
+              .lt('last_sent_at', new Date(Date.now()-FOLLOW_AFTER_DAYS*864e5).toISOString()).order('last_sent_at');
+  var r = await qb;
+  var type = view==='new' ? 'first' : 'followup';
+  var full = used[type] >= CAP[type];
+  $('list').innerHTML = (r.data||[]).length ? '' : '<p class="hint">Nothing queued. The daily harvest refills this.</p>';
+  (r.data||[]).forEach(function(l){
+    var d = document.createElement('div'); d.className='card';
+    d.innerHTML = '<div><b>'+esc(l.name)+'</b> <span class="meta">'+esc(l.kind)+' · '+esc(l.niche||'')+' · '+esc(l.city||'')+
+      '</span><div class="meta">+'+esc(l.phone)+(l.handle?' · @'+esc(l.handle):'')+' · source: '+esc(l.source||'')+
+      (l.followups_sent?' · follow-ups sent: '+l.followups_sent:'')+'</div></div>'+
+      '<div class="acts"><button class="wa" '+(full?'disabled title="Daily limit reached"':'')+'>Send on WhatsApp</button>'+
+      '<button data-s="replied">Replied</button><button data-s="dnc">Don\'t contact</button></div>';
+    d.querySelector('.wa').onclick = function(){ send(l, type); };
+    d.querySelectorAll('[data-s]').forEach(function(b){ b.onclick = async function(){
+      await sb.from('wa_leads').update({status:b.dataset.s}).eq('id',l.id); refresh(); }; });
+    $('list').appendChild(d);
+  });
+}
+
+async function send(l, type){
+  // Record first so the server-side cap is authoritative; only then open WhatsApp.
+  var r = await sb.rpc('wa_mark_sent', {p_lead:l.id, p_type:type});
+  if (r.error){ alert(r.error.message); refresh(); return; }
+  var text = tpl(type==='first'?l.kind:'followup').replace(/\{name\}/g, l.name);
+  window.open('https://wa.me/'+l.phone+'?text='+encodeURIComponent(text), '_blank', 'noopener');
+  refresh();
+}
+boot();
+</script>
+</body>
+</html>

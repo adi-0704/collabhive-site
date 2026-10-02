@@ -28,6 +28,7 @@ on:
           - seo
           - verify
           - report
+          - leads
           - enrich
 
 concurrency:
@@ -64,6 +65,7 @@ jobs:
         env:
           OUTREACH_EMAIL_USER: ${{ secrets.OUTREACH_EMAIL_USER }}
           OUTREACH_EMAIL_PASS: ${{ secrets.OUTREACH_EMAIL_PASS }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
           RUN_MODE: ${{ inputs.mode || 'all' }}
         run: |
@@ -82,6 +84,8 @@ jobs:
           # Only published applicants are ever mailed — see src/creators.py.
           python src/run.py creators || echo "Creator activation skipped"
           python src/run.py creators --refer || echo "Creator referral skipped"
+          # Daily WhatsApp lead harvest into the private Supabase queue.
+          python src/run.py leads || echo "Lead harvest skipped"
 
       - name: Commit report + state + SEO
         # always(): even if the run step failed part-way, commit whatever state

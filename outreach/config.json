@@ -221,6 +221,14 @@
       "handoff_after_minutes": 30
     }
   },
+  "leads": {
+    "enabled": true,
+    "supabase_url": "https://tfdnmlzvktqjwjjbkoif.supabase.co",
+    "daily_target_each": 100,
+    "max_minutes": 25,
+    "daily_first_cap": 10,
+    "daily_followup_cap": 5
+  },
   "publish": {
     "enabled": true,
     "applicant_sheet_id": "1fnINFVDChyeK0VoihUeTHY_vG9V1s-4dkHMsxGdzYGY",

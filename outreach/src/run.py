@@ -423,6 +423,10 @@ def main(argv: list[str] | None = None) -> int:
         res = creators_mod.run_campaign(cfg, kind, dry_run=("--dry-run" in argv))
         log(f"creators({kind}): {res}")
         return 0 if res.get("ok") else 1
+    elif mode == "leads":
+        from src import leads as leads_mod
+        res = leads_mod.run_harvest(cfg)
+        log(f"leads: {res}")
     elif mode == "sales":
         cmd_sales(cfg)
     elif mode == "seo":
