@@ -116,7 +116,9 @@
     "care@bombayshavingcompany.com",
     "help@ustraa.com",
     "info@kapiva.in",
-    "care@themancompany.com"
+    "care@themancompany.com",
+    "community@oziva.in",
+    "care@wellbeingnutrition.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -234,7 +236,9 @@
     "bombayshavingcompany.com",
     "ustraa.com",
     "kapiva.in",
-    "themancompany.com"
+    "themancompany.com",
+    "oziva.in",
+    "wellbeingnutrition.com"
   ],
   "sent_log": [
     {
@@ -1146,9 +1150,25 @@
       "niche": "Beauty & Cosmetics",
       "city": "Gurugram",
       "subject": "A free creator shortlist for The Man Company"
+    },
+    {
+      "ts": "2026-10-02T10:00:24.435520+00:00",
+      "email": "community@oziva.in",
+      "name": "OZiva",
+      "niche": "Fitness & Wellness",
+      "city": "Mumbai",
+      "subject": "OZiva: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-02T10:02:38.819600+00:00",
+      "email": "care@wellbeingnutrition.com",
+      "name": "Wellbeing Nutrition",
+      "niche": "Fitness & Wellness",
+      "city": "Mumbai",
+      "subject": "Wellbeing Nutrition: five matched creators, free"
     }
   ],
-  "last_run": "2026-10-01T10:30:10.722539+00:00",
+  "last_run": "2026-10-02T10:02:38.850952+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",

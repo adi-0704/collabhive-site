@@ -1924,27 +1924,38 @@
     "niche": "Fitness & Wellness",
     "city": "Mumbai",
     "website": "https://oziva.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "community@oziva.in",
+    "emails": [
+      "community@oziva.in"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Wellbeing Nutrition",
     "niche": "Fitness & Wellness",
     "city": "Mumbai",
     "website": "https://wellbeingnutrition.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "care@wellbeingnutrition.com",
+    "emails": [
+      "care@wellbeingnutrition.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Setu Nutrition",
     "niche": "Fitness & Wellness",
     "city": "Mumbai",
     "website": "https://setu.in",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "enteryour@addresshere.com?subject=https://setu.in/blogs/listing/dry-dull-skin-your-skin-barrier-might-be-weak-heres-what-science-says",
+    "emails": [
+      "enteryour@addresshere.com?subject=https://setu.in/blogs/listing/dry-dull-skin-your-skin-barrier-might-be-weak-heres-what-science-says",
+      "enteryour@addresshere.com?subject=https://setu.in/blogs/listing/what-happens-when-you-replace-whey-with-plant-protein-for-30-days",
+      "enteryour@addresshere.com?subject=https://setu.in/blogs/listing/marine-collagen-and-glutathione-the-ultimate-skin-pair"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "Plix",

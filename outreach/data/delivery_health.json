@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "checked_at": "2026-10-01T10:31:04.283921+00:00",
+  "checked_at": "2026-10-02T10:03:19.057260+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 9,
+  "recorded_sends": 11,
   "confirmed_in_sent": 2,
-  "unconfirmed": 7,
-  "delivery_rate_pct": 22.2,
+  "unconfirmed": 9,
+  "delivery_rate_pct": 18.2,
   "bounces": 5,
   "bounce_emails": [],
   "unconfirmed_emails": [
@@ -15,7 +15,9 @@
     "care@bombayshavingcompany.com",
     "help@ustraa.com",
     "info@kapiva.in",
-    "care@themancompany.com"
+    "care@themancompany.com",
+    "community@oziva.in",
+    "care@wellbeingnutrition.com"
   ],
   "flagged": true
 }
