@@ -224,8 +224,9 @@
   "leads": {
     "enabled": true,
     "supabase_url": "https://tfdnmlzvktqjwjjbkoif.supabase.co",
-    "daily_target_each": 100,
-    "max_minutes": 25,
+    "daily_target_each": 150,
+    "total_brand_goal": 1000,
+    "max_minutes": 45,
     "daily_first_cap": 10,
     "daily_followup_cap": 5
   },

@@ -1,0 +1,43 @@
+name: WhatsApp Lead Harvest
+
+# Refills the private wa_leads queue until the brand goal (leads.total_brand_goal)
+# is reached, then becomes a no-op for brands. Runs several times a day so it
+# keeps going on its own, including after any quota reset.
+on:
+  schedule:
+    - cron: '47 */4 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: outreach-daily
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Harvest leads
+        working-directory: outreach
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python src/run.py leads || echo "Harvest finished with warnings"
+      - name: Commit new brand emails
+        if: always()
+        shell: bash
+        run: |
+          git config user.name "collabhive-outreach"
+          git config user.email "collabhive.in@gmail.com"
+          git add outreach/data/brands_seed.json || true
+          if git diff --cached --quiet; then echo "Nothing new."; else
+            git commit -m "build: lead harvest new brand emails [skip ci]"
+            for i in 1 2 3 4 5; do git pull --rebase origin "${{ github.ref_name }}" && break || true; done
+            for i in 1 2 3 4 5; do git push origin "${{ github.ref_name }}" && break || sleep 20; done
+          fi
