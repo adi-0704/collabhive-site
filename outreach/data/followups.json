@@ -485,23 +485,23 @@
     "name": "Fabnest"
   },
   "support@colorbarcosmetics.com": {
-    "count": 1,
-    "last_sent": "2026-09-28T10:07:46.018395+00:00",
+    "count": 2,
+    "last_sent": "2026-10-03T09:22:25.632499+00:00",
     "name": "Colorbar"
   },
   "support@buywow.in": {
-    "count": 1,
-    "last_sent": "2026-09-28T10:07:46.018395+00:00",
+    "count": 2,
+    "last_sent": "2026-10-03T09:22:25.632499+00:00",
     "name": "WOW Skin Science"
   },
   "support@swissbeauty.in": {
-    "count": 1,
-    "last_sent": "2026-09-28T10:07:46.018395+00:00",
+    "count": 2,
+    "last_sent": "2026-10-03T09:22:25.632499+00:00",
     "name": "Swiss Beauty"
   },
   "support@fixderma.com": {
-    "count": 1,
-    "last_sent": "2026-09-28T10:07:46.018395+00:00",
+    "count": 2,
+    "last_sent": "2026-10-03T09:22:25.632499+00:00",
     "name": "Fixderma"
   },
   "hello@consciouschemist.com": {
@@ -523,5 +523,15 @@
     "count": 1,
     "last_sent": "2026-10-01T10:30:29.909090+00:00",
     "name": "Soultree"
+  },
+  "care@nathabit.in": {
+    "count": 1,
+    "last_sent": "2026-10-03T09:22:25.632499+00:00",
+    "name": "Nat Habit"
+  },
+  "hello@quenchbotanics.com": {
+    "count": 1,
+    "last_sent": "2026-10-03T09:22:25.632499+00:00",
+    "name": "Quench Botanics"
   }
 }

@@ -1962,9 +1962,13 @@
     "niche": "Fitness & Wellness",
     "city": "Mumbai",
     "website": "https://plixlife.com",
-    "email": "",
-    "emails": [],
-    "source": "curated"
+    "email": "hello@plixlife.com",
+    "emails": [
+      "hello@plixlife.com",
+      "business@plixlife.com"
+    ],
+    "source": "curated",
+    "has_email": true
   },
   {
     "name": "HealthKart",
@@ -1973,7 +1977,8 @@
     "website": "https://healthkart.com",
     "email": "",
     "emails": [],
-    "source": "curated"
+    "source": "curated",
+    "has_email": false
   },
   {
     "name": "Fast&Up",

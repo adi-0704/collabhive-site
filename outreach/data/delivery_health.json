@@ -1,23 +1,22 @@
 {
   "ok": true,
-  "checked_at": "2026-10-02T10:03:19.057260+00:00",
+  "checked_at": "2026-10-03T09:22:56.219836+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 11,
+  "recorded_sends": 10,
   "confirmed_in_sent": 2,
-  "unconfirmed": 9,
-  "delivery_rate_pct": 18.2,
-  "bounces": 5,
+  "unconfirmed": 8,
+  "delivery_rate_pct": 20.0,
+  "bounces": 3,
   "bounce_emails": [],
   "unconfirmed_emails": [
-    "care@nathabit.in",
-    "hello@quenchbotanics.com",
     "support@beardo.in",
     "care@bombayshavingcompany.com",
     "help@ustraa.com",
     "info@kapiva.in",
     "care@themancompany.com",
     "community@oziva.in",
-    "care@wellbeingnutrition.com"
+    "care@wellbeingnutrition.com",
+    "hello@plixlife.com"
   ],
   "flagged": true
 }

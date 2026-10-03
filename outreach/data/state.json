@@ -118,7 +118,8 @@
     "info@kapiva.in",
     "care@themancompany.com",
     "community@oziva.in",
-    "care@wellbeingnutrition.com"
+    "care@wellbeingnutrition.com",
+    "hello@plixlife.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -238,7 +239,8 @@
     "kapiva.in",
     "themancompany.com",
     "oziva.in",
-    "wellbeingnutrition.com"
+    "wellbeingnutrition.com",
+    "plixlife.com"
   ],
   "sent_log": [
     {
@@ -1166,9 +1168,17 @@
       "niche": "Fitness & Wellness",
       "city": "Mumbai",
       "subject": "Wellbeing Nutrition: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-03T09:22:20.233843+00:00",
+      "email": "hello@plixlife.com",
+      "name": "Plix",
+      "niche": "Fitness & Wellness",
+      "city": "Mumbai",
+      "subject": "Plix: five matched creators, free"
     }
   ],
-  "last_run": "2026-10-02T10:02:38.850952+00:00",
+  "last_run": "2026-10-03T09:22:20.247278+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
