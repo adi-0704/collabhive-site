@@ -2132,5 +2132,1691 @@
     "email": "",
     "emails": [],
     "source": "curated"
+  },
+  {
+    "name": "Petpooja",
+    "niche": "Food & Beverage",
+    "city": "Mumbai",
+    "website": "https://blog.petpooja.com",
+    "email": "inquiry@petpooja.com",
+    "emails": [
+      "inquiry@petpooja.com",
+      "you@company.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Qikink",
+    "niche": "Food & Beverage",
+    "city": "Mumbai",
+    "website": "https://qikink.com",
+    "email": "care@qikink.com",
+    "emails": [
+      "care@qikink.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Dermaville",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bangalore",
+    "website": "https://www.dermaville.org",
+    "email": "servocaregroup@gmail.com",
+    "emails": [
+      "servocaregroup@gmail.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Vive Cosmetics",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bangalore",
+    "website": "https://vivecosmetic.com",
+    "email": "info@vivecosmetic.com",
+    "emails": [
+      "info@vivecosmetic.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Sephora India",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bangalore",
+    "website": "https://sephora.in",
+    "email": "support@sephora.in",
+    "emails": [
+      "support@sephora.in",
+      "help@sephoraonline.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Derma PCD Franchise Company in India",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bangalore",
+    "website": "https://www.canbrohealthcare.com",
+    "email": "info@canbro.in",
+    "emails": [
+      "info@canbro.in",
+      "canbrohc@gmail.com",
+      "info@canbrohealthcare.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Limpo Ecommerce",
+    "niche": "Tech & Startups",
+    "city": "Mumbai",
+    "website": "https://limpo.in",
+    "email": "rahul@yourbrand.com",
+    "emails": [
+      "rahul@yourbrand.com",
+      "limposupport@gmail.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Watskart",
+    "niche": "Tech & Startups",
+    "city": "Mumbai",
+    "website": "https://watskart.com",
+    "email": "business@theadroit.in",
+    "emails": [
+      "business@theadroit.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "WatEase",
+    "niche": "Tech & Startups",
+    "city": "Mumbai",
+    "website": "https://watease.com",
+    "email": "support@watease.com",
+    "emails": [
+      "support@watease.com",
+      "priya@yourbrand.com",
+      "you@business.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Indian Startup Times",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://www.indianstartuptimes.com",
+    "email": "indianstartuptimes@gmail.com",
+    "emails": [
+      "indianstartuptimes@gmail.com",
+      "raamesh.chandra@indianstartuptimes.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "ITD GrowthLabs",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://itdgrowthlabs.com",
+    "email": "info@itdgrowthlabs.com",
+    "emails": [
+      "info@itdgrowthlabs.com",
+      "you@company.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Taantraa // Organic Handbaking",
+    "niche": "Food & Beverage",
+    "city": "Bangalore",
+    "website": "https://taantraa.com",
+    "email": "team@latofonts.com",
+    "emails": [
+      "team@latofonts.com",
+      "anapbm@gmail.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Thom's Bakery and Supermarket |",
+    "niche": "Food & Beverage",
+    "city": "Bangalore",
+    "website": "https://thomsonline.in",
+    "email": "thomsbakeryonline@gmail.com",
+    "emails": [
+      "thomsbakeryonline@gmail.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Amande Patisserie",
+    "niche": "Food & Beverage",
+    "city": "Bangalore",
+    "website": "https://amande.co.in",
+    "email": "sales@amande.co.in",
+    "emails": [
+      "sales@amande.co.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Aubree Haute Chocolaterie",
+    "niche": "Food & Beverage",
+    "city": "Bangalore",
+    "website": "https://aubree.in",
+    "email": "connect@aubree.in",
+    "emails": [
+      "connect@aubree.in",
+      "abcd@gmail.com",
+      "intl-tel-input@25.10.12"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Anand Sweets & Savouries",
+    "niche": "Food & Beverage",
+    "city": "Bangalore",
+    "website": "https://www.anandsweets.in",
+    "email": "care@anandsweets.net",
+    "emails": [
+      "care@anandsweets.net"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Meena Bazaar",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://meenabazaar.com",
+    "email": "customercare@meenabazaar.com",
+    "emails": [
+      "customercare@meenabazaar.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Soch",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://www.soch.com",
+    "email": "support@soch.com",
+    "emails": [
+      "support@soch.com",
+      "support@sochstore.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Heritage India Official",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://www.heritageofficial.com",
+    "email": "care@heritageofficial.com",
+    "emails": [
+      "care@heritageofficial.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Ethnos",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://www.shopethnos.com",
+    "email": "nhelp@shopethnos.com",
+    "emails": [
+      "nhelp@shopethnos.com",
+      "help@shopethnos.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "fitndia.com",
+    "niche": "Fitness & Wellness",
+    "city": "Mumbai",
+    "website": "https://fitndia.com",
+    "email": "harshchoudhary123h@gmail.com",
+    "emails": [
+      "harshchoudhary123h@gmail.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Gym Equipment Brand in India",
+    "niche": "Fitness & Wellness",
+    "city": "Mumbai",
+    "website": "https://www.jeraifitness.com",
+    "email": "support@jeraifitness.com",
+    "emails": [
+      "support@jeraifitness.com",
+      "sales@jeraifitness.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Powermax– Best Fitness Equipment Brand in India",
+    "niche": "Fitness & Wellness",
+    "city": "Mumbai",
+    "website": "https://www.powermaxfitness.net",
+    "email": "info@powermaxfitness.net",
+    "emails": [
+      "info@powermaxfitness.net",
+      "support@powermaxfitness.net"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "aurikahotels.com",
+    "niche": "Travel & Hospitality",
+    "city": "Udaipur",
+    "website": "https://www.aurikahotels.com",
+    "email": "bootstrap@4.0.0",
+    "emails": [
+      "bootstrap@4.0.0"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "5 Star Hotels in India",
+    "niche": "Travel & Hospitality",
+    "city": "Udaipur",
+    "website": "https://www.tridenthotels.com",
+    "email": "reservations@tridenthotels.com",
+    "emails": [
+      "reservations@tridenthotels.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Holidify",
+    "niche": "Travel & Hospitality",
+    "city": "Udaipur",
+    "website": "https://www.holidify.com",
+    "email": "hello@holidify.com",
+    "emails": [
+      "hello@holidify.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Rajasthan Tourism Development Corporation",
+    "niche": "Travel & Hospitality",
+    "city": "Udaipur",
+    "website": "https://rtdc.tourism.rajasthan.gov.in",
+    "email": "croho.rtdc@rajasthan.gov.in",
+    "emails": [
+      "croho.rtdc@rajasthan.gov.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "MoneyX",
+    "niche": "Tech & Startups",
+    "city": "Pune",
+    "website": "https://moneyx.vc",
+    "email": "bootstrap@5.3.0-alpha3",
+    "emails": [
+      "bootstrap@5.3.0-alpha3",
+      "intl-tel-input@18.1.1",
+      "core@2.11.7"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "moneycontrol.com",
+    "niche": "Tech & Startups",
+    "city": "Pune",
+    "website": "https://moneycontrol.com",
+    "email": "forum@moneycontrol.com",
+    "emails": [
+      "forum@moneycontrol.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "India's Best Gym Management Software|Gym & Fitness Centre",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://fitgymsoftware.com",
+    "email": "support@fitgymsoftware.com",
+    "emails": [
+      "support@fitgymsoftware.com",
+      "sales@fitgymsoftware.com",
+      "hr@fitgymsoftware.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Rack Manufacturers",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://gymequipmentsmanufacturers.co.in",
+    "email": "bootstrap@5.3.3",
+    "emails": [
+      "bootstrap@5.3.3",
+      "bootstrap@5.3.2"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Gym Management Software with WhatsApp & Biometric",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://easygymsoftware.com",
+    "email": "bootstrap@5.3.0",
+    "emails": [
+      "bootstrap@5.3.0",
+      "bootstrap-icons@1.11.3",
+      "echarts@6.0.0"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "VIVA FITNESS",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://vivafitness.net",
+    "email": "info@vivafitness.net",
+    "emails": [
+      "info@vivafitness.net"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Fitsource",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://fitsource.in",
+    "email": "intl-segmenter@11.7.10",
+    "emails": [
+      "intl-segmenter@11.7.10",
+      "core-js-bundle@3.2.1",
+      "focus-within-polyfill@5.0.9"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "www.aerofit.co",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://aerofit.co.in",
+    "email": "aerofit.info@gmail.com",
+    "emails": [
+      "aerofit.info@gmail.com",
+      "bootstrap@5.0.1"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Welcare Fitness",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://welcareindia.com",
+    "email": "info@welcarefitness.com",
+    "emails": [
+      "info@welcarefitness.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Durafit91",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://durafit.in",
+    "email": "sales@durafit91.com",
+    "emails": [
+      "sales@durafit91.com",
+      "cares@durafit91.com",
+      "support@durafit91.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Health Strives",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://healthstrives.com",
+    "email": "info@healthstrives.com",
+    "emails": [
+      "info@healthstrives.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "indianretailer.com",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://www.indianretailer.com",
+    "email": "info@indianretailer.comcontact",
+    "emails": [
+      "info@indianretailer.comcontact",
+      "info@indianretailer.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "irec.asia",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://irec.asia",
+    "email": "ui@5.0",
+    "emails": [
+      "ui@5.0",
+      "futura-font@1.0.0"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Digit Insurance",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://godigit.com",
+    "email": "hello@godigit.com",
+    "emails": [
+      "hello@godigit.com",
+      "grievance@godigit.com",
+      "joinus@godigit.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Franchise Global",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://franglobal.com",
+    "email": "ceo@franglobal.com",
+    "emails": [
+      "ceo@franglobal.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Franchise India Exhibitions",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://franchiseindia.net",
+    "email": "conference@franchiseindia.com",
+    "emails": [
+      "conference@franchiseindia.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Franchising in India with Expert Franchise Consultant",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://francorp.in",
+    "email": "bootstrap@5.3.3",
+    "emails": [
+      "bootstrap@5.3.3",
+      "bootstrap-icons@1.11.1",
+      "aos@2.3.4"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Global Franchise Forum",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://globalfranchiseforum.com",
+    "email": "bootstrap-icons@1.4.1",
+    "emails": [
+      "bootstrap-icons@1.4.1",
+      "bootstrap@5.0.0"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "plutos ONE : Offers, Coupons, Cashback, Promo Codes & Deals",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bangalore",
+    "website": "https://plutos.one",
+    "email": "care@plutos.one",
+    "emails": [
+      "care@plutos.one"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "ALANNA",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bangalore",
+    "website": "https://alanna.co.in",
+    "email": "sales@alanna.co.in",
+    "emails": [
+      "sales@alanna.co.in",
+      "marketing@alanna.co.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "AMINU",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bangalore",
+    "website": "https://aminu.life",
+    "email": "flowbite@2.5.1",
+    "emails": [
+      "flowbite@2.5.1",
+      "care@aminu.life",
+      "skincoach@aminu.life"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Antinorm",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bangalore",
+    "website": "https://antinorm.co",
+    "email": "care@antinorm.co",
+    "emails": [
+      "care@antinorm.co"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "World of Asaya",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bangalore",
+    "website": "https://worldofasaya.com",
+    "email": "web-sdk@14.12.5",
+    "emails": [
+      "web-sdk@14.12.5",
+      "asayacare@wellspringconsumer.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Beauty Garage",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bangalore",
+    "website": "https://beautygarage.com",
+    "email": "ecom-swiper@11.css",
+    "emails": [
+      "ecom-swiper@11.css",
+      "codex@beautygarage.com",
+      "help@beautygarage.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "by Naked fact",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bangalore",
+    "website": "https://bynakedfact.com",
+    "email": "help@bynakedfact.com",
+    "emails": [
+      "help@bynakedfact.com",
+      "operations@bynakedfact.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Eze Perfume",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://ezeperfume.com",
+    "email": "care@ezeperfumes.com",
+    "emails": [
+      "care@ezeperfumes.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "GHAR SOAPS",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://gharsoaps.shop",
+    "email": "web-sdk@14.12.5",
+    "emails": [
+      "web-sdk@14.12.5",
+      "support@gharsoaps.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Neothera",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://neothera.co",
+    "email": "care@neothera.co",
+    "emails": [
+      "care@neothera.co"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Numour",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://numour.com",
+    "email": "ecom-swiper@11.css",
+    "emails": [
+      "ecom-swiper@11.css",
+      "admin@numour.com",
+      "help@numour.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Old School Ritual",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://oldschoolrituals.in",
+    "email": "care@oldschoolrituals.in",
+    "emails": [
+      "care@oldschoolrituals.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Plenaire India",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://plenaire.in",
+    "email": "helloindia@plenaire.co",
+    "emails": [
+      "helloindia@plenaire.co"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Ruby's Organics",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://rubysorganics.in",
+    "email": "hello@rubysorganics.in",
+    "emails": [
+      "hello@rubysorganics.in",
+      "consult@rubysorganics.in",
+      "canvas-confetti@1.6.0"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Simply Nam",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://simplynam.com",
+    "email": "ecom-swiper@11.css",
+    "emails": [
+      "ecom-swiper@11.css",
+      "support@simplynam.com",
+      "orders@simplynam.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "SkinInspired",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://skininspired.in",
+    "email": "slick-carousel@1.8.1",
+    "emails": [
+      "slick-carousel@1.8.1",
+      "splide@2.4.6",
+      "care@skininspired.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Skinvest",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://skinvest.care",
+    "email": "info@skinvest.care",
+    "emails": [
+      "info@skinvest.care",
+      "rellax@1.12.1"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "The Love Co",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://theloveco.in",
+    "email": "support@theloveco.in",
+    "emails": [
+      "support@theloveco.in",
+      "your@email.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "The Natural Wash",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://thenaturalwash.com",
+    "email": "care@thenaturalwash.com",
+    "emails": [
+      "care@thenaturalwash.com",
+      "marketing@thenaturalwash.com",
+      "offlinesale@thenaturalwash.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "The Skin Story",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://theskinstory.in",
+    "email": "feedback@theskinstory.in",
+    "emails": [
+      "feedback@theskinstory.in",
+      "orders@theskinstory.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Traya",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://traya.health",
+    "email": "thumbmarkjs@1.10.0",
+    "emails": [
+      "thumbmarkjs@1.10.0",
+      "customercare@traya.health",
+      ".unknown@traya.health"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Type Beauty",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://typebeautyinc.com",
+    "email": "customercare@typebeautyinc.com",
+    "emails": [
+      "customercare@typebeautyinc.com",
+      "partnerships@typebeautyinc.com",
+      "info@typebeautyinc.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Typsy Beauty",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://typsybeauty.com",
+    "email": "pingtheprincess@typsybeauty.com",
+    "emails": [
+      "pingtheprincess@typsybeauty.com",
+      "slick-carousel@1.8.1"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Cruelty-Free & Beauty Products",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://thebodyshop.in",
+    "email": "help@thebodyshop.com",
+    "emails": [
+      "help@thebodyshop.com",
+      "customercare.tbs@questretail.in",
+      "grievance-redressal@questretail.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "O3plus",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://o3plus.com",
+    "email": "isotope-layout@3.0.6",
+    "emails": [
+      "isotope-layout@3.0.6",
+      "info@o3plus.com",
+      "browser@6.2.2"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Clensta",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://clensta.com",
+    "email": "clensta@floridabeautylabs.com",
+    "emails": [
+      "clensta@floridabeautylabs.com",
+      "ecomm@floridabeautylabs.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Auli Lifestyle",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://aulilifestyle.com",
+    "email": "info@aulilifestyle.com",
+    "emails": [
+      "info@aulilifestyle.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "CosIQ",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://mycosiq.com",
+    "email": "bootstrap@5.3.1",
+    "emails": [
+      "bootstrap@5.3.1",
+      "care@mycosiq.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Beautywiseshop",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://beautywise.in",
+    "email": "slick-carousel@1.8.1",
+    "emails": [
+      "slick-carousel@1.8.1",
+      "customercare@beautywise.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Amrutam",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://amrutam.co.in",
+    "email": "support@amrutam.co.in",
+    "emails": [
+      "support@amrutam.co.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Avimee Herbal",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://avimeeherbal.com",
+    "email": "support@avimeeskin.com",
+    "emails": [
+      "support@avimeeskin.com",
+      "raj.gandhi@avimeeherbal.com",
+      "support@avimeeherbal.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Havintha",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://havintha.in",
+    "email": "info@yourstore.com",
+    "emails": [
+      "info@yourstore.com",
+      "support@havintha.in",
+      "shop@yourstore.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Cognito IT Consultancy",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://cognitoitconsultancy.com",
+    "email": "info@cognitoitcosultancy.com",
+    "emails": [
+      "info@cognitoitcosultancy.com",
+      "info@cognitoitconsultancy.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Inventiva",
+    "niche": "Beauty & Cosmetics",
+    "city": "Delhi",
+    "website": "https://www.inventiva.co.in",
+    "email": "info@inventiva.co.in",
+    "emails": [
+      "info@inventiva.co.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Denzour Nutrition",
+    "niche": "Fitness & Wellness",
+    "city": "Mumbai",
+    "website": "https://denzournutrition.com",
+    "email": "help@denzournutrition.com",
+    "emails": [
+      "help@denzournutrition.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "The 5xl Nutrition",
+    "niche": "Fitness & Wellness",
+    "city": "Mumbai",
+    "website": "https://the5xlnutrition.com",
+    "email": "e-mailsupport@the5xlnutrition.com",
+    "emails": [
+      "e-mailsupport@the5xlnutrition.com",
+      "support@the5xlnutrition.com",
+      "support@5xlnutrition.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Growkitchen",
+    "niche": "Food & Beverage",
+    "city": "Hyderabad",
+    "website": "https://growkitchen.in",
+    "email": "info@growkitchen.in",
+    "emails": [
+      "info@growkitchen.in",
+      "thegrowkitchen@gmail.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "GreenSalad",
+    "niche": "Food & Beverage",
+    "city": "Hyderabad",
+    "website": "https://greensalad.in",
+    "email": "thegreensaladin@gmail.com",
+    "emails": [
+      "thegreensaladin@gmail.com",
+      "support@yellow-finch-989138.hostingersite.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Marzorin Cafe",
+    "niche": "Food & Beverage",
+    "city": "Pune",
+    "website": "https://marzorin.com",
+    "email": "contactus@marzorin.com",
+    "emails": [
+      "contactus@marzorin.com",
+      "pizza@pizza.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Malaka Spice: Best Asian & Fine-Dine Restaurants in Kharadi,",
+    "niche": "Food & Beverage",
+    "city": "Pune",
+    "website": "https://malakaspice.com",
+    "email": "marketingmanager@malakaspice.com",
+    "emails": [
+      "marketingmanager@malakaspice.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "DLFmallofindia",
+    "niche": "Fashion & Apparel",
+    "city": "Jaipur",
+    "website": "https://dlfmallofindia.com",
+    "email": "customercare@dlfmallofindia.com",
+    "emails": [
+      "customercare@dlfmallofindia.com",
+      "customercare-dlfmallofindia@dlf.in",
+      "negi-arun@dlf.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "magicpin",
+    "niche": "Fashion & Apparel",
+    "city": "Jaipur",
+    "website": "https://magicpin.in",
+    "email": "care@magicpin.in",
+    "emails": [
+      "care@magicpin.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Raw Mango",
+    "niche": "Fashion & Apparel",
+    "city": "Jaipur",
+    "website": "https://rawmango.com",
+    "email": "info@rawmango.in",
+    "emails": [
+      "info@rawmango.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Vilvah Store",
+    "niche": "Beauty & Cosmetics",
+    "city": "Bangalore",
+    "website": "https://vilvahstore.com",
+    "email": "sales@vilvahstore.com",
+    "emails": [
+      "sales@vilvahstore.com",
+      "collaboration@vilvahstore.com",
+      "careers@vilvahstore.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "GrabOn",
+    "niche": "Beauty & Cosmetics",
+    "city": "Mumbai",
+    "website": "https://www.grabon.in",
+    "email": "contact@grabon.in",
+    "emails": [
+      "contact@grabon.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Good Karma Wellness Private Limited",
+    "niche": "Beauty & Cosmetics",
+    "city": "Mumbai",
+    "website": "https://thegoodkarmawellness.com",
+    "email": "hello@thegoodkarmawellness.com",
+    "emails": [
+      "hello@thegoodkarmawellness.com",
+      "innovation@thegoodkarmawellness.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "brwn.in",
+    "niche": "Beauty & Cosmetics",
+    "city": "Mumbai",
+    "website": "https://brwn.in",
+    "email": "care@brwn.in",
+    "emails": [
+      "care@brwn.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Fix My Curls",
+    "niche": "Beauty & Cosmetics",
+    "city": "Mumbai",
+    "website": "https://fixmycurls.com",
+    "email": "customercarefmc@gmail.com",
+    "emails": [
+      "customercarefmc@gmail.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Gunam Beauty",
+    "niche": "Beauty & Cosmetics",
+    "city": "Mumbai",
+    "website": "https://gunambeauty.com",
+    "email": "contact@gunambeauty.com",
+    "emails": [
+      "contact@gunambeauty.com",
+      "contact@gunambeauty.comphone"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "HYPHEN",
+    "niche": "Beauty & Cosmetics",
+    "city": "Mumbai",
+    "website": "https://letshyphen.com",
+    "email": "noreply@mailers.letshyphen.com",
+    "emails": [
+      "noreply@mailers.letshyphen.com",
+      "web-sdk@14.12.5",
+      "care@letshyphen.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "PrivateCircle",
+    "niche": "Fashion & Apparel",
+    "city": "Mumbai",
+    "website": "https://privatecircle.co",
+    "email": "support@privatecircle.co",
+    "emails": [
+      "support@privatecircle.co",
+      "press@privatecircle.co"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "SEFT",
+    "niche": "Fashion & Apparel",
+    "city": "Mumbai",
+    "website": "https://www.seft.world",
+    "email": "support@seft.world",
+    "emails": [
+      "support@seft.world"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "OZRIT",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://ozrit.com",
+    "email": "connect@ozrit.com",
+    "emails": [
+      "connect@ozrit.com",
+      "name@company.com",
+      "you@company.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Tvisha Technologies",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://tvisha.com",
+    "email": "info@tvisha.com",
+    "emails": [
+      "info@tvisha.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "revolynk.com",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://revolynk.com",
+    "email": "revolynk@gmail.com",
+    "emails": [
+      "revolynk@gmail.com",
+      "reach@revolynk.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Welcome to Ahex Technologies",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://ahex.co",
+    "email": "sales@ahex.co.in",
+    "emails": [
+      "sales@ahex.co.in",
+      "info@ahex.co",
+      "hr@ahex.co.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Eqaim Technology and Services",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://eqaim.com",
+    "email": "contact@eqaim.com",
+    "emails": [
+      "contact@eqaim.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Extended Web",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://extwebtech.com",
+    "email": "sales@extwebtech.com",
+    "emails": [
+      "sales@extwebtech.com",
+      "info@extwebtech.com",
+      "hr@extwebtech.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Best Mobile App, AI Software Development Company in Hyderaba",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://vrinda.io",
+    "email": "hey@vrinda.io",
+    "emails": [
+      "hey@vrinda.io",
+      "glen@vrinda.io"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "DotcomWeavers",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://dotcomweavers.com",
+    "email": "info@dotcomweavers.com",
+    "emails": [
+      "info@dotcomweavers.com",
+      "insights@dotcomweavers.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "AI Software & Custom Web, Mobile App & SaaS Development comp",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://kkeydos.com",
+    "email": "boxicons@2.0.7",
+    "emails": [
+      "boxicons@2.0.7",
+      "info@kkeydos.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "BeyondScale",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://beyondscale.tech",
+    "email": "hello@beyondscale.tech",
+    "emails": [
+      "hello@beyondscale.tech",
+      "jane@company.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Royal It Park",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://royalitpark.com",
+    "email": "support@royalitpark.com",
+    "emails": [
+      "support@royalitpark.com",
+      "you@your-company.com",
+      "hello@royalitpark.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Devathon",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://devathon.com",
+    "email": "hello@devathon.com",
+    "emails": [
+      "hello@devathon.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Tapadia Tech |",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://tapadiatech.com",
+    "email": "info@tapadiatech.com",
+    "emails": [
+      "info@tapadiatech.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Star Advertising Agency",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://staradvertisingagency.in",
+    "email": "info@staradvertisingagency.in",
+    "emails": [
+      "info@staradvertisingagency.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "CodeFacts",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://codefacts.com",
+    "email": "hello@codefacts.com",
+    "emails": [
+      "hello@codefacts.com",
+      "jane@company.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Codiant Software Technologies",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://codiant.com",
+    "email": "info@codiant.com",
+    "emails": [
+      "info@codiant.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Inovies",
+    "niche": "Tech & Startups",
+    "city": "Hyderabad",
+    "website": "https://inovies.com",
+    "email": "info@inovies.com",
+    "emails": [
+      "info@inovies.com",
+      "you@company.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Superkicks",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://superkicks.in",
+    "email": "care@superkicks.in",
+    "emails": [
+      "care@superkicks.in",
+      "info@superkicks.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Stylera",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://stylera.co",
+    "email": "care@stylera.co",
+    "emails": [
+      "care@stylera.co",
+      "hello@stylera.co",
+      "stylera-sub@aurumfms.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "No Nasties",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://nonasties.in",
+    "email": "betty@nonasties.in",
+    "emails": [
+      "betty@nonasties.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Bunka Studio",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://bunka.in",
+    "email": "connect@bunka.in",
+    "emails": [
+      "connect@bunka.in",
+      "care@bunka.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Hibiscus Heroes",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://hibiscusheroes.com",
+    "email": "intl-segmenter@11.7.10",
+    "emails": [
+      "intl-segmenter@11.7.10",
+      "core-js-bundle@3.2.1",
+      "focus-within-polyfill@5.0.9"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Pia And Paro Clothing",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://piaparo.com",
+    "email": "hi@piaparo.com",
+    "emails": [
+      "hi@piaparo.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Gulaal",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://gulaalcreations.com",
+    "email": "hello@gulaalcreations.com",
+    "emails": [
+      "hello@gulaalcreations.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "House of Fett",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://houseoffett.com",
+    "email": "sales@houseoffett.com",
+    "emails": [
+      "sales@houseoffett.com",
+      "pr@houseoffett.com",
+      "careers@houseoffett.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Shop Mulmul",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://shopmulmul.com",
+    "email": "web-sdk@14.12.5",
+    "emails": [
+      "web-sdk@14.12.5",
+      "orders@shopmulmul.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Lakshita",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://lakshita.com",
+    "email": "care@lakshita.com",
+    "emails": [
+      "care@lakshita.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "wforwoman",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://wforwoman.com",
+    "email": "customercare.tcns@abfrl.adityabirla.com",
+    "emails": [
+      "customercare.tcns@abfrl.adityabirla.com",
+      "customercare@tcnsclothing.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Chakori Ethnic",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://chakoriethnic.com",
+    "email": "slick-carousel@1.8.1",
+    "emails": [
+      "slick-carousel@1.8.1",
+      "info@chakoriethnic.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Chidiyaa",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://chidiyaa.com",
+    "email": "hello@chidiyaa.com",
+    "emails": [
+      "hello@chidiyaa.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Vimor Sarees",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://vimor.in",
+    "email": "info@vimor.in",
+    "emails": [
+      "info@vimor.in",
+      "vimorsarees@gmail.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Ganga Fashions",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://gangafashions.com",
+    "email": "ecomsupport@gangafashions.com",
+    "emails": [
+      "ecomsupport@gangafashions.com",
+      "business-inquiry@gangafashions.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Irich Photography",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://irichphotography.com",
+    "email": "irich12106@gmail.com",
+    "emails": [
+      "irich12106@gmail.com",
+      "solene@qodeinteractive.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "GulabiCity.com",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://gulabicity.com",
+    "email": "info@gulabicity.com",
+    "emails": [
+      "info@gulabicity.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "ShopKoai",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://koai.in",
+    "email": "officialkoai@gmail.com",
+    "emails": [
+      "officialkoai@gmail.com",
+      "contact@koai.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Azafashions.com",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://azafashions.com",
+    "email": "contactus@azafashions.com",
+    "emails": [
+      "contactus@azafashions.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Party Wear For Women",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://urbansuburban.in",
+    "email": "info@urbansuburban.in",
+    "emails": [
+      "info@urbansuburban.in"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "CAVA Athleisure Pvt Ltd",
+    "niche": "Fitness & Wellness",
+    "city": "Bangalore",
+    "website": "https://cavaathleisure.com",
+    "email": "contact@cavaathleisure.com",
+    "emails": [
+      "contact@cavaathleisure.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "AeroLeads",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://aeroleads.com",
+    "email": "support@aeroleads.com",
+    "emails": [
+      "support@aeroleads.com",
+      "hello@aeroleads.com",
+      "anna@company.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "DailyObjects",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://dailyobjects.com",
+    "email": "support@dailyobjects.com",
+    "emails": [
+      "support@dailyobjects.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "bijnis",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://bijnis.com",
+    "email": "info@bijnis.com",
+    "emails": [
+      "info@bijnis.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "V2Retail Ltd.",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://v2retail.com",
+    "email": "customercare@v2kart.com",
+    "emails": [
+      "customercare@v2kart.com",
+      "support@v2retail.com",
+      "hr@v2kart.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Bombay Shirt Company",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://korra.in",
+    "email": "lottie-player@1.5.7",
+    "emails": [
+      "lottie-player@1.5.7",
+      "support@bombayshirts.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "confidentialcouture.com",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://confidentialcouture.com",
+    "email": "slick-carousel@1.8.1",
+    "emails": [
+      "slick-carousel@1.8.1",
+      "info@confidentialcouture.com",
+      "consign@confidentialcouture.com"
+    ],
+    "source": "web_discovery"
+  },
+  {
+    "name": "Quintype: Best CMS Partner for Digital Newsrooms",
+    "niche": "Fashion & Apparel",
+    "city": "Delhi",
+    "website": "https://quintype.com",
+    "email": "your@company.com",
+    "emails": [
+      "your@company.com"
+    ],
+    "source": "web_discovery"
   }
 ]
