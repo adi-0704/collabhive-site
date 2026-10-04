@@ -119,7 +119,25 @@
     "care@themancompany.com",
     "community@oziva.in",
     "care@wellbeingnutrition.com",
-    "hello@plixlife.com"
+    "hello@plixlife.com",
+    "sales@vilvahstore.com",
+    "care@thenaturalwash.com",
+    "customercare@typebeautyinc.com",
+    "sales@houseoffett.com",
+    "ecomsupport@gangafashions.com",
+    "support@privatecircle.co",
+    "marketingmanager@malakaspice.com",
+    "business@theadroit.in",
+    "ceo@franglobal.com",
+    "servocaregroup@gmail.com",
+    "info@canbro.in",
+    "care@aminu.life",
+    "asayacare@wellspringconsumer.in",
+    "codex@beautygarage.com",
+    "help@bynakedfact.com",
+    "indianstartuptimes@gmail.com",
+    "nhelp@shopethnos.com",
+    "hello@rubysorganics.in"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -240,7 +258,25 @@
     "themancompany.com",
     "oziva.in",
     "wellbeingnutrition.com",
-    "plixlife.com"
+    "plixlife.com",
+    "vilvahstore.com",
+    "thenaturalwash.com",
+    "typebeautyinc.com",
+    "houseoffett.com",
+    "gangafashions.com",
+    "privatecircle.co",
+    "malakaspice.com",
+    "watskart.com",
+    "franglobal.com",
+    "dermaville.org",
+    "canbrohealthcare.com",
+    "aminu.life",
+    "worldofasaya.com",
+    "beautygarage.com",
+    "bynakedfact.com",
+    "indianstartuptimes.com",
+    "shopethnos.com",
+    "rubysorganics.in"
   ],
   "sent_log": [
     {
@@ -1176,9 +1212,153 @@
       "niche": "Fitness & Wellness",
       "city": "Mumbai",
       "subject": "Plix: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-04T10:02:10.898905+00:00",
+      "email": "sales@vilvahstore.com",
+      "name": "Vilvah Store",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bangalore",
+      "subject": "What would a creator campaign cost Vilvah Store?"
+    },
+    {
+      "ts": "2026-10-04T10:04:10.204467+00:00",
+      "email": "care@thenaturalwash.com",
+      "name": "The Natural Wash",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost The Natural Wash?"
+    },
+    {
+      "ts": "2026-10-04T10:07:08.465557+00:00",
+      "email": "customercare@typebeautyinc.com",
+      "name": "Type Beauty",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Type Beauty"
+    },
+    {
+      "ts": "2026-10-04T10:08:56.073401+00:00",
+      "email": "sales@houseoffett.com",
+      "name": "House of Fett",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for House of Fett"
+    },
+    {
+      "ts": "2026-10-04T10:11:07.531393+00:00",
+      "email": "ecomsupport@gangafashions.com",
+      "name": "Ganga Fashions",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Ganga Fashions: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-04T10:12:39.635356+00:00",
+      "email": "support@privatecircle.co",
+      "name": "PrivateCircle",
+      "niche": "Fashion & Apparel",
+      "city": "Mumbai",
+      "subject": "PrivateCircle: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-04T10:14:52.355712+00:00",
+      "email": "marketingmanager@malakaspice.com",
+      "name": "Malaka Spice: Best Asian & Fine-Dine Restaurants in Kharadi,",
+      "niche": "Food & Beverage",
+      "city": "Pune",
+      "subject": "What would a creator campaign cost Malaka Spice: Best Asian & Fine-Dine Restaurants in Kharadi,?"
+    },
+    {
+      "ts": "2026-10-04T10:17:07.070705+00:00",
+      "email": "business@theadroit.in",
+      "name": "Watskart",
+      "niche": "Tech & Startups",
+      "city": "Mumbai",
+      "subject": "Watskart: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-04T10:18:47.622411+00:00",
+      "email": "ceo@franglobal.com",
+      "name": "Franchise Global",
+      "niche": "Fitness & Wellness",
+      "city": "Bangalore",
+      "subject": "A free creator shortlist for Franchise Global"
+    },
+    {
+      "ts": "2026-10-04T10:20:29.507542+00:00",
+      "email": "servocaregroup@gmail.com",
+      "name": "Dermaville",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bangalore",
+      "subject": "Dermaville: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-04T10:22:39.643678+00:00",
+      "email": "info@canbro.in",
+      "name": "Derma PCD Franchise Company in India",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bangalore",
+      "subject": "Creator shortlist for Derma PCD Franchise Company in India?"
+    },
+    {
+      "ts": "2026-10-04T10:24:34.280546+00:00",
+      "email": "care@aminu.life",
+      "name": "AMINU",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bangalore",
+      "subject": "Creator shortlist for AMINU?"
+    },
+    {
+      "ts": "2026-10-04T10:27:12.136690+00:00",
+      "email": "asayacare@wellspringconsumer.in",
+      "name": "World of Asaya",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bangalore",
+      "subject": "A free creator shortlist for World of Asaya"
+    },
+    {
+      "ts": "2026-10-04T10:29:32.195808+00:00",
+      "email": "codex@beautygarage.com",
+      "name": "Beauty Garage",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bangalore",
+      "subject": "Beauty Garage: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-04T10:31:56.968355+00:00",
+      "email": "help@bynakedfact.com",
+      "name": "by Naked fact",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bangalore",
+      "subject": "A free creator shortlist for by Naked fact"
+    },
+    {
+      "ts": "2026-10-04T10:33:50.804871+00:00",
+      "email": "indianstartuptimes@gmail.com",
+      "name": "Indian Startup Times",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Indian Startup Times"
+    },
+    {
+      "ts": "2026-10-04T10:35:26.179053+00:00",
+      "email": "nhelp@shopethnos.com",
+      "name": "Ethnos",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Ethnos: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-04T10:37:44.426220+00:00",
+      "email": "hello@rubysorganics.in",
+      "name": "Ruby's Organics",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "Creator shortlist for Ruby's Organics?"
     }
   ],
-  "last_run": "2026-10-03T09:22:20.247278+00:00",
+  "last_run": "2026-10-04T10:37:44.439352+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
@@ -1204,6 +1384,9 @@
     "nbspcontact@kicaactive.com",
     "78winone.com@gmail.com",
     "help@reequil.com",
-    "sainik@ustraa.com"
+    "sainik@ustraa.com",
+    "isha11siddiqui@gmail.com",
+    "nhelp@shopethnos.com",
+    "pr@houseoffett.com"
   ]
 }

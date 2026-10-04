@@ -505,13 +505,13 @@
     "name": "Fixderma"
   },
   "hello@consciouschemist.com": {
-    "count": 1,
-    "last_sent": "2026-09-29T10:07:57.795837+00:00",
+    "count": 2,
+    "last_sent": "2026-10-04T10:37:53.224470+00:00",
     "name": "Conscious Chemist"
   },
   "help@reequil.com": {
-    "count": 1,
-    "last_sent": "2026-09-29T10:07:57.795837+00:00",
+    "count": 2,
+    "last_sent": "2026-10-04T10:37:53.224470+00:00",
     "name": "Re equil"
   },
   "info@arata.in": {
@@ -533,5 +533,30 @@
     "count": 1,
     "last_sent": "2026-10-03T09:22:25.632499+00:00",
     "name": "Quench Botanics"
+  },
+  "support@beardo.in": {
+    "count": 1,
+    "last_sent": "2026-10-04T10:37:53.224470+00:00",
+    "name": "Beardo"
+  },
+  "care@bombayshavingcompany.com": {
+    "count": 1,
+    "last_sent": "2026-10-04T10:37:53.224470+00:00",
+    "name": "Bombay Shaving Company"
+  },
+  "help@ustraa.com": {
+    "count": 1,
+    "last_sent": "2026-10-04T10:37:53.224470+00:00",
+    "name": "Ustraa"
+  },
+  "info@kapiva.in": {
+    "count": 1,
+    "last_sent": "2026-10-04T10:37:53.224470+00:00",
+    "name": "Kapiva"
+  },
+  "care@themancompany.com": {
+    "count": 1,
+    "last_sent": "2026-10-04T10:37:53.224470+00:00",
+    "name": "The Man Company"
   }
 }
