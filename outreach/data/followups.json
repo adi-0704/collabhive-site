@@ -515,13 +515,13 @@
     "name": "Re equil"
   },
   "info@arata.in": {
-    "count": 1,
-    "last_sent": "2026-10-01T10:30:29.909090+00:00",
+    "count": 2,
+    "last_sent": "2026-10-05T11:25:23.781482+00:00",
     "name": "Arata"
   },
   "wecare@soultree.in": {
-    "count": 1,
-    "last_sent": "2026-10-01T10:30:29.909090+00:00",
+    "count": 2,
+    "last_sent": "2026-10-05T11:25:23.781482+00:00",
     "name": "Soultree"
   },
   "care@nathabit.in": {
@@ -558,5 +558,15 @@
     "count": 1,
     "last_sent": "2026-10-04T10:37:53.224470+00:00",
     "name": "The Man Company"
+  },
+  "community@oziva.in": {
+    "count": 1,
+    "last_sent": "2026-10-05T11:25:23.781482+00:00",
+    "name": "OZiva"
+  },
+  "care@wellbeingnutrition.com": {
+    "count": 1,
+    "last_sent": "2026-10-05T11:25:23.781482+00:00",
+    "name": "Wellbeing Nutrition"
   }
 }

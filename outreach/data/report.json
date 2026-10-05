@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T10:38:34.757413+00:00",
+  "generated_at": "2026-10-05T11:26:22.191018+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -10,21 +10,21 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 137,
-    "unique_brands_emailed": 136,
-    "brands_in_pool": 327,
-    "brands_with_email": 226,
-    "remaining_candidates": 90,
+    "total_sent": 155,
+    "unique_brands_emailed": 154,
+    "brands_in_pool": 326,
+    "brands_with_email": 225,
+    "remaining_candidates": 71,
     "sent_today": 18,
-    "sent_week": 30,
-    "day_streak": 30,
+    "sent_week": 46,
+    "day_streak": 46,
     "daily_budget": 18
   },
   "by_niche": {
-    "Fashion & Apparel": 44,
-    "Beauty & Cosmetics": 50,
-    "Food & Beverage": 12,
-    "Fitness & Wellness": 11,
+    "Fashion & Apparel": 51,
+    "Beauty & Cosmetics": 54,
+    "Food & Beverage": 17,
+    "Fitness & Wellness": 13,
     "Home & Decor": 11,
     "Travel & Hospitality": 1,
     "Tech & Startups": 8
@@ -32,23 +32,23 @@
   "by_city": {
     "Bengaluru": 18,
     "Coimbatore": 2,
-    "Delhi": 18,
+    "Delhi": 27,
     "Gurugram": 26,
-    "Hyderabad": 3,
+    "Hyderabad": 5,
     "Kolkata": 1,
-    "Mumbai": 35,
-    "Jaipur": 4,
+    "Mumbai": 36,
+    "Jaipur": 5,
     "Chennai": 1,
     "Jodhpur": 1,
     "Chandigarh": 2,
     "Ahmedabad": 3,
     "New Delhi": 13,
     "Pune": 2,
-    "Bangalore": 8
+    "Bangalore": 13
   },
   "pool_by_niche": {
     "Food & Beverage": 40,
-    "Fashion & Apparel": 90,
+    "Fashion & Apparel": 89,
     "Beauty & Cosmetics": 96,
     "Fitness & Wellness": 45,
     "Home & Decor": 20,
@@ -56,6 +56,150 @@
     "Tech & Startups": 28
   },
   "recent_sends": [
+    {
+      "ts": "2026-10-05T11:25:09.364978+00:00",
+      "email": "thegreensaladin@gmail.com",
+      "name": "GreenSalad",
+      "niche": "Food & Beverage",
+      "city": "Hyderabad",
+      "subject": "Creator shortlist for GreenSalad?"
+    },
+    {
+      "ts": "2026-10-05T11:22:34.490907+00:00",
+      "email": "info@growkitchen.in",
+      "name": "Growkitchen",
+      "niche": "Food & Beverage",
+      "city": "Hyderabad",
+      "subject": "Growkitchen: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-05T11:19:50.423993+00:00",
+      "email": "conference@franchiseindia.com",
+      "name": "Franchise India Exhibitions",
+      "niche": "Fitness & Wellness",
+      "city": "Bangalore",
+      "subject": "Creator shortlist for Franchise India Exhibitions?"
+    },
+    {
+      "ts": "2026-10-05T11:17:40.675179+00:00",
+      "email": "hello@godigit.com",
+      "name": "Digit Insurance",
+      "niche": "Fitness & Wellness",
+      "city": "Bangalore",
+      "subject": "Digit Insurance: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-05T11:15:40.396700+00:00",
+      "email": "connect@aubree.in",
+      "name": "Aubree Haute Chocolaterie",
+      "niche": "Food & Beverage",
+      "city": "Bangalore",
+      "subject": "Aubree Haute Chocolaterie: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-05T11:13:24.677237+00:00",
+      "email": "thomsbakeryonline@gmail.com",
+      "name": "Thom's Bakery and Supermarket |",
+      "niche": "Food & Beverage",
+      "city": "Bangalore",
+      "subject": "Creator shortlist for Thom's Bakery and Supermarket |?"
+    },
+    {
+      "ts": "2026-10-05T11:10:30.123925+00:00",
+      "email": "team@latofonts.com",
+      "name": "Taantraa // Organic Handbaking",
+      "niche": "Food & Beverage",
+      "city": "Bangalore",
+      "subject": "A free creator shortlist for Taantraa // Organic Handbaking"
+    },
+    {
+      "ts": "2026-10-05T11:08:36.928797+00:00",
+      "email": "hello@thegoodkarmawellness.com",
+      "name": "Good Karma Wellness Private Limited",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Good Karma Wellness Private Limited: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-05T11:05:46.156771+00:00",
+      "email": "raj.gandhi@avimeeherbal.com",
+      "name": "Avimee Herbal",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "Avimee Herbal: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-05T11:03:11.334968+00:00",
+      "email": "clensta@floridabeautylabs.com",
+      "name": "Clensta",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "Creator shortlist for Clensta?"
+    },
+    {
+      "ts": "2026-10-05T11:01:13.807430+00:00",
+      "email": "pingtheprincess@typsybeauty.com",
+      "name": "Typsy Beauty",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost Typsy Beauty?"
+    },
+    {
+      "ts": "2026-10-05T10:58:45.241467+00:00",
+      "email": "customercare@dlfmallofindia.com",
+      "name": "DLFmallofindia",
+      "niche": "Fashion & Apparel",
+      "city": "Jaipur",
+      "subject": "Creator shortlist for DLFmallofindia?"
+    },
+    {
+      "ts": "2026-10-05T10:56:09.690785+00:00",
+      "email": "info@confidentialcouture.com",
+      "name": "confidentialcouture.com",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for confidentialcouture.com"
+    },
+    {
+      "ts": "2026-10-05T10:53:00.123271+00:00",
+      "email": "officialkoai@gmail.com",
+      "name": "ShopKoai",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Creator shortlist for ShopKoai?"
+    },
+    {
+      "ts": "2026-10-05T10:51:17.625725+00:00",
+      "email": "irich12106@gmail.com",
+      "name": "Irich Photography",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Irich Photography"
+    },
+    {
+      "ts": "2026-10-05T10:49:18.844454+00:00",
+      "email": "info@vimor.in",
+      "name": "Vimor Sarees",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Vimor Sarees"
+    },
+    {
+      "ts": "2026-10-05T10:46:16.380373+00:00",
+      "email": "betty@nonasties.in",
+      "name": "No Nasties",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for No Nasties"
+    },
+    {
+      "ts": "2026-10-05T10:43:54.493214+00:00",
+      "email": "care@stylera.co",
+      "name": "Stylera",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Stylera"
+    },
     {
       "ts": "2026-10-04T10:37:44.426220+00:00",
       "email": "hello@rubysorganics.in",
@@ -71,150 +215,6 @@
       "niche": "Fashion & Apparel",
       "city": "Delhi",
       "subject": "Ethnos: five matched creators, free"
-    },
-    {
-      "ts": "2026-10-04T10:33:50.804871+00:00",
-      "email": "indianstartuptimes@gmail.com",
-      "name": "Indian Startup Times",
-      "niche": "Beauty & Cosmetics",
-      "city": "Delhi",
-      "subject": "A free creator shortlist for Indian Startup Times"
-    },
-    {
-      "ts": "2026-10-04T10:31:56.968355+00:00",
-      "email": "help@bynakedfact.com",
-      "name": "by Naked fact",
-      "niche": "Beauty & Cosmetics",
-      "city": "Bangalore",
-      "subject": "A free creator shortlist for by Naked fact"
-    },
-    {
-      "ts": "2026-10-04T10:29:32.195808+00:00",
-      "email": "codex@beautygarage.com",
-      "name": "Beauty Garage",
-      "niche": "Beauty & Cosmetics",
-      "city": "Bangalore",
-      "subject": "Beauty Garage: five matched creators, free"
-    },
-    {
-      "ts": "2026-10-04T10:27:12.136690+00:00",
-      "email": "asayacare@wellspringconsumer.in",
-      "name": "World of Asaya",
-      "niche": "Beauty & Cosmetics",
-      "city": "Bangalore",
-      "subject": "A free creator shortlist for World of Asaya"
-    },
-    {
-      "ts": "2026-10-04T10:24:34.280546+00:00",
-      "email": "care@aminu.life",
-      "name": "AMINU",
-      "niche": "Beauty & Cosmetics",
-      "city": "Bangalore",
-      "subject": "Creator shortlist for AMINU?"
-    },
-    {
-      "ts": "2026-10-04T10:22:39.643678+00:00",
-      "email": "info@canbro.in",
-      "name": "Derma PCD Franchise Company in India",
-      "niche": "Beauty & Cosmetics",
-      "city": "Bangalore",
-      "subject": "Creator shortlist for Derma PCD Franchise Company in India?"
-    },
-    {
-      "ts": "2026-10-04T10:20:29.507542+00:00",
-      "email": "servocaregroup@gmail.com",
-      "name": "Dermaville",
-      "niche": "Beauty & Cosmetics",
-      "city": "Bangalore",
-      "subject": "Dermaville: five matched creators, free"
-    },
-    {
-      "ts": "2026-10-04T10:18:47.622411+00:00",
-      "email": "ceo@franglobal.com",
-      "name": "Franchise Global",
-      "niche": "Fitness & Wellness",
-      "city": "Bangalore",
-      "subject": "A free creator shortlist for Franchise Global"
-    },
-    {
-      "ts": "2026-10-04T10:17:07.070705+00:00",
-      "email": "business@theadroit.in",
-      "name": "Watskart",
-      "niche": "Tech & Startups",
-      "city": "Mumbai",
-      "subject": "Watskart: five matched creators, free"
-    },
-    {
-      "ts": "2026-10-04T10:14:52.355712+00:00",
-      "email": "marketingmanager@malakaspice.com",
-      "name": "Malaka Spice: Best Asian & Fine-Dine Restaurants in Kharadi,",
-      "niche": "Food & Beverage",
-      "city": "Pune",
-      "subject": "What would a creator campaign cost Malaka Spice: Best Asian & Fine-Dine Restaurants in Kharadi,?"
-    },
-    {
-      "ts": "2026-10-04T10:12:39.635356+00:00",
-      "email": "support@privatecircle.co",
-      "name": "PrivateCircle",
-      "niche": "Fashion & Apparel",
-      "city": "Mumbai",
-      "subject": "PrivateCircle: five matched creators, free"
-    },
-    {
-      "ts": "2026-10-04T10:11:07.531393+00:00",
-      "email": "ecomsupport@gangafashions.com",
-      "name": "Ganga Fashions",
-      "niche": "Fashion & Apparel",
-      "city": "Delhi",
-      "subject": "Ganga Fashions: five matched creators, free"
-    },
-    {
-      "ts": "2026-10-04T10:08:56.073401+00:00",
-      "email": "sales@houseoffett.com",
-      "name": "House of Fett",
-      "niche": "Fashion & Apparel",
-      "city": "Delhi",
-      "subject": "A free creator shortlist for House of Fett"
-    },
-    {
-      "ts": "2026-10-04T10:07:08.465557+00:00",
-      "email": "customercare@typebeautyinc.com",
-      "name": "Type Beauty",
-      "niche": "Beauty & Cosmetics",
-      "city": "Delhi",
-      "subject": "A free creator shortlist for Type Beauty"
-    },
-    {
-      "ts": "2026-10-04T10:04:10.204467+00:00",
-      "email": "care@thenaturalwash.com",
-      "name": "The Natural Wash",
-      "niche": "Beauty & Cosmetics",
-      "city": "Delhi",
-      "subject": "What would a creator campaign cost The Natural Wash?"
-    },
-    {
-      "ts": "2026-10-04T10:02:10.898905+00:00",
-      "email": "sales@vilvahstore.com",
-      "name": "Vilvah Store",
-      "niche": "Beauty & Cosmetics",
-      "city": "Bangalore",
-      "subject": "What would a creator campaign cost Vilvah Store?"
-    },
-    {
-      "ts": "2026-10-03T09:22:20.233843+00:00",
-      "email": "hello@plixlife.com",
-      "name": "Plix",
-      "niche": "Fitness & Wellness",
-      "city": "Mumbai",
-      "subject": "Plix: five matched creators, free"
-    },
-    {
-      "ts": "2026-10-02T10:02:38.819600+00:00",
-      "email": "care@wellbeingnutrition.com",
-      "name": "Wellbeing Nutrition",
-      "niche": "Fitness & Wellness",
-      "city": "Mumbai",
-      "subject": "Wellbeing Nutrition: five matched creators, free"
     }
   ],
   "sales": {
@@ -423,15 +423,15 @@
       ]
     ],
     "replied_count": 7,
-    "reply_rate_pct": 5.1
+    "reply_rate_pct": 4.5
   },
   "mail_health": {
-    "sent_total": 137,
-    "delivered_pct": 12.5,
-    "bounces": 6,
+    "sent_total": 155,
+    "delivered_pct": 5.1,
+    "bounces": 10,
     "human_replies": 7,
     "hot_leads": 7,
-    "reply_rate_pct": 5.1,
+    "reply_rate_pct": 4.5,
     "hot_by_status": {
       "interested": 2,
       "negotiating": 5
@@ -496,7 +496,7 @@
     ],
     "reachability": {
       "decision_maker": 19,
-      "named_person": 70,
+      "named_person": 69,
       "generic": 65,
       "support_desk": 72,
       "no_email": 101
@@ -509,25 +509,24 @@
     ]
   },
   "social_runway": {
-    "rendered_through": "2026-11-18",
+    "rendered_through": "2026-11-19",
     "days_left": 45,
     "rendered": 92
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-10-04T10:38:34.754325+00:00",
+    "checked_at": "2026-10-05T11:26:22.187615+00:00",
     "lookback_hours": 96,
-    "recorded_sends": 24,
-    "confirmed_in_sent": 3,
-    "unconfirmed": 21,
-    "delivery_rate_pct": 12.5,
-    "bounces": 6,
+    "recorded_sends": 39,
+    "confirmed_in_sent": 2,
+    "unconfirmed": 37,
+    "delivery_rate_pct": 5.1,
+    "bounces": 10,
     "bounce_emails": [
-      "nhelp@shopethnos.com"
+      "nhelp@shopethnos.com",
+      "conference@franchiseindia.com"
     ],
     "unconfirmed_emails": [
-      "community@oziva.in",
-      "care@wellbeingnutrition.com",
       "hello@plixlife.com",
       "sales@vilvahstore.com",
       "care@thenaturalwash.com",
@@ -545,7 +544,9 @@
       "codex@beautygarage.com",
       "help@bynakedfact.com",
       "indianstartuptimes@gmail.com",
-      "hello@rubysorganics.in"
+      "hello@rubysorganics.in",
+      "care@stylera.co",
+      "betty@nonasties.in"
     ],
     "flagged": true
   },
@@ -620,7 +621,7 @@
       "campaigns_run": 0,
       "alltime_creators": 75,
       "alltime_briefs": 2,
-      "generated_at": "2026-10-04T10:38:34.767964+00:00"
+      "generated_at": "2026-10-05T11:26:22.201346+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -638,7 +639,7 @@
     }
   },
   "publish": {
-    "published_count": 52,
+    "published_count": 53,
     "creators": [
       {
         "name": "Garima narang",
@@ -1094,5 +1095,5 @@
     }
   },
   "dnc_count": 1,
-  "last_run": "2026-10-04T10:37:44.439352+00:00"
+  "last_run": "2026-10-05T11:25:09.408645+00:00"
 }
