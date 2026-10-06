@@ -2940,19 +2940,6 @@
     "has_email": false
   },
   {
-    "name": "Avimee Herbal",
-    "niche": "Beauty & Cosmetics",
-    "city": "Delhi",
-    "website": "https://avimeeherbal.com",
-    "email": "raj.gandhi@avimeeherbal.com",
-    "emails": [
-      "raj.gandhi@avimeeherbal.com",
-      "support@avimeeherbal.com"
-    ],
-    "source": "web_discovery",
-    "has_email": true
-  },
-  {
     "name": "Havintha",
     "niche": "Beauty & Cosmetics",
     "city": "Delhi",

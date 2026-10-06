@@ -1,18 +1,18 @@
 {
   "ok": true,
-  "checked_at": "2026-10-05T11:26:22.187615+00:00",
+  "checked_at": "2026-10-06T10:37:49.233198+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 39,
-  "confirmed_in_sent": 2,
-  "unconfirmed": 37,
-  "delivery_rate_pct": 5.1,
+  "recorded_sends": 37,
+  "confirmed_in_sent": 1,
+  "unconfirmed": 36,
+  "delivery_rate_pct": 2.7,
   "bounces": 10,
   "bounce_emails": [
     "nhelp@shopethnos.com",
-    "conference@franchiseindia.com"
+    "conference@franchiseindia.com",
+    "raj.gandhi@avimeeherbal.com"
   ],
   "unconfirmed_emails": [
-    "hello@plixlife.com",
     "sales@vilvahstore.com",
     "care@thenaturalwash.com",
     "customercare@typebeautyinc.com",
@@ -31,7 +31,8 @@
     "indianstartuptimes@gmail.com",
     "hello@rubysorganics.in",
     "care@stylera.co",
-    "betty@nonasties.in"
+    "betty@nonasties.in",
+    "info@vimor.in"
   ],
   "flagged": true
 }
