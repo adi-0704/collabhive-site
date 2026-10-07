@@ -155,7 +155,25 @@
     "hello@godigit.com",
     "conference@franchiseindia.com",
     "info@growkitchen.in",
-    "thegreensaladin@gmail.com"
+    "thegreensaladin@gmail.com",
+    "harshchoudhary123h@gmail.com",
+    "e-mailsupport@the5xlnutrition.com",
+    "revolynk@gmail.com",
+    "hey@vrinda.io",
+    "info@dotcomweavers.com",
+    "rahul@yourbrand.com",
+    "support@watease.com",
+    "forum@moneycontrol.com",
+    "contactus@marzorin.com",
+    "reservations@tridenthotels.com",
+    "croho.rtdc@rajasthan.gov.in",
+    "info@vivecosmetic.com",
+    "info@itdgrowthlabs.com",
+    "helloindia@plenaire.co",
+    "info@skinvest.care",
+    "info@o3plus.com",
+    "info@yourstore.com",
+    "info@cognitoitconsultancy.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -312,7 +330,25 @@
     "godigit.com",
     "franchiseindia.net",
     "growkitchen.in",
-    "greensalad.in"
+    "greensalad.in",
+    "fitndia.com",
+    "the5xlnutrition.com",
+    "revolynk.com",
+    "vrinda.io",
+    "dotcomweavers.com",
+    "limpo.in",
+    "watease.com",
+    "moneycontrol.com",
+    "marzorin.com",
+    "tridenthotels.com",
+    "rtdc.tourism.rajasthan.gov.in",
+    "vivecosmetic.com",
+    "itdgrowthlabs.com",
+    "plenaire.in",
+    "skinvest.care",
+    "o3plus.com",
+    "havintha.in",
+    "cognitoitconsultancy.com"
   ],
   "sent_log": [
     {
@@ -1536,9 +1572,153 @@
       "niche": "Food & Beverage",
       "city": "Hyderabad",
       "subject": "Creator shortlist for GreenSalad?"
+    },
+    {
+      "ts": "2026-10-07T10:29:40.117613+00:00",
+      "email": "harshchoudhary123h@gmail.com",
+      "name": "fitndia.com",
+      "niche": "Fitness & Wellness",
+      "city": "Mumbai",
+      "subject": "A free creator shortlist for fitndia.com"
+    },
+    {
+      "ts": "2026-10-07T10:31:44.088981+00:00",
+      "email": "e-mailsupport@the5xlnutrition.com",
+      "name": "The 5xl Nutrition",
+      "niche": "Fitness & Wellness",
+      "city": "Mumbai",
+      "subject": "Creator shortlist for The 5xl Nutrition?"
+    },
+    {
+      "ts": "2026-10-07T10:34:40.923410+00:00",
+      "email": "revolynk@gmail.com",
+      "name": "revolynk.com",
+      "niche": "Tech & Startups",
+      "city": "Hyderabad",
+      "subject": "What would a creator campaign cost revolynk.com?"
+    },
+    {
+      "ts": "2026-10-07T10:37:13.722625+00:00",
+      "email": "hey@vrinda.io",
+      "name": "Best Mobile App, AI Software Development Company in Hyderaba",
+      "niche": "Tech & Startups",
+      "city": "Hyderabad",
+      "subject": "Best Mobile App, AI Software Development Company in Hyderaba: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-07T10:40:10.715803+00:00",
+      "email": "info@dotcomweavers.com",
+      "name": "DotcomWeavers",
+      "niche": "Tech & Startups",
+      "city": "Hyderabad",
+      "subject": "What would a creator campaign cost DotcomWeavers?"
+    },
+    {
+      "ts": "2026-10-07T10:43:16.852497+00:00",
+      "email": "rahul@yourbrand.com",
+      "name": "Limpo Ecommerce",
+      "niche": "Tech & Startups",
+      "city": "Mumbai",
+      "subject": "Limpo Ecommerce: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-07T10:45:08.582665+00:00",
+      "email": "support@watease.com",
+      "name": "WatEase",
+      "niche": "Tech & Startups",
+      "city": "Mumbai",
+      "subject": "Creator shortlist for WatEase?"
+    },
+    {
+      "ts": "2026-10-07T10:46:50.022961+00:00",
+      "email": "forum@moneycontrol.com",
+      "name": "moneycontrol.com",
+      "niche": "Tech & Startups",
+      "city": "Pune",
+      "subject": "Creator shortlist for moneycontrol.com?"
+    },
+    {
+      "ts": "2026-10-07T10:50:00.254416+00:00",
+      "email": "contactus@marzorin.com",
+      "name": "Marzorin Cafe",
+      "niche": "Food & Beverage",
+      "city": "Pune",
+      "subject": "Marzorin Cafe: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-07T10:52:02.234571+00:00",
+      "email": "reservations@tridenthotels.com",
+      "name": "5 Star Hotels in India",
+      "niche": "Travel & Hospitality",
+      "city": "Udaipur",
+      "subject": "Creator shortlist for 5 Star Hotels in India?"
+    },
+    {
+      "ts": "2026-10-07T10:55:08.052840+00:00",
+      "email": "croho.rtdc@rajasthan.gov.in",
+      "name": "Rajasthan Tourism Development Corporation",
+      "niche": "Travel & Hospitality",
+      "city": "Udaipur",
+      "subject": "Creator shortlist for Rajasthan Tourism Development Corporation?"
+    },
+    {
+      "ts": "2026-10-07T10:57:17.524469+00:00",
+      "email": "info@vivecosmetic.com",
+      "name": "Vive Cosmetics",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bangalore",
+      "subject": "A free creator shortlist for Vive Cosmetics"
+    },
+    {
+      "ts": "2026-10-07T11:00:16.457615+00:00",
+      "email": "info@itdgrowthlabs.com",
+      "name": "ITD GrowthLabs",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "Creator shortlist for ITD GrowthLabs?"
+    },
+    {
+      "ts": "2026-10-07T11:02:06.081357+00:00",
+      "email": "helloindia@plenaire.co",
+      "name": "Plenaire India",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "Plenaire India: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-07T11:04:46.344435+00:00",
+      "email": "info@skinvest.care",
+      "name": "Skinvest",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost Skinvest?"
+    },
+    {
+      "ts": "2026-10-07T11:06:45.465489+00:00",
+      "email": "info@o3plus.com",
+      "name": "O3plus",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "Creator shortlist for O3plus?"
+    },
+    {
+      "ts": "2026-10-07T11:08:42.660777+00:00",
+      "email": "info@yourstore.com",
+      "name": "Havintha",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost Havintha?"
+    },
+    {
+      "ts": "2026-10-07T11:12:00.489117+00:00",
+      "email": "info@cognitoitconsultancy.com",
+      "name": "Cognito IT Consultancy",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost Cognito IT Consultancy?"
     }
   ],
-  "last_run": "2026-10-06T10:37:08.457344+00:00",
+  "last_run": "2026-10-07T11:12:00.503260+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
@@ -1573,6 +1753,10 @@
     "abcd@gmail.com",
     "conference@franchiseindia.com",
     "innovation@thegoodkarmawellness.com",
-    "raj.gandhi@avimeeherbal.com"
+    "raj.gandhi@avimeeherbal.com",
+    "priya@yourbrand.com",
+    "e-mailsupport@the5xlnutrition.com",
+    "pizza@pizza.com",
+    "rahul@yourbrand.com"
   ]
 }

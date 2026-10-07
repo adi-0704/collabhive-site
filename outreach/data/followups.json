@@ -525,13 +525,13 @@
     "name": "Soultree"
   },
   "care@nathabit.in": {
-    "count": 1,
-    "last_sent": "2026-10-03T09:22:25.632499+00:00",
+    "count": 2,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
     "name": "Nat Habit"
   },
   "hello@quenchbotanics.com": {
-    "count": 1,
-    "last_sent": "2026-10-03T09:22:25.632499+00:00",
+    "count": 2,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
     "name": "Quench Botanics"
   },
   "support@beardo.in": {
@@ -573,5 +573,95 @@
     "count": 1,
     "last_sent": "2026-10-06T10:37:20.077945+00:00",
     "name": "Plix"
+  },
+  "sales@vilvahstore.com": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "Vilvah Store"
+  },
+  "care@thenaturalwash.com": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "The Natural Wash"
+  },
+  "customercare@typebeautyinc.com": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "Type Beauty"
+  },
+  "sales@houseoffett.com": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "House of Fett"
+  },
+  "ecomsupport@gangafashions.com": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "Ganga Fashions"
+  },
+  "support@privatecircle.co": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "PrivateCircle"
+  },
+  "marketingmanager@malakaspice.com": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "Malaka Spice: Best Asian & Fine-Dine Restaurants in Kharadi,"
+  },
+  "business@theadroit.in": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "Watskart"
+  },
+  "ceo@franglobal.com": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "Franchise Global"
+  },
+  "servocaregroup@gmail.com": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "Dermaville"
+  },
+  "info@canbro.in": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "Derma PCD Franchise Company in India"
+  },
+  "care@aminu.life": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "AMINU"
+  },
+  "asayacare@wellspringconsumer.in": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "World of Asaya"
+  },
+  "codex@beautygarage.com": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "Beauty Garage"
+  },
+  "help@bynakedfact.com": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "by Naked fact"
+  },
+  "indianstartuptimes@gmail.com": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "Indian Startup Times"
+  },
+  "nhelp@shopethnos.com": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "Ethnos"
+  },
+  "hello@rubysorganics.in": {
+    "count": 1,
+    "last_sent": "2026-10-07T11:12:10.226029+00:00",
+    "name": "Ruby's Organics"
   }
 }

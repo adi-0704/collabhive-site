@@ -2196,18 +2196,6 @@
     "source": "web_discovery"
   },
   {
-    "name": "Limpo Ecommerce",
-    "niche": "Tech & Startups",
-    "city": "Mumbai",
-    "website": "https://limpo.in",
-    "email": "rahul@yourbrand.com",
-    "emails": [
-      "rahul@yourbrand.com",
-      "limposupport@gmail.com"
-    ],
-    "source": "web_discovery"
-  },
-  {
     "name": "Watskart",
     "niche": "Tech & Startups",
     "city": "Mumbai",
@@ -2984,19 +2972,6 @@
       "help@denzournutrition.com"
     ],
     "source": "web_discovery"
-  },
-  {
-    "name": "The 5xl Nutrition",
-    "niche": "Fitness & Wellness",
-    "city": "Mumbai",
-    "website": "https://the5xlnutrition.com",
-    "email": "e-mailsupport@the5xlnutrition.com",
-    "emails": [
-      "e-mailsupport@the5xlnutrition.com",
-      "support@the5xlnutrition.com"
-    ],
-    "source": "web_discovery",
-    "has_email": true
   },
   {
     "name": "Growkitchen",
