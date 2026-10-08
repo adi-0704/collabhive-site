@@ -2928,19 +2928,6 @@
     "has_email": false
   },
   {
-    "name": "Havintha",
-    "niche": "Beauty & Cosmetics",
-    "city": "Delhi",
-    "website": "https://havintha.in",
-    "email": "info@yourstore.com",
-    "emails": [
-      "info@yourstore.com",
-      "support@havintha.in",
-      "shop@yourstore.com"
-    ],
-    "source": "web_discovery"
-  },
-  {
     "name": "Cognito IT Consultancy",
     "niche": "Beauty & Cosmetics",
     "city": "Delhi",
@@ -3407,18 +3394,6 @@
       "care@bunka.in"
     ],
     "source": "web_discovery"
-  },
-  {
-    "name": "Hibiscus Heroes",
-    "niche": "Fashion & Apparel",
-    "city": "Delhi",
-    "website": "https://hibiscusheroes.com",
-    "email": "contact@auroville.org.in",
-    "emails": [
-      "contact@auroville.org.in"
-    ],
-    "source": "web_discovery",
-    "has_email": true
   },
   {
     "name": "Pia And Paro Clothing",

@@ -535,28 +535,28 @@
     "name": "Quench Botanics"
   },
   "support@beardo.in": {
-    "count": 1,
-    "last_sent": "2026-10-04T10:37:53.224470+00:00",
+    "count": 2,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
     "name": "Beardo"
   },
   "care@bombayshavingcompany.com": {
-    "count": 1,
-    "last_sent": "2026-10-04T10:37:53.224470+00:00",
+    "count": 2,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
     "name": "Bombay Shaving Company"
   },
   "help@ustraa.com": {
-    "count": 1,
-    "last_sent": "2026-10-04T10:37:53.224470+00:00",
+    "count": 2,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
     "name": "Ustraa"
   },
   "info@kapiva.in": {
-    "count": 1,
-    "last_sent": "2026-10-04T10:37:53.224470+00:00",
+    "count": 2,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
     "name": "Kapiva"
   },
   "care@themancompany.com": {
-    "count": 1,
-    "last_sent": "2026-10-04T10:37:53.224470+00:00",
+    "count": 2,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
     "name": "The Man Company"
   },
   "community@oziva.in": {
@@ -663,5 +663,65 @@
     "count": 1,
     "last_sent": "2026-10-07T11:12:10.226029+00:00",
     "name": "Ruby's Organics"
+  },
+  "care@stylera.co": {
+    "count": 1,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
+    "name": "Stylera"
+  },
+  "betty@nonasties.in": {
+    "count": 1,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
+    "name": "No Nasties"
+  },
+  "info@vimor.in": {
+    "count": 1,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
+    "name": "Vimor Sarees"
+  },
+  "irich12106@gmail.com": {
+    "count": 1,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
+    "name": "Irich Photography"
+  },
+  "officialkoai@gmail.com": {
+    "count": 1,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
+    "name": "ShopKoai"
+  },
+  "info@confidentialcouture.com": {
+    "count": 1,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
+    "name": "confidentialcouture.com"
+  },
+  "customercare@dlfmallofindia.com": {
+    "count": 1,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
+    "name": "DLFmallofindia"
+  },
+  "pingtheprincess@typsybeauty.com": {
+    "count": 1,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
+    "name": "Typsy Beauty"
+  },
+  "clensta@floridabeautylabs.com": {
+    "count": 1,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
+    "name": "Clensta"
+  },
+  "raj.gandhi@avimeeherbal.com": {
+    "count": 1,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
+    "name": "Avimee Herbal"
+  },
+  "hello@thegoodkarmawellness.com": {
+    "count": 1,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
+    "name": "Good Karma Wellness Private Limited"
+  },
+  "team@latofonts.com": {
+    "count": 1,
+    "last_sent": "2026-10-08T11:10:46.784836+00:00",
+    "name": "Taantraa // Organic Handbaking"
   }
 }

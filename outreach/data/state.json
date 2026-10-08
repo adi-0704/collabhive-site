@@ -173,7 +173,16 @@
     "info@skinvest.care",
     "info@o3plus.com",
     "info@yourstore.com",
-    "info@cognitoitconsultancy.com"
+    "info@cognitoitconsultancy.com",
+    "care@superkicks.in",
+    "connect@bunka.in",
+    "contact@auroville.org.in",
+    "hi@piaparo.com",
+    "hello@gulaalcreations.com",
+    "info@chakoriethnic.com",
+    "hello@chidiyaa.com",
+    "info@gulabicity.com",
+    "contactus@azafashions.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -348,7 +357,16 @@
     "skinvest.care",
     "o3plus.com",
     "havintha.in",
-    "cognitoitconsultancy.com"
+    "cognitoitconsultancy.com",
+    "superkicks.in",
+    "bunka.in",
+    "hibiscusheroes.com",
+    "piaparo.com",
+    "gulaalcreations.com",
+    "chakoriethnic.com",
+    "chidiyaa.com",
+    "gulabicity.com",
+    "azafashions.com"
   ],
   "sent_log": [
     {
@@ -1716,9 +1734,81 @@
       "niche": "Beauty & Cosmetics",
       "city": "Delhi",
       "subject": "What would a creator campaign cost Cognito IT Consultancy?"
+    },
+    {
+      "ts": "2026-10-08T10:50:15.945997+00:00",
+      "email": "care@superkicks.in",
+      "name": "Superkicks",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Superkicks"
+    },
+    {
+      "ts": "2026-10-08T10:52:17.317589+00:00",
+      "email": "connect@bunka.in",
+      "name": "Bunka Studio",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Bunka Studio: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-08T10:55:34.834928+00:00",
+      "email": "contact@auroville.org.in",
+      "name": "Hibiscus Heroes",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Hibiscus Heroes"
+    },
+    {
+      "ts": "2026-10-08T10:58:26.689875+00:00",
+      "email": "hi@piaparo.com",
+      "name": "Pia And Paro Clothing",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost Pia And Paro Clothing?"
+    },
+    {
+      "ts": "2026-10-08T11:00:59.106036+00:00",
+      "email": "hello@gulaalcreations.com",
+      "name": "Gulaal",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Creator shortlist for Gulaal?"
+    },
+    {
+      "ts": "2026-10-08T11:03:28.181581+00:00",
+      "email": "info@chakoriethnic.com",
+      "name": "Chakori Ethnic",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Chakori Ethnic"
+    },
+    {
+      "ts": "2026-10-08T11:05:37.374082+00:00",
+      "email": "hello@chidiyaa.com",
+      "name": "Chidiyaa",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Chidiyaa"
+    },
+    {
+      "ts": "2026-10-08T11:07:56.785344+00:00",
+      "email": "info@gulabicity.com",
+      "name": "GulabiCity.com",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Creator shortlist for GulabiCity.com?"
+    },
+    {
+      "ts": "2026-10-08T11:10:12.723096+00:00",
+      "email": "contactus@azafashions.com",
+      "name": "Azafashions.com",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Azafashions.com"
     }
   ],
-  "last_run": "2026-10-07T11:12:00.503260+00:00",
+  "last_run": "2026-10-08T11:10:13.322739+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
@@ -1757,6 +1847,8 @@
     "priya@yourbrand.com",
     "e-mailsupport@the5xlnutrition.com",
     "pizza@pizza.com",
-    "rahul@yourbrand.com"
+    "rahul@yourbrand.com",
+    "contact@auroville.org.in",
+    "info@yourstore.com"
   ]
 }

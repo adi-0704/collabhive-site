@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T11:13:27.485162+00:00",
+  "generated_at": "2026-10-08T11:12:20.962683+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -10,18 +10,18 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 173,
-    "unique_brands_emailed": 172,
-    "brands_in_pool": 324,
-    "brands_with_email": 223,
-    "remaining_candidates": 51,
-    "sent_today": 18,
-    "sent_week": 60,
-    "day_streak": 60,
+    "total_sent": 182,
+    "unique_brands_emailed": 181,
+    "brands_in_pool": 322,
+    "brands_with_email": 221,
+    "remaining_candidates": 40,
+    "sent_today": 9,
+    "sent_week": 66,
+    "day_streak": 66,
     "daily_budget": 18
   },
   "by_niche": {
-    "Fashion & Apparel": 51,
+    "Fashion & Apparel": 60,
     "Beauty & Cosmetics": 61,
     "Food & Beverage": 18,
     "Fitness & Wellness": 15,
@@ -32,7 +32,7 @@
   "by_city": {
     "Bengaluru": 18,
     "Coimbatore": 2,
-    "Delhi": 33,
+    "Delhi": 42,
     "Gurugram": 26,
     "Hyderabad": 8,
     "Kolkata": 1,
@@ -51,12 +51,84 @@
     "Food & Beverage": 40,
     "Fashion & Apparel": 89,
     "Beauty & Cosmetics": 95,
-    "Fitness & Wellness": 44,
+    "Fitness & Wellness": 43,
     "Home & Decor": 20,
     "Travel & Hospitality": 8,
-    "Tech & Startups": 28
+    "Tech & Startups": 27
   },
   "recent_sends": [
+    {
+      "ts": "2026-10-08T11:10:12.723096+00:00",
+      "email": "contactus@azafashions.com",
+      "name": "Azafashions.com",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Azafashions.com"
+    },
+    {
+      "ts": "2026-10-08T11:07:56.785344+00:00",
+      "email": "info@gulabicity.com",
+      "name": "GulabiCity.com",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Creator shortlist for GulabiCity.com?"
+    },
+    {
+      "ts": "2026-10-08T11:05:37.374082+00:00",
+      "email": "hello@chidiyaa.com",
+      "name": "Chidiyaa",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Chidiyaa"
+    },
+    {
+      "ts": "2026-10-08T11:03:28.181581+00:00",
+      "email": "info@chakoriethnic.com",
+      "name": "Chakori Ethnic",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Chakori Ethnic"
+    },
+    {
+      "ts": "2026-10-08T11:00:59.106036+00:00",
+      "email": "hello@gulaalcreations.com",
+      "name": "Gulaal",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Creator shortlist for Gulaal?"
+    },
+    {
+      "ts": "2026-10-08T10:58:26.689875+00:00",
+      "email": "hi@piaparo.com",
+      "name": "Pia And Paro Clothing",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost Pia And Paro Clothing?"
+    },
+    {
+      "ts": "2026-10-08T10:55:34.834928+00:00",
+      "email": "contact@auroville.org.in",
+      "name": "Hibiscus Heroes",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Hibiscus Heroes"
+    },
+    {
+      "ts": "2026-10-08T10:52:17.317589+00:00",
+      "email": "connect@bunka.in",
+      "name": "Bunka Studio",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Bunka Studio: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-08T10:50:15.945997+00:00",
+      "email": "care@superkicks.in",
+      "name": "Superkicks",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Superkicks"
+    },
     {
       "ts": "2026-10-07T11:12:00.489117+00:00",
       "email": "info@cognitoitconsultancy.com",
@@ -144,78 +216,6 @@
       "niche": "Tech & Startups",
       "city": "Pune",
       "subject": "Creator shortlist for moneycontrol.com?"
-    },
-    {
-      "ts": "2026-10-07T10:45:08.582665+00:00",
-      "email": "support@watease.com",
-      "name": "WatEase",
-      "niche": "Tech & Startups",
-      "city": "Mumbai",
-      "subject": "Creator shortlist for WatEase?"
-    },
-    {
-      "ts": "2026-10-07T10:43:16.852497+00:00",
-      "email": "rahul@yourbrand.com",
-      "name": "Limpo Ecommerce",
-      "niche": "Tech & Startups",
-      "city": "Mumbai",
-      "subject": "Limpo Ecommerce: five matched creators, free"
-    },
-    {
-      "ts": "2026-10-07T10:40:10.715803+00:00",
-      "email": "info@dotcomweavers.com",
-      "name": "DotcomWeavers",
-      "niche": "Tech & Startups",
-      "city": "Hyderabad",
-      "subject": "What would a creator campaign cost DotcomWeavers?"
-    },
-    {
-      "ts": "2026-10-07T10:37:13.722625+00:00",
-      "email": "hey@vrinda.io",
-      "name": "Best Mobile App, AI Software Development Company in Hyderaba",
-      "niche": "Tech & Startups",
-      "city": "Hyderabad",
-      "subject": "Best Mobile App, AI Software Development Company in Hyderaba: five matched creators, free"
-    },
-    {
-      "ts": "2026-10-07T10:34:40.923410+00:00",
-      "email": "revolynk@gmail.com",
-      "name": "revolynk.com",
-      "niche": "Tech & Startups",
-      "city": "Hyderabad",
-      "subject": "What would a creator campaign cost revolynk.com?"
-    },
-    {
-      "ts": "2026-10-07T10:31:44.088981+00:00",
-      "email": "e-mailsupport@the5xlnutrition.com",
-      "name": "The 5xl Nutrition",
-      "niche": "Fitness & Wellness",
-      "city": "Mumbai",
-      "subject": "Creator shortlist for The 5xl Nutrition?"
-    },
-    {
-      "ts": "2026-10-07T10:29:40.117613+00:00",
-      "email": "harshchoudhary123h@gmail.com",
-      "name": "fitndia.com",
-      "niche": "Fitness & Wellness",
-      "city": "Mumbai",
-      "subject": "A free creator shortlist for fitndia.com"
-    },
-    {
-      "ts": "2026-10-05T11:25:09.364978+00:00",
-      "email": "thegreensaladin@gmail.com",
-      "name": "GreenSalad",
-      "niche": "Food & Beverage",
-      "city": "Hyderabad",
-      "subject": "Creator shortlist for GreenSalad?"
-    },
-    {
-      "ts": "2026-10-05T11:22:34.490907+00:00",
-      "email": "info@growkitchen.in",
-      "name": "Growkitchen",
-      "niche": "Food & Beverage",
-      "city": "Hyderabad",
-      "subject": "Growkitchen: five matched creators, free"
     }
   ],
   "sales": {
@@ -424,15 +424,15 @@
       ]
     ],
     "replied_count": 7,
-    "reply_rate_pct": 4.1
+    "reply_rate_pct": 3.9
   },
   "mail_health": {
-    "sent_total": 173,
-    "delivered_pct": 33.3,
-    "bounces": 14,
+    "sent_total": 182,
+    "delivered_pct": 26.7,
+    "bounces": 16,
     "human_replies": 7,
     "hot_leads": 7,
-    "reply_rate_pct": 4.0,
+    "reply_rate_pct": 3.8,
     "hot_by_status": {
       "interested": 2,
       "negotiating": 5
@@ -497,7 +497,7 @@
     ],
     "reachability": {
       "decision_maker": 19,
-      "named_person": 67,
+      "named_person": 65,
       "generic": 65,
       "support_desk": 72,
       "no_email": 101
@@ -510,38 +510,28 @@
     ]
   },
   "social_runway": {
-    "rendered_through": "2026-11-21",
+    "rendered_through": "2026-11-22",
     "days_left": 45,
     "rendered": 92
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-10-07T11:13:27.480953+00:00",
+    "checked_at": "2026-10-08T11:12:20.958792+00:00",
     "lookback_hours": 96,
-    "recorded_sends": 54,
-    "confirmed_in_sent": 18,
-    "unconfirmed": 36,
-    "delivery_rate_pct": 33.3,
-    "bounces": 14,
+    "recorded_sends": 45,
+    "confirmed_in_sent": 12,
+    "unconfirmed": 33,
+    "delivery_rate_pct": 26.7,
+    "bounces": 16,
     "bounce_emails": [
+      "rahul@yourbrand.com",
       "raj.gandhi@avimeeherbal.com",
+      "contact@auroville.org.in",
       "conference@franchiseindia.com",
       "e-mailsupport@the5xlnutrition.com",
-      "nhelp@shopethnos.com",
-      "rahul@yourbrand.com"
+      "info@yourstore.com"
     ],
     "unconfirmed_emails": [
-      "care@stylera.co",
-      "betty@nonasties.in",
-      "info@vimor.in",
-      "irich12106@gmail.com",
-      "officialkoai@gmail.com",
-      "info@confidentialcouture.com",
-      "customercare@dlfmallofindia.com",
-      "pingtheprincess@typsybeauty.com",
-      "clensta@floridabeautylabs.com",
-      "hello@thegoodkarmawellness.com",
-      "team@latofonts.com",
       "thomsbakeryonline@gmail.com",
       "connect@aubree.in",
       "hello@godigit.com",
@@ -550,7 +540,18 @@
       "harshchoudhary123h@gmail.com",
       "revolynk@gmail.com",
       "hey@vrinda.io",
-      "info@dotcomweavers.com"
+      "info@dotcomweavers.com",
+      "support@watease.com",
+      "forum@moneycontrol.com",
+      "contactus@marzorin.com",
+      "reservations@tridenthotels.com",
+      "croho.rtdc@rajasthan.gov.in",
+      "info@vivecosmetic.com",
+      "info@itdgrowthlabs.com",
+      "helloindia@plenaire.co",
+      "info@skinvest.care",
+      "info@o3plus.com",
+      "info@cognitoitconsultancy.com"
     ],
     "flagged": true
   },
@@ -625,7 +626,7 @@
       "campaigns_run": 0,
       "alltime_creators": 76,
       "alltime_briefs": 2,
-      "generated_at": "2026-10-07T11:13:27.495905+00:00"
+      "generated_at": "2026-10-08T11:12:20.973074+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -1104,5 +1105,5 @@
     }
   },
   "dnc_count": 1,
-  "last_run": "2026-10-07T11:12:00.503260+00:00"
+  "last_run": "2026-10-08T11:10:13.322739+00:00"
 }
