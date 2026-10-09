@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-10-08T19:59:08.513866+00:00",
+  "generated_at": "2026-10-09T19:33:57.400645+00:00",
   "status": "fail",
   "checks": [
     {
       "name": "pipeline_ran",
       "status": "ok",
-      "detail": "Last run 9h ago.",
+      "detail": "Last run 8h ago.",
       "fix": ""
     },
     {
       "name": "mail_flowing",
       "status": "ok",
-      "detail": "Last email sent 9h ago.",
+      "detail": "Last email sent 8h ago.",
       "fix": ""
     },
     {
       "name": "prospect_pool",
       "status": "ok",
-      "detail": "61 brand(s) ready to contact.",
+      "detail": "52 brand(s) ready to contact.",
       "fix": ""
     },
     {
@@ -35,14 +35,14 @@
     {
       "name": "deliverability",
       "status": "fail",
-      "detail": "Delivery flagged: 26.7% delivered, 16 bounce(s).",
+      "detail": "Delivery flagged: 18.2% delivered, 16 bounce(s).",
       "fix": "Pause sending and clean the pool before Gmail throttles the account."
     }
   ],
   "metrics": {
     "sent_24h": 9,
-    "sent_7d": 66,
-    "sent_total": 182,
+    "sent_7d": 73,
+    "sent_total": 191,
     "replies_total": 7,
     "interested": 2,
     "negotiating": 5,
@@ -52,6 +52,6 @@
     "creators": 0,
     "social_drafts": 53,
     "seo_pages": 19,
-    "reply_rate_pct": 3.9
+    "reply_rate_pct": 3.7
   }
 }
