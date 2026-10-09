@@ -182,7 +182,16 @@
     "info@chakoriethnic.com",
     "hello@chidiyaa.com",
     "info@gulabicity.com",
-    "contactus@azafashions.com"
+    "contactus@azafashions.com",
+    "info@urbansuburban.in",
+    "support@aeroleads.com",
+    "info@bijnis.com",
+    "info@rawmango.in",
+    "contact@grabon.in",
+    "contact@gunambeauty.com",
+    "hello@holidify.com",
+    "info@vivafitness.net",
+    "info@welcarefitness.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -366,7 +375,16 @@
     "chakoriethnic.com",
     "chidiyaa.com",
     "gulabicity.com",
-    "azafashions.com"
+    "azafashions.com",
+    "urbansuburban.in",
+    "aeroleads.com",
+    "bijnis.com",
+    "rawmango.com",
+    "grabon.in",
+    "gunambeauty.com",
+    "holidify.com",
+    "vivafitness.net",
+    "welcareindia.com"
   ],
   "sent_log": [
     {
@@ -1806,9 +1824,81 @@
       "niche": "Fashion & Apparel",
       "city": "Delhi",
       "subject": "A free creator shortlist for Azafashions.com"
+    },
+    {
+      "ts": "2026-10-09T10:48:18.220262+00:00",
+      "email": "info@urbansuburban.in",
+      "name": "Party Wear For Women",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Party Wear For Women"
+    },
+    {
+      "ts": "2026-10-09T10:50:22.399890+00:00",
+      "email": "support@aeroleads.com",
+      "name": "AeroLeads",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for AeroLeads"
+    },
+    {
+      "ts": "2026-10-09T10:52:41.290637+00:00",
+      "email": "info@bijnis.com",
+      "name": "bijnis",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost bijnis?"
+    },
+    {
+      "ts": "2026-10-09T10:55:14.389183+00:00",
+      "email": "info@rawmango.in",
+      "name": "Raw Mango",
+      "niche": "Fashion & Apparel",
+      "city": "Jaipur",
+      "subject": "A free creator shortlist for Raw Mango"
+    },
+    {
+      "ts": "2026-10-09T10:57:42.934383+00:00",
+      "email": "contact@grabon.in",
+      "name": "GrabOn",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "GrabOn: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-09T10:59:25.954590+00:00",
+      "email": "contact@gunambeauty.com",
+      "name": "Gunam Beauty",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Creator shortlist for Gunam Beauty?"
+    },
+    {
+      "ts": "2026-10-09T11:02:41.366983+00:00",
+      "email": "hello@holidify.com",
+      "name": "Holidify",
+      "niche": "Travel & Hospitality",
+      "city": "Udaipur",
+      "subject": "A free creator shortlist for Holidify"
+    },
+    {
+      "ts": "2026-10-09T11:04:32.070488+00:00",
+      "email": "info@vivafitness.net",
+      "name": "VIVA FITNESS",
+      "niche": "Fitness & Wellness",
+      "city": "Bangalore",
+      "subject": "Creator shortlist for VIVA FITNESS?"
+    },
+    {
+      "ts": "2026-10-09T11:06:47.015097+00:00",
+      "email": "info@welcarefitness.com",
+      "name": "Welcare Fitness",
+      "niche": "Fitness & Wellness",
+      "city": "Bangalore",
+      "subject": "What would a creator campaign cost Welcare Fitness?"
     }
   ],
-  "last_run": "2026-10-08T11:10:13.322739+00:00",
+  "last_run": "2026-10-09T11:06:47.031654+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
@@ -1849,6 +1939,8 @@
     "pizza@pizza.com",
     "rahul@yourbrand.com",
     "contact@auroville.org.in",
-    "info@yourstore.com"
+    "info@yourstore.com",
+    "info@growkitchen.in",
+    "info@canbro.in"
   ]
 }

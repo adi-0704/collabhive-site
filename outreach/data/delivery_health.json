@@ -1,26 +1,21 @@
 {
   "ok": true,
-  "checked_at": "2026-10-08T11:12:20.958792+00:00",
+  "checked_at": "2026-10-09T11:08:14.050024+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 45,
-  "confirmed_in_sent": 12,
-  "unconfirmed": 33,
-  "delivery_rate_pct": 26.7,
+  "recorded_sends": 44,
+  "confirmed_in_sent": 8,
+  "unconfirmed": 36,
+  "delivery_rate_pct": 18.2,
   "bounces": 16,
   "bounce_emails": [
-    "rahul@yourbrand.com",
-    "raj.gandhi@avimeeherbal.com",
+    "info@yourstore.com",
     "contact@auroville.org.in",
+    "info@growkitchen.in",
     "conference@franchiseindia.com",
-    "e-mailsupport@the5xlnutrition.com",
-    "info@yourstore.com"
+    "rahul@yourbrand.com",
+    "e-mailsupport@the5xlnutrition.com"
   ],
   "unconfirmed_emails": [
-    "thomsbakeryonline@gmail.com",
-    "connect@aubree.in",
-    "hello@godigit.com",
-    "info@growkitchen.in",
-    "thegreensaladin@gmail.com",
     "harshchoudhary123h@gmail.com",
     "revolynk@gmail.com",
     "hey@vrinda.io",
@@ -35,7 +30,12 @@
     "helloindia@plenaire.co",
     "info@skinvest.care",
     "info@o3plus.com",
-    "info@cognitoitconsultancy.com"
+    "info@cognitoitconsultancy.com",
+    "care@superkicks.in",
+    "connect@bunka.in",
+    "hi@piaparo.com",
+    "hello@gulaalcreations.com",
+    "info@chakoriethnic.com"
   ],
   "flagged": true
 }

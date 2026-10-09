@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T11:12:20.962683+00:00",
+  "generated_at": "2026-10-09T11:08:14.053267+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -10,53 +10,125 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 182,
-    "unique_brands_emailed": 181,
-    "brands_in_pool": 322,
-    "brands_with_email": 221,
-    "remaining_candidates": 40,
-    "sent_today": 9,
-    "sent_week": 66,
-    "day_streak": 66,
+    "total_sent": 191,
+    "unique_brands_emailed": 190,
+    "brands_in_pool": 320,
+    "brands_with_email": 219,
+    "remaining_candidates": 29,
+    "sent_today": 10,
+    "sent_week": 73,
+    "day_streak": 73,
     "daily_budget": 18
   },
   "by_niche": {
-    "Fashion & Apparel": 60,
-    "Beauty & Cosmetics": 61,
+    "Fashion & Apparel": 64,
+    "Beauty & Cosmetics": 63,
     "Food & Beverage": 18,
-    "Fitness & Wellness": 15,
+    "Fitness & Wellness": 17,
     "Home & Decor": 11,
-    "Travel & Hospitality": 3,
+    "Travel & Hospitality": 4,
     "Tech & Startups": 14
   },
   "by_city": {
     "Bengaluru": 18,
     "Coimbatore": 2,
-    "Delhi": 42,
+    "Delhi": 45,
     "Gurugram": 26,
     "Hyderabad": 8,
     "Kolkata": 1,
-    "Mumbai": 40,
-    "Jaipur": 5,
+    "Mumbai": 42,
+    "Jaipur": 6,
     "Chennai": 1,
     "Jodhpur": 1,
     "Chandigarh": 2,
     "Ahmedabad": 3,
     "New Delhi": 13,
     "Pune": 4,
-    "Bangalore": 14,
-    "Udaipur": 2
+    "Bangalore": 16,
+    "Udaipur": 3
   },
   "pool_by_niche": {
     "Food & Beverage": 40,
-    "Fashion & Apparel": 89,
-    "Beauty & Cosmetics": 95,
+    "Fashion & Apparel": 88,
+    "Beauty & Cosmetics": 94,
     "Fitness & Wellness": 43,
     "Home & Decor": 20,
     "Travel & Hospitality": 8,
     "Tech & Startups": 27
   },
   "recent_sends": [
+    {
+      "ts": "2026-10-09T11:06:47.015097+00:00",
+      "email": "info@welcarefitness.com",
+      "name": "Welcare Fitness",
+      "niche": "Fitness & Wellness",
+      "city": "Bangalore",
+      "subject": "What would a creator campaign cost Welcare Fitness?"
+    },
+    {
+      "ts": "2026-10-09T11:04:32.070488+00:00",
+      "email": "info@vivafitness.net",
+      "name": "VIVA FITNESS",
+      "niche": "Fitness & Wellness",
+      "city": "Bangalore",
+      "subject": "Creator shortlist for VIVA FITNESS?"
+    },
+    {
+      "ts": "2026-10-09T11:02:41.366983+00:00",
+      "email": "hello@holidify.com",
+      "name": "Holidify",
+      "niche": "Travel & Hospitality",
+      "city": "Udaipur",
+      "subject": "A free creator shortlist for Holidify"
+    },
+    {
+      "ts": "2026-10-09T10:59:25.954590+00:00",
+      "email": "contact@gunambeauty.com",
+      "name": "Gunam Beauty",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Creator shortlist for Gunam Beauty?"
+    },
+    {
+      "ts": "2026-10-09T10:57:42.934383+00:00",
+      "email": "contact@grabon.in",
+      "name": "GrabOn",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "GrabOn: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-09T10:55:14.389183+00:00",
+      "email": "info@rawmango.in",
+      "name": "Raw Mango",
+      "niche": "Fashion & Apparel",
+      "city": "Jaipur",
+      "subject": "A free creator shortlist for Raw Mango"
+    },
+    {
+      "ts": "2026-10-09T10:52:41.290637+00:00",
+      "email": "info@bijnis.com",
+      "name": "bijnis",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost bijnis?"
+    },
+    {
+      "ts": "2026-10-09T10:50:22.399890+00:00",
+      "email": "support@aeroleads.com",
+      "name": "AeroLeads",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for AeroLeads"
+    },
+    {
+      "ts": "2026-10-09T10:48:18.220262+00:00",
+      "email": "info@urbansuburban.in",
+      "name": "Party Wear For Women",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Party Wear For Women"
+    },
     {
       "ts": "2026-10-08T11:10:12.723096+00:00",
       "email": "contactus@azafashions.com",
@@ -144,78 +216,6 @@
       "niche": "Beauty & Cosmetics",
       "city": "Delhi",
       "subject": "What would a creator campaign cost Havintha?"
-    },
-    {
-      "ts": "2026-10-07T11:06:45.465489+00:00",
-      "email": "info@o3plus.com",
-      "name": "O3plus",
-      "niche": "Beauty & Cosmetics",
-      "city": "Delhi",
-      "subject": "Creator shortlist for O3plus?"
-    },
-    {
-      "ts": "2026-10-07T11:04:46.344435+00:00",
-      "email": "info@skinvest.care",
-      "name": "Skinvest",
-      "niche": "Beauty & Cosmetics",
-      "city": "Delhi",
-      "subject": "What would a creator campaign cost Skinvest?"
-    },
-    {
-      "ts": "2026-10-07T11:02:06.081357+00:00",
-      "email": "helloindia@plenaire.co",
-      "name": "Plenaire India",
-      "niche": "Beauty & Cosmetics",
-      "city": "Delhi",
-      "subject": "Plenaire India: five matched creators, free"
-    },
-    {
-      "ts": "2026-10-07T11:00:16.457615+00:00",
-      "email": "info@itdgrowthlabs.com",
-      "name": "ITD GrowthLabs",
-      "niche": "Beauty & Cosmetics",
-      "city": "Delhi",
-      "subject": "Creator shortlist for ITD GrowthLabs?"
-    },
-    {
-      "ts": "2026-10-07T10:57:17.524469+00:00",
-      "email": "info@vivecosmetic.com",
-      "name": "Vive Cosmetics",
-      "niche": "Beauty & Cosmetics",
-      "city": "Bangalore",
-      "subject": "A free creator shortlist for Vive Cosmetics"
-    },
-    {
-      "ts": "2026-10-07T10:55:08.052840+00:00",
-      "email": "croho.rtdc@rajasthan.gov.in",
-      "name": "Rajasthan Tourism Development Corporation",
-      "niche": "Travel & Hospitality",
-      "city": "Udaipur",
-      "subject": "Creator shortlist for Rajasthan Tourism Development Corporation?"
-    },
-    {
-      "ts": "2026-10-07T10:52:02.234571+00:00",
-      "email": "reservations@tridenthotels.com",
-      "name": "5 Star Hotels in India",
-      "niche": "Travel & Hospitality",
-      "city": "Udaipur",
-      "subject": "Creator shortlist for 5 Star Hotels in India?"
-    },
-    {
-      "ts": "2026-10-07T10:50:00.254416+00:00",
-      "email": "contactus@marzorin.com",
-      "name": "Marzorin Cafe",
-      "niche": "Food & Beverage",
-      "city": "Pune",
-      "subject": "Marzorin Cafe: five matched creators, free"
-    },
-    {
-      "ts": "2026-10-07T10:46:50.022961+00:00",
-      "email": "forum@moneycontrol.com",
-      "name": "moneycontrol.com",
-      "niche": "Tech & Startups",
-      "city": "Pune",
-      "subject": "Creator shortlist for moneycontrol.com?"
     }
   ],
   "sales": {
@@ -424,15 +424,15 @@
       ]
     ],
     "replied_count": 7,
-    "reply_rate_pct": 3.9
+    "reply_rate_pct": 3.7
   },
   "mail_health": {
-    "sent_total": 182,
-    "delivered_pct": 26.7,
+    "sent_total": 191,
+    "delivered_pct": 18.2,
     "bounces": 16,
     "human_replies": 7,
     "hot_leads": 7,
-    "reply_rate_pct": 3.8,
+    "reply_rate_pct": 3.7,
     "hot_by_status": {
       "interested": 2,
       "negotiating": 5
@@ -498,7 +498,7 @@
     "reachability": {
       "decision_maker": 19,
       "named_person": 65,
-      "generic": 65,
+      "generic": 63,
       "support_desk": 72,
       "no_email": 101
     },
@@ -510,33 +510,28 @@
     ]
   },
   "social_runway": {
-    "rendered_through": "2026-11-22",
+    "rendered_through": "2026-11-23",
     "days_left": 45,
     "rendered": 92
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-10-08T11:12:20.958792+00:00",
+    "checked_at": "2026-10-09T11:08:14.050024+00:00",
     "lookback_hours": 96,
-    "recorded_sends": 45,
-    "confirmed_in_sent": 12,
-    "unconfirmed": 33,
-    "delivery_rate_pct": 26.7,
+    "recorded_sends": 44,
+    "confirmed_in_sent": 8,
+    "unconfirmed": 36,
+    "delivery_rate_pct": 18.2,
     "bounces": 16,
     "bounce_emails": [
-      "rahul@yourbrand.com",
-      "raj.gandhi@avimeeherbal.com",
+      "info@yourstore.com",
       "contact@auroville.org.in",
+      "info@growkitchen.in",
       "conference@franchiseindia.com",
-      "e-mailsupport@the5xlnutrition.com",
-      "info@yourstore.com"
+      "rahul@yourbrand.com",
+      "e-mailsupport@the5xlnutrition.com"
     ],
     "unconfirmed_emails": [
-      "thomsbakeryonline@gmail.com",
-      "connect@aubree.in",
-      "hello@godigit.com",
-      "info@growkitchen.in",
-      "thegreensaladin@gmail.com",
       "harshchoudhary123h@gmail.com",
       "revolynk@gmail.com",
       "hey@vrinda.io",
@@ -551,7 +546,12 @@
       "helloindia@plenaire.co",
       "info@skinvest.care",
       "info@o3plus.com",
-      "info@cognitoitconsultancy.com"
+      "info@cognitoitconsultancy.com",
+      "care@superkicks.in",
+      "connect@bunka.in",
+      "hi@piaparo.com",
+      "hello@gulaalcreations.com",
+      "info@chakoriethnic.com"
     ],
     "flagged": true
   },
@@ -626,7 +626,7 @@
       "campaigns_run": 0,
       "alltime_creators": 76,
       "alltime_briefs": 2,
-      "generated_at": "2026-10-08T11:12:20.973074+00:00"
+      "generated_at": "2026-10-09T11:08:14.061322+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -1105,5 +1105,5 @@
     }
   },
   "dnc_count": 1,
-  "last_run": "2026-10-08T11:10:13.322739+00:00"
+  "last_run": "2026-10-09T11:06:47.031654+00:00"
 }
