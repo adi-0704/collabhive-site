@@ -1,19 +1,18 @@
 {
   "ok": true,
-  "checked_at": "2026-10-09T11:08:14.050024+00:00",
+  "checked_at": "2026-10-10T10:24:32.004727+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 44,
-  "confirmed_in_sent": 8,
-  "unconfirmed": 36,
-  "delivery_rate_pct": 18.2,
-  "bounces": 16,
+  "recorded_sends": 45,
+  "confirmed_in_sent": 0,
+  "unconfirmed": 45,
+  "delivery_rate_pct": 0.0,
+  "bounces": 15,
   "bounce_emails": [
+    "info@ahex.co",
     "info@yourstore.com",
+    "e-mailsupport@the5xlnutrition.com",
     "contact@auroville.org.in",
-    "info@growkitchen.in",
-    "conference@franchiseindia.com",
-    "rahul@yourbrand.com",
-    "e-mailsupport@the5xlnutrition.com"
+    "rahul@yourbrand.com"
   ],
   "unconfirmed_emails": [
     "harshchoudhary123h@gmail.com",

@@ -3158,18 +3158,6 @@
     "source": "web_discovery"
   },
   {
-    "name": "Welcome to Ahex Technologies",
-    "niche": "Tech & Startups",
-    "city": "Hyderabad",
-    "website": "https://ahex.co",
-    "email": "info@ahex.co",
-    "emails": [
-      "info@ahex.co"
-    ],
-    "source": "web_discovery",
-    "has_email": true
-  },
-  {
     "name": "Eqaim Technology and Services",
     "niche": "Tech & Startups",
     "city": "Hyderabad",
@@ -3331,19 +3319,6 @@
     "emails": [
       "care@superkicks.in",
       "info@superkicks.in"
-    ],
-    "source": "web_discovery"
-  },
-  {
-    "name": "Stylera",
-    "niche": "Fashion & Apparel",
-    "city": "Delhi",
-    "website": "https://stylera.co",
-    "email": "care@stylera.co",
-    "emails": [
-      "care@stylera.co",
-      "hello@stylera.co",
-      "stylera-sub@aurumfms.com"
     ],
     "source": "web_discovery"
   },
