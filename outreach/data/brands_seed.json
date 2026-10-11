@@ -3243,17 +3243,6 @@
     "has_email": true
   },
   {
-    "name": "Devathon",
-    "niche": "Tech & Startups",
-    "city": "Hyderabad",
-    "website": "https://devathon.com",
-    "email": "hello@devathon.com",
-    "emails": [
-      "hello@devathon.com"
-    ],
-    "source": "web_discovery"
-  },
-  {
     "name": "Tapadia Tech |",
     "niche": "Tech & Startups",
     "city": "Hyderabad",
@@ -3274,18 +3263,6 @@
       "info@staradvertisingagency.in"
     ],
     "source": "web_discovery"
-  },
-  {
-    "name": "CodeFacts",
-    "niche": "Tech & Startups",
-    "city": "Hyderabad",
-    "website": "https://codefacts.com",
-    "email": "hello@codefacts.com",
-    "emails": [
-      "hello@codefacts.com"
-    ],
-    "source": "web_discovery",
-    "has_email": true
   },
   {
     "name": "Codiant Software Technologies",

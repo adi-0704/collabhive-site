@@ -200,7 +200,21 @@
     "info@ahex.co",
     "contact@eqaim.com",
     "sales@extwebtech.com",
-    "info@kkeydos.com"
+    "info@kkeydos.com",
+    "inquiry@petpooja.com",
+    "hello@beyondscale.tech",
+    "support@royalitpark.com",
+    "hello@devathon.com",
+    "info@tapadiatech.com",
+    "info@staradvertisingagency.in",
+    "hello@codefacts.com",
+    "info@codiant.com",
+    "info@inovies.com",
+    "info@powermaxfitness.net",
+    "support@fitgymsoftware.com",
+    "sales@durafit91.com",
+    "support@jeraifitness.com",
+    "support@sephora.in"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -402,7 +416,21 @@
     "ahex.co",
     "eqaim.com",
     "extwebtech.com",
-    "kkeydos.com"
+    "kkeydos.com",
+    "blog.petpooja.com",
+    "beyondscale.tech",
+    "royalitpark.com",
+    "devathon.com",
+    "tapadiatech.com",
+    "staradvertisingagency.in",
+    "codefacts.com",
+    "codiant.com",
+    "inovies.com",
+    "powermaxfitness.net",
+    "fitgymsoftware.com",
+    "durafit.in",
+    "jeraifitness.com",
+    "sephora.in"
   ],
   "sent_log": [
     {
@@ -1986,9 +2014,121 @@
       "niche": "Tech & Startups",
       "city": "Hyderabad",
       "subject": "AI Software & Custom Web, Mobile App & SaaS Development comp: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-11T10:13:56.554519+00:00",
+      "email": "inquiry@petpooja.com",
+      "name": "Petpooja",
+      "niche": "Food & Beverage",
+      "city": "Mumbai",
+      "subject": "Creator shortlist for Petpooja?"
+    },
+    {
+      "ts": "2026-10-11T10:17:01.593934+00:00",
+      "email": "hello@beyondscale.tech",
+      "name": "BeyondScale",
+      "niche": "Tech & Startups",
+      "city": "Hyderabad",
+      "subject": "BeyondScale: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-11T10:18:45.165294+00:00",
+      "email": "support@royalitpark.com",
+      "name": "Royal It Park",
+      "niche": "Tech & Startups",
+      "city": "Hyderabad",
+      "subject": "Creator shortlist for Royal It Park?"
+    },
+    {
+      "ts": "2026-10-11T10:21:06.028289+00:00",
+      "email": "hello@devathon.com",
+      "name": "Devathon",
+      "niche": "Tech & Startups",
+      "city": "Hyderabad",
+      "subject": "Devathon: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-11T10:23:43.966237+00:00",
+      "email": "info@tapadiatech.com",
+      "name": "Tapadia Tech |",
+      "niche": "Tech & Startups",
+      "city": "Hyderabad",
+      "subject": "A free creator shortlist for Tapadia Tech |"
+    },
+    {
+      "ts": "2026-10-11T10:26:35.596455+00:00",
+      "email": "info@staradvertisingagency.in",
+      "name": "Star Advertising Agency",
+      "niche": "Tech & Startups",
+      "city": "Hyderabad",
+      "subject": "Star Advertising Agency: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-11T10:28:33.957156+00:00",
+      "email": "hello@codefacts.com",
+      "name": "CodeFacts",
+      "niche": "Tech & Startups",
+      "city": "Hyderabad",
+      "subject": "A free creator shortlist for CodeFacts"
+    },
+    {
+      "ts": "2026-10-11T10:31:52.586017+00:00",
+      "email": "info@codiant.com",
+      "name": "Codiant Software Technologies",
+      "niche": "Tech & Startups",
+      "city": "Hyderabad",
+      "subject": "Codiant Software Technologies: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-11T10:33:57.828980+00:00",
+      "email": "info@inovies.com",
+      "name": "Inovies",
+      "niche": "Tech & Startups",
+      "city": "Hyderabad",
+      "subject": "Inovies: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-11T10:35:55.567127+00:00",
+      "email": "info@powermaxfitness.net",
+      "name": "Powermax– Best Fitness Equipment Brand in India",
+      "niche": "Fitness & Wellness",
+      "city": "Mumbai",
+      "subject": "What would a creator campaign cost Powermax– Best Fitness Equipment Brand in India?"
+    },
+    {
+      "ts": "2026-10-11T10:38:13.605294+00:00",
+      "email": "support@fitgymsoftware.com",
+      "name": "India's Best Gym Management Software|Gym & Fitness Centre",
+      "niche": "Fitness & Wellness",
+      "city": "Bangalore",
+      "subject": "Creator shortlist for India's Best Gym Management Software|Gym & Fitness Centre?"
+    },
+    {
+      "ts": "2026-10-11T10:40:43.305823+00:00",
+      "email": "sales@durafit91.com",
+      "name": "Durafit91",
+      "niche": "Fitness & Wellness",
+      "city": "Bangalore",
+      "subject": "Durafit91: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-11T10:42:27.023793+00:00",
+      "email": "support@jeraifitness.com",
+      "name": "Gym Equipment Brand in India",
+      "niche": "Fitness & Wellness",
+      "city": "Mumbai",
+      "subject": "A free creator shortlist for Gym Equipment Brand in India"
+    },
+    {
+      "ts": "2026-10-11T10:44:56.938850+00:00",
+      "email": "support@sephora.in",
+      "name": "Sephora India",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bangalore",
+      "subject": "What would a creator campaign cost Sephora India?"
     }
   ],
-  "last_run": "2026-10-10T10:23:33.928712+00:00",
+  "last_run": "2026-10-11T10:44:56.964863+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
@@ -2033,6 +2173,9 @@
     "info@growkitchen.in",
     "info@canbro.in",
     "info@ahex.co",
-    "care@stylera.co"
+    "care@stylera.co",
+    "hello@codefacts.com",
+    "hello@devathon.com",
+    "hello@royalitpark.com"
   ]
 }
