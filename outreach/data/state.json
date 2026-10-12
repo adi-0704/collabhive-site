@@ -214,7 +214,25 @@
     "support@fitgymsoftware.com",
     "sales@durafit91.com",
     "support@jeraifitness.com",
-    "support@sephora.in"
+    "support@sephora.in",
+    "customercare@meenabazaar.com",
+    "support@soch.com",
+    "care@heritageofficial.com",
+    "care@lakshita.com",
+    "customercare.tcns@abfrl.adityabirla.com",
+    "support@dailyobjects.com",
+    "customercare@v2kart.com",
+    "care@magicpin.in",
+    "support@seft.world",
+    "care@plutos.one",
+    "care@antinorm.co",
+    "care@ezeperfumes.com",
+    "support@gharsoaps.in",
+    "care@neothera.co",
+    "help@numour.com",
+    "care@oldschoolrituals.in",
+    "support@simplynam.com",
+    "care@skininspired.in"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -430,7 +448,25 @@
     "fitgymsoftware.com",
     "durafit.in",
     "jeraifitness.com",
-    "sephora.in"
+    "sephora.in",
+    "meenabazaar.com",
+    "soch.com",
+    "heritageofficial.com",
+    "lakshita.com",
+    "wforwoman.com",
+    "dailyobjects.com",
+    "v2retail.com",
+    "magicpin.in",
+    "seft.world",
+    "plutos.one",
+    "antinorm.co",
+    "ezeperfume.com",
+    "gharsoaps.shop",
+    "neothera.co",
+    "numour.com",
+    "oldschoolrituals.in",
+    "simplynam.com",
+    "skininspired.in"
   ],
   "sent_log": [
     {
@@ -2126,9 +2162,153 @@
       "niche": "Beauty & Cosmetics",
       "city": "Bangalore",
       "subject": "What would a creator campaign cost Sephora India?"
+    },
+    {
+      "ts": "2026-10-12T11:09:52.583047+00:00",
+      "email": "customercare@meenabazaar.com",
+      "name": "Meena Bazaar",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost Meena Bazaar?"
+    },
+    {
+      "ts": "2026-10-12T11:11:27.970258+00:00",
+      "email": "support@soch.com",
+      "name": "Soch",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Soch: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-12T11:14:28.998012+00:00",
+      "email": "care@heritageofficial.com",
+      "name": "Heritage India Official",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost Heritage India Official?"
+    },
+    {
+      "ts": "2026-10-12T11:16:11.685017+00:00",
+      "email": "care@lakshita.com",
+      "name": "Lakshita",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "Lakshita: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-12T11:19:03.677474+00:00",
+      "email": "customercare.tcns@abfrl.adityabirla.com",
+      "name": "wforwoman",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for wforwoman"
+    },
+    {
+      "ts": "2026-10-12T11:20:42.090082+00:00",
+      "email": "support@dailyobjects.com",
+      "name": "DailyObjects",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "DailyObjects: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-12T11:23:12.388177+00:00",
+      "email": "customercare@v2kart.com",
+      "name": "V2Retail Ltd.",
+      "niche": "Fashion & Apparel",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost V2Retail Ltd.?"
+    },
+    {
+      "ts": "2026-10-12T11:26:12.845036+00:00",
+      "email": "care@magicpin.in",
+      "name": "magicpin",
+      "niche": "Fashion & Apparel",
+      "city": "Jaipur",
+      "subject": "A free creator shortlist for magicpin"
+    },
+    {
+      "ts": "2026-10-12T11:29:00.907516+00:00",
+      "email": "support@seft.world",
+      "name": "SEFT",
+      "niche": "Fashion & Apparel",
+      "city": "Mumbai",
+      "subject": "Creator shortlist for SEFT?"
+    },
+    {
+      "ts": "2026-10-12T11:31:55.064524+00:00",
+      "email": "care@plutos.one",
+      "name": "plutos ONE : Offers, Coupons, Cashback, Promo Codes & Deals",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bangalore",
+      "subject": "plutos ONE : Offers, Coupons, Cashback, Promo Codes & Deals: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-12T11:34:26.859149+00:00",
+      "email": "care@antinorm.co",
+      "name": "Antinorm",
+      "niche": "Beauty & Cosmetics",
+      "city": "Bangalore",
+      "subject": "A free creator shortlist for Antinorm"
+    },
+    {
+      "ts": "2026-10-12T11:36:08.141734+00:00",
+      "email": "care@ezeperfumes.com",
+      "name": "Eze Perfume",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Eze Perfume"
+    },
+    {
+      "ts": "2026-10-12T11:39:09.749995+00:00",
+      "email": "support@gharsoaps.in",
+      "name": "GHAR SOAPS",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for GHAR SOAPS"
+    },
+    {
+      "ts": "2026-10-12T11:42:05.507711+00:00",
+      "email": "care@neothera.co",
+      "name": "Neothera",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "Creator shortlist for Neothera?"
+    },
+    {
+      "ts": "2026-10-12T11:44:14.911613+00:00",
+      "email": "help@numour.com",
+      "name": "Numour",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "Creator shortlist for Numour?"
+    },
+    {
+      "ts": "2026-10-12T11:46:58.841489+00:00",
+      "email": "care@oldschoolrituals.in",
+      "name": "Old School Ritual",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Old School Ritual"
+    },
+    {
+      "ts": "2026-10-12T11:48:32.843837+00:00",
+      "email": "support@simplynam.com",
+      "name": "Simply Nam",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "Creator shortlist for Simply Nam?"
+    },
+    {
+      "ts": "2026-10-12T11:51:51.430329+00:00",
+      "email": "care@skininspired.in",
+      "name": "SkinInspired",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost SkinInspired?"
     }
   ],
-  "last_run": "2026-10-11T10:44:56.964863+00:00",
+  "last_run": "2026-10-12T11:51:51.467338+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
@@ -2176,6 +2356,7 @@
     "care@stylera.co",
     "hello@codefacts.com",
     "hello@devathon.com",
-    "hello@royalitpark.com"
+    "hello@royalitpark.com",
+    "support@aeroleads.com"
   ]
 }

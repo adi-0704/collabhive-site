@@ -3506,19 +3506,6 @@
     "source": "web_discovery"
   },
   {
-    "name": "AeroLeads",
-    "niche": "Fashion & Apparel",
-    "city": "Delhi",
-    "website": "https://aeroleads.com",
-    "email": "support@aeroleads.com",
-    "emails": [
-      "support@aeroleads.com",
-      "hello@aeroleads.com"
-    ],
-    "source": "web_discovery",
-    "has_email": true
-  },
-  {
     "name": "DailyObjects",
     "niche": "Fashion & Apparel",
     "city": "Delhi",
