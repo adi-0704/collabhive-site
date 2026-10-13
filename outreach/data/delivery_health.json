@@ -1,27 +1,19 @@
 {
   "ok": true,
-  "checked_at": "2026-10-12T11:55:13.055383+00:00",
+  "checked_at": "2026-10-13T10:53:29.061935+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 50,
-  "confirmed_in_sent": 9,
-  "unconfirmed": 41,
-  "delivery_rate_pct": 18.0,
-  "bounces": 17,
+  "recorded_sends": 47,
+  "confirmed_in_sent": 15,
+  "unconfirmed": 32,
+  "delivery_rate_pct": 31.9,
+  "bounces": 16,
   "bounce_emails": [
-    "info@ahex.co",
     "hello@devathon.com",
-    "support@aeroleads.com",
+    "sales@extwebtech.com",
+    "info@ahex.co",
     "hello@codefacts.com"
   ],
   "unconfirmed_emails": [
-    "info@healthstrives.com",
-    "info@indianretailer.com",
-    "contact@cavaathleisure.com",
-    "connect@ozrit.com",
-    "info@tvisha.com",
-    "contact@eqaim.com",
-    "sales@extwebtech.com",
-    "info@kkeydos.com",
     "inquiry@petpooja.com",
     "hello@beyondscale.tech",
     "support@royalitpark.com",
@@ -33,7 +25,15 @@
     "support@fitgymsoftware.com",
     "sales@durafit91.com",
     "support@jeraifitness.com",
-    "support@sephora.in"
+    "support@sephora.in",
+    "customercare@meenabazaar.com",
+    "support@soch.com",
+    "care@heritageofficial.com",
+    "care@lakshita.com",
+    "customercare.tcns@abfrl.adityabirla.com",
+    "support@dailyobjects.com",
+    "customercare@v2kart.com",
+    "care@magicpin.in"
   ],
   "flagged": true
 }
