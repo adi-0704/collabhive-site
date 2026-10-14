@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T20:16:24.898376+00:00",
+  "generated_at": "2026-10-14T18:41:10.450249+00:00",
   "status": "fail",
   "checks": [
     {
@@ -11,14 +11,14 @@
     {
       "name": "mail_flowing",
       "status": "ok",
-      "detail": "Last email sent 32h ago.",
+      "detail": "Last email sent 9h ago.",
       "fix": ""
     },
     {
       "name": "prospect_pool",
-      "status": "ok",
-      "detail": "11 brand(s) ready to contact.",
-      "fix": ""
+      "status": "fail",
+      "detail": "0 brands left to contact — outreach is starved.",
+      "fix": "Add brands to data/brands_seed.json or run the Maps discovery workflow."
     },
     {
       "name": "hot_leads",
@@ -29,20 +29,20 @@
     {
       "name": "creator_supply",
       "status": "ok",
-      "detail": "54 creators available for matching.",
+      "detail": "55 creators available for matching.",
       "fix": ""
     },
     {
       "name": "deliverability",
       "status": "fail",
-      "detail": "Delivery flagged: 31.9% delivered, 16 bounce(s).",
+      "detail": "Delivery flagged: 17.3% delivered, 16 bounce(s).",
       "fix": "Pause sending and clean the pool before Gmail throttles the account."
     }
   ],
   "metrics": {
-    "sent_24h": 0,
-    "sent_7d": 77,
-    "sent_total": 232,
+    "sent_24h": 11,
+    "sent_7d": 70,
+    "sent_total": 243,
     "replies_total": 7,
     "interested": 2,
     "negotiating": 5,
@@ -50,8 +50,8 @@
     "quotes_sent": 5,
     "pipeline_value": 149600,
     "creators": 0,
-    "social_drafts": 53,
+    "social_drafts": 54,
     "seo_pages": 19,
-    "reply_rate_pct": 3.0
+    "reply_rate_pct": 2.9
   }
 }
