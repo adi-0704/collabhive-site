@@ -1,17 +1,18 @@
 {
   "ok": true,
-  "checked_at": "2026-10-13T10:53:29.061935+00:00",
+  "checked_at": "2026-10-14T09:19:38.620888+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 47,
-  "confirmed_in_sent": 15,
-  "unconfirmed": 32,
-  "delivery_rate_pct": 31.9,
+  "recorded_sends": 52,
+  "confirmed_in_sent": 9,
+  "unconfirmed": 43,
+  "delivery_rate_pct": 17.3,
   "bounces": 16,
   "bounce_emails": [
-    "hello@devathon.com",
+    "hello@codefacts.com",
+    "help@thebodyshop.com",
     "sales@extwebtech.com",
     "info@ahex.co",
-    "hello@codefacts.com"
+    "hello@devathon.com"
   ],
   "unconfirmed_emails": [
     "inquiry@petpooja.com",

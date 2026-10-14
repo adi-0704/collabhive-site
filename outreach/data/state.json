@@ -232,7 +232,18 @@
     "help@numour.com",
     "care@oldschoolrituals.in",
     "support@simplynam.com",
-    "care@skininspired.in"
+    "care@skininspired.in",
+    "support@theloveco.in",
+    "feedback@theskinstory.in",
+    "customercare@traya.health",
+    "help@thebodyshop.com",
+    "care@mycosiq.com",
+    "customercare@beautywise.in",
+    "care@brwn.in",
+    "customercarefmc@gmail.com",
+    "care@letshyphen.com",
+    "help@denzournutrition.com",
+    "care@qikink.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -466,7 +477,18 @@
     "numour.com",
     "oldschoolrituals.in",
     "simplynam.com",
-    "skininspired.in"
+    "skininspired.in",
+    "theloveco.in",
+    "theskinstory.in",
+    "traya.health",
+    "thebodyshop.in",
+    "mycosiq.com",
+    "beautywise.in",
+    "brwn.in",
+    "fixmycurls.com",
+    "letshyphen.com",
+    "denzournutrition.com",
+    "qikink.com"
   ],
   "sent_log": [
     {
@@ -2306,9 +2328,97 @@
       "niche": "Beauty & Cosmetics",
       "city": "Delhi",
       "subject": "What would a creator campaign cost SkinInspired?"
+    },
+    {
+      "ts": "2026-10-14T08:56:41.261955+00:00",
+      "email": "support@theloveco.in",
+      "name": "The Love Co",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "The Love Co: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-14T08:58:44.601839+00:00",
+      "email": "feedback@theskinstory.in",
+      "name": "The Skin Story",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost The Skin Story?"
+    },
+    {
+      "ts": "2026-10-14T09:02:03.828560+00:00",
+      "email": "customercare@traya.health",
+      "name": "Traya",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "Traya: five matched creators, free"
+    },
+    {
+      "ts": "2026-10-14T09:03:58.528242+00:00",
+      "email": "help@thebodyshop.com",
+      "name": "Cruelty-Free & Beauty Products",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost Cruelty-Free & Beauty Products?"
+    },
+    {
+      "ts": "2026-10-14T09:05:42.674062+00:00",
+      "email": "care@mycosiq.com",
+      "name": "CosIQ",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "What would a creator campaign cost CosIQ?"
+    },
+    {
+      "ts": "2026-10-14T09:08:39.968336+00:00",
+      "email": "customercare@beautywise.in",
+      "name": "Beautywiseshop",
+      "niche": "Beauty & Cosmetics",
+      "city": "Delhi",
+      "subject": "A free creator shortlist for Beautywiseshop"
+    },
+    {
+      "ts": "2026-10-14T09:10:31.994259+00:00",
+      "email": "care@brwn.in",
+      "name": "brwn.in",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Creator shortlist for brwn.in?"
+    },
+    {
+      "ts": "2026-10-14T09:12:08.490185+00:00",
+      "email": "customercarefmc@gmail.com",
+      "name": "Fix My Curls",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "Creator shortlist for Fix My Curls?"
+    },
+    {
+      "ts": "2026-10-14T09:14:31.717302+00:00",
+      "email": "care@letshyphen.com",
+      "name": "HYPHEN",
+      "niche": "Beauty & Cosmetics",
+      "city": "Mumbai",
+      "subject": "A free creator shortlist for HYPHEN"
+    },
+    {
+      "ts": "2026-10-14T09:16:23.004593+00:00",
+      "email": "help@denzournutrition.com",
+      "name": "Denzour Nutrition",
+      "niche": "Fitness & Wellness",
+      "city": "Mumbai",
+      "subject": "What would a creator campaign cost Denzour Nutrition?"
+    },
+    {
+      "ts": "2026-10-14T09:18:17.614060+00:00",
+      "email": "care@qikink.com",
+      "name": "Qikink",
+      "niche": "Food & Beverage",
+      "city": "Mumbai",
+      "subject": "What would a creator campaign cost Qikink?"
     }
   ],
-  "last_run": "2026-10-13T10:52:19.750761+00:00",
+  "last_run": "2026-10-14T09:18:17.645168+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
@@ -2358,6 +2468,7 @@
     "hello@devathon.com",
     "hello@royalitpark.com",
     "support@aeroleads.com",
-    "sales@extwebtech.com"
+    "sales@extwebtech.com",
+    "help@thebodyshop.com"
   ]
 }

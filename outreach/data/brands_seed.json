@@ -2844,19 +2844,6 @@
     "has_email": true
   },
   {
-    "name": "Cruelty-Free & Beauty Products",
-    "niche": "Beauty & Cosmetics",
-    "city": "Delhi",
-    "website": "https://thebodyshop.in",
-    "email": "help@thebodyshop.com",
-    "emails": [
-      "help@thebodyshop.com",
-      "customercare.tbs@questretail.in",
-      "grievance-redressal@questretail.in"
-    ],
-    "source": "web_discovery"
-  },
-  {
     "name": "O3plus",
     "niche": "Beauty & Cosmetics",
     "city": "Delhi",
