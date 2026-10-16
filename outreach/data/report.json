@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T08:33:18.892237+00:00",
+  "generated_at": "2026-10-16T08:27:08.486734+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -12,12 +12,12 @@
   "summary": {
     "total_sent": 243,
     "unique_brands_emailed": 242,
-    "brands_in_pool": 311,
-    "brands_with_email": 210,
+    "brands_in_pool": 310,
+    "brands_with_email": 209,
     "remaining_candidates": 0,
-    "sent_today": 11,
-    "sent_week": 70,
-    "day_streak": 70,
+    "sent_today": 0,
+    "sent_week": 61,
+    "day_streak": 61,
     "daily_budget": 18
   },
   "by_niche": {
@@ -51,7 +51,7 @@
     "Food & Beverage": 39,
     "Fashion & Apparel": 86,
     "Beauty & Cosmetics": 92,
-    "Fitness & Wellness": 43,
+    "Fitness & Wellness": 42,
     "Home & Decor": 20,
     "Travel & Hospitality": 8,
     "Tech & Startups": 23
@@ -438,8 +438,8 @@
   },
   "mail_health": {
     "sent_total": 243,
-    "delivered_pct": 32.6,
-    "bounces": 18,
+    "delivered_pct": 62.1,
+    "bounces": 16,
     "human_replies": 8,
     "hot_leads": 8,
     "reply_rate_pct": 3.3,
@@ -517,7 +517,7 @@
       "decision_maker": 19,
       "named_person": 62,
       "generic": 58,
-      "support_desk": 71,
+      "support_desk": 70,
       "no_email": 101
     },
     "redirects": [
@@ -528,48 +528,35 @@
     ]
   },
   "social_runway": {
-    "rendered_through": "2026-11-29",
+    "rendered_through": "2026-11-30",
     "days_left": 45,
     "rendered": 92
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-10-15T08:33:18.887783+00:00",
+    "checked_at": "2026-10-16T08:27:08.482791+00:00",
     "lookback_hours": 96,
-    "recorded_sends": 43,
-    "confirmed_in_sent": 14,
-    "unconfirmed": 29,
-    "delivery_rate_pct": 32.6,
-    "bounces": 18,
+    "recorded_sends": 29,
+    "confirmed_in_sent": 18,
+    "unconfirmed": 11,
+    "delivery_rate_pct": 62.1,
+    "bounces": 16,
     "bounce_emails": [
-      "hello@devathon.com",
-      "hello@codefacts.com",
-      "support@jeraifitness.com",
       "help@thebodyshop.com"
     ],
     "unconfirmed_emails": [
-      "customercare@meenabazaar.com",
-      "support@soch.com",
-      "care@heritageofficial.com",
-      "care@lakshita.com",
-      "customercare.tcns@abfrl.adityabirla.com",
-      "support@dailyobjects.com",
-      "customercare@v2kart.com",
-      "care@magicpin.in",
-      "support@seft.world",
-      "care@plutos.one",
-      "care@antinorm.co",
-      "care@ezeperfumes.com",
-      "support@gharsoaps.in",
-      "care@neothera.co",
-      "help@numour.com",
-      "care@oldschoolrituals.in",
-      "support@simplynam.com",
-      "care@skininspired.in",
       "support@theloveco.in",
-      "feedback@theskinstory.in"
+      "feedback@theskinstory.in",
+      "customercare@traya.health",
+      "care@mycosiq.com",
+      "customercare@beautywise.in",
+      "care@brwn.in",
+      "customercarefmc@gmail.com",
+      "care@letshyphen.com",
+      "help@denzournutrition.com",
+      "care@qikink.com"
     ],
-    "flagged": true
+    "flagged": false
   },
   "pipeline_dataset": {
     "counts": {
@@ -635,14 +622,14 @@
       "brand_conversion_pct": 100.0,
       "approve_rate_pct": 100.0,
       "brief_rate_pct": 0.0,
-      "events_last_24h": 1
+      "events_last_24h": 0
     },
     "proof": {
       "creators_joined": 0,
       "campaigns_run": 0,
       "alltime_creators": 77,
       "alltime_briefs": 2,
-      "generated_at": "2026-10-15T08:33:18.903082+00:00"
+      "generated_at": "2026-10-16T08:27:08.494986+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -1126,5 +1113,5 @@
     }
   },
   "dnc_count": 1,
-  "last_run": "2026-10-15T08:31:59.951577+00:00"
+  "last_run": "2026-10-16T08:24:54.779591+00:00"
 }
