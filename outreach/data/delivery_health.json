@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "checked_at": "2026-10-16T08:27:08.482791+00:00",
+  "checked_at": "2026-10-17T08:01:24.449796+00:00",
   "lookback_hours": 96,
-  "recorded_sends": 29,
-  "confirmed_in_sent": 18,
+  "recorded_sends": 11,
+  "confirmed_in_sent": 0,
   "unconfirmed": 11,
-  "delivery_rate_pct": 62.1,
-  "bounces": 16,
+  "delivery_rate_pct": 0.0,
+  "bounces": 14,
   "bounce_emails": [
     "help@thebodyshop.com"
   ],
@@ -22,5 +22,5 @@
     "help@denzournutrition.com",
     "care@qikink.com"
   ],
-  "flagged": false
+  "flagged": true
 }
