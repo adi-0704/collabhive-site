@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-16T18:07:21.790350+00:00",
+  "generated_at": "2026-10-17T17:16:36.153789+00:00",
   "status": "fail",
   "checks": [
     {
       "name": "pipeline_ran",
       "status": "ok",
-      "detail": "Last run 10h ago.",
+      "detail": "Last run 9h ago.",
       "fix": ""
     },
     {
       "name": "mail_flowing",
       "status": "warn",
-      "detail": "No email sent for 57h — but 0 brands are currently sendable.",
+      "detail": "No email sent for 80h — but 0 brands are currently sendable.",
       "fix": "This is a pool problem, not a mail problem. See prospect_pool."
     },
     {
@@ -23,7 +23,7 @@
     {
       "name": "hot_leads",
       "status": "warn",
-      "detail": "7 hot lead(s) with no quote for >48h: hello@sugarcosmetics.com, care@kamaayurveda.in, support@damensch.com, woot@mcaffeine.com, care@thesleepcompany.in",
+      "detail": "8 hot lead(s) with no quote for >48h: hello@sugarcosmetics.com, care@kamaayurveda.in, support@damensch.com, woot@mcaffeine.com, care@thesleepcompany.in",
       "fix": "Reply personally — these are the closest thing to revenue you have."
     },
     {
@@ -34,14 +34,14 @@
     },
     {
       "name": "deliverability",
-      "status": "ok",
-      "detail": "62.1% delivered, 16 bounce(s).",
-      "fix": ""
+      "status": "fail",
+      "detail": "Delivery flagged: 0.0% delivered, 14 bounce(s).",
+      "fix": "Pause sending and clean the pool before Gmail throttles the account."
     }
   ],
   "metrics": {
     "sent_24h": 0,
-    "sent_7d": 52,
+    "sent_7d": 43,
     "sent_total": 243,
     "replies_total": 8,
     "interested": 2,
