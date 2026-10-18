@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T17:16:36.153789+00:00",
+  "generated_at": "2026-10-18T17:25:08.235980+00:00",
   "status": "fail",
   "checks": [
     {
@@ -11,7 +11,7 @@
     {
       "name": "mail_flowing",
       "status": "warn",
-      "detail": "No email sent for 80h — but 0 brands are currently sendable.",
+      "detail": "No email sent for 104h — but 0 brands are currently sendable.",
       "fix": "This is a pool problem, not a mail problem. See prospect_pool."
     },
     {
@@ -34,14 +34,14 @@
     },
     {
       "name": "deliverability",
-      "status": "fail",
-      "detail": "Delivery flagged: 0.0% delivered, 14 bounce(s).",
-      "fix": "Pause sending and clean the pool before Gmail throttles the account."
+      "status": "ok",
+      "detail": "100.0% delivered, 14 bounce(s).",
+      "fix": ""
     }
   ],
   "metrics": {
     "sent_24h": 0,
-    "sent_7d": 43,
+    "sent_7d": 29,
     "sent_total": 243,
     "replies_total": 8,
     "interested": 2,
