@@ -1,26 +1,15 @@
 {
   "ok": true,
-  "checked_at": "2026-10-17T08:01:24.449796+00:00",
+  "checked_at": "2026-10-18T08:16:36.420971+00:00",
   "lookback_hours": 96,
   "recorded_sends": 11,
-  "confirmed_in_sent": 0,
-  "unconfirmed": 11,
-  "delivery_rate_pct": 0.0,
+  "confirmed_in_sent": 11,
+  "unconfirmed": 0,
+  "delivery_rate_pct": 100.0,
   "bounces": 14,
   "bounce_emails": [
     "help@thebodyshop.com"
   ],
-  "unconfirmed_emails": [
-    "support@theloveco.in",
-    "feedback@theskinstory.in",
-    "customercare@traya.health",
-    "care@mycosiq.com",
-    "customercare@beautywise.in",
-    "care@brwn.in",
-    "customercarefmc@gmail.com",
-    "care@letshyphen.com",
-    "help@denzournutrition.com",
-    "care@qikink.com"
-  ],
-  "flagged": true
+  "unconfirmed_emails": [],
+  "flagged": false
 }
