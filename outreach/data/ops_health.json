@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T18:42:30.260622+00:00",
+  "generated_at": "2026-10-22T18:35:33.285674+00:00",
   "status": "fail",
   "checks": [
     {
@@ -11,7 +11,7 @@
     {
       "name": "mail_flowing",
       "status": "warn",
-      "detail": "No email sent for 177h — but 0 brands are currently sendable.",
+      "detail": "No email sent for 201h — but 0 brands are currently sendable.",
       "fix": "This is a pool problem, not a mail problem. See prospect_pool."
     },
     {
@@ -35,7 +35,7 @@
     {
       "name": "deliverability",
       "status": "ok",
-      "detail": "0.0% delivered, 7 bounce(s).",
+      "detail": "0.0% delivered, 5 bounce(s).",
       "fix": ""
     }
   ],
