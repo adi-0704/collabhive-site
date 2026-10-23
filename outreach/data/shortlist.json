@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T08:51:47.653356+00:00",
+  "generated_at": "2026-10-23T08:46:56.719898+00:00",
   "shortlist": [
     {
       "brand": "UrbanBrew",
@@ -37,6 +37,15 @@
           "score": 0.65
         },
         {
+          "name": "Gaganpreet Kaur ",
+          "handle": "@gpcooks",
+          "niche": "Food",
+          "city": "Malout, Punjab",
+          "followers": 124000,
+          "rate": null,
+          "score": 0.55
+        },
+        {
           "name": "Garima narang",
           "handle": "@onlyyygarima",
           "niche": "Food",
@@ -53,15 +62,6 @@
           "followers": 4000,
           "rate": null,
           "score": 0.415
-        },
-        {
-          "name": "Sunami devi",
-          "handle": "@https://www.instagram.com/t.sunaamii_",
-          "niche": "Food fashion fitness travel beauty",
-          "city": "India",
-          "followers": 3000,
-          "rate": null,
-          "score": 0.411
         }
       ]
     },
