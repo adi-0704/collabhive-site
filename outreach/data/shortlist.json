@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T08:39:27.331922+00:00",
+  "generated_at": "2026-10-26T09:14:37.136392+00:00",
   "shortlist": [
     {
       "brand": "UrbanBrew",
@@ -15,6 +15,15 @@
           "niche": "Food and Travel",
           "city": "Delhi",
           "followers": 64171000000,
+          "rate": null,
+          "score": 0.8
+        },
+        {
+          "name": "Harshit Kinger",
+          "handle": "@kravings_withkinger",
+          "niche": "Food and Travel",
+          "city": "Delhi",
+          "followers": 2100000,
           "rate": null,
           "score": 0.8
         },
@@ -53,15 +62,6 @@
           "followers": 4300,
           "rate": null,
           "score": 0.416
-        },
-        {
-          "name": "Chetna Jain",
-          "handle": "@Vibe_with_chetna_",
-          "niche": "Lifestyle, Fashion, food",
-          "city": "Mumbai",
-          "followers": 4000,
-          "rate": null,
-          "score": 0.415
         }
       ]
     },
@@ -284,6 +284,15 @@
           "score": 0.55
         },
         {
+          "name": "Harshit Kinger",
+          "handle": "@kravings_withkinger",
+          "niche": "Food and Travel",
+          "city": "Delhi",
+          "followers": 2100000,
+          "rate": null,
+          "score": 0.55
+        },
+        {
           "name": "Ananya gupta ",
           "handle": "@ananyyawwww",
           "niche": "Fashion, Beauty, want to explore travel as well",
@@ -309,15 +318,6 @@
           "followers": 2500,
           "rate": null,
           "score": 0.409
-        },
-        {
-          "name": "Ishika Shahi",
-          "handle": "@ishikashahiii",
-          "niche": "Fashion , travel , beauty",
-          "city": "Pithoragarh, uttrakhand",
-          "followers": 1427,
-          "rate": null,
-          "score": 0.405
         }
       ]
     }

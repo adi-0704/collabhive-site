@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-25T08:39:38.616437+00:00",
-  "count": 57,
+  "generated_at": "2026-10-26T09:14:47.598527+00:00",
+  "count": 58,
   "creators": [
     {
       "name": "Garima narang",
@@ -513,6 +513,15 @@
       "city": "Bangalore",
       "followers": 131000,
       "platforms": "Instagram, YouTube, Facebook",
+      "source": "applicant"
+    },
+    {
+      "name": "Harshit Kinger",
+      "handle": "@kravings_withkinger",
+      "niche": "Food and Travel",
+      "city": "Delhi",
+      "followers": 2100000,
+      "platforms": "Instagram, YouTube, Snapchat, Facebook",
       "source": "applicant"
     }
   ]
