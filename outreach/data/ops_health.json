@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-25T17:40:50.059033+00:00",
+  "generated_at": "2026-10-26T19:58:22.127288+00:00",
   "status": "fail",
   "checks": [
     {
       "name": "pipeline_ran",
       "status": "ok",
-      "detail": "Last run 9h ago.",
+      "detail": "Last run 11h ago.",
       "fix": ""
     },
     {
       "name": "mail_flowing",
       "status": "warn",
-      "detail": "No email sent for 272h — but 0 brands are currently sendable.",
+      "detail": "No email sent for 299h — but 0 brands are currently sendable.",
       "fix": "This is a pool problem, not a mail problem. See prospect_pool."
     },
     {
@@ -29,7 +29,7 @@
     {
       "name": "creator_supply",
       "status": "ok",
-      "detail": "57 creators available for matching.",
+      "detail": "58 creators available for matching.",
       "fix": ""
     },
     {
@@ -50,7 +50,7 @@
     "quotes_sent": 5,
     "pipeline_value": 149600,
     "creators": 0,
-    "social_drafts": 56,
+    "social_drafts": 57,
     "seo_pages": 19,
     "reply_rate_pct": 3.3
   }
