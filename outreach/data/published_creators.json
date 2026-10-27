@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-26T09:14:47.598527+00:00",
-  "count": 58,
+  "generated_at": "2026-10-27T09:16:19.727861+00:00",
+  "count": 59,
   "creators": [
     {
       "name": "Garima narang",
@@ -522,6 +522,15 @@
       "city": "Delhi",
       "followers": 2100000,
       "platforms": "Instagram, YouTube, Snapchat, Facebook",
+      "source": "applicant"
+    },
+    {
+      "name": "Ved Dixit ",
+      "handle": "@ved19.official",
+      "niche": "Lifestyle,beauty,fashion and wellness ",
+      "city": "Kanpur UP",
+      "followers": 21600,
+      "platforms": "Instagram",
       "source": "applicant"
     }
   ]

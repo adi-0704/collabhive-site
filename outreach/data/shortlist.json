@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T09:14:37.136392+00:00",
+  "generated_at": "2026-10-27T09:16:11.746015+00:00",
   "shortlist": [
     {
       "brand": "UrbanBrew",
@@ -92,6 +92,15 @@
           "score": 0.65
         },
         {
+          "name": "Ved Dixit ",
+          "handle": "@ved19.official",
+          "niche": "Lifestyle,beauty,fashion and wellness ",
+          "city": "Kanpur UP",
+          "followers": 21600,
+          "rate": null,
+          "score": 0.481
+        },
+        {
           "name": "Sunami devi",
           "handle": "@https://www.instagram.com/t.sunaamii_",
           "niche": "Food fashion fitness travel beauty",
@@ -117,15 +126,6 @@
           "followers": 1000,
           "rate": null,
           "score": 0.404
-        },
-        {
-          "name": "Chetna Jain",
-          "handle": "@Vibe_with_chetna_",
-          "niche": "Lifestyle, Fashion, food",
-          "city": "Mumbai",
-          "followers": 4000,
-          "rate": null,
-          "score": 0.265
         }
       ]
     },
