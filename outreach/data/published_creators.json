@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-27T09:16:19.727861+00:00",
-  "count": 59,
+  "generated_at": "2026-10-28T09:56:32.304533+00:00",
+  "count": 60,
   "creators": [
     {
       "name": "Garima narang",
@@ -531,6 +531,15 @@
       "city": "Kanpur UP",
       "followers": 21600,
       "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Rehana ",
+      "handle": "@Designwithrehana",
+      "niche": "Tech , AI , skills , knowledge ",
+      "city": "Noida",
+      "followers": 11730,
+      "platforms": "Instagram, YouTube",
       "source": "applicant"
     }
   ]
