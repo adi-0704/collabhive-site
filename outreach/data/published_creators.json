@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-03T11:09:20.374713+00:00",
-  "count": 61,
+  "generated_at": "2026-11-05T11:17:30.406522+00:00",
+  "count": 62,
   "creators": [
     {
       "name": "Garima narang",
@@ -547,6 +547,15 @@
       "handle": "@mr.shre",
       "niche": "Travel and lifestyle",
       "city": "Jhansi",
+      "platforms": "Instagram, YouTube",
+      "source": "applicant"
+    },
+    {
+      "name": "Revanth Terala",
+      "handle": "@revanth_terala_",
+      "niche": "Automobiles/ Motovlogs ",
+      "city": "Hyderabad",
+      "followers": 58000,
       "platforms": "Instagram, YouTube",
       "source": "applicant"
     }

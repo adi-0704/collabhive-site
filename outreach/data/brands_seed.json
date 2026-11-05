@@ -122,10 +122,12 @@
     "niche": "Fashion & Apparel",
     "city": "Mumbai",
     "website": "https://www.thesouledstore.com",
-    "email": "",
-    "emails": [],
+    "email": "connect@thesouledstore.com",
+    "emails": [
+      "connect@thesouledstore.com"
+    ],
     "source": "seed",
-    "has_email": false
+    "has_email": true
   },
   {
     "name": "Snitch",

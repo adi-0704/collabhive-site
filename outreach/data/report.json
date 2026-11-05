@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T11:09:19.452393+00:00",
+  "generated_at": "2026-11-05T11:17:29.535368+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -10,18 +10,18 @@
     "phone": "+91 81780 22572"
   },
   "summary": {
-    "total_sent": 243,
-    "unique_brands_emailed": 242,
+    "total_sent": 244,
+    "unique_brands_emailed": 243,
     "brands_in_pool": 310,
-    "brands_with_email": 209,
+    "brands_with_email": 210,
     "remaining_candidates": 0,
-    "sent_today": 0,
-    "sent_week": 0,
-    "day_streak": 0,
+    "sent_today": 1,
+    "sent_week": 1,
+    "day_streak": 1,
     "daily_budget": 18
   },
   "by_niche": {
-    "Fashion & Apparel": 73,
+    "Fashion & Apparel": 74,
     "Beauty & Cosmetics": 82,
     "Food & Beverage": 20,
     "Fitness & Wellness": 25,
@@ -36,7 +36,7 @@
     "Gurugram": 26,
     "Hyderabad": 22,
     "Kolkata": 1,
-    "Mumbai": 51,
+    "Mumbai": 52,
     "Jaipur": 7,
     "Chennai": 1,
     "Jodhpur": 1,
@@ -57,6 +57,14 @@
     "Tech & Startups": 23
   },
   "recent_sends": [
+    {
+      "ts": "2026-11-05T11:17:14.012963+00:00",
+      "email": "connect@thesouledstore.com",
+      "name": "The Souled Store",
+      "niche": "Fashion & Apparel",
+      "city": "Mumbai",
+      "subject": "Creator shortlist for The Souled Store?"
+    },
     {
       "ts": "2026-10-14T09:18:17.614060+00:00",
       "email": "care@qikink.com",
@@ -208,14 +216,6 @@
       "niche": "Beauty & Cosmetics",
       "city": "Bangalore",
       "subject": "A free creator shortlist for Antinorm"
-    },
-    {
-      "ts": "2026-10-12T11:31:55.064524+00:00",
-      "email": "care@plutos.one",
-      "name": "plutos ONE : Offers, Coupons, Cashback, Promo Codes & Deals",
-      "niche": "Beauty & Cosmetics",
-      "city": "Bangalore",
-      "subject": "plutos ONE : Offers, Coupons, Cashback, Promo Codes & Deals: five matched creators, free"
     }
   ],
   "sales": {
@@ -437,7 +437,7 @@
     "reply_rate_pct": 3.3
   },
   "mail_health": {
-    "sent_total": 243,
+    "sent_total": 244,
     "delivered_pct": 0.0,
     "bounces": 0,
     "human_replies": 8,
@@ -516,9 +516,9 @@
     "reachability": {
       "decision_maker": 19,
       "named_person": 62,
-      "generic": 58,
+      "generic": 59,
       "support_desk": 70,
-      "no_email": 101
+      "no_email": 100
     },
     "redirects": [
       {
@@ -528,21 +528,23 @@
     ]
   },
   "social_runway": {
-    "rendered_through": "2026-12-18",
+    "rendered_through": "2026-12-20",
     "days_left": 45,
     "rendered": 92
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-11-03T11:09:19.448014+00:00",
+    "checked_at": "2026-11-05T11:17:29.533444+00:00",
     "lookback_hours": 96,
-    "recorded_sends": 0,
+    "recorded_sends": 1,
     "confirmed_in_sent": 0,
-    "unconfirmed": 0,
+    "unconfirmed": 1,
     "delivery_rate_pct": 0.0,
     "bounces": 0,
     "bounce_emails": [],
-    "unconfirmed_emails": [],
+    "unconfirmed_emails": [
+      "connect@thesouledstore.com"
+    ],
     "flagged": false
   },
   "pipeline_dataset": {
@@ -614,9 +616,9 @@
     "proof": {
       "creators_joined": 0,
       "campaigns_run": 0,
-      "alltime_creators": 83,
+      "alltime_creators": 84,
       "alltime_briefs": 2,
-      "generated_at": "2026-11-03T11:09:19.459319+00:00"
+      "generated_at": "2026-11-05T11:17:29.541558+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -634,7 +636,7 @@
     }
   },
   "publish": {
-    "published_count": 61,
+    "published_count": 62,
     "creators": [
       {
         "name": "Garima narang",
@@ -1117,18 +1119,23 @@
         "handle": "@mr.shre",
         "name": "Shreyansh Mishra ",
         "niche": "Travel and lifestyle"
+      },
+      {
+        "handle": "@revanth_terala_",
+        "name": "Revanth Terala",
+        "niche": "Automobiles/ Motovlogs "
       }
     ],
-    "drafts_count": 60
+    "drafts_count": 61
   },
   "buffer": {
     "queued_count": 0,
-    "needs_media_count": 60,
-    "has_drafts": 60,
+    "needs_media_count": 61,
+    "has_drafts": 61,
     "statuses": {
-      "needs_media": 60
+      "needs_media": 61
     }
   },
   "dnc_count": 1,
-  "last_run": "2026-11-03T11:09:08.065660+00:00"
+  "last_run": "2026-11-05T11:17:14.032902+00:00"
 }

@@ -243,7 +243,8 @@
     "customercarefmc@gmail.com",
     "care@letshyphen.com",
     "help@denzournutrition.com",
-    "care@qikink.com"
+    "care@qikink.com",
+    "connect@thesouledstore.com"
   ],
   "emailed_domains": [
     "snitch.com",
@@ -488,7 +489,8 @@
     "fixmycurls.com",
     "letshyphen.com",
     "denzournutrition.com",
-    "qikink.com"
+    "qikink.com",
+    "thesouledstore.com"
   ],
   "sent_log": [
     {
@@ -2416,9 +2418,17 @@
       "niche": "Food & Beverage",
       "city": "Mumbai",
       "subject": "What would a creator campaign cost Qikink?"
+    },
+    {
+      "ts": "2026-11-05T11:17:14.012963+00:00",
+      "email": "connect@thesouledstore.com",
+      "name": "The Souled Store",
+      "niche": "Fashion & Apparel",
+      "city": "Mumbai",
+      "subject": "Creator shortlist for The Souled Store?"
     }
   ],
-  "last_run": "2026-11-03T11:09:08.065660+00:00",
+  "last_run": "2026-11-05T11:17:14.032902+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",
