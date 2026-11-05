@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-04T20:50:40.040465+00:00",
+  "generated_at": "2026-11-05T21:07:02.261765+00:00",
   "status": "fail",
   "checks": [
     {
       "name": "pipeline_ran",
       "status": "ok",
-      "detail": "Last run 34h ago.",
+      "detail": "Last run 10h ago.",
       "fix": ""
     },
     {
       "name": "mail_flowing",
-      "status": "warn",
-      "detail": "No email sent for 516h — but 0 brands are currently sendable.",
-      "fix": "This is a pool problem, not a mail problem. See prospect_pool."
+      "status": "ok",
+      "detail": "Last email sent 10h ago.",
+      "fix": ""
     },
     {
       "name": "prospect_pool",
@@ -40,9 +40,9 @@
     }
   ],
   "metrics": {
-    "sent_24h": 0,
-    "sent_7d": 0,
-    "sent_total": 243,
+    "sent_24h": 1,
+    "sent_7d": 1,
+    "sent_total": 244,
     "replies_total": 8,
     "interested": 2,
     "negotiating": 6,
@@ -50,7 +50,7 @@
     "quotes_sent": 5,
     "pipeline_value": 149600,
     "creators": 0,
-    "social_drafts": 60,
+    "social_drafts": 61,
     "seo_pages": 19,
     "reply_rate_pct": 3.3
   }
