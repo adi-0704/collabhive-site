@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T11:17:29.535368+00:00",
+  "generated_at": "2026-11-06T11:14:35.995237+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -528,13 +528,13 @@
     ]
   },
   "social_runway": {
-    "rendered_through": "2026-12-20",
+    "rendered_through": "2026-12-21",
     "days_left": 45,
     "rendered": 92
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-11-05T11:17:29.533444+00:00",
+    "checked_at": "2026-11-06T11:14:35.993375+00:00",
     "lookback_hours": 96,
     "recorded_sends": 1,
     "confirmed_in_sent": 0,
@@ -618,7 +618,7 @@
       "campaigns_run": 0,
       "alltime_creators": 84,
       "alltime_briefs": 2,
-      "generated_at": "2026-11-05T11:17:29.541558+00:00"
+      "generated_at": "2026-11-06T11:14:36.002940+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -1137,5 +1137,5 @@
     }
   },
   "dnc_count": 1,
-  "last_run": "2026-11-05T11:17:14.032902+00:00"
+  "last_run": "2026-11-06T11:14:24.292293+00:00"
 }
