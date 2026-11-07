@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-06T20:27:57.193614+00:00",
+  "generated_at": "2026-11-07T18:49:54.601326+00:00",
   "status": "fail",
   "checks": [
     {
       "name": "pipeline_ran",
       "status": "ok",
-      "detail": "Last run 9h ago.",
+      "detail": "Last run 8h ago.",
       "fix": ""
     },
     {
       "name": "mail_flowing",
-      "status": "ok",
-      "detail": "Last email sent 33h ago.",
-      "fix": ""
+      "status": "warn",
+      "detail": "No email sent for 56h — but 0 brands are currently sendable.",
+      "fix": "This is a pool problem, not a mail problem. See prospect_pool."
     },
     {
       "name": "prospect_pool",
