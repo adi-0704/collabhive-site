@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-09T11:54:39.964371+00:00",
-  "count": 62,
+  "generated_at": "2026-11-10T11:30:45.235283+00:00",
+  "count": 63,
   "creators": [
     {
       "name": "Garima narang",
@@ -557,6 +557,15 @@
       "city": "Hyderabad",
       "followers": 58000,
       "platforms": "Instagram, YouTube",
+      "source": "applicant"
+    },
+    {
+      "name": "Pobbisetty Likitha",
+      "handle": "@jyospassions",
+      "niche": "Lifestyle, Fashion, Beauty, Food, Travel",
+      "city": "Bangalore",
+      "followers": 531000,
+      "platforms": "Instagram",
       "source": "applicant"
     }
   ]

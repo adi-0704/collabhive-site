@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T11:54:29.947761+00:00",
+  "generated_at": "2026-11-10T11:30:35.946401+00:00",
   "shortlist": [
     {
       "brand": "UrbanBrew",
@@ -293,6 +293,15 @@
           "score": 0.55
         },
         {
+          "name": "Pobbisetty Likitha",
+          "handle": "@jyospassions",
+          "niche": "Lifestyle, Fashion, Beauty, Food, Travel",
+          "city": "Bangalore",
+          "followers": 531000,
+          "rate": null,
+          "score": 0.55
+        },
+        {
           "name": "Ananya gupta ",
           "handle": "@ananyyawwww",
           "niche": "Fashion, Beauty, want to explore travel as well",
@@ -309,15 +318,6 @@
           "followers": 3000,
           "rate": null,
           "score": 0.411
-        },
-        {
-          "name": "Anshika Rai",
-          "handle": "@_anshika._.rai",
-          "niche": "Beauty & Skincare and fashion ",
-          "city": "Dehradun, Uttarakhand",
-          "followers": 2500,
-          "rate": null,
-          "score": 0.409
         }
       ]
     }
