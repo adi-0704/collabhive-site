@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-10T11:30:45.235283+00:00",
-  "count": 63,
+  "generated_at": "2026-11-11T11:17:39.942500+00:00",
+  "count": 64,
   "creators": [
     {
       "name": "Garima narang",
@@ -566,6 +566,15 @@
       "city": "Bangalore",
       "followers": 531000,
       "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Itsme_pyary",
+      "handle": "@itsme_pyary",
+      "niche": "Beauty,food,fashion",
+      "city": "Chennai",
+      "followers": 5500,
+      "platforms": "Instagram, Facebook",
       "source": "applicant"
     }
   ]
