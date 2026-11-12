@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-11T11:17:39.942500+00:00",
-  "count": 64,
+  "generated_at": "2026-11-12T11:35:32.529472+00:00",
+  "count": 65,
   "creators": [
     {
       "name": "Garima narang",
@@ -575,6 +575,15 @@
       "city": "Chennai",
       "followers": 5500,
       "platforms": "Instagram, Facebook",
+      "source": "applicant"
+    },
+    {
+      "name": "Ayesha Preet",
+      "handle": "@diy_by_ayesha",
+      "niche": "DIY, furniture refurbishing, home decor",
+      "city": "Gurugram",
+      "followers": 264000,
+      "platforms": "Instagram, YouTube, Facebook",
       "source": "applicant"
     }
   ]

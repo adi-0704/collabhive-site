@@ -635,5 +635,12 @@
     "referrer": "",
     "source": "seed",
     "ts": "2026-11-11T11:17:33.362874+00:00"
+  },
+  {
+    "kind": "creator_registered",
+    "email": "ayeshapreet@gmail.com",
+    "referrer": "",
+    "source": "seed",
+    "ts": "2026-11-12T11:35:24.949515+00:00"
   }
 ]
