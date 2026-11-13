@@ -1,5 +1,6 @@
 {
   "activate": [
+    "aanchaljain75@yahoo.in",
     "aasthaniranjan2307@gmail.com",
     "abhijeet6012@gmail.com",
     "ananyagupta2804@gmail.com",
@@ -64,8 +65,9 @@
     "workwithrukshar@gmail.com",
     "yanagpt529@gmail.com"
   ],
-  "last_run": "2026-11-12T11:36:14.015651+00:00",
+  "last_run": "2026-11-13T11:21:23.482347+00:00",
   "refer": [
+    "aanchaljain75@yahoo.in",
     "aasthaniranjan2307@gmail.com",
     "abhijeet6012@gmail.com",
     "ananyagupta2804@gmail.com",
@@ -131,7 +133,6 @@
     "yanagpt529@gmail.com"
   ],
   "sent_by_day": {
-    "2026-10-05": 12,
     "2026-10-06": 12,
     "2026-10-07": 12,
     "2026-10-08": 8,
@@ -144,6 +145,7 @@
     "2026-11-05": 2,
     "2026-11-10": 2,
     "2026-11-11": 2,
-    "2026-11-12": 2
+    "2026-11-12": 2,
+    "2026-11-13": 2
   }
 }
