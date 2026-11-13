@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T21:29:18.848057+00:00",
+  "generated_at": "2026-11-13T20:55:16.371152+00:00",
   "status": "fail",
   "checks": [
     {
@@ -11,7 +11,7 @@
     {
       "name": "mail_flowing",
       "status": "warn",
-      "detail": "No email sent for 178h — but 0 brands are currently sendable.",
+      "detail": "No email sent for 202h — but 0 brands are currently sendable.",
       "fix": "This is a pool problem, not a mail problem. See prospect_pool."
     },
     {
@@ -50,7 +50,7 @@
     "quotes_sent": 5,
     "pipeline_value": 149600,
     "creators": 0,
-    "social_drafts": 64,
+    "social_drafts": 65,
     "seo_pages": 19,
     "reply_rate_pct": 3.3
   }
