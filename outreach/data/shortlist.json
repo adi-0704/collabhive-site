@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T10:46:02.071022+00:00",
+  "generated_at": "2026-11-15T11:19:25.482891+00:00",
   "shortlist": [
     {
       "brand": "UrbanBrew",
@@ -55,13 +55,13 @@
           "score": 0.55
         },
         {
-          "name": "Garima narang",
-          "handle": "@onlyyygarima",
-          "niche": "Food",
-          "city": "Sonipat",
-          "followers": 4300,
+          "name": "SPICEFORTASTE ",
+          "handle": "@https://www.instagram.com/spicefortaste",
+          "niche": "Recipes, Food Content, Kitchen based Equipment ",
+          "city": "Chennai",
+          "followers": 200000,
           "rate": null,
-          "score": 0.416
+          "score": 0.55
         }
       ]
     },
@@ -202,6 +202,15 @@
       "note": "Needs fashion influencers for the festive drop; 4 posts + stories.",
       "matches": [
         {
+          "name": "Anuradha Kapoor ",
+          "handle": "@http://www.instagram.com/anuraya_by_anuradhakapoor/",
+          "niche": "Fashion",
+          "city": "Gurgaon Haryana India",
+          "followers": 58600,
+          "rate": null,
+          "score": 0.55
+        },
+        {
           "name": "Chetna Kathayat",
           "handle": "@21.chetna",
           "niche": "Fashion",
@@ -245,15 +254,6 @@
           "followers": 5780,
           "rate": null,
           "score": 0.422
-        },
-        {
-          "name": "Shanaya Wadibhasme ",
-          "handle": "@shanayaaa_1137",
-          "niche": "Fashion , beauty, lifestyle, content writer ",
-          "city": "Nagpur India",
-          "followers": 4455,
-          "rate": null,
-          "score": 0.417
         }
       ]
     },

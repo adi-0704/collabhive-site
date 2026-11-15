@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-14T10:46:09.319766+00:00",
-  "count": 66,
+  "generated_at": "2026-11-15T11:19:31.388480+00:00",
+  "count": 69,
   "creators": [
     {
       "name": "Garima narang",
@@ -593,6 +593,33 @@
       "city": "Mumbai",
       "followers": 309000,
       "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Aditi Kukreti",
+      "handle": "@Homebeautylife7",
+      "niche": "Home ,lifestyle ",
+      "city": "Dehradun , uttrakhand",
+      "followers": 68000,
+      "platforms": "Instagram, YouTube, Facebook",
+      "source": "applicant"
+    },
+    {
+      "name": "Anuradha Kapoor ",
+      "handle": "@http://www.instagram.com/anuraya_by_anuradhakapoor/",
+      "niche": "Fashion",
+      "city": "Gurgaon Haryana India",
+      "followers": 58600,
+      "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "SPICEFORTASTE ",
+      "handle": "@https://www.instagram.com/spicefortaste",
+      "niche": "Recipes, Food Content, Kitchen based Equipment ",
+      "city": "Chennai",
+      "followers": 200000,
+      "platforms": "Instagram, YouTube, Facebook",
       "source": "applicant"
     }
   ]

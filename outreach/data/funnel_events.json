@@ -649,5 +649,26 @@
     "referrer": "",
     "source": "seed",
     "ts": "2026-11-13T11:20:24.869129+00:00"
+  },
+  {
+    "kind": "creator_registered",
+    "email": "aditikukreti27@gmail.com",
+    "referrer": "",
+    "source": "seed",
+    "ts": "2026-11-15T11:19:26.074245+00:00"
+  },
+  {
+    "kind": "creator_registered",
+    "email": "anuradha.kapoor5@gmail.com",
+    "referrer": "",
+    "source": "seed",
+    "ts": "2026-11-15T11:19:26.074256+00:00"
+  },
+  {
+    "kind": "creator_registered",
+    "email": "ragapriyaaradhakrishnan@gmail.com",
+    "referrer": "",
+    "source": "seed",
+    "ts": "2026-11-15T11:19:26.074260+00:00"
   }
 ]
