@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-15T11:19:31.388480+00:00",
-  "count": 69,
+  "generated_at": "2026-11-16T11:49:06.583251+00:00",
+  "count": 70,
   "creators": [
     {
       "name": "Garima narang",
@@ -620,6 +620,15 @@
       "city": "Chennai",
       "followers": 200000,
       "platforms": "Instagram, YouTube, Facebook",
+      "source": "applicant"
+    },
+    {
+      "name": "Vikas Silwal",
+      "handle": "@flavourful_minds",
+      "niche": "Foos",
+      "city": "Delhi",
+      "followers": 85000,
+      "platforms": "Instagram",
       "source": "applicant"
     }
   ]
