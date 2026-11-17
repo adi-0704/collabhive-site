@@ -1,5 +1,5 @@
 {
-  "maps_consecutive_failures": 0,
+  "maps_consecutive_failures": 1,
   "maps_last_ok": "2026-08-28T03:15:09.012989+00:00",
   "emailed_emails": [
     "grievance@snitch.com",
@@ -2428,7 +2428,7 @@
       "subject": "Creator shortlist for The Souled Store?"
     }
   ],
-  "last_run": "2026-11-16T11:48:48.157421+00:00",
+  "last_run": "2026-11-17T12:10:14.567009+00:00",
   "bounced_emails": [
     "files@quinn-live.bundle.js",
     "careers@bewakoof.com",

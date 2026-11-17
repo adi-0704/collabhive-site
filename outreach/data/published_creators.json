@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-16T11:49:06.583251+00:00",
-  "count": 70,
+  "generated_at": "2026-11-17T12:10:31.128567+00:00",
+  "count": 71,
   "creators": [
     {
       "name": "Garima narang",
@@ -629,6 +629,15 @@
       "city": "Delhi",
       "followers": 85000,
       "platforms": "Instagram",
+      "source": "applicant"
+    },
+    {
+      "name": "Sapna soni",
+      "handle": "@its.sapna.soni",
+      "niche": "Fitness, lifestyle, travel",
+      "city": "Delhi & Mumbai",
+      "followers": 93000,
+      "platforms": "Instagram, YouTube",
       "source": "applicant"
     }
   ]

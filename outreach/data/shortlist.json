@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T11:48:56.771500+00:00",
+  "generated_at": "2026-11-17T12:10:21.421915+00:00",
   "shortlist": [
     {
       "brand": "UrbanBrew",
@@ -302,6 +302,15 @@
           "score": 0.55
         },
         {
+          "name": "Sapna soni",
+          "handle": "@its.sapna.soni",
+          "niche": "Fitness, lifestyle, travel",
+          "city": "Delhi & Mumbai",
+          "followers": 93000,
+          "rate": null,
+          "score": 0.55
+        },
+        {
           "name": "Ananya gupta ",
           "handle": "@ananyyawwww",
           "niche": "Fashion, Beauty, want to explore travel as well",
@@ -309,15 +318,6 @@
           "followers": 4000,
           "rate": null,
           "score": 0.415
-        },
-        {
-          "name": "Sunami devi",
-          "handle": "@https://www.instagram.com/t.sunaamii_",
-          "niche": "Food fashion fitness travel beauty",
-          "city": "India",
-          "followers": 3000,
-          "rate": null,
-          "score": 0.411
         }
       ]
     }

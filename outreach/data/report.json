@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T11:49:05.575803+00:00",
+  "generated_at": "2026-11-17T12:10:30.028009+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -357,7 +357,7 @@
           "@thatsmyplate",
           "@kravings_withkinger",
           "@jyospassions",
-          "@ananyyawwww"
+          "@its.sapna.soni"
         ]
       ]
     ],
@@ -529,12 +529,12 @@
   },
   "social_runway": {
     "rendered_through": "2026-12-29",
-    "days_left": 43,
-    "rendered": 88
+    "days_left": 42,
+    "rendered": 86
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-11-16T11:49:05.572128+00:00",
+    "checked_at": "2026-11-17T12:10:30.023962+00:00",
     "lookback_hours": 96,
     "recorded_sends": 0,
     "confirmed_in_sent": 0,
@@ -614,9 +614,9 @@
     "proof": {
       "creators_joined": 0,
       "campaigns_run": 0,
-      "alltime_creators": 92,
+      "alltime_creators": 93,
       "alltime_briefs": 2,
-      "generated_at": "2026-11-16T11:49:05.583334+00:00"
+      "generated_at": "2026-11-17T12:10:30.035673+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -634,7 +634,7 @@
     }
   },
   "publish": {
-    "published_count": 70,
+    "published_count": 71,
     "creators": [
       {
         "name": "Garima narang",
@@ -1162,18 +1162,23 @@
         "handle": "@flavourful_minds",
         "name": "Vikas Silwal",
         "niche": "Foos"
+      },
+      {
+        "handle": "@its.sapna.soni",
+        "name": "Sapna soni",
+        "niche": "Fitness, lifestyle, travel"
       }
     ],
-    "drafts_count": 69
+    "drafts_count": 70
   },
   "buffer": {
     "queued_count": 0,
-    "needs_media_count": 69,
-    "has_drafts": 69,
+    "needs_media_count": 70,
+    "has_drafts": 70,
     "statuses": {
-      "needs_media": 69
+      "needs_media": 70
     }
   },
   "dnc_count": 1,
-  "last_run": "2026-11-16T11:48:48.157421+00:00"
+  "last_run": "2026-11-17T12:10:14.567009+00:00"
 }
