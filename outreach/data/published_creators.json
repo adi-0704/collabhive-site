@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-17T12:10:31.128567+00:00",
-  "count": 71,
+  "generated_at": "2026-11-18T12:02:22.145893+00:00",
+  "count": 72,
   "creators": [
     {
       "name": "Garima narang",
@@ -638,6 +638,15 @@
       "city": "Delhi & Mumbai",
       "followers": 93000,
       "platforms": "Instagram, YouTube",
+      "source": "applicant"
+    },
+    {
+      "name": "Hema Gayatri ",
+      "handle": "@www.instagram.com/hema.gayatri",
+      "niche": "Parenting and Lifestyle ",
+      "city": "Bangalore",
+      "followers": 295000,
+      "platforms": "Instagram, Facebook",
       "source": "applicant"
     }
   ]
