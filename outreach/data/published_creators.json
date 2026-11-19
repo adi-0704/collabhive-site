@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-18T12:02:22.145893+00:00",
-  "count": 72,
+  "generated_at": "2026-11-19T11:59:44.913852+00:00",
+  "count": 73,
   "creators": [
     {
       "name": "Garima narang",
@@ -647,6 +647,15 @@
       "city": "Bangalore",
       "followers": 295000,
       "platforms": "Instagram, Facebook",
+      "source": "applicant"
+    },
+    {
+      "name": "Kaviraj K H",
+      "handle": "@Ootadamane_official",
+      "niche": "Food",
+      "city": "Bangalore,Karnataka",
+      "followers": 116229000,
+      "platforms": "Instagram, YouTube, Facebook",
       "source": "applicant"
     }
   ]
