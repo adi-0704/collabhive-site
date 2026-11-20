@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T22:13:22.753743+00:00",
+  "generated_at": "2026-11-20T21:51:09.189416+00:00",
   "status": "fail",
   "checks": [
     {
@@ -10,20 +10,20 @@
     },
     {
       "name": "mail_flowing",
-      "status": "warn",
-      "detail": "No email sent for 347h — but 0 brands are currently sendable.",
-      "fix": "This is a pool problem, not a mail problem. See prospect_pool."
+      "status": "fail",
+      "detail": "No email sent for 371h, but 1 brand(s) are ready to contact.",
+      "fix": "Usually a missing/expired Gmail app password (OUTREACH_EMAIL_PASS)."
     },
     {
       "name": "prospect_pool",
-      "status": "fail",
-      "detail": "0 brands left to contact — outreach is starved.",
-      "fix": "Add brands to data/brands_seed.json or run the Maps discovery workflow."
+      "status": "warn",
+      "detail": "Only 1 contactable brand(s) left (threshold 10).",
+      "fix": "Top up the seed pool this week or outreach stops."
     },
     {
       "name": "hot_leads",
       "status": "warn",
-      "detail": "8 hot lead(s) with no quote for >48h: hello@sugarcosmetics.com, care@kamaayurveda.in, support@damensch.com, woot@mcaffeine.com, care@thesleepcompany.in",
+      "detail": "9 hot lead(s) with no quote for >48h: hello@sugarcosmetics.com, care@kamaayurveda.in, support@damensch.com, woot@mcaffeine.com, care@thesleepcompany.in",
       "fix": "Reply personally — these are the closest thing to revenue you have."
     },
     {
@@ -35,7 +35,7 @@
     {
       "name": "deliverability",
       "status": "ok",
-      "detail": "0.0% delivered, 1 bounce(s).",
+      "detail": "0.0% delivered, 0 bounce(s).",
       "fix": ""
     }
   ],
@@ -50,7 +50,7 @@
     "quotes_sent": 5,
     "pipeline_value": 149600,
     "creators": 0,
-    "social_drafts": 72,
+    "social_drafts": 73,
     "seo_pages": 19,
     "reply_rate_pct": 3.7
   }
