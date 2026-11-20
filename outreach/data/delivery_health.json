@@ -1,12 +1,12 @@
 {
   "ok": true,
-  "checked_at": "2026-11-19T11:59:43.889056+00:00",
+  "checked_at": "2026-11-20T12:01:31.303752+00:00",
   "lookback_hours": 96,
   "recorded_sends": 0,
   "confirmed_in_sent": 0,
   "unconfirmed": 0,
   "delivery_rate_pct": 0.0,
-  "bounces": 1,
+  "bounces": 0,
   "bounce_emails": [],
   "unconfirmed_emails": [],
   "flagged": false

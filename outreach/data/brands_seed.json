@@ -840,10 +840,12 @@
     "niche": "Fitness & Wellness",
     "city": "Pune",
     "website": "https://myfitness.in",
-    "email": "",
-    "emails": [],
+    "email": "care@myfitness.co.in",
+    "emails": [
+      "care@myfitness.co.in"
+    ],
     "source": "seed",
-    "has_email": false
+    "has_email": true
   },
   {
     "name": "Muse Wellness",

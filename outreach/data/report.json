@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T11:59:43.892726+00:00",
+  "generated_at": "2026-11-20T12:01:31.306097+00:00",
   "profile": {
     "company": "CollabHive",
     "tagline": "Influencer Marketing Agency",
@@ -13,7 +13,7 @@
     "total_sent": 244,
     "unique_brands_emailed": 243,
     "brands_in_pool": 310,
-    "brands_with_email": 210,
+    "brands_with_email": 211,
     "remaining_candidates": 0,
     "sent_today": 0,
     "sent_week": 0,
@@ -449,7 +449,7 @@
   "mail_health": {
     "sent_total": 244,
     "delivered_pct": 0.0,
-    "bounces": 1,
+    "bounces": 0,
     "human_replies": 9,
     "hot_leads": 9,
     "reply_rate_pct": 3.7,
@@ -527,8 +527,8 @@
       "decision_maker": 19,
       "named_person": 62,
       "generic": 59,
-      "support_desk": 70,
-      "no_email": 100
+      "support_desk": 71,
+      "no_email": 99
     },
     "redirects": [
       {
@@ -539,18 +539,18 @@
   },
   "social_runway": {
     "rendered_through": "2026-12-29",
-    "days_left": 40,
-    "rendered": 82
+    "days_left": 39,
+    "rendered": 80
   },
   "verification": {
     "ok": true,
-    "checked_at": "2026-11-19T11:59:43.889056+00:00",
+    "checked_at": "2026-11-20T12:01:31.303752+00:00",
     "lookback_hours": 96,
     "recorded_sends": 0,
     "confirmed_in_sent": 0,
     "unconfirmed": 0,
     "delivery_rate_pct": 0.0,
-    "bounces": 1,
+    "bounces": 0,
     "bounce_emails": [],
     "unconfirmed_emails": [],
     "flagged": false
@@ -619,14 +619,14 @@
       "brand_conversion_pct": 100.0,
       "approve_rate_pct": 100.0,
       "brief_rate_pct": 0.0,
-      "events_last_24h": 2
+      "events_last_24h": 1
     },
     "proof": {
       "creators_joined": 0,
       "campaigns_run": 0,
-      "alltime_creators": 95,
+      "alltime_creators": 96,
       "alltime_briefs": 2,
-      "generated_at": "2026-11-19T11:59:43.900206+00:00"
+      "generated_at": "2026-11-20T12:01:31.313957+00:00"
     },
     "referrals": {
       "total_referrals": 1,
@@ -644,7 +644,7 @@
     }
   },
   "publish": {
-    "published_count": 73,
+    "published_count": 74,
     "creators": [
       {
         "name": "Garima narang",
@@ -1187,18 +1187,23 @@
         "handle": "@Ootadamane_official",
         "name": "Kaviraj K H",
         "niche": "Food"
+      },
+      {
+        "handle": "@aartimahajan_lifestyle",
+        "name": "Aarti Mahajan ",
+        "niche": "Lifestyle "
       }
     ],
-    "drafts_count": 72
+    "drafts_count": 73
   },
   "buffer": {
     "queued_count": 0,
-    "needs_media_count": 72,
-    "has_drafts": 72,
+    "needs_media_count": 73,
+    "has_drafts": 73,
     "statuses": {
-      "needs_media": 72
+      "needs_media": 73
     }
   },
   "dnc_count": 1,
-  "last_run": "2026-11-19T11:59:24.024016+00:00"
+  "last_run": "2026-11-20T12:01:10.791289+00:00"
 }
