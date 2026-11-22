@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T20:34:11.711010+00:00",
+  "generated_at": "2026-11-22T20:45:06.984590+00:00",
   "status": "fail",
   "checks": [
     {
@@ -11,7 +11,7 @@
     {
       "name": "mail_flowing",
       "status": "fail",
-      "detail": "No email sent for 393h, but 1 brand(s) are ready to contact.",
+      "detail": "No email sent for 417h, but 1 brand(s) are ready to contact.",
       "fix": "Usually a missing/expired Gmail app password (OUTREACH_EMAIL_PASS)."
     },
     {
@@ -29,7 +29,7 @@
     {
       "name": "creator_supply",
       "status": "ok",
-      "detail": "74 creators available for matching.",
+      "detail": "75 creators available for matching.",
       "fix": ""
     },
     {
