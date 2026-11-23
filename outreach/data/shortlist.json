@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T11:45:29.248452+00:00",
+  "generated_at": "2026-11-23T13:18:06.290504+00:00",
   "shortlist": [
     {
       "brand": "UrbanBrew",
@@ -92,6 +92,15 @@
           "score": 0.65
         },
         {
+          "name": "Wanitha Ashok ",
+          "handle": "@wanithaashok",
+          "niche": "Fitness",
+          "city": "Bangalore",
+          "followers": 33000,
+          "rate": null,
+          "score": 0.524
+        },
+        {
           "name": "Ved Dixit ",
           "handle": "@ved19.official",
           "niche": "Lifestyle,beauty,fashion and wellness ",
@@ -117,15 +126,6 @@
           "followers": 2500,
           "rate": null,
           "score": 0.409
-        },
-        {
-          "name": "Mahek Dwivedi",
-          "handle": "@Mahek_dwivedi_",
-          "niche": "Gen-Z Lifestyle & Fashion Creator | Relatable Reels + UGC",
-          "city": "Nagpur",
-          "followers": 1000,
-          "rate": null,
-          "score": 0.404
         }
       ]
     },
