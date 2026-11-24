@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-24T01:42:21.755363+00:00",
+  "generated_at": "2026-11-24T23:29:59.048983+00:00",
   "status": "fail",
   "checks": [
     {
       "name": "pipeline_ran",
       "status": "ok",
-      "detail": "Last run 12h ago.",
+      "detail": "Last run 9h ago.",
       "fix": ""
     },
     {
       "name": "mail_flowing",
       "status": "fail",
-      "detail": "No email sent for 446h, but 1 brand(s) are ready to contact.",
+      "detail": "No email sent for 468h, but 1 brand(s) are ready to contact.",
       "fix": "Usually a missing/expired Gmail app password (OUTREACH_EMAIL_PASS)."
     },
     {
@@ -29,7 +29,7 @@
     {
       "name": "creator_supply",
       "status": "ok",
-      "detail": "77 creators available for matching.",
+      "detail": "79 creators available for matching.",
       "fix": ""
     },
     {
@@ -50,7 +50,7 @@
     "quotes_sent": 5,
     "pipeline_value": 149600,
     "creators": 0,
-    "social_drafts": 76,
+    "social_drafts": 78,
     "seo_pages": 19,
     "reply_rate_pct": 3.7
   }
