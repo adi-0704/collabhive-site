@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T13:18:06.290504+00:00",
+  "generated_at": "2026-11-24T14:02:18.753049+00:00",
   "shortlist": [
     {
       "brand": "UrbanBrew",
@@ -211,6 +211,15 @@
           "score": 0.55
         },
         {
+          "name": "Vinshi Bansal",
+          "handle": "@Thevworld_",
+          "niche": "Home Decor, Parenting, Kids fashion ",
+          "city": "Gangtok",
+          "followers": 254000,
+          "rate": null,
+          "score": 0.55
+        },
+        {
           "name": "Chetna Kathayat",
           "handle": "@21.chetna",
           "niche": "Fashion",
@@ -245,15 +254,6 @@
           "followers": 7400,
           "rate": null,
           "score": 0.428
-        },
-        {
-          "name": "Mahak Chauhan",
-          "handle": "@shanthojamehakk",
-          "niche": "fashion ,travel ",
-          "city": "shimla",
-          "followers": 5780,
-          "rate": null,
-          "score": 0.422
         }
       ]
     },

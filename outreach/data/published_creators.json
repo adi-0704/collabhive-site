@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-23T13:18:12.747912+00:00",
-  "count": 77,
+  "generated_at": "2026-11-24T14:02:24.542183+00:00",
+  "count": 79,
   "creators": [
     {
       "name": "Garima narang",
@@ -692,6 +692,24 @@
       "city": "Lucknow India",
       "followers": 192000,
       "platforms": "Instagram, YouTube, Facebook",
+      "source": "applicant"
+    },
+    {
+      "name": "Vinshi Bansal",
+      "handle": "@Thevworld_",
+      "niche": "Home Decor, Parenting, Kids fashion ",
+      "city": "Gangtok",
+      "followers": 254000,
+      "platforms": "Instagram, YouTube",
+      "source": "applicant"
+    },
+    {
+      "name": "Gazala ",
+      "handle": "@Spices_of_the_city",
+      "niche": "Food ",
+      "city": "Bareilly",
+      "followers": 3000,
+      "platforms": "Instagram, YouTube",
       "source": "applicant"
     }
   ]
