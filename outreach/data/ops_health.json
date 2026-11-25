@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-24T23:29:59.048983+00:00",
+  "generated_at": "2026-11-25T23:08:21.453667+00:00",
   "status": "fail",
   "checks": [
     {
       "name": "pipeline_ran",
       "status": "ok",
-      "detail": "Last run 9h ago.",
+      "detail": "Last run 10h ago.",
       "fix": ""
     },
     {
       "name": "mail_flowing",
       "status": "fail",
-      "detail": "No email sent for 468h, but 1 brand(s) are ready to contact.",
+      "detail": "No email sent for 492h, but 1 brand(s) are ready to contact.",
       "fix": "Usually a missing/expired Gmail app password (OUTREACH_EMAIL_PASS)."
     },
     {
