@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T23:02:43.318061+00:00",
+  "generated_at": "2026-11-27T22:44:59.801956+00:00",
   "status": "fail",
   "checks": [
     {
@@ -11,7 +11,7 @@
     {
       "name": "mail_flowing",
       "status": "fail",
-      "detail": "No email sent for 516h, but 1 brand(s) are ready to contact.",
+      "detail": "No email sent for 539h, but 1 brand(s) are ready to contact.",
       "fix": "Usually a missing/expired Gmail app password (OUTREACH_EMAIL_PASS)."
     },
     {
