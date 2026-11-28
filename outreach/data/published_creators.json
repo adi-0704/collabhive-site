@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-27T12:49:03.808547+00:00",
-  "count": 79,
+  "generated_at": "2026-11-28T12:03:53.334143+00:00",
+  "count": 80,
   "creators": [
     {
       "name": "Garima narang",
@@ -710,6 +710,15 @@
       "city": "Bareilly",
       "followers": 3000,
       "platforms": "Instagram, YouTube",
+      "source": "applicant"
+    },
+    {
+      "name": "Simta Sharma",
+      "handle": "@glutton_foodchannel",
+      "niche": "Food",
+      "city": "Ludhiana",
+      "followers": 107000,
+      "platforms": "Instagram, YouTube, Snapchat, Facebook",
       "source": "applicant"
     }
   ]
